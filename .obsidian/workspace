@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "fc20ba7af4ef6cd3",
+        "id": "be2cde3e9de634fe",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -12,20 +12,18 @@
             "file": "Fall 2021/2021-09-09.md",
             "mode": "source"
           }
-        },
-        "group": "3e96c91d4a35be56"
+        }
       },
       {
-        "id": "be2cde3e9de634fe",
+        "id": "0fb12efb5ce49439",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Fall 2021/2021-09-09.md",
-            "mode": "preview"
+            "file": "Database Systems/Join.md",
+            "mode": "source"
           }
-        },
-        "group": "3e96c91d4a35be56"
+        }
       }
     ],
     "direction": "vertical"
@@ -146,9 +144,10 @@
     "width": 240.3175506591797,
     "collapsed": true
   },
-  "active": "fc20ba7af4ef6cd3",
+  "active": "be2cde3e9de634fe",
   "lastOpenFiles": [
     "Fall 2021/2021-09-09.md",
+    "Database Systems/Join.md",
     "Fall 2021/2021-09-10.md",
     "Theory of Computation/RL Closure under Concatenation.md",
     "Theory of Computation/Theory of Computation.md",
@@ -156,7 +155,6 @@
     "Theory of Computation/RL Closure under Concaination.md",
     "Theory of Computation/RL Closure under Intersection.md",
     "Theory of Computation/RL Closure under Union.md",
-    "Operating Systems/OS.md",
-    "Theory of Computation/RL Closure under Complement.md"
+    "Operating Systems/OS.md"
   ]
 }
