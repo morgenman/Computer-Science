@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "title": "OS",
+      "path": "Operating Systems/OS.md"
+    },
+    {
+      "type": "file",
+      "title": "Databases",
+      "path": "Database Systems/Databases.md"
+    },
+    {
+      "type": "file",
+      "title": "Game Development",
+      "path": "Game Dev/Game Development.md"
+    },
+    {
+      "type": "file",
+      "title": "Professional Practice",
+      "path": "Professional Practice/Professional Practice.md"
+    },
+    {
+      "type": "file",
+      "title": "Theory of Computation",
+      "path": "Theory of Computation/Theory of Computation.md"
+    }
+  ]
+}

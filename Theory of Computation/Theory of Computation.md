@@ -1,0 +1,114 @@
+# Theory of Computation
+* ^^ Fundamental Capabilities and limitations of computers
+	* Also known as [[Automata Theory]] 
+* [[Complexity]] --> Why are some problems harder than others?
+* [[Computability]] --> Are there problems that cannot be solved by computers?
+* What is an [[Automata Theory]]?
+	* A mathematical model of computation which could be used to address the two above questions
+* [[Complexity]] example:
+	* Problem: Sorting a deck of 100 uniquely numbered cards
+		* Easy, Computable
+	* Problem: Checking whether such a deck exists
+		* What is the input? Given a box of cards? or? 
+		* This is why we need to know the [[Domain]]
+	* Problem (Complex): Scheduling 100 unique classes with 25 instructors into 9 class rooms with 3 time slots a day 4 days a week
+		* Constraint: Avoiding room or instructor conflicts
+		* Computable but complex
+* How do we deal with complexity?
+	* Abstraction and simplification
+	* 1. Alter the root of difficulty
+	* 2. Settle for a less than perfect solution
+	* 3. Only hard in the worst case situation
+* History Lesson:
+	* 1900: David Hilbert proposed in Paris 23 mathematical problems for the century
+		* \# 10: test if a polynomial has an integral root 
+* In order to study this we will be reviewing [[Set Theory]]
+
+## Functions and Relations
+* f(a) = b
+	* f maps a to b
+* Add function.. Domain is the set of ordered pairs
+* **Binary Function**: A function with two arguments
+* **Relation:** A property who's domain is a set of k-tuples
+
+**Special Binary Relation:** [[Equivalence Relation]]
+
+Theorem: [[DeMorgans Law]]
+
+Theorem: [[sqrt(2) is irrational]]
+
+
+## Building Blocks of TOC
+### Symbol: a,b,\*, etc
+### From symbols, we can form an alphabet: $\Sigma$  
+* collection of symbols
+
+### String: a sequence of symbols
+
+* Consider an alphabet $\Sigma$ = {a,b}
+* how many strings of length n?
+	* 2^n strings
+* if the alphabet is $\Sigma$ then a number of symbols in $\Sigma$ = |$\Sigma$|
+* the number of strings over $\Sigma$ is $|\Sigma|^n$ 
+
+### Language is a collection of Strings
+### Powers of $\Sigma$
+* \* = 0 union 1 union 2 etc (set of all possible strings)
+	* universal set
+* 0 = {$\epsilon$}
+* 1 = set of all strings of length 1
+* n = all strings of length n
+* etc..
+
+
+How do we describe Automatas?
+
+## Computational Model
+### [[State Diagram]]
+
+*  State diagrams usually describe [[DFA]]s, which are a type of [[Finite Automata]]
+
+* Any Language that can be represented by a [[DFA]] is called a [[Regular Language]]
+
+## Formal Definition of Computation
+let $M=(Q,\Sigma,\delta,q_0,f)$ be a finite automata 
+	and let $w_1...w_n$ be a string where $w_i\in\Sigma$
+then $M$ accepts $w$ if a sequence of states $r_0,r_1...r_n$ in $Q$ exists such that 
+	$r_0=q_0$
+	$\delta(r_i,w_{i+1})=r_{i+1}$ for $i=0...n-1$
+	$r_n\in f$
+$M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
+
+*![[Closure]]
+
+## Regular Language Closure:
+
+* Regular Languages are closed under:
+	* [[RL Closure under Complement|Complementation]] (NOT) 
+	* [[RL Closure under Union|Union]]
+	* [[RL Closure under Intersection|Intersection]]
+	* [[RL Closure under Concatenation|Concatenation]]
+
+![[DFA Multiple of 4.svg]]
+## Generalized form for multiple of M
+* Sum of digits is a multiple of m
+* $(Q,\Sigma,\delta,q_0,f)$
+* $Q=\{q_0...q_{m-1}\}$
+* $\Sigma = \{0,1,2,3,4,5,6,7,8,9\}$
+* $q_0=q_0$
+* $\delta(q_2,3)=q_1$
+* $(i+d)mod(m)$
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+

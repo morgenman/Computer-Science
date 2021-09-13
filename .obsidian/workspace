@@ -1,0 +1,162 @@
+{
+  "main": {
+    "id": "1a8f24977b98f2ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "fc20ba7af4ef6cd3",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Fall 2021/2021-09-09.md",
+            "mode": "source"
+          }
+        },
+        "group": "3e96c91d4a35be56"
+      },
+      {
+        "id": "be2cde3e9de634fe",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Fall 2021/2021-09-09.md",
+            "mode": "preview"
+          }
+        },
+        "group": "3e96c91d4a35be56"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "931110c3abd3ae6c",
+    "type": "split",
+    "children": [
+      {
+        "id": "d621a60cd38d848b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1f6a6f3e41358e49",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "618b30f70ed45fd5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2076a6de3cb27f6e",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 225.0094985961914
+  },
+  "right": {
+    "id": "832b6d9595f64d6b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6b03118a787b6833",
+        "type": "tabs",
+        "dimension": 33.421052631578945,
+        "children": [
+          {
+            "id": "03af6559eba08ad9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Fall 2021/2021-09-09.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "371c8677630a4fbf",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Fall 2021/2021-09-09.md"
+              }
+            }
+          },
+          {
+            "id": "cc27de9ea6ae7864",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "284e0326b95de8de",
+        "type": "tabs",
+        "dimension": 66.57894736842105,
+        "children": [
+          {
+            "id": "90c97ecc0260d249",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Fall 2021/2021-09-09.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 240.3175506591797,
+    "collapsed": true
+  },
+  "active": "fc20ba7af4ef6cd3",
+  "lastOpenFiles": [
+    "Fall 2021/2021-09-09.md",
+    "Fall 2021/2021-09-10.md",
+    "Theory of Computation/RL Closure under Concatenation.md",
+    "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/RL Closure under Concatination.md",
+    "Theory of Computation/RL Closure under Concaination.md",
+    "Theory of Computation/RL Closure under Intersection.md",
+    "Theory of Computation/RL Closure under Union.md",
+    "Operating Systems/OS.md",
+    "Theory of Computation/RL Closure under Complement.md"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "spellcheck": true,
+  "showFrontmatter": true,
+  "spellcheckDictionary": [
+    "schemas",
+    "virtualize",
+    "Metacognition",
+    "Metacognitive",
+    "Atomicity",
+    "Automata",
+    "Computable",
+    "Computable",
+    "automata",
+    "Complementation",
+    "complementation"
+  ],
+  "autoPairMarkdown": false,
+  "newFileLocation": "current",
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "./"
+}
