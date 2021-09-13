@@ -10,3 +10,5 @@
 * natural join does not have duplicate attributes
 * theta is natural join with a condition, BUT it does not remove duplicate attributes 
 * Theta is basically the [[Cartesian product]] with a condition
+* ![[Pasted image 20210913161827.png]]
+* 
