@@ -1,0 +1,5 @@
+* Denoted by $\rho_x(E)$
+	* returns the result of expression $E$ under the name $x$
+* Alternate form: $\rho_{x(A1,A2,..An)}(E)$
+	* n has to be the number of attributes as result E
+* 

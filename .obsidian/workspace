@@ -4,26 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "4e25ae21d671bdd8",
+        "id": "eea7eaf031e7bc42",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Fall 2021/2021-09-09.md",
+            "file": "Database Systems/SQL.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "4291c0d555ed203f"
       },
       {
-        "id": "529b6950ea5b83be",
+        "id": "f53c3f53875647e3",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Fall 2021/2021-09-14.md",
+            "file": "Database Systems/SQL.md",
             "mode": "preview"
           }
-        }
+        },
+        "group": "4291c0d555ed203f"
       }
     ],
     "direction": "vertical"
@@ -88,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fall 2021/2021-09-14.md",
+                "file": "Database Systems/SQL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fall 2021/2021-09-14.md"
+                "file": "Database Systems/SQL.md"
               }
             }
           }
@@ -122,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fall 2021/2021-09-14.md",
+                "file": "Database Systems/SQL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,17 +137,17 @@
     "width": 240.3175506591797,
     "collapsed": true
   },
-  "active": "529b6950ea5b83be",
+  "active": "eea7eaf031e7bc42",
   "lastOpenFiles": [
+    "Database Systems/SQL.md",
+    "Database Systems/Databases.md",
+    "Database Systems/Relational Algebra.md",
+    "Operating Systems/OS.md",
+    "Database Systems/Rename Operation.md",
+    "Database Systems/Assignment Operation.md",
     "Fall 2021/2021-09-14.md",
     "Database Systems/Join.md",
     "Fall 2021/2021-09-09.md",
-    "Fall 2021/2021-09-10.md",
-    "Database Systems/Databases.md",
-    "Database Systems/Relational Algebra.md",
-    "Professional Practice/Professional Practice.md",
-    "Operating Systems/OS.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/RL Closure under Concatenation.md"
+    "Fall 2021/2021-09-10.md"
   ]
 }

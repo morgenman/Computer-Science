@@ -1,4 +1,5 @@
 # Databases
+* https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
 * DBMS (Database Management System)
 	* 2 part system
 		* Collecting Data
@@ -47,6 +48,8 @@
 * [[Union]]
 * [[Set Intersection]]
 * [[Set Difference]]
+* [[Assignment Operation]]
+* [[Rename Operation]]
 
 * [[Union]], [[Set Difference]], and [[Set Difference]] must have the *same* attributes in both tables
 
@@ -55,4 +58,6 @@
 * EG: ![[Pasted image 20210907142700.png]]
 
 
-* 
+## Equivalent Queries:
+![[Pasted image 20210914135844.png]]
+## SQL: ![[SQL#Commands]]
