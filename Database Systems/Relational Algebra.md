@@ -11,3 +11,6 @@
 	* [[Assignment Operation]]
 	* [[Rename Operation]]
 
+Example on how some are written:
+![[2021-09-14]]
+

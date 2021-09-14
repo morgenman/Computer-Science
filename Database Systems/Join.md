@@ -1,5 +1,6 @@
 # Join
 ## AKA Natural Join or Theta Join
+### Natural Join only shows rows where matching attributes are the same in both tables
 ![[Pasted image 20210909133030.png]]
 * Essentially a [[Cartesian Product]] which matches [[Primary Key]] using [[Select]]
 * ![[Pasted image 20210909134115.png]]
