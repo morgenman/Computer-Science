@@ -14,7 +14,7 @@
 	* Problem (Complex): Scheduling 100 unique classes with 25 instructors into 9 class rooms with 3 time slots a day 4 days a week
 		* Constraint: Avoiding room or instructor conflicts
 		* Computable but complex
-* How do we deal with complexity?
+* How do we deal with [[complexity]]?
 	* Abstraction and simplification
 	* 1. Alter the root of difficulty
 	* 2. Settle for a less than perfect solution

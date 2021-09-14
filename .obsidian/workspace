@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
-            "mode": "preview"
+            "file": "Database Systems/Databases.md",
+            "mode": "source"
           }
         }
       }
@@ -78,13 +78,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Database Systems/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": false
               }
             }
@@ -95,20 +95,11 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Database Systems/Databases.md"
               }
             }
-          },
-          {
-            "id": "cc27de9ea6ae7864",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "284e0326b95de8de",
@@ -121,8 +112,8 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
-                "linksCollapsed": false,
+                "file": "Database Systems/Databases.md",
+                "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
             }
@@ -136,15 +127,15 @@
   },
   "active": "be2cde3e9de634fe",
   "lastOpenFiles": [
-    "Theory of Computation/Theory of Computation.md",
     "Database Systems/Databases.md",
     "Professional Practice/Professional Practice.md",
+    "Operating Systems/OS.md",
+    "Theory of Computation/Theory of Computation.md",
     "Fall 2021/2021-09-10.md",
     "Fall 2021/2021-09-09.md",
     "Database Systems/Join.md",
     "Theory of Computation/RL Closure under Concatenation.md",
     "Theory of Computation/RL Closure under Concatination.md",
-    "Theory of Computation/RL Closure under Concaination.md",
-    "Theory of Computation/RL Closure under Intersection.md"
+    "Theory of Computation/RL Closure under Concaination.md"
   ]
 }
