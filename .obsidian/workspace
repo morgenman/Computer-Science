@@ -4,28 +4,26 @@
     "type": "split",
     "children": [
       {
-        "id": "eea7eaf031e7bc42",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Game Dev/Game Development.md",
-            "mode": "source"
-          }
-        },
-        "group": "992dce756690b758"
-      },
-      {
         "id": "8203fc8af1866277",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Dev/Game Development.md",
+            "file": "Database Systems/Relational Algebra.md",
             "mode": "preview"
           }
-        },
-        "group": "992dce756690b758"
+        }
+      },
+      {
+        "id": "69ef412b4455e8b8",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Database Systems/Select.md",
+            "mode": "source"
+          }
+        }
       }
     ],
     "direction": "vertical"
@@ -74,7 +72,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.0094985961914
+    "width": 142.0062370300293
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -91,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Dev/Game Development.md",
+                "file": "Database Systems/Relational Algebra.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Dev/Game Development.md"
+                "file": "Database Systems/Relational Algebra.md"
               }
             }
           }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Dev/Game Development.md",
+                "file": "Database Systems/Relational Algebra.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -138,17 +136,17 @@
     "width": 240.3175506591797,
     "collapsed": true
   },
-  "active": "eea7eaf031e7bc42",
+  "active": "8203fc8af1866277",
   "lastOpenFiles": [
+    "Database Systems/Relational Algebra.md",
+    "Database Systems/Select.md",
+    "Database Systems/Databases.md",
+    "Operating Systems/OS.md",
     "Game Dev/Game Development.md",
     "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Epsilon Transition.md",
     "Theory of Computation/RL Closure under Concatenation.md",
-    "Operating Systems/OS.md",
-    "Operating Systems/Von Neumann Model of computing.md",
-    "Fall 2021/2021-09-15.md",
-    "Database Systems/Databases.md",
-    "Database Systems/Rename Operation.md"
+    "Operating Systems/Von Neumann Model of computing.md"
   ]
 }
