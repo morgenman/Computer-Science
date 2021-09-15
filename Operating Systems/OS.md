@@ -35,7 +35,6 @@
 * Outside world provides a number
 * Inside we have an array of pointers at code
 
-
 * A [[Process]] is simply a [[Program]] with context
 
 ## Programming, Data Types, etc.
@@ -43,8 +42,7 @@
 * [[Pointers]]
 
 * A [[Quantum]] is a unit of time for a cpu process to run (think when it switches back and forth, each time it runs is a quantum)
-* 
 
-
+##
 
 #virtualization  

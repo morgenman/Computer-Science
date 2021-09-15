@@ -9,23 +9,10 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Database Systems/Databases.md",
+            "file": "Fall 2021/2021-09-15.md",
             "mode": "source"
           }
-        },
-        "group": "4291c0d555ed203f"
-      },
-      {
-        "id": "f53c3f53875647e3",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Database Systems/Databases.md",
-            "mode": "preview"
-          }
-        },
-        "group": "4291c0d555ed203f"
+        }
       }
     ],
     "direction": "vertical"
@@ -91,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database Systems/Databases.md",
+                "file": "Fall 2021/2021-09-15.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database Systems/Databases.md"
+                "file": "Fall 2021/2021-09-15.md"
               }
             }
           }
@@ -125,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Database Systems/Databases.md",
+                "file": "Fall 2021/2021-09-15.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,20 +122,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 240.3175506591797,
-    "collapsed": true
+    "width": 240.3175506591797
   },
   "active": "eea7eaf031e7bc42",
   "lastOpenFiles": [
+    "Fall 2021/2021-09-15.md",
+    "Operating Systems/OS.md",
     "Database Systems/Databases.md",
     "Database Systems/Rename Operation.md",
-    "Operating Systems/OS.md",
     "Database Systems/SQL.md",
     "Database Systems/Relational Algebra.md",
     "Database Systems/Assignment Operation.md",
     "Fall 2021/2021-09-14.md",
     "Database Systems/Join.md",
-    "Fall 2021/2021-09-09.md",
-    "Fall 2021/2021-09-10.md"
+    "Fall 2021/2021-09-09.md"
   ]
 }
