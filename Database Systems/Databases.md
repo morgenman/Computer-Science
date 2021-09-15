@@ -46,7 +46,7 @@
 * [[Join]]
 	* [[Cartesian Product]] is faster, but uses more memory
 * [[Union]]
-* [[Set Intersection]]
+	* [[Set Intersection]]
 * [[Set Difference]]
 * [[Assignment Operation]]
 * [[Rename Operation]]
