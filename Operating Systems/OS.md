@@ -44,5 +44,41 @@
 * A [[Quantum]] is a unit of time for a cpu process to run (think when it switches back and forth, each time it runs is a quantum)
 
 ##
+# A Computer is...
+### CPU
+* [[Registers]]
+* [[Program Couter]]
+* fetch-decode-execute ([[Von Neumann Model of computing]])
+### RAM
+### I/O devices
+
+## Computing Resources
+* CPU *Cycles*
+* RAM *address spaces*
+* RAM *safe concurrent access*
+* Device *interaction*
+* Persistent storage *organization*
+
+## Mechanism vs Policy
+* Mechanism: a low level capability. **How** the system works
+	* How does the OS switch contexts of two processes
+* Policy: a high level strategy. **Which** resources go to which process
+	* Which process is scheduled to have the CPU after we interrupt the current one?
+* **Policies** are implemented by making use of **Mechanisms**
+
+# An OS is a Resource Manager for one or more processes using the computer hardware concurrently
+* Concurrent: happening at the same time, overlapping duration
+* What services does it offer:
+	* Multiprocessing
+		* Sharing CPU/RAM
+		* Process Management - loading/unloading, starting/pausing/stopping
+		* Scheduling
+	* Safe Sharing (of resources like RAM)
+	* Device Interface
+	* Persistence (files)
+	* Error detection/correction/recovery
+
+
+
 
 #virtualization  

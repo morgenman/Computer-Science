@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Fall 2021/2021-09-15.md",
+            "file": "Operating Systems/OS.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fall 2021/2021-09-15.md",
+                "file": "Operating Systems/OS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fall 2021/2021-09-15.md"
+                "file": "Operating Systems/OS.md"
               }
             }
           }
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fall 2021/2021-09-15.md",
+                "file": "Operating Systems/OS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -127,15 +127,15 @@
   },
   "active": "eea7eaf031e7bc42",
   "lastOpenFiles": [
-    "Fall 2021/2021-09-15.md",
     "Operating Systems/OS.md",
+    "Operating Systems/Von Neumann Model of computing.md",
+    "Fall 2021/2021-09-15.md",
     "Database Systems/Databases.md",
     "Database Systems/Rename Operation.md",
     "Database Systems/SQL.md",
     "Database Systems/Relational Algebra.md",
     "Database Systems/Assignment Operation.md",
     "Fall 2021/2021-09-14.md",
-    "Database Systems/Join.md",
-    "Fall 2021/2021-09-09.md"
+    "Database Systems/Join.md"
   ]
 }
