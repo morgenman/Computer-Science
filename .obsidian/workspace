@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/RL Closure under Concatenation.md",
+            "file": "Theory of Computation/Nondeterministic Finite Automata.md",
             "mode": "source"
           }
         },
@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/RL Closure under Concatenation.md",
+            "file": "Theory of Computation/Nondeterministic Finite Automata.md",
             "mode": "preview"
           }
         },
@@ -90,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/RL Closure under Concatenation.md",
+                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/RL Closure under Concatenation.md"
+                "file": "Theory of Computation/Nondeterministic Finite Automata.md"
               }
             }
           }
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/RL Closure under Concatenation.md",
+                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -139,6 +139,7 @@
   },
   "active": "eea7eaf031e7bc42",
   "lastOpenFiles": [
+    "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/RL Closure under Concatenation.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/OS.md",
@@ -147,7 +148,6 @@
     "Database Systems/Databases.md",
     "Database Systems/Rename Operation.md",
     "Database Systems/SQL.md",
-    "Database Systems/Relational Algebra.md",
-    "Database Systems/Assignment Operation.md"
+    "Database Systems/Relational Algebra.md"
   ]
 }
