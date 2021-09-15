@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Database Systems/SQL.md",
+            "file": "Database Systems/Databases.md",
             "mode": "source"
           }
         },
@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Database Systems/SQL.md",
+            "file": "Database Systems/Databases.md",
             "mode": "preview"
           }
         },
@@ -69,7 +69,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -90,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database Systems/SQL.md",
+                "file": "Database Systems/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +108,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database Systems/SQL.md"
+                "file": "Database Systems/Databases.md"
               }
             }
           }
@@ -124,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Database Systems/SQL.md",
+                "file": "Database Systems/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -139,11 +140,11 @@
   },
   "active": "eea7eaf031e7bc42",
   "lastOpenFiles": [
-    "Database Systems/SQL.md",
     "Database Systems/Databases.md",
-    "Database Systems/Relational Algebra.md",
-    "Operating Systems/OS.md",
     "Database Systems/Rename Operation.md",
+    "Operating Systems/OS.md",
+    "Database Systems/SQL.md",
+    "Database Systems/Relational Algebra.md",
     "Database Systems/Assignment Operation.md",
     "Fall 2021/2021-09-14.md",
     "Database Systems/Join.md",
