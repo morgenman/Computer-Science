@@ -69,7 +69,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -140,9 +141,9 @@
   "active": "eea7eaf031e7bc42",
   "lastOpenFiles": [
     "Theory of Computation/Nondeterministic Finite Automata.md",
+    "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Epsilon Transition.md",
     "Theory of Computation/RL Closure under Concatenation.md",
-    "Theory of Computation/Theory of Computation.md",
     "Operating Systems/OS.md",
     "Operating Systems/Von Neumann Model of computing.md",
     "Fall 2021/2021-09-15.md",

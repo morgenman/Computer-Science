@@ -99,3 +99,5 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 * $\delta(q_2,3)=q_1$
 * $(i+d)mod(m)$
 
+## Looking at NFA's: 
+![[Nondeterministic Finite Automata#Example Finite Automata that accepts all strings of form 0 k where k is a multiple of 2 or 3]]
