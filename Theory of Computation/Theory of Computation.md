@@ -99,17 +99,3 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 * $\delta(q_2,3)=q_1$
 * $(i+d)mod(m)$
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
