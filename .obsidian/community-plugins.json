@@ -2,7 +2,6 @@
   "table-editor-obsidian",
   "periodic-notes",
   "cm-editor-syntax-highlight-obsidian",
-  "obsidian-filename-heading-sync",
   "obsidian-outliner",
   "obsidian-system-dark-mode",
   "zoottelkeeper-obsidian-plugin",
@@ -11,5 +10,6 @@
   "drawio-obsidian",
   "obsidian-tabs",
   "obsidian-advanced-appearance",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-filename-heading-sync"
 ]
