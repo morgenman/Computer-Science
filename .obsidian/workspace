@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Nondeterministic Finite Automata.md",
+            "file": "Game Dev/Game Development.md",
             "mode": "source"
           }
         },
@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Nondeterministic Finite Automata.md",
+            "file": "Game Dev/Game Development.md",
             "mode": "preview"
           }
         },
@@ -91,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
+                "file": "Game Dev/Game Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +108,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Nondeterministic Finite Automata.md"
+                "file": "Game Dev/Game Development.md"
               }
             }
           }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
+                "file": "Game Dev/Game Development.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -140,6 +140,7 @@
   },
   "active": "eea7eaf031e7bc42",
   "lastOpenFiles": [
+    "Game Dev/Game Development.md",
     "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Epsilon Transition.md",
@@ -148,7 +149,6 @@
     "Operating Systems/Von Neumann Model of computing.md",
     "Fall 2021/2021-09-15.md",
     "Database Systems/Databases.md",
-    "Database Systems/Rename Operation.md",
-    "Database Systems/SQL.md"
+    "Database Systems/Rename Operation.md"
   ]
 }
