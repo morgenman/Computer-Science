@@ -15,12 +15,12 @@
         }
       },
       {
-        "id": "69ef412b4455e8b8",
+        "id": "4497077ec20b0862",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Database Systems/Select.md",
+            "file": "Database Systems/Join.md",
             "mode": "source"
           }
         }
@@ -89,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database Systems/Relational Algebra.md",
+                "file": "Database Systems/Join.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database Systems/Relational Algebra.md"
+                "file": "Database Systems/Join.md"
               }
             }
           }
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Database Systems/Relational Algebra.md",
+                "file": "Database Systems/Join.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,17 +136,17 @@
     "width": 240.3175506591797,
     "collapsed": true
   },
-  "active": "8203fc8af1866277",
+  "active": "4497077ec20b0862",
   "lastOpenFiles": [
+    "Database Systems/Join.md",
     "Database Systems/Relational Algebra.md",
+    "Database Systems/Cartesian Product.md",
     "Database Systems/Select.md",
     "Database Systems/Databases.md",
     "Operating Systems/OS.md",
     "Game Dev/Game Development.md",
     "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Epsilon Transition.md",
-    "Theory of Computation/RL Closure under Concatenation.md",
-    "Operating Systems/Von Neumann Model of computing.md"
+    "Theory of Computation/Epsilon Transition.md"
   ]
 }
