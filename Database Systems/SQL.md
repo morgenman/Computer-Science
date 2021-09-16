@@ -20,6 +20,11 @@
 * `create table r(ID char(5),name varchar(20)) `
 * `insert into instructor values('10211','Smith', 'Biology',66000)
 * `delete from student` (removes every row)
+* `drop table r` (delete the actual table)
+* `alter table r add A D` 
+	* where A is the name of the attribute to be added to r and d is the domain
+* `alter table r drop A`
+	* attribute of relation r 
 
 ## Domain Types
 * char(n)
@@ -36,5 +41,9 @@
 * foreign key references r
 * not null
 * 
-
+## Query Structure:
+* Typically of this form:
+	* **select** $A_1, A_2, A_3...$
+	* **from** table 
+	* **where** attribute = ?
 
