@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Database Systems/Databases.md",
+            "file": "Database Systems/SQL.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database Systems/Databases.md",
+                "file": "Database Systems/SQL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database Systems/Databases.md"
+                "file": "Database Systems/SQL.md"
               }
             }
           }
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Database Systems/Databases.md",
+                "file": "Database Systems/SQL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -127,6 +127,7 @@
   },
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
+    "Database Systems/SQL.md",
     "Database Systems/Databases.md",
     "Fall 2021/2021-09-16.md",
     "Professional Practice/Professional Practice.md",
@@ -135,7 +136,6 @@
     "Database Systems/Set Difference.md",
     "Database Systems/Set Intersection.md",
     "Database Systems/Union.md",
-    "Database Systems/Cartesian Product.md",
-    "Database Systems/Join.md"
+    "Database Systems/Cartesian Product.md"
   ]
 }
