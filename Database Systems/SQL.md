@@ -45,5 +45,6 @@
 * Typically of this form:
 	* **select** $A_1, A_2, A_3...$
 	* **from** table 
-	* **where** attribute = ?
+	* **where** P
+* 
 
