@@ -37,3 +37,6 @@
 	* ask why how and what if
 	* test understanding by giving 'mini lectures'
 	* aim for 100% mastery
+
+
+* 
