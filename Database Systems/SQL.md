@@ -18,7 +18,8 @@
 
 ### Examples:
 * `create table r(ID char(5),name varchar(20)) `
-* 
+* `insert into instructor values('10211','Smith', 'Biology',66000)
+* `delete from student` (removes every row)
 
 ## Domain Types
 * char(n)
