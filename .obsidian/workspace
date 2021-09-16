@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Professional Practice.md",
+            "file": "Fall 2021/2021-09-16.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Fall 2021/2021-09-16.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Professional Practice.md"
+                "file": "Fall 2021/2021-09-16.md"
               }
             }
           }
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Fall 2021/2021-09-16.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -127,6 +127,7 @@
   },
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
+    "Fall 2021/2021-09-16.md",
     "Professional Practice/Professional Practice.md",
     "Database Systems/Relational Algebra.md",
     "Database Systems/Select.md",
@@ -135,7 +136,6 @@
     "Database Systems/Set Intersection.md",
     "Database Systems/Union.md",
     "Database Systems/Cartesian Product.md",
-    "Database Systems/Join.md",
-    "Database Systems/Project.md"
+    "Database Systems/Join.md"
   ]
 }
