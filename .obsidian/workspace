@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Fall 2021/2021-09-16.md",
+            "file": "Database Systems/Databases.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fall 2021/2021-09-16.md",
+                "file": "Database Systems/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fall 2021/2021-09-16.md"
+                "file": "Database Systems/Databases.md"
               }
             }
           }
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fall 2021/2021-09-16.md",
+                "file": "Database Systems/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -127,11 +127,11 @@
   },
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
+    "Database Systems/Databases.md",
     "Fall 2021/2021-09-16.md",
     "Professional Practice/Professional Practice.md",
     "Database Systems/Relational Algebra.md",
     "Database Systems/Select.md",
-    "Database Systems/Databases.md",
     "Database Systems/Set Difference.md",
     "Database Systems/Set Intersection.md",
     "Database Systems/Union.md",
