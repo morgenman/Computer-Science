@@ -31,6 +31,9 @@
 * float(n) with precision of at least n digits
 
 ## Integrity Constraints
+* primary key
+* foreign key references r
+* not null
 * 
 
 
