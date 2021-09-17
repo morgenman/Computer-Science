@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "closure",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -128,13 +128,13 @@
   "lastOpenFiles": [
     "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Closure.md",
+    "Theory of Computation/_Index_of_Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Professional Practice/Professional Practice.md",
     "Game Development/Game Development.md",
     "Databases/Databases.md",
     "Fall 2021/2021-08-30.md",
-    "Operating Systems/OS.md",
-    "Fall 2021/2021-09-16.md",
-    "Database Systems/ch2.pdf"
+    "Operating Systems/OS.md"
   ]
 }

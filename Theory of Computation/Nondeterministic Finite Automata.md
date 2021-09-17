@@ -13,10 +13,15 @@
 * NFA does not need to comply to the rule that each input can only have one path. 
 * $\mathcal{E}$:  [[Epsilon Transition]] 
 
-# Closure Properties
+# Closure Properties of regular languages using NFA:
 
+1. Union:
+	* given two regular languages l1 and l2
+	* two NFA for th
+
+# Examples
 ## Example: Writing a NFA formally:
-
+![[Pasted image 20210917093136.png]]
 
 ## Example: Finite Automata that accepts all strings of form $0^k$ where k is a multiple of 2 or 3
 * ![[Pasted image 20210915095411.png]]

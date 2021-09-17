@@ -81,8 +81,7 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 
 *![[Closure]]
 
-## Regular Language Closure:
-
+## Regular Language [[Closure]]:
 * Regular Languages are closed under:
 	* [[RL Closure under Complement|Complementation]] (NOT) 
 	* [[RL Closure under Union|Union]]
