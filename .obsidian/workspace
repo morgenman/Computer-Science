@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "duplicate",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,7 +56,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -127,6 +128,7 @@
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
     "Operating Systems/OS.md",
+    "Fall 2021/2021-09-16.md",
     "Database Systems/ch2.pdf",
     "Theory of Computation/Theory of Computation.md",
     "Database Systems/Rename Operation.md",
@@ -134,7 +136,6 @@
     "Database Systems/Union.md",
     "Database Systems/Select.md",
     "Database Systems/Databases.md",
-    "Database Systems/SQL.md",
-    "Database Systems/Assignment Operation.md"
+    "Database Systems/SQL.md"
   ]
 }

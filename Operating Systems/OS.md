@@ -20,6 +20,7 @@
 * [[Privilege Bit]]
 * [[System Call]]
 * [[Address Translation]]
+* [[Atomic Instructions]]
 
 * The CPU [[Status Register]] has a [[Privilege Bit]]:
 	* 0 -> [[User Mode]]
@@ -80,7 +81,10 @@
 				* sequence of bytes
 				* must be opened/closed after interaction
 				* A naming scheme is provided to find resources
+				* persists longer than one process execution
 	* Persistence (files)
 	* Error detection/correction/recovery
+
+
 
 #virtualization  
