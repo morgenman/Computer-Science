@@ -78,6 +78,7 @@
 		* Example of a common interface:
 			* What is a file?
 				* sequence of bytes
+				* must be opened/closed after interaction
 	* Persistence (files)
 	* Error detection/correction/recovery
 
