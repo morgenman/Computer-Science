@@ -127,6 +127,7 @@
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
     "Operating Systems/OS.md",
+    "Database Systems/ch2.pdf",
     "Theory of Computation/Theory of Computation.md",
     "Database Systems/Rename Operation.md",
     "Database Systems/Relational Algebra.md",
@@ -134,7 +135,6 @@
     "Database Systems/Select.md",
     "Database Systems/Databases.md",
     "Database Systems/SQL.md",
-    "Database Systems/Assignment Operation.md",
-    "Database Systems/Cartesian Product.md"
+    "Database Systems/Assignment Operation.md"
   ]
 }

@@ -63,7 +63,7 @@
 	* Which process is scheduled to have the CPU after we interrupt the current one?
 * **Policies** are implemented by making use of **Mechanisms**
 
-# An OS is a Resource Manager for one or more processes using the computer hardware concurrently
+## An OS is a Resource Manager for one or more processes using the computer hardware concurrently
 * Concurrent: happening at the same time, overlapping duration
 * What services does it offer:
 	* Multiprocessing
@@ -74,9 +74,11 @@
 		* Uncontrolled concurrent access of a single physical resource is inherently unsafe
 	* Device Interface
 		* Multiple devices attach to the computer
-		* a *facade* place in front of all devices rais
+		* a *facade* place in front of all devices raises the level of abstraction at which they are used 
+		* Example of a common interface:
+			* What is a file?
+				* sequence of bytes
 	* Persistence (files)
 	* Error detection/correction/recovery
-
 
 #virtualization  
