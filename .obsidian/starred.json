@@ -2,11 +2,6 @@
   "items": [
     {
       "type": "file",
-      "title": "OS",
-      "path": "Operating Systems/OS.md"
-    },
-    {
-      "type": "file",
       "title": "Databases",
       "path": "Database Systems/Databases.md"
     },
@@ -24,6 +19,11 @@
       "type": "file",
       "title": "Theory of Computation",
       "path": "Theory of Computation/Theory of Computation.md"
+    },
+    {
+      "type": "file",
+      "title": "Operating Systems",
+      "path": "Operating Systems/Operating Systems.md"
     }
   ]
 }
