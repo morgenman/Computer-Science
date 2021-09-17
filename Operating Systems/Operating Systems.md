@@ -86,5 +86,7 @@
 	* Error detection/correction/recovery
 
 
+* Program is the file, process is what's actually running
+
 
 #virtualization  
