@@ -101,3 +101,5 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 
 ## Looking at NFA's: 
 ![[Nondeterministic Finite Automata#Example Finite Automata that accepts all strings of form 0 k where k is a multiple of 2 or 3]] 
+![[Nondeterministic Finite Automata#Example the language of strings of length at least 2 that begin with 0 and end in 1]]]
+![[Nondeterministic Finite Automata#Example the language of strings of length at least 2 that have a 1 in the second to last position]]

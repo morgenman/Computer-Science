@@ -9,3 +9,6 @@
 ![[Pasted image 20210915100049.png]]
 
 * NOTE: When a state has no transitions, if you have more inputs it will fail automatically
+
+
+## Example: the language of strings of length at least 2 that have a 1 in the second to last position
