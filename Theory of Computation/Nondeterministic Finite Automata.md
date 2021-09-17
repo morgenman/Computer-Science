@@ -27,8 +27,6 @@
 2. Concatenation:  success state -> epsilon transition to -> start states of next
 3. 
 
-
-
 # Examples
 ## Example: Writing a NFA formally:
 ![[Pasted image 20210917093136.png]]
