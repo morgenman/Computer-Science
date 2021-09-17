@@ -23,8 +23,9 @@
 	* construct L1 $\cup$ L2 -> n1, $\cup$ n2 
 	* Epsilon transitions to each
 		* ![[Pasted image 20210917093804.png]]
-	* Proof:
-		* 
+	* Proof:![[photo_2021-09-17_09-45-01.jpg]]
+2. Concatenation:  success state -> epsilon transition to -> start states of next
+3. 
 
 
 

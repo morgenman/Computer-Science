@@ -7,10 +7,9 @@
         "id": "8df75301a7ec7aaa",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "Theory of Computation/Nondeterministic Finite Automata.md",
-            "mode": "source"
+            "file": "Theory of Computation/photo_2021-09-17_09-45-01.jpg"
           }
         }
       }
@@ -77,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
+                "file": "Theory of Computation/photo_2021-09-17_09-45-01.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +93,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Nondeterministic Finite Automata.md"
+                "file": "Theory of Computation/photo_2021-09-17_09-45-01.jpg"
               }
             }
           }
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
+                "file": "Theory of Computation/photo_2021-09-17_09-45-01.jpg",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +125,7 @@
   },
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
+    "Theory of Computation/photo_2021-09-17_09-45-01.jpg",
     "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Closure.md",
@@ -134,7 +134,6 @@
     "Professional Practice/Professional Practice.md",
     "Game Development/Game Development.md",
     "Databases/Databases.md",
-    "Fall 2021/2021-08-30.md",
-    "Operating Systems/OS.md"
+    "Fall 2021/2021-08-30.md"
   ]
 }
