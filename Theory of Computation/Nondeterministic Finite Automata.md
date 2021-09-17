@@ -1,3 +1,7 @@
+## Formal Definition:
+* A nondeterministic finite automaton is a 5-tuple ()
+
+
 ## Combining DFA's to become NFA
 * See: ![[RL Closure under Concatenation#NFA Example]]
 * NFA does not need to comply to the rule that each input can only have one path. 
@@ -12,3 +16,4 @@
 
 
 ## Example: the language of strings of length at least 2 that have a 1 in the second to last position
+![[Pasted image 20210917091923.png]]
