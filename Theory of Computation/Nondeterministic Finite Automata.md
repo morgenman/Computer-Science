@@ -8,6 +8,8 @@
 	4. $q_0 \in Q$ is the start state
 	5. $f\leq Q$ is set of accept states
 
+^ e is $\epsilon$
+
 ## Combining DFA's to become NFA
 * See: ![[RL Closure under Concatenation#NFA Example]]
 * NFA does not need to comply to the rule that each input can only have one path. 
@@ -17,7 +19,14 @@
 
 1. Union:
 	* given two regular languages l1 and l2
-	* two NFA for th
+	* two NFA for then 2 regular languages n1 and n2
+	* construct L1 $\cup$ L2 -> n1, $\cup$ n2 
+	* Epsilon transitions to each
+		* ![[Pasted image 20210917093804.png]]
+	* Proof:
+		* 
+
+
 
 # Examples
 ## Example: Writing a NFA formally:
