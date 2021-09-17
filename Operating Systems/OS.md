@@ -69,9 +69,12 @@
 	* Multiprocessing
 		* Sharing CPU/RAM
 		* Process Management - loading/unloading, starting/pausing/stopping
-		* Scheduling
+		* Scheduling based on some criteria
 	* Safe Sharing (of resources like RAM)
+		* Uncontrolled concurrent access of a single physical resource is inherently unsafe
 	* Device Interface
+		* Multiple devices attach to the computer
+		* a *facade* place in front of all devices rais
 	* Persistence (files)
 	* Error detection/correction/recovery
 
