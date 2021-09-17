@@ -1,3 +1,4 @@
+# Nondeterministic Finite Automata
 ## Formal Definition:
 * A nondeterministic finite automaton is a 5-tuple $(Q,\Sigma, \delta, q_0,f)$ where 
 	1. Q is a finite set of states
@@ -7,11 +8,15 @@
 	4. $q_0 \in Q$ is the start state
 	5. $f\leq Q$ is set of accept states
 
-
 ## Combining DFA's to become NFA
 * See: ![[RL Closure under Concatenation#NFA Example]]
 * NFA does not need to comply to the rule that each input can only have one path. 
 * $\mathcal{E}$:  [[Epsilon Transition]] 
+
+# Closure Properties
+
+## Example: Writing a NFA formally:
+
 
 ## Example: Finite Automata that accepts all strings of form $0^k$ where k is a multiple of 2 or 3
 * ![[Pasted image 20210915095411.png]]
