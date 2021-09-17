@@ -79,6 +79,7 @@
 			* What is a file?
 				* sequence of bytes
 				* must be opened/closed after interaction
+				* A naming scheme is provided to find resources
 	* Persistence (files)
 	* Error detection/correction/recovery
 
