@@ -19,5 +19,6 @@
   "autoPairMarkdown": false,
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
-  "attachmentFolderPath": "./"
+  "attachmentFolderPath": "./",
+  "communityPluginSortOrder": "release"
 }
