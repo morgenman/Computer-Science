@@ -82,7 +82,7 @@
 				* must be opened/closed after interaction
 				* A naming scheme is provided to find resources
 				* persists longer than one process execution
-	* Persistence (files)
+	* [[Persistence]] (files)
 	* Error detection/correction/recovery
 
 

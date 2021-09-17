@@ -18,7 +18,7 @@
 
 * [[Data Models]]
 * We will be using the [[Relational Model]] a lot
-* [[Data Definition Language]] (DDL) language that stores the metadata and notation for defining [[schema]]
+* [[Data Definition Language]] (DDL) language that stores the metadata and notation for defining [[Schema]]
 * in this, we are learning the difference between the [[Primary Key]] and the [[Foreign Key]]
 * The [[Data Manipulation Language]](DML/[[SQL]]) language for accessing and manipulating data organized by the data model
 	* [[SQL]] is the most popular

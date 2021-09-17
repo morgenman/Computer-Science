@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Professional Practice.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -69,7 +69,7 @@
       {
         "id": "6b03118a787b6833",
         "type": "tabs",
-        "dimension": 59.23009623797025,
+        "dimension": 36.48293963254593,
         "children": [
           {
             "id": "03af6559eba08ad9",
@@ -77,13 +77,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": false
               }
             }
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Professional Practice.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -103,7 +103,7 @@
       {
         "id": "284e0326b95de8de",
         "type": "tabs",
-        "dimension": 40.76990376202975,
+        "dimension": 63.51706036745407,
         "children": [
           {
             "id": "90c97ecc0260d249",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -121,19 +121,20 @@
       }
     ],
     "direction": "horizontal",
-    "width": 240.3175506591797
+    "width": 301.4287109375,
+    "collapsed": true
   },
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
-    "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
+    "Professional Practice/Professional Practice.md",
+    "Game Development/Game Development.md",
+    "Databases/Databases.md",
     "Fall 2021/2021-08-30.md",
     "Operating Systems/OS.md",
     "Fall 2021/2021-09-16.md",
     "Database Systems/ch2.pdf",
     "Theory of Computation/Theory of Computation.md",
-    "Database Systems/Rename Operation.md",
-    "Database Systems/Relational Algebra.md",
-    "Database Systems/Union.md"
+    "Database Systems/Rename Operation.md"
   ]
 }
