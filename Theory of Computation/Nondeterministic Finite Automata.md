@@ -1,5 +1,11 @@
 ## Formal Definition:
-* A nondeterministic finite automaton is a 5-tuple ()
+* A nondeterministic finite automaton is a 5-tuple $(Q,\Sigma, \delta, q_0,f)$ where 
+	1. Q is a finite set of states
+	2. $\Sigma$ is a finite alphabet
+	3. $\delta:Q\times {\Sigma}_e\rightarrow P(Q)$
+	 * $\Sigma _e=\Sigma \cup \{e\}$
+	4. $q_0 \in Q$ is the start state
+	5. $f\leq Q$ is set of accept states
 
 
 ## Combining DFA's to become NFA

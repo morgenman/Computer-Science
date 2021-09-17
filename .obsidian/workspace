@@ -12,7 +12,20 @@
             "file": "Theory of Computation/Nondeterministic Finite Automata.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "c5c57f936c6205c6"
+      },
+      {
+        "id": "c8dcca210e8325a3",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Nondeterministic Finite Automata.md",
+            "mode": "preview"
+          }
+        },
+        "group": "c5c57f936c6205c6"
       }
     ],
     "direction": "vertical"
