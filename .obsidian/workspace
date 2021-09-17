@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Database Systems/Rename Operation.md",
+            "file": "Operating Systems/OS.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database Systems/Rename Operation.md",
+                "file": "Operating Systems/OS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database Systems/Rename Operation.md"
+                "file": "Operating Systems/OS.md"
               }
             }
           }
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Database Systems/Rename Operation.md",
+                "file": "Operating Systems/OS.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -127,6 +127,8 @@
   },
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
+    "Operating Systems/OS.md",
+    "Theory of Computation/Theory of Computation.md",
     "Database Systems/Rename Operation.md",
     "Database Systems/Relational Algebra.md",
     "Database Systems/Union.md",
@@ -134,8 +136,6 @@
     "Database Systems/Databases.md",
     "Database Systems/SQL.md",
     "Database Systems/Assignment Operation.md",
-    "Database Systems/Cartesian Product.md",
-    "Fall 2021/2021-09-16.md",
-    "Professional Practice/Professional Practice.md"
+    "Database Systems/Cartesian Product.md"
   ]
 }

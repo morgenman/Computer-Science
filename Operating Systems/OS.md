@@ -12,11 +12,8 @@
 		* Runs in [[User Mode]]
 		* transfers control to [[trap-handler]] which raises the [[Hardware Privledge Level]] to [[Kernel Mode]]
 * A [[Process]] is an abstraction of a running program
-
-
 * Taking an [[Interrupt]] copies the data in the registers and puts it into the **[[K-Stack]]**
 	* What happens to the 
-
 
 ## What Only Hardware Can do:
 * [[Interrupt]]
@@ -77,8 +74,6 @@
 	* Device Interface
 	* Persistence (files)
 	* Error detection/correction/recovery
-
-
 
 
 #virtualization  
