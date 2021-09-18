@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Game Development.md",
+            "file": "Theory of Computation/Nondeterministic Finite Automata.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "closure",
+                "query": "formal",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,7 +56,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Theory of Computation/Nondeterministic Finite Automata.md"
               }
             }
           }
@@ -111,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Theory of Computation/Nondeterministic Finite Automata.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,15 +127,15 @@
   },
   "active": "8df75301a7ec7aaa",
   "lastOpenFiles": [
-    "Game Development/Game Development.md",
     "Theory of Computation/Nondeterministic Finite Automata.md",
-    "Theory of Computation/photo_2021-09-17_09-45-01.jpg",
+    "Theory of Computation/DFA.md",
     "Theory of Computation/Theory of Computation.md",
+    "Game Development/Game Development.md",
+    "Theory of Computation/photo_2021-09-17_09-45-01.jpg",
     "Theory of Computation/Closure.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Professional Practice/Professional Practice.md",
-    "Databases/Databases.md",
-    "Fall 2021/2021-08-30.md"
+    "Databases/Databases.md"
   ]
 }
