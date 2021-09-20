@@ -10,5 +10,7 @@
 ![[RL Closure under Concatenation]]
 
 ## NFA
+![[RL Closure under star]]
+
 
 	
