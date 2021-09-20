@@ -88,7 +88,7 @@
 
 * Program is the file, process is what's actually running
 
-# Device: How does the OS talk to devices
+# Devices: How does the OS talk to devices
 * Status, control, data registers
 * ![[Pasted image 20210920081216.png]]
 * ![[Pasted image 20210920081244.png]]
@@ -105,8 +105,28 @@
 	* hybrid
 	* interrupt coalescing
 
-* Polling vs Interrupts:
-	* 
+## Status Checks: Polling vs Interrupts
+* Polling:
+	* wait until resource is available
+* Interrupts:
+	* take process off cpu until next interrupt
+## Data: PIO (Program IO) vs DMA (Direct Memory Access)
+* PIO
+	* CPU directly tells device what data is
+* DMA 
+	* CPU leaves data in memory 
+	* device reads it directly
+## Control: special instructions vs Memory Mapped IO
+* Special Instructions
+	* each device has a port
+	* in/out instructions to communicate with device
+* Memory Mapped IO
+	* HW Maps registers into address space
+	* loads/stores sent to device
 
+## Problem: too many devices; Solution: drivers
+* 70% of linux source code is drivers
+* Encapsulation! 
+* mix and match devices, schedulers, file systems
 
 #virtualization  
