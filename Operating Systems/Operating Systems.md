@@ -88,5 +88,11 @@
 
 * Program is the file, process is what's actually running
 
+# Device: How does the OS talk to devices
+* Status, control, data registers
+* ![[Pasted image 20210920081216.png]]
+* ![[Pasted image 20210920081244.png]]
+* ![[Pasted image 20210920080406.png]]
+* In RAM, there is a segment that linked to the status register on the hw device
 
 #virtualization  
