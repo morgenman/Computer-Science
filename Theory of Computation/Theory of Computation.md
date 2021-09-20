@@ -113,4 +113,9 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 ## Every NFA has a DFA
 * For every ambiguous transition (where it goes to 2 or more states), unify them as a 'combo state'
 	* instead of 0 going to q0 and q1, it goes to q0q1
-	* 
+	* Table method
+	* Only read epsilon symbol after character (on transition table)
+	* Start state can be different
+
+
+# ![[Regular Language]]

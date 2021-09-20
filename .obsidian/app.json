@@ -14,7 +14,8 @@
     "Computable",
     "automata",
     "Complementation",
-    "complementation"
+    "complementation",
+    "Automatas"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
