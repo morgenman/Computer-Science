@@ -104,3 +104,13 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 ![[Nondeterministic Finite Automata#Example the language of strings of length at least 2 that have a 1 in the second to last position]]
 
 * * includes empty set
+
+
+# NFA to DFA
+* Why?
+	* NFA is not serial, making it a DFA you can predict runtime etc
+
+## Every NFA has a DFA
+* For every ambiguous transition (where it goes to 2 or more states), unify them as a 'combo state'
+	* instead of 0 going to q0 and q1, it goes to q0q1
+	* 
