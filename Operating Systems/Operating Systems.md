@@ -93,6 +93,20 @@
 * ![[Pasted image 20210920081216.png]]
 * ![[Pasted image 20210920081244.png]]
 * ![[Pasted image 20210920080406.png]]
-* In RAM, there is a segment that linked to the status register on the hw device
+* In RAM, there is a segment that linked to the status register on the hw device 
+`While (STATUS == BUSY) wait for interrupt; // wait until device is not busy 
+	Write data to DATA register 
+	Write command to COMMAND register (starts the device and executes the command) 
+	While (STATUS == BUSY) wait for interrupt; // wait until device is done with your request`
+* Using interrupts ensures that you are not wasting CPU Cycles 'Spinning
+	* Are interrupts worse? 
+		Yes, they can cause a livelock (flood of network packets)
+* Techniques
+	* hybrid
+	* interrupt coalescing
+
+* Polling vs Interrupts:
+	* 
+
 
 #virtualization  
