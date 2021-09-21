@@ -52,5 +52,16 @@
 	* %dar%  finds dar in any string
 * \_: matches any character
 * Escape character: \
+* Order by:   etc
+* between X and Y
+
+## Set Operations
+* [Select] Union [Select]
+* [Select] intersect [Select]
+* [Select] Except [Select]
+* Add "all" to the end when retaining duplicates
+* any operation with null is null
+* Unknown is different to null
+* comparisons between something and null it returns unknown
 * 
 
