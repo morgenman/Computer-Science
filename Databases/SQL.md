@@ -63,5 +63,21 @@
 * any operation with null is null
 * Unknown is different to null
 * comparisons between something and null it returns unknown
-* 
+* Aggregate Functions:
+	* Count
+	* average
+	* min
+	* max
+	* sum
+* Group By: Average salary of instructors in each department:
+
+`select dept_name, avg(salary) as avg_salary
+from instructor
+group by dept_name;`
+
+* Having, filters output
+
+## Nested subquery
+* where P can be 
+
 
