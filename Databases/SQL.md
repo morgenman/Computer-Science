@@ -46,5 +46,11 @@
 	* **select** $A_1, A_2, A_3...$
 	* **from** table 
 	* **where** P
+
+## String Operations
+* %: wildcard
+	* %dar%  finds dar in any string
+* \_: matches any character
+* Escape character: \
 * 
 

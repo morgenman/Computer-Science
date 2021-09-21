@@ -61,3 +61,5 @@
 ## Equivalent Queries:
 ![[Pasted image 20210914135844.png]]
 ## SQL: ![[SQL#Commands]]
+
+HW: Sql & output
