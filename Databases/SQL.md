@@ -76,8 +76,7 @@ from instructor
 group by dept_name;`
 
 * Having, filters output
+* not in ('option a', 'option b')
 
 ## Nested subquery
 * where P can be 
-
-
