@@ -128,5 +128,8 @@
 * 70% of linux source code is drivers
 * Encapsulation! 
 * mix and match devices, schedulers, file systems
+## Storage: loosing half a sector on average per file
+* 
+
 
 #virtualization  
