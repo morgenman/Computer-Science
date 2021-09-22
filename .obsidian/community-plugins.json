@@ -2,7 +2,6 @@
   "table-editor-obsidian",
   "periodic-notes",
   "cm-editor-syntax-highlight-obsidian",
-  "obsidian-outliner",
   "obsidian-system-dark-mode",
   "zoottelkeeper-obsidian-plugin",
   "oz-image-plugin",
@@ -13,5 +12,8 @@
   "obsidian-git",
   "folder-note-core",
   "alx-folder-note",
-  "page-heading-from-links"
+  "page-heading-from-links",
+  "find-unlinked-files",
+  "text-snippets-obsidian",
+  "obsidian-outliner"
 ]

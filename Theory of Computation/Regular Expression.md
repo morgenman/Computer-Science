@@ -23,5 +23,9 @@ $\Sigma$ -> language of all strings over the alphabet of length 1
 
 It is possible to concatenate with an empty set
 Anything union empty set or epsilon is itself
+Something *concatenated* with an empty set is an empty set
 
 `{0,e}{1,e}={01,0,1,e}`
+
+* L(R): Language of R the regular language is the set of all strings accepted by R
+* 

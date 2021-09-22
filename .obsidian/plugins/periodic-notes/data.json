@@ -17,5 +17,15 @@
     "format": "",
     "template": "",
     "folder": ""
+  },
+  "quarterly": {
+    "format": "",
+    "template": "",
+    "folder": ""
+  },
+  "yearly": {
+    "format": "",
+    "template": "",
+    "folder": ""
   }
 }

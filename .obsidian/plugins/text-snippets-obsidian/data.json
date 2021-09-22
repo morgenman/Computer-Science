@@ -1,0 +1,13 @@
+{
+  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\nsigma : $\\Sigma$\nepsilon : $\\varepsilon$\ndot : $\\cdot$\n",
+  "snippets": [
+    "snippets : It is an obsidian plugin, that replaces your selected text.",
+    "sigma : $\\Sigma$",
+    "epsilon : $\\varepsilon$",
+    "dot : $\\cdot$"
+  ],
+  "endSymbol": "$end$",
+  "newlineSymbol": "$nl$",
+  "stopSymbol": "$tb$",
+  "useTab": true
+}

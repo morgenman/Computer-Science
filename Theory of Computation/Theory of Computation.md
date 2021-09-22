@@ -122,3 +122,10 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 
 We are now going to learn about:
 # ![[Regular Expression]]
+
+# Converting R into an NFA
+![[Pasted image 20210922095823.png]]
+
+
+
+

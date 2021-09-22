@@ -1,7 +1,7 @@
 {
   "styleLists": true,
   "debug": false,
-  "stickCursor": true,
+  "stickCursor": false,
   "betterEnter": true,
   "selectAll": true,
   "disableZoomNotification": false,
