@@ -119,3 +119,6 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 
 
 # ![[Regular Language]]
+
+We are now going to learn about:
+# ![[Regular Expression]]

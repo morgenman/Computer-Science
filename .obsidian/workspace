@@ -9,7 +9,18 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Fall 2021/2021-09-22.md",
+            "file": "Theory of Computation/Theory of Computation.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "4e73431ee86ef2e9",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Regular Expression.md",
             "mode": "source"
           }
         }
@@ -77,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fall 2021/2021-09-22.md",
+                "file": "Theory of Computation/Regular Expression.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fall 2021/2021-09-22.md"
+                "file": "Theory of Computation/Regular Expression.md"
               }
             }
           }
@@ -111,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fall 2021/2021-09-22.md",
+                "file": "Theory of Computation/Regular Expression.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -124,17 +135,17 @@
     "width": 301.4287109375,
     "collapsed": true
   },
-  "active": "8df75301a7ec7aaa",
+  "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Theory of Computation/Regular Expression.md",
+    "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Regular Language.md",
     "Fall 2021/2021-09-22.md",
     "Operating Systems/Operating Systems.md",
     "Databases/SQL.md",
     "Databases/Database Engine.md",
     "Databases/Databases.md",
     "Game Development/Game Development.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Closure.md",
-    "Theory of Computation/RL Closure under star.md",
-    "Theory of Computation/Nondeterministic Finite Automata.md"
+    "Theory of Computation/Closure.md"
   ]
 }
