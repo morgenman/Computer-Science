@@ -80,3 +80,7 @@ group by dept_name;`
 
 ## Nested subquery
 * where P can be 
+
+
+If you pull out a value, and want to use as a value, put all command in
+

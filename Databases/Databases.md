@@ -60,6 +60,8 @@
 
 ## Equivalent Queries:
 ![[Pasted image 20210914135844.png]]
-## SQL: ![[SQL#Commands]]
+## [[SQL]]: ![[SQL#Commands]]
 
 HW: Sql & output
+
+[[Review Difficult Questions for HW 1 - Relational Algebra]]

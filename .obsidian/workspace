@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Presentation 1- Feedback.md",
+            "file": "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Presentation 1- Feedback.md",
+                "file": "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Presentation 1- Feedback.md"
+                "file": "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Presentation 1- Feedback.md",
+                "file": "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,15 +126,15 @@
   },
   "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md",
+    "Databases/Databases.md",
+    "Databases/SQL.md",
     "Professional Practice/Presentation 1- Feedback.md",
     "Professional Practice/Professional Practice.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Regular Expression.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Regular Language.md",
-    "Fall 2021/2021-09-22.md",
-    "Operating Systems/Operating Systems.md",
-    "Databases/SQL.md",
-    "Databases/Database Engine.md"
+    "Fall 2021/2021-09-22.md"
   ]
 }

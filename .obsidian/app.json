@@ -15,7 +15,8 @@
     "automata",
     "Complementation",
     "complementation",
-    "Automatas"
+    "Automatas",
+    "subquery"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
