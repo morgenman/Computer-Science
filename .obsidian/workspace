@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Game Development.md",
+            "file": "Professional Practice/Presentation 1- Feedback.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Professional Practice/Presentation 1- Feedback.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Professional Practice/Presentation 1- Feedback.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Professional Practice/Presentation 1- Feedback.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,8 @@
   },
   "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Professional Practice/Presentation 1- Feedback.md",
+    "Professional Practice/Professional Practice.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Regular Expression.md",
     "Theory of Computation/Theory of Computation.md",
@@ -133,8 +135,6 @@
     "Fall 2021/2021-09-22.md",
     "Operating Systems/Operating Systems.md",
     "Databases/SQL.md",
-    "Databases/Database Engine.md",
-    "Databases/Databases.md",
-    "Theory of Computation/Closure.md"
+    "Databases/Database Engine.md"
   ]
 }
