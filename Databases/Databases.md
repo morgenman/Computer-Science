@@ -65,3 +65,4 @@
 HW: Sql & output
 
 [[Review Difficult Questions for HW 1 - Relational Algebra]]
+
