@@ -32,7 +32,21 @@ eh font..
 I like the slide changes and large font. 
 Header lines over points (blue on the left) is weird
 a little too many ums
+Slightly too much going on on slides
 slide with acm 3.7 and 2.1 are not same column size: left is justified, right is hanging
+
+## Trevor Butler
+* Experian Hack
+* 15 million customers from tmobile
+* name addresses, ssn, passport driverslicence 
+* what to know
+* 200 million affected in first leak  (this was the second)
+* No credit information was stored
+
+Decent posture, not too much reading
+Got right into guidelines, 2.9
+Content on slides wasn't distracting
+Ended a little bit awkwardly
 
 
 
