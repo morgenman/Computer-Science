@@ -135,12 +135,16 @@
 		* Access Rights
 		* owner
 		* ref count
+		* indirect pointers etc.
+		* Inode has blocks of where the file is stored
+		* 
 	2. FD
 		* File Descriptor
 		* Internal view of a file in a running process
 		* OS has an array with a bunch of File Control Blocks
 		* holds metainformation
-	3. 
+	3. pathname
+		*  
 
 OS owned file array per process
 * this array holds an block
@@ -148,7 +152,12 @@ OS owned file array per process
 	* index i refers to the FD index in the FCB
 *
 
-Inode table block 2 (superblock)
+Inode table block 2 (superblock) fixed
+FCB table holds in use now blocks with inode # (in memory)
+File Array table also in memory per process
+FD is the index of this table ^^
 
+![[PXL_20210924_122457556.jpg]]
+* 
 
 #virtualization  
