@@ -135,9 +135,14 @@
 		* Access Rights
 		* owner
 		* ref count
-		* indirect pointers etc.
-		* Inode has blocks of where the file is stored
-		* 
+		* Direct block array: Inode has blocks of where the file is stored (file data)	
+		* Indirect -> points at a block which contains block numbers
+			* this block is 4k long
+			* 4 byte block addresses
+			* = 1k block
+			* So if a file is more than 10 blocks, the inode has an indirect block which contains more block references
+		* if I need more than one indirect, I use a block of indirects (double indirect), then triple indirect etc. 
+		* Inode structure is Preallocated,
 	2. FD
 		* File Descriptor
 		* Internal view of a file in a running process

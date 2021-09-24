@@ -16,7 +16,13 @@
     "Complementation",
     "complementation",
     "Automatas",
-    "subquery"
+    "subquery",
+    "Preallocated",
+    "Inode",
+    "indirects",
+    "inode",
+    "metainformation",
+    "pathname"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
