@@ -129,7 +129,26 @@
 * Encapsulation! 
 * mix and match devices, schedulers, file systems
 ## Storage: loosing half a sector on average per file
-* 
+* On the HDD, there is an array of inodes
+* Three names for files:
+	1. inode
+		* Access Rights
+		* owner
+		* ref count
+	2. FD
+		* File Descriptor
+		* Internal view of a file in a running process
+		* OS has an array with a bunch of File Control Blocks
+		* holds metainformation
+	3. 
+
+OS owned file array per process
+* this array holds an block
+	* block has 
+	* index i refers to the FD index in the FCB
+*
+
+Inode table block 2 (superblock)
 
 
 #virtualization  
