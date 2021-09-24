@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Theory of Computation/DFA to Regular Expression.md",
             "mode": "source"
           }
         }
@@ -60,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 215.00566864013672
+    "width": 233.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/DFA to Regular Expression.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Theory of Computation/DFA to Regular Expression.md"
               }
             }
           }
@@ -111,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/DFA to Regular Expression.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +127,8 @@
   },
   "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Theory of Computation/DFA to Regular Expression.md",
+    "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Databases/Databases.md",
     "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md",
@@ -133,8 +136,6 @@
     "Professional Practice/Presentation 1- Feedback.md",
     "Professional Practice/Professional Practice.md",
     "Game Development/Game Development.md",
-    "Theory of Computation/Regular Expression.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Regular Language.md"
+    "Theory of Computation/Regular Expression.md"
   ]
 }

@@ -11,15 +11,15 @@
   "darkStyle": "advanced-dark",
   "uiFont": "IBM Plex Sans",
   "textFont": "IBM Plex Sans",
-  "editorFont": "IBM Plex Sans",
+  "editorFont": "IBM Plex Mono",
   "monoFont": "IBM Plex Mono",
   "fancyCursor": false,
-  "lineWidth": 42,
+  "lineWidth": 60,
   "textNormal": 16,
   "textSmall": 13,
   "underlineInternal": true,
   "underlineExternal": true,
   "useSystemTheme": false,
-  "relationLinesPreview": false,
+  "relationLinesPreview": true,
   "relationLinesEdit": false
 }

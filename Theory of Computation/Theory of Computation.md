@@ -129,3 +129,4 @@ We are now going to learn about:
 
 
 
+# ![[DFA to Regular Expression]]
