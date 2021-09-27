@@ -134,4 +134,14 @@ We are now going to learn about:
 
 # ![[DFA to Regular Expression]]
 
+## Example: NFA->DFA
+* States without incoming transitions can be ignored
+* ![[Pasted image 20210927095841.png]]
+* ![[Pasted image 20210927100027.png]]
 * 
+
+# Exam 1
+* shouldn't take more than the class time. 
+* can start 5m early
+* Closed book
+* Everything we have learned so far
