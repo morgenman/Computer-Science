@@ -18,7 +18,7 @@
 * Vertex:
 	* [x y z]
 * Matrix
-	* [a b c]
+	* [a b c]c
 	   [d e f]
 	   [g h i]
 	* How a vector changes
