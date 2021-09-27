@@ -184,7 +184,23 @@ FD is the index of this table ^^
 
 ### Contents of a File (in our filesystem)
 * data block
+	* Set aside blocks for data
 * inode block
+	* Set aside some sectors/blocks to store inodes (determines how many files you can store)
+	* 16-32 inodes for block
+	* Contents:
+		* type
+		* uid
+		* rwx
+		* size
+		* blocks
+		* time
+		* ctime
+		* links_count
+		* addrs[N]
+	* Offset for inode 0?
+		* 256 byte sector
+		* 3:0 (block 3 offset 0)
 * indirect block
 * directories
 * data bitmap
