@@ -116,6 +116,9 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 	* Table method
 	* Only read epsilon symbol after character (on transition table)
 	* Start state can be different
+* Domain of DFA includes the powerset of the sets in the NFA (think epsilon transitions)
+* How to simplify states
+	* if no input states, remove state
 
 
 # ![[Regular Language]]
@@ -130,3 +133,5 @@ We are now going to learn about:
 
 
 # ![[DFA to Regular Expression]]
+
+* 
