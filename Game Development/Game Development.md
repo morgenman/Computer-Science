@@ -12,5 +12,13 @@
 * Evaluative:
 * Meaningful play does not necessarily mean meaningful choices
 
-# nds dev
-* 
+# 3d Graphics
+* vector vs array
+* 2d vs 3d
+* Vertex:
+	* [x y z]
+* Matrix
+	* [a b c]
+	   [d e f]
+	   [g h i]
+	* How a vector changes
