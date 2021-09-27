@@ -132,6 +132,7 @@
 * On the HDD, there is an array of inodes
 * Three names for files:
 	1. inode
+		* Permanent name for a collection of datablocks
 		* Access Rights
 		* owner
 		* ref count
@@ -148,14 +149,17 @@
 		* Internal view of a file in a running process
 		* OS has an array with a bunch of File Control Blocks
 		* holds metainformation
+		* shortlived
+		* only as long as the process needs to read a file
+		* keeps track of where you are in a file 
+		* stores File Control Blocks which store links to inodes
 	3. pathname
-		*  
+		*  hierarchal 
 
 OS owned file array per process
 * this array holds an block
 	* block has 
 	* index i refers to the FD index in the FCB
-*
 
 Inode table block 2 (superblock) fixed
 FCB table holds in use now blocks with inode # (in memory)
@@ -163,6 +167,16 @@ File Array table also in memory per process
 FD is the index of this table ^^
 
 ![[PXL_20210924_122457556.jpg]]
-* 
+### FileNames
+* Three types: (see [[Operating Systems#Storage loosing half a sector on average per file]])
+	* inode number
+	* path
+	* file descriptor
+* Special Calls
+	* `fsync(int fd)`
+		* synchronizes file on device
+	* `rename(char *oldpath, char *newpath)`
+		* 
+	* `flock(int fd,int operation)`
 
 #virtualization  
