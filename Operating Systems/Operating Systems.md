@@ -176,7 +176,17 @@ FD is the index of this table ^^
 	* `fsync(int fd)`
 		* synchronizes file on device
 	* `rename(char *oldpath, char *newpath)`
-		* 
+		* adds file to new directory table
+		* removes file from old directory table
 	* `flock(int fd,int operation)`
+* Deleting a File:
+	* remove references to file, which *should* lower the ref count on a file
 
-#virtualization  
+### Contents of a File (in our filesystem)
+* data block
+* inode block
+* indirect block
+* directories
+* data bitmap
+* inode bitmap
+* superblock
