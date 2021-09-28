@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
+            "file": "Theory of Computation/DFA to Regular Expression.md",
             "mode": "preview"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Theory of Computation/DFA to Regular Expression.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Theory of Computation/DFA to Regular Expression.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Theory of Computation/DFA to Regular Expression.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,9 +126,9 @@
   },
   "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Theory of Computation/DFA to Regular Expression.md",
     "Theory of Computation/Theory of Computation.md",
     "Game Development/Game Development.md",
-    "Theory of Computation/DFA to Regular Expression.md",
     "Theory of Computation/Pasted image 20210922095823.png",
     "Databases/Databases.md",
     "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md",
