@@ -103,4 +103,23 @@ If you pull out a value, and want to use as a value, put all command in
 * exists(some command returning a table)
 	* if table has any rows, it will be true
 	* otherwise not
-	* 
+
+## 'unique' clause
+* tests if subquery contains duplicates
+
+## 'distinct' clause is for select clause (but similar to unique)
+ 
+ ^^ A lot of these can be used in the from clause too
+ 
+ ## 'with' clause
+* defining a temporary table ...
+
+
+## Scalar Subquery
+* one which is used where a single value is expected
+
+!! Need to review select !!
+
+
+## delete removes rows
+* `delete from instructor` (removes all rows)
