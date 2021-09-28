@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/SQL.md",
-            "mode": "source"
+            "file": "Theory of Computation/Theory of Computation.md",
+            "mode": "preview"
           }
         }
       }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/SQL.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/SQL.md"
+                "file": "Theory of Computation/Theory of Computation.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/SQL.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,7 @@
   },
   "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Theory of Computation/Theory of Computation.md",
     "Databases/SQL.md",
     "Databases/Databases.md",
     "Operating Systems/Operating Systems.md",
@@ -133,7 +134,6 @@
     "Professional Practice/Professional Practice.md",
     "Operating Systems/System Call.md",
     "Theory of Computation/DFA to Regular Expression.md",
-    "Theory of Computation/Theory of Computation.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Pasted image 20210922095823.png"
   ]
