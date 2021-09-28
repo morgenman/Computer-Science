@@ -91,4 +91,16 @@ If you pull out a value, and want to use as a value, put all command in
 * select name from instructor where salary > some (select salary from instructor where dept name = 'biology')
 * Example: 
 	0,5,6 : 5 < some = true (6)
-* 
+
+
+## 'all' clause
+* find names of instructors where salary is greater than all instructors in biology
+	* where salary > all (other table)
+
+## 'exists' clause
+* if value found in subtable, accept
+* select course_id where exists (bigger table)
+* exists(some command returning a table)
+	* if table has any rows, it will be true
+	* otherwise not
+	* 
