@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Professional Practice/Losing Lena.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Professional Practice/Losing Lena.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Professional Practice/Losing Lena.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Professional Practice/Losing Lena.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,8 @@
   },
   "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Professional Practice/Losing Lena.md",
+    "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/System Call.md",
     "Theory of Computation/DFA to Regular Expression.md",
@@ -133,8 +135,6 @@
     "Game Development/Game Development.md",
     "Theory of Computation/Pasted image 20210922095823.png",
     "Databases/Databases.md",
-    "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md",
-    "Professional Practice/Presentation 1- Feedback.md",
-    "Professional Practice/Professional Practice.md"
+    "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md"
   ]
 }

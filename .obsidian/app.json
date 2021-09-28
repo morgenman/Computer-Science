@@ -22,7 +22,8 @@
     "indirects",
     "inode",
     "metainformation",
-    "pathname"
+    "pathname",
+    "Blindspots"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
