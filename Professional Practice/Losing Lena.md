@@ -41,6 +41,19 @@
 * It's a question of opportunity
 * Things like christmas gifts and etc
 * by 7-9 we tell kids that intelligence is innate
-* Nothing in the genes that say one gener is better than the others
+* Nothing in the genes that say one person is smarter than the others
 * Women and POC
-* 
+* Way you are raised "women clean and do housework"
+	* Science & Math
+* Making CS mandatory in High School 
+	* gets rid of the illusion of choice based on personal beliefs (when they don't understand why they think that the CS class is not for them)
+* If more women had been on the early twitter team, the amount harassment and stuff wouldn't be as prevalent
+* what if they had been involved in the making of our tech?
+
+
+* I was proud of the picture
+* At the time, "this is the way it is"
+* It was a man's world
+* There's a lot of work to do
+* "first lady of the internet"
+* I retired from modeling a long time ago, It's time I retired from tech too
