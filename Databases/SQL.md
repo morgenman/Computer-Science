@@ -74,7 +74,8 @@
 ```mysql
 select dept_name, avg(salary) as avg_salary
 from instructor
-group by dept_name;```
+group by dept_name;
+```
 
 * Having, filters output
 * not in ('option a', 'option b')
