@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Losing Lena.md",
+            "file": "Databases/SQL.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Losing Lena.md",
+                "file": "Databases/SQL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Losing Lena.md"
+                "file": "Databases/SQL.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Losing Lena.md",
+                "file": "Databases/SQL.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,8 @@
   },
   "active": "4e73431ee86ef2e9",
   "lastOpenFiles": [
+    "Databases/SQL.md",
+    "Databases/Databases.md",
     "Professional Practice/Losing Lena.md",
     "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
@@ -133,8 +135,6 @@
     "Theory of Computation/DFA to Regular Expression.md",
     "Theory of Computation/Theory of Computation.md",
     "Game Development/Game Development.md",
-    "Theory of Computation/Pasted image 20210922095823.png",
-    "Databases/Databases.md",
-    "Databases/Review Difficult Questions for HW 1 - Relational Algebra.md"
+    "Theory of Computation/Pasted image 20210922095823.png"
   ]
 }

@@ -81,6 +81,14 @@ group by dept_name;`
 ## Nested subquery
 * where P can be 
 
-
 If you pull out a value, and want to use as a value, put all command in
 
+* select distinct X from Y where Z not in (select X1 from Y1 where Z1)
+* where (X, Y,Z) in (select X, Y, Z from ....)
+* 
+
+## 'some' clause
+* select name from instructor where salary > some (select salary from instructor where dept name = 'biology')
+* Example: 
+	0,5,6 : 5 < some = true (6)
+* 
