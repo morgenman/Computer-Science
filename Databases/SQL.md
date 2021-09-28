@@ -71,9 +71,10 @@
 	* sum
 * Group By: Average salary of instructors in each department:
 
-`select dept_name, avg(salary) as avg_salary
+```mysql
+select dept_name, avg(salary) as avg_salary
 from instructor
-group by dept_name;`
+group by dept_name;```
 
 * Having, filters output
 * not in ('option a', 'option b')
@@ -123,3 +124,22 @@ If you pull out a value, and want to use as a value, put all command in
 
 ## delete removes rows
 * `delete from instructor` (removes all rows)
+
+## insert
+* insert into X values (xyz)
+* insert into X select * from Y (assuming attributes match)
+
+**Select from where** in a subquery is evaluated first
+
+## Update
+* update instructor set salary = salary * 1.05
+
+## Case.. else
+```MySQL
+case
+	when
+	when
+	else
+end
+```
+
