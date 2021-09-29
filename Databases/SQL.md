@@ -43,9 +43,12 @@
 * 
 ## Query Structure:
 * Typically of this form:
-	* **select** $A_1, A_2, A_3...$
-	* **from** table 
-	* **where** P
+	```mysql
+	select A1 A2 A3
+	from table 
+	where P;
+	```
+* 
 
 ## String Operations
 * %: wildcard
