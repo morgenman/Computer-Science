@@ -30,3 +30,4 @@ while(t)
 	show state
 ```
 
+# Compression: reducing redundancy
