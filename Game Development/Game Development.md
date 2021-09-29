@@ -22,3 +22,11 @@
 	   [d e f]
 	   [g h i]
 	* How a vector changes
+
+```
+while(t) 
+    read input
+	update state
+	show state
+```
+
