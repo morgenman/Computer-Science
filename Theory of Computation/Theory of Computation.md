@@ -146,3 +146,5 @@ We are now going to learn about:
 * Closed book
 * Everything we have learned so far
 
+
+# ![[Non-Regular Language]]
