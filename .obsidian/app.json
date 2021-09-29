@@ -23,7 +23,8 @@
     "inode",
     "metainformation",
     "pathname",
-    "Blindspots"
+    "Blindspots",
+    "ok"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",

@@ -10,4 +10,9 @@
 	* Length of string has to be equal to the number of states
 * Suppose L is regular
 * then M be a finite automaton that recognizes L
-* let n be the number of states in M
+* let n be the number of states in M * Guaranteeing the loop, no other way to generalize it *  
+![[Pasted image 20210929093313.png]]
+* ^^ This NFA does NOT guarantee 0^n
+* 0^n is accepted
+* 0^(n-1) is also accepted (not ok)
+* 0^(n+x) is also accepted (not ok)
