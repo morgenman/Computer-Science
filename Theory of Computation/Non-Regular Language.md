@@ -16,3 +16,8 @@
 * 0^n is accepted
 * 0^(n-1) is also accepted (not ok)
 * 0^(n+x) is also accepted (not ok)
+
+
+## Pumping Lemma
+*  the fact that all sufficiently long strings in such a language have a substring that can be repeated arbitrarily many times, usually used to prove that certain languages are not regular
+* if greater, those three states have to be satisfied (I think)
