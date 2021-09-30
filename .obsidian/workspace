@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Join.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Join.md"
+                "file": "Databases/Databases.md"
               }
             }
           }
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Join.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,12 +135,12 @@
     "width": 301.4287109375,
     "collapsed": true
   },
-  "active": "aed114a7a2f503fe",
+  "active": "7ccdcfa04b917db8",
   "lastOpenFiles": [
+    "Databases/Databases.md",
     "Databases/Join.md",
     "Databases/Schema.md",
     "Databases/SQL.md",
-    "Databases/Databases.md",
     "Databases/Union.md",
     "Databases/Relational Algebra.md",
     "Professional Practice/Professional Practice.md",
