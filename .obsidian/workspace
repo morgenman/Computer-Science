@@ -4,34 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "7ccdcfa04b917db8",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Databases/Databases.md",
-            "mode": "preview"
-          }
-        }
-      },
-      {
         "id": "ccfc3f34144d47f0",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/SQL.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "aed114a7a2f503fe",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Databases/Join.md",
+            "file": "Databases/Databases.md",
             "mode": "preview"
           }
         }
@@ -99,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/SQL.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/SQL.md"
+                "file": "Databases/Databases.md"
               }
             }
           }
@@ -133,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/SQL.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -148,8 +126,8 @@
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
-    "Databases/SQL.md",
     "Databases/Databases.md",
+    "Databases/SQL.md",
     "Databases/Join.md",
     "Databases/Schema.md",
     "Databases/Union.md",
