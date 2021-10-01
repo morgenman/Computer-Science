@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -121,10 +121,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.4287109375
+    "width": 301.4287109375,
+    "collapsed": true
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
     "Databases/Databases.md",
     "Databases/Levels of Abstraction.md",
     "Databases/SQL.md",
@@ -133,7 +135,6 @@
     "Databases/Union.md",
     "Databases/Relational Algebra.md",
     "Professional Practice/Professional Practice.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Game Development/Game Development.md"
+    "Theory of Computation/Theory of Computation.md"
   ]
 }

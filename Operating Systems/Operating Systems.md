@@ -206,3 +206,20 @@ FD is the index of this table ^^
 * data bitmap
 * inode bitmap
 * superblock
+
+
+## File System integrity check (fsck)
+* inodes are correct 
+* rebuild bitmap from data
+
+
+## Superblock
+Need to know FS Metadata
+* block size
+* how many inodes are there
+* how much free data
+* allows mount operation
+Store this in the Superblock
+
+## Bitmaps are there for speed, not required
+
