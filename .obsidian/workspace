@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/DFA to Regular Expression.md",
+            "file": "Game Development/Game Development.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/DFA to Regular Expression.md",
+                "file": "Game Development/Game Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/DFA to Regular Expression.md"
+                "file": "Game Development/Game Development.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/DFA to Regular Expression.md",
+                "file": "Game Development/Game Development.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,7 @@
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
+    "Game Development/Game Development.md",
     "Theory of Computation/DFA to Regular Expression.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
@@ -134,7 +135,6 @@
     "Databases/SQL.md",
     "Databases/Join.md",
     "Databases/Schema.md",
-    "Databases/Union.md",
-    "Databases/Relational Algebra.md"
+    "Databases/Union.md"
   ]
 }
