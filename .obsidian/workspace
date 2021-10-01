@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Databases/Databases.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -121,12 +121,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 301.4287109375,
-    "collapsed": true
+    "width": 301.4287109375
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
     "Databases/Databases.md",
+    "Databases/Levels of Abstraction.md",
     "Databases/SQL.md",
     "Databases/Join.md",
     "Databases/Schema.md",
@@ -134,7 +134,6 @@
     "Databases/Relational Algebra.md",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
-    "Game Development/Game Development.md",
-    "Theory of Computation/Non-Regular Language.md"
+    "Game Development/Game Development.md"
   ]
 }
