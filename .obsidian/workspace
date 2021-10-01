@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Theory of Computation/DFA to Regular Expression.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/DFA to Regular Expression.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Theory of Computation/DFA to Regular Expression.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/DFA to Regular Expression.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,8 @@
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
+    "Theory of Computation/DFA to Regular Expression.md",
+    "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Databases/Databases.md",
     "Databases/Levels of Abstraction.md",
@@ -133,8 +135,6 @@
     "Databases/Join.md",
     "Databases/Schema.md",
     "Databases/Union.md",
-    "Databases/Relational Algebra.md",
-    "Professional Practice/Professional Practice.md",
-    "Theory of Computation/Theory of Computation.md"
+    "Databases/Relational Algebra.md"
   ]
 }

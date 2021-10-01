@@ -226,3 +226,5 @@ Store this in the Superblock
 ![[Pasted image 20211001082407.png]]
 
 mkfs: make filesystem
+
+
