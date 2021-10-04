@@ -9,23 +9,10 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
-        },
-        "group": "841a808cbe45dc46"
-      },
-      {
-        "id": "1bd04663fe7a5875",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
-            "mode": "preview"
-          }
-        },
-        "group": "841a808cbe45dc46"
+        }
       }
     ],
     "direction": "vertical"
@@ -90,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -124,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -139,15 +126,15 @@
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Theory of Computation.md",
+    "Professional Practice/Professional Practice.md",
     "Theory of Computation/Regular Expression.md",
     "Theory of Computation/Pasted image 20210922095823.png",
     "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/Equivalence Relation.md",
     "Theory of Computation/Set Theory.md",
     "Theory of Computation/State Diagram.md",
-    "Theory of Computation/Automata Theory.md",
-    "Theory of Computation/DFA.md",
-    "Game Development/Twine Pitches.md"
+    "Theory of Computation/Automata Theory.md"
   ]
 }

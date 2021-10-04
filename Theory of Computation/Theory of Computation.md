@@ -66,7 +66,7 @@ How do we describe Automatas?
 ## Computational Model
 ### ![[State Diagram]]
 
-*  State diagrams usually describe [[DFA]]s, which are a type of ![[Finite Automata]]
+* State diagrams usually describe [[DFA]]s, which are a type of ![[Finite Automata]]
 
 * Any Language that can be represented by a [[DFA]] is called a [[Regular Language]]
 
