@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Game Development/Game Development.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Game Development/Game Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Game Development/Game Development.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Game Development/Game Development.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,7 @@
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
+    "Game Development/Game Development.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/Theory of Computation.md",
     "Professional Practice/Professional Practice.md",
@@ -134,7 +135,6 @@
     "Theory of Computation/Nondeterministic Finite Automata.md",
     "Theory of Computation/Equivalence Relation.md",
     "Theory of Computation/Set Theory.md",
-    "Theory of Computation/State Diagram.md",
-    "Theory of Computation/Automata Theory.md"
+    "Theory of Computation/State Diagram.md"
   ]
 }
