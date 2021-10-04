@@ -31,11 +31,11 @@
 * **Binary Function**: A function with two arguments
 * **Relation:** A property who's domain is a set of k-tuples
 
-**Special Binary Relation:** [[Equivalence Relation]]
+**Special Binary Relation:** ![[Equivalence Relation]]
 
 Theorem: [[DeMorgans Law]]
 
-Theorem: [[sqrt(2) is irrational]]
+Theorem: ![[sqrt(2) is irrational]]
 
 
 ## Building Blocks of TOC
@@ -64,11 +64,13 @@ Theorem: [[sqrt(2) is irrational]]
 How do we describe Automatas?
 
 ## Computational Model
-### [[State Diagram]]
+### ![[State Diagram]]
 
-*  State diagrams usually describe [[DFA]]s, which are a type of [[Finite Automata]]
+*  State diagrams usually describe [[DFA]]s, which are a type of ![[Finite Automata]]
 
 * Any Language that can be represented by a [[DFA]] is called a [[Regular Language]]
+
+## ![[Regular Language]]
 
 ## Formal Definition of Computation
 let $M=(Q,\Sigma,\delta,q_0,f)$ be a finite automata 

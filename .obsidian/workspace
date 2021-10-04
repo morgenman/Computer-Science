@@ -9,10 +9,23 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Twine Pitches.md",
+            "file": "Theory of Computation/Theory of Computation.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "841a808cbe45dc46"
+      },
+      {
+        "id": "1bd04663fe7a5875",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Theory of Computation.md",
+            "mode": "preview"
+          }
+        },
+        "group": "841a808cbe45dc46"
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Twine Pitches.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Twine Pitches.md"
+                "file": "Theory of Computation/Theory of Computation.md"
               }
             }
           }
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Twine Pitches.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,15 +139,15 @@
   },
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
-    "Game Development/Twine Pitches.md",
-    "Game Development/Game Development.md",
-    "Theory of Computation/DFA to Regular Expression.md",
     "Theory of Computation/Theory of Computation.md",
-    "Operating Systems/Operating Systems.md",
-    "Databases/Databases.md",
-    "Databases/Levels of Abstraction.md",
-    "Databases/SQL.md",
-    "Databases/Join.md",
-    "Databases/Schema.md"
+    "Theory of Computation/Regular Expression.md",
+    "Theory of Computation/Pasted image 20210922095823.png",
+    "Theory of Computation/Nondeterministic Finite Automata.md",
+    "Theory of Computation/Equivalence Relation.md",
+    "Theory of Computation/Set Theory.md",
+    "Theory of Computation/State Diagram.md",
+    "Theory of Computation/Automata Theory.md",
+    "Theory of Computation/DFA.md",
+    "Game Development/Twine Pitches.md"
   ]
 }
