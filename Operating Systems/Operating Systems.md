@@ -229,19 +229,21 @@ mkfs: make filesystem
 
 ## Formatting a disk
 * Setting up all the data on the disk
-* establishing /x/k, writing 'a' in file k
+* establishing /x/k, writing 'a' in file k, 
+* mkdir /x/
+* touch /x/y
+* 
 
-| inodes         | data             | Explanation                                              |
-| -------------- | ---------------- | -------------------------------------------------------- |
-| 0 [d a:3 d:0]  | 0 [..:0,.:0,x:1] | (dir, access ct:ref count, d:data block)(.. refers to 0) |
-| 1 [d a:2 d:1]  | 1 [..:0,.:1,k:2] |                                                          |
-| 2 [f a:1 d:-1] | 2 [a]            |                                                          | 	
+| inodes        | data             | Explanation                                              |
+| ------------- | ---------------- | -------------------------------------------------------- |
+| 0 [d a:3 d:0] | 0 [..:0,.:0,x:1] | (dir, access ct:ref count, d:data block)(.. refers to 0) |
+| 1 [d a:2 d:1] | 1 [..:0,.:1,k:2] |                                                          |
+| 2 [f a:1 d:2] | 2 [a]	            |                                                          |
 
 todo ^^ :
 1. `mkdir /x`
 	* Search for `/`
-2. open
-	*  
+2. open 
 3. write 
 4. link
 5. unlink
