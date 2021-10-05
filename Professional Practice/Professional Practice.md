@@ -44,3 +44,5 @@
 [[Losing Lena]]
 
 [[Professional Practice/# Is China’s corruption-busting AI syste]]
+
+[[Picture a Scientist Notes]]
