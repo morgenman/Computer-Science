@@ -10,7 +10,29 @@
           "type": "markdown",
           "state": {
             "file": "Databases/Databases.md",
-            "mode": "source"
+            "mode": "preview"
+          }
+        }
+      },
+      {
+        "id": "d50703359bdef55d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Databases/Relational Algebra.md",
+            "mode": "preview"
+          }
+        }
+      },
+      {
+        "id": "0338a7156e83c1ab",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Databases/Select.md",
+            "mode": "preview"
           }
         }
       }
@@ -127,14 +149,14 @@
   "active": "ccfc3f34144d47f0",
   "lastOpenFiles": [
     "Databases/Databases.md",
+    "Databases/Select.md",
+    "Databases/Relational Algebra.md",
     "Professional Practice/Picture a Scientist Notes.md",
     "Professional Practice/Professional Practice.md",
     "Game Development/Game Development.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Regular Expression.md",
-    "Theory of Computation/Pasted image 20210922095823.png",
-    "Theory of Computation/Nondeterministic Finite Automata.md",
-    "Theory of Computation/Equivalence Relation.md"
+    "Theory of Computation/Pasted image 20210922095823.png"
   ]
 }
