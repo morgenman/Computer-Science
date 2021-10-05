@@ -24,7 +24,8 @@
     "metainformation",
     "pathname",
     "Blindspots",
-    "ok"
+    "ok",
+    "hypervisible"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
