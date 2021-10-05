@@ -138,4 +138,29 @@
 	* "I expected to fight alone"
 	* I knew I was write
 	* Gave MIT a last chance, wrote to president of MIT
-	* Another woman faculty member, Mary Lou 
+	* Another woman faculty member to read it, Mary Lou Pardue, PHD
+		* Corner table
+		* Reads it
+		* "I'd like to sign this letter"
+		* I think we should go see the president together
+		* Talked to each tenured woman in the school of science
+		* spring of 94
+		* 15 woman, 197 men
+		* Half in the national academy 
+		* Meeting in remote location
+		* Was it a bigger problem?
+		* don't want to be perceived as a problem
+		* No women had taken **family leave** and gotten tenure
+		* walking to deans office as a group
+		* intimidated, like we didn't belong there
+		* asked for committee
+		* Dean said you can have committee but I don't think it will fix the problem
+* Jane's wedding
+	* adam lewis was confronted by brother
+		* "you were there when she was ruined"
+		* "holy shit that must have been really bad for jane" 
+		* "Jane says hey, it's time to file this report"
+		* It needs to be dealt with
+		* Write down what happened
+
+## Beast?
