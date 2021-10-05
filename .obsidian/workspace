@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Join.md",
+            "file": "Databases/Union.md",
             "mode": "preview"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Join.md",
+                "file": "Databases/Union.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Join.md"
+                "file": "Databases/Union.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Join.md",
+                "file": "Databases/Union.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,15 +126,15 @@
   },
   "active": "d50703359bdef55d",
   "lastOpenFiles": [
-    "Databases/Join.md",
+    "Databases/Union.md",
     "Databases/Databases.md",
     "Databases/Cartesian Product.md",
+    "Databases/Join.md",
     "Databases/Project.md",
     "Databases/Select.md",
     "Databases/Relational Algebra.md",
     "Professional Practice/Picture a Scientist Notes.md",
     "Professional Practice/Professional Practice.md",
-    "Game Development/Game Development.md",
-    "Operating Systems/Operating Systems.md"
+    "Game Development/Game Development.md"
   ]
 }
