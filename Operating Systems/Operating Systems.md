@@ -266,3 +266,11 @@ mv /x /t/y
 ```
 
 
+Block # = byte/block size
+ 5000k/4k: 1250
+ -1032
+ 
+ 
+Looking for byte 5000k
+5000k/4000k = 1250
+1250 - 1028 - 8 = 218
