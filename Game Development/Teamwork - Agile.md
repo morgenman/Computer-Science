@@ -21,4 +21,5 @@ Requirements -> Design -> Coding -> Testing -> Beginning
 
 * Backlog is a requirements list
 	* Use fibbonacci numbers when estimating time?
+* It's a feedback loop
 * 
