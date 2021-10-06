@@ -72,7 +72,33 @@ Let p be the pumpling length given by pumping lemma
 consider the string w = $1^{p^2}$
 Also $|w|\geq p$
 
-Accor
+According to PL w can be written as xyz where 
+1. $|xy|\leq p$
+2. $y\neq \epsilon$
+3. $xy^kz\in L$ for $k\geq 0$
+
+What if k = 2?
+* $xy^2z$
+	* $1^{p^2 + |y|}$
+	
+
+![[Pasted image 20211006094851.png]]
+Need to understand the area on the right ^^
+
+xyyz
+
+if xyz is $1^{p^2}$
+then xyyz is $1^{p^2+|y|}$ ??
+
+$1^{p^2+|y|}\in L$ iff $p^2+ |y|$ is a perfect  square
+p^2 is a perfect square
+(p+1)^2 is the next perfect square
+
+p^2 + |y| based on the condition |ny|$\leq$p
+p^2+|y| $\leq$ p^2 +p $\lt$(p+1)^2
+$\therefore$ $1^{p^2+|y|}\notin L$
+$\therefore$ L is not regular
+
 
 
 
