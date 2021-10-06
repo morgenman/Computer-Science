@@ -256,3 +256,13 @@ delay due to moving head track to track
 t-t 5ms
 rotation 0.2ms
 transfer 0.1ms
+
+Exam:
+
+```bash
+mv /x /t/y
+	link(/t/y,/x)
+	unlink(/x)
+```
+
+
