@@ -9,47 +9,10 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Selection Predicate.md",
-            "mode": "preview"
+            "file": "Operating Systems/Operating Systems.md",
+            "mode": "source"
           }
-        },
-        "group": "442fcdb0311a74b1"
-      },
-      {
-        "id": "8029b439759a4fa9",
-        "type": "leaf",
-        "state": {
-          "type": "localgraph",
-          "state": {
-            "file": "Selection Predicate.md",
-            "options": {
-              "collapse-filter": false,
-              "search": "",
-              "localJumps": 2,
-              "localBacklinks": true,
-              "localForelinks": true,
-              "localInterlinks": false,
-              "showTags": false,
-              "showAttachments": false,
-              "hideUnresolved": false,
-              "collapse-color-groups": false,
-              "colorGroups": [],
-              "collapse-display": false,
-              "showArrow": false,
-              "textFadeMultiplier": 0,
-              "nodeSizeMultiplier": 1,
-              "lineSizeMultiplier": 1,
-              "collapse-forces": false,
-              "centerStrength": 0.518713248970312,
-              "repelStrength": 10,
-              "linkStrength": 1,
-              "linkDistance": 250,
-              "scale": 0.9574549467837257,
-              "close": true
-            }
-          }
-        },
-        "group": "442fcdb0311a74b1"
+        }
       }
     ],
     "direction": "vertical"
@@ -114,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Selection Predicate.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Selection Predicate.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -148,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Selection Predicate.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -161,8 +124,10 @@
     "width": 301.4287109375,
     "collapsed": true
   },
-  "active": "8029b439759a4fa9",
+  "active": "d50703359bdef55d",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
+    "Game Development/Game Development.md",
     "Selection Predicate.md",
     "Databases/Databases.md",
     "Databases/Key.md",
@@ -170,8 +135,6 @@
     "Databases/Rename Operation.md",
     "Databases/Assignment Operation.md",
     "Databases/Set Difference.md",
-    "Databases/Set Intersection.md",
-    "Databases/Union.md",
-    "Databases/Cartesian Product.md"
+    "Databases/Set Intersection.md"
   ]
 }

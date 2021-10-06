@@ -250,3 +250,9 @@ todo ^^ :
 
 
 ## Cache needs a calculable access pattern
+
+
+delay due to moving head track to track
+t-t 5ms
+rotation 0.2ms
+transfer 0.1ms
