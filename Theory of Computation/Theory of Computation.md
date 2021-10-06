@@ -152,3 +152,4 @@ We are now going to learn about:
 # ![[Non-Regular Language]]
 
 
+# ![[Pumping Lemma]]

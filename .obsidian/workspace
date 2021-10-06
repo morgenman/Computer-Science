@@ -6,13 +6,40 @@
       {
         "id": "d50703359bdef55d",
         "type": "leaf",
+        "dimension": 13.3769322235434,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Fall 2021/2021-10-06.md",
             "mode": "source"
           }
         }
+      },
+      {
+        "id": "5e0cee2223e0003f",
+        "type": "leaf",
+        "dimension": 43.3115338882283,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Pumping Lemma.md",
+            "mode": "source"
+          }
+        },
+        "group": "1d274c47a0a18ece"
+      },
+      {
+        "id": "375a558fe69d4e49",
+        "type": "leaf",
+        "dimension": 43.3115338882283,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Pumping Lemma.md",
+            "mode": "preview"
+          }
+        },
+        "group": "1d274c47a0a18ece"
       }
     ],
     "direction": "vertical"
@@ -77,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/Pumping Lemma.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +121,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Theory of Computation/Pumping Lemma.md"
               }
             }
           }
@@ -111,7 +138,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/Pumping Lemma.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -124,17 +151,17 @@
     "width": 301.4287109375,
     "collapsed": true
   },
-  "active": "d50703359bdef55d",
+  "active": "5e0cee2223e0003f",
   "lastOpenFiles": [
+    "Theory of Computation/Pumping Lemma.md",
+    "Theory of Computation/Theory of Computation.md",
+    "Fall 2021/2021-10-06.md",
     "Operating Systems/Operating Systems.md",
     "Game Development/Game Development.md",
     "Selection Predicate.md",
     "Databases/Databases.md",
     "Databases/Key.md",
     "Databases/SQL.md",
-    "Databases/Rename Operation.md",
-    "Databases/Assignment Operation.md",
-    "Databases/Set Difference.md",
-    "Databases/Set Intersection.md"
+    "Databases/Rename Operation.md"
   ]
 }
