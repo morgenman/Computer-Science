@@ -53,8 +53,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -120,6 +119,8 @@
   },
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "Selection Predicate.md",
+    "_Index_of_Computer-Science.md",
     "index.md",
     "Databases/Entity-Relationship.md",
     "Databases/Primary Key.md",
@@ -127,8 +128,6 @@
     "Databases/Key.md",
     "Databases/Superkey.md",
     "Databases/Databases.md",
-    "Databases/Normalization Theory.md",
-    "Professional Practice/Picture a Scientist Notes.md",
-    "Operating Systems/Operating Systems.md"
+    "Databases/Normalization Theory.md"
   ]
 }
