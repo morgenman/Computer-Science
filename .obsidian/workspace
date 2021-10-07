@@ -9,7 +9,29 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Picture a Scientist Notes.md",
+            "file": "Databases/Databases.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "da9549e17b9ed6c6",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Databases/Normalization Theory.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "5b00da74fc852d1b",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Databases/Entity-Relationship.md",
             "mode": "source"
           }
         }
@@ -77,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Picture a Scientist Notes.md",
+                "file": "Databases/Entity-Relationship.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +116,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Picture a Scientist Notes.md"
+                "file": "Databases/Entity-Relationship.md"
               }
             }
           }
@@ -111,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Picture a Scientist Notes.md",
+                "file": "Databases/Entity-Relationship.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -124,17 +146,17 @@
     "width": 301.4287109375,
     "collapsed": true
   },
-  "active": "5930cdda7367ea39",
+  "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "Databases/Entity-Relationship.md",
+    "Databases/Normalization Theory.md",
+    "Databases/Databases.md",
     "Professional Practice/Picture a Scientist Notes.md",
     "Operating Systems/Operating Systems.md",
     "Professional Practice/Professional Practice.md",
     "Game Development/Teamwork - Agile.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Pumping Lemma.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Fall 2021/2021-10-06.md",
-    "Selection Predicate.md",
-    "Databases/Databases.md"
+    "Theory of Computation/Theory of Computation.md"
   ]
 }

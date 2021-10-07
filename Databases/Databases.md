@@ -67,3 +67,24 @@ HW: Sql & output
 [[Review Difficult Questions for HW 1 - Relational Algebra]]
 
 
+## JSON 
+* Key value pairings
+* MAP is every {}
+
+Eg:
+```json
+{ 
+	"id":"value",
+	"text": "this is some text"
+}
+```
+
+Doing the project right. Build the web interface first and use the university db
+
+# Database Designs using the E-R Model
+## Two pitfalls: incompleteness/redundancy
+* 
+## ![[Entity-Relationship]] Model
+## ![[Normalization Theory]]
+
+
