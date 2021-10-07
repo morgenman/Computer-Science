@@ -164,3 +164,36 @@
 		* Write down what happened
 
 ## Beast?
+
+* We don't need a computer to measure this bias, a sundial will do
+* men/women word association with science
+
+Male colleague thinks it does not exist
+you need to know the research, not personal experience
+
+"human beings may not be the people we think we are"
+
+Media ans science portrayal
+
+
+
+## Eyes to see?
+* Science communicator
+	* youtube bbc etc
+	* representation matters
+
+* Some unknown woman
+	* Unspoken rule is either phd or military pilot 
+	* Boston University 
+	* New Professor
+	* First grad student of dave marchant
+	* second week he said he didn't want a woman as a grad student
+	* foisted her on him
+	* atrocious experience
+	* bullying from day one
+		* whore bitch cunt
+		* he did not believe that women should be on the ice, altering the science for the worse
+		* walked out of the camp
+			* he said she would have no future in polar studies, no funding
+			* grinned and walked off
+			* 

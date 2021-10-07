@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "375a558fe69d4e49",
+        "id": "5930cdda7367ea39",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Teamwork - Agile.md",
-            "mode": "preview"
+            "file": "Professional Practice/Picture a Scientist Notes.md",
+            "mode": "source"
           }
         }
       }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Teamwork - Agile.md",
+                "file": "Professional Practice/Picture a Scientist Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Teamwork - Agile.md"
+                "file": "Professional Practice/Picture a Scientist Notes.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Teamwork - Agile.md",
+                "file": "Professional Practice/Picture a Scientist Notes.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -124,17 +124,17 @@
     "width": 301.4287109375,
     "collapsed": true
   },
-  "active": "375a558fe69d4e49",
+  "active": "5930cdda7367ea39",
   "lastOpenFiles": [
+    "Professional Practice/Picture a Scientist Notes.md",
+    "Operating Systems/Operating Systems.md",
+    "Professional Practice/Professional Practice.md",
     "Game Development/Teamwork - Agile.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Pumping Lemma.md",
     "Theory of Computation/Theory of Computation.md",
     "Fall 2021/2021-10-06.md",
-    "Operating Systems/Operating Systems.md",
     "Selection Predicate.md",
-    "Databases/Databases.md",
-    "Databases/Key.md",
-    "Databases/SQL.md"
+    "Databases/Databases.md"
   ]
 }
