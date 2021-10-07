@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Entity-Relationship.md",
+            "file": "index.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Entity-Relationship.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Entity-Relationship.md"
+                "file": "index.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Entity-Relationship.md",
+                "file": "index.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,7 @@
   },
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "index.md",
     "Databases/Entity-Relationship.md",
     "Databases/Primary Key.md",
     "Databases/Super Key.md",
@@ -134,7 +135,6 @@
     "Databases/Databases.md",
     "Databases/Normalization Theory.md",
     "Professional Practice/Picture a Scientist Notes.md",
-    "Operating Systems/Operating Systems.md",
-    "Professional Practice/Professional Practice.md"
+    "Operating Systems/Operating Systems.md"
   ]
 }
