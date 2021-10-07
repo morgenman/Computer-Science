@@ -56,6 +56,11 @@ Eg:
 * Composite
 	* Divide attributes into subparts:
 	* Like name -> first,last
+* [[Primary Key]]
+* Relationship primary key is usually union of two ids
+![[Primary Key#Binary Relationships PK]]
+
+
 
 
 ER Diagram
@@ -68,6 +73,7 @@ ER Diagram
 	* one to many
 	* many to one
 	* many to many
+	* see [[Primary Key#Binary Relationships PK]]
 * ![[Pasted image 20211007140447.png]]
 
 * Cardinality is marked with arrow end
@@ -76,7 +82,18 @@ ER Diagram
 	* ![[Pasted image 20211007140703.png]]
 
 ###
-## Total and Partial Participat
+## Total and Partial Participation
+* Single line means they could have the relationship, or not
+* Double means **Total Participation**: Entity in set participates in at least one repationship in relationship set
+* ![[Pasted image 20211007140914.png]]
+* ^^ Every student needs an advisor, not every instructor needs a student to advise
+
+## More Constraints and their notation:
+![[Pasted image 20211007141058.png]]
+* 1..1 is a minimum and maximum Cardinality
+
+### Ternary Relationship constraints
+* TBD
 
 
 

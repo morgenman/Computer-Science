@@ -127,14 +127,14 @@
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
     "Databases/Entity-Relationship.md",
-    "Databases/Normalization Theory.md",
+    "Databases/Primary Key.md",
+    "Databases/Super Key.md",
+    "Databases/Key.md",
+    "Databases/Superkey.md",
     "Databases/Databases.md",
+    "Databases/Normalization Theory.md",
     "Professional Practice/Picture a Scientist Notes.md",
     "Operating Systems/Operating Systems.md",
-    "Professional Practice/Professional Practice.md",
-    "Game Development/Teamwork - Agile.md",
-    "Game Development/Game Development.md",
-    "Theory of Computation/Pumping Lemma.md",
-    "Theory of Computation/Theory of Computation.md"
+    "Professional Practice/Professional Practice.md"
   ]
 }
