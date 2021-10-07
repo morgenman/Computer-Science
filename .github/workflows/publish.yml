@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 jobs:
-  deploy:
+  - deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,9 +17,9 @@ jobs:
         python-version: 3.8
 
   - name: Install oboe
-    run:
-      - python -m pip install --upgrade pip
-      - pip install git+https://github.com/kmaasrud/oboe.git
+    run: |
+      python -m pip install --upgrade pip
+      pip install git+https://github.com/kmaasrud/oboe.git
 
   - name: Generate HTML through oboe
     run: oboe ./ -o ./out -t ./template.html -d "Databases" "Game Development" "Operating Systems" "Professional Practice" "Theory of Computation" 
