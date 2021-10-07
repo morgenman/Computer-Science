@@ -196,4 +196,30 @@ Media ans science portrayal
 		* walked out of the camp
 			* he said she would have no future in polar studies, no funding
 			* grinned and walked off
-			* 
+			* Department chair, a woman .. you can go through this, but he has a sterling reputation and gets lots of funding
+
+* Nancy 
+	* ready to retire ~50, tired of struggling
+
+
+## Scouts before the Troops
+* MIT Evidence coming in 
+	* lab space for women significantly less
+	* paid lower salary
+	* no childcare
+	* MIT Report
+	* Complicated for the university
+	* Prided itself on being a meritocracy 
+	* President endorsed the report
+		* "I have always believed contemporary gender discrimination has been part fan`tasy and reality, I now believe its a majority reality"
+		* owning the problem
+		* based on data
+		* Ripple, feel the resonance
+	* Why are we not doing this? (departments around the country)
+	* Daycare center on campus now, tenured woman doubled
+	* Other provosts said "it's not in my institution" 
+
+* Jane, Bob brown overruled panel recommendation
+	* Provost of MIT then BU
+
+
