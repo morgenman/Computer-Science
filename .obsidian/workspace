@@ -4,28 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "5930cdda7367ea39",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Databases/Databases.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "da9549e17b9ed6c6",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Databases/Normalization Theory.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
         "id": "5b00da74fc852d1b",
         "type": "leaf",
         "state": {

@@ -25,7 +25,9 @@
     "pathname",
     "Blindspots",
     "ok",
-    "hypervisible"
+    "hypervisible",
+    "Cardinalities",
+    "Cardinality"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
