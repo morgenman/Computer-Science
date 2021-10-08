@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
-            "mode": "source"
+            "file": "Operating Systems/Operating Systems.md",
+            "mode": "preview"
           }
         }
       }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,15 +126,15 @@
   },
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
+    "Operating Systems/PXL_20210924_122457556.jpg",
     "Databases/Databases.md",
     "index.md",
     "Theory of Computation/Theory of Computation.md",
     "Professional Practice/Professional Practice.md",
-    "Operating Systems/Operating Systems.md",
     "Game Development/Game Development.md",
     "_Index_of_Computer-Science.md",
     "Selection Predicate.md",
-    "Databases/Entity-Relationship.md",
-    "Databases/Primary Key.md"
+    "Databases/Entity-Relationship.md"
   ]
 }
