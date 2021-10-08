@@ -99,6 +99,35 @@ p^2+|y| $\leq$ p^2 +p $\lt$(p+1)^2
 $\therefore$ $1^{p^2+|y|}\notin L$
 $\therefore$ L is not regular
 
+---
+Eg: L = {w|w contains equal number of 0's and 1's}
 
+L also contains 0^n 1^n, 0101^* etc
+
+if you take language L and intersect with 0^\*1^\*
+
+$L\cap 0^*1^*=\{0^n1^n\}0^*1^*$
+0^\*1^\* is not regular. L is also not regular, 0^n 1^n is not regular
+
+---
+Eg: L=$\{0^i1^j|i\leq j\}$
+Suppose L is regular.
+Let p be the pumping length by PL and let w = 0^p1^p
+clearly |w|> p and w can be written as xyz where
+1. |xy|$\leq$p
+2. y$\notin\epsilon$
+3. $xy^kz\in L$ for $k\geq 0$
+
+1-> y is all 0's 
+* [v] if k = 0 => xy => $0^{p-|y|}1^p$
+* [ ] if k = 2 => xy$^2$z => $0^{p+|y|}1^p \notin L$
+
+$\therefore$ this contradicts condition 3
+$\therefore$ L is not regular
+
+---
+Example:
+
+L = {}
 
 
