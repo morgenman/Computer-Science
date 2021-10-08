@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "index.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "index.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "index.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,10 +126,10 @@
   },
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "index.md",
     "Databases/Databases.md",
     "_Index_of_Computer-Science.md",
     "Selection Predicate.md",
-    "index.md",
     "Databases/Entity-Relationship.md",
     "Databases/Primary Key.md",
     "Databases/Super Key.md",

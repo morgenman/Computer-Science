@@ -3,6 +3,10 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: post
-permalink: /
 ---
 
+[[Databases]]
+[[Game Development]]
+[[Operating Systems]]
+[[Professional Practice]]
+[[Theory of Computation]]
