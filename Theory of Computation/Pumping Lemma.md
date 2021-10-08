@@ -128,6 +128,36 @@ $\therefore$ L is not regular
 ---
 Example:
 
-L = {}
+L = {w|w=w$^R$, w $\in${0,1}$^*$}
+
+^^ R signifies reverse
+
+so 010 is in the language but 011 is not
+
+working in class
+
+Suppose l is regular 
+let p be the pumping length given by the pumping lemma
+let w = $0^p10^p$
+clearly |w| $\geq p$
+According to pumping lemma w can be written as xyz where 
+1. $|xy|\leq p$
+2. $y\neq \epsilon$
+3. $xy^kz\in L$ for $k\geq 0$
+
+from 1 & 2:
+* y is all 0's
+* if k = 0; xy^kz = xy such that $0^{p-|y|}10^p\notin L$
+* if k = 2; xy^kz = xy^2z such that $0^{p+|y|}10^p \notin L$
+
+
+---
+Eg: $L=\{1^i\#1^j\#1^{i+j}\}$
+let i,j = p
+w is clearly $\geq p$
+if k = 0 $xy^kz$  => $1^{p-|y|}\#1^p\#1^{2p}\notin L$
+* 2p-|y|$\lt$2p
+
+
 
 

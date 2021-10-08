@@ -153,3 +153,10 @@ We are now going to learn about:
 
 
 # ![[Pumping Lemma]]
+
+
+
+# Context free stuff
+* [[Context Free Language]]
+	* has a [[Context Free Grammar]]
+* [[Push Down Automata]]
