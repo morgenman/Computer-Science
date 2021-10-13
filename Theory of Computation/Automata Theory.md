@@ -4,6 +4,6 @@
 	* [[Finite Automata]]
 		* text processing
 		* compilers
-	* [[Context Free Grammar]]
+	* [[Context Free Language]]
 		* Programing languages, AI, ML etc
 	* 

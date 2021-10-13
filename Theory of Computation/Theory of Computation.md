@@ -158,6 +158,8 @@ We are now going to learn about:
 
 # Context free stuff
 * [[Context Free Language]]
-	* has a [[Context Free Grammar]]
+	* has a [[Context Free Language#Context Free Grammar]]
 * [[Push Down Automata]]
+
+
 
