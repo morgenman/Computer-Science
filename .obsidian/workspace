@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Push Down Automata.md",
+            "file": "Game Development/Teamwork Agile.md",
             "mode": "source"
           }
         }
@@ -60,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 233.99999809265137
+    "width": 233.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Push Down Automata.md",
+                "file": "Game Development/Teamwork Agile.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Push Down Automata.md"
+                "file": "Game Development/Teamwork Agile.md"
               }
             }
           }
@@ -111,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Push Down Automata.md",
+                "file": "Game Development/Teamwork Agile.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,15 +127,15 @@
   },
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "Game Development/Teamwork Agile.md",
+    "Game Development/Game Development.md",
+    "Game Development/Teamwork - Agile.md",
     "Theory of Computation/Push Down Automata.md",
     "Theory of Computation/Context Free Language.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Context Free Grammar.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/K-Stack.md",
-    "Operating Systems/processes.pdf",
-    "Databases/Databases.md",
-    "Game Development/Game Development.md",
-    "Game Development/Teamwork - Agile.md"
+    "Operating Systems/processes.pdf"
   ]
 }

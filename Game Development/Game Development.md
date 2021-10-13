@@ -39,7 +39,7 @@ while(t)
 ## Actor?
 
 
-# ![[Teamwork - Agile]]
+# ![[Teamwork Agile]]
 
 
 
