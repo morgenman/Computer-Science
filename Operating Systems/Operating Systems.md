@@ -276,3 +276,22 @@ Looking for byte 5000k
 1250 - 1028 - 8 = 218
 
 
+---
+See [[processes.pdf]] for this section
+# Memory Block
+Low  to high
+| Code  | Data | Heap -> |     | <- Stack |
+| ----- | ---- | ------- | --- | -------- |
+| 00000 |      |         |     | fffff    | 	
+
+Stack allocated variables?
+Allows recursion
+Context is like a local variable
+gets stored on the stack
+
+* Context stored in registers
+	* one of bits in the flags register is privledge 
+
+## [[Interrupt Service Vector]] in memory?
+![[Pasted image 20211013081732.png]]
+![[Pasted image 20211013081715.png]]

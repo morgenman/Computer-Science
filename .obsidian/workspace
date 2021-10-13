@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -60,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 233.99999809265137
+    "width": 233.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -111,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +127,8 @@
   },
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
+    "Operating Systems/processes.pdf",
     "Databases/Databases.md",
     "Game Development/Game Development.md",
     "Game Development/Teamwork - Agile.md",
@@ -133,8 +136,6 @@
     "Game Development/Game Loop.md",
     "index.md",
     "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Context Free Language.md",
-    "Theory of Computation/Push Down Automata.md",
-    "Theory of Computation/Context Free Grammar.md"
+    "Theory of Computation/Context Free Language.md"
   ]
 }
