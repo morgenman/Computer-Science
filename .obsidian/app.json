@@ -27,7 +27,8 @@
     "ok",
     "hypervisible",
     "Cardinalities",
-    "Cardinality"
+    "Cardinality",
+    "substring"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
