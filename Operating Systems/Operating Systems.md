@@ -276,7 +276,7 @@ Looking for byte 5000k
 1250 - 1028 - 8 = 218
 
 
----
+--- 
 See [[processes.pdf]] for this section
 # Memory Block
 Low  to high
@@ -295,3 +295,8 @@ gets stored on the stack
 ## [[Interrupt Service Vector]] in memory?
 ![[Pasted image 20211013081732.png]]
 ![[Pasted image 20211013081715.png]]
+
+* This shows us that the k-stack is only used when switching context
+* When we take the interrupt, the context of the user process is transferred into the [[K-Stack]]
+
+[Slides](http://pages.cs.wisc.edu/~harter/537/slides.html)
