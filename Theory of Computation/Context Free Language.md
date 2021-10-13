@@ -9,6 +9,13 @@ This means:
 	* [{()}] => CFG
 
 # Context Free Grammar
+A collection of substitution rules also called 'productions' 
+```
+Has 'Variables' & 'Terminals'
+	 LHS 		&  RHS
+	 capital let   can be variables and symbols
+```
+
 * The following grammar has only one variable (S)
 	* S is also the start variable
 	* Each rule specifies that the variable on the left can be replaced with 
@@ -18,5 +25,14 @@ This means:
 	* $0^n1^n | n = 3$: Fill in s until it's like 000 $\varepsilon$ 111	
 		* 0S1->00S11->000S111->000 $\varepsilon$ 111=000111
 
+## Formal Definition:
+A 4 tuple $(V,\Sigma, R, S)$
 
-* 
+1. V is a finite set called variables
+2. $\Sigma$ is a finite set, disjoint form v called terminals
+3. R is the finite set of rules of form
+	A -> w when A $\in$ V and w $\in$(V $\cup \Sigma$)$^*$ 
+4. S $\in$ V is the start variable
+
+
+![[Push Down Automata]]
