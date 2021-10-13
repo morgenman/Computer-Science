@@ -23,9 +23,5 @@ Requirements -> Design -> Coding -> Testing -> Beginning
 	* Use fibbonacci numbers when estimating time?
 * It's a feedback loop
 
-
-
 # SCRUM
 * Correction Factor important
-
-
