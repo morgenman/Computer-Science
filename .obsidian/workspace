@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Game Development.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -127,6 +127,8 @@
   },
   "active": "5b00da74fc852d1b",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
+    "Operating Systems/Untitled.md",
     "Game Development/Game Development.md",
     "Game Development/Teamwork Agile.md",
     "Game Development/Teamwork - Agile.md",
@@ -134,8 +136,6 @@
     "Theory of Computation/Context Free Language.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Context Free Grammar.md",
-    "Operating Systems/Operating Systems.md",
-    "Operating Systems/K-Stack.md",
-    "Operating Systems/processes.pdf"
+    "Operating Systems/K-Stack.md"
   ]
 }
