@@ -55,12 +55,13 @@ So far all of these are regular
 > 	2. R = e then G is s -> e
 > 	3. R $\neq$ $\emptyset$ then G has no rules
 > 	4. R = R1 $\cup$ R2
-> 	5. ..
+> 	5. R = R1 R2 (concatenation)
 > 	6. ..
 > Convert R1 and R2 into grammar G1 and G2 
 > Make sure that the two grammars have no variables in common
 > Let S1 and S2 be the start variables for G1 and G2 respectively
 > The grammar of R1 $\cup$ R2 contains all variables and rules of G1 and G2 with a new start symbol s and the rule s -> s1 | s2
+> 
 
 
 
