@@ -3,6 +3,11 @@ A class of machines that recognize [[Context Free Language]]s
 
 * Has a stack
 
+An NFA with a stack
+Stack provides additional memory allowing it to recognize non-regular languages
+![[Pasted image 20211015094708.png]]
+
+
 ---
 Eg:
 G = ({s},{a,b},R,S)
@@ -56,7 +61,7 @@ So far all of these are regular
 > 	3. R $\neq$ $\emptyset$ then G has no rules
 > 	4. R = R1 $\cup$ R2
 > 	5. R = R1 R2 (concatenation)
-> 	6. ..
+> 	6. R = R1*; 
 > Convert R1 and R2 into grammar G1 and G2 
 > Make sure that the two grammars have no variables in common
 > Let S1 and S2 be the start variables for G1 and G2 respectively
