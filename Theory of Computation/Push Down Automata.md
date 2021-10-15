@@ -6,7 +6,7 @@ A class of machines that recognize [[Context Free Language]]s
 An NFA with a stack
 Stack provides additional memory allowing it to recognize non-regular languages
 ![[Pasted image 20211015094708.png]]
-
+$ -> $\varepsilon$ for end of stack, o->$\varepsilon$ for stack popping
 
 ---
 Eg:
