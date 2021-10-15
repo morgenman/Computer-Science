@@ -28,7 +28,9 @@
     "hypervisible",
     "Cardinalities",
     "Cardinality",
-    "substring"
+    "substring",
+    "c++",
+    "filesystem"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
