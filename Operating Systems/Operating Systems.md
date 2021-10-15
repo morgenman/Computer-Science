@@ -343,3 +343,7 @@ struct proc {
 
 
 * c++ filesystem
+
+## Forking
+* `vector` is the dynamic array
+* 
