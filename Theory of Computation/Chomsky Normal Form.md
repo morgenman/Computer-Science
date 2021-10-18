@@ -15,7 +15,7 @@ A grammar is in CNF if every rule is of the form:
 Where a is any terminal and A B & C are any variable
 also, s->e is permitted where s is the start variable
 
-# Four steps to converting:
+# Four Steps to Converting:
 1. Add a new start variable $S_0$
 	and a new rule $S_0 \rightarrow S$ where S is the original start variable
 	This guarantees that the start variable is not on RHS
@@ -34,6 +34,88 @@ also, s->e is permitted where s is the start variable
 3. Remove unit rules $A \rightarrow B$ 
 	Remove unit rule then whenever rule $B\rightarrow u$ appears, add $A\rightarrow u$
 	where u is a string of variables and terminals
-	**Unit rules is a variable going to a variable (not a terminal)**
+	**Unit rules is a variable going to a single variable (not a terminal)**
 	
 4. Convert all remaining rules to proper form
+	Replace $A\rightarrow u_1 , u_2 , ... u_k$ where k $\geq$ 3 
+	Until each $u_i$ is a variable or terminal symbol with rules:
+	$A\rightarrow u_1A_1$
+	$A\rightarrow u_2A_2$
+	...
+	$A\rightarrow u_kA_k$
+	
+	We replace any terminal $u_i$ in the preceding rules with the new variable $U_i$ and add rule:
+	$U_i\rightarrow u_i$
+	
+## Example: converting to CNF
+```
+S 	-> A S A | a B
+A 	-> B | S
+B 	-> b | e
+```
+
+*what's wrong?*
+B going to epsilon
+S goes to ASA (more than 2)
+S goes to aB (variable and terminal in same rule)
+A goes to B | S (both unit rules) 
+
+.
+.
+1. New start symbol $S_0$
+```
+S0	-> S
+S	-> ASA | aB
+A	-> B | S
+B	-> b | e
+```
+
+.
+.
+2. Remove e rules B -> e
+```
+S0	-> S
+S	-> ASA | aB | a
+A	-> B | S | e
+B	-> b 
+```
+(add e transitions)	
+Now we gotta finish, adding the possibilities for ASA (where A can be e)
+```
+S0	-> S
+S	-> ASA | AS | SA | S | aB | a
+A	-> B | S
+B	-> b
+```
+
+.
+.
+3. Unit Rules (remove s->s)
+```
+S0	-> S
+S	-> ASA | AS | SA | aB | a
+A	-> B | S
+B	-> b
+```
+(remove s0->S)
+```
+S0	-> ASA | AS | SA | aB | a
+S	-> ASA | AS | SA | aB | a
+A	-> B | S
+B	-> b
+```
+(remove A->B)
+```
+S0	-> ASA | AS | SA | aB | a
+S	-> ASA | AS | SA | aB | a
+A	-> b | S
+B	-> b
+```
+(remove A->S)
+```
+S0	-> ASA | AS | SA | aB | a
+S	-> ASA | AS | SA | aB | a
+A	-> b | ASA | AS | SA | aB | a
+B	-> b
+```
+
