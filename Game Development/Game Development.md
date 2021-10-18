@@ -51,3 +51,20 @@ This is a decision space. We try and
 
 
 
+*What is a cellular automata*
+* A grid of automata...
+* group of states of people in neighborhood is my view?
+
+Eg: Game of Life 
+https://processing.org/examples/gameoflife.html
+
+|     |     |     |
+| --- | --- | --- |
+| X   |     |     |
+|     |     |     |
+|     |     |     |
+
+if there's 3 or more neighbors, you turn on
+if there's less than 2 neighbors, you are lonely and turn off
+
+So lines of three flip
