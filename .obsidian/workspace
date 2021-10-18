@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Schedulers.md",
+            "file": "Theory of Computation/Push Down Automata.md",
             "mode": "source"
           }
         }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 233.99999809265137,
-    "collapsed": true
+    "width": 233.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Schedulers.md",
+                "file": "Theory of Computation/Push Down Automata.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Schedulers.md"
+                "file": "Theory of Computation/Push Down Automata.md"
               }
             }
           }
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Schedulers.md",
+                "file": "Theory of Computation/Push Down Automata.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -127,6 +126,8 @@
   },
   "active": "3fc52700415d7826",
   "lastOpenFiles": [
+    "Theory of Computation/Push Down Automata.md",
+    "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Schedulers.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/K-Stack.md",
@@ -134,8 +135,6 @@
     "Operating Systems/Limited Direct Execution.md",
     "Operating Systems/Privilege Bit.md",
     "Operating Systems/Untitled.md",
-    "Game Development/Game Development.md",
-    "Theory of Computation/Push Down Automata.md",
-    "Theory of Computation/Context Free Language.md"
+    "Game Development/Game Development.md"
   ]
 }

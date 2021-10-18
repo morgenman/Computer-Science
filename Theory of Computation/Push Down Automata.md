@@ -3,6 +3,18 @@ A class of machines that recognize [[Context Free Language]]s
 
 * Has a stack
 
+## Formal Definition
+Pushdown Automata is a 6-tuple(Q, $\Sigma$, Rho, $\delta$, q0, f)
+1. Q is the set of all states
+2. $\Sigma$ is the input alphabet
+3. Rho is the stack alphabet
+4. $\delta$: Q x $\Sigma$ _e_ Rho_e_ -> P(Q x Rho _e_)  is the transition function
+5. q_0_ $\in$ Q is start state
+6. f subset Q is set of accept states
+
+
+## Informal Definition
+
 An NFA with a stack
 Stack provides additional memory allowing it to recognize non-regular languages
 ![[Pasted image 20211015094708.png]]
@@ -15,6 +27,7 @@ R = {s->aSb|SS| $\varepsilon$ }
 if we set
 a = ( 
 b = )
+
 We now have a linter for () of programming languages
 
 ---
@@ -71,3 +84,32 @@ So far all of these are regular
 
 
 
+## Ambiguity and Parse Trees:
+Eg: Arithmetic expression with operand a and operators + and *
+* Coming up with a grammar for this...
+` E -> E + E | E * E | (E) | a `
+Let's do a parse tree for `a+a*a`
+
+1. 
+```
+				E
+			E	*	E
+					a
+		E	+	E	
+		a		a
+```
+2. 
+```
+				E
+			E	+	E
+			a
+				E	*	E
+				a		a
+```
+
+If a string has **more than one** parse tree in a particular grammar the grammar is *ambiguous*
+
+
+## Why is ambiguity a problem?
+* You cannot conclude how long it takes to process a particular string
+* We c
