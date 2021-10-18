@@ -163,3 +163,4 @@ We are now going to learn about:
 
 
 
+# ![[Chomsky Normal Form]]

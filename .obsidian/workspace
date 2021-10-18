@@ -9,10 +9,23 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Push Down Automata.md",
+            "file": "Theory of Computation/Chomsky Normal Form.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "1c46788e3c8b9a7d"
+      },
+      {
+        "id": "b9f99742c1c16b0f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Chomsky Normal Form.md",
+            "mode": "preview"
+          }
+        },
+        "group": "1c46788e3c8b9a7d"
       }
     ],
     "direction": "vertical"
@@ -77,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Push Down Automata.md",
+                "file": "Theory of Computation/Chomsky Normal Form.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Push Down Automata.md"
+                "file": "Theory of Computation/Chomsky Normal Form.md"
               }
             }
           }
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Push Down Automata.md",
+                "file": "Theory of Computation/Chomsky Normal Form.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,15 +139,15 @@
   },
   "active": "3fc52700415d7826",
   "lastOpenFiles": [
+    "Theory of Computation/Chomsky Normal Form.md",
     "Theory of Computation/Push Down Automata.md",
+    "Theory of Computation/Trompsky Normal Form.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Schedulers.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/K-Stack.md",
     "Operating Systems/_Index_of_Operating Systems.md",
     "Operating Systems/Limited Direct Execution.md",
-    "Operating Systems/Privilege Bit.md",
-    "Operating Systems/Untitled.md",
-    "Game Development/Game Development.md"
+    "Operating Systems/Privilege Bit.md"
   ]
 }

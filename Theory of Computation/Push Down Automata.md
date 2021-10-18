@@ -112,4 +112,11 @@ If a string has **more than one** parse tree in a particular grammar the grammar
 
 ## Why is ambiguity a problem?
 * You cannot conclude how long it takes to process a particular string
-* We c
+	* We measure this in derivations..
+* Because it's recursive we could loop forever
+
+## For context free grammar, we have a solution
+
+# [[Chomsky Normal Form]]
+Some [[Context Free Language]]s can only be generated using ambiguous grammar. Such languages are called *Inherently ambiguous* and cannot be put in Chomsky form
+
