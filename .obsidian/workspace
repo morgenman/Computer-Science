@@ -4,12 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "5b00da74fc852d1b",
+        "id": "3fc52700415d7826",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Game Development.md",
+            "file": "Operating Systems/Operating Systems.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "afedc0484c81a864",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Operating Systems/Privilege Bit.md",
             "mode": "source"
           }
         }
@@ -77,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +105,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -111,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -124,17 +135,17 @@
     "width": 301.4287109375,
     "collapsed": true
   },
-  "active": "5b00da74fc852d1b",
+  "active": "3fc52700415d7826",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
+    "Operating Systems/Limited Direct Execution.md",
+    "Operating Systems/Untitled.md",
+    "Operating Systems/Privilege Bit.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Push Down Automata.md",
     "Theory of Computation/Context Free Language.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Pasted image 20210927100027.png",
-    "Theory of Computation/Pumping Lemma.md",
-    "Operating Systems/Operating Systems.md",
-    "Operating Systems/Untitled.md",
-    "Game Development/Teamwork Agile.md",
-    "Game Development/Teamwork - Agile.md"
+    "Theory of Computation/Pumping Lemma.md"
   ]
 }

@@ -346,4 +346,43 @@ struct proc {
 
 ## Forking
 * `vector` is the dynamic array
-* 
+
+Program = process + context
+# what is context?
+states:
+Ready (init or through descheduling) -> Running (through scheduling) -> blocked (I/0 Initiate) -> back to ready (I/0 Done)
+
+## CPU Time Sharing
+### Two goals
+* efficiency
+* control
+	* processes shouldn't do bad things when running
+
+### Solution: 
+![[Limited Direct Execution]]
+
+## How does a [[Privilege Bit]] work? 
+![[Privilege Bit]]
+
+STANDARD QUESTION:
+**Let's pretend that we allow people to write the Interrupt service vector, how would that violate OS, how would it be bad??**
+*Answer: Invalidates privilege bit, Only in privilege mode when we take an interrupt, so if we can change it and point at my code, we can do anything*
+
+# Context Switching
+When to switch process contexts?
+
+Direct Execution => OS can't run while process runs
+How can the OS do anything when it's not running?
+
+Answer: 
+Cooperative scheduling is one option, but process can 'steal' time 
+actual answer...
+
+## Timer Interrupts
+* non-cooperative approach
+* set up before processes
+* hw does not 
+
+
+
+
