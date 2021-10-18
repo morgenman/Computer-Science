@@ -43,5 +43,11 @@ while(t)
 
 
 
+# Decision Making
+## We could use min/max tree
+This is a decision space. We try and 
+
+
+
 
 
