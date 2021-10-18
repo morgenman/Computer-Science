@@ -13,17 +13,6 @@
             "mode": "source"
           }
         }
-      },
-      {
-        "id": "afedc0484c81a864",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Operating Systems/Privilege Bit.md",
-            "mode": "source"
-          }
-        }
       }
     ],
     "direction": "vertical"
@@ -50,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "{",
+                "query": "k-stack",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,14 +127,14 @@
   "active": "3fc52700415d7826",
   "lastOpenFiles": [
     "Operating Systems/Operating Systems.md",
+    "Operating Systems/K-Stack.md",
+    "Operating Systems/_Index_of_Operating Systems.md",
     "Operating Systems/Limited Direct Execution.md",
-    "Operating Systems/Untitled.md",
     "Operating Systems/Privilege Bit.md",
+    "Operating Systems/Untitled.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Push Down Automata.md",
     "Theory of Computation/Context Free Language.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Pasted image 20210927100027.png",
-    "Theory of Computation/Pumping Lemma.md"
+    "Theory of Computation/Theory of Computation.md"
   ]
 }

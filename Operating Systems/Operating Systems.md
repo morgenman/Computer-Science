@@ -296,7 +296,7 @@ gets stored on the stack
 ![[Pasted image 20211013081732.png]]
 ![[Pasted image 20211013081715.png]]
 
-* This shows us that the k-stack is only used when switching context
+* This shows us that the [[k-stack]] is only used when switching context
 * When we take the interrupt, the context of the user process is transferred into the [[K-Stack]]
 
 [Slides](http://pages.cs.wisc.edu/~harter/537/slides.html)
@@ -381,8 +381,52 @@ actual answer...
 ## Timer Interrupts
 * non-cooperative approach
 * set up before processes
-* hw does not 
+* hw does not let processes prevent this
+* switches on a timer interrupt
+
+
+Process A, timer interrupt save regs(A) to [[k-stack]](A) move to kernel mode jump to interrupt
+etc etc
+
+# Per Process State
+```C
+// Per-process state
+
+struct proc {
+ uint sz; // Size of process memory (bytes)
+ pde_t* pgdir; // Page table
+ char *kstack; // Bottom of kern stack for this proc
+ enum procstate state; // Process state
+ volatile int pid; // Process ID
+ struct proc *parent; // Parent process
+ struct trapframe *tf; // Trap frame for current syscall
+ struct context *context; // swtch() here to run process
+ void *chan; // If non-zero, sleeping on chan
+ int killed; // If non-zero, have been killed
+ struct file *ofile[NOFILE]; // Open files
+ struct inode *cwd; // Current directory
+ char name[16]; // Process name (debugging)
+};
+```
 
 
 
+# Schedulers
+*Workload:* set of job descriptions
+*Scheduler:* logic that decides when jobs run
+*Metric:* measurement of scheduling quality
 
+Scheduler 'algebra', given two variables, find the third
+`f(W,S)=M`
+
+## Workload Assumptions:
+1. Each jobs run for the same amount of time
+2. All jobs arrive at the same time
+3. All jobs only use the CPU (no IO)
+4. The runtime of each job is known
+
+![[Pasted image 20211018084025.png]]
+first in first out
+shortest job first
+shortest time t
+## 
