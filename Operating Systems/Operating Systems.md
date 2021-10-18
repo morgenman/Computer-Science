@@ -403,7 +403,7 @@ struct proc {
  struct context *context; // swtch() here to run process
  void *chan; // If non-zero, sleeping on chan
  int killed; // If non-zero, have been killed
- struct file *ofile[NOFILE]; // Open files
+ struct file *ofile[NOFILE]; // Open files. Index 0 of this is current directory?
  struct inode *cwd; // Current directory
  char name[16]; // Process name (debugging)
 };
@@ -411,22 +411,4 @@ struct proc {
 
 
 
-# Schedulers
-*Workload:* set of job descriptions
-*Scheduler:* logic that decides when jobs run
-*Metric:* measurement of scheduling quality
-
-Scheduler 'algebra', given two variables, find the third
-`f(W,S)=M`
-
-## Workload Assumptions:
-1. Each jobs run for the same amount of time
-2. All jobs arrive at the same time
-3. All jobs only use the CPU (no IO)
-4. The runtime of each job is known
-
-![[Pasted image 20211018084025.png]]
-first in first out
-shortest job first
-shortest time t
-## 
+# ![[Schedulers]]
