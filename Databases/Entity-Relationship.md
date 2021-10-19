@@ -112,4 +112,18 @@ UML, ODL limit to binary.
 Any relationship connecting more than two entities can be converted to a collection of Binary, many_one relationship:
 1. Introduce new entity
 	entities are tuples of the relationship set for the multiway relationship
-2. 
+2. connect to the new entity set
+3. introduce many_one relationships form 
+	the connecting entity set to each of the entity sets that provide componenents of tuples in the original multiway relationship
+	
+eg: four way contracts relationship
+![[Pasted image 20211019142321.png]]
+Converts to...
+![[Pasted image 20211019142402.png]]
+
+
+
+## Subclass:
+Use triangle for design, is a : `ISA`
+![[Pasted image 20211019142424.png]]
+* Some entities in an entity set may have special properties not 
