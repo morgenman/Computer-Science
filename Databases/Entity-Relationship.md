@@ -97,4 +97,19 @@ ER Diagram
 
 
 
+Looking at entity sets
 
+Is it possible that one entity set appears two or more times in a relationship? *Yes*
+imagine the relation sequel for movies, can refer to another element in the same set. An entity has a relation with itself.
+
+A movie may have many sequels for each sequel there is only one original
+
+
+
+
+## How to convert Multiway to Binary
+UML, ODL limit to binary.
+Any relationship connecting more than two entities can be converted to a collection of Binary, many_one relationship:
+1. Introduce new entity
+	entities are tuples of the relationship set for the multiway relationship
+2. 
