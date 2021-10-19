@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Game Development.md",
+            "file": "Game Development/Untitled.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Game Development/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Game Development/Untitled.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Game Development/Untitled.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,7 @@
   },
   "active": "3fc52700415d7826",
   "lastOpenFiles": [
+    "Game Development/Untitled.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Chomsky Normal Form.md",
     "Theory of Computation/Push Down Automata.md",
@@ -134,7 +135,6 @@
     "Operating Systems/Schedulers.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/K-Stack.md",
-    "Operating Systems/_Index_of_Operating Systems.md",
-    "Operating Systems/Limited Direct Execution.md"
+    "Operating Systems/_Index_of_Operating Systems.md"
   ]
 }

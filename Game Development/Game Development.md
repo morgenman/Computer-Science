@@ -68,3 +68,4 @@ if there's 3 or more neighbors, you turn on
 if there's less than 2 neighbors, you are lonely and turn off
 
 So lines of three flip
+
