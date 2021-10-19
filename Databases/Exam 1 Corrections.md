@@ -21,6 +21,6 @@
 3. ...
 4. d) forgot launched qualifier
 5. b) `like` keyword with `_%_%_%`
-	c) *both*... forgot to add `a.country = b.country` to code
+	c) *both*... mistake, I chose class = class, should have had: `a.country = b.country` 
 	
 	
