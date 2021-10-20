@@ -119,3 +119,25 @@ A	-> b | ASA | AS | SA | aB | a
 B	-> b
 ```
 
+**At this point**:
+\* marks non compliant bits
+```
+S0	-> *ASA | AS | SA | *aB | a
+S	-> *ASA | AS | SA | *aB | a
+A	-> b | *ASA | AS | SA | *aB | a
+B	-> b
+```
+
+Let's add some rules:
+```
+A1 	-> AS
+U	-> a
+```
+
+This becomes:
+```
+S0	-> A1 A | AS | SA | *aB | a
+S	-> *ASA | AS | SA | *aB | a
+A	-> b | *ASA | AS | SA | *aB | a
+B	-> b
+```
