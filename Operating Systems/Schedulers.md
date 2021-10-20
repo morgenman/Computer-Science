@@ -80,3 +80,16 @@ This solution is effectively multiple levels of round-robin
 
 ![[Pasted image 20211020081909.png]]
 
+![[Pasted image 20211020082008.png]]
+
+![[Pasted image 20211020082529.png]]
+
+![[Pasted image 20211020082538.png]]
+
+*problem:* unforgiving, gaming the system, hard to tune...
+
+How do we fix processes getting stuck at q0:
+**every so often we clear the queue, reschedule everything at highest priority**
+
+
+## Lo
