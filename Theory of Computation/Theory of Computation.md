@@ -169,3 +169,4 @@ We are now going to learn about:
 Let's do another example for ada? pda? didn't hear her right... :
 
 ![[Pasted image 20211020100213.png]]
+
