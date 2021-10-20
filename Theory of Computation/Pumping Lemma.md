@@ -44,7 +44,7 @@ This contradicts condition 3
 
 ---
 Eg:
-L = strings of form xx (something repeated twice (00, 0101, 11 etc))
+L = strings of form ww (something repeated twice (00, 0101, 11 etc))
 Suppose l is regular 
 let p be the pumping length given by the pumping lemma
 Consider the string w = $0^p1 \ 0^p1$
