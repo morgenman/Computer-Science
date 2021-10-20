@@ -6,6 +6,8 @@
 Scheduler 'algebra', given two variables, find the third
 `f(W,S)=M`
 
+**Preemptive:** When the operating system interrupts a program from running (vs. cooperative)
+
 ## Workload Assumptions:
 1. Each jobs run for the same amount of time
 2. All jobs arrive at the same time
@@ -44,4 +46,37 @@ Not good...
 ![[Pasted image 20211018085007.png]]
 
 ## Example: Round Robin
-**
+*what if we care about when a job starts?*
+
+Response time = first run - arrival time
+![[Pasted image 20211020081120.png]]
+
+Other schedulers have poor response time
+![[Pasted image 20211020081506.png]]
+
+## I/O Aware
+*what if jobs wanted to use I/O?*
+
+![[Pasted image 20211020081549.png]]
+![[Pasted image 20211020081600.png]]
+
+## MLFQ
+*what if the runtime of each job is NOT known?*
+
+* Multi-Level Feedback Queue
+* General purpose scheduling
+
+Two job types:
+1. *interactive*: programs care about **response time**
+2. *batch*: programs care about **turnaround time**
+
+This solution is effectively multiple levels of round-robin
+
+### Priorities
+**Rule 1**: If priority(A) > Priority(B), A runs 
+**Rule 2**: If priority(A) == Priority(B), A & B run in RR
+**Rule 3**: Processes start at top priority 
+**Rule 4**: If job uses whole slice, demote process
+
+![[Pasted image 20211020081909.png]]
+
