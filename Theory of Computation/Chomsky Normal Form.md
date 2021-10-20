@@ -136,8 +136,13 @@ U	-> a
 
 This becomes:
 ```
-S0	-> A1 A | AS | SA | *aB | a
-S	-> *ASA | AS | SA | *aB | a
-A	-> b | *ASA | AS | SA | *aB | a
+S0	-> A1 A | AS | SA | UB | a
+S	-> A1 A | AS | SA | UB | a
+A	-> b | A1 A | AS | SA | UB | a
 B	-> b
 ```
+
+Don't convert the single a's, because that would violate unit rules
+
+CNF
+$\therefore$ (2n-1) steps for string of length n
