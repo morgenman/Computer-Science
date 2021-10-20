@@ -92,4 +92,29 @@ How do we fix processes getting stuck at q0:
 **every so often we clear the queue, reschedule everything at highest priority**
 
 
-## Lo
+## Lottery
+### Proportional Share
+* Give processes lottery tickets
+* whoever wins runs
+* higher priority = more tickets
+
+```C
+int counter = 0;
+int winner = getrandom(0, totaltickets);
+node_t *current = head;
+while(current) { 
+	counter += current->tickets; 
+	if (counter > winner) break; 
+	current = current->next; 
+} // current is the winner
+```
+
+![[Pasted image 20211020084229.png]]
+Winner = 102
+![[Pasted image 20211020084323.png]]
+![[Pasted image 20211020084332.png]]
+![[Pasted image 20211020084344.png]]
+![[Pasted image 20211020084359.png]]
+
+
+
