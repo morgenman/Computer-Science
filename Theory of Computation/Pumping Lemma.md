@@ -119,7 +119,7 @@ clearly |w|> p and w can be written as xyz where
 3. $xy^kz\in L$ for $k\geq 0$
 
 1-> y is all 0's 
-* [v] if k = 0 => xy => $0^{p-|y|}1^p$
+* [ ] if k = 0 => xy => $0^{p-|y|}1^p$
 * [ ] if k = 2 => xy$^2$z => $0^{p+|y|}1^p \notin L$
 
 $\therefore$ this contradicts condition 3
