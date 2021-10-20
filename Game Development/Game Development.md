@@ -69,3 +69,8 @@ if there's less than 2 neighbors, you are lonely and turn off
 
 So lines of three flip
 
+
+
+
+walking skeleton
+
