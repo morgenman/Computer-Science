@@ -37,7 +37,7 @@
   "newFileLocation": "current",
   "showUnsupportedFiles": true,
   "attachmentFolderPath": "./",
-  "communityPluginSortOrder": "download",
+  "communityPluginSortOrder": "release",
   "pdfExportSettings": {
     "pageSize": "Letter",
     "landscape": false,

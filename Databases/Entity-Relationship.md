@@ -72,7 +72,7 @@ ER Diagram
 	* one to one 
 	* one to many
 	* many to one
-	* many to many
+	* many to many [use a table to store relationship]
 	* see [[Primary Key#Binary Relationships PK]]
 * ![[Pasted image 20211007140447.png]]
 

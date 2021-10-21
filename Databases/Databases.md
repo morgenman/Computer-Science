@@ -1,3 +1,7 @@
+---
+created: 2021-10-21T13:46:26-04:00
+updated: 2021-10-21T13:53:29-04:00
+---
 # Databases
 * https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
 * DBMS (Database Management System)
@@ -111,6 +115,9 @@ Cascading deletions helps
 * The entity sets and their attributes should reflect reality
 * car -> make, model, color etc (should make sense)
 ### Avoiding Redundancy
+* Extra copies of data, if not designed well, can cause updating anomalies
 ### Simplicity 
 ### Choosing the right relationships
+* Should not add every possible relationship between entities to the design
+	* 
 ### Picking the right kind of elements

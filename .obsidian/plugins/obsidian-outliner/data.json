@@ -1,9 +1,9 @@
 {
-  "styleLists": true,
+  "styleLists": false,
   "debug": false,
   "stickCursor": false,
   "betterEnter": true,
-  "selectAll": true,
+  "selectAll": false,
   "disableZoomNotification": false,
   "hideWarning": false
 }

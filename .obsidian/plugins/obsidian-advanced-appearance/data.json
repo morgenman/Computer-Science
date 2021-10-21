@@ -20,6 +20,6 @@
   "underlineInternal": true,
   "underlineExternal": true,
   "useSystemTheme": false,
-  "relationLinesPreview": true,
-  "relationLinesEdit": false
+  "relationLinesPreview": false,
+  "relationLinesEdit": true
 }

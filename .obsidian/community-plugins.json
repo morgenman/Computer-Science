@@ -7,14 +7,15 @@
   "oz-image-plugin",
   "theme-picker",
   "drawio-obsidian",
-  "obsidian-tabs",
-  "obsidian-advanced-appearance",
   "obsidian-git",
   "folder-note-core",
   "alx-folder-note",
   "page-heading-from-links",
   "find-unlinked-files",
   "text-snippets-obsidian",
+  "update-time-on-edit",
+  "obsidian-minimal-settings",
+  "obsidian-advanced-appearance",
   "obsidian-outliner",
-  "obsidian-metatemplates"
+  "obsidian-wikipedia"
 ]
