@@ -1,6 +1,6 @@
 ---
 created: 2021-10-21T13:46:26-04:00
-updated: 2021-10-21T14:16:54-04:00
+updated: 2021-10-21T14:23:23-04:00
 ---
 # Databases
 * https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
@@ -128,4 +128,8 @@ Cascading deletions helps
 
 1. All relationships which E is involved in must have arrows entering E
 	* ie: E must be the "one" in many>one relationships
-2. If E has more than one attribut
+2. If E has more than one attribute, then no attribute depends on other attributes
+	* ie: the only key for E is all its attributes
+3. No relationships involving E more than once
+
+## Weak Entity Sets
