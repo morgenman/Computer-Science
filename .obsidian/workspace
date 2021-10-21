@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Algorithms of bias movie.md",
+            "file": "Databases/Databases.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md"
+                "file": "Databases/Databases.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +126,7 @@
   },
   "active": "942c9df91455a921",
   "lastOpenFiles": [
+    "Databases/Databases.md",
     "Professional Practice/Algorithms of bias movie.md",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Pumping Lemma.md",
@@ -134,7 +135,6 @@
     "Theory of Computation/Context Free Language.md",
     "Theory of Computation/Push Down Automata.md",
     "Operating Systems/Schedulers.md",
-    "Theory of Computation/Chomsky Normal Form.md",
-    "Operating Systems/Scheduling.pdf"
+    "Theory of Computation/Chomsky Normal Form.md"
   ]
 }

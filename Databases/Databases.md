@@ -83,9 +83,34 @@ Doing the project right. Build the web interface first and use the university db
 
 # Database Designs using the E-R Model
 ## Two pitfalls: incompleteness/redundancy
-* 
+
 ## ![[Entity-Relationship]] Model
 ## ![[Normalization Theory]]
 
 
 [[Exam 1 Corrections]]
+
+
+# Database Subtopics
+
+## Anomalies:
+* *focus* on these problems when designing databases to avoid these issues
+* Problems that occur when we try and cram too much information into a single relation:
+1. Redundancy: information may be repeated unnecessarily in several tuples
+2. Update: we may change info in one tuple but leave the same info unchanged in another
+3. Delete: If a set of values become empty, we may lose other information as a sideffect 
+
+
+***Referential Integrity***
+
+Cascading deletions helps
+
+
+## Design Principals 
+### Faithfulness
+* The entity sets and their attributes should reflect reality
+* car -> make, model, color etc (should make sense)
+### Avoiding Redundancy
+### Simplicity 
+### Choosing the right relationships
+### Picking the right kind of elements
