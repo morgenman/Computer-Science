@@ -35,3 +35,26 @@ Pushing for federal regulation for facial recognition
 * Everyone is just trying make a lot of money on it
 
 * Powerful people scoring powerless people 
+
+
+God damn, stupid ai dramatization
+
+### Value added model
+* what value is the teacher offering? (Houston texas)
+
+Why aren't we using the constitutional right to due process in other areas
+
+
+
+### Recidivism Risk Algorithms:
+How likely to recommit crimes again?
+Biased against PoC
+
+There is no positive feedback in this system
+
+
+
+## Algorithmic Justice League
+
+Resume algorithms 
+
