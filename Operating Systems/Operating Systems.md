@@ -1,3 +1,7 @@
+---
+created: 2021-10-21T14:13:29-04:00
+updated: 2021-10-21T14:13:29-04:00
+---
 # Operating Systems
 ## What does it do?
 * Handle physical resources and [[Virtualization|virtualize]] them

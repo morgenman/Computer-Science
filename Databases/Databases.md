@@ -1,6 +1,6 @@
 ---
 created: 2021-10-21T13:46:26-04:00
-updated: 2021-10-21T13:53:29-04:00
+updated: 2021-10-21T14:16:54-04:00
 ---
 # Databases
 * https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
@@ -119,5 +119,13 @@ Cascading deletions helps
 ### Simplicity 
 ### Choosing the right relationships
 * Should not add every possible relationship between entities to the design
-	* 
+
 ### Picking the right kind of elements
+
+## Conditions in which we prefer to use attribute instead:
+
+> *Suppose E is an entity set. If E obeys the following conditions then we can replace E with an attribute:*
+
+1. All relationships which E is involved in must have arrows entering E
+	* ie: E must be the "one" in many>one relationships
+2. If E has more than one attribut

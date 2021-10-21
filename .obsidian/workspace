@@ -127,6 +127,7 @@
   "active": "942c9df91455a921",
   "lastOpenFiles": [
     "Databases/Databases.md",
+    "Operating Systems/Operating Systems.md",
     "Databases/Entity-Relationship.md",
     "Professional Practice/Algorithms of bias movie.md",
     "Professional Practice/Professional Practice.md",
@@ -134,7 +135,6 @@
     "Theory of Computation/Theory of Computation.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Context Free Language.md",
-    "Theory of Computation/Push Down Automata.md",
-    "Operating Systems/Schedulers.md"
+    "Theory of Computation/Push Down Automata.md"
   ]
 }
