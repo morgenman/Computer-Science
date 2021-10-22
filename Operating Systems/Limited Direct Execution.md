@@ -1,3 +1,7 @@
+---
+created: 2021-10-22T08:02:22-04:00
+updated: 2021-10-22T08:02:22-04:00
+---
 # Limited Direct Execution
 What to limit?
 * General memory access
@@ -11,3 +15,5 @@ how? get hw help but processes in 'user mode'
 	* limited direct execution
 	* timer interrupts
 	* automatic register saving
+
+* 

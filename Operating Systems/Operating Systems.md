@@ -1,6 +1,6 @@
 ---
 created: 2021-10-21T14:13:29-04:00
-updated: 2021-10-21T14:13:29-04:00
+updated: 2021-10-22T08:02:17-04:00
 ---
 # Operating Systems
 ## What does it do?
@@ -416,3 +416,6 @@ struct proc {
 
 
 # ![[Schedulers]]
+
+
+[[Limited Direct Execution]]
