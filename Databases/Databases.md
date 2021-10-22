@@ -1,6 +1,6 @@
 ---
 created: 2021-10-21T13:46:26-04:00
-updated: 2021-10-21T14:23:23-04:00
+updated: 2021-10-21T21:41:57-04:00
 ---
 # Databases
 * https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
