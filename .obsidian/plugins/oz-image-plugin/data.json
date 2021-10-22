@@ -5,6 +5,8 @@
   "renderExcalidraw": false,
   "renderTransclusion": false,
   "renderAdmonition": false,
+  "renderMermaid": false,
+  "renderMathJax": false,
   "refreshImagesAfterChange": false,
-  "WYSIWYG": true
+  "WYSIWYG": false
 }

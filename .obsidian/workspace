@@ -4,13 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "31be40fcfcbf1226",
+        "id": "3146e5739e41879b",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
             "file": "Theory of Computation/Context Free Language.md",
             "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "b5a3397a0b55fd3d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Context Free Language.md",
+            "mode": "preview"
           }
         }
       }
@@ -60,7 +71,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 252,
+    "width": 212.99999809265137,
     "collapsed": true
   },
   "right": {
@@ -122,10 +133,10 @@
       }
     ],
     "direction": "horizontal",
-    "width": 252,
+    "width": 200,
     "collapsed": true
   },
-  "active": "31be40fcfcbf1226",
+  "active": "3146e5739e41879b",
   "lastOpenFiles": [
     "Theory of Computation/Context Free Language.md",
     "Theory of Computation/Theory of Computation.md",

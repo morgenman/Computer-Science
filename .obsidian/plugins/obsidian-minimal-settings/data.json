@@ -22,7 +22,7 @@
   "underlineInternal": true,
   "underlineExternal": true,
   "useSystemTheme": false,
-  "folding": true,
+  "folding": false,
   "relationLinesPreview": false,
   "relationLinesEdit": false
 }

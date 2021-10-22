@@ -13,13 +13,11 @@
   "page-heading-from-links",
   "find-unlinked-files",
   "text-snippets-obsidian",
-  "update-time-on-edit",
-  "obsidian-minimal-settings",
-  "obsidian-advanced-appearance",
-  "obsidian-outliner",
   "obsidian-wikipedia",
-  "quick-latex",
   "obsidian-card-view-mode",
-  "obsidian-sidebar-expand-on-hover",
-  "obsidian-hide-sidebars-when-narrow"
+  "obsidian-nomnoml-diagram",
+  "obsidian-advanced-appearance",
+  "obsidian-minimal-settings",
+  "obsidian-outliner",
+  "quick-latex"
 ]

@@ -1,3 +1,8 @@
+---
+created: 2021-10-22T09:32:02-04:00
+updated: 2021-10-22T09:46:39-04:00
+---
+
 # Context Free Language
 
 L = $0^n1^n$ is not regular
@@ -40,6 +45,23 @@ A 4 tuple $(V,\Sigma, R, S)$
 
 # Theorem: A language is CF iff some PDA recognizes it
 ## Given a CFG, Show how to construct a PDA
-Eg: 
-sigma
+### General Form:
+22 | A
+Terminals | Rest of Rule
+
+* At each step expand the left most derivation
+* Eg: Rule B->ASAXBA
+	* match top of stack to a rule
+	* pop stack
+	* push right hand side of the rool onto stack
+* Eg A->BCD
+	* 
+
+### Eg: 
+$\Sigma$={0,1,2}
+S -> BS | A
+A -> 0A | e
+B -> BB1 | 2
+
+
 ## Given a PDA, Show how to construct a CFG
