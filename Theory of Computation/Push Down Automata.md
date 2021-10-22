@@ -1,3 +1,7 @@
+---
+created: 2021-10-22T09:15:43-04:00
+updated: 2021-10-22T09:29:56-04:00
+---
 # Push Down Automata
 A class of machines that recognize [[Context Free Language]]s
 
@@ -120,3 +124,16 @@ If a string has **more than one** parse tree in a particular grammar the grammar
 # [[Chomsky Normal Form]]
 Some [[Context Free Language]]s can only be generated using ambiguous grammar. Such languages are called *Inherently ambiguous* and cannot be put in Chomsky form
 
+
+
+> Example:
+L = {a$^{2n}b^{3n}|n\geq 0$}
+| x   | x   | x   | x   |
+| --- | --- | --- | --- |
+| aa  | aa  | bbb | bbb |
+aabbb![[Pasted image 20211022091655.png]]
+
+---
+
+Example:
+![[Pasted image 20211022092924.png]]

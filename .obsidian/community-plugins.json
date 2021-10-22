@@ -19,5 +19,7 @@
   "obsidian-outliner",
   "obsidian-wikipedia",
   "quick-latex",
-  "obsidian-card-view-mode"
+  "obsidian-card-view-mode",
+  "obsidian-sidebar-expand-on-hover",
+  "obsidian-hide-sidebars-when-narrow"
 ]

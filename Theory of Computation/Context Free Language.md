@@ -36,3 +36,10 @@ A 4 tuple $(V,\Sigma, R, S)$
 
 
 ![[Push Down Automata]]
+
+
+# Theorem: A language is CF iff some PDA recognizes it
+## Given a CFG, Show how to construct a PDA
+Eg: 
+sigma
+## Given a PDA, Show how to construct a CFG
