@@ -170,3 +170,7 @@ Let's do another example for ada? pda? didn't hear her right... :
 
 ![[Pasted image 20211020100213.png]]
 
+# Closure properties of CFL
+*Regular languages are closed under $\cup$,$\cap$,-,$\cdot$,\* *
+1. The class of context free languages is closed under union, concatenation, and star operations. 
+	* L1 and L2 are two CFL then L1 $\cup$
