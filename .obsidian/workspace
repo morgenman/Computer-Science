@@ -9,19 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Context Free Language.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "b5a3397a0b55fd3d",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Theory of Computation/Context Free Language.md",
-            "mode": "preview"
           }
         }
       }
@@ -71,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -89,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Context Free Language.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Context Free Language.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           }
@@ -123,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Context Free Language.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -138,11 +126,11 @@
   },
   "active": "3146e5739e41879b",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Context Free Language.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Push Down Automata.md",
     "Operating Systems/Schedulers.md",
-    "Operating Systems/Operating Systems.md",
     "Operating Systems/State.md",
     "Operating Systems/_Index_of_Operating Systems.md",
     "Operating Systems/Limited Direct Execution.md",

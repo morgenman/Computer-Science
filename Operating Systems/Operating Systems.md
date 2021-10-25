@@ -354,7 +354,7 @@ struct proc {
 Program = process + context
 # what is context?
 states:
-Ready (init or through descheduling) -> Running (through scheduling) -> blocked (I/0 Initiate) -> back to ready (I/0 Done)
+**Ready** (init or through descheduling) -> **Running** (through scheduling) -> **blocked** (I/0 Initiate) -> back to ready (I/0 Done)
 
 ## CPU Time Sharing
 ### Two goals
@@ -419,3 +419,38 @@ struct proc {
 
 
 [[Limited Direct Execution]]
+
+
+# Where do we keep processes when they are in these states?
+*Run/Ready/Block*
+
+```c
+c = fork();
+if(c>0)
+	parent
+else
+	child
+```
+
+parent and child are blocks of code
+calls exec, which loads a new context into a process
+
+
+**Fork**: create a new process, with all the context copied
+
+copied into the [[Process Control Block]]
+new PID
+
+Open files are in context
+
+Same address in the instruction pointer
+fork does return in both processes
+so the code above runs 
+environment is also passed
+
+How does the shell run ls?
+
+
+## What's in the parent block?
+* could be wait(& info)
+* 
