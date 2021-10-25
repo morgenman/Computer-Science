@@ -6,4 +6,5 @@
 	* Pixels with more of a change get higher priority
 	* run out of time, or dropped frame?
 * Use freesync like protocol to only redraw when needed
-* Chipset 
+* Chipset compares, puts changed pixels in a tree based on contrast 
+	* tiers of how many contrast levels they are
