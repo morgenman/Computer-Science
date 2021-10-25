@@ -453,4 +453,9 @@ How does the shell run ls?
 
 ## What's in the parent block?
 * could be wait(& info)
-* 
+
+`ctrl + d is end of file marker`
+
+single > is making a new file,  >> is for appending
+ls . | sort
+output of ls is piped into sort 
