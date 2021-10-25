@@ -13,10 +13,10 @@
             "mode": "source"
           }
         },
-        "group": "a5fede33ff2acf78"
+        "group": "ce8662dbed7619cb"
       },
       {
-        "id": "fddf502283b67f79",
+        "id": "7320baa67eed3988",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -25,7 +25,7 @@
             "mode": "preview"
           }
         },
-        "group": "a5fede33ff2acf78"
+        "group": "ce8662dbed7619cb"
       }
     ],
     "direction": "vertical"
@@ -140,8 +140,8 @@
   "active": "3146e5739e41879b",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
-    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Context Free Language.md",
+    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Push Down Automata.md",
     "Operating Systems/Schedulers.md",
     "Operating Systems/State.md",

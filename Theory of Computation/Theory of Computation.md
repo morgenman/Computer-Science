@@ -172,5 +172,36 @@ Let's do another example for ada? pda? didn't hear her right... :
 
 # Closure properties of CFL
 *Regular languages are closed under $\cup$,$\cap$,-,$\cdot$,\* *
+
 1. The class of context free languages is closed under union, concatenation, and star operations. 
-	* L1 and L2 are two CFL then L1 $\cup$
+	* L1 and L2 are two CFL then L1 $\cup$ L2 is also CFL (L1 L2 => CFL)
+	* L1$^*$ or L2$^*$ is also CFL
+	* You could do this with PDA, but let's do it with CFG
+	**Union**:
+	* S -> S1 | S2
+	  CFG of L1
+	  CFG of L2
+	**Concatenation**:
+	* L1 and L2 are CFLs
+	  let s1 be the start variable for L1's grammar
+	  let s2 be the start variable for L2  
+	  L = L1 L2
+	* S -> S1 S2
+	  CFG of L1
+	  CFG of L2  
+	**Star**: 
+	* S -> S S1 | e
+	  CFG of L1
+	* L = L$^*$  CFG  
+2. The class of CFL are *not* closed under intersection or compliment (one implies the other)
+	* Easiest to do this as an example, rather than a proper proof (proof by example)
+	**Intersection**:
+	* Consider the language L1= {$a^nb^nc^i|i,n\geq0$}
+	  S -> TU
+	  T -> aTb | e
+	  U -> cU | e
+	* Now consider the language L2 = {$a^ib^nc^{n}|i,n\geq 0$}
+	* Both are CFG
+	* L1 $\cap$ L2 = {$a^nb^nc^n|n\geq0$}
+	* **this is not a CFG**
+	* 
