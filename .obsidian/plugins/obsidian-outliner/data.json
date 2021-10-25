@@ -1,5 +1,5 @@
 {
-  "styleLists": false,
+  "styleLists": true,
   "debug": false,
   "stickCursor": false,
   "betterEnter": true,
