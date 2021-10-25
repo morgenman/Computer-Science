@@ -1,6 +1,11 @@
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
 	* Also known as [[Automata Theory]] 
+
+
+If a language is regular, it is also Context free, and Turing recognizable
+
+If it is a non-regular language, some may be context free, some may be not context free
 * [[Complexity]] --> Why are some problems harder than others?
 * [[Computability]] --> Are there problems that cannot be solved by computers?
 * What is an [[Automata Theory]]?
@@ -204,4 +209,11 @@ Let's do another example for ada? pda? didn't hear her right... :
 	* Both are CFG
 	* L1 $\cap$ L2 = {$a^nb^nc^n|n\geq0$}
 	* **this is not a CFG**
-	* 
+	* *we will go over this next class*
+	**Complementation**:
+	* if it were, then it would be closed under intersection because of DeMorgan's Law
+	* A$\cap$B = $\overline{\overline{A}\cup\overline{B}}$
+
+
+* a^i b^j c^k | i =/= j or j=/=k 
+	* **find the grammar for this**
