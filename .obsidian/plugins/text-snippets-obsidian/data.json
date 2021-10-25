@@ -1,14 +1,14 @@
 {
-  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\nsigma : $\\Sigma$\nepsilon : $\\varepsilon$\ndot : $\\cdot$\nnull : $\\emptyset$\nsd : ```nomnoml $nl$ [<hidden>.]-> $nl$ $nl$ ```\n",
+  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\nsigma : $\\Sigma$\nepsilon : $\\varepsilon$\ndot : $\\cdot$\nnull : $\\emptyset$\nsd : $nl$```nomnoml $nl$ [<hidden>.]->  $here$ $nl$ $nl$ ```\n",
   "snippets": [
     "snippets : It is an obsidian plugin, that replaces your selected text.",
     "sigma : $\\Sigma$",
     "epsilon : $\\varepsilon$",
     "dot : $\\cdot$",
     "null : $\\emptyset$",
-    "sd : ```nomnoml $nl$ [<hidden>.]-> $nl$ $nl$ ```"
+    "sd : $nl$```nomnoml $nl$ [<hidden>.]->  $here$ $nl$ $nl$ ```"
   ],
-  "endSymbol": "$here",
+  "endSymbol": "$here$",
   "newlineSymbol": "$nl$",
   "stopSymbol": "$tb$",
   "useTab": true

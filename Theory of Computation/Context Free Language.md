@@ -1,8 +1,7 @@
 ---
-created: 2021-10-22T09:32:02-04:00
-updated: 2021-10-22T09:46:39-04:00
+created: 2021-10-22T09:57:25-04:00
+updated: 2021-10-22T09:58:06-04:00
 ---
-
 # Context Free Language
 
 L = $0^n1^n$ is not regular
@@ -52,11 +51,10 @@ Terminals | Rest of Rule
 * At each step expand the left most derivation
 * Eg: Rule B->ASAXBA
 	* match top of stack to a rule
-	* pop stack
 	* push right hand side of the rool onto stack
-* Eg A->BCD
-	* 
+	* pop stack
 
+![[Pasted image 20211022095438.png]]
 ### Eg: 
 $\Sigma$={0,1,2}
 S -> BS | A
