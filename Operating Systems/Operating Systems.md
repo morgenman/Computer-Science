@@ -459,3 +459,9 @@ How does the shell run ls?
 single > is making a new file,  >> is for appending
 ls . | sort
 output of ls is piped into sort 
+
+Signature for executable program: `#!`
+
+## Where does the copy get put?
+* ready state?
+* 
