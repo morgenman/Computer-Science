@@ -74,3 +74,6 @@ So lines of three flip
 
 walking skeleton
 
+# C++ Stuff
+* No garbage collection
+* 
