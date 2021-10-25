@@ -32,24 +32,15 @@ while(t)
 
 # Compression: reducing redundancy
 
-
 # [[Twine Pitches]]
-
 
 ## Actor?
 
-
 # ![[Teamwork Agile]]
-
-
 
 # Decision Making
 ## We could use min/max tree
 This is a decision space. We try and 
-
-
-
-
 
 *What is a cellular automata*
 * A grid of automata...
@@ -68,12 +59,10 @@ if there's 3 or more neighbors, you turn on
 if there's less than 2 neighbors, you are lonely and turn off
 
 So lines of three flip
-
-
-
-
 walking skeleton
 
 # C++ Stuff
 * No garbage collection
+	* make sure to deallocate memory
+* if new is called for an array, before the array is the size stored
 * 

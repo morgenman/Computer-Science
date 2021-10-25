@@ -31,7 +31,11 @@
     "substring",
     "c++",
     "filesystem",
-    "Pushdown"
+    "Pushdown",
+    "deallocate",
+    "chipset",
+    "pseudorandomly",
+    "freesync"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
