@@ -89,4 +89,15 @@ Resume algorithms
 * 2400 faces misidentified..
 * AOC is fire
 * Facebook algorithm for corporate surveilence
-* 
+* Cities are banning it
+
+
+* Chechov, didn't kill the us
+* fully effient etc is loosing humanity
+* leads to inhuman things
+
+
+2020 amazon 1y pause on facial recognician
+june 2020 federal legislation put to congress, not done yet
+
+
