@@ -161,3 +161,23 @@ E -R-> F
 3. Any attributes belonging to R
 
 
+## Functional Dependency 
+FD on a relation is a statement:
+> "if two tuples of R agree on all attributes A1-An (same values) then they must agree on all of another list of attributes B1-Bn"
+
+This never happens
+`title,year -> length, genre, studioname`
+if title & year are the same among elements, the rest are too 
+
+## Transitive property
+R(A,B,C)
+if 
+A->B
+B->C
+then
+A->C
+dependencies...
+
+
+
+
