@@ -133,3 +133,13 @@ Cascading deletions helps
 3. No relationships involving E more than once
 
 ## Weak Entity Sets
+
+
+# Referential Integrity
+* The RI constraint is that a value appearing in one context must appear in another
+
+
+## Weak Entity
+* Let weak entity set then the key consists of:
+1. zero or more of it's own attributes and 
+2. key attributes from entity set 

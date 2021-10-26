@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Algorithms of bias movie.md",
+            "file": "Databases/Databases.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md"
+                "file": "Databases/Databases.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -125,6 +125,8 @@
   },
   "active": "3146e5739e41879b",
   "lastOpenFiles": [
+    "Databases/Databases.md",
+    "Databases/Entity-Relationship.md",
     "Professional Practice/Algorithms of bias movie.md",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
@@ -132,8 +134,6 @@
     "Game Development/Dithered Drawing.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Context Free Language.md",
-    "Operating Systems/Operating Systems.md",
-    "Theory of Computation/Push Down Automata.md",
-    "Operating Systems/Schedulers.md"
+    "Operating Systems/Operating Systems.md"
   ]
 }

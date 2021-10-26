@@ -126,4 +126,18 @@ Converts to...
 ## Subclass:
 Use triangle for design, is a : `ISA`
 ![[Pasted image 20211019142424.png]]
-* Some entities in an entity set may have special properties not 
+* Some entities in an entity set may have special properties not
+
+
+
+
+
+* Entity relations with curve, connecting entity must exist
+
+What is a weak entity set?
+* Crew has no meaning unless studio exists, so it's weak
+* must be supported by strong entity
+* subclass 
+
+
+
