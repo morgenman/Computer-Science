@@ -142,4 +142,22 @@ Cascading deletions helps
 ## Weak Entity
 * Let weak entity set then the key consists of:
 1. zero or more of it's own attributes and 
-2. key attributes from entity set 
+2. key attributes from entity set are reached by certain many_to_one relationships from E to other entity sets
+
+(supporting relationship)
+
+
+
+# Converting E/R diagram to relational design
+
+1. Turn each entity set into a relation w/ same set of attributes
+2. Replace relationship by a relation whose attributes are keys for the connecting entities
+
+
+## Many to one relationship to relation
+E -R-> F
+1. All attributes of E
+2. The key attributes of F
+3. Any attributes belonging to R
+
+
