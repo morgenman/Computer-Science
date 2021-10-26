@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "Japanese Meeting.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Japanese Meeting.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Japanese Meeting.md"
               }
             }
           }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Japanese Meeting.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -125,15 +125,15 @@
   },
   "active": "3146e5739e41879b",
   "lastOpenFiles": [
+    "Japanese Meeting.md",
+    "Science of Learning.md",
+    "Databases/Untitled.md",
     "Databases/Databases.md",
     "Databases/Entity-Relationship.md",
     "Professional Practice/Algorithms of bias movie.md",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Pumping Lemma.md",
-    "Game Development/Dithered Drawing.md",
-    "Game Development/Game Development.md",
-    "Theory of Computation/Context Free Language.md",
-    "Operating Systems/Operating Systems.md"
+    "Game Development/Dithered Drawing.md"
   ]
 }
