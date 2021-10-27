@@ -473,5 +473,11 @@ Signature for executable program: `#!`
 | P3  | 1000 |
 |     |      |
 |     |      |
+Base register is a step towards having virtual memory
+Bounds allows us to protect memory
 
-$i^{3x}+5$
+# Paged Memory
+## Physical Memory [Frames]
+* Physical hardware is divided into frames
+## Process Address Space [Pages]
+* Stores table with forwards to actual memory
