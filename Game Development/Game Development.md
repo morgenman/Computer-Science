@@ -68,8 +68,31 @@ walking skeleton
 
 
 # Design Patterns
-> I need to keep track of lattes 
-* 
+> Example, Inheritance:
+> I need to keep track of espresso and coffee
+> Class called espresso, and a class called coffee
+> What if people want flavor in their coffee?
+> vanilla espresso? milk espresso? vanilla milk espresso?
+> bazillion classes, will never be complete
+> What is the solution? fields in classes (Not using inheritance)
+> New class called Special(flavor,baseDrink);
+> drink is parent type
+
+```nomnoml
+[drink] -> [special|flavor|baseDrink|0.25*baseDrink.price]
+[drink] -> [espresso|1.00]
+[drink] -> [coffee|0.5]
+```
+## Decorator Pattern
+[[https://www.tutorialspoint.com/design_pattern/decorator_pattern.htm]]
+* One of your subtypes can contain a list of base types. 
+```nomnoml
+#direction: down
+[widget] - [panel|list<widget>]
+[widget] - [window]
+```
+
+
 
 # Turing Machines
 * Pre-Turing machines

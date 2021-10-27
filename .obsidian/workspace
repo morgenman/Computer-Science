@@ -12,7 +12,20 @@
             "file": "Game Development/Game Development.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "09c0de3340e7b555"
+      },
+      {
+        "id": "db79db34168e54d3",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Game Development/Game Development.md",
+            "mode": "preview"
+          }
+        },
+        "group": "09c0de3340e7b555"
       }
     ],
     "direction": "vertical"
