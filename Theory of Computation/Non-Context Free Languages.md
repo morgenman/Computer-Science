@@ -80,3 +80,5 @@ if k = 2 -> uv$^2$xy$^2$z
 	3. uv$^{K}$xy$^{K}$z $\in$ L for all k $\geq$ 0
 
 
+
+

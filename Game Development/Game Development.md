@@ -65,4 +65,18 @@ walking skeleton
 * No garbage collection
 	* make sure to deallocate memory
 * if new is called for an array, before the array is the size stored
+
+
+# Design Patterns
+> I need to keep track of lattes 
 * 
+
+# Turing Machines
+* Pre-Turing machines
+* Hilbert came up with 'Century' problems
+	* Come up with a way for giving steps to problems that look like: a$^n$+b$^n$=c$^n$
+	* an algorithm for solving this
+* Turing came up with the idea of a nominal machine
+* There are only as many programs as there are integers, and ^^ requires real numbers, real > int $\therefore$ impossible
+* Established linguistics to talk about computing
+
