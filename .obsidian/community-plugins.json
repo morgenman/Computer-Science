@@ -20,5 +20,6 @@
   "obsidian-minimal-settings",
   "obsidian-outliner",
   "quick-latex",
-  "obsidian-hide-sidebars-when-narrow"
+  "obsidian-hide-sidebars-when-narrow",
+  "obsidian-codemirror-options"
 ]
