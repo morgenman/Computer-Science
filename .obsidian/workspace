@@ -129,12 +129,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125,
-    "collapsed": true
+    "width": 265.14288330078125
   },
   "active": "3146e5739e41879b",
   "lastOpenFiles": [
     "Theory of Computation/Non-Context Free Languages.md",
+    "Theory of Computation/Pumping Lemma.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Japanese Meeting.md",
@@ -142,7 +142,6 @@
     "Databases/Untitled.md",
     "Databases/Databases.md",
     "Databases/Entity-Relationship.md",
-    "Professional Practice/Algorithms of bias movie.md",
-    "Professional Practice/Professional Practice.md"
+    "Professional Practice/Algorithms of bias movie.md"
   ]
 }
