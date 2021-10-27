@@ -217,3 +217,5 @@ Let's do another example for ada? pda? didn't hear her right... :
 
 * a^i b^j c^k | i =/= j or j=/=k 
 	* **find the grammar for this**
+
+![[Non-Context Free Languages]]
