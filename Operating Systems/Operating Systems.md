@@ -481,3 +481,7 @@ Bounds allows us to protect memory
 * Physical hardware is divided into frames
 ## Process Address Space [Pages]
 * Stores table with forwards to actual memory
+* Virtual addresses (per process)
+## 
+
+
