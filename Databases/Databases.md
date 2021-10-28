@@ -167,7 +167,44 @@ FD on a relation is a statement:
 
 This never happens
 `title,year -> length, genre, studioname`
-if title & year are the same among elements, the rest are too 
+if title & year are the same among elements, the rest are too
+
+### Splitting/Combining Rule
+FD: A1, A2... AN -> B1, B2... BM
+> x -> y
+> x functionally determines y
+
+This functional dependencies can be split by M:
+A1, A2... AN -> B1
+A1, A2... AN -> B2
+...
+A1, A2... AN -> BM
+
+* equivalent to A1, A2... AN -> Bi for i = 1,2..M
+
+**You cannot split on the LHS**
+
+### Trivial Functional Dependency
+FD: A1,A2...An -> B1, B2 ... Bm
+if B1, B2... $\subseteq$ A1, A2 ... An 
+then the above FD is called a trivial FD
+
+* RHS attributes of a trivial FD are a subset  of LHS's attributes 
+* title,year -> title
+* title -> title
+
+### Nontrivial Functional Dependency
+A1 ... An -> C1 ... Ck
+| A1  | ... | An  | C1  | ... | Ck  |
+| --- | --- | --- | --- | --- | --- |
+| a   | a   | a   | c   | c   | c   |
+|     | b   | b   | b   | b   | b   |
+|     | *   | *   | #   | #   | #   |
+
+* '*' is trivial attributes, '#' is non trivial attributes for b
+
+
+
 
 ## Transitive property
 R(A,B,C)
