@@ -239,7 +239,51 @@ output: the closure {A1, A2, ... An}+
 	* B1, B2 ... Bm -> C
 	* such that: all of B1 ... Bm are in x and c is not in x 
 	* then add c to x 
-4.  
+4.  The set x after no more attributes can be added to it is the closure of {A1 ... An}+
+
+Example:
+![[Pasted image 20211028140100.png]]
+
+Another Example (might not record)
+
+R = (A,B,C,D)
+FD = {AB->C, C->D, D->A}
+find all non-trivial FD that hold on R. Also find Super key and primary key
+
+Only key track of non-trivial ones ..
+
+{A}+ = {A}
+{B}+ = {B}
+{C}+ = {A C D}
+	C	-> A
+{D}+ = {D A}
+{AB}+ = **{A B C D}**  
+	AB -> D
+{AC}+ = {A C D}
+	AC -> D
+{AD}+ = {A D}
+{BC}+ = **{A B C D}**
+	BC -> A
+	BC -> D
+{BD}+ = **{A B C D}**
+	BD -> A
+	BD -> C
+{CD}+ = {A C D}
+	CD -> A
+{ABC}+ = **{A B C D}**
+	ABC -> D
+{ACD}+ = {A C D}
+{ABD}+ = **{A B C D}**
+	ABD -> C
+{BCD}+ = **{A B C D}**
+	BCD -> A
+{ABCD}+ = **{A B C D}**
+
+Superkeys:
+{AB, BC, BD, ABC, ABD, BCD, ABCD}
+Candidate Keys:
+{AB BC BD}
+
 
 
 
