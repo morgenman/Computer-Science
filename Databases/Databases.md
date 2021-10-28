@@ -203,6 +203,43 @@ A1 ... An -> C1 ... Ck
 
 * '*' is trivial attributes, '#' is non trivial attributes for b
 
+## Closure of Attributes, How to find [[Superkey]]
+R(A,B,C,D,E,F)
+FD = { AB -> C
+	   BC -> AD
+	   D -> E
+	   CF ->B
+	 }
+	 
+### Splitting FD's
+1. Split when RHS has more than one element
+AB 	-> C
+BC 	-> A
+BC 	-> D
+D 	-> E
+CF 	-> B
+
+2. Add attributes that the function dependencies point to 
+{AB}$^+$={ABCDE}
+trivial:
+AB 	-> AB
+nontrivial:
+AB	-> CDE
+* to do this, we put RHS on a list with LHS of closure we are testing (AB + C for first pass)
+* Then we do it again, adding any RHS where LHS is all elements on said list
+* if all attributes in relation are on list, FD we are testing is a key
+
+### Algorithm: Closure of a set of attributes
+input: set of attributes {A1, A2.. An} and set of FD's S
+output: the closure {A1, A2, ... An}+
+1. if necessary, split FD's in S so catch FD in S has a single attribute on RHS
+2. let x be a set of attributes that eventually will become closure
+	* initialize x = {A1, A2, A3... An}
+3. Repeatedly search for some FD
+	* B1, B2 ... Bm -> C
+	* such that: all of B1 ... Bm are in x and c is not in x 
+	* then add c to x 
+4.  
 
 
 
