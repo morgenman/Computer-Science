@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "pree",
+                "query": "page tab",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,7 +56,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -134,9 +135,9 @@
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
     "Operating Systems/Operating Systems.md",
-    "Operating Systems/Interrupt.md",
     "Operating Systems/PXL_20210924_122457556.jpg",
     "Operating Systems/Schedulers.md",
+    "Operating Systems/Interrupt.md",
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Process.md",
     "Operating Systems/Program.md",
