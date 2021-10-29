@@ -44,6 +44,8 @@ Not good...
 * Policy: switch jobs so we always run the one that will complete the quickest
 
 ![[Pasted image 20211018085007.png]]
+STCF, great for small jobs who want to run and don't want to wait for a big job, bad for big jobs who could be continually kept on the bottom of the queue so they never run FIFO, great for bigger jobs since everyone is run in order, is not affected by smaller jobs arriving SJF, bad for big jobs if not first since they could never run and bad for small jobs because if a big job ever get's loaded they have to wait for it to be completely finished So yea, worst of both worlds
+
 
 ## Example: Round Robin
 *what if we care about when a job starts?*
