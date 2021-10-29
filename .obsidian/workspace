@@ -56,8 +56,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -130,20 +129,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125,
-    "collapsed": true
+    "width": 265.14288330078125
   },
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
     "Operating Systems/Schedulers.md",
     "Operating Systems/Operating Systems.md",
+    "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Process.md",
     "Operating Systems/Program.md",
     "Operating Systems/PXL_20210924_122457556.jpg",
     "Operating Systems/Interrupt Service Vector.md",
     "Operating Systems/K-Stack.md",
     "Operating Systems/Scheduling.pdf",
-    "Databases/Databases.md",
-    "Databases/Superkey.md"
+    "Databases/Databases.md"
   ]
 }

@@ -482,6 +482,8 @@ Bounds allows us to protect memory
 ## Process Address Space [Pages]
 * Stores table with forwards to actual memory
 * Virtual addresses (per process)
-## 
+
+[[Exam 2 Terms]]
+
 
 
