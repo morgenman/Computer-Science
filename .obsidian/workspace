@@ -149,6 +149,7 @@
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Pumping Lemma.md",
     "Theory of Computation/Non-Context Free Languages.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/PXL_20210924_122457556.jpg",
@@ -156,7 +157,6 @@
     "Operating Systems/Interrupt.md",
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Process.md",
-    "Operating Systems/Program.md",
-    "Operating Systems/Interrupt Service Vector.md"
+    "Operating Systems/Program.md"
   ]
 }
