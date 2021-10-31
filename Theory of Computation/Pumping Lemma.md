@@ -1,5 +1,8 @@
 # Pumping Lemma
 
+[Pumping Lemma PPT](https://www.cs.swarthmore.edu/~sindhu/cs46/s16/PumpingLemma.pdf)
+
+
 * String of length n
 	* State: 1 -> 2
 		* n+1 transitions
