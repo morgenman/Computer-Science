@@ -219,3 +219,4 @@ Let's do another example for ada? pda? didn't hear her right... :
 	* **find the grammar for this**
 
 ![[Non-Context Free Languages]]
+![[Non-Context Free Languages#Theorem]]

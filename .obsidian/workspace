@@ -9,7 +9,18 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Theory of Computation/Theory of Computation.md",
+            "mode": "source"
+          }
+        }
+      },
+      {
+        "id": "e610003b5ca1381c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Non-Context Free Languages.md",
             "mode": "source"
           }
         }
@@ -56,12 +67,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137
+    "width": 212.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/Non-Context Free Languages.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Theory of Computation/Non-Context Free Languages.md"
               }
             }
           },
@@ -120,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/Non-Context Free Languages.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -130,10 +141,13 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125
+    "width": 265.14288330078125,
+    "collapsed": true
   },
-  "active": "dc193a640d7be711",
+  "active": "e610003b5ca1381c",
   "lastOpenFiles": [
+    "Theory of Computation/Non-Context Free Languages.md",
+    "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/PXL_20210924_122457556.jpg",
     "Operating Systems/Schedulers.md",
@@ -141,8 +155,6 @@
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Process.md",
     "Operating Systems/Program.md",
-    "Operating Systems/Interrupt Service Vector.md",
-    "Operating Systems/K-Stack.md",
-    "Operating Systems/Scheduling.pdf"
+    "Operating Systems/Interrupt Service Vector.md"
   ]
 }
