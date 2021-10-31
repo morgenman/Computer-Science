@@ -6,6 +6,7 @@
       {
         "id": "dc193a640d7be711",
         "type": "leaf",
+        "dimension": 61.5301724137931,
         "state": {
           "type": "markdown",
           "state": {
@@ -17,6 +18,7 @@
       {
         "id": "e610003b5ca1381c",
         "type": "leaf",
+        "dimension": 38.4698275862069,
         "state": {
           "type": "markdown",
           "state": {
@@ -89,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +108,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md"
+                "file": "Theory of Computation/Theory of Computation.md"
               }
             }
           },
@@ -131,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -144,10 +146,10 @@
     "width": 265.14288330078125,
     "collapsed": true
   },
-  "active": "e610003b5ca1381c",
+  "active": "dc193a640d7be711",
   "lastOpenFiles": [
-    "Theory of Computation/Non-Context Free Languages.md",
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Non-Context Free Languages.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/PXL_20210924_122457556.jpg",
     "Operating Systems/Schedulers.md",
