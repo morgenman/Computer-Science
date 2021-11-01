@@ -6,23 +6,10 @@
       {
         "id": "dc193a640d7be711",
         "type": "leaf",
-        "dimension": 68.31896551724138,
         "state": {
           "type": "markdown",
           "state": {
             "file": "Theory of Computation/Theory of Computation.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "e610003b5ca1381c",
-        "type": "leaf",
-        "dimension": 31.68103448275862,
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Theory of Computation/Non-Context Free Languages.md",
             "mode": "source"
           }
         }
