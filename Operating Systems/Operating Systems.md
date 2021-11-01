@@ -507,5 +507,32 @@ return v.data();
 
 ```
 
+---
 
+# Paged memory
+## 16 bit
+* Address translation
+	* How do you translate an address
+	* Look it up in table to see..??
+* Virtual Address: 
+	* 16 bit for now
+	* page numbers are the virtual numbers, they refer to frames
+| 4 bit  | 12 bit |
+| ------ | ------ |
+| Page # | offset                |
+
+* offset is going to be the same size for every address
+* PageTable for each process (held by OS, per process, part of context)
+	* will have 16 entries
+	* divided into Metadata and 20 bits for each frame
+	* each entry in page table points to frame which holds 4k (2^12 from 12 bit offset)
+	* page number is 4 bits (2^4 = 16 pages per process)
+Physical memory will become 20 bits
+
+Process address Space: 
+* holds all the code from the process you are running
+16 pages
+
+Translated to:
+4 bit 12 bit offset from virtual address
 
