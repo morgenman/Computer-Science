@@ -107,3 +107,11 @@ https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm
 * There are only as many programs as there are integers, and ^^ requires real numbers, real > int $\therefore$ impossible
 * Established linguistics to talk about computing
 
+# STD Lib
+## Data structures and the like
+* ArrayList <Integer> (java) - typing has to be object
+* vector <int> v; // (c++) - typing can be data/object
+* v.push_back(1);
+* allows overloading operators
+	* v[0] instead of v.at(0);
+	* 

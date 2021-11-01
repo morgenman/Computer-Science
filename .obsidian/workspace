@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Non-Context Free Languages.md",
+            "file": "Game Development/Game Development.md",
             "mode": "source"
           }
         }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md",
+                "file": "Game Development/Game Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md"
+                "file": "Game Development/Game Development.md"
               }
             }
           },
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md",
+                "file": "Game Development/Game Development.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,6 +134,7 @@
   },
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
+    "Game Development/Game Development.md",
     "Theory of Computation/Non-Context Free Languages.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Pumping Lemma.md",
@@ -143,7 +143,6 @@
     "Operating Systems/Schedulers.md",
     "Operating Systems/Interrupt.md",
     "Operating Systems/Exam 2 Terms.md",
-    "Operating Systems/Process.md",
-    "Operating Systems/Program.md"
+    "Operating Systems/Process.md"
   ]
 }
