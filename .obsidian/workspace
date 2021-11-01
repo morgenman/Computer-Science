@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -136,10 +135,10 @@
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
     "Game Development/Game Development.md",
-    "Theory of Computation/Non-Context Free Languages.md",
     "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Pumping Lemma.md",
     "Operating Systems/Operating Systems.md",
+    "Theory of Computation/Non-Context Free Languages.md",
+    "Theory of Computation/Pumping Lemma.md",
     "Operating Systems/PXL_20210924_122457556.jpg",
     "Operating Systems/Schedulers.md",
     "Operating Systems/Interrupt.md",

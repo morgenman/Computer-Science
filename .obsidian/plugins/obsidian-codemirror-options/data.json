@@ -24,6 +24,8 @@
   "renderDataview": false,
   "renderMath": true,
   "renderMathPreview": true,
+  "renderBanner": true,
   "styleCheckBox": true,
+  "allowedYamlKeys": "document-font-size",
   "tokenList": "em|strong|strikethrough|code|linkText|task|internalLink|highlight"
 }

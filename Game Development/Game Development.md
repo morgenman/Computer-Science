@@ -109,22 +109,31 @@ https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm
 
 # STD Lib
 ## Data structures and the like
-* ArrayList <Integer> (java) - typing has to be object
-* vector <int> v; // (c++) - typing can be data/object
-* v.push_back(1);
+* ArrayList <Integer.> (java) - typing has to be object
+* `vector <int> v;` // (c++) - typing can be data/object
+* `v.push_back(1);`
 * allows overloading operators
 	* v[0] instead of v.at(0);
-
 * Associative Array
 	* Map
-	* map<string, string> m;
+	* `map<string,string> m;`
 	* m["cat"];
 		* this is operator overloading
-			
 * imagine you make a vector
 
 ```c++
 vec3 v{1,2.5,3}, w{0,1,2},u;
-u = v+w;
+u = v+w;s
 ```
 	
+Post-increment makes a copy of whatever you are using:
+i++ makes a copy of i to return. 
+
+empty overload = ++i, if int is in the overload it's i++
+```c++
+vec3 operator++(); // ++i
+vec3 operator++(int x); // i++
+```
+
+## Constructors:
+* 

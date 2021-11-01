@@ -469,20 +469,6 @@ body.unified-cm-highlighting.theme-dark.cm-theme-solarized-light {
   padding: 0;
 }
 
-/* .rendered-code-block-wrapper .CodeMirror-linebackground {
-  background: none !important;
-}
-
-.rendered-code-block-wrapper .HyperMD-codeblock {
-  border: none !important;
-} */
-
-/* Make sure the <CODE> button is on top of the rendered element */
-.cm-s-obsidian .rendered-code-block-wrapper .CodeMirror-linewidget,
-.cm-s-obsidian .rendered-code-block-wrapper pre.CodeMirror-line {
-  z-index: unset !important;
-}
-
 /* Remove the default code block background and let the rendered element set it */
 .rendered-code-block-wrapper .HyperMD-codeblock-bg {
   opacity: 0;
@@ -490,7 +476,7 @@ body.unified-cm-highlighting.theme-dark.cm-theme-solarized-light {
 /* Admonitions have margins by default. We don't need these in edit mode */
 /* You can add the margins back in, if you want, but you'll need to adjust the <CODE> button positioning */
 .rendered-code-block-wrapper .admonition {
-  margin: 0.2em;
+  margin: 0em;
 }
 
 /* END: Style rendered code blocks */
@@ -516,26 +502,76 @@ body.unified-cm-highlighting.theme-dark.cm-theme-solarized-light {
   padding: 0px;
 }
 
-/* START: Reset default theme styling of rendered tables */
+/* START: Banner rendering */
 
-/* START: Rendered code block <CODE> button styling and placement */
-
-.rendered-code-block-wrapper .CodeMirror-line .CodeMirror-widget {
+body.cm-render-banners div[data-banner] .CodeMirror-code {
+  margin-top: var(--banner-height);
+  margin-bottom: calc(-1 * var(--banner-height));
+}
+/* the style below is needed to ensure the banner isn't removed when there is
+   no vertical scroll bar */
+body.cm-render-banners div[data-banner] .CodeMirror-vscrollbar {
+  display: block;
+  bottom: 0;
+}
+body.cm-render-banners div[data-banner] .CodeMirror-vscrollbar::before {
+  content: "";
+  height: var(--banner-height);
+  width: 100%;
   position: absolute;
-  right: 2em;
-  top: 0.85em;
-  z-index: 3 !important;
-  line-height: 1.5;
+  top: 0;
+  left: 0;
+  background: var(--banner);
+  background-size: cover;
+  background-position: var(--banner_x) var(--banner_y);
+}
+body.cm-render-banners div[data-banner] .CodeMirror-gutter.CodeMirror-linenumbers,
+.mod-root .CodeMirror-gutter.CodeMirror-foldgutter {
+  background: transparent;
+}
+body.cm-render-banners div[data-banner][data-banner-style="gradient"] .CodeMirror-vscrollbar::before {
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
 }
 
-.rendered-code-block-wrapper .CodeMirror-line .CodeMirror-widget .hmd-fold-code-stub {
-  height: 1.7em;
+/* END: Banner rendering */
+
+/* START: Rendered code & html block <CODE> button styling and placement */
+
+.rendered-code-block-wrapper .CodeMirror-line .CodeMirror-widget,
+.rendered-html-block-wrapper .CodeMirror-line .CodeMirror-widget {
+  position: absolute;
+  left: 5px;
+  top: -1.5em;
+  padding-bottom: 0.5em;
+  z-index: 3;
+  line-height: 1.5;
+  display: none;
+}
+.cm-s-obsidian .CodeMirror-linewidget.rendered-html-block,
+.cm-s-obsidian .CodeMirror-linewidget.rendered-code-block {
+  padding: 0 5px;
+}
+.rendered-html-block-wrapper:hover .CodeMirror-line .CodeMirror-widget,
+.rendered-code-block-wrapper:hover .CodeMirror-line .CodeMirror-widget {
+  display: inline-flex;
+}
+.rendered-html-block-wrapper .CodeMirror-linewidget,
+.rendered-code-block-wrapper .CodeMirror-linewidget {
+  /* this is needed to have CM properly calculate the widget height */
+  /* when using display: block, margins on child elements don't cause the parent to expand */
+  display: grid;
+}
+
+.cm-s-obsidian .CodeMirror-widget :where(.hmd-fold-code-stub, .hmd-fold-html-stub) {
   font-size: 0.7rem;
   font-family: var(--font-monospace);
   font-weight: 600;
+  margin: 0;
+  padding: 0em 0.2em;
+  line-height: 1.75em;
 }
 
-.rendered-code-block-wrapper.rendered-query-wrapper .CodeMirror-line .CodeMirror-widget {
+/* .rendered-code-block-wrapper.rendered-query-wrapper .CodeMirror-line .CodeMirror-widget {
   right: 0.1em;
   top: 0.1em;
 }
@@ -548,7 +584,7 @@ body.unified-cm-highlighting.theme-dark.cm-theme-solarized-light {
 .rendered-code-block-wrapper.rendered-chart-wrapper .CodeMirror-line .CodeMirror-widget {
   right: 0.2em;
   top: 0.2em;
-}
+} */
 
 /* END: Rendered code block <CODE> button styling and placement */
 
