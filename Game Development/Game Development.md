@@ -136,4 +136,4 @@ vec3 operator++(int x); // i++
 ```
 
 ## Constructors:
-* 
+* return this()
