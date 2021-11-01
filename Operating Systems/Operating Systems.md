@@ -485,5 +485,27 @@ Bounds allows us to protect memory
 
 [[Exam 2 Terms]]
 
+---
+
+After exam 2
+
+Passing a vector as a 2d array
+
+Vector is an array with some data, a length, and some field that might be called allocated
+
+Like an arraylist
+
+Data is stored contiguously
+
+```c++
+vector<const char *> v;
+for (string str: args){
+	v.push_back(str.c_str());
+}
+v.push_back(nullptr);
+return v.data();
+
+```
+
 
 
