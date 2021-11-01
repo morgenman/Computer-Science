@@ -510,7 +510,6 @@ return v.data();
 ---
 
 # Paged memory
-## 16 bit
 * Address translation
 	* How do you translate an address
 	* Look it up in table to see..??
@@ -534,5 +533,32 @@ Process address Space:
 16 pages
 
 Translated to:
-4 bit 12 bit offset from virtual address
+(4 bit page number->20 bit frame number = 20bit) + 12 bit offset from virtual address = 32 bits
+
+* Translation example:`11111111111100` 
+* 1111-> lookup in page table
+	* get back 00000000000000000000
+* 1111111100 offset
+
+* whenever I use address it's a per process virtual address
+* whenever running in non-privileged mode
+
+
+Let's try that again:
+
+<page #, offset>
+*page #*:which element in page table
+*offset*: which byte in the page we are referring to 
+
+<frame #, offset>
+*frame #*: which block in actual memory
+*offset*: which byte in frame (same as page)
+
+
+Types of questions:
+How big are these things?
+
+
+
+
 
