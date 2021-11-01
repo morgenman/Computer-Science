@@ -115,9 +115,37 @@ Two cases:
 1. v or y contain more than one kind of symbol (2 symbols, either a & b or b & c)
 	* let k = 2
 	* $uv^2xy^2z$ 
-2. .
-	* . 
+		* v or y have 2 characters, so repeating them means they are out of order when power 2 applies
+		* so if v x y was aa a ab => aaaa a abab 
+		* now there is an a after a b...
+	* also, the number of b's and c's is different 
+2. v & y each contain one type of symbol
+	*  $uv^2xy^2z$ 
+	* Options:
+		* v is all a's; y is all b's 
+			* $a^{p+|v|}b^{p+|y|}c^{p}\notin L$
+		* v is all b's; y is all c's 
+			* $a^pb^{p+|v|}c^{p+|y|}\notin L$
+One of these cases must occur, $\therefore$ a contradiction must occur
 
+## Example: ww
+L = {ww} (not a palindrome)
+
+bla bla proof stuff
+
+let w = $0^p1^p0^p1^p$
+w consists of 4 blocks of length p 
+
+|vxy| $\leq$ p => vxy can can touch at most two blocks
+suppose that v and y are both contained within a single block. 
+
+say block 1. ie: vxy is all 0's
+
+$uv^2xy^2z$ => $0^{p+i}1^p0^p1^p$ for i > 0
+
+$uv^2xy^{2}z\notin L$
+
+**Now, for HW, look at multiple cases**
 
 
 
