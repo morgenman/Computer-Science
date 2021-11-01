@@ -114,4 +114,17 @@ https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm
 * v.push_back(1);
 * allows overloading operators
 	* v[0] instead of v.at(0);
-	* 
+
+* Associative Array
+	* Map
+	* map<string, string> m;
+	* m["cat"];
+		* this is operator overloading
+			
+* imagine you make a vector
+
+```c++
+vec3 v{1,2.5,3}, w{0,1,2},u;
+u = v+w;
+```
+	
