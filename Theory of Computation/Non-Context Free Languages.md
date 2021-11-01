@@ -79,6 +79,22 @@ if k = 2 -> uv$^2$xy$^2$z
 	2. vy $\neq$ e
 	3. uv$^{K}$xy$^{K}$z $\in$ L for all k $\geq$ 0
 
+> Proof: 
+> Let L be a CFL and let G be the CFG that generates L 
+> Let b be the maximum number of symbols on RHS of any rule
+> V is the number of variables
+> Let p = max(b$^{|V|}$+1,b$^{|V|+1}$)
+> Parse tree: 
+> Number of steps is the same as the height of the parse tree
+> max length of string is b$^h$
+> consider the smallest possible parse tree for w
+> Subtree w:
+> Parse tree
+> because |w|$\geq$ b$^{|v|}$ the height of the tree must be greater than |v|
+> Let $\pi$  be on 
+
+
+
 
 
 

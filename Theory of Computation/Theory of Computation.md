@@ -223,3 +223,5 @@ Let's do another example for ada? pda? didn't hear her right... :
 
 
 # Ask about last hw question
+
+![[Non-Context Free Languages#Pumping Lemma]]
