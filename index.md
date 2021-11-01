@@ -1,9 +1,15 @@
-[[Databases]]
+# Cole's Notes
+## I really should style these...
 
-[[Game Development]]
+### [[Databases]]
 
-[[Operating Systems]]
+### [[Game Development]]
 
-[[Professional Practice]]
+### [[Operating Systems]]
 
-[[Theory of Computation]]
+### [[Professional Practice]]
+
+### [[Theory of Computation]]
+
+Note: if there is an issue with a dead link, make sure that there aren't too many dashes in the url. Sometimes if I do `note - name` it becomes note---name.html, but the link points to note-name.html (or something like that)
+

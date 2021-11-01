@@ -4,7 +4,6 @@
 -  [[Fall 2021/_Index_of_Fall 2021|_Index_of_Fall 2021]]
 -  [[Game Development/_Index_of_Game Development|_Index_of_Game Development]]
 -  [[index|index]]
--  [[Japanese Meeting|Japanese Meeting]]
 -  [[Operating Systems/_Index_of_Operating Systems|_Index_of_Operating Systems]]
 -  [[Professional Practice/_Index_of_Professional Practice|_Index_of_Professional Practice]]
 -  [[Science of Learning|Science of Learning]]
