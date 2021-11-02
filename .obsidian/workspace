@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Pumping Lemma.md",
+            "file": "Databases/Databases.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Pumping Lemma.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Pumping Lemma.md"
+                "file": "Databases/Databases.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Pumping Lemma.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,6 +135,7 @@
   },
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
+    "Databases/Databases.md",
     "Theory of Computation/Pumping Lemma.md",
     "Databases/Entity-Relationship.md",
     "Operating Systems/Schedulers.md",
@@ -143,7 +144,6 @@
     "Professional Practice/Interview.md",
     "Professional Practice/Presentation 1- Feedback.md",
     "Professional Practice/Losing Lena.md",
-    "Professional Practice/Picture a Scientist Notes.md",
-    "Professional Practice/_Index_of_Professional Practice.md"
+    "Professional Practice/Picture a Scientist Notes.md"
   ]
 }
