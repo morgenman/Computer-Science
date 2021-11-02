@@ -298,4 +298,28 @@ dependencies...
 
 
 
+# Inference Rules of FD
+## Reflexive
+if $y\subseteq x$ then x -> y; trivial FD
+## Augmentation
+if x -> y; xz -> yz; xz is x $\cup$ z
+## Transitive
+if x -> y and y -> z then x -> z
+## Decomposition
+if x -> yz then x -> y and x -> z
+## Union
+if x -> y and x -> z then x -> yz
+## Psuedotransitivity 
+if x -> y and wy -> z then wx -> z
 
+# Equivalence of set of FD's
+Two sets of FD's F and G are equivalent if:
+1. every FD in F can be inferred from G
+2. every FD in G can be inferred from F
+3. F$^+$ = G$^+$ ( )
+
+minimal basis for a relation
+*minimal basis*: correct set of FD's
+* the minimum number of FD's to describe a relation
+
+*prime attribute*: an attribute of a candidate key (each is one)

@@ -35,7 +35,8 @@
     "deallocate",
     "chipset",
     "pseudorandomly",
-    "freesync"
+    "freesync",
+    "Psuedotransitivity"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
