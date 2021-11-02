@@ -349,6 +349,32 @@ minimal of E
 	(x -> A1, x -> A2, ... x -> An)
 3. for each FD (x -> A) in F
    for each attribute B that is an element of x
-   if {{F-x -> A} $\cup$ x-B -> A} is equivalent to E, 
+   if {{F-(x -> A)} $\cup$ x-B -> A} is equivalent to E, 
    then replace x -> A with x-B -> A in F
-4. 
+4. For each remaining FD's x -> A in F
+   if F - {x -> A} is equivalent to F
+   then remove x -> A from F
+
+## Example: E = {B -> A, D -> A, AB -> D}
+No more than one attribute on RHS. 
+Jump to step 3
+
+Find FD that has more than one on LHS
+
+AB -> D
+find if there are any extraneous attributes
+
+B -> A by augmentation rule
+BB -> AB
+B -> AB
+
+use transitive rule w/ AB -> D
+**B -> D**
+is A extraneous? yes.
+
+Now remove A: E = {B -> A, D -> A, B -> D}
+from this we can see that B -> A is redundant (implied by transitivity)
+
+E = {B -> D, D -> A} 
+Done!
+
