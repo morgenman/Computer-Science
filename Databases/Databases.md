@@ -322,4 +322,33 @@ minimal basis for a relation
 *minimal basis*: correct set of FD's
 * the minimum number of FD's to describe a relation
 
-*prime attribute*: an attribute of a candidate key (each is one)
+*Prime Attribute*: an attribute of a candidate key (each is one)
+
+F is the set of FD's, the minimal basis of F say F' is produced by removing extraneous attributes in F
+
+*Extraneous Attribute*: An attribute is extraneous if we remove it without changing the closure of the set of dependencies..
+e.g. F is a set of FDs
+F = {x->A , , ...}
+attribute y is extraneous if y $\subseteq$ x and {F-(x -> A)$\cup$ x-y -> A} => logically represent F
+
+let x = {y,z,b,c}
+if y is trivial...
+
+yzbc -> A    < remove this
+
+add zbc -> A
+
+# How to find Minimal Basis for a given set of FDs
+## Input
+set of FDs: E
+## Output
+minimal of E
+## Procedure 
+1. set F = E
+2. replace each FD  (x -> A1...An) in F by applying decomposition/splitting rule
+	(x -> A1, x -> A2, ... x -> An)
+3. for each FD (x -> A) in F
+   for each attribute B that is an element of x
+   if {{F-x -> A} $\cup$ x-B -> A} is equivalent to E, 
+   then replace x -> A with x-B -> A in F
+4. 
