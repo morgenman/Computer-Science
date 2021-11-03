@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Theory of Computation/Non-Context Free Languages.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/Non-Context Free Languages.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Theory of Computation/Non-Context Free Languages.md"
               }
             }
           },
@@ -119,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Theory of Computation/Non-Context Free Languages.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -133,6 +133,8 @@
   },
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
+    "Theory of Computation/Non-Context Free Languages.md",
+    "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Databases/Databases.md",
     "Theory of Computation/Pumping Lemma.md",
@@ -140,8 +142,6 @@
     "Operating Systems/Schedulers.md",
     "Operating Systems/Process.md",
     "Operating Systems/Exam 2 Terms.md",
-    "Professional Practice/Interview.md",
-    "Professional Practice/Presentation 1- Feedback.md",
-    "Professional Practice/Losing Lena.md"
+    "Professional Practice/Interview.md"
   ]
 }

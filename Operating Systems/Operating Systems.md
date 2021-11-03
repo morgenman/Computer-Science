@@ -535,7 +535,7 @@ Process address Space:
 Translated to:
 (4 bit page number->20 bit frame number = 20bit) + 12 bit offset from virtual address = 32 bits
 
-* Translation example:`11111111111100` 
+* Translation example: `11111111111100` 
 * 1111-> lookup in page table
 	* get back 00000000000000000000
 * 1111111100 offset
@@ -592,7 +592,7 @@ An *address space* is all of the memory that a process/machine can address
 * everything we work with is byte addressable 
 * if it ends in 00 it's a multiple of 4
 
-the something or another is 2^k
+the something or another is $2^k$
 
 ## Virtualization of Memory
 * should be transparent, process should be unaware
@@ -600,9 +600,32 @@ the something or another is 2^k
 * all addresses in process (contents of IP, pointers, `load/store` instruction targets) are virtual
 * indirect addressing, through an OS supported translator, is always applied for user space machine code
 * user space machine code cannot access memory directly
+
 ## How to do Address Translation (contiguous allocation, not paged)
 * We want memory translation (moving memory without linking)
 	* dynamic memory relocation
 * A **base register** is a CPU or MMU register that permits dynamic memory relocation
 * the *physical* address is calculated by adding the virtual address to the value in the base register
+* base register alone can permit user programs to generate dangerous addresses
+* combined with **bounds register**, making the translation safer
+### Problems
+Using single base/bounds pair for a process permits dynamic relocation of the *who virtual address space*
+This requires contiguous **physical** memory that can contain the **virtual** address space
+Fixed size process will probably over-allocate, leading to internal fragmentation (inside of allocated memory not using all internal memory)
+Variable sized process spaces will lead to external fragmentation (in actual physical memory)
+### Solution: multiple base/bounds pairs
+easier to fit if virtual address space is broken down into multiple pieces, each with it's own base/bounds pair
+can break down by **segment**
+* 4 registers = left most pair indicate which segment
+* OS can allocate 4 blocks, each a quarter of the size of the virtual address space 
+* etc...
+* **Speed**: addition is expensive
+* Big block vs small block
+
+
+
+
+
+
+
 
