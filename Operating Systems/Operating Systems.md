@@ -565,7 +565,7 @@ How big are these things?
 * creates a new PCB - OS specific data structure, access must be privileged
 * is a library wrapper around a *system call*
 * Trap(software generated interrupt) to the OS. *k-stack* saved to current (parent) PCB
-* duplicate parent PCB, duplicate all file descriptors, duplicate memory assignment but separate writable pages
+* **duplicate parent PCB**, duplicate all file descriptors, duplicate memory assignment but separate writable pages
 * **Policy**: Prefer parent or child process by returning from the system call to one or the other
 
 ## Exec
@@ -575,9 +575,34 @@ How big are these things?
 * exec() is a library wrapper around a *system call*
 * has to change Instruction Pointer
 * Trap to OS. Save context to PCB. Release user memory (will keep FD and most of PCB the same)
+* load beginning of code segment of `cmd` file. Allocate new memory for *heap* and *stack* for a new program
+	* *heap* is where we get memory when we call new
+	* *stack* is the memory that stores calls? not sure
+* put string `cmd` and provided arguments in memory according to OS convention
+* Modify context so IP contains virtual starting address for a new program
+* return from interrupt
+* **no PCB created** (kept the old one, PID stayed the same)
 
 
+# Address Space
+An *address space* is all of the memory that a process/machine can address
 
+* if the address refers to actual RAM locations, they are **physical** addresses in a physical address space
+* if addresses must be translated before they refer to actual RAM locations, they are **virtual** addresses in a virtual address space
+* everything we work with is byte addressable 
+* if it ends in 00 it's a multiple of 4
 
+the something or another is 2^k
 
+## Virtualization of Memory
+* should be transparent, process should be unaware
+* the process sees a contiguous address space beginning at 0
+* all addresses in process (contents of IP, pointers, `load/store` instruction targets) are virtual
+* indirect addressing, through an OS supported translator, is always applied for user space machine code
+* user space machine code cannot access memory directly
+## How to do Address Translation (contiguous allocation, not paged)
+* We want memory translation (moving memory without linking)
+	* dynamic memory relocation
+* A **base register** is a CPU or MMU register that permits dynamic memory relocation
+* the *physical* address is calculated by adding the virtual address to the value in the base register
 
