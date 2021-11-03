@@ -170,6 +170,73 @@ therefore not in the language, and since neither is in language, not a CFL
 
 
 
-## Example: L = {a^i b^i c^k | 0<=i<=j<= k}
+## Example: L = {a^i b^j c^k | 0 <= i <= j <= k}
+
+Let L be a CFL and let p be the pumping length given by a pumping length
+
+w = a$^p$ b$^p$ c$^p$
+* we are choosing this because we know a^n b^n c^n not cfl, but a little different since we will have to pump up due to the less than
+|w| $\geq$ p 
+
+therefore according to pumping lemma w can be represented as uvxyz where:
+1. |vxy| $\leq$ P 
+2. vy $\neq$ e
+3. uv$^{K}$xy$^{K}$z $\in$ L for all k $\geq$ 0
+
+### Case 1
+Both v and y contain the same symbol
+three subcases.. can't be generalized
+1. v & y are in the middle (all b's)
+	* b^p => vxy
+	* pumping down ... $a^{p}b^{p-|m|}c^{p}$
+	* |a| > |b|
+	* soooo
+	* $uv^{0}xy^{0}z\notin L$ because |a| > |b|
+2. v and y are in the 1st part of the L (all a's)
+	* pumping down won't work, so we need to pump up
+	* Pumping up
+		* k = 2
+		* $a^{p+|m|}b^{p}c^{p}\notin l$
+3. v and y are in the last part of L (all C's)
+	* pump down 
+		* $a^{p}b^{p}c^{p=|m|}\notin L$
+
+### Case 2
+both v and y contain different symbols
+can be generalized:
+1. v is all a's and some b's ; y is all b's
+2. v is all b's and some c's; y is all c's
+OR
+1. v is some a's
+2. b is some a's and some b's
+
+you can say "**either v or y contain 2 different symbols**" (thanks Nick!)
+
+either way, the order is going to be wrong
+* like if v = aaabbb, v^2 is aaabbbbaaabbb
+	* now a's are after b's
+
+Pump up: $uv^{2}xy^{2}z \notin L$
+
+blabla, therefore not in set of CFL etc
+
+
+---
+# Homework by Friday:
+(from book)
+2.30: 
+a) {0$^n$ 1$^n$ 0$^n$ 1$^n$  | n $\ge$ 0} is not a CFL
+d) {t$_1$ # t$_2$ # ... # t$_k$ | }
+
+
+
+
+
+
+
+
+
+
+
 
 

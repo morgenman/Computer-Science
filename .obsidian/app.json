@@ -36,7 +36,8 @@
     "chipset",
     "pseudorandomly",
     "freesync",
-    "Psuedotransitivity"
+    "Psuedotransitivity",
+    "subcases"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
