@@ -226,7 +226,49 @@ blabla, therefore not in set of CFL etc
 (from book)
 2.30: 
 a) {0$^n$ 1$^n$ 0$^n$ 1$^n$  | n $\ge$ 0} is not a CFL
-d) {t$_1$ # t$_2$ # ... # t$_k$ | }
+d) {t$_1$ # t$_2$ # ... # t$_k$ | k $\ge$ 2, each t$_i$ $\in$ {a,b}$^{*}$ and t$_i$ = t$_j$ for some i $\ne$ j}
+2.33:
+show that f = {a$^{i}$ b$^{j}$ | i = kj for some positive integer k} is not a CFL
+
+---
+
+## Example: L = {1^i # 1^j # 1^{i+j} | i <= j}
+" CFL Pumping lemma stuff
+
+choose w = 1$^{p}$ # 1$^{p}$ # 1$^{2p}$
+uvxyz
+
+### Case 1
+either v or y contains # 
+* uv$^{2}$xy$^{2}$z => 1$^{p}$##1$^{p}$#1$^{2p}\notin L$
+* uv$^{0}$xy$^{0}$z => 1$^{p}$1$^{p}$#1$^{2p}\notin L$ 
+
+^^ one is pumping up, one is down, we *don't* need to do both, just show one
+
+> She is reexplaining this case...
+> uv$^{2}$xy$^{2}$z => #1#1#1^p ... too many hashes
+> probably ignore this to not get confused
+
+### Case 2
+neither v or y contain # 
+
+v & y could be first, second, or third block of the string (like between the #)
+
+they will fall within a block
+
+1. first block (v & y are in first block)
+* length of $|vxy| \le p$, $\therefore$ v and y are in 1st block
+* soo, we should pump up
+* uv$^{2}$xy$^{2}$z$\notin$ L because i>j 
+2. second block (v & y are in second block)
+	* pump down
+	* uv$^{0}$xy$^{0}$z $\notin$ L bc i>j
+3. third block  (v & y are in third block)
+	* v 
+
+
+to be continued
+
 
 
 
