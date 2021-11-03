@@ -137,3 +137,9 @@ vec3 operator++(int x); // i++
 
 ## Constructors:
 * return this()
+
+# 3d graphics?
+## Three spaces:
+1. model space
+2. world space
+3. view space
