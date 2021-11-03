@@ -133,21 +133,43 @@ L = {ww} (not a palindrome)
 
 bla bla proof stuff
 
+1. |vxy| $\leq$ P 
+2. vy $\neq$ e
+3. uv$^{K}$xy$^{K}$z $\in$ L for all k $\geq$ 0
+
 let w = $0^p1^p0^p1^p$
 w consists of 4 blocks of length p 
 
-|vxy| $\leq$ p => vxy can can touch at most two blocks
-suppose that v and y are both contained within a single block. 
+| vxy | $\leq$ p => vxy can can touch at most two blocks 
+
+### Case 1
+suppose that v and y are both contained within a single block (same symbol)
 
 say block 1. ie: vxy is all 0's
 
+let k = 2
+
 $uv^2xy^2z$ => $0^{p+i}1^p0^p1^p$ for i > 0
 
-$uv^2xy^{2}z\notin L$
+$uv^2xy^{2}z\notin L$ 
+
+if v & y are all 1's:
+$0^p1^{p+i}0^p1^p$ is also $\notin$ L
 
 **Now, for HW, look at multiple cases**
+### Case 2
+suppose v & y each have two different symbols
+
+0's and 1's mixed up
+
+$uv^2xy^2z\notin L$ because the 0's and 1's are not in order
+
+therefore not in the language, and since neither is in language, not a CFL
+
+...
 
 
 
+## Example: L = {a^i b^i c^k | 0<=i<=j<= k}
 
 
