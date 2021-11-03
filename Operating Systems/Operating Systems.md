@@ -558,6 +558,25 @@ Let's try that again:
 Types of questions:
 How big are these things?
 
+---
+
+# Fork() vs Exec()
+## Fork
+* creates a new PCB - OS specific data structure, access must be privileged
+* is a library wrapper around a *system call*
+* Trap(software generated interrupt) to the OS. *k-stack* saved to current (parent) PCB
+* duplicate parent PCB, duplicate all file descriptors, duplicate memory assignment but separate writable pages
+* **Policy**: Prefer parent or child process by returning from the system call to one or the other
+
+## Exec
+* loads new program code into memory and starts loaded program *from the beginning*
+* Will read from *filesystem*. Will modify *context*.
+* Privileged operations
+* exec() is a library wrapper around a *system call*
+* has to change Instruction Pointer
+* Trap to OS. Save context to PCB. Release user memory (will keep FD and most of PCB the same)
+
+
 
 
 

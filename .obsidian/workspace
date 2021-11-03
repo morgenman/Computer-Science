@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,6 +133,7 @@
   },
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
     "Databases/Databases.md",
     "Theory of Computation/Pumping Lemma.md",
     "Databases/Entity-Relationship.md",
@@ -142,7 +142,6 @@
     "Operating Systems/Exam 2 Terms.md",
     "Professional Practice/Interview.md",
     "Professional Practice/Presentation 1- Feedback.md",
-    "Professional Practice/Losing Lena.md",
-    "Professional Practice/Picture a Scientist Notes.md"
+    "Professional Practice/Losing Lena.md"
   ]
 }
