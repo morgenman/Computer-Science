@@ -384,4 +384,21 @@ Notes for 11/4
 
 # Normalization: decomposing the table to fit normal forms
 ## Guidelines for good scheme design
+```mysql
+create table Employee(ename,ssn,bdate, address, dnumber);
+create table Department(dname, etc etc);
+create table Dept_loc(...);
+create table project(...);
+create table workson(...);
+```
+> Spurious tuples:
+> like teaches X instructor
+> probably only one row is meaningful, and the rest are pp
+
 1. each tuple in relation should represent only one entity
+	* if we were doing one for a company, we might group things by employee, department etc..
+	* big example
+	* if there are 100 ppl working for billing, then we will need to update all 100 roles when changing something for department
+2. Design a schema that does not suffer from insertion, deletion, and update anomalies 
+3. Relations should be designed such that their tuples will have as few NULL values as possible
+	* Attributes that are NULL frequently might be better in a separate table
