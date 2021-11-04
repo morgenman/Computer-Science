@@ -37,7 +37,13 @@
     "pseudorandomly",
     "freesync",
     "Psuedotransitivity",
-    "subcases"
+    "subcases",
+    "Boyce",
+    "Codd",
+    "multivalued",
+    "FDs",
+    "eg",
+    "multivalued"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",

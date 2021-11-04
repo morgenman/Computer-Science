@@ -1,0 +1,1 @@
+*Prime Attribute*: an attribute of a candidate key (each is one)

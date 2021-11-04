@@ -322,7 +322,7 @@ minimal basis for a relation
 *minimal basis*: correct set of FD's
 * the minimum number of FD's to describe a relation
 
-*Prime Attribute*: an attribute of a candidate key (each is one)
+![[Prime Attribute]]
 
 F is the set of FD's, the minimal basis of F say F' is produced by removing extraneous attributes in F
 

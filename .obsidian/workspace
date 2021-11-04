@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "f-(",
+                "query": "prime ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -130,12 +130,14 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125
+    "width": 265.14288330078125,
+    "collapsed": true
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
     "Databases/Normal Forms.md",
     "Databases/Databases.md",
+    "Databases/Prime Attribute.md",
     "Theory of Computation/Theory of Computation.md",
     "index.md",
     "Operating Systems/Operating Systems.md",

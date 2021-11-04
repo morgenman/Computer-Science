@@ -27,5 +27,30 @@ Formalize what designs are bad, test for them
 ## Formal Definition:
 Conditions using keys and FDs of a relation to certify whether a relation schema is a particular in normal form 
 
+# Defining Normal Forms:
+## First Normal Form
+Do not allow composite attributes and multivalued attributes
 
+* eg multivalued: address with street, city etc...
+	* one attribute, multiple "fields"
+* eg composite: name with first, middle, last
+	* multiple attributes representing one thing (like fname & lname)	
+* Most db are in first normal
 
+## Second Normal Form
+A relation schema R is in second normal form if every non-prime attribute is fully functionally dependent on primary key
+
+![[Prime Attribute]]
+
+> eg (ssn, pnumber, hours, ename, pname, ploc) becomes
+> (ssn, pnumber, hours)
+> (ssn ename)
+> (pnumber pname ploc)
+
+## Third Normal Form
+
+## Boyce Codd Normal Form
+
+## Fourth Normal Form
+
+## Fifth Normal Form

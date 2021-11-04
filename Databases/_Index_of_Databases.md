@@ -52,6 +52,7 @@
 -  [[Databases/Pasted image 20211028140816.png|Pasted image 20211028140816.png]]
 -  [[Databases/Pasted image 20211028141035.png|Pasted image 20211028141035.png]]
 -  [[Databases/Primary Key|Primary Key]]
+-  [[Databases/Prime Attribute|Prime Attribute]]
 -  [[Databases/Project|Project]]
 -  [[Databases/Relational Algebra|Relational Algebra]]
 -  [[Databases/Relational Model|Relational Model]]
