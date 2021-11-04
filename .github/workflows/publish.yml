@@ -28,6 +28,9 @@ jobs:
       
     - name: git stuff
       run: git clone "https://github.com/morgenman/Computer-Science.git" _notes/Public/CS 
+    
+    - name: permissions
+      run: chmod +x ./run.sh
 
     - name: black magic
       run: ./run.sh

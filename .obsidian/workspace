@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "index.md",
+            "file": "Databases/Databases.md",
             "mode": "source"
           }
         }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Databases/Databases.md"
               }
             }
           },
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -130,16 +129,17 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125
+    "width": 265.14288330078125,
+    "collapsed": true
   },
   "active": "dc193a640d7be711",
   "lastOpenFiles": [
-    "index.md",
     "Databases/Databases.md",
+    "Theory of Computation/Theory of Computation.md",
+    "index.md",
     "Operating Systems/Operating Systems.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Non-Context Free Languages.md",
-    "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Pumping Lemma.md",
     "Databases/Entity-Relationship.md",
     "Operating Systems/Schedulers.md",
