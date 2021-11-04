@@ -349,7 +349,7 @@ minimal of E
 	(x -> A1, x -> A2, ... x -> An)
 3. for each FD (x -> A) in F
    for each attribute B that is an element of x
-   if {{F-(x -> A)} $\cup$ x-B -> A} is equivalent to E, 
+   if { {F - ( x -> A)} $\cup$ x-B -> A} is equivalent to E, 
    then replace x -> A with x-B -> A in F
 4. For each remaining FD's x -> A in F
    if F - {x -> A} is equivalent to F
@@ -378,3 +378,10 @@ from this we can see that B -> A is redundant (implied by transitivity)
 E = {B -> D, D -> A} 
 Done!
 
+
+---
+Notes for 11/4
+
+# Normalization: decomposing the table to fit normal forms
+## Guidelines for good scheme design
+1. each tuple in relation should represent only one entity
