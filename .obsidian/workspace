@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "dc193a640d7be711",
+        "id": "f83761c040a3e7e4",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "Databases/Normal Forms.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Databases/Normal Forms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Databases/Normal Forms.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Databases/Normal Forms.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -130,11 +130,11 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125,
-    "collapsed": true
+    "width": 265.14288330078125
   },
-  "active": "dc193a640d7be711",
+  "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Databases/Normal Forms.md",
     "Databases/Databases.md",
     "Theory of Computation/Theory of Computation.md",
     "index.md",
@@ -142,8 +142,6 @@
     "Game Development/Game Development.md",
     "Theory of Computation/Non-Context Free Languages.md",
     "Theory of Computation/Pumping Lemma.md",
-    "Databases/Entity-Relationship.md",
-    "Operating Systems/Schedulers.md",
-    "Operating Systems/Process.md"
+    "Databases/Entity-Relationship.md"
   ]
 }
