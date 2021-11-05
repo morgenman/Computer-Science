@@ -38,7 +38,7 @@ Do not allow composite attributes and multivalued attributes
 * Most db are in first normal
 
 ## Second Normal Form
-A relation schema R is in second normal form if every non-prime attribute is fully functionally dependent on primary key
+A relation schema R is in second normal form if in first normal form and every non-prime attribute is fully functionally dependent on primary key
 
 ![[Prime Attribute]]
 
@@ -48,6 +48,8 @@ A relation schema R is in second normal form if every non-prime attribute is ful
 > (pnumber pname ploc)
 
 ## Third Normal Form
+A relation schema R is in third normal form if it is 2nd normal form & no non-prime attribute A in R is **transitively dependent** on the primary key 
+* 
 
 ## Boyce Codd Normal Form
 
