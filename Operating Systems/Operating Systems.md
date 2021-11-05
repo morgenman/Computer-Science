@@ -683,14 +683,44 @@ We need something in the CPU though:
 Fetch
 	Page Size	4KB
 	IP			0000210C (virtual address)
-	PTBR		F0000000
+	PBR			F0000000
 	sizeof(PTE)	4B
 Offset Bits		12b to address 4KB (3 hex digits)
 				10b to address 1KB, 2b to address 4
 				|20b page (5hex) | 12b offset(3hex)|
 Page #			00002
 Offset			10C
-	
-
+Address of PTE	F0000000 ...
+				(addressing into array, index*size of entry + index)
+				F0000000 + 4 * 00002 = F0000008
+RAM[F0000008] =	007F2
+Physical Address:
+				007F210C
 ```
 
+If privilege bit is not set, must be translated
+![[Pasted image 20211105084449.png]]
+
+### Metadata in PTE
+* present
+	* is the content of that page in a frame?
+	* if no: it's on a disk and has to be loaded OR needs to be allocated if brand new
+	* if new:
+		* page fault
+		* pause process
+		* start pulling from disk
+		* set present bit to 1
+		* restart instruction
+* dirty
+	* The data in the page has differed from the thing it was loaded from on disk
+	* let's say value of i is in page, but i has been changed
+	* we need to save the contents if we 'clear' this page to use it
+	* take whole thing, write to swap, mark as non present so all the data is saved
+	* swap on disk
+	* generally this would stay 1 forever, since it's been modified
+* reference
+	* has this page been referenced recently?
+	* if we need to load a frame from disk we have to 'choose a victim', choose one with reference of 0
+	* every once in a while we clear the reference bits on all of them, and see which ones are going to be used
+* valid
+	* if false, OS or compiler has dictated that we cannot actually use that bit of memory
