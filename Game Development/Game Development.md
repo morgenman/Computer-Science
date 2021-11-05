@@ -143,3 +143,25 @@ vec3 operator++(int x); // i++
 1. model space
 2. world space
 3. view space
+
+
+# Pathfinding
+## Graph...
+* nodes with weights
+
+Shortest Single Source Path
+Dijkstra's algorithm
+
+destination nodes are called: horizon
+
+sorted by distance
+
+breadth first, all 1st level nodes
+
+## A star algorithm
+for walking in game?
+
+
+
+
+

@@ -43,7 +43,8 @@
     "multivalued",
     "FDs",
     "eg",
-    "multivalued"
+    "multivalued",
+    "Pathfinding"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",
