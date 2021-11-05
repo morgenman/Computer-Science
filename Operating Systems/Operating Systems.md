@@ -608,23 +608,24 @@ the something or another is $2^k$
 * the *physical* address is calculated by adding the virtual address to the value in the base register
 * base register alone can permit user programs to generate dangerous addresses
 * combined with **bounds register**, making the translation safer
-### Problems
+### Problems...
 Using single base/bounds pair for a process permits dynamic relocation of the *who virtual address space*
 This requires contiguous **physical** memory that can contain the **virtual** address space
 Fixed size process will probably over-allocate, leading to internal fragmentation (inside of allocated memory not using all internal memory)
 Variable sized process spaces will lead to external fragmentation (in actual physical memory)
-### Solution: multiple base/bounds pairs
+### Solution? multiple base/bounds pairs
 easier to fit if virtual address space is broken down into multiple pieces, each with it's own base/bounds pair
 can break down by **segment**
 * 4 registers = left most pair indicate which segment
 	* effectively the base/bounds chunk of memory has been quartered
-	* code;heap;stack;data
+	* ***code;heap;stack;data***
 	* exe on disk has:
 		* code and data (global)
 		* anything static or global
 	* heap is dynamically allocated
 	* stack is all the local variables and parameters
-		* *current running functions*
+		* *current running functions & their activation records*
+	* code is where instructions for functions and stuff are held
 * OS can allocate 4 blocks, each a quarter of the size of the virtual address space 
 * still variable size, capable of fragmenting
 * all of this assumes you use the full address space
@@ -643,4 +644,53 @@ Between in use memory
 * only allocating a single size of block
 ### Problem: dissonance between picking big and small block sizes
 * Big: fewer base registers needed; more internal fragmentation
-* Small: 
+* Small: less fragmentation; more base registers
+* registers are expensive
+
+### Solution: Paged Virtual Memory
+*frame*: virtual
+*page*: physical
+
+small page size with translation information accessed indirectly from RAM
+
+We need something in the CPU though:
+*page table base register* (pbr): CPU/MMU register that contains the physical address of the beginning of the page table
+
+```nomnoml
+[PBR] -> [Page Table|PTE: Page Table entries which store frame numbers]
+```
+
+* PBR is part of context
+* per process
+* Address translation is done by separating to two parts
+* | Page # | Offset |
+* offset can only address x amount of bytes, so we *don't need* a bound's register
+## Page Translation:
+1. split virtual address <page,offset>
+2. use page as an index into the page table array
+3. get frame out of page table
+4. combine <frame,offset> into physical address
+
+*the idea is we are using small memory blocks, but keeping the addresses in ram, not in registers*
+
+> Side note:
+> Caching...
+> locality of reference, predictability of reference
+> We can speed up slowness by caching
+> We can fix the fragmentation with small pages
+
+```c++
+Fetch
+	Page Size	4KB
+	IP			0000210C (virtual address)
+	PTBR		F0000000
+	sizeof(PTE)	4B
+Offset Bits		12b to address 4KB (3 hex digits)
+				10b to address 1KB, 2b to address 4
+				|20b page (5hex) | 12b offset(3hex)|
+Page #			00002
+Offset			10C
+	
+
+```
+
