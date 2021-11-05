@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Non-Context Free Languages.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -121,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Non-Context Free Languages.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,13 +134,13 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
-    "Theory of Computation/Non-Context Free Languages.md",
+    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Non-Context Free Languages.md",
     "Databases/Normal Forms.md",
     "Databases/Databases.md",
     "Databases/Prime Attribute.md",
     "index.md",
-    "Operating Systems/Operating Systems.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Pumping Lemma.md",
     "Databases/Entity-Relationship.md"

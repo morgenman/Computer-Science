@@ -617,15 +617,30 @@ Variable sized process spaces will lead to external fragmentation (in actual phy
 easier to fit if virtual address space is broken down into multiple pieces, each with it's own base/bounds pair
 can break down by **segment**
 * 4 registers = left most pair indicate which segment
+	* effectively the base/bounds chunk of memory has been quartered
+	* code;heap;stack;data
+	* exe on disk has:
+		* code and data (global)
+		* anything static or global
+	* heap is dynamically allocated
+	* stack is all the local variables and parameters
+		* *current running functions*
 * OS can allocate 4 blocks, each a quarter of the size of the virtual address space 
-* etc...
-* **Speed**: addition is expensive
-* Big block vs small block
-
-
-
-
-
-
-
-
+* still variable size, capable of fragmenting
+* all of this assumes you use the full address space
+* speed of addition `O(log(bits))`
+	* we are doing addition
+* If we have a 32 bit address in hex
+	* lets say I have 256 byte pages (kinda small)
+	* if every page is this size I couldd split it to:
+	* | six hex digits | 2 hex digits|
+	* | frame/page #   | offset      |
+	* offset tends to be the same size
+	* every hex is 4 bits
+### Problem: External fragmentation
+Between in use memory
+### Solution? only issue one size of object
+* only allocating a single size of block
+### Problem: dissonance between picking big and small block sizes
+* Big: fewer base registers needed; more internal fragmentation
+* Small: 
