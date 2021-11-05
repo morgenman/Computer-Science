@@ -56,7 +56,8 @@ show that f = {a$^{i}$ b$^{j}$ | i = kj for some positive integer k} is not a CF
 
 show that f = {a$^{i}$ b$^{j}$ | i = kj for some positive integer k} is not a CFL
 
-let w = $a^{2p^{2}}b^{2p}$ (k = p)
+let w = $a^{2p^{2}}b^{2p}$ (k = p) the nested square is *not* the same square as on a
+a = 2p * p
 
 $uvxyz$
 1. |vxy|$\le$p
@@ -67,9 +68,27 @@ $uvxyz$
 let k = 2
 $uv^{2}xy^{2}\notin L$
 when we repeat them, out of order:
-### v & y contain a's 
+### both v & y contain a's 
 let k = 2
 $uv^{2}xy^{2}\notin L$
 | v y | = l 
 l < p < 2p
-$a^{2p^{2}+l}$
+$a^{2p^{2}+l}b^{2p}$
+
+2p^2+l is not a multiple of 2p
+
+### both v & y contain only b's 
+$uv^{m}xy^{m}z$
+
+m = 2p^2
+
+$a^{2p^{2}}b^{2p+2p^{2}}$ i < j $\ne$ L
+
+### V contains only a's and y contains only b's 
+$uv^{m}xy^{m}z$
+
+$a^{g+|v|}b^{h+|y|}$
+![[Pasted image 20211105095854.png]]
+
+
+Cover 3 conditions, same x, same y, 2 kinds of symbols

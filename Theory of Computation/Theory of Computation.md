@@ -220,10 +220,6 @@ Let's do another example for ada? pda? didn't hear her right... :
 
 ![[Non-Context Free Languages]]
 ![[Non-Context Free Languages#Theorem]]
-
-
-# Ask about last hw question
-
 ![[Non-Context Free Languages#Pumping Lemma]]
 
 
