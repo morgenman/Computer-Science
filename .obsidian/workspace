@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Chomsky Normal Form.md",
-            "mode": "source"
+            "file": "Theory of Computation/Theory of Computation.md",
+            "mode": "preview"
           }
         }
       }
@@ -79,7 +79,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Chomsky Normal Form.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Chomsky Normal Form.md"
+                "file": "Theory of Computation/Theory of Computation.md"
               }
             }
           },
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Chomsky Normal Form.md",
+                "file": "Theory of Computation/Theory of Computation.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -137,15 +137,15 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
-    "Theory of Computation/Chomsky Normal Form.md",
-    "Theory of Computation/_Index_of_Theory of Computation.md",
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Pumping Lemma.md",
+    "Theory of Computation/_Index_of_Theory of Computation.md",
+    "Theory of Computation/Chomsky Normal Form.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Non-Context Free Languages.md",
     "Theory of Computation/Exam Prep.md",
     "Operating Systems/Operating Systems.md",
     "Databases/Normal Forms.md",
-    "Databases/Databases.md",
-    "Databases/Prime Attribute.md"
+    "Databases/Databases.md"
   ]
 }

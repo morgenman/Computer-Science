@@ -16,7 +16,7 @@
   "containerAttributes": false,
   "syntaxHighlighting": false,
   "autoAlignTables": false,
-  "renderCode": true,
+  "renderCode": false,
   "renderHTML": false,
   "renderChart": false,
   "renderAdmonition": false,

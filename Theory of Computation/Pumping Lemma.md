@@ -159,7 +159,7 @@ Eg: $L=\{1^i\#1^j\#1^{i+j}\}$
 let i,j = p
 w is clearly $\geq p$
 if k = 0 $xy^kz$  => $1^{p-|y|}\#1^p\#1^{2p}\notin L$
-* 2p-|y|$\lt$2p
+* 2p-|y| $\lt$ 2p
 
 ---
 
