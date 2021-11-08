@@ -648,8 +648,8 @@ Between in use memory
 * registers are expensive
 
 ### Solution: Paged Virtual Memory
-*frame*: virtual
-*page*: physical
+*frame*: physical
+*page*: virtual
 
 small page size with translation information accessed indirectly from RAM
 
@@ -727,13 +727,45 @@ If privilege bit is not set, must be translated
 
 PTBR: Page table base register (PBR)
 
-# Memory:
-| Name      | Size  | Unit                  |
-| --------- | ----- | --------------------- |
-| PTBR      | 03010 |                       |
-| Page Size | 256B  | 8bits/offset or 2 Hex |
-| Metadata  | 9b    |                       |
-| Physical  | 1MB   | bits/address          |
-| Virtual   | 16kB  | bits/address          |
+2$^{10}$ 1KB
+2$^{16}$ 64KB (2$^{6}$ = 64)
+2$^{20}$ 1MB
+2$^{30}$ 1GB
 
-Physical 
+*frame*: physical
+*page*: virtual
+
+# Memory:
+| Name            | Size  | Unit                   | Explanation                     |
+| --------------- | ----- | ---------------------- | ------------------------------- |
+| PTBR            | 03010 |                        | Pointer at array of addresses[] |
+| Page/Frame Size | 256B  | 8 bits/offset or 2 Hex |                                 |
+| Metadata        | 9b    |                        |                                 |
+| Physical        | 1MB   | 20 bits/address        |                                 |
+| Virtual         | 64kB  | 16 bits/address        |                                 |
+
+bits per...
+
+frame #?
+- how many frames? Physical/page size
+- 20 - 8 = 12 bits / frame #
+- 2$^{12}$ = 4k
+
+page #?
+- how many pages?
+- 16 - 8 = 12 bits / page # 
+- 2$^{8}$ = 256
+
+```scheme
+230c load  R1, 1308
+2310 addi RI, R1, 1
+2314 store R1, 1308
+```
+
+What are the virtual addresses you get from running these lines:
+- fetch: `230C` is where we start 
+- load: then we pull instruction at `1308`(v) to R1
+- fetch: `2310` 
+then we process 
+
+
