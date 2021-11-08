@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -56,8 +56,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -130,10 +129,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125
+    "width": 265.14288330078125,
+    "collapsed": true
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Exam Prep.md",
     "Theory of Computation/Non-Regular Language.md",
@@ -142,7 +143,6 @@
     "Theory of Computation/RL Closure under Intersection.md",
     "Theory of Computation/Pumping Lemma.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
-    "Theory of Computation/Chomsky Normal Form.md",
-    "Game Development/Game Development.md"
+    "Theory of Computation/Chomsky Normal Form.md"
   ]
 }

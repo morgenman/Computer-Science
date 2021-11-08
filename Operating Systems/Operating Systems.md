@@ -724,3 +724,16 @@ If privilege bit is not set, must be translated
 	* every once in a while we clear the reference bits on all of them, and see which ones are going to be used
 * valid
 	* if false, OS or compiler has dictated that we cannot actually use that bit of memory
+
+PTBR: Page table base register (PBR)
+
+# Memory:
+| Name      | Size  | Unit                  |
+| --------- | ----- | --------------------- |
+| PTBR      | 03010 |                       |
+| Page Size | 256B  | 8bits/offset or 2 Hex |
+| Metadata  | 9b    |                       |
+| Physical  | 1MB   | bits/address          |
+| Virtual   | 16kB  | bits/address          |
+
+Physical 
