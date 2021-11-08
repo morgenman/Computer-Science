@@ -44,7 +44,8 @@
     "FDs",
     "eg",
     "multivalued",
-    "Pathfinding"
+    "Pathfinding",
+    "Polymorphism"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",

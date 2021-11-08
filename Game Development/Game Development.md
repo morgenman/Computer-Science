@@ -161,6 +161,9 @@ breadth first, all 1st level nodes
 ## A star algorithm
 for walking in game?
 
+# Polymorphism
+*Polymorphism*: relationship between classes; the idea that 
+
 
 
 
