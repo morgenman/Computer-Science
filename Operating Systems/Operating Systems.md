@@ -756,16 +756,50 @@ page #?
 - 16 - 8 = 12 bits / page # 
 - 2$^{8}$ = 256
 
+## Example:
+
 ```scheme
 230c load  R1, 1308
 2310 addi RI, R1, 1
 2314 store R1, 1308
 ```
 
+### Virtual
 What are the virtual addresses you get from running these lines:
 - fetch: `230C` is where we start 
 - load: then we pull instruction at `1308`(v) to R1
-- fetch: `2310` 
-then we process 
+---
+- fetch: `2310` add 1 to register 1
+---
+- fetch: `2314`
+- store: `1308`
+
+### Physical
+What are the physical addresses?
+`23`:page# `0C`:offset
+now we need frame number...
+
+XXX|0C
+what is XXX?
+
+- Page table entry 23
+- We need the sizeof(PTE[])
+	- frame#(in bits) + metadata(bits) rounded up to nearest 8 bits
+	- 12 bits + 9 bits = 21 bits => round up to 32 bits = 3B
+- 23(hex)* 3B = 69(hex)
+
+xxx is 03079 
+
+**Arithmetic is in Hex**
+
+| PTE[]   | Address | Result | Explanation                   |
+| ------- | ------- | ------ | ----------------------------- |
+| PTE[23] | 03079   | 971XXX | 03010 + 69                    |
+|         | 9710C   |        | now we have physical for 230C |
+| PTE[13] | 03049   | 0F7XXX | 03010 + 13 * 3                |
+|         | 0F708   |        | Now we have physical for 1308 |
+| PTE[23] | 030     | 971XXX | 03010 + 23 * 3                | 	
+
+
 
 
