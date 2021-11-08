@@ -795,11 +795,13 @@ xxx is 03079
 | PTE[]   | Address | Result | Explanation                   |
 | ------- | ------- | ------ | ----------------------------- |
 | PTE[23] | 03079   | 971XXX | 03010 + 69                    |
-|         | 9710C   |        | now we have physical for 230C |
+|         | 9710C   |        | Now we have physical for 230C |
 | PTE[13] | 03049   | 0F7XXX | 03010 + 13 * 3                |
 |         | 0F708   |        | Now we have physical for 1308 |
-| PTE[23] | 030     | 971XXX | 03010 + 23 * 3                | 	
-
-
-
+| PTE[23] | 03079   | 971XXX | 03010 + 23 * 3                |
+|         | 97110   |        | Now we have physical for 2310 |
+| PTE[23] | 03079   | 971XXX |                               |
+|         | 97114   |        | Now we have physical for 2314 |
+| PTE[13] | 03049   | 0F7XXX |                               |
+|         | 0F708   |        | Now we have physical for 1308 |
 
