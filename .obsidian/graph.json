@@ -1,9 +1,9 @@
 {
-  "collapse-filter": true,
-  "search": "",
+  "collapse-filter": false,
+  "search": "pumping",
   "showTags": false,
   "showAttachments": false,
-  "hideUnresolved": false,
+  "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [],
@@ -17,6 +17,6 @@
   "repelStrength": 10.5378151260504,
   "linkStrength": 1,
   "linkDistance": 88,
-  "scale": 0.3931299198883256,
-  "close": true
+  "scale": 1.9955039587751466,
+  "close": false
 }

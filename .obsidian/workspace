@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Theory of Computation/Theory of Computation.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "chom",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -85,7 +84,7 @@
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
+                "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
               }
             }
@@ -108,8 +107,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "284e0326b95de8de",
@@ -132,20 +130,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125,
-    "collapsed": true
+    "width": 265.14288330078125
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Exam Prep.md",
+    "Theory of Computation/Non-Regular Language.md",
+    "Theory of Computation/Closure.md",
+    "Theory of Computation/RL Closure under Union.md",
+    "Theory of Computation/RL Closure under Intersection.md",
     "Theory of Computation/Pumping Lemma.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
     "Theory of Computation/Chomsky Normal Form.md",
-    "Game Development/Game Development.md",
-    "Theory of Computation/Non-Context Free Languages.md",
-    "Theory of Computation/Exam Prep.md",
-    "Operating Systems/Operating Systems.md",
-    "Databases/Normal Forms.md",
-    "Databases/Databases.md"
+    "Game Development/Game Development.md"
   ]
 }
