@@ -27,6 +27,96 @@ Formalize what designs are bad, test for them
 ## Formal Definition:
 Conditions using keys and FDs of a relation to certify whether a relation schema is a particular in normal form 
 
+## Decomposition of Relation (to get it into normal form):
+1. Lossless Join
+2. Dependency Preservation
+
+### Lossless Join?
+e.g.: 
+R(ABC)
+| A   | B   | C   |
+| --- | --- | --- |
+| 1   | 2   | 3   |
+| 4   | 2   | 5   |
+
+due to some normal form violation R is decomposed into R1 and R2
+
+R1(A B)
+| A   | B   |
+| --- | --- |
+| 1   | 2   |
+| 4   | 2   |
+
+R2(B C)
+| B   | C   |
+| --- | --- |
+| 2   | 3   |
+| 2   | 5   |
+
+After decomposition if R1 $\bowtie$ R2 == R1 then it is a *lossless decomposition*
+
+R1 $\bowtie$ R2
+| A   | B   | C   |
+| --- | --- | --- |
+| 1   | 2   | 3   |
+| 1   | 2   | 5   |
+| 4   | 2   | 3   |
+| 4   | 2   | 5   |
+
+R1 $\bowtie$ R2 $\neq$ R $\therefore$ the decomposition was lossy
+
+If you don't have the table to compare...
+
+#### The Chase Test for lossless join: A better method of determining lossiness
+R(A B C D E G)
+
+R1(A B)
+R2(B C)
+R3(A B D E)
+R4(E G)
+
+FD that hold:
+AD 	-> E
+B 	-> D
+E 	-> G
+
+1. Draw a table
+| A   | B   | C   | D   | E   | G   |
+| --- | --- | --- | --- | --- | --- |
+| R   |     |     |     |     |     |
+
+### Dependency Preservation?
+R(A B C D E G)
+F={	AB->C
+	AC->B
+	AD->E
+	B->D
+	BC->A
+	E->G
+  }
+  
+Let's say R is decomposed into:
+R1(A B)
+R2(B C)
+R3(A B C D E)
+R4(E G)
+
+We need to check to see if the dependencies have been maintained
+B->D:
+	R3 has B->D
+E->G:
+	R4
+AD->E:
+	R3 
+AB->C:
+	*none*
+AC->B:
+	*none*
+BC->A:
+	*none*
+
+If either of these things happen, you did not decompose it right!
+
 # Defining Normal Forms:
 ## First Normal Form
 Do not allow composite attributes and multivalued attributes

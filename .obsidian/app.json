@@ -45,7 +45,9 @@
     "eg",
     "multivalued",
     "Pathfinding",
-    "Polymorphism"
+    "Polymorphism",
+    "lossy",
+    "lossiness"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",

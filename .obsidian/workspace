@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Game Development.md",
+            "file": "Databases/Normal Forms.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Databases/Normal Forms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Databases/Normal Forms.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Databases/Normal Forms.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,6 +134,8 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Databases/Normal Forms.md",
+    "Databases/Databases.md",
     "Game Development/Game Development.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/Theory of Computation.md",
@@ -141,8 +143,6 @@
     "Theory of Computation/Non-Regular Language.md",
     "Theory of Computation/Closure.md",
     "Theory of Computation/RL Closure under Union.md",
-    "Theory of Computation/RL Closure under Intersection.md",
-    "Theory of Computation/Pumping Lemma.md",
-    "Theory of Computation/_Index_of_Theory of Computation.md"
+    "Theory of Computation/RL Closure under Intersection.md"
   ]
 }
