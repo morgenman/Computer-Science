@@ -184,7 +184,7 @@ A1, A2... AN -> BM
 
 **You cannot split on the LHS**
 
-### Trivial Functional Dependency
+### [[Trivial]] Functional Dependency
 FD: A1,A2...An -> B1, B2 ... Bm
 if B1, B2... $\subseteq$ A1, A2 ... An 
 then the above FD is called a trivial FD

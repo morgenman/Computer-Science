@@ -80,7 +80,8 @@ AD 	-> E
 B 	-> D
 E 	-> G
 
-1. Draw a table
+Draw a table
+
 |     | A   | B   | C   | D   | E   | G   |
 | --- | --- | --- | --- | --- | --- | --- |
 | R1  | x   | x   |     |     |     |     |
@@ -179,8 +180,54 @@ A relation schema R is in second normal form if in first normal form and every n
 
 ## Third Normal Form
 A relation schema R is in third normal form if it is 2nd normal form & no non-prime attribute A in R is **transitively dependent** on the primary key 
-* For each non-![[Trivial]] FD, either the LHS is superkey OR the RHS consists of prime attributes only (not both)
-* 
+* For each non-![[Trivial]] FD, either the LHS is superkey OR the RHS consists of prime attributes only (not both) 
+### Decomposition Algorithm to get it into 3rd Normal Form:
+1. Find Minimal basis(*the minimum number of FD's to describe a relation)*) for FD's (say G) (I have notes somewhere...) 
+2. For each FD X->A in G
+	1. use XA as schema
+3. if none of the schemas from step 2 is a superkey of original schema R, then add another relation whose schema is a key of R
+
+Eg:
+R(A B C D E)
+FD={
+	AB	-> C
+	C	-> B
+	A	-> D
+}
+
+all nontrivial (RHS is not subset of LHS)
+
+is R in 3rd normal form? *no*
+
+how to find the superkeys?
+find the closure:
+{AB}+ = {A B C D}
+{ABE}+ = {A B C D E} (found one)
+{ACE}+ = {A B C D E} (found another)
+find a couple of them
+superkey={ABE,ACE...}
+None of the LHS for FD's are superkeys, so RHS for all must be a prime attribute (a part of super key)
+D will never be a super key, so A->D Fails
+
+Minimal FD's for Relation R
+find minimal
+1. AB	-> C
+2. C	-> B
+3. A	-> D
+
+this is the minimal, how do we know
+
+If you remove  AB -> C, then can I get to AB -> C with the other two?
+C+ closure = B
+A+ closure = D
+AB Closure without #1 = {A B D}
+
+To find minimum: remove each FD and find closure of others to see if we get to that relation
+
+2nd step: 
+(ABC) (CB) (AD)
+R2 subset R1 so got rid of it
+so we have (ABC) (AD) (ABE)
 
 ## Boyce Codd Normal Form
 
