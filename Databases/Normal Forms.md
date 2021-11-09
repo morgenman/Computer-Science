@@ -81,9 +81,49 @@ B 	-> D
 E 	-> G
 
 1. Draw a table
-| A   | B   | C   | D   | E   | G   |
-| --- | --- | --- | --- | --- | --- |
-| R   |     |     |     |     |     |
+|     | A   | B   | C   | D   | E   | G   |
+| --- | --- | --- | --- | --- | --- | --- |
+| R1  | x   | x   |     |     |     |     |
+| R2  |     | x   | x   |     |     |     |
+| R3  | x   | x   |     | x   | x   |     |
+| R4  |     |     |     |     | x   | x   |
+
+For each FD, *look for a row that has both the LHS & RHS are marked*, if found, find all rows that match the LHS. Fill in the symbol on that row that matches the RHS 
+
+AD -> E
+* no rows that match AD  but don't have E
+
+B -> D
+
+|     | A   | B   | C   | D   | E   | G   |
+| --- | --- | --- | --- | --- | --- | --- |
+| R1  | x   | x   |     | x   |     |     |
+| R2  |     | x   | x   | x   |     |     |
+| R3  | x   | x   |     | x   | x   |     |
+| R4  |     |     |     |     | x   | x   |
+
+E -> G
+|     | A   | B   | C   | D   | E   | G   |
+| --- | --- | --- | --- | --- | --- | --- |
+| R1  | x   | x   |     | x   |     |     |
+| R2  |     | x   | x   | x   |     |     |
+| R3  | x   | x   |     | x   | x   | x   |
+| R4  |     |     |     |     | x   | x   |
+Do it again....
+AD -> E
+|     | A   | B   | C   | D   | E   | G   |
+| --- | --- | --- | --- | --- | --- | --- |
+| R1  | x   | x   |     | x   | x   |     |
+| R2  |     | x   | x   | x   | x   |     |
+| R3  | x   | x   |     | x   | x   | x   |
+| R4  |     |     |     |     | x   | x   |
+
+Keep doing it until you can't anymore (we are done here)
+
+Is there a row where all columns are marked?
+* *yes*: decomposition is lossless
+* *no*: decomposition is lossy
+
 
 ### Dependency Preservation?
 R(A B C D E G)
@@ -139,6 +179,7 @@ A relation schema R is in second normal form if in first normal form and every n
 
 ## Third Normal Form
 A relation schema R is in third normal form if it is 2nd normal form & no non-prime attribute A in R is **transitively dependent** on the primary key 
+* For each non-![[Trivial]] FD, either the LHS is superkey OR the RHS consists of prime attributes only (not both)
 * 
 
 ## Boyce Codd Normal Form
