@@ -224,3 +224,8 @@ Let's do another example for ada? pda? didn't hear her right... :
 
 
 ![[Exam Prep]]
+
+
+---
+
+# ![[Turing Machine]]
