@@ -36,9 +36,10 @@ Input:
 `01101100`
 
 Infinite memory, so we need to know end of input (tape symbol)
-| 0   | 1   | 1   | 0   | 1   | 1   | 0   | 0   | $\textvisiblespace$                  |
+
+| 0   | 1   | 1   | 0   | 1   | 1   | 0   | 0 | $\textvisiblespace$   |
 | --- | --- | --- | --- | --- | --- | --- | --- | ----------------- |
-| ^   |     |     |     |     |     |     |     |                   |
+| ^ |   |  |  | |  ||  | |
 
 
 reject = false;
@@ -83,3 +84,23 @@ An Algorithm is a *turing machine that always halts*
 ## Example: a^n b^n c^n
 Not CFL, but is TM
 aaabbbccc$\textvisiblespace$ 
+replace
+
+### Steps:
+1. Add input to tape
+2. add $\textvisiblespace$ to end of input
+	1. first symbol $\textvisiblespace$ -> Reject
+	2. first symbol b or c -> Reject
+	3. first symbol a, change to x and move right
+		1. keep moving right until you see a b
+		2. if you see a b, change it to a y 
+			1. keep moving right until you see a c
+			2. if you see a c change it to a z
+				1. keep moving left until you see an x
+				2. move right & repeat back to 
+	4. ^^here
+	5. check if all a's are marked, b's are marked, c's are marked
+	6. accept or reject
+		
+
+
