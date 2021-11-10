@@ -863,7 +863,7 @@ Let's make the present bit 1 and location bit 4
 |                                | 0         | 0       |     | 0       |                       |      |
 |                                | 0         | 0       |     | 0       |                       |      |
 |                                | ...       | ...     |     | ...     | ...                   |      |
-| C00F                           | 1         |         |     | 1       | 0 (where stack lives) |      |
+| C00F                           | 1         | 1       |     | 1       | 0 (where stack lives) |      |
 
 All programs start at 0 (assumption)
 
@@ -904,7 +904,24 @@ F - 10_1 0
 > turn into physical address trace assume no TLB
 > Which accesses(PT lookups) go away when you have a TLB
 
+How do we know when to delete stuff in RAM? Timestamps? no.. too big... add "Reference"
+| Location (Page #)(Offset)      | P(resent) | D(irty) | R(eference) | V(alid) | Frame #               | size |
+| ------------------------------ | --------- | ------- | ----------- | ------- | --------------------- | ---- |
+| C000  (address stored in PTBR) | 1         | 0       | 1           | 1       | 4                     | 1B   |
+|                                | 0         | 0       | 0           | 1       |                       |      |
+|                                | 0         | 0       | 0           | 1       |                       |      |
+|                                | 0         | 0       | 0           | 1       |                       |      |
+|                                | 0         | 0       | 0           | 1       |                       |      |
+|                                | 0         | 0       | 0           | 1       |                       |      |
+|                                | 0         | 0       | 0           | 0       |                       |      |
+|                                | 0         | 0       | 0           | 0       |                       |      |
+|                                | ...       | ...     |             | ...     | ...                   |      |
+| C00F                           | 1         | 1       | 1           | 1       | 0 (where stack lives) |      |
 
+Find one that's not referenced, remove it
+
+
+Test is a week from next monday
 
 
 
