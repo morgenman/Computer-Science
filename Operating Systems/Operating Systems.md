@@ -805,3 +805,83 @@ xxx is 03079
 | PTE[13] | 03049   | 0F7XXX |                               |
 |         | 0F708   |        | Now we have physical for 1308 |
 
+---
+## Example
+File PGM (program)
+| ABC |
+| DEF |
+| GHI |
+| JKL |
+| MNO |
+| PQR |
+^Sitting on the disk
+fork and exec
+
+Creates PGM PageTable:
+|       | P(resent) | D(irty) |     | V(alid) | Frame |
+| ----- | --------- | ------- | --- | ------- | ----- |
+| 0     | 0         | 0       |     | 1       |       |
+| 1     | 0         | 0       |     | 1       |       |
+| 2     | 0         | 0       |     | 1       |       |
+| 3     | 0         | 0       |     | 1       |       |
+| 4     | 0         | 0       |     | 1       |       |
+| 5     | 0         | 0       |     | 1       |       |
+| 6     | 0         | 0       |     | 0       |       |
+| 7     | 0         | 0       |     | 0       |       |
+|       | ...       | ...     |     | ...     | ...   |
+| F(16) | 1         |         |     | 1       | 0     |
+
+first 6 are valid because it knew how big the file is
+How big is an address
+4 bit page number
+need to address 4k, so 12 bits (2^12) for offset
+16 bit address
+
+Allocating this space
+|     | RAM   |
+| --- | ----- |
+| 0   | STACK |
+| 1   |       |
+| 2   |       |
+| 3   |       |
+| 4   |       |
+| 5   |       |
+| 6   |       |
+| 7   |       |
+| ... |       |
+|     |       |
+
+Let's make the present bit 1 and location bit 4
+| Location | P(resent) | D(irty) |     | V(alid) | Frame                 | size |
+| -------- | --------- | ------- | --- | ------- | --------------------- | ---- |
+| C000     | 1         | 0       |     | 1       | 4                     | 1B   |
+|          | 0         | 0       |     | 1       |                       |      |
+|          | 0         | 0       |     | 1       |                       |      |
+|          | 0         | 0       |     | 1       |                       |      |
+|          | 0         | 0       |     | 1       |                       |      |
+|          | 0         | 0       |     | 1       |                       |      |
+|          | 0         | 0       |     | 0       |                       |      |
+|          | 0         | 0       |     | 0       |                       |      |
+|          | ...       | ...     |     | ...     | ...                   |      |
+| F(16)    | 1         |         |     | 1       | 0 (where stack lives) |      |
+
+All programs start at 0 (assumption)
+
+let's say first addresses for PGM are:
+### Virtual Address Trace
+0000 (Fetch)
+0004 (Fetch)
+0008 (Fetch)
+FFFC (Store)
+### Physical Address Trace
+C000 (Fetch)
+4000 (4 comes from value in frame)
+
+C000
+4004
+
+C000
+4008
+
+
+
