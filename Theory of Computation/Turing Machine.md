@@ -36,9 +36,50 @@ Input:
 `01101100`
 
 Infinite memory, so we need to know end of input (tape symbol)
-| 0   | 1   | 1   | 0   | 1   | 1   | 0   | 0   | $\textvisiblespace$ |
-| --- | --- | --- | --- | --- | --- | --- | --- | ------------------- |
-| ^   |     |     |     |     |     |     |     |                     | 	
+| 0   | 1   | 1   | 0   | 1   | 1   | 0   | 0   | $\textvisiblespace$                  |
+| --- | --- | --- | --- | --- | --- | --- | --- | ----------------- |
+| ^   |     |     |     |     |     |     |     |                   |
 
-1. if first symbol in tape is $\textvisiblespace$, reject
-2. else move right
+
+reject = false;
+while(!reject)
+	if first symbol in tape is $\textvisiblespace$, reject=true;
+	else move right, remember first symbol
+		if symbol is $\textvisiblespace$ reject
+		else ? something something, once you see one, move left
+		
+		
+		
+State diagram
+
+we are at a
+a->b,D
+a is input reading
+changing b to a, move D
+```nomnoml
+[<hidden>Blank]-> [q0]
+[q0]->0->R[q1]
+[q0]->_[q_reject]
+[q1]->_[q_reject]
+[q1]->0,1->R[q2]
+[q2]->0,1->R[q2]
+[q2]->_->L[q3]
+[q3]->0[q_accept]
+[q0]->1->1,R[q4]
+[q4]->_[q_reject]
+[q4]->0,1->R[q5]
+[q5]->0,1->R[q5]
+[q5]->_->L[q6]
+[q6]->1[q_accept]
+[q3]->1[q_reject]
+[q6]->0[q_reject]
+```
+
+An Algorithm is a *turing machine that always halts*
+```nomnoml
+[TM|[CFL|[RL]]]
+```
+
+## Example: a^n b^n c^n
+Not CFL, but is TM
+aaabbbccc$\textvisiblespace$ 

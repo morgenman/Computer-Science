@@ -4,9 +4,9 @@
   "#direction": "right",
   "#gutter": "",
   "#edgeMargin": "",
-  "#gravity": "",
+  "#gravity": "2",
   "#edges": "rounded",
-  "#background": "transparent",
+  "#background": "white",
   "#fill": "",
   "#fillArrows": false,
   "#font": "",
@@ -16,5 +16,5 @@
   "#padding": "",
   "#spacing": "",
   "#stroke": "",
-  "#ranker": "network-simplex"
+  "#ranker": "longest-path"
 }
