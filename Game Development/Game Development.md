@@ -169,3 +169,5 @@ for walking in game?
 Peer to peer vs server client
 
 ## Distributed Trust Algorithms
+
+Encryption without latency?
