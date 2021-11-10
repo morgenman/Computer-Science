@@ -852,18 +852,18 @@ Allocating this space
 |     |       |
 
 Let's make the present bit 1 and location bit 4
-| Location | P(resent) | D(irty) |     | V(alid) | Frame                 | size |
-| -------- | --------- | ------- | --- | ------- | --------------------- | ---- |
-| C000     | 1         | 0       |     | 1       | 4                     | 1B   |
-|          | 0         | 0       |     | 1       |                       |      |
-|          | 0         | 0       |     | 1       |                       |      |
-|          | 0         | 0       |     | 1       |                       |      |
-|          | 0         | 0       |     | 1       |                       |      |
-|          | 0         | 0       |     | 1       |                       |      |
-|          | 0         | 0       |     | 0       |                       |      |
-|          | 0         | 0       |     | 0       |                       |      |
-|          | ...       | ...     |     | ...     | ...                   |      |
-| F(16)    | 1         |         |     | 1       | 0 (where stack lives) |      |
+| Location (Page #)(Offset)      | P(resent) | D(irty) |     | V(alid) | Frame #               | size |
+| ------------------------------ | --------- | ------- | --- | ------- | --------------------- | ---- |
+| C000  (address stored in PTBR) | 1         | 0       |     | 1       | 4                     | 1B   |
+|                                | 0         | 0       |     | 1       |                       |      |
+|                                | 0         | 0       |     | 1       |                       |      |
+|                                | 0         | 0       |     | 1       |                       |      |
+|                                | 0         | 0       |     | 1       |                       |      |
+|                                | 0         | 0       |     | 1       |                       |      |
+|                                | 0         | 0       |     | 0       |                       |      |
+|                                | 0         | 0       |     | 0       |                       |      |
+|                                | ...       | ...     |     | ...     | ...                   |      |
+| C00F                           | 1         |         |     | 1       | 0 (where stack lives) |      |
 
 All programs start at 0 (assumption)
 
@@ -874,7 +874,11 @@ let's say first addresses for PGM are:
 0008 (Fetch)
 FFFC (Store)
 ### Physical Address Trace
-C000 (Fetch)
+1. Get PTE (Replace Page # with Frame #)
+2. Get Physical
+
+
+C000 (Fetch) C000 + 0 * 1B
 4000 (4 comes from value in frame)
 
 C000
@@ -882,6 +886,29 @@ C000
 
 C000
 4008
+
+C00F
+0FFC
+
+### Problem: Too many duplicate requests
+looking up C000 too many times
+### Solution: Cache
+*called Table Lookaside Buffer (TLB)*
+Cache is empty. Looks up C000
+0 - 10_1 4
+...
+F - 10_1 0
+
+> Exam Question:
+> Do Virtual address trace
+> turn into physical address trace assume no TLB
+> Which accesses(PT lookups) go away when you have a TLB
+
+
+
+
+
+
 
 
 
