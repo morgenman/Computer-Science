@@ -227,7 +227,10 @@ To find minimum: remove each FD and find closure of others to see if we get to t
 2nd step: 
 (ABC) (CB) (AD)
 R2 subset R1 so got rid of it
-so we have (ABC) (AD) (ABE)
+so we have (ABC) (AD) , none are superkeys
+
+choose superkey, add to relation
+R1(ABC) R3(AD) **R4(ABE)**
 
 ## Boyce Codd Normal Form
 
