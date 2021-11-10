@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Turing Machine.md",
+            "file": "Game Development/Game Development.md",
             "mode": "source"
           }
         },
@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Turing Machine.md",
+            "file": "Game Development/Game Development.md",
             "mode": "preview"
           }
         },
@@ -90,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Game Development/Game Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md"
+                "file": "Game Development/Game Development.md"
               }
             }
           },
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Game Development/Game Development.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -147,6 +147,7 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Game Development/Game Development.md",
     "Theory of Computation/Turing Machine.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
@@ -155,7 +156,6 @@
     "Databases/Prime Attribute.md",
     "Databases/Databases.md",
     "Databases/Trivial.md",
-    "Databases/Superkey.md",
-    "Game Development/Game Development.md"
+    "Databases/Superkey.md"
   ]
 }
