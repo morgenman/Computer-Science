@@ -165,6 +165,7 @@ for walking in game?
 *Polymorphism*: relationship between classes; the idea that 
 
 
+# Networking
+Peer to peer vs server client
 
-
-
+## Distributed Trust Algorithms
