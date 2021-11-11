@@ -155,7 +155,7 @@ AC->B:
 	*none*
 BC->A:
 	*none*
-
+**If you don't have the symbols in the FD in the decomposition, it does not maintain FDs**
 If either of these things happen, you did not decompose it right!
 
 # Defining Normal Forms:
@@ -234,6 +234,7 @@ R1(ABC) R3(AD) **R4(ABE)**
 
 ## Boyce Codd Normal Form
 
-## Fourth Normal Form
 
+## Fourth Normal Form
+Not useful to learn
 ## Fifth Normal Form

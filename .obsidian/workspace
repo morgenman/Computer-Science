@@ -9,23 +9,10 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Game Development/Game Development.md",
+            "file": "Databases/Normal Forms.md",
             "mode": "source"
           }
-        },
-        "group": "3b74ac4e3808cc75"
-      },
-      {
-        "id": "bc117feb47fbc7c0",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Game Development/Game Development.md",
-            "mode": "preview"
-          }
-        },
-        "group": "3b74ac4e3808cc75"
+        }
       }
     ],
     "direction": "vertical"
@@ -52,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "prime attribute",
+                "query": "maintained",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,11 +56,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137
+    "width": 212.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -90,7 +79,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Databases/Normal Forms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -107,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Databases/Normal Forms.md"
               }
             }
           },
@@ -133,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Databases/Normal Forms.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -143,18 +132,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125
+    "width": 265.14288330078125,
+    "collapsed": true
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Databases/Normal Forms.md",
+    "Databases/Databases.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Turing Machine.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
-    "Databases/Normal Forms.md",
     "Databases/_Index_of_Databases.md",
     "Databases/Prime Attribute.md",
-    "Databases/Databases.md",
     "Databases/Trivial.md",
     "Databases/Superkey.md"
   ]
