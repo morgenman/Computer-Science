@@ -159,6 +159,11 @@ BC->A:
 If either of these things happen, you did not decompose it right!
 
 # Defining Normal Forms:
+if BCNF, then 1st, 2nd, and 3rd
+```nomnoml
+[1st NF|[2rd NF|[3rd NF|[BCNF]]]]
+
+```
 ## First Normal Form
 Do not allow composite attributes and multivalued attributes
 
@@ -232,9 +237,55 @@ so we have (ABC) (AD) , none are superkeys
 choose superkey, add to relation
 R1(ABC) R3(AD) **R4(ABE)**
 
-## Boyce Codd Normal Form
+## Boyce Codd Normal Form (BCNF)
+In a relation R for every non-trivial FD:
+A1 A2 ... An -> B1 B2 ... Bn
+Left hand side must have a [[Key]] 
+### Decomposition Algo. for BCNF:
+1. Let X->Y be a BCNF violation
+	1. find x+ (closure)
+	2. let R1 = x+ and then R2 = x ^ attributes in R that are not x+
+2. compute FD's on R1 and R2
+3. check for BCNF violations in R1 & R2. If  there are, repeat
+
+> Theorem:
+> if a relation has only two attributes is in BCNF
+
+### Example:
+R(A B C D)
+FD+ = AB -> C,  C->D, D-> A
+
+A+ 	= A
+B+ 	= B
+C+ 	= A C D
+D+ 	= A D
+AB+	= A B C D
+BC+	= A B C D
+AC+ = A C D
+AD+	= A D
+BD+	= A B C D
+CD+ = A C D
+
+continuing isn't relevant since LHS is max AB
+
+Keys = {AB, BC, BD}
+
+C -> D violates BCNF
+* Closure of C gives us ACD
+* R1 = A C D
+* R2 = C B (anything not in R1)
+	* Only 2 attributes, so already in BCNF
+
+Is R1 in BCNF?
+A+ = A
+C+ = A C D
+D+ = A D
+
+D -> A violates BCNF
 
 
-## Fourth Normal Form
-Not useful to learn
-## Fifth Normal Form
+
+## ~~Fourth Normal Form~~
+Not useful to learn these last two...
+
+## ~~Fifth Normal Form~~
