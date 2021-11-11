@@ -252,7 +252,7 @@ Left hand side must have a [[Key]]
 > if a relation has only two attributes is in BCNF
 
 ### Example:
-R(A B C D)
+*R(A B C D)*
 FD+ = AB -> C,  C->D, D-> A
 
 A+ 	= A
@@ -270,22 +270,57 @@ continuing isn't relevant since LHS is max AB
 
 Keys = {AB, BC, BD}
 
-C -> D violates BCNF
-* Closure of C gives us ACD
+**C -> D violates BCNF**
+* Closure of C gives us A C D
 * R1 = A C D
 * R2 = C B (anything not in R1)
 	* Only 2 attributes, so already in BCNF
+
+*R1(A C D)*
 
 Is R1 in BCNF?
 A+ = A
 C+ = A C D
 D+ = A D
 
-D -> A violates BCNF
+**D -> A violates BCNF**
+* Closure of D gives us A D
+* R11 = A D
+* R12 = C D
+
+I think we are done?
+
+```nomnoml
+#direction:down
+[R(ABCD)] - [R1(ACD)]
+[R(ABCD)] - [R2(BC)]
+[R1(ACD)] - [R11(AD)]
+[R1(ACD)] - [R12(CD)]
+```
 
 
 
-## ~~Fourth Normal Form~~
+## ~~Fourth Normal Form BCNF for multivalued dep.~~
 Not useful to learn these last two...
 
 ## ~~Fifth Normal Form~~
+
+# Multivalued Dependencies 
+Denoted with double arrows
+
+A1 ... An ->> B1 ... Bn
+in a relation R
+
+$\bar A$ could represent a set of values?
+
+$\forall$ t,u $\in$ R: t[$\bar A$]= u[$\bar A$] then 
+$\exists$ v $\in$ R | v[$\bar A$] = t[$\bar A$] and 
+ v[$\bar B$] = t[$\bar B$] and 
+ v[$\bar{rest}$] = t[$\bar {rest}$] 
+ 
+ |     | A1...AK ($\bar A$) | B1...Bk ($\bar B$) | Rest |
+ | --- | ------------------ | ------------------ | ---- |
+ | t   | $\bar a$           | .....              |      |
+
+aanyways... Took a pic of this chart 11/11/2021 @ 2pmish
+

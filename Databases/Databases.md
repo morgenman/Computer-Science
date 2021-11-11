@@ -408,3 +408,8 @@ create table workson(...);
 
 ![[Normal Forms]]
 
+Exam: ER Diagrams, coming up with relation schema, 3rd chapter completely
+We have done chapters up to 6
+**ER model chapter 4
+Normal Forms chapter 3**
+
