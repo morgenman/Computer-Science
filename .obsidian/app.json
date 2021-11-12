@@ -47,7 +47,8 @@
     "Pathfinding",
     "Polymorphism",
     "lossy",
-    "lossiness"
+    "lossiness",
+    "turing"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",

@@ -2,6 +2,35 @@
 
 Simple model of computation
 
+---
+## Definition
+A turing  machine is a 7-tuple (Q, $\Sigma$, $\rho$,$\delta$, q0, qA, qR)
+where Q, $\Sigma$, $\rho$ are finite sets and 
+1. Q is the set of states
+2. $\Sigma$ is the input alphabet not including blank symbol _
+3. $\delta$ is the tape symbol where _ $\in$ $\rho$ and $\Sigma \subseteq \rho$ 
+4. .... Just gonna take a pic
+5. .
+6. .
+7. .
+![[Pasted image 20211112095636.png]]
+As a TM computes, changes occur in [Current state|Current Tape|Head location]
+
+Configuration of a TM:
+(q,u,i) where 
+q $\in$ Q
+u is a semi-infinite string over $\rho$
+i $\in$ Z+ head location starts at 1
+
+Initial Configuration:
+(q0,w_, 1)
+Accepting Configuration:
+(q_accept, ... , ...)
+Reject:
+(q_reject, ... , ...)
+
+---
+
 ```nomnoml
 [Turing Machine|Stats|
 	[<table> S| . |. ||. |. ]
@@ -121,3 +150,5 @@ mark every other 0 until blank
 ## Example L = {w # w| w in 0,1}
 
 
+
+![[Pasted image 20211112094944.png]]
