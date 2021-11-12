@@ -934,6 +934,10 @@ friend allows access to private functions
 
 ## Lamda Functions
 
+[](int input){return input++;}
+
+
+
 
 
 
