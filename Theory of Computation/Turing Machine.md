@@ -113,6 +113,11 @@ mark every other 0 until blank
 | 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | _   |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | _   | x   | 0   | x   | 0   | x   | 0   | x   | _   |
+| _   | x   | x   | x   | 0   | x   | x   | x   | _   |
 | _   | x   | x   | x   | x   | x   | x   | x   | _   |
+
+![[Pasted image 20211112093703.png]]
+
+## Example L = {w # w| w in 0,1}
 
 

@@ -1,5 +1,6 @@
 {
-  "renderAll": false,
+  "renderAll": true,
+  "renderImages": true,
   "renderPDF": false,
   "renderIframe": false,
   "renderExcalidraw": false,
