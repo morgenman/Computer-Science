@@ -938,6 +938,18 @@ friend allows access to private functions
 
 
 
+---
+32b virtual/physical
 
+4b metadata
 
+4KB page
+
+20b frame/page (Number of pages is $2^{20}$ ~= 1 MB, that's how many it can address)
+12b offset
+
+How many bits in the pte?
+|PTE| = $\lceil$(20 + 4)/8$\rceil$ = 3B
+	
+|Page Table| = # Pages * |PTE| =  3 MB
 
