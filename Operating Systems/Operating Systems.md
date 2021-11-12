@@ -923,8 +923,16 @@ Find one that's not referenced, remove it
 
 Test is a week from next monday
 
+# C++ Stuff
 
+```c++
+friend void function();
+friend class();
+```
 
+friend allows access to private functions
+
+## Lamda Functions
 
 
 
