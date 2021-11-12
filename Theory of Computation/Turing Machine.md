@@ -103,4 +103,16 @@ replace
 	6. accept or reject
 		
 
+## Example: L = {0^2^n | n >= 0}
+0's where length is power of 2
+
+mark first element as blank. 
+add blank at end
+mark every other 0 until blank
+
+| 0   | 0   | 0   | 0   | 0   | 0   | 0   | 0   | _   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| _   | x   | 0   | x   | 0   | x   | 0   | x   | _   |
+| _   | x   | x   | x   | x   | x   | x   | x   | _   |
+
 

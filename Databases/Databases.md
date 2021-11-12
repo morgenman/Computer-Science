@@ -19,7 +19,6 @@ updated: 2021-10-21T21:41:57-04:00
 
 
 * [[Levels of Abstraction]]
-
 * [[Data Models]]
 * We will be using the [[Relational Model]] a lot
 * [[Data Definition Language]] (DDL) language that stores the metadata and notation for defining [[Schema]]
