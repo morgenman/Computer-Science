@@ -3,6 +3,7 @@
 -  [[Databases/Assignment Operation|Assignment Operation]]
 -  [[Databases/Attribute|Attribute]]
 -  [[Databases/Candidate Key|Candidate Key]]
+-  [[Databases/Capstone Presentations|Capstone Presentations]]
 -  [[Databases/Cartesian Product|Cartesian Product]]
 -  [[Databases/ch1.pdf|ch1.pdf]]
 -  [[Databases/ch2.pdf|ch2.pdf]]
