@@ -84,7 +84,7 @@ ER Diagram
 ###
 ## Total and Partial Participation
 * Single line means they could have the relationship, or not
-* Double means **Total Participation**: Entity in set participates in at least one repationship in relationship set
+* Double means **Total Participation**: Entity in set participates in at least one relationship in relationship set
 * ![[Pasted image 20211007140914.png]]
 * ^^ Every student needs an advisor, not every instructor needs a student to advise
 
