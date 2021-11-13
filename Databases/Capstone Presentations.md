@@ -13,4 +13,6 @@ Research Experience for Undergraduates
 	* python
 	* c++
 * Team Management Process
-	* 
+### Periodic Ellipse Problem
+* Simulating different Renault values
+* 
