@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Turing Machine.md",
+            "file": "Databases/Databases.md",
             "mode": "source"
           }
         }
@@ -60,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137
+    "width": 212.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md"
+                "file": "Databases/Databases.md"
               }
             }
           },
@@ -120,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,15 +136,15 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Databases/Databases.md",
+    "Databases/Normal Forms.md",
+    "Databases/Entity-Relationship.md",
     "Theory of Computation/Turing Machine.md",
     "Theory of Computation/Theory of Computation.md",
-    "Databases/Databases.md",
     "Operating Systems/Operating Systems.md",
-    "Databases/Normal Forms.md",
     "Game Development/Game Development.md",
     "Databases/_Index_of_Databases.md",
     "Databases/Prime Attribute.md",
-    "Databases/Trivial.md",
-    "Databases/Superkey.md"
+    "Databases/Trivial.md"
   ]
 }
