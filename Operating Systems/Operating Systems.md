@@ -938,7 +938,6 @@ friend allows access to private functions
 
 
 
----
 32b virtual/physical
 
 4b metadata
