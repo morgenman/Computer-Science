@@ -45,7 +45,6 @@ updated: 2021-10-22T08:02:17-04:00
 
 * A [[Quantum]] is a unit of time for a cpu process to run (think when it switches back and forth, each time it runs is a quantum)
 
-##
 # A Computer is...
 ### CPU
 * [[Registers]]
