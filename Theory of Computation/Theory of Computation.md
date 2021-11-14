@@ -86,7 +86,7 @@ then $M$ accepts $w$ if a sequence of states $r_0,r_1...r_n$ in $Q$ exists such 
 	$r_n\in f$
 $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 
-*![[Closure]]
+* ![[Closure]]
 
 ## Regular Language [[Closure]]:
 * Regular Languages are closed under:
