@@ -3,7 +3,7 @@
 -  [[Databases/_Index_of_Databases|_Index_of_Databases]]
 -  [[Fall 2021/_Index_of_Fall 2021|_Index_of_Fall 2021]]
 -  [[Game Development/_Index_of_Game Development|_Index_of_Game Development]]
--  [[index|index]]
+-  [[index2|index2]]
 -  [[Operating Systems/_Index_of_Operating Systems|_Index_of_Operating Systems]]
 -  [[Professional Practice/_Index_of_Professional Practice|_Index_of_Professional Practice]]
 -  [[Science of Learning|Science of Learning]]
