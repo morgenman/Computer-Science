@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -137,11 +136,11 @@
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
+    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Non-Regular Language.md",
     "Theory of Computation/!Non-Regular Language.md",
     "Databases/_Index_of_Databases.md",
     "Databases/Databases.md",
-    "Operating Systems/Operating Systems.md",
     "Databases/Capstone Presentations.md",
     "Databases/Entity-Relationship.md",
     "Databases/Data Models.md",
