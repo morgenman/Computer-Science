@@ -135,6 +135,7 @@
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
     "Operating Systems/Operating Systems.md",
+    "Science of Learning.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Non-Regular Language.md",
     "Theory of Computation/!Non-Regular Language.md",
@@ -142,7 +143,6 @@
     "Databases/Databases.md",
     "Databases/Capstone Presentations.md",
     "Databases/Entity-Relationship.md",
-    "Databases/Data Models.md",
-    "Databases/Normal Forms.md"
+    "Databases/Data Models.md"
   ]
 }

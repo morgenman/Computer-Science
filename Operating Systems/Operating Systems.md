@@ -98,10 +98,12 @@ updated: 2021-10-22T08:02:17-04:00
 * ![[Pasted image 20210920081244.png]]
 * ![[Pasted image 20210920080406.png]]
 * In RAM, there is a segment that linked to the status register on the hw device 
-`While (STATUS == BUSY) wait for interrupt; // wait until device is not busy 
+```
+While (STATUS == BUSY) wait for interrupt; // wait until device is not busy 
 	Write data to DATA register 
 	Write command to COMMAND register (starts the device and executes the command) 
-	While (STATUS == BUSY) wait for interrupt; // wait until device is done with your request`
+	While (STATUS == BUSY) wait for interrupt; // wait until device is done with your request
+```
 * Using interrupts ensures that you are not wasting CPU Cycles 'Spinning
 	* Are interrupts worse? 
 		Yes, they can cause a livelock (flood of network packets)
@@ -236,13 +238,12 @@ mkfs: make filesystem
 * establishing /x/k, writing 'a' in file k, 
 * mkdir /x/
 * touch /x/y
-* 
 
 | inodes        | data             | Explanation                                              |
 | ------------- | ---------------- | -------------------------------------------------------- |
 | 0 [d a:3 d:0] | 0 [..:0,.:0,x:1] | (dir, access ct:ref count, d:data block)(.. refers to 0) |
 | 1 [d a:2 d:1] | 1 [..:0,.:1,k:2] |                                                          |
-| 2 [f a:1 d:2] | 2 [a]            |                                                          | 	
+| 2 [f a:1 d:2] | 2 [a]            |                                                          |
 
 todo ^^ :
 1. `mkdir /x`
