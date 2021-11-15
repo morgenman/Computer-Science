@@ -51,7 +51,7 @@
             var source = nomnomls[i].textContent;
             nomnomls[i].innerHTML += "<h3 id="this-is-the-text-which-has-been-inserted-by-js"><a class="header" href="#this-is-the-text-which-has-been-inserted-by-js">This is the text which has been inserted by JS</a></h3>";
             var canvas = document.getElementById('target-canvas');
-
+            console.log(nomnomls[i].innerHTML);
             nomnoml.draw(canvas, source);
         }
     </script>
