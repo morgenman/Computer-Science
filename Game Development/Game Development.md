@@ -5,7 +5,7 @@
 * [[Game Loop]]
 * Suggestion for Lecture:
 	* Go over Semiotics and how it relates to game design. 
-
+ 
 
 ## Meaning: Descriptive vs Evaluative 
 * Descriptive: 
@@ -21,7 +21,7 @@
 	* [a b c]c
 	   [d e f]
 	   [g h i]
-	* How a vector changes
+	* How a vector changes...
 
 ```
 while(t) 

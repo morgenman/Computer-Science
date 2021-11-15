@@ -22,5 +22,6 @@
   "quick-latex",
   "obsidian-hide-sidebars-when-narrow",
   "obsidian-codemirror-options",
-  "obsidian-pandoc"
+  "obsidian-pandoc",
+  "update-time-on-edit"
 ]

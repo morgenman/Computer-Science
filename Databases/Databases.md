@@ -17,7 +17,7 @@ updated: 2021-10-21T21:41:57-04:00
 		* needed for performance
 		* uncontrolled can lead to inconsistencies
 
-
+ 
 * [[Levels of Abstraction]]
 * [[Data Models]]
 * We will be using the [[Relational Model]] a lot

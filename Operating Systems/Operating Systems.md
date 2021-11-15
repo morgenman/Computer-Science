@@ -1,6 +1,5 @@
 ---
-created: 2021-10-21T14:13:29-04:00
-updated: 2021-10-22T08:02:17-04:00
+updated: 2021-11-14_20:35:56-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -8,7 +7,7 @@ updated: 2021-10-22T08:02:17-04:00
 * Handle [[Concurrency]]
 * Store data with [[Persistence]]
 
-## Components
+## Components 
 * Libraries
 * File System
 * [[System Call]] vs [[Procedure Call]]
@@ -664,7 +663,7 @@ We need something in the CPU though:
 ```
 
 * PBR is part of context
-* per process
+* per process 
 * Address translation is done by separating to two parts
 * | Page # | Offset |
 * offset can only address x amount of bytes, so we *don't need* a bound's register

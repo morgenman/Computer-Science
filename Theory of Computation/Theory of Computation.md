@@ -1,3 +1,6 @@
+---
+updated: 2021-11-14_20:44:41-05:00
+---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
 	* Also known as [[Automata Theory]] 
@@ -197,7 +200,7 @@ Let's do another example for ada? pda? didn't hear her right... :
 	**Star**: 
 	* S -> S S1 | e
 	  CFG of L1
-	* L = L$^*$  CFG  
+	* L = L$^{*}$  CFG  
 2. The class of CFL are *not* closed under intersection or compliment (one implies the other)
 	* Easiest to do this as an example, rather than a proper proof (proof by example)
 	**Intersection**:
