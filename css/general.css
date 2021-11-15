@@ -27,8 +27,32 @@ em {
     color: var(--accent-3)!important;
 }
 
-.scrollable-element {
-    scrollbar-color: var(--sidebar-active) var(--sidebar-bg)!important;
+:root {
+    color-scheme: dark;
+}
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 code {
