@@ -207,11 +207,10 @@ Type of <a href="Key.html">Key</a></p>
             nomnomls[i].classList.remove('colorbox');
             nomnomls.item(i).classList.add('hueframe');
             var source = nomnomls[i].textContent;
-            nomnomls[i].innerHTML = '<canvas id="target-canvas';
-            nomnomls[i].innerHTML += i;
-            nomnomls[i].innerHTML += '">testing</canvas>';
-            var canvas = document.getElementById('target-canvas');
-            console.log(source);
+            var name = 'target-canvas';
+            name += i;
+            nomnomls[i].innerHTML = '<canvas id="' + name + '">testing</canvas>';
+            var canvas = document.getElementById(name);
             nomnoml.draw(canvas, source);
         }
     </script>
