@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -137,6 +136,7 @@
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
     "Operating Systems/Operating Systems.md",
+    "Operating Systems/Jump Table.md",
     "Game Development/Game Development.md",
     "Professional Practice/Professional Practice.md",
     "Databases/Databases.md",
@@ -144,7 +144,6 @@
     "Theory of Computation/Turing Machine.md",
     "Theory of Computation/Non-Context Free Languages.md",
     "Databases/Entity-Relationship.md",
-    "Databases/Data Models.md",
-    "Operating Systems/Limited Direct Execution.md"
+    "Databases/Data Models.md"
   ]
 }

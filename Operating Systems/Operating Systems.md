@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-14_20:35:56-05:00
+updated: 2021-11-15_08:02:33-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -955,3 +955,11 @@ How many bits in the pte?
 	
 |Page Table| = # Pages * |PTE| =  3 MB
 
+---
+Assignment:
+what's important?
+* PTE
+	* PageTable
+vector 
+* Frame
+	* RAM
