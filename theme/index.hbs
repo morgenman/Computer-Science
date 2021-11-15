@@ -58,9 +58,16 @@
     <script src="//unpkg.com/graphre/dist/graphre.js"></script>
     <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
     <script>
-        var canvas = document.getElementsByClassName('language-nomnoml hljs');
-        var source = '[nomnoml] is -> [awesome]';
-        nomnoml.draw(canvas, source);
+        var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+        for (var i = 0; i < nomnomls.length; i++) {
+            nomnomls[i].classList.remove('colorbox');
+            nomnomls.item(i).classList.add('hueframe');
+            var source = nomnomls[i].textContent;
+            nomnomls[i].innerHTML += "<h3>This is the text which has been inserted by JS</h3>";
+            var canvas = document.getElementById('target-canvas');
+
+            nomnoml.draw(canvas, source);
+        }
     </script>
 
     <!-- Work around some values being stored in localStorage wrapped in quotes -->
