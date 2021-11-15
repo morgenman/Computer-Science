@@ -69,7 +69,7 @@ jobs:
         run: ./mdzk build
 
       - name: copy
-        run: cp ./notes/index.html ./notes/index.htm
+        run: cp ./html/index.html ./html/index.htm
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
