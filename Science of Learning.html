@@ -200,7 +200,8 @@
         for (var i = 0; i < nomnomls.length; i++) {
             nomnomls[i].classList.remove('colorbox');
             nomnomls.item(i).classList.add('hueframe');
-            var source = nomnomls[i].textContent;
+            var source = '#direction:right\n#stroke: #fff\n#fill: #000; #000\n'
+            source += nomnomls[i].textContent;
             var name = 'target-canvas';
             name += i;
             nomnomls[i].innerHTML = '<canvas id="' + name + '">testing</canvas>';
