@@ -208,7 +208,7 @@
             nomnomls[i].classList.remove('colorbox');
             nomnomls.item(i).classList.add('hueframe');
             var source = nomnomls[i].textContent;
-            nomnomls[i].textcontent = '<canvas id="target-canvas"></canvas>';
+            nomnomls[i].innerHTML = '</code> hi\n <code><canvas id="target-canvas">testing</canvas>';
             var canvas = document.getElementById('target-canvas');
             console.log(source);
             nomnoml.draw(canvas, source);
