@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/_Index_of_Databases.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -79,7 +79,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/_Index_of_Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/_Index_of_Databases.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -122,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/_Index_of_Databases.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -137,8 +137,8 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
-    "Databases/_Index_of_Databases.md",
     "Operating Systems/Operating Systems.md",
+    "Databases/_Index_of_Databases.md",
     "Operating Systems/int input.md",
     "Operating Systems/Jump Table.md",
     "Game Development/Game Development.md",
