@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-15_09:11:45-05:00
+updated: 2021-11-15_09:29:27-05:00
 ---
 # Turing Machine
 
@@ -76,9 +76,9 @@ Infinite memory, so we need to know end of input (tape symbol)
 
 reject = false;
 while(!reject)
-	if first symbol in tape is $\textvisiblespace$, reject=true;
+	if first symbol in tape is _ , reject=true;
 	else move right, remember first symbol
-		if symbol is $\textvisiblespace$ reject
+		if symbol is _ reject
 		else ? something something, once you see one, move left
 		
 		
@@ -115,7 +115,7 @@ An Algorithm is a *turing machine that always halts*
 
 ## Example: a^n b^n c^n
 Not CFL, but is TM
-aaabbbccc$\textvisiblespace$ 
+aaabbbccc_ 
 replace
 
 ### Steps:
