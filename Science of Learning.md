@@ -4,4 +4,3 @@
 * Read the book
 * Try and find a block of time to study intently a couple times a week
 * Write down information you know about it
-* 
