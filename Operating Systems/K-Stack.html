@@ -41,22 +41,6 @@
         var path_to_root = "../";
         var default_theme = "dark";
     </script>
-    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
-    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
-    <script>
-        console.log("hello world");
-        var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
-        for (var i = 0; i < nomnomls.length; i++) {
-            nomnomls[i].classList.remove('colorbox');
-            nomnomls.item(i).classList.add('hueframe');
-            var source = nomnomls[i].textContent;
-            nomnomls[i].innerHTML += "<h3 id="this-is-the-text-which-has-been-inserted-by-js"><a class="header" href="#this-is-the-text-which-has-been-inserted-by-js">This is the text which has been inserted by JS</a></h3>";
-            var canvas = document.getElementById('target-canvas');
-            console.log(source);
-
-            nomnoml.draw(canvas, source);
-        }
-    </script>
 
     <!-- Work around some values being stored in localStorage wrapped in quotes -->
     <script type="text/javascript">
@@ -194,6 +178,21 @@
     <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
     <!-- Custom JS scripts -->
+    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
+    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
+    <script>
+        console.log("hello world");
+        var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+        for (var i = 0; i < nomnomls.length; i++) {
+            nomnomls[i].classList.remove('colorbox');
+            nomnomls.item(i).classList.add('hueframe');
+            var source = nomnomls[i].textContent;
+            nomnomls[i].write('<canvas id="target-canvas"></canvas>');
+            var canvas = document.getElementById('target-canvas');
+            console.log(source);
+            nomnoml.draw(canvas, source);
+        }
+    </script>
 </body>
 
 </html>
