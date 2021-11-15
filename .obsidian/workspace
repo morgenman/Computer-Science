@@ -12,20 +12,7 @@
             "file": "Theory of Computation/Turing Machine.md",
             "mode": "source"
           }
-        },
-        "group": "a01e9a1e9d3ea2b3"
-      },
-      {
-        "id": "4f337da15267774b",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Theory of Computation/Turing Machine.md",
-            "mode": "preview"
-          }
-        },
-        "group": "a01e9a1e9d3ea2b3"
+        }
       }
     ],
     "direction": "vertical"
