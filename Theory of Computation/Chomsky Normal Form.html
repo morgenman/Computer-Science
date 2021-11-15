@@ -310,7 +310,7 @@ $\therefore$ (2n-1) steps for string of length n</p>
             nomnomls[i].classList.remove('colorbox');
             nomnomls.item(i).classList.add('hueframe');
             var source = nomnomls[i].textContent;
-            nomnomls[i].write('<canvas id="target-canvas"></canvas>');
+            nomnomls[i].textcontent = '<canvas id="target-canvas"></canvas>';
             var canvas = document.getElementById('target-canvas');
             console.log(source);
             nomnoml.draw(canvas, source);

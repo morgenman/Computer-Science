@@ -351,7 +351,7 @@ if k = 0 $xy^kz$  =&gt; $1^{p-|y|}#1^p#1^{2p}\notin L$</p>
             nomnomls[i].classList.remove('colorbox');
             nomnomls.item(i).classList.add('hueframe');
             var source = nomnomls[i].textContent;
-            nomnomls[i].write('<canvas id="target-canvas"></canvas>');
+            nomnomls[i].textcontent = '<canvas id="target-canvas"></canvas>';
             var canvas = document.getElementById('target-canvas');
             console.log(source);
             nomnoml.draw(canvas, source);
