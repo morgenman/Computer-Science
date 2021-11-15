@@ -27,8 +27,8 @@ em {
     color: var(--accent-3)!important;
 }
 
-.scrollable-element {
-    scrollbar-color: var(--sidebar-active) var(--sidebar-bg)!important;
+:root {
+    color-scheme: dark;
 }
 
 code {
