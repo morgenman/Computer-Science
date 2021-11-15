@@ -41,6 +41,13 @@
         var path_to_root = "../";
         var default_theme = "dark";
     </script>
+    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
+    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
+    <script>
+        var canvas = document.getElementsByClassName('language-nomnoml hljs');
+        var source = '[nomnoml] is -> [awesome]';
+        nomnoml.draw(canvas, source);
+    </script>
 
     <!-- Work around some values being stored in localStorage wrapped in quotes -->
     <script type="text/javascript">
