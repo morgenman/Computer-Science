@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-15_08:44:20-05:00
+updated: 2021-11-15_09:11:14-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -969,5 +969,3 @@ vector
 What if we broke up the page# and offset into page table + page # 
 
 Smaller page table, less memory
-
-***testing***

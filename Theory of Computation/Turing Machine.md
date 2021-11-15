@@ -1,3 +1,6 @@
+---
+updated: 2021-11-15_09:11:45-05:00
+---
 # Turing Machine
 
 Simple model of computation
@@ -82,7 +85,7 @@ while(!reject)
 		
 State diagram
 
-we are at a
+we are at a 
 a->b,D
 a is input reading
 changing b to a, move D
