@@ -27,10 +27,6 @@ em {
     color: var(--accent-3)!important;
 }
 
-:root {
-    color-scheme: dark;
-}
-
 /* width */
 
 ::-webkit-scrollbar {
@@ -46,13 +42,13 @@ em {
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(61, 63, 80);
+    background: rgb(61, 63, 80)!important;
 }
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(69, 71, 85);
+    background: rgb(69, 71, 85)!important;
 }
 
 code {
