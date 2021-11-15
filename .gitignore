@@ -1,0 +1,11 @@
+html/
+
+# to exclude Obsidian workspace settings (including plugin and hotkey configurations)
+.obsidian/
+
+# This file is used to keep track of last auto backup/pull
+.obsidian-git-data
+
+# Add below lines to exclude OS settings and caches
+.trash/
+.DS_Store

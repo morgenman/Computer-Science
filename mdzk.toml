@@ -1,0 +1,22 @@
+[mdzk]
+backlinks-header = "Backlinks"
+authors = ["morgenman"]
+language = "en"
+multilingual = false
+src = "notes"
+title = "Zettelkasten"
+ignore = [
+    "templates/",
+    ".obsidian/",
+    "assets/"
+]
+
+[build]
+preprocessors = ["toc"]
+
+[output.html]
+copy-fonts = false
+no-section-label = true
+
+[output.html.fold]
+enable = true

@@ -1,0 +1,81 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+
+      - name: git stuff
+        run: git clone "https://github.com/morgenman/Computer-Science.git" _notes/
+
+      - name: remove .git
+        run: rm -r ./_notes/.git
+
+      - name: remove github
+        run: rm -r ./_notes/.github
+
+      - name: remove obsidian
+        run: rm -r ./_notes/.obsidian
+        
+      - name: magicPre
+        run: |
+          mkdir ./notes/assets/
+          find ./_notes/ -name '*.jpg' -exec mv {} ./notes/assets/ \;
+          find ./_notes/ -name '*.png' -exec mv {} ./notes/assets/ \;
+          find ./_notes/ -name '*.svg' -exec mv {} ./notes/assets/ \;
+          find ./_notes/ -name '*.pdf' -exec mv {} ./notes/assets/ \;
+          find ./_notes/ -name '*.ppt' -exec mv {} ./notes/assets/ \;
+          find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s~![[][[]([^.]*)\.(png|jpg|svg)]]~<a href=\"https://morgenman.github.io/brain/assets/\1.\2\\" target=\"_blank\"><img src=\"https://morgenman.github.io/brain/assets/\1.\2\" alt=\"\"/>\n~g" "$i"` && echo "$x" > "$i"; done
+          find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|![[][[]([^.]*)\.([^]]*)]]|<a href=\"https://morgenman.github.io/brain/assets/\1.\2\">\1</a>\n|g" "$i"` && echo "$x" > "$i"; done
+          
+      - name: tables
+        run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E -z 's/([^|])\n\|/\1\n\n|/g' "$i"` && echo "$x" > "$i"; done
+        
+      - name: math
+        run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E 's~([^\$]*)[\$]([^\$]*)\*([^\$]*)[\$]~\1$\2\\\star\3$~g' "$i"` && echo "$x" > "$i"; done
+        
+      - name: subsections
+        run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E 's~[!*][[][[]([^#]+)#([^]]*)]]~<a href=\"\1#\l\2\">\1#\2</a>~g' "$i"` && echo "$x" > "$i"; done
+                  
+      - name: magic1
+        run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|![[][[]|[[|g" "$i"` && echo "$x" > "$i"; done      
+          
+      - name: magic2
+        run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|---\$|\n<hr>\n|g" "$i"` && echo "$x" > "$i"; done  
+        
+      - name: magic3
+        run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|([.]*)\$|\1  |g" "$i"` && echo "$x" > "$i"; done  
+        
+      - name: testing
+        run: find ./_notes/ -name '*.md' | while read -r i; do  x=`echo -e "\n"; cat "$i"` && echo "$x" > "$i"; done
+  
+
+      - name: copy
+        run: cp -a ./_notes/. ./notes/
+
+      - name: permission
+        run: chmod +x ./mdzk
+
+      - name: Build ZK
+        run: ./mdzk build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
+
+      - name: Publish
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: ./
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
