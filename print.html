@@ -8553,7 +8553,7 @@ Something <em>concatenated</em> with an empty set is an empty set</p>
     });
 </script>
 <hr>  
-<p>updated: 2021-11-15_09:11:45-05:00</p>
+<p>updated: 2021-11-15_09:29:27-05:00</p>
 <hr>  
 <h1 id="turing-machine"><a class="header" href="#turing-machine">Turing Machine</a></h1>
 <p>Simple model of computation</p>
@@ -8612,9 +8612,9 @@ $\Sigma$ = {0,1}</p>
 </tbody></table>
 <p>reject = false;<br />
 while(!reject)<br />
-if first symbol in tape is $\textvisiblespace$, reject=true;<br />
+if first symbol in tape is _ , reject=true;<br />
 else move right, remember first symbol<br />
-if symbol is $\textvisiblespace$ reject<br />
+if symbol is _ reject<br />
 else ? something something, once you see one, move left</p>
 <p>State diagram</p>
 <p>we are at a<br />
@@ -8643,7 +8643,7 @@ changing b to a, move D</p>
 </code></pre>
 <h2 id="example-an-bn-cn-1"><a class="header" href="#example-an-bn-cn-1">Example: a^n b^n c^n</a></h2>
 <p>Not CFL, but is TM<br />
-aaabbbccc$\textvisiblespace$<br />
+aaabbbccc_<br />
 replace</p>
 <h3 id="steps"><a class="header" href="#steps">Steps:</a></h3>
 <ol>
