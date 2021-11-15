@@ -27,7 +27,7 @@ jobs:
         run: rm -r ./_notes/.obsidian
         
       - name: index
-        run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s~[[][[](.*)\|(.*)]]~[[\2]]~g" "$i"` && echo "$x" > "$i"; done
+        run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s~[[][[](.*)\|(.*)]]~![[\2]]~g" "$i"` && echo "$x" > "$i"; done
           
       - name: magicPre
         run: |
