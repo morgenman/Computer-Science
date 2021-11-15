@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-15_10:30:14-05:00
+updated: 2021-11-15_10:42:59-05:00
 ---
 # Science of Learning
 * Prepare when you come to class
