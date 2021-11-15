@@ -967,3 +967,5 @@ vector
 ---
 
 What if we broke up the page# and offset into page table + page # 
+
+Smaller page table, less memory
