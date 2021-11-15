@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/_Index_of_Operating Systems.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/_Index_of_Operating Systems.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/_Index_of_Operating Systems.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/_Index_of_Operating Systems.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,8 +135,8 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
-    "Operating Systems/_Index_of_Operating Systems.md",
     "Operating Systems/Operating Systems.md",
+    "Operating Systems/_Index_of_Operating Systems.md",
     "Databases/_Index_of_Databases.md",
     "Operating Systems/int input.md",
     "Operating Systems/Jump Table.md",
