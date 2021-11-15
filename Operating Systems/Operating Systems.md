@@ -516,9 +516,12 @@ return v.data();
 * Virtual Address: 
 	* 16 bit for now
 	* page numbers are the virtual numbers, they refer to frames
+
 | 4 bit  | 12 bit |
 | ------ | ------ |
-| Page # | offset                |
+| Page # | offset |
+|        |        |
+|        |        |
 
 * offset is going to be the same size for every address
 * PageTable for each process (held by OS, per process, part of context)
@@ -818,6 +821,7 @@ File PGM (program)
 fork and exec
 
 Creates PGM PageTable:
+
 |       | P(resent) | D(irty) |     | V(alid) | Frame |
 | ----- | --------- | ------- | --- | ------- | ----- |
 | 0     | 0         | 0       |     | 1       |       |
