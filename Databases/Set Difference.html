@@ -44,6 +44,7 @@
     <script src="//unpkg.com/graphre/dist/graphre.js"></script>
     <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
     <script>
+        console.log("hello world");
         var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
         for (var i = 0; i < nomnomls.length; i++) {
             nomnomls[i].classList.remove('colorbox');
@@ -52,7 +53,7 @@
             nomnomls[i].innerHTML += "<h3 id="this-is-the-text-which-has-been-inserted-by-js"><a class="header" href="#this-is-the-text-which-has-been-inserted-by-js">This is the text which has been inserted by JS</a></h3>";
             var canvas = document.getElementById('target-canvas');
             console.log(source);
-            console.log("hello world");
+
             nomnoml.draw(canvas, source);
         }
     </script>
