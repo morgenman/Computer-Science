@@ -10,6 +10,7 @@ A *turing recognizable language* is recognized by some turing machine
 
 A *turing decidable language* is decided by some turing machine
 * has to go to accept/reject state, should not loop
+* if a language loops, it is not decidable
 
 ---
 ## Definition
