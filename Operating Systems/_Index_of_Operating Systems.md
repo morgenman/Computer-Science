@@ -1,5 +1,6 @@
 ---
 updated: 2021-11-15_07:59:49-05:00
+tags: [MOC]
 ---
 ---
 tags: [MOC]
@@ -10,6 +11,7 @@ tags: [MOC]
 -  [[Operating Systems/Exam 2 Terms|Exam 2 Terms]]
 -  [[Operating Systems/FileSystem Slides.pdf|FileSystem Slides.pdf]]
 -  [[Operating Systems/Hardware Privledge Level|Hardware Privledge Level]]
+-  [[Operating Systems/int input|int input]]
 -  [[Operating Systems/Interrupt Service Vector|Interrupt Service Vector]]
 -  [[Operating Systems/Interrupt|Interrupt]]
 -  [[Operating Systems/Jump Table|Jump Table]]
