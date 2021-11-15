@@ -38,7 +38,7 @@ jobs:
           find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|![[][[]([^.]*)\.([^]]*)]]|<a href=\"https://morgenman.github.io/Computer-Science/assets/\1.\2\">\1</a>\n|g" "$i"` && echo "$x" > "$i"; done
 
       - name: index
-        run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s|[[][[]([^]]*)]]|<a href=\"https://morgenman.github.io/Computer-Science\1\">\1</a>|g" "$i"` && echo "$x" > "$i"; done
+        run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s~[[][[]([^\.]*)|.*]]~<a href=\"https://morgenman.github.io/Computer-Science/\1\">\1</a>~g" "$i"` && echo "$x" > "$i"; done
           
       - name: tables
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E -z 's/([^|])\n\|/\1\n\n|/g' "$i"` && echo "$x" > "$i"; done
