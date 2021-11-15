@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-14_21:21:21-05:00
+updated: 2021-11-15_09:57:50-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -232,3 +232,12 @@ Let's do another example for ada? pda? didn't hear her right... :
 ---
 
 # ![[Turing Machine]]
+
+
+---
+HW (sorta, for practice)
+
+TM
+C = {a^i b^j c^k | i x j = k and i,j,k >= 1}
+
+L = {a^2i b^i c^2i | i>0}

@@ -1,9 +1,15 @@
 ---
-updated: 2021-11-15_09:29:27-05:00
+updated: 2021-11-15_09:58:46-05:00
 ---
 # Turing Machine
 
 Simple model of computation
+
+A *turing recognizable language* is recognized by some turing machine
+* recognizable only if it ends in accept state
+
+A *turing decidable language* is decided by some turing machine
+* has to go to accept/reject state, should not loop
 
 ---
 ## Definition
