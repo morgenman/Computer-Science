@@ -1,3 +1,6 @@
+---
+updated: 2021-11-15_10:22:01-05:00
+---
 # Science of Learning
 * Prepare when you come to class
 * Review after class
