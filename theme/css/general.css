@@ -27,10 +27,6 @@ em {
     color: var(--accent-3)!important;
 }
 
-:root {
-    color-scheme: dark;
-}
-
 /* width */
 
 ::-webkit-scrollbar {
