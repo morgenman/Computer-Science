@@ -1,0 +1,367 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title>SQL - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item expanded "><a href="../Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../Databases/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item "><a href="../Databases/Normal Forms.html">Normal Forms</a></li><li class="chapter-item "><a href="../Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item expanded "><a href="../Databases/SQL.html" class="active">SQL</a></li><li class="chapter-item "><a href="../Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Database Systems.html">_Index_of_Database Systems</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Fall 2021/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../Fall 2021/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-07.html">2021-09-07</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../Fall 2021/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../Fall 2021/_Index_of_Fall 2021.html">_Index_of_Fall 2021</a></li></ol></li><li class="chapter-item "><a href="../Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Dev.html">_Index_of_Game Dev</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item "><a href="../Operating Systems/Operating Systems.html">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt Service Vector.html">Interrupt Service Vector</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../Operating Systems/Program.html">Program</a></li><li class="chapter-item "><a href="../Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../Operating Systems/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item "><a href="../Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Professional Practice/# Is China’s corruption-busting AI syste.html">Is China’s corruption-busting AI syste</a></li><li class="chapter-item "><a href="../Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../Professional Practice/Interview.html">Interview</a></li><li class="chapter-item "><a href="../Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item "><a href="../Professional Practice/Picture a Scientist Notes.html">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item "><a href="../Theory of Computation/Theory of Computation.html">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../Theory of Computation/Complexity.html">Complexity</a></li><li class="chapter-item "><a href="../Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item "><a href="../Theory of Computation/Exam Prep.html">Exam Prep</a></li><li class="chapter-item "><a href="../Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li><li class="chapter-item "><a href="../index.html">Welcome to my brain!</a></li><li class="chapter-item "><a href="../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button style="display: none;" id="theme-toggle" class="icon-button" type="button"
+                        title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title">SQL</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<h1 id="sql"><a class="header" href="#sql">SQL</a></h1>
+<ul>
+<li>Most widely used commercial language</li>
+<li>NOT Turing machine equivalent language</li>
+<li>has lots of extensions and APIs which work with it</li>
+</ul>
+<h2 id="commands"><a class="header" href="#commands">Commands</a></h2>
+<ul>
+<li><code>SELECT</code> - extracts data from a database</li>
+<li><code>UPDATE</code> - updates data in a database</li>
+<li><code>DELETE</code> - deletes data from a database</li>
+<li><code>INSERT INTO</code> - inserts new data into a database</li>
+<li><code>CREATE DATABASE</code> - creates a new database</li>
+<li><code>ALTER DATABASE</code> - modifies a database</li>
+<li><code>CREATE TABLE</code> - creates a new table</li>
+<li><code>ALTER TABLE</code> - modifies a table</li>
+<li><code>DROP TABLE</code> - deletes a table</li>
+<li><code>CREATE INDEX</code> - creates an index (search key)</li>
+<li><code>DROP INDEX</code> - deletes an index</li>
+</ul>
+<h3 id="examples"><a class="header" href="#examples">Examples:</a></h3>
+<ul>
+<li><code>create table r(ID char(5),name varchar(20)) </code></li>
+<li>`insert into instructor values('10211','Smith', 'Biology',66000)</li>
+<li><code>delete from student</code> (removes every row)</li>
+<li><code>drop table r</code> (delete the actual table)</li>
+<li><code>alter table r add A D</code>
+<ul>
+<li>where A is the name of the attribute to be added to r and d is the domain</li>
+</ul>
+</li>
+<li><code>alter table r drop A</code>
+<ul>
+<li>attribute of relation r</li>
+</ul>
+</li>
+</ul>
+<h2 id="domain-types"><a class="header" href="#domain-types">Domain Types</a></h2>
+<ul>
+<li>char(n)</li>
+<li>varchar(n)
+<ul>
+<li>variable length</li>
+</ul>
+</li>
+<li>int</li>
+<li>smallint</li>
+<li>numeric(p,d) precision and digits to the right of point (3,1)=0.32</li>
+<li>real, double precision (floating point and double)</li>
+<li>float(n) with precision of at least n digits</li>
+</ul>
+<h2 id="integrity-constraints"><a class="header" href="#integrity-constraints">Integrity Constraints</a></h2>
+<ul>
+<li>primary key</li>
+<li>foreign key references r</li>
+<li>not null</li>
+<li></li>
+</ul>
+<h2 id="query-structure"><a class="header" href="#query-structure">Query Structure:</a></h2>
+<ul>
+<li>Typically of this form:
+<pre><code class="language-mysql">select A1 A2 A3  
+from table   
+where P;  
+</code></pre>
+</li>
+<li></li>
+</ul>
+<h2 id="string-operations"><a class="header" href="#string-operations">String Operations</a></h2>
+<ul>
+<li>%: wildcard
+<ul>
+<li>%dar%  finds dar in any string</li>
+</ul>
+</li>
+<li>_: matches any character</li>
+<li>Escape character: \</li>
+<li>Order by:   etc</li>
+<li>between X and Y</li>
+</ul>
+<h2 id="set-operations"><a class="header" href="#set-operations">Set Operations</a></h2>
+<ul>
+<li>[Select] Union [Select]</li>
+<li>[Select] intersect [Select]</li>
+<li>[Select] Except [Select]</li>
+<li>Add &quot;all&quot; to the end when retaining duplicates</li>
+<li>any operation with null is null</li>
+<li>Unknown is different to null</li>
+<li>comparisons between something and null it returns unknown</li>
+<li>Aggregate Functions:
+<ul>
+<li>Count</li>
+<li>average</li>
+<li>min</li>
+<li>max</li>
+<li>sum</li>
+</ul>
+</li>
+<li>Group By: Average salary of instructors in each department:</li>
+</ul>
+<pre><code class="language-mysql">select dept_name, avg(salary) as avg_salary  
+from instructor  
+group by dept_name;  
+</code></pre>
+<ul>
+<li>Having, filters output</li>
+<li>not in ('option a', 'option b')</li>
+</ul>
+<h2 id="nested-subquery"><a class="header" href="#nested-subquery">Nested subquery</a></h2>
+<ul>
+<li>where P can be</li>
+</ul>
+<p>If you pull out a value, and want to use as a value, put all command in</p>
+<ul>
+<li>select distinct X from Y where Z not in (select X1 from Y1 where Z1)</li>
+<li>where (X, Y,Z) in (select X, Y, Z from ....)</li>
+<li></li>
+</ul>
+<h2 id="some-clause"><a class="header" href="#some-clause">'some' clause</a></h2>
+<ul>
+<li>select name from instructor where salary &gt; some (select salary from instructor where dept name = 'biology')</li>
+<li>Example:<br />
+0,5,6 : 5 &lt; some = true (6)</li>
+</ul>
+<h2 id="all-clause"><a class="header" href="#all-clause">'all' clause</a></h2>
+<ul>
+<li>find names of instructors where salary is greater than all instructors in biology
+<ul>
+<li>where salary &gt; all (other table)</li>
+</ul>
+</li>
+</ul>
+<h2 id="exists-clause"><a class="header" href="#exists-clause">'exists' clause</a></h2>
+<ul>
+<li>if value found in subtable, accept</li>
+<li>select course_id where exists (bigger table)</li>
+<li>exists(some command returning a table)
+<ul>
+<li>if table has any rows, it will be true</li>
+<li>otherwise not</li>
+</ul>
+</li>
+</ul>
+<h2 id="unique-clause"><a class="header" href="#unique-clause">'unique' clause</a></h2>
+<ul>
+<li>tests if subquery contains duplicates</li>
+</ul>
+<h2 id="distinct-clause-is-for-select-clause-but-similar-to-unique"><a class="header" href="#distinct-clause-is-for-select-clause-but-similar-to-unique">'distinct' clause is for select clause (but similar to unique)</a></h2>
+<p>^^ A lot of these can be used in the from clause too</p>
+<h2 id="with-clause"><a class="header" href="#with-clause">'with' clause</a></h2>
+<ul>
+<li>defining a temporary table ...</li>
+</ul>
+<h2 id="scalar-subquery"><a class="header" href="#scalar-subquery">Scalar Subquery</a></h2>
+<ul>
+<li>one which is used where a single value is expected</li>
+</ul>
+<p>!! Need to review select !!</p>
+<h2 id="delete-removes-rows"><a class="header" href="#delete-removes-rows">delete removes rows</a></h2>
+<ul>
+<li><code>delete from instructor</code> (removes all rows)</li>
+</ul>
+<h2 id="insert"><a class="header" href="#insert">insert</a></h2>
+<ul>
+<li>insert into X values (xyz)</li>
+<li>insert into X select * from Y (assuming attributes match)</li>
+</ul>
+<p><strong>Select from where</strong> in a subquery is evaluated first</p>
+<h2 id="update"><a class="header" href="#update">Update</a></h2>
+<ul>
+<li>update instructor set salary = salary * 1.05</li>
+</ul>
+<h2 id="case-else"><a class="header" href="#case-else">Case.. else</a></h2>
+<pre><code class="language-MySQL">case  
+	when  
+	when  
+	else  
+end  
+</code></pre>
+<h2 id="rename-statement-m"><a class="header" href="#rename-statement-m">Rename: (statement) M</a></h2>
+<h2 id="group-by--where-where-becomes-having"><a class="header" href="#group-by--where-where-becomes-having">Group by &amp; where, where becomes 'having'</a></h2>
+<hr />
+<h2 id="backlinks"><a class="header" href="#backlinks">Backlinks</a></h2>
+<blockquote>
+<ul>
+<li><a href="_Index_of_Databases.html">_Index_of_Databases</a></li>
+</ul>
+</blockquote>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+</body>
+
+</html>

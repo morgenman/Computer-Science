@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title>Exam Prep - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item "><a href="../Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../Databases/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item "><a href="../Databases/Normal Forms.html">Normal Forms</a></li><li class="chapter-item "><a href="../Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item "><a href="../Databases/SQL.html">SQL</a></li><li class="chapter-item "><a href="../Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Database Systems.html">_Index_of_Database Systems</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Fall 2021/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../Fall 2021/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-07.html">2021-09-07</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../Fall 2021/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../Fall 2021/_Index_of_Fall 2021.html">_Index_of_Fall 2021</a></li></ol></li><li class="chapter-item "><a href="../Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Dev.html">_Index_of_Game Dev</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item "><a href="../Operating Systems/Operating Systems.html">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt Service Vector.html">Interrupt Service Vector</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../Operating Systems/Program.html">Program</a></li><li class="chapter-item "><a href="../Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../Operating Systems/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item "><a href="../Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Professional Practice/# Is China’s corruption-busting AI syste.html">Is China’s corruption-busting AI syste</a></li><li class="chapter-item "><a href="../Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../Professional Practice/Interview.html">Interview</a></li><li class="chapter-item "><a href="../Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item "><a href="../Professional Practice/Picture a Scientist Notes.html">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item expanded "><a href="../Theory of Computation/Theory of Computation.html">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../Theory of Computation/Complexity.html">Complexity</a></li><li class="chapter-item "><a href="../Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item expanded "><a href="../Theory of Computation/Exam Prep.html" class="active">Exam Prep</a></li><li class="chapter-item "><a href="../Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li><li class="chapter-item "><a href="../index.html">Welcome to my brain!</a></li><li class="chapter-item "><a href="../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button style="display: none;" id="theme-toggle" class="icon-button" type="button"
+                        title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title">Exam Prep</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<h1 id="exam-prep"><a class="header" href="#exam-prep">Exam Prep</a></h1>
+<h1 id="pumping-lemma-hw-problems"><a class="header" href="#pumping-lemma-hw-problems">Pumping Lemma: HW Problems</a></h1>
+<h2 id="a--wwww-in-ab-prove-a-is-not-regular"><a class="header" href="#a--wwww-in-ab-prove-a-is-not-regular">A = {www|w \i\n {ab}*}; prove A is not regular</a></h2>
+<p>suppose A is regular<br />
+$w = a^{p}ba^{p}ba^{p}b$, |w| $\ge$ p</p>
+<ol>
+<li>|xy| $\le$ p</li>
+<li>y $\ne$ e</li>
+<li>xy$^{k}$z $\in$ L $\forall$ k $\geq$ 0</li>
+</ol>
+<h3 id="1-clear-that-xy-are-all-as"><a class="header" href="#1-clear-that-xy-are-all-as">1: clear that xy are all a's</a></h3>
+<ul>
+<li>so for k = 0 =&gt; xy$^{0}$z
+<ul>
+<li>xy = a$^{p-|y|}ba^{p}ba^{p}b\notin A$</li>
+<li>same for k = 2, p+y</li>
+</ul>
+</li>
+</ul>
+<h2 id="y--wwx1x2x3xk"><a class="header" href="#y--wwx1x2x3xk">Y = {w|w=x1#x2#x3...xk}</a></h2>
+<blockquote>
+<p>ERROR FAILURE<br />
+$\Sigma$ = {1, #}<br />
+for k $\geq$ 0 xi $\in$ 1$^{\star}$, xi $\neq$ xj for i $\ne$ j</p>
+</blockquote>
+<p>let w = 1#1$^{p}$#1$^{2p}$<br />
+xy is 1#1$^{p}$<br />
+y can be 1#</p>
+<ul>
+<li>1#1#1$^{p}$#1$^{2p}$ (fail)</li>
+</ul>
+<p>y can be #</p>
+<ul>
+<li>1##... (fail)</li>
+</ul>
+<p>y can be 1#1$^{g}$ where g &lt; p</p>
+<ul>
+<li>1#1$^{g}$</li>
+<li>she's getting a bit confused here</li>
+<li>assumption is x is empty
+<ul>
+<li>we can't assume that</li>
+</ul>
+</li>
+<li>forget about it</li>
+<li>do w = 1^p, 1^p+1,</li>
+<li>then pump up, p+y will be equal to another element from 1-&gt;p</li>
+</ul>
+<h2 id="add--x--y--2--xyz-are-all-binary"><a class="header" href="#add--x--y--2--xyz-are-all-binary">ADD = {x = y + 2 | x,y,z are all binary}</a></h2>
+<p>w =   10$^{p}$= 1$^{p}+1$<br />
+k = 0; xy^0z =&gt;</p>
+<hr />
+<h1 id="take-home-hw"><a class="header" href="#take-home-hw">take home hw:</a></h1>
+<p>(from book)<br />
+2.30:<br />
+a) {0$^n$ 1$^n$ 0$^n$ 1$^n$  | n $\ge$ 0} is not a CFL<br />
+d) {t$_1$ # t$_2$ # ... # t$_k$ | k $\ge$ 2, each t$_i$ $\in$ {a,b}$^{\star}$ and t$_i$ = t$_j$ for some i $\ne$ j}<br />
+2.33:<br />
+show that f = {a$^{i}$ b$^{j}$ | i = kj for some positive integer k} is not a CFL</p>
+<h2 id="lets-do-233"><a class="header" href="#lets-do-233">let's do 2.33:</a></h2>
+<p>show that f = {a$^{i}$ b$^{j}$ | i = kj for some positive integer k} is not a CFL</p>
+<p>let w = $a^{2p^{2}}b^{2p}$ (k = p) the nested square is <em>not</em> the same square as on a<br />
+a = 2p * p</p>
+<p>$uvxyz$</p>
+<ol>
+<li>|vxy|$\le$p</li>
+<li>vy $\ne$ 0</li>
+<li>$uv^{k}xy^{z}\in L \forall k \ge 0$</li>
+</ol>
+<h3 id="v-or-y-contain-more-than-one-kind-of-symbol"><a class="header" href="#v-or-y-contain-more-than-one-kind-of-symbol">v or y contain more than one kind of symbol</a></h3>
+<p>let k = 2<br />
+$uv^{2}xy^{2}\notin L$<br />
+when we repeat them, out of order:</p>
+<h3 id="both-v--y-contain-as"><a class="header" href="#both-v--y-contain-as">both v &amp; y contain a's</a></h3>
+<p>let k = 2<br />
+$uv^{2}xy^{2}\notin L$</p>
+<p>| v y | = l<br />
+l &lt; p &lt; 2p<br />
+$a^{2p^{2}+l}b^{2p}$</p>
+<p>2p^2+l is not a multiple of 2p</p>
+<h3 id="both-v--y-contain-only-bs"><a class="header" href="#both-v--y-contain-only-bs">both v &amp; y contain only b's</a></h3>
+<p>$uv^{m}xy^{m}z$</p>
+<p>m = 2p^2</p>
+<p>$a^{2p^{2}}b^{2p+2p^{2}}$ i &lt; j $\ne$ L</p>
+<h3 id="v-contains-only-as-and-y-contains-only-bs"><a class="header" href="#v-contains-only-as-and-y-contains-only-bs">V contains only a's and y contains only b's</a></h3>
+<p>$uv^{m}xy^{m}z$</p>
+<p>$a^{g+|v|}b^{h+|y|}$<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211105095854.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211105095854.png" alt=""/></p>
+<p>Cover 3 conditions, same x, same y, 2 kinds of symbols</p>
+<hr />
+<h2 id="backlinks"><a class="header" href="#backlinks">Backlinks</a></h2>
+<blockquote>
+<ul>
+<li><a href="_Index_of_Theory%20of%20Computation.html">_Index_of_Theory of Computation</a></li>
+</ul>
+</blockquote>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+</body>
+
+</html>

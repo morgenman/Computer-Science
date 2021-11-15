@@ -1,0 +1,523 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title>Picture a Scientist Notes - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item "><a href="../Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../Databases/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item "><a href="../Databases/Normal Forms.html">Normal Forms</a></li><li class="chapter-item "><a href="../Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item "><a href="../Databases/SQL.html">SQL</a></li><li class="chapter-item "><a href="../Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Database Systems.html">_Index_of_Database Systems</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Fall 2021/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../Fall 2021/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-07.html">2021-09-07</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../Fall 2021/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../Fall 2021/_Index_of_Fall 2021.html">_Index_of_Fall 2021</a></li></ol></li><li class="chapter-item "><a href="../Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Dev.html">_Index_of_Game Dev</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item "><a href="../Operating Systems/Operating Systems.html">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt Service Vector.html">Interrupt Service Vector</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../Operating Systems/Program.html">Program</a></li><li class="chapter-item "><a href="../Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../Operating Systems/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item expanded "><a href="../Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Professional Practice/# Is China’s corruption-busting AI syste.html">Is China’s corruption-busting AI syste</a></li><li class="chapter-item "><a href="../Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../Professional Practice/Interview.html">Interview</a></li><li class="chapter-item "><a href="../Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item expanded "><a href="../Professional Practice/Picture a Scientist Notes.html" class="active">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item "><a href="../Theory of Computation/Theory of Computation.html">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../Theory of Computation/Complexity.html">Complexity</a></li><li class="chapter-item "><a href="../Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item "><a href="../Theory of Computation/Exam Prep.html">Exam Prep</a></li><li class="chapter-item "><a href="../Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li><li class="chapter-item "><a href="../index.html">Welcome to my brain!</a></li><li class="chapter-item "><a href="../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button style="display: none;" id="theme-toggle" class="icon-button" type="button"
+                        title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title">Picture a Scientist Notes</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<h1 id="picture-a-scientist-notes"><a class="header" href="#picture-a-scientist-notes">Picture a Scientist Notes</a></h1>
+<ul>
+<li>'triggered'
+<ul>
+<li>3 yo daughter</li>
+<li>told her I was a scientist</li>
+<li>you really are a scientist mommy, I also want to be one</li>
+<li>crying, imagining
+<ul>
+<li>someone treating her like trash</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>you don't belong here</li>
+</ul>
+<h2 id="tip-of-the-iceberg"><a class="header" href="#tip-of-the-iceberg">Tip of the Iceberg</a></h2>
+<ul>
+<li>Nancy Hopkins (MIT Professor biology)
+<ul>
+<li>fish experiment</li>
+<li>zebra fish</li>
+<li>in the lab 365</li>
+<li>cancer research</li>
+<li>small private girls school, little math &amp; science</li>
+<li>went to radcliff</li>
+<li>bio 2, Jim Watson
+<ul>
+<li>prof. discovered dna</li>
+</ul>
+</li>
+<li>working in his lab as an undergrad</li>
+<li>Francis Crick visiting lab
+<ul>
+<li>he came in and put hands on her chest</li>
+<li>didn't want to make a fuss</li>
+<li>pretend nothing happened</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Jane..
+<ul>
+<li>Cliff Retreat in California
+<ul>
+<li>figuring out how sea level rise is impacting costal zone</li>
+<li>jane ..</li>
+<li>how landscapes change over time</li>
+</ul>
+</li>
+<li>earth science</li>
+<li>want to do fieldwork in antartica</li>
+<li>Dave marchant mission to antartica</li>
+<li>head out in early december</li>
+<li>four ppl in group
+<ul>
+<li>dave, brother, master student alan lewis</li>
+</ul>
+</li>
+<li>there was a break between in mcmurdow (science office) to in the field</li>
+<li>called her slut, whore, cunt</li>
+<li>how slutty I was and how good I would be for other men</li>
+<li>every time I had to go to the bathroom, throw rocks at me</li>
+<li>embarrassing and demeaning</li>
+<li>stopped drinking water during the day</li>
+<li>blood in urine</li>
+<li>bladder problems since</li>
+<li>looking for ash</li>
+<li>blew glass shards and ash into her eyes... &quot;oops that went too far&quot;</li>
+<li>slope hard to climb, he pushed her down the hill</li>
+<li>weeping at the bottom
+<ul>
+<li>decided at the moment to let everything wash over her</li>
+</ul>
+</li>
+<li>do something later...</li>
+</ul>
+</li>
+<li>National Acadamies of Science sexual harrassment report
+<ul>
+<li>50% of women in the workplace face harrassment</li>
+<li>Student-faculty dependence</li>
+<li>sexual advancements are the least common</li>
+<li>iceberg
+<ul>
+<li>tip: coersion,unwanted attention, assult</li>
+<li>bottom: subtle exclusions
+<ul>
+<li>being left off email</li>
+<li>exclusion</li>
+<li>jokes</li>
+<li>etc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="underneath"><a class="header" href="#underneath">Underneath</a></h2>
+<ul>
+<li>
+<p>Raychelle Burks</p>
+<ul>
+<li>Makes sensor arrays</li>
+<li>Bio/chem weapons, explosives, tests for that</li>
+<li>People need a testing metric for issues like flint hurricanes etc</li>
+<li>info and statistics so end users have simple at home test</li>
+<li>grew up in LA
+<ul>
+<li>Ohura TOS</li>
+</ul>
+</li>
+<li>No black women chemistry professors in school</li>
+<li>got phd</li>
+<li>2.2% of phds in stem fields go to black women</li>
+<li>&quot;Some real Bullshit&quot;
+<ul>
+<li>Different types of abuse</li>
+<li><strong>Walk into office and assumes she's the janitor</strong></li>
+<li><strong>Ignored in meetings</strong></li>
+<li>How to deal with it diplomatically</li>
+<li>Time I'm not spending working on grants, research etc, navigating oppressive systems</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Back to nancy</p>
+<ul>
+<li>enough discoveries to be known</li>
+<li>approached by MIT for job</li>
+<li>as a junior faculty member
+<ul>
+<li><strong>treated like a technician</strong></li>
+<li>have to wait to use her own equipment</li>
+<li>women had to be nice to everyone</li>
+<li>didn't want people to avoid her</li>
+</ul>
+</li>
+<li>Publish the papers, <strong>have trouble getting credit for work</strong>
+<ul>
+<li>somehow different</li>
+</ul>
+</li>
+<li>Significant problems
+<ul>
+<li>going to setup zebrafish</li>
+<li>needed 200 square feet of space</li>
+<li>&quot;you don't think you could handle setting up a lab&quot;</li>
+<li>measured lab space</li>
+<li>compared space with numbers</li>
+<li>refused to look at the numbers</li>
+</ul>
+</li>
+<li>&quot;I became a radical activist beyond my wishes&quot;</li>
+</ul>
+</li>
+</ul>
+<h2 id="data"><a class="header" href="#data">Data</a></h2>
+<ul>
+<li>back to jane
+<ul>
+<li>enjoyed the struggle of fieldwork</li>
+<li>added unnecessary struggle made me think of quitting</li>
+<li>Thinking of being a bus driver</li>
+<li>&quot;Him telling me I'm fucking stupid, never have a career as a scientist&quot;</li>
+<li><strong>Questioning competence</strong></li>
+<li>Didn't talk about it</li>
+<li>PHD-&gt;Postdoc-&gt;Faculty position</li>
+<li>Told yourself you'd do something, but never did</li>
+<li>He was still a faculty member there, still harassing</li>
+<li>I tried to create a science friendly environment, but hadn't confronted him</li>
+<li>Title IX complaint
+<ul>
+<li>first draft that night</li>
+<li>Liberating, 17 years later</li>
+</ul>
+</li>
+<li>Waited for tenure first</li>
+<li>Told Adam Lewis she thought about saying something
+<ul>
+<li>he said he always felt guilty and would be happy to write a letter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Back to Burks
+<ul>
+<li>conference, majority heavy</li>
+<li>&quot;manel&quot; (only men)</li>
+<li>whiter than the cast of friends</li>
+<li>less than 1/4 speakers woman</li>
+<li>less than 1/25 poc</li>
+<li>Parking in faculty lot as faculty with faculty sticker
+<ul>
+<li>yells at her &quot;do you work here&quot;</li>
+<li>look at my sticker,</li>
+<li>&quot;Well I've never seen you before&quot;</li>
+</ul>
+</li>
+<li>Higher up the tower, the more white, the more male etc</li>
+<li>7% of deans and 3% of provosts &amp; research unis</li>
+<li>Insult us to our face, but we are meant to be respectful and civil</li>
+<li>Talk a certain way, look a certain way, but even when you do, you are not considered one of them.</li>
+<li><strong>Being invisible</strong>
+<ul>
+<li>but also hypervisible in the &quot;why are you here&quot; way</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Back to Nancy
+<ul>
+<li>looking at office and lab</li>
+<li>did measurements at night and odd times when people aren't around</li>
+<li>measured all the spaces</li>
+<li>&quot;I expected to fight alone&quot;</li>
+<li>I knew I was write</li>
+<li>Gave MIT a last chance, wrote to president of MIT</li>
+<li>Another woman faculty member to read it, Mary Lou Pardue, PHD
+<ul>
+<li>Corner table</li>
+<li>Reads it</li>
+<li>&quot;I'd like to sign this letter&quot;</li>
+<li>I think we should go see the president together</li>
+<li>Talked to each tenured woman in the school of science</li>
+<li>spring of 94</li>
+<li>15 woman, 197 men</li>
+<li>Half in the national academy</li>
+<li>Meeting in remote location</li>
+<li>Was it a bigger problem?</li>
+<li>don't want to be perceived as a problem</li>
+<li>No women had taken <strong>family leave</strong> and gotten tenure</li>
+<li>walking to deans office as a group</li>
+<li>intimidated, like we didn't belong there</li>
+<li>asked for committee</li>
+<li>Dean said you can have committee but I don't think it will fix the problem</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Jane's wedding
+<ul>
+<li>adam lewis was confronted by brother
+<ul>
+<li>&quot;you were there when she was ruined&quot;</li>
+<li>&quot;holy shit that must have been really bad for jane&quot;</li>
+<li>&quot;Jane says hey, it's time to file this report&quot;</li>
+<li>It needs to be dealt with</li>
+<li>Write down what happened</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="beast"><a class="header" href="#beast">Beast?</a></h2>
+<ul>
+<li>We don't need a computer to measure this bias, a sundial will do</li>
+<li>men/women word association with science</li>
+</ul>
+<p>Male colleague thinks it does not exist<br />
+you need to know the research, not personal experience</p>
+<p>&quot;human beings may not be the people we think we are&quot;</p>
+<p>Media ans science portrayal</p>
+<h2 id="eyes-to-see"><a class="header" href="#eyes-to-see">Eyes to see?</a></h2>
+<ul>
+<li>
+<p>Science communicator</p>
+<ul>
+<li>youtube bbc etc</li>
+<li>representation matters</li>
+</ul>
+</li>
+<li>
+<p>Some unknown woman</p>
+<ul>
+<li>Unspoken rule is either phd or military pilot</li>
+<li>Boston University</li>
+<li>New Professor</li>
+<li>First grad student of dave marchant</li>
+<li>second week he said he didn't want a woman as a grad student</li>
+<li>foisted her on him</li>
+<li>atrocious experience</li>
+<li>bullying from day one
+<ul>
+<li>whore bitch cunt</li>
+<li>he did not believe that women should be on the ice, altering the science for the worse</li>
+<li>walked out of the camp
+<ul>
+<li>he said she would have no future in polar studies, no funding</li>
+<li>grinned and walked off</li>
+<li>Department chair, a woman .. you can go through this, but he has a sterling reputation and gets lots of funding</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Nancy</p>
+<ul>
+<li>ready to retire ~50, tired of struggling</li>
+</ul>
+</li>
+</ul>
+<h2 id="scouts-before-the-troops"><a class="header" href="#scouts-before-the-troops">Scouts before the Troops</a></h2>
+<ul>
+<li>
+<p>MIT Evidence coming in</p>
+<ul>
+<li>lab space for women significantly less</li>
+<li>paid lower salary</li>
+<li>no childcare</li>
+<li>MIT Report</li>
+<li>Complicated for the university</li>
+<li>Prided itself on being a meritocracy</li>
+<li>President endorsed the report
+<ul>
+<li>&quot;I have always believed contemporary gender discrimination has been part fan`tasy and reality, I now believe its a majority reality&quot;</li>
+<li>owning the problem</li>
+<li>based on data</li>
+<li>Ripple, feel the resonance</li>
+</ul>
+</li>
+<li>Why are we not doing this? (departments around the country)</li>
+<li>Daycare center on campus now, tenured woman doubled</li>
+<li>Other provosts said &quot;it's not in my institution&quot;</li>
+</ul>
+</li>
+<li>
+<p>Jane, Bob brown overruled panel recommendation</p>
+<ul>
+<li>Provost of MIT then BU</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="backlinks"><a class="header" href="#backlinks">Backlinks</a></h2>
+<blockquote>
+<ul>
+<li><a href="_Index_of_Professional%20Practice.html">_Index_of_Professional Practice</a></li>
+</ul>
+</blockquote>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+</body>
+
+</html>

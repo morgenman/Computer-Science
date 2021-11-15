@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title># Is China’s corruption-busting AI syste - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item "><a href="../Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../Databases/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item "><a href="../Databases/Normal Forms.html">Normal Forms</a></li><li class="chapter-item "><a href="../Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item "><a href="../Databases/SQL.html">SQL</a></li><li class="chapter-item "><a href="../Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Database Systems.html">_Index_of_Database Systems</a></li><li class="chapter-item "><a href="../Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Fall 2021/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../Fall 2021/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-07.html">2021-09-07</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../Fall 2021/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../Fall 2021/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../Fall 2021/_Index_of_Fall 2021.html">_Index_of_Fall 2021</a></li></ol></li><li class="chapter-item "><a href="../Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Dev.html">_Index_of_Game Dev</a></li><li class="chapter-item "><a href="../Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item "><a href="../Operating Systems/Operating Systems.html">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt Service Vector.html">Interrupt Service Vector</a></li><li class="chapter-item "><a href="../Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../Operating Systems/Program.html">Program</a></li><li class="chapter-item "><a href="../Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../Operating Systems/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item expanded "><a href="../Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../Professional Practice/# Is China’s corruption-busting AI syste.html" class="active">Is China’s corruption-busting AI syste</a></li><li class="chapter-item "><a href="../Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../Professional Practice/Interview.html">Interview</a></li><li class="chapter-item "><a href="../Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item "><a href="../Professional Practice/Picture a Scientist Notes.html">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item "><a href="../Theory of Computation/Theory of Computation.html">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../Theory of Computation/Complexity.html">Complexity</a></li><li class="chapter-item "><a href="../Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item "><a href="../Theory of Computation/Exam Prep.html">Exam Prep</a></li><li class="chapter-item "><a href="../Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li><li class="chapter-item "><a href="../index.html">Welcome to my brain!</a></li><li class="chapter-item "><a href="../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button style="display: none;" id="theme-toggle" class="icon-button" type="button"
+                        title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                        aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title"># Is China’s corruption-busting AI syste</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<h1 id="is-chinas-corruption-busting-ai-system-zero-trust-being-turned-off-for-being-too-efficient"><a class="header" href="#is-chinas-corruption-busting-ai-system-zero-trust-being-turned-off-for-being-too-efficient">Is China’s corruption-busting AI system ‘Zero Trust’ being turned off for being too efficient?</a></h1>
+<ul>
+<li>Despite being restricted to just 30 counties and cities, artificial intelligence system has already helped snare 8,721 officials</li>
+<li>System cross-references big data to evaluate work and personal lives of<br />
+millions of government workers</li>
+</ul>
+<p>What would you do if you had a machine to catch a thief? If you were a corrupt Chinese bureaucrat, you would want to ditch it, of course.<br />
+Resistance by government officials to a groundbreaking big data experiment is only one of many challenges as the Chinese government starts using new technology to navigate its giant bureaucracy.<br />
+According to state media, there were more than 50 million people on China’s government payroll in 2016, though analysts have put the figure at more than 64 million – slightly less than the population of Britain.<br />
+To turn this behemoth into a seamless operation befitting the information age, China has started adapting various types of sophisticated technology. The foreign ministry, for instance, is using machine learning to aid in risk assessment and decision making for China’s major investment projects overseas.<br />
+Beijing has been developing a nationwide facial recognition system using surveillance cameras capable of identifying any person, anywhere, around the clock within seconds. In Guizhou, a cloud system tracks the movements of every policeman with a live status report.<br />
+Major Chinese telecommunication companies such as ZTE have won government contracts to develop blockchain technology to prevent the modification of government data by unauthorised people or organisations.<br />
+President Xi Jinping has repeatedly stressed the necessity of promoting scientific and technological innovations such as big data and artificial intelligence (AI) in government reform.<br />
+The challenge is implementing that vision on the ground. Look no further than an anti-corruption AI system dubbed by the researchers working it as “Zero Trust”.<br />
+Jointly developed and deployed by the Chinese Academy of Sciences and the Chinese Communist Party’s internal control institutions to monitor, evaluate or intervene in the work and personal life of public servants, the system can access more than 150 protected databases in central and local governments for cross-reference.<br />
+According to people involved in the programme, this allows it to draw sophisticated, multiple layers of social relationship maps to derive behaviour analyses of government employees.<br />
+This was “particularly useful” in detecting suspicious property transfers, infrastructure construction, land acquisitions and house demolitions, a researcher said.<br />
+The system is not without its weaknesses, however.<br />
+“AI may quickly point out a corrupt official, but it is not very good at explaining the process it has gone through to reach such a conclusion,” the researcher said. “Although it gets it right in most cases, you need a human to work closely with it.”<br />
+The system can immediately detect unusual increases in bank savings, for instance, or if there has been a new car purchase or bidding for a government contract under the name of an official or one of his family or friends.<br />
+Once its suspicions have been raised it will calculate the chances of the action being corrupt. If the result exceeds a set marker, the authorities are alerted.<br />
+A computer scientist involved in the programme who asked not to be named said that at that stage a superior could then contact the person under scrutiny and perhaps help him avoid “going down the road of no return with further, bigger mistakes”.<br />
+The Zero Trust experiment has been limited to 30 counties and cities, just 1 per cent of the country’s total administrative area. The local governments involved, including the Mayang Miao autonomous county in Hunan province, are located in relatively poor and isolated regions far away from China’s political power centres.<br />
+Another researcher involved in the programme said the idea was to “avoid triggering large-scale resistance among bureaucrats”, especially the most powerful ones, to the use of bots in governance.<br />
+Since 2012, Zero Trust has caught 8,721 government employees engaging in misconduct such as embezzlement, abuse of power, misuse of government funds and nepotism.<br />
+While some were sentenced to prison terms, most were allowed to keep their jobs after being given a warning or minor punishment.<br />
+Still, some governments – including Mayang county, Huaihua city and Li county in Hunan – have decommissioned the machine, according to the researchers, one of whom said they “may not feel quite comfortable with the new technology”.<br />
+None of the local authorities responded to requests for comment.<br />
+Zhang Yi, an official at the Commission for Discipline Inspection of the Chinese Communist Party in Ningxiang, Hunan province, said his agency was one of the few still using the system.<br />
+“It is not easy … we are under enormous pressure,” he said, insisting that the main purpose of the programme was not to punish officials but to “save them” at an “early stage of corruption”.<br />
+“We just use the machine’s result as reference,” Zhang said. “We need to check and verify its validity. The machine cannot pick up the phone and call the person with a problem. The final decision is always made by humans.”<br />
+Since Xi rose to power in 2012, more than 1.4 million party members and government employees are estimated to have been disciplined, including leaders like former security tsar Zhou Yongkang and former Chongqing strongman Bo Xilai.<br />
+A party disciplinary official in Xiushui county, Jiangxi, who took part in the Zero Trust project said no government officials were willing to provide the necessary data.<br />
+“But they usually comply with a bit of pressure,” said the official, who asked not to be named because of the sensitivity of the issue.<br />
+Disciplinary officials need to help scientists train the machine with their experience and knowledge accumulated from previous cases. For instance, disciplinary officials spent many hours manually tagging unusual phenomena in various types of data sets to teach the machine what to look for.<br />
+Some officials might fabricate data, but the machine can compare information from different sources and flag discrepancies. It can even call up satellite images, for instance, to investigate whether the government funding to build a road in a village ended up in the pocket of an official, the researchers said.<br />
+The system is still running in Xiushui, but its fate is uncertain. Some officials have questioned the machine’s right of access to sensitive databases because there is neither a law nor regulation authorising a computer or robot to do so.<br />
+No wonder the system is being decommissioned by counties and cities that had signed up, and those still using it are facing enormous pressure, with the researchers seeing little or no hope of rolling it out nationwide.<br />
+The Zero Trust hump notwithstanding, artificial intelligence’s foray into other government sectors continues as the government is determined to apply cutting-edge technology to its advantage. AI clerks, for example, have been recruited in some courts to read case files and help judges process lawsuits with higher speed and accuracy.<br />
+Last month, a court in Shanghai became the first ever in China to use an AI assistant at a public hearing, Xinhua reported.<br />
+The machine, code-named “206”, has the ability to record conversations, show evidence such as surveillance camera footage when mentioned by lawyers, and compare testimonies to help judges spot discrepancies, the report said.<br />
+One judge was quoted as saying it would reduce the likelihood of a wrong verdict.</p>
+<hr />
+<h2 id="backlinks"><a class="header" href="#backlinks">Backlinks</a></h2>
+<blockquote>
+<ul>
+<li><a href="Professional%20Practice.html">Professional Practice</a></li>
+<li><a href="_Index_of_Professional%20Practice.html">_Index_of_Professional Practice</a></li>
+</ul>
+</blockquote>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+</body>
+
+</html>
