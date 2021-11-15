@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-15_08:02:33-05:00
+updated: 2021-11-15_08:18:18-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -963,3 +963,7 @@ what's important?
 vector 
 * Frame
 	* RAM
+
+---
+
+What if we broke up the page# and offset into page table + page # 
