@@ -171,7 +171,7 @@
 <li>All jobs only use the CPU (no IO)</li>
 <li>The runtime of each job is known</li>
 </ol>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084025.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084025.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084025.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084025.png" alt="Pasted image 20211018084025"/></a></p>
 <p>first in first out<br />
 shortest job first<br />
 shortest to completion first<br />
@@ -179,52 +179,52 @@ round robin (preemptive time slices with quantum time slices, cyclic nature of q
 <h2 id="example-fifo"><a class="header" href="#example-fifo">Example: FIFO</a></h2>
 <ul>
 <li>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084408.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084408.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084408.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084408.png" alt="Pasted image 20211018084408"/></a></p>
 </li>
 <li>
 <p>Turnaround: Completion time - arrival time</p>
 </li>
 <li>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084436.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084436.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084436.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084436.png" alt="Pasted image 20211018084436"/></a></p>
 </li>
 <li>
 <p>Trace:</p>
 </li>
 <li>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084455.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084455.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084455.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084455.png" alt="Pasted image 20211018084455"/></a></p>
 </li>
 <li>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084540.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084540.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084540.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084540.png" alt="Pasted image 20211018084540"/></a></p>
 </li>
 </ul>
 <h2 id="example-shortest-job-first-with-a-big-first-job"><a class="header" href="#example-shortest-job-first-with-a-big-first-job">Example: Shortest Job First, with a big first job</a></h2>
 <p><em>What if they didn't run for the same amount of time?</em><br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084717.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084717.png" alt=""/></p>
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084717.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084717.png" alt="Pasted image 20211018084717"/></a></p>
 <p>FIFO:<br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084726.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084726.png" alt=""/></p>
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084726.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084726.png" alt="Pasted image 20211018084726"/></a></p>
 <ul>
 <li>when deciding what job to run next, choose the one with smallest run_time</li>
-<li><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084802.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084802.png" alt=""/></li>
+<li><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084802.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084802.png" alt="Pasted image 20211018084802"/></a></li>
 </ul>
 <h2 id="example-shortest-time-to-completion-first"><a class="header" href="#example-shortest-time-to-completion-first">Example: Shortest Time to completion first</a></h2>
 <p><em>What if jobs didn't arrive at the same time?</em><br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084927.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084927.png" alt=""/></p>
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084927.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018084927.png" alt="Pasted image 20211018084927"/></a></p>
 <p>Not good...</p>
 <ul>
 <li>Policy: switch jobs so we always run the one that will complete the quickest</li>
 </ul>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018085007.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018085007.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018085007.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211018085007.png" alt="Pasted image 20211018085007"/></a></p>
 <p>STCF, great for small jobs who want to run and don't want to wait for a big job, bad for big jobs who could be continually kept on the bottom of the queue so they never run FIFO, great for bigger jobs since everyone is run in order, is not affected by smaller jobs arriving SJF, bad for big jobs if not first since they could never run and bad for small jobs because if a big job ever get's loaded they have to wait for it to be completely finished So yea, worst of both worlds</p>
 <h2 id="example-round-robin"><a class="header" href="#example-round-robin">Example: Round Robin</a></h2>
 <p><em>what if we care about when a job starts?</em></p>
 <p>Response time = first run - arrival time<br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081120.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081120.png" alt=""/></p>
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081120.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081120.png" alt="Pasted image 20211020081120"/></a></p>
 <p>Other schedulers have poor response time<br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081506.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081506.png" alt=""/></p>
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081506.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081506.png" alt="Pasted image 20211020081506"/></a></p>
 <h2 id="io-aware"><a class="header" href="#io-aware">I/O Aware</a></h2>
 <p><em>what if jobs wanted to use I/O?</em></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081549.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081549.png" alt=""/></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081600.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081600.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081549.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081549.png" alt="Pasted image 20211020081549"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081600.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081600.png" alt="Pasted image 20211020081600"/></a></p>
 <h2 id="mlfq"><a class="header" href="#mlfq">MLFQ</a></h2>
 <p><em>what if the runtime of each job is NOT known?</em></p>
 <ul>
@@ -242,10 +242,10 @@ round robin (preemptive time slices with quantum time slices, cyclic nature of q
 <strong>Rule 2</strong>: If priority(A) == Priority(B), A &amp; B run in RR<br />
 <strong>Rule 3</strong>: Processes start at top priority<br />
 <strong>Rule 4</strong>: If job uses whole slice, demote process</p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081909.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081909.png" alt=""/></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082008.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082008.png" alt=""/></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082529.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082529.png" alt=""/></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082538.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082538.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081909.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020081909.png" alt="Pasted image 20211020081909"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082008.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082008.png" alt="Pasted image 20211020082008"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082529.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082529.png" alt="Pasted image 20211020082529"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082538.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020082538.png" alt="Pasted image 20211020082538"/></a></p>
 <p><em>problem:</em> unforgiving, gaming the system, hard to tune...</p>
 <p>How do we fix processes getting stuck at q0:<br />
 <strong>every so often we clear the queue, reschedule everything at highest priority</strong></p>
@@ -265,12 +265,12 @@ while(current) {
 	current = current-&gt;next;   
 } // current is the winner  
 </code></pre>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084229.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084229.png" alt=""/></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084229.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084229.png" alt="Pasted image 20211020084229"/></a></p>
 <p>Winner = 102<br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084323.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084323.png" alt=""/></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084332.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084332.png" alt=""/></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084344.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084344.png" alt=""/></p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084359.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084359.png" alt=""/></p>
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084323.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084323.png" alt="Pasted image 20211020084323"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084332.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084332.png" alt="Pasted image 20211020084332"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084344.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084344.png" alt="Pasted image 20211020084344"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084359.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020084359.png" alt="Pasted image 20211020084359"/></a></p>
 
                 </main>
             </div>
