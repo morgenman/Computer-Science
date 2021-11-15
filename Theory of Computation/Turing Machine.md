@@ -68,7 +68,7 @@ Infinite memory, so we need to know end of input (tape symbol)
 
 | 0   | 1   | 1   | 0   | 1   | 1   | 0   | 0 | $\textvisiblespace$   |
 | --- | --- | --- | --- | --- | --- | --- | --- | ----------------- |
-| ^ |   |  |  | |  ||  | |
+| ^ |  |  |  | |  ||  | |
 
 
 reject = false;

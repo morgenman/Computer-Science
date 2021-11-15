@@ -9,10 +9,23 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Entity-Relationship.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "09c83b5489b4e6c8"
+      },
+      {
+        "id": "dd9c88b783e71d69",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Operating Systems/Operating Systems.md",
+            "mode": "preview"
+          }
+        },
+        "group": "09c83b5489b4e6c8"
       }
     ],
     "direction": "vertical"
@@ -39,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "entity",
+                "query": "||",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,13 +69,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -79,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Entity-Relationship.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Entity-Relationship.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -122,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Entity-Relationship.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -132,20 +143,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125,
-    "collapsed": true
+    "width": 265.14288330078125
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
+    "Theory of Computation/Turing Machine.md",
+    "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Non-Context Free Languages.md",
     "Databases/Entity-Relationship.md",
     "Databases/Data Models.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Operating Systems/Operating Systems.md",
     "Operating Systems/Limited Direct Execution.md",
     "Game Development/Game Development.md",
     "Science of Learning.md",
-    "Theory of Computation/Non-Regular Language.md",
-    "Theory of Computation/!Non-Regular Language.md",
-    "Databases/_Index_of_Databases.md"
+    "Theory of Computation/Non-Regular Language.md"
   ]
 }
