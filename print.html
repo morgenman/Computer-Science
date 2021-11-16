@@ -9028,7 +9028,7 @@ As the note conversion process is automated it's hard to know which is which.</p
     });
 </script>
 <hr>  
-<p>updated: 2021-11-16_13:17:05-05:00</p>
+<p>updated: 2021-11-16_14:57:46-05:00</p>
 <hr>  
 <h1 id="science-of-learning"><a class="header" href="#science-of-learning">Science of Learning</a></h1>
 <ul>
@@ -9147,6 +9147,7 @@ tags: [MOC]</p>
             var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
             source += nomnomls[i].textContent;
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
+            var canvas = document.getElementById(name);
 
             let context = canvas.getContext("2d");
 
@@ -9163,7 +9164,7 @@ tags: [MOC]</p>
             // scale everything down using CSS
             canvas.style.width = rect.width + 'px';
             canvas.style.height = rect.height + 'px';
-            var canvas = document.getElementById(name);
+
             nomnoml.draw(canvas, source);
         }
 

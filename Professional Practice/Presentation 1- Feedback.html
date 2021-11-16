@@ -233,6 +233,7 @@ Ended a little bit awkwardly</p>
             var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
             source += nomnomls[i].textContent;
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
+            var canvas = document.getElementById(name);
 
             let context = canvas.getContext("2d");
 
@@ -249,7 +250,7 @@ Ended a little bit awkwardly</p>
             // scale everything down using CSS
             canvas.style.width = rect.width + 'px';
             canvas.style.height = rect.height + 'px';
-            var canvas = document.getElementById(name);
+
             nomnoml.draw(canvas, source);
         }
 
