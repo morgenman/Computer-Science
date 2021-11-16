@@ -72,9 +72,6 @@ jobs:
       - name: Build ZK
         run: ./mdzk build
 
-      - name: remove href
-        run: sed '~<base href=\"/\">~d' ./html/404.html
-
       - name: copy
         run: cp ./html/index.html ./html/index.htm
 
