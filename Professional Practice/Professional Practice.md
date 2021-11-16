@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_09:12:57-05:00
+updated: 2021-11-16_09:27:07-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -45,8 +45,6 @@ updated: 2021-11-16_09:12:57-05:00
 [[Presentation 1- Feedback]]
 
 [[Losing Lena]]
-
-[[Professional Practice/# Is China’s corruption-busting AI syste]]
 
 [[Picture a Scientist Notes]]
 
