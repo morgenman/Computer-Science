@@ -193,7 +193,7 @@
         for (var i = 0; i < nomnomls.length + 1; i++) {
             var name = 'target-canvas';
             name += i;
-            var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: var(--fg)\n#fill: #181a20; #22262f\n'
+            var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: var(--fg)\n#fill: var(--sidebar-bg); var(--bg)\n'
             source += nomnomls[0].textContent;
             nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>testing testing 1-2-3\n');
             var canvas = document.getElementById(name);
