@@ -10,15 +10,18 @@
 /* Themes */
 
 .light {
-    --bg: #fff;
-    --fg: #000;
+    --scroll: rgb(224, 225, 235);
+    --scroll-hover: rgb(212, 213, 219);
+    --bg: #f5f5f5;
+    --fg: #22262f;
     --accent-1: #f5704c;
     --accent-2: #f5a14c;
-    --accent-3: #ede482;
-    --accent-4: #aade62;
-    --accent-5: #62deac;
+    --main-node: #dea500;
+    --accent-3: #b7ad3a;
+    --accent-4: #8ac536;
+    --accent-5: #3cad7f;
     --accent-6: #62b7de;
-    --links: #008cff;
+    --links: #307a8e;
     --link-disabled: rgba(131, 197, 235, 0.3);
     --sidebar-bg: #fafafa;
     --sidebar-fg: #000;
@@ -48,6 +51,8 @@
 }
 
 .dark {
+    --scroll: rgb(61, 63, 80);
+    --scroll-hover: rgb(69, 71, 85);
     --bg: #22262f;
     --fg: #c9c9c9;
     --main-node: #ffbe00;

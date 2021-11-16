@@ -42,13 +42,13 @@ em {
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(61, 63, 80)!important;
+    background: var(--scroll)!important;
 }
 
 /* Handle on hover */
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(69, 71, 85)!important;
+    background: var(--scroll-hover)!important;
 }
 
 code {
