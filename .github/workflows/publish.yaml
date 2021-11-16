@@ -23,7 +23,7 @@ jobs:
 
       - name: remove github
         run: rm -r ./_notes/.github
-
+ 
       - name: remove obsidian
         run: rm -r ./_notes/.obsidian
         
