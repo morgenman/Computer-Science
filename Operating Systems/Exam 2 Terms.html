@@ -156,55 +156,58 @@
         });
     });
 </script>
+<hr>  
+<p>updated: 2021-11-16_17:54:16-05:00</p>
+<hr>  
 <h1 id="exam-2-terms"><a class="header" href="#exam-2-terms">Exam 2 Terms</a></h1>
-<p>Blocking receive	The receiver blocks until a message is available.</p>
-<p>Blocking send	The sending process is blocked until the message is received by the receiving process or by the mailbox.</p>
-<p>Bounded Buffer	Assumes a fixed buffer size. The consumer must wait if the buffer is empty and the producer must wait if the buffer is full.</p>
-<p>Cascading Termination	If process terminates then all its children must also be terminated</p>
-<p>Child Process	New process created</p>
-<p>Communication Link	If process P and Q want to communicate they must send and receive messages so a communication link must exist between them. This link can be implemented in direct and indirect communication.</p>
-<p>Context Switch	Switching the CPU to another process by performing a state save of the current process and a state restore of a different process.</p>
-<p>Cooperating Processse	If it can affect or be affected by other processes executing in the system.</p>
-<p>CPU-bound process	generates I/O requests infrequently, using more of its time doing computations.</p>
-<p>Data Section	Contains global variables.</p>
-<p>Degree of Multiprogramming	The number of processes in memory, which is controlled by long term scheduler.</p>
-<p>Device Queue	List of processes waiting for a particular I/O device</p>
-<p>Direct Communication	Each process that want to communicate must explicitly name the recipient or sender of the communication.</p>
-<p>Heap	Memory that is dynamically allocated during process run time.</p>
-<p>I/O-bound process	One that spends more of its time doing I/O than it spends doing computations.</p>
-<p>Independent Processes	A process that cannot affect or be affected by other processes executing in the system.</p>
-<p>Indirect Communication	the messages are sent to and received from mailboxes or ports.</p>
-<p>Interproccess Communication	Allows process to exchange data and information.</p>
-<p>Job Queue	consists of all processes in the system.</p>
-<p>Long-Term Scheduler	Selects processes from ones that are kept for later execution</p>
-<p>Medium-Term Scheduler	Sometimes is advantageous to remove processes from memory and thus reduce the degree of multiprogramming.</p>
-<p>Message Passing	Communication takes place by means of message exchanging between the cooperating processes.</p>
-<p>Non-Blocking receive	The receiver either a valid message or null.</p>
-<p>Non-Blocking send	The sending process sends the message and resumes operation</p>
-<p>Parent Process	The creating process</p>
-<p>Process	A program in execution</p>
-<p>Process Control Block	Contains many pieces of information associated with a specific process including these : Process State, Program counter, CPU registers, CPU scheduler info, Memory management info, accounting info, I/O status info</p>
-<p>Process Dispatch	A process is selected for execution so it is out of ready queue.</p>
-<p>Process Identifier (pid)	unique identifier</p>
-<p>Process Mix	Mix of I/O bound and CPU bound processes</p>
-<p>Process Scheduler	selects an available process for program execution on CPU</p>
-<p>Process State	Defined in part by the current activity of that process</p>
-<p>Process State: New	The process is being created</p>
-<p>Process State: Ready	The process is waiting to be assigned to a processor.</p>
-<p>Process State: Running	Instructions are being executed</p>
-<p>Process State: Terminated	The process has finished execution.</p>
-<p>Process State: Waiting	Process is waiting for some event to occur (such as an I/O completion or reception of a signal)</p>
-<p>Program Counter	Value that represents the current activity</p>
-<p>Ready Queue	Processes that are residing in main memory and are ready and waiting to execute</p>
-<p>Shared Memory (for Communication)	A reigion of memory that is shared by cooperating processes is established. Processes can then exchange information by reading and writing data to the shared region.</p>
-<p>Short-Term Scheduler	Selects among processes that are ready to execute and allocates the CPU to one of them.</p>
-<p>Stack	Contains temporary data(such as function parameters, return addresses, and local variables),</p>
-<p>State Restore (in Context Switch)	Resume Operations</p>
-<p>State Save(in Context Switch)	Save current state of CPU</p>
-<p>Swapping	process is swapped out and later swapped in</p>
-<p>Text Section	The program Code</p>
-<p>Unbounded Buffer	Places no practical limit on the size of the buffer. The consumer may have to wait for new items, but the producer can always produce new items.</p>
-<p>Zero-capacity buffer	The queue has a maximum length of zero; thus the link cannot have any messages waiting in it. In this case, the sender must block until the recipient receives the message.</p>
+<p><em>Blocking receive</em>: The receiver blocks until a message is available.</p>
+<p><em>Blocking send</em>: The sending process is blocked until the message is received by the receiving process or by the mailbox.</p>
+<p><em>Bounded Buffer</em>: Assumes a fixed buffer size. The consumer must wait if the buffer is empty and the producer must wait if the buffer is full.</p>
+<p><em>Cascading Termination</em>: If process terminates then all its children must also be terminated</p>
+<p><em>Child Process</em>: New process created</p>
+<p><em>Communication Link</em>: If process P and Q want to communicate they must send and receive messages so a communication link must exist between them. This link can be implemented in direct and indirect communication.</p>
+<p><em>Context Switch</em>: Switching the CPU to another process by performing a state save of the current process and a state restore of a different process.</p>
+<p><em>Cooperating Processse</em>: If it can affect or be affected by other processes executing in the system.</p>
+<p><em>CPU-bound process</em>: generates I/O requests infrequently, using more of its time doing computations.</p>
+<p><em>Data Section</em>: Contains global variables.</p>
+<p><em>Degree of Multiprogramming</em>: The number of processes in memory, which is controlled by long term scheduler.</p>
+<p><em>Device Queue</em>: List of processes waiting for a particular I/O device</p>
+<p><em>Direct Communication</em>: Each process that want to communicate must explicitly name the recipient or sender of the communication.</p>
+<p><em>Heap</em>: Memory that is dynamically allocated during process run time.</p>
+<p><em>I/O-bound process</em>: One that spends more of its time doing I/O than it spends doing computations.</p>
+<p><em>Independent Processes</em>: A process that cannot affect or be affected by other processes executing in the system.</p>
+<p><em>Indirect Communication</em>: the messages are sent to and received from mailboxes or ports.</p>
+<p><em>Interproccess Communication</em>: Allows process to exchange data and information.</p>
+<p><em>Job Queue</em>: consists of all processes in the system.</p>
+<p><em>Long-Term Scheduler</em>: Selects processes from ones that are kept for later execution</p>
+<p><em>Medium-Term Scheduler</em>: Sometimes is advantageous to remove processes from memory and thus reduce the degree of multiprogramming.</p>
+<p><em>Message Passing</em>: Communication takes place by means of message exchanging between the cooperating processes.</p>
+<p><em>Non-Blocking receive</em>: The receiver either a valid message or null.</p>
+<p><em>Non-Blocking send</em>: The sending process sends the message and resumes operation</p>
+<p><em>Parent Process</em>: The creating process</p>
+<p><em>Process</em>: A program in execution</p>
+<p><em>Process Control Block</em>: Contains many pieces of information associated with a specific process including these : Process State, Program counter, CPU registers, CPU scheduler info, Memory management info, accounting info, I/O status info</p>
+<p><em>Process Dispatch</em>: A process is selected for execution so it is out of ready queue.</p>
+<p><em>Process Identifier (pid)</em>: unique identifier</p>
+<p><em>Process Mix</em>: Mix of I/O bound and CPU bound processes</p>
+<p><em>Process Scheduler</em>: selects an available process for program execution on CPU</p>
+<p><em>Process State</em>: Defined in part by the current activity of that process</p>
+<p><em>Process State: New</em>: The process is being created</p>
+<p><em>Process State: Ready</em>: The process is waiting to be assigned to a processor.</p>
+<p><em>Process State: Running</em>: Instructions are being executed</p>
+<p><em>Process State: Terminated</em>: The process has finished execution.</p>
+<p><em>Process State: Waiting</em>: Process is waiting for some event to occur (such as an I/O completion or reception of a signal)</p>
+<p><em>Program Counter</em>: Value that represents the current activity</p>
+<p><em>Ready Queue</em>: Processes that are residing in main memory and are ready and waiting to execute</p>
+<p><em>Shared Memory (for Communication)</em>: A reigion of memory that is shared by cooperating processes is established. Processes can then exchange information by reading and writing data to the shared region.</p>
+<p><em>Short-Term Scheduler</em>: Selects among processes that are ready to execute and allocates the CPU to one of them.</p>
+<p><em>Stack</em>: Contains temporary data(such as function parameters, return addresses, and local variables),</p>
+<p><em>State Restore (in Context Switch)</em>: Resume Operations</p>
+<p><em>State Save(in Context Switch)</em>: Save current state of CPU</p>
+<p><em>Swapping</em>: process is swapped out and later swapped in</p>
+<p><em>Text Section</em>: The program Code</p>
+<p><em>Unbounded Buffer</em>: Places no practical limit on the size of the buffer. The consumer may have to wait for new items, but the producer can always produce new items.</p>
+<p><em>Zero-capacity buffer</em>: The queue has a maximum length of zero; thus the link cannot have any messages waiting in it. In this case, the sender must block until the recipient receives the message.</p>
 
                 </main>
             </div>
