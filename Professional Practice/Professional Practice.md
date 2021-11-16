@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_08:10:57-05:00
+updated: 2021-11-16_08:19:22-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -79,3 +79,4 @@ updated: 2021-11-16_08:10:57-05:00
 4. Professional organizations
 5. Individual professionals
 
+xx
