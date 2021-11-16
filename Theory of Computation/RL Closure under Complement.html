@@ -198,14 +198,14 @@ $\therefore L(M')=\overline A$</p>
             source += nomnomls[i].textContent;
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
             var canvas = document.getElementById(name);
-                l//et context = canvas.getContext("2d");
-           // let rect = canvas.getBoundingClientRect();
+            //let context = canvas.getContext("2d");
+            // let rect = canvas.getBoundingClientRect();
 
             // get current size of the canvas
 
 
             // increase the actual size of our canvas
-           // canvas.width = rect.width * devicePixelRatio;
+            // canvas.width = rect.width * devicePixelRatio;
             //canvas.height = rect.height * devicePixelRatio;
 
             // ensure all drawing operations are scaled
@@ -214,7 +214,7 @@ $\therefore L(M')=\overline A$</p>
             // scale everything down using CSS
             //canvas.style.width = rect.width + 'px';
             //canvas.style.height = rect.height + 'px';
-            
+
 
             nomnoml.draw(canvas, source, 2);
         }
