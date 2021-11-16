@@ -27,10 +27,10 @@ jobs:
       - name: remove obsidian
         run: rm -r ./_notes/.obsidian
         
-      - name: index
+      - name: Fix _index page links
         run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s~[[][[](.*)\|(.*)]]~[[\2]]~g" "$i"` && echo "$x" > "$i"; done
           
-      - name: images
+      - name: Fix Images
         run: |
           mkdir ./notes/assets/
           find ./_notes/ -name '*.jpg' -exec mv {} ./notes/assets/ \;
@@ -41,38 +41,37 @@ jobs:
           find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s~![[][[]([^.]*)\.(png|jpg|svg)]]~<a href=\"https://morgenman.github.io/Computer-Science/assets/\1.\2\" target=\"_blank\"><img src=\"https://morgenman.github.io/Computer-Science/assets/\1.\2\" alt=\"\1\"/></a>\n~g" "$i"` && echo "$x" > "$i"; done
           find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|!*[[][[]([^.]*)\.([^]]*)]]|<a href=\"https://morgenman.github.io/Computer-Science/assets/\1.\2\">\1.\2</a>\n|g" "$i"` && echo "$x" > "$i"; done
 
-      - name: tables
+      - name: Fix Tables not being rendered correctly
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E -z 's/([^|])\n\|/\1\n\n|/g' "$i"` && echo "$x" > "$i"; done
         
-      - name: math
+      - name: Fix Preprocessor _ handling so it doesn't break math
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E 's~([^\$]*)[\$]([^\$]*)\*([^\$]*)[\$]~\1$\2\\\star\3$~g' "$i"` && echo "$x" > "$i"; done
         
-      - name: subsections
+      - name: Fix [[Reference#Section]] links
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E 's~[!*][[][[]([^#]+)#([^]]*)]]~<a href=\"\1#\l\2\">\1#\2</a>~g' "$i"` && echo "$x" > "$i"; done
                   
-      - name: magic1
+      - name: Remove unsupported ! preview
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|![[][[]|[[|g" "$i"` && echo "$x" > "$i"; done      
           
-      - name: magic2
+      - name: Fix horizontal lines deleting content
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|---\$|\n<hr>\n|g" "$i"` && echo "$x" > "$i"; done  
         
-      - name: magic3
+      - name: Force linebreaks where lines are broken 
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|([.]*)\$|\1  |g" "$i"` && echo "$x" > "$i"; done  
         
-      - name: testing
+      - name: fix first line note being rendered
         run: find ./_notes/ -name '*.md' | while read -r i; do  x=`echo -e "\n"; cat "$i"` && echo "$x" > "$i"; done
   
-
-      - name: copy
+      - name: copy my notes over
         run: cp -a ./_notes/. ./notes/
 
-      - name: permission
+      - name: permissions
         run: chmod +x ./mdzk
 
       - name: Build ZK
         run: ./mdzk build 
 
-      - name: copy
+      - name: Fix redirection
         run: cp ./html/index.html ./html/index.htm
 
       - name: Deploy
