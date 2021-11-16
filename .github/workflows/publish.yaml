@@ -22,7 +22,7 @@ jobs:
         run: rm -r ./_notes/.github 
  
       - name: remove obsidian
-        run: rm -r ./_notes/.obsidian
+        run: rm -r ./_notes/.obsidian 
         
       - name: Fix _index page links
         run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s~[[][[](.*)\|(.*)]]~[[\2]]~g" "$i"` && echo "$x" > "$i"; done
