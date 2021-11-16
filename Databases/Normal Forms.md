@@ -1,3 +1,6 @@
+---
+updated: 2021-11-16_18:34:57-05:00
+---
 # Normal Forms
 * 1st Normal Form
 * 2nd Normal Form
@@ -110,6 +113,7 @@ E -> G
 | R2  |     | x   | x   | x   |     |     |
 | R3  | x   | x   |     | x   | x   | x   |
 | R4  |     |     |     |     | x   | x   |
+
 Do it again....
 AD -> E
 |     | A   | B   | C   | D   | E   | G   |

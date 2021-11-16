@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Exam 2 Terms.md",
+            "file": "Databases/Normal Forms.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Do it again",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,12 +56,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Exam 2 Terms.md",
+                "file": "Databases/Normal Forms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Exam 2 Terms.md"
+                "file": "Databases/Normal Forms.md"
               }
             }
           },
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Exam 2 Terms.md",
+                "file": "Databases/Normal Forms.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,15 +136,15 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Databases/Normal Forms.md",
+    "Game Development/Game Development.md",
+    "Operating Systems/Operating Systems.md",
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Exam 2 Terms.pdf",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Turing Machine.md",
-    "Operating Systems/Operating Systems.md",
     "Operating Systems/Building with Make.md",
-    "Operating Systems/_Index_of_Operating Systems.md",
-    "Theory of Computation/Push Down Automata.md",
-    "Databases/_Index_of_Databases.md"
+    "Operating Systems/_Index_of_Operating Systems.md"
   ]
 }
