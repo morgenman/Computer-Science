@@ -227,11 +227,11 @@ if   A-&gt;DFA and  B-&gt;DFA  then  A$\cup$B-&gt;DFA</p>
             name += i;
             var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
             source += nomnomls[i].textContent;
-            let rect = nomnomls[i].getBoundingClientRect();
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
             var canvas = document.getElementById(name);
-
-            let context = canvas.getContext("2d");
+            < !--
+                let context = canvas.getContext("2d");
+            let rect = canvas.getBoundingClientRect();
 
             // get current size of the canvas
 
@@ -246,8 +246,9 @@ if   A-&gt;DFA and  B-&gt;DFA  then  A$\cup$B-&gt;DFA</p>
             // scale everything down using CSS
             canvas.style.width = rect.width + 'px';
             canvas.style.height = rect.height + 'px';
+            -->
 
-            nomnoml.draw(canvas, source);
+                nomnoml.draw(canvas, source, 2);
         }
 
     </script>
