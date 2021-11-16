@@ -6,4 +6,4 @@ updated: 2021-11-16_15:11:35-05:00
 * Review after class
 * Read the book
 * Try and find a block of time to study intently a couple times a week
-* Write down information you know about it 
+* Write down information you know about it
