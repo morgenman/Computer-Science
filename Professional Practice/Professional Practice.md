@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_08:05:27-05:00
+updated: 2021-11-16_08:10:57-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -61,6 +61,12 @@ updated: 2021-11-16_08:05:27-05:00
 * Reverse engineering o of human brain 
 * General Purpose/True/Strong AI
 * How does ethics get built into this system?
+
 ## Asimov's 3 laws
-* robot may not hurt human
+1. robot may not hurt humans
+2. must obey orders except when violating #1
+3. robot must protect its own existence as long as it does not violate #1 or #2
+
+* additional 0th law: may not hurt humanity, or by inaction, allow humanity to come to harm
 * 
+##
