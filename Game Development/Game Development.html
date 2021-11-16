@@ -360,16 +360,16 @@ Dijkstra's algorithm</p>
             var name = 'target-canvas';
             name += i;
             var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
-            source += nomnomls[i].textContent;
-            nomnomls[i].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>testing testing 1-2-3\n');
+            source += nomnomls[0].textContent;
+            nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>testing testing 1-2-3\n');
             var canvas = document.getElementById(name);
             nomnoml.draw(canvas, source);
             let rect = canvas.getBoundingClientRect();
             nomnoml.draw(canvas, source, 4);
             canvas.style.width = rect.width + 'px';
             canvas.style.height = rect.height + 'px';
-            nomnomls[i].parentElement.removeChild(element.firstChild);
-            nomnomls[i].remove();
+            nomnomls[0].parentElement.removeChild(nomnomls[0].parentElement.firstChild);
+            nomnomls[0].remove();
         }
 
     </script>
