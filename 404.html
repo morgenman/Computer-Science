@@ -4,7 +4,8 @@
 <head>
     <!-- Book generated using mdBook and mdzk -->
     <meta charset="UTF-8">
-    <title>testing</title>
+    <title></title>
+    <!-- <base href="/"> -->
     <!-- Custom HTML head -->
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="description" content="">
@@ -176,11 +177,6 @@ As the note conversion process is automated it's hard to know which is which.</p
 
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
             var canvas = document.getElementById(name);
-            let dpi = window.devicePixelRatio;
-            let style_height = +getComputedStyle(canvas).getPropertyValue("height").slice(0, -2);
-            let style_width = +getComputedStyle(canvas).getPropertyValue("width").slice(0, -2);
-            canvas.setAttribute('height', style_height * dpi * 2);
-            canvas.setAttribute('width', style_width * dpi * 2);
             nomnoml.draw(canvas, source);
         }
 
