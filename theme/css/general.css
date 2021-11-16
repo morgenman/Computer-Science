@@ -137,7 +137,7 @@ span.missing-link {
 }
 
 div#menu-bar {
-    background-color: sidebar-bg;
+    background-color: var(--sidebar-bg);
     margin-left: -20px;
 }
 
