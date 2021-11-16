@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      - brain
+      - 'brain'
 
 jobs:
   build-and-deploy:
