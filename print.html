@@ -9028,7 +9028,7 @@ As the note conversion process is automated it's hard to know which is which.</p
     });
 </script>
 <hr>  
-<p>updated: 2021-11-16_15:04:02-05:00</p>
+<p>updated: 2021-11-16_15:11:35-05:00</p>
 <hr>  
 <h1 id="science-of-learning"><a class="header" href="#science-of-learning">Science of Learning</a></h1>
 <ul>
@@ -9148,26 +9148,25 @@ tags: [MOC]</p>
             source += nomnomls[i].textContent;
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
             var canvas = document.getElementById(name);
-            < !--
-                let context = canvas.getContext("2d");
-            let rect = canvas.getBoundingClientRect();
+                l//et context = canvas.getContext("2d");
+           // let rect = canvas.getBoundingClientRect();
 
             // get current size of the canvas
 
 
             // increase the actual size of our canvas
-            canvas.width = rect.width * devicePixelRatio;
-            canvas.height = rect.height * devicePixelRatio;
+           // canvas.width = rect.width * devicePixelRatio;
+            //canvas.height = rect.height * devicePixelRatio;
 
             // ensure all drawing operations are scaled
-            context.scale(devicePixelRatio, devicePixelRatio);
+            //context.scale(devicePixelRatio, devicePixelRatio);
 
             // scale everything down using CSS
-            canvas.style.width = rect.width + 'px';
-            canvas.style.height = rect.height + 'px';
-            -->
+            //canvas.style.width = rect.width + 'px';
+            //canvas.style.height = rect.height + 'px';
+            
 
-                nomnoml.draw(canvas, source, 2);
+            nomnoml.draw(canvas, source, 2);
         }
 
     </script>

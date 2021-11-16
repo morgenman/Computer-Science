@@ -194,26 +194,25 @@
             source += nomnomls[i].textContent;
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
             var canvas = document.getElementById(name);
-            < !--
-                let context = canvas.getContext("2d");
-            let rect = canvas.getBoundingClientRect();
+                l//et context = canvas.getContext("2d");
+           // let rect = canvas.getBoundingClientRect();
 
             // get current size of the canvas
 
 
             // increase the actual size of our canvas
-            canvas.width = rect.width * devicePixelRatio;
-            canvas.height = rect.height * devicePixelRatio;
+           // canvas.width = rect.width * devicePixelRatio;
+            //canvas.height = rect.height * devicePixelRatio;
 
             // ensure all drawing operations are scaled
-            context.scale(devicePixelRatio, devicePixelRatio);
+            //context.scale(devicePixelRatio, devicePixelRatio);
 
             // scale everything down using CSS
-            canvas.style.width = rect.width + 'px';
-            canvas.style.height = rect.height + 'px';
-            -->
+            //canvas.style.width = rect.width + 'px';
+            //canvas.style.height = rect.height + 'px';
+            
 
-                nomnoml.draw(canvas, source, 2);
+            nomnoml.draw(canvas, source, 2);
         }
 
     </script>
