@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Professional Practice.md",
+            "file": "Operating Systems/Building with Make.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": ".pdf",
+                "query": "buil",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,12 +56,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Operating Systems/Building with Make.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Professional Practice.md"
+                "file": "Operating Systems/Building with Make.md"
               }
             }
           },
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Operating Systems/Building with Make.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,15 +136,15 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Operating Systems/Building with Make.md",
+    "Operating Systems/_Index_of_Operating Systems.md",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Turing Machine.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Push Down Automata.md",
     "Operating Systems/Operating Systems.md",
-    "Operating Systems/_Index_of_Operating Systems.md",
     "Databases/_Index_of_Databases.md",
     "Operating Systems/int input.md",
-    "Operating Systems/Jump Table.md",
-    "Game Development/Game Development.md"
+    "Operating Systems/Jump Table.md"
   ]
 }
