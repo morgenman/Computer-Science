@@ -349,11 +349,12 @@ function playground_text(playground) {
     var theme = get_theme();
 
     set_theme(theme, false);
-
     themeToggleButton.addEventListener('click', function () {
         if (theme === 'light') {
             set_theme('dark');
             theme = 'dark';
+            themeToggleButton.target.classList.remove('fa fa-paint-brush');
+            themeToggleButton.target.classList.add('fa fa-sun');
         } else if (theme === 'dark') {
             set_theme('light');
             theme = 'light';
