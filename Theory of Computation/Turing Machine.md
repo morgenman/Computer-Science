@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-15_09:58:46-05:00
+updated: 2021-11-16_16:00:25-05:00
 ---
 # Turing Machine
 
@@ -76,7 +76,7 @@ Input:
 
 Infinite memory, so we need to know end of input (tape symbol)
 
-| 0   | 1   | 1   | 0   | 1   | 1   | 0   | 0 | $\textvisiblespace$   |
+| 0   | 1   | 1   | 0   | 1   | 1   | 0   | 0 | _   |
 | --- | --- | --- | --- | --- | --- | --- | --- | ----------------- |
 | ^ |  |  |  | |  ||  | |
 
@@ -127,8 +127,8 @@ replace
 
 ### Steps:
 1. Add input to tape
-2. add $\textvisiblespace$ to end of input
-	1. first symbol $\textvisiblespace$ -> Reject
+2. add _ to end of input
+	1. first symbol _ -> Reject
 	2. first symbol b or c -> Reject
 	3. first symbol a, change to x and move right
 		1. keep moving right until you see a b
