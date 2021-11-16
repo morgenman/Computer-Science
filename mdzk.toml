@@ -8,7 +8,8 @@ title = "Zettelkasten"
 ignore = [
     "templates/",
     ".obsidian/",
-    "assets/"
+    "assets/",
+    "./404.md"
 ]
 
 [build]
