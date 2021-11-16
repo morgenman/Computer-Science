@@ -2,9 +2,6 @@ name: Publish
 
 on:
   push:
-    branches:
-      - master
-      - 'brain'
 
 jobs:
   build-and-deploy:
