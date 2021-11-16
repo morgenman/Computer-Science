@@ -17,7 +17,7 @@ jobs:
 
       - name: remove .git
         run: rm -r ./_notes/.git
-
+ 
       - name: remove github
         run: rm -r ./_notes/.github 
  
