@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Professional Practice.md",
+            "file": "Operating Systems/Exam 2 Terms.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Operating Systems/Exam 2 Terms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Professional Practice.md"
+                "file": "Operating Systems/Exam 2 Terms.md"
               }
             }
           },
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Operating Systems/Exam 2 Terms.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,6 +136,8 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Operating Systems/Exam 2 Terms.md",
+    "Operating Systems/Exam 2 Terms.pdf",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Turing Machine.md",
@@ -143,8 +145,6 @@
     "Operating Systems/Building with Make.md",
     "Operating Systems/_Index_of_Operating Systems.md",
     "Theory of Computation/Push Down Automata.md",
-    "Databases/_Index_of_Databases.md",
-    "Operating Systems/int input.md",
-    "Operating Systems/Jump Table.md"
+    "Databases/_Index_of_Databases.md"
   ]
 }
