@@ -79,3 +79,6 @@ updated: 2021-11-16_08:24:24-05:00
 4. Professional organizations
 5. Individual professionals
 
+## Sentience vs Sapience
+*Sentience*: Awareness
+*Sapience*: Self Knowledge
