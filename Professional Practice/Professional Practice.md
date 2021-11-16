@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_09:04:04-05:00
+updated: 2021-11-16_09:12:57-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -94,5 +94,4 @@ updated: 2021-11-16_09:04:04-05:00
 * Ethics depends on understanding emotion
 	* empathy
 * Emotion as a decision making system
-* 
 
