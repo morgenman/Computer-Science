@@ -93,4 +93,6 @@ updated: 2021-11-16_08:45:27-05:00
 * Emotion is a motivating factor
 * Ethics depends on understanding emotion
 	* empathy
+* Emotion as a decision making system
+* 
 
