@@ -1,3 +1,4 @@
+
 # not-four-o-four
 
 Unfortunately either the note does not exist or the link is bad. 
