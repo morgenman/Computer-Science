@@ -136,6 +136,13 @@ span.missing-link {
     color: white!important;
 }
 
+div#menu-bar {
+    background-color: sidebar-bg;
+    margin-left: -20px;
+}
+
+
+
 /* This is broken on Safari as of version 14, but is fixed
    in Safari Technology Preview 117 which I think will be Safari 14.2.
    https://bugs.webkit.org/show_bug.cgi?id=218076

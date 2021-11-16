@@ -24,9 +24,9 @@
     --links: #307a8e;
     --link-disabled: rgba(131, 197, 235, 0.3);
     --sidebar-bg: #fafafa;
-    --sidebar-fg: #000;
+    --sidebar-fg: #22262f;
     --sidebar-non-existant: #aaa;
-    --sidebar-active: var(--links);
+    --sidebar-active: #fe6a26;
     --sidebar-spacer: #eee;
     --scrollbar: #eee;
     --icons: #aaa;
