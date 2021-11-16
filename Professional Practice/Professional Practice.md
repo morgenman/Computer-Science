@@ -13,7 +13,7 @@ updated: 2021-11-16_09:37:51-05:00
 		* Not preparing what you will have to do on the test
 	* don't give up < 15m, don't dally >30m
 	* Mistakes only look careless in retrospect
-* Attend class
+* Attend class 
 * Studying vs learning
 	* Recommend focusing on being able to teach material instead of getting an A 
 	* Stay in learn mode
