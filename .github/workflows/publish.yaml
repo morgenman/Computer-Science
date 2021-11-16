@@ -30,7 +30,7 @@ jobs:
       - name: index
         run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s~[[][[](.*)\|(.*)]]~[[\2]]~g" "$i"` && echo "$x" > "$i"; done
           
-      - name: magicPre
+      - name: images
         run: |
           mkdir ./notes/assets/
           find ./_notes/ -name '*.jpg' -exec mv {} ./notes/assets/ \;
@@ -71,6 +71,9 @@ jobs:
 
       - name: Build ZK
         run: ./mdzk build
+
+      - name: remove href
+        run: sed '~<base href=\"/\">~d' ./html/404.html
 
       - name: copy
         run: cp ./html/index.html ./html/index.htm
