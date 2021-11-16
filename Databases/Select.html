@@ -218,10 +218,10 @@
     <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
     <script>
         var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
-        for (var i = 0; i < nomnomls.length; i++) {
+        for (var i = 0; i < nomnomls.length + 1; i++) {
             var name = 'target-canvas';
             name += i;
-            var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
+            var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: var(--fg)\n#fill: #181a20; #22262f\n'
             source += nomnomls[0].textContent;
             nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>testing testing 1-2-3\n');
             var canvas = document.getElementById(name);
