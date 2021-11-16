@@ -55,7 +55,7 @@ updated: 2021-11-16_08:10:57-05:00
 
 ---
 
-# AI
+# AI Ethics
 ## Kurzweil and Singularity
 * Human level AI
 * Reverse engineering o of human brain 
@@ -68,5 +68,14 @@ updated: 2021-11-16_08:10:57-05:00
 3. robot must protect its own existence as long as it does not violate #1 or #2
 
 * additional 0th law: may not hurt humanity, or by inaction, allow humanity to come to harm
-* 
-##
+
+## Fear of the machine
+...
+
+## Ethical challenges for...
+1. Governments
+2. Regulation/oversight/treaties (enforcement?)
+3. Corporations/businesses
+4. Professional organizations
+5. Individual professionals
+
