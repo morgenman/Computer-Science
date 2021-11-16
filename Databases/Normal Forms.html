@@ -496,7 +496,8 @@ v[$\bar{rest}$] = t[$\bar {rest}$]</p>
             name += i;
             var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
             source += nomnomls[i].textContent;
-            nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
+            nomnomls[i].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>');
+            nomnomls[i].remove();
             var canvas = document.getElementById(name);
             nomnoml.draw(canvas, source);
             let rect = canvas.getBoundingClientRect();
