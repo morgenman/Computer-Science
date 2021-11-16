@@ -483,14 +483,15 @@ C = {a^i b^j c^k | i x j = k and i,j,k &gt;= 1}</p>
             name += i;
             var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
             source += nomnomls[i].textContent;
-            nomnomls[i].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>');
-            nomnomls[i].remove();
+            nomnomls[i].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>testing testing 1-2-3\n');
             var canvas = document.getElementById(name);
             nomnoml.draw(canvas, source);
             let rect = canvas.getBoundingClientRect();
-            nomnoml.draw(canvas, source, 10);
+            nomnoml.draw(canvas, source, 4);
             canvas.style.width = rect.width + 'px';
             canvas.style.height = rect.height + 'px';
+            nomnomls[i].parentElement.removeChild(element.firstChild);
+            nomnomls[i].remove();
         }
 
     </script>
