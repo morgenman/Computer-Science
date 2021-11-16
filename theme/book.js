@@ -353,8 +353,10 @@ function playground_text(playground) {
     themeToggleButton.addEventListener('click', function () {
         if (theme === 'light') {
             set_theme('dark');
-        } else {
+            theme = 'dark';
+        } else if (theme === 'dark') {
             set_theme('light');
+            theme = 'light';
         }
     });
 
