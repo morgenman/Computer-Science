@@ -358,24 +358,33 @@ end
     <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
     <script>
         var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
-        while (nomnomls.length > 0) {
-            for (var i = 0; i < nomnomls.length; i++) {
-                var name = 'target-canvas';
-                name += i;
-                var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: var(--fg)\n#fill: #181a20; #22262f\n'
-                source += nomnomls[0].textContent;
-                nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '"></canvas>');
-                var canvas = document.getElementById(name);
-                nomnoml.draw(canvas, source);
-                let rect = canvas.getBoundingClientRect();
-                nomnoml.draw(canvas, source, 4);
-                canvas.style.width = rect.width + 'px';
-                canvas.style.height = rect.height + 'px';
-                nomnomls[0].parentElement.removeChild(nomnomls[0].parentElement.firstChild);
-                nomnomls[0].remove();
-            }
-            nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+        var i = 0;
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) {
+            theme = 'dark';
         }
+        while (nomnomls.length > 0) {
+            var name = 'target-canvas';
+            name += i;
+            var source;
+            if (theme == 'dark') source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n';
+            else source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #22262f\n#fill: #fafafa; #ffffff\n';
+            source += nomnomls[0].textContent;
+            nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '">\n</canvas>');
+            var canvas = document.getElementById(name);
+            nomnoml.draw(canvas, source);
+            let rect = canvas.getBoundingClientRect();
+            nomnoml.draw(canvas, source, 4);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            nomnomls[0].parentElement.removeChild(nomnomls[0].parentElement.firstChild);
+            nomnomls[0].remove();
+            nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+            i++;
+        }
+
+
 
     </script>
 </body>
