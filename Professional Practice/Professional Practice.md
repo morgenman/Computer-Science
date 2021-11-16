@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_09:27:07-05:00
+updated: 2021-11-16_09:37:51-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -39,7 +39,7 @@ updated: 2021-11-16_09:27:07-05:00
 	* memorize what you are told to memorize
 	* ask why how and what if
 	* test understanding by giving 'mini lectures'
-	* aim for 100% mastery
+	* aim for 100% mastery 
 
 
 [[Presentation 1- Feedback]]
