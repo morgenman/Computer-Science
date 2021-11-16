@@ -1,3 +1,6 @@
+---
+updated: 2021-11-16_08:05:27-05:00
+---
 # Professional Practice
 * Metacognition video lecture
 * How to make a [[Resume]]
@@ -48,3 +51,16 @@
 [[Picture a Scientist Notes]]
 
 [[Algorithms of bias movie]]
+
+
+---
+
+# AI
+## Kurzweil and Singularity
+* Human level AI
+* Reverse engineering o of human brain 
+* General Purpose/True/Strong AI
+* How does ethics get built into this system?
+## Asimov's 3 laws
+* robot may not hurt human
+* 

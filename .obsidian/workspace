@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Turing Machine.md",
-            "mode": "preview"
+            "file": "Professional Practice/Professional Practice.md",
+            "mode": "source"
           }
         }
       }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Professional Practice/Professional Practice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md"
+                "file": "Professional Practice/Professional Practice.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Professional Practice/Professional Practice.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,6 +134,7 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Professional Practice/Professional Practice.md",
     "Theory of Computation/Turing Machine.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Push Down Automata.md",
@@ -142,7 +143,6 @@
     "Databases/_Index_of_Databases.md",
     "Operating Systems/int input.md",
     "Operating Systems/Jump Table.md",
-    "Game Development/Game Development.md",
-    "Professional Practice/Professional Practice.md"
+    "Game Development/Game Development.md"
   ]
 }
