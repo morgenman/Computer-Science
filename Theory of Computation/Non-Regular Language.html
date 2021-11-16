@@ -225,11 +225,25 @@
         for (var i = 0; i < nomnomls.length; i++) {
             var name = 'target-canvas';
             name += i;
-
             var source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n'
             source += nomnomls[i].textContent;
-
             nomnomls[i].innerHTML = '<canvas id="' + name + '"></canvas>';
+
+            let context = canvas.getContext("2d");
+
+            // get current size of the canvas
+            let rect = canvas.getBoundingClientRect();
+
+            // increase the actual size of our canvas
+            canvas.width = rect.width * devicePixelRatio;
+            canvas.height = rect.height * devicePixelRatio;
+
+            // ensure all drawing operations are scaled
+            context.scale(devicePixelRatio, devicePixelRatio);
+
+            // scale everything down using CSS
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
             var canvas = document.getElementById(name);
             nomnoml.draw(canvas, source);
         }
