@@ -350,21 +350,34 @@ function playground_text(playground) {
 
 
     set_theme(theme, false);
+    var icon = document.getElementById('iconToggle');
+    if (theme === 'dark') {
+        set_theme('dark');
+        icon.classList.remove('fa-moon-o');
+        icon.classList.add('fa-sun-o');
+    } else if (theme === 'light') {
+        set_theme('light');
+        icon.classList.remove('fa-sun-o');
+        icon.classList.add('fa-moon-o');
+
+    }
+
     themeToggleButton.addEventListener('click', function () {
         var icon = document.getElementById('iconToggle');
         if (theme === 'light') {
             set_theme('dark');
             theme = 'dark';
-            icon.classList.remove('fa-sun-o');
-            icon.classList.add('fa-moon-o');
+            icon.classList.remove('fa-moon-o');
+            icon.classList.add('fa-sun-o');
 
 
 
         } else if (theme === 'dark') {
             set_theme('light');
             theme = 'light';
-            icon.classList.remove('fa-moon-o');
-            icon.classList.add('fa-sun-o');
+            icon.classList.remove('fa-sun-o');
+            icon.classList.add('fa-moon-o');
+
         }
     });
 
