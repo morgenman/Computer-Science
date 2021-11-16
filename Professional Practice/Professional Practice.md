@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_08:24:24-05:00
+updated: 2021-11-16_08:39:17-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -81,4 +81,5 @@ updated: 2021-11-16_08:24:24-05:00
 
 ## Sentience vs Sapience
 *Sentience*: Awareness
-*Sapience*: Self Knowledge
+*Sapience*: Self Knowledge, higher bar to hit
+
