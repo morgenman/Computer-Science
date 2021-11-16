@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_08:39:17-05:00
+updated: 2021-11-16_08:45:27-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -82,4 +82,15 @@ updated: 2021-11-16_08:39:17-05:00
 ## Sentience vs Sapience
 *Sentience*: Awareness
 *Sapience*: Self Knowledge, higher bar to hit
+
+> Responsibility of Creators
+> Like parents, you should try and get them to be self reliant
+> I like this parallel
+
+*decart's error, good book to read*
+
+### Emotion?
+* Emotion is a motivating factor
+* Ethics depends on understanding emotion
+	* empathy
 
