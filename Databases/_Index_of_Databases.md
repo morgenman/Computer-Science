@@ -23,6 +23,7 @@
 -  [[Databases/Join|Join]]
 -  [[Databases/Key|Key]]
 -  [[Databases/Levels of Abstraction|Levels of Abstraction]]
+-  [[Databases/Nihon-Go/_Index_of_Nihon-Go|_Index_of_Nihon-Go]]
 -  [[Databases/Normal Forms|Normal Forms]]
 -  [[Databases/Pasted image 20210907141454.png|Pasted image 20210907141454.png]]
 -  [[Databases/Pasted image 20210907141544.png|Pasted image 20210907141544.png]]

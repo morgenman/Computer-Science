@@ -17,6 +17,7 @@ updated: 2021-10-21T21:41:57-04:00
 		* needed for performance
 		* uncontrolled can lead to inconsistencies
 
+# DB Project[[Nihon-Go]]
  
 * [[Levels of Abstraction]]
 * [[Data Models]]
