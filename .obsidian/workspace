@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "Databases/Entity-Relationship.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Databases/Entity-Relationship.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Databases/Entity-Relationship.md"
               }
             }
           },
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Databases/Entity-Relationship.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,6 +136,7 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Databases/Entity-Relationship.md",
     "Databases/Databases.md",
     "Databases/Normal Forms.md",
     "Game Development/Game Development.md",
@@ -144,7 +145,6 @@
     "Operating Systems/Exam 2 Terms.pdf",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Turing Machine.md",
-    "Operating Systems/Building with Make.md"
+    "Theory of Computation/Turing Machine.md"
   ]
 }
