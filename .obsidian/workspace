@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Normal Forms.md",
+            "file": "Databases/Databases.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Normal Forms.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Normal Forms.md"
+                "file": "Databases/Databases.md"
               }
             }
           },
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Normal Forms.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,6 +136,7 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Databases/Databases.md",
     "Databases/Normal Forms.md",
     "Game Development/Game Development.md",
     "Operating Systems/Operating Systems.md",
@@ -144,7 +145,6 @@
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Turing Machine.md",
-    "Operating Systems/Building with Make.md",
-    "Operating Systems/_Index_of_Operating Systems.md"
+    "Operating Systems/Building with Make.md"
   ]
 }
