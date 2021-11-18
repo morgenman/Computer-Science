@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Turing Machine.md",
+            "file": "📗Textbooks/📗Textbooks.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "📗Textbooks/📗Textbooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md"
+                "file": "📗Textbooks/📗Textbooks.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "📗Textbooks/📗Textbooks.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,11 +135,11 @@
   },
   "active": "ac92a33031c5ed3a",
   "lastOpenFiles": [
+    "📗Textbooks/📗Textbooks.md",
     "Theory of Computation/Turing Machine.md",
     "Science of Learning.md",
     "_Index_of_Computer-Science.md",
     "Game Development/Game Development.md",
-    "📗Textbooks/📗Textbooks.md",
     "Databases/Databases.md",
     "Operating Systems/Operating Systems.md",
     "Professional Practice/Professional Practice.md",
