@@ -4,15 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "f83761c040a3e7e4",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Databases/Databases.md",
-            "mode": "preview"
+        "id": "e8153df7e1748fda",
+        "type": "split",
+        "children": [
+          {
+            "id": "f83761c040a3e7e4",
+            "type": "leaf",
+            "dimension": 72.4168126094571,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Databases/Databases.md",
+                "mode": "source"
+              }
+            }
+          },
+          {
+            "id": "6e715f28a17986ee",
+            "type": "leaf",
+            "dimension": 27.583187390542907,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Databases/Trivial.md",
+                "mode": "source"
+              }
+            }
           }
-        }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -137,6 +157,7 @@
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
     "Databases/Databases.md",
+    "Databases/Trivial.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Set Theory.md",
@@ -144,7 +165,6 @@
     "Operating Systems/Operating Systems.md",
     "Databases/Nihon-Go/Nihon-Go.md",
     "Databases/Entity-Relationship.md",
-    "Databases/Normal Forms.md",
-    "Operating Systems/Exam 2 Terms.md"
+    "Databases/Normal Forms.md"
   ]
 }
