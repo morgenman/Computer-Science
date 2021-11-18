@@ -2,7 +2,8 @@
 updated: 2021-11-18_06:31:59-05:00
 ---
 # Databases
-* https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
+* [https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html](Database
+  we will be using in class is hosted here)
 * DBMS (Database Management System)
 	* 2 part system
 		* Collecting Data

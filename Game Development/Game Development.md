@@ -1,3 +1,6 @@
+---
+updated: 2021-11-18_13:00:05-05:00
+---
 # Game Development
 * Building text-adventure games (3 of them)
 * Lots of twine programming
