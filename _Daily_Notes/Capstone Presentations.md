@@ -15,4 +15,3 @@ Research Experience for Undergraduates
 * Team Management Process
 ### Periodic Ellipse Problem
 * Simulating different Renault values
-* 

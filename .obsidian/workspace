@@ -7,11 +7,8 @@
         "id": "ac92a33031c5ed3a",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "📗Textbooks/📗Textbooks.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -60,8 +57,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +74,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "📗Textbooks/📗Textbooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,9 +89,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "📗Textbooks/📗Textbooks.md"
-              }
+              "state": {}
             }
           },
           {
@@ -121,7 +114,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "📗Textbooks/📗Textbooks.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,15 +128,15 @@
   },
   "active": "ac92a33031c5ed3a",
   "lastOpenFiles": [
+    "_Daily_Notes/_Index_of_Fall 2021.md",
+    "_Daily_Notes/_Index_of__Daily_Notes.md",
+    "_Daily_Notes/Capstone Presentations.md",
+    "Databases/Databases.md",
     "📗Textbooks/📗Textbooks.md",
     "Theory of Computation/Turing Machine.md",
     "Science of Learning.md",
     "_Index_of_Computer-Science.md",
     "Game Development/Game Development.md",
-    "Databases/Databases.md",
-    "Operating Systems/Operating Systems.md",
-    "Professional Practice/Professional Practice.md",
-    "📗Textbooks/_Index_of_📗Textbooks.md",
-    "Textbooks/_Index_of_Textbooks.md"
+    "Operating Systems/Operating Systems.md"
   ]
 }
