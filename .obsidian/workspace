@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "Textbooks/_Index_of_Textbooks.md",
-            "mode": "preview"
+            "mode": "source"
           }
         }
       }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -131,8 +130,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125,
-    "collapsed": true
+    "width": 265.14288330078125
   },
   "active": "8afe1b266e691c40",
   "lastOpenFiles": [
