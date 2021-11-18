@@ -27,14 +27,9 @@ jobs:
       - name: Fix _index page links
         run: find ./_notes/ -name '_*.md' | while read -r i; do  x=`sed -E "s~[[][[](.*)\|(.*)]]~[[\2]]~g" "$i"` && echo "$x" > "$i"; done
           
-      - name: Fix Images
+      - name: Fix Images/Attachments
         run: |
           mkdir ./notes/assets/
-          # find ./_notes/ -name '*.jpg' -exec mv {} ./notes/assets/ \;
-          # find ./_notes/ -name '*.png' -exec mv {} ./notes/assets/ \;
-          # find ./_notes/ -name '*.svg' -exec mv {} ./notes/assets/ \;
-          # find ./_notes/ -name '*.pdf' -exec mv {} ./notes/assets/ \;
-          # find ./_notes/ -name '*.ppt' -exec mv {} ./notes/assets/ \;
           find ./_notes/ -not -name '*.md' -exec mv {} ./notes/assets/ \;
           find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s~![[][[]([^.]*)\.(png|jpg|svg)]]~<a href=\"https://morgenman.github.io/Computer-Science/assets/\1.\2\" target=\"_blank\"><img src=\"https://morgenman.github.io/Computer-Science/assets/\1.\2\" alt=\"\1\"/></a>\n~g" "$i"` && echo "$x" > "$i"; done
           find ./_notes/ -name '*.md' | while read -r i; do  x=`sed -E "s|!*[[][[]([^.]*)\.([^]]*)]]|<a href=\"https://morgenman.github.io/Computer-Science/assets/\1.\2\">\1.\2</a>\n|g" "$i"` && echo "$x" > "$i"; done
