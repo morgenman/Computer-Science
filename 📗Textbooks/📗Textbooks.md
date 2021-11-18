@@ -1,6 +1,8 @@
 ---
-updated: 2021-11-18_12:18:10-05:00
+updated: 2021-11-18_12:35:20-05:00
 ---
 # Textbooks
-Textbook files can be found in the [[_Index_of_Textbooks|Index]]
+Textbook files can be found in the [[_Index_of_📗Textbooks]]
 Alternatively you can find my complete textbook folder [here](https://drive.google.com/drive/folders/17ANbZBaYyNeoYMSBIq35smBrGLyAIEJ6?usp=sharing)
+
+
