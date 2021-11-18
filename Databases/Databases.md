@@ -1,6 +1,5 @@
 ---
-created: 2021-10-21T13:46:26-04:00
-updated: 2021-11-17_00:02:31-05:00
+updated: 2021-11-18_05:25:04-05:00
 ---
 # Databases
 * https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
@@ -17,7 +16,7 @@ updated: 2021-11-17_00:02:31-05:00
 		* needed for performance
 		* uncontrolled can lead to inconsistencies
 
-# DB Project: [[Nihon-Go]]
+> DB Project: [[Nihon-Go]]
  
 * [[Levels of Abstraction]]
 * [[Data Models]]
