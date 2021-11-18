@@ -2254,14 +2254,14 @@ var require_timout_plugin = __commonJS({
           action(_data, context) {
             var _a, _b;
             let timeout;
-            function wait2() {
+            function wait3() {
               timeout && clearTimeout(timeout);
               timeout = setTimeout(kill, block);
             }
             function stop() {
               var _a2, _b2;
-              (_a2 = context.spawned.stdout) === null || _a2 === void 0 ? void 0 : _a2.off("data", wait2);
-              (_b2 = context.spawned.stderr) === null || _b2 === void 0 ? void 0 : _b2.off("data", wait2);
+              (_a2 = context.spawned.stdout) === null || _a2 === void 0 ? void 0 : _a2.off("data", wait3);
+              (_b2 = context.spawned.stderr) === null || _b2 === void 0 ? void 0 : _b2.off("data", wait3);
               context.spawned.off("exit", stop);
               context.spawned.off("close", stop);
             }
@@ -2269,11 +2269,11 @@ var require_timout_plugin = __commonJS({
               stop();
               context.kill(new git_plugin_error_1.GitPluginError(void 0, "timeout", `block timeout reached`));
             }
-            (_a = context.spawned.stdout) === null || _a === void 0 ? void 0 : _a.on("data", wait2);
-            (_b = context.spawned.stderr) === null || _b === void 0 ? void 0 : _b.on("data", wait2);
+            (_a = context.spawned.stdout) === null || _a === void 0 ? void 0 : _a.on("data", wait3);
+            (_b = context.spawned.stderr) === null || _b === void 0 ? void 0 : _b.on("data", wait3);
             context.spawned.on("exit", stop);
             context.spawned.on("close", stop);
-            wait2();
+            wait3();
           }
         };
       }
@@ -6400,247 +6400,11 @@ var require_feather = __commonJS({
   }
 });
 
-// node_modules/obsidian-community-lib/dist/utils.js
-var require_utils2 = __commonJS({
-  "node_modules/obsidian-community-lib/dist/utils.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.addChangelogButton = exports.ChangelogModal = exports.linkedQ = exports.openOrSwitch = exports.createNewMDNote = exports.hoverPreview = exports.isInVault = exports.getSelectionFromCurrFile = exports.getSelectionFromEditor = exports.copy = exports.getAvailablePathForAttachments = exports.base64ToArrayBuffer = exports.addFeatherIcon = exports.addAllFeatherIcons = exports.wait = void 0;
-    var feather = require_feather();
-    var obsidian_1 = require("obsidian");
-    function wait2(delay) {
-      return __async(this, null, function* () {
-        return new Promise((resolve) => setTimeout(resolve, delay));
-      });
-    }
-    exports.wait = wait2;
-    function addAllFeatherIcons(attr2 = { viewBox: "0 0 24 24", width: "100", height: "100" }) {
-      Object.values(feather.icons).forEach((i) => {
-        const svg = i.toSvg(attr2);
-        (0, obsidian_1.addIcon)(`feather-${i.name}`, svg);
-      });
-    }
-    exports.addAllFeatherIcons = addAllFeatherIcons;
-    function addFeatherIcon2(name, attr2 = { viewBox: "0 0 24 24", width: "100", height: "100" }) {
-      if (feather.icons[name]) {
-        const iconName = `feather-${name}`;
-        (0, obsidian_1.addIcon)(iconName, feather.icons[name].toSvg(attr2));
-        return iconName;
-      } else {
-        throw Error(`This Icon (${name}) doesn't exist in the Feather Library.`);
-      }
-    }
-    exports.addFeatherIcon = addFeatherIcon2;
-    function base64ToArrayBuffer(base64) {
-      const binary_string = window.atob(base64);
-      const len = binary_string.length;
-      let bytes = new Uint8Array(len);
-      for (let i = 0; i < len; i++) {
-        bytes[i] = binary_string.charCodeAt(i);
-      }
-      return bytes.buffer;
-    }
-    exports.base64ToArrayBuffer = base64ToArrayBuffer;
-    function getAvailablePathForAttachments(vault, fileName, format, sourceFile) {
-      return vault.getAvailablePathForAttachments(fileName, format, sourceFile);
-    }
-    exports.getAvailablePathForAttachments = getAvailablePathForAttachments;
-    function copy(content, success = () => new obsidian_1.Notice("Copied to clipboard"), failure = (reason) => {
-      new obsidian_1.Notice("Could not copy to clipboard");
-      console.log({ reason });
-    }) {
-      return __async(this, null, function* () {
-        yield navigator.clipboard.writeText(content).then(success, failure);
-      });
-    }
-    exports.copy = copy;
-    function getSelectionFromEditor(editor) {
-      if (editor.somethingSelected()) {
-        return editor.getSelection();
-      } else {
-        return editor.getValue();
-      }
-    }
-    exports.getSelectionFromEditor = getSelectionFromEditor;
-    function getSelectionFromCurrFile(app, cached = true) {
-      return __async(this, null, function* () {
-        var _a;
-        const text2 = (_a = window == null ? void 0 : window.getSelection()) == null ? void 0 : _a.toString();
-        if (text2) {
-          return text2;
-        } else {
-          const currFile = app.workspace.getActiveFile();
-          if (currFile instanceof obsidian_1.TFile) {
-            if (cached) {
-              return yield app.vault.cachedRead(currFile);
-            } else {
-              return yield app.vault.read(currFile);
-            }
-          } else {
-            new obsidian_1.Notice("You must be focused on a markdown file.");
-          }
-        }
-      });
-    }
-    exports.getSelectionFromCurrFile = getSelectionFromCurrFile;
-    var isInVault = (app, noteName, sourcePath = "") => !!app.metadataCache.getFirstLinkpathDest(noteName, sourcePath);
-    exports.isInVault = isInVault;
-    function hoverPreview3(event, view, to) {
-      const targetEl = event.target;
-      view.app.workspace.trigger("hover-link", {
-        event,
-        source: view.getViewType(),
-        hoverParent: view,
-        targetEl,
-        linktext: to
-      });
-    }
-    exports.hoverPreview = hoverPreview3;
-    function createNewMDNote(app, newName, currFilePath = "") {
-      return __async(this, null, function* () {
-        const newFileFolder = app.fileManager.getNewFileParent(currFilePath).path;
-        if (!newName.endsWith(".md")) {
-          newName += ".md";
-        }
-        const newFilePath = (0, obsidian_1.normalizePath)(`${newFileFolder}${newFileFolder === "/" ? "" : "/"}${newName}.md`);
-        return yield app.vault.create(newFilePath, "");
-      });
-    }
-    exports.createNewMDNote = createNewMDNote;
-    function openOrSwitch3(_0, _1, _2) {
-      return __async(this, arguments, function* (app, dest, event, options = { createNewFile: true }) {
-        const { workspace } = app;
-        const currFile = workspace.getActiveFile();
-        let destFile = app.metadataCache.getFirstLinkpathDest(dest, currFile.path);
-        if (!destFile) {
-          if (options.createNewFile) {
-            destFile = yield createNewMDNote(app, dest, currFile.path);
-          } else
-            return;
-        }
-        const leavesWithDestAlreadyOpen = [];
-        workspace.iterateAllLeaves((leaf) => {
-          var _a, _b;
-          if (leaf.view instanceof obsidian_1.MarkdownView) {
-            if (((_b = (_a = leaf.view) == null ? void 0 : _a.file) == null ? void 0 : _b.basename) === dest) {
-              leavesWithDestAlreadyOpen.push(leaf);
-            }
-          }
-        });
-        if (leavesWithDestAlreadyOpen.length > 0) {
-          workspace.setActiveLeaf(leavesWithDestAlreadyOpen[0]);
-        } else {
-          const mode = app.vault.getConfig("defaultViewMode");
-          const leaf = event.ctrlKey || event.getModifierState("Meta") ? workspace.splitActiveLeaf() : workspace.getUnpinnedLeaf();
-          yield leaf.openFile(destFile, { active: true, mode });
-        }
-      });
-    }
-    exports.openOrSwitch = openOrSwitch3;
-    function linkedQ(resolvedLinks, from, to, directed = true) {
-      var _a, _b;
-      if (!from.endsWith(".md")) {
-        from += ".md";
-      }
-      if (!to.endsWith(".md")) {
-        to += ".md";
-      }
-      const fromTo = (_a = resolvedLinks[from]) == null ? void 0 : _a.hasOwnProperty(to);
-      if (!fromTo && !directed) {
-        const toFrom = (_b = resolvedLinks[to]) == null ? void 0 : _b.hasOwnProperty(from);
-        return toFrom;
-      } else
-        return fromTo;
-    }
-    exports.linkedQ = linkedQ;
-    var ChangelogModal = class extends obsidian_1.Modal {
-      constructor(app, plugin, url) {
-        super(app);
-        this.plugin = plugin;
-        this.url = url;
-      }
-      onOpen() {
-        return __async(this, null, function* () {
-          let { contentEl, url, plugin } = this;
-          const changelog = yield (0, obsidian_1.request)({ url });
-          const logDiv = contentEl.createDiv();
-          obsidian_1.MarkdownRenderer.renderMarkdown(changelog, logDiv, "", plugin);
-        });
-      }
-      onClose() {
-        this.contentEl.empty();
-      }
-    };
-    exports.ChangelogModal = ChangelogModal;
-    function addChangelogButton(app, plugin, containerEl, url, displayText = "Changlog") {
-      containerEl.createEl("button", { text: displayText }, (but) => but.onClickEvent(() => {
-        new ChangelogModal(app, plugin, url).open();
-      }));
-    }
-    exports.addChangelogButton = addChangelogButton;
-  }
-});
-
-// node_modules/obsidian-community-lib/dist/index.js
-var require_dist3 = __commonJS({
-  "node_modules/obsidian-community-lib/dist/index.js"(exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    exports.ChangelogModal = exports.addChangelogButton = exports.linkedQ = exports.openOrSwitch = exports.createNewMDNote = exports.isInVault = exports.hoverPreview = exports.getSelectionFromEditor = exports.getSelectionFromCurrFile = exports.copy = exports.wait = exports.getAvailablePathForAttachments = exports.base64ToArrayBuffer = exports.addFeatherIcon = exports.addAllFeatherIcons = void 0;
-    var utils_1 = require_utils2();
-    Object.defineProperty(exports, "addAllFeatherIcons", { enumerable: true, get: function() {
-      return utils_1.addAllFeatherIcons;
-    } });
-    Object.defineProperty(exports, "addFeatherIcon", { enumerable: true, get: function() {
-      return utils_1.addFeatherIcon;
-    } });
-    Object.defineProperty(exports, "base64ToArrayBuffer", { enumerable: true, get: function() {
-      return utils_1.base64ToArrayBuffer;
-    } });
-    Object.defineProperty(exports, "getAvailablePathForAttachments", { enumerable: true, get: function() {
-      return utils_1.getAvailablePathForAttachments;
-    } });
-    Object.defineProperty(exports, "wait", { enumerable: true, get: function() {
-      return utils_1.wait;
-    } });
-    Object.defineProperty(exports, "copy", { enumerable: true, get: function() {
-      return utils_1.copy;
-    } });
-    Object.defineProperty(exports, "getSelectionFromCurrFile", { enumerable: true, get: function() {
-      return utils_1.getSelectionFromCurrFile;
-    } });
-    Object.defineProperty(exports, "getSelectionFromEditor", { enumerable: true, get: function() {
-      return utils_1.getSelectionFromEditor;
-    } });
-    Object.defineProperty(exports, "hoverPreview", { enumerable: true, get: function() {
-      return utils_1.hoverPreview;
-    } });
-    Object.defineProperty(exports, "isInVault", { enumerable: true, get: function() {
-      return utils_1.isInVault;
-    } });
-    Object.defineProperty(exports, "createNewMDNote", { enumerable: true, get: function() {
-      return utils_1.createNewMDNote;
-    } });
-    Object.defineProperty(exports, "openOrSwitch", { enumerable: true, get: function() {
-      return utils_1.openOrSwitch;
-    } });
-    Object.defineProperty(exports, "linkedQ", { enumerable: true, get: function() {
-      return utils_1.linkedQ;
-    } });
-    Object.defineProperty(exports, "addChangelogButton", { enumerable: true, get: function() {
-      return utils_1.addChangelogButton;
-    } });
-    Object.defineProperty(exports, "ChangelogModal", { enumerable: true, get: function() {
-      return utils_1.ChangelogModal;
-    } });
-  }
-});
-
 // src/main.ts
 __export(exports, {
   default: () => ObsidianGit
 });
-var import_obsidian10 = __toModule(require("obsidian"));
+var import_obsidian11 = __toModule(require("obsidian"));
 var path2 = __toModule(require("path"));
 
 // src/promiseQueue.ts
@@ -6718,6 +6482,10 @@ var ObsidianGitSettingsTab = class extends import_obsidian.PluginSettingTab {
     })));
     new import_obsidian.Setting(containerEl).setName("List filenames affected by commit in the commit body").addToggle((toggle) => toggle.setValue(plugin.settings.listChangedFilesInMessageBody).onChange((value) => {
       plugin.settings.listChangedFilesInMessageBody = value;
+      plugin.saveSettings();
+    }));
+    new import_obsidian.Setting(containerEl).setName("Specify custom commit message on auto backup").addToggle((toggle) => toggle.setValue(plugin.settings.customMessageOnAutoBackup).onChange((value) => {
+      plugin.settings.customMessageOnAutoBackup = value;
       plugin.saveSettings();
     }));
     new import_obsidian.Setting(containerEl).setName("Current branch").setDesc("Switch to a different branch").addDropdown((dropdown) => __async(this, null, function* () {
@@ -6860,7 +6628,7 @@ var ChangedFilesModal = class extends import_obsidian2.FuzzySuggestModal {
     return this.changedFiles;
   }
   getItemText(item) {
-    if (item.index == "?" && item.working_dir == "?") {
+    if (item.index == "?" && item.working_dir == "U") {
       return `Untracked | ${item.path}`;
     }
     let working_dir = "";
@@ -6883,10 +6651,27 @@ var ChangedFilesModal = class extends import_obsidian2.FuzzySuggestModal {
 // src/ui/modals/customMessageModal.ts
 var import_obsidian3 = __toModule(require("obsidian"));
 var CustomMessageModal = class extends import_obsidian3.SuggestModal {
-  constructor(plugin) {
+  constructor(plugin, fromAutoBackup) {
     super(plugin.app);
+    this.fromAutoBackup = fromAutoBackup;
+    this.resolve = null;
     this.plugin = plugin;
     this.setPlaceholder("Type your message and select optional the version with the added date.");
+  }
+  open() {
+    super.open();
+    return new Promise((resolve) => {
+      this.resolve = resolve;
+    });
+  }
+  onClose() {
+    if (this.resolve)
+      this.resolve(void 0);
+  }
+  selectSuggestion(value, evt) {
+    if (this.resolve)
+      this.resolve(value);
+    super.selectSuggestion(value, evt);
   }
   getSuggestions(query) {
     const date = window.moment().format(this.plugin.settings.commitDateFormat);
@@ -6898,7 +6683,6 @@ var CustomMessageModal = class extends import_obsidian3.SuggestModal {
     el.innerText = value;
   }
   onChooseSuggestion(item, _) {
-    this.plugin.promiseQueue.addTask(() => this.plugin.createBackup(false, item));
   }
 };
 
@@ -6915,7 +6699,8 @@ var DEFAULT_SETTINGS = {
   listChangedFilesInMessageBody: false,
   showStatusBar: true,
   updateSubmodules: false,
-  gitPath: ""
+  gitPath: "",
+  customMessageOnAutoBackup: false
 };
 var VIEW_CONFIG = {
   type: "git-view",
@@ -6993,6 +6778,7 @@ var SimpleGit = class extends GitManager {
           const res = this.formatPath(e.path);
           e.path = res.path;
           e.from = res.from;
+          e.working_dir = e.working_dir === "?" ? "U" : e.working_dir;
           return e;
         }),
         staged: status.files.filter((e) => e.index !== " " && e.index != "?").map((e) => {
@@ -7236,24 +7022,93 @@ var SimpleGit = class extends GitManager {
   }
 };
 
+// node_modules/obsidian-community-lib/dist/utils.js
+var feather = __toModule(require_feather());
+var import_obsidian4 = __toModule(require("obsidian"));
+function addFeatherIcon(name, attr2 = { viewBox: "0 0 24 24", width: "100", height: "100" }) {
+  if (feather.icons[name]) {
+    const iconName = `feather-${name}`;
+    (0, import_obsidian4.addIcon)(iconName, feather.icons[name].toSvg(attr2));
+    return iconName;
+  } else {
+    throw Error(`This Icon (${name}) doesn't exist in the Feather Library.`);
+  }
+}
+function hoverPreview(event, view, to) {
+  const targetEl = event.target;
+  view.app.workspace.trigger("hover-link", {
+    event,
+    source: view.getViewType(),
+    hoverParent: view,
+    targetEl,
+    linktext: to
+  });
+}
+function createNewMDNote(app, newName, currFilePath = "") {
+  return __async(this, null, function* () {
+    const newFileFolder = app.fileManager.getNewFileParent(currFilePath).path;
+    const newFilePath = (0, import_obsidian4.normalizePath)(`${newFileFolder}${newFileFolder === "/" ? "" : "/"}${addMD(newName)}`);
+    return yield app.vault.create(newFilePath, "");
+  });
+}
+var addMD = (noteName) => {
+  let withMD = noteName.slice();
+  if (!withMD.endsWith(".md")) {
+    withMD += ".md";
+  }
+  return withMD;
+};
+var stripMD = (noteName) => {
+  if (noteName.endsWith(".md")) {
+    return noteName.split(".md").slice(0, -1).join(".md");
+  } else
+    return noteName;
+};
+function openOrSwitch(_0, _1, _2) {
+  return __async(this, arguments, function* (app, dest, event, options = { createNewFile: true }) {
+    const { workspace } = app;
+    const destStripped = stripMD(dest);
+    let destFile = app.metadataCache.getFirstLinkpathDest(destStripped, "");
+    if (!destFile && options.createNewFile) {
+      destFile = yield createNewMDNote(app, destStripped);
+    } else if (!destFile && options.createNewFile)
+      return;
+    const leavesWithDestAlreadyOpen = [];
+    workspace.iterateAllLeaves((leaf) => {
+      var _a, _b;
+      if (leaf.view instanceof import_obsidian4.MarkdownView) {
+        if (((_b = (_a = leaf.view) === null || _a === void 0 ? void 0 : _a.file) === null || _b === void 0 ? void 0 : _b.basename) === destStripped) {
+          leavesWithDestAlreadyOpen.push(leaf);
+        }
+      }
+    });
+    if (leavesWithDestAlreadyOpen.length > 0) {
+      workspace.setActiveLeaf(leavesWithDestAlreadyOpen[0]);
+    } else {
+      const mode = app.vault.getConfig("defaultViewMode");
+      const leaf = event.ctrlKey || event.getModifierState("Meta") ? workspace.splitActiveLeaf() : workspace.getUnpinnedLeaf();
+      yield leaf.openFile(destFile, { active: true, mode });
+    }
+  });
+}
+
 // src/ui/icons.ts
-var import_obsidian_community_lib = __toModule(require_dist3());
 function addIcons() {
-  (0, import_obsidian_community_lib.addFeatherIcon)("git-pull-request");
-  (0, import_obsidian_community_lib.addFeatherIcon)("check");
-  (0, import_obsidian_community_lib.addFeatherIcon)("refresh-cw");
-  (0, import_obsidian_community_lib.addFeatherIcon)("plus-circle");
-  (0, import_obsidian_community_lib.addFeatherIcon)("minus-circle");
-  (0, import_obsidian_community_lib.addFeatherIcon)("upload");
-  (0, import_obsidian_community_lib.addFeatherIcon)("download");
-  (0, import_obsidian_community_lib.addFeatherIcon)("plus");
-  (0, import_obsidian_community_lib.addFeatherIcon)("skip-back");
-  (0, import_obsidian_community_lib.addFeatherIcon)("minus");
+  addFeatherIcon("git-pull-request");
+  addFeatherIcon("check");
+  addFeatherIcon("refresh-cw");
+  addFeatherIcon("plus-circle");
+  addFeatherIcon("minus-circle");
+  addFeatherIcon("upload");
+  addFeatherIcon("download");
+  addFeatherIcon("plus");
+  addFeatherIcon("skip-back");
+  addFeatherIcon("minus");
 }
 
 // src/ui/modals/generalModal.ts
-var import_obsidian4 = __toModule(require("obsidian"));
-var GeneralModal = class extends import_obsidian4.SuggestModal {
+var import_obsidian5 = __toModule(require("obsidian"));
+var GeneralModal = class extends import_obsidian5.SuggestModal {
   constructor(app, remotes, placeholder) {
     super(app);
     this.resolve = null;
@@ -7286,7 +7141,7 @@ var GeneralModal = class extends import_obsidian4.SuggestModal {
 };
 
 // src/ui/sidebar/sidebarView.ts
-var import_obsidian9 = __toModule(require("obsidian"));
+var import_obsidian10 = __toModule(require("obsidian"));
 
 // node_modules/svelte/internal/index.mjs
 function noop() {
@@ -7569,7 +7424,7 @@ function update($$) {
   }
 }
 var promise;
-function wait() {
+function wait2() {
   if (!promise) {
     promise = Promise.resolve();
     promise.then(() => {
@@ -7699,7 +7554,7 @@ function create_bidirectional_transition(node, fn, params, intro) {
   return {
     run(b) {
       if (is_function(config)) {
-        wait().then(() => {
+        wait2().then(() => {
           config = config();
           go(b);
         });
@@ -7896,7 +7751,7 @@ var SvelteComponent = class {
 };
 
 // src/ui/sidebar/gitView.svelte
-var import_obsidian8 = __toModule(require("obsidian"));
+var import_obsidian9 = __toModule(require("obsidian"));
 
 // node_modules/svelte/easing/index.mjs
 function cubicOut(t) {
@@ -7924,12 +7779,11 @@ function slide(node, { delay = 0, duration = 400, easing = cubicOut } = {}) {
 }
 
 // src/ui/sidebar/components/fileComponent.svelte
-var import_obsidian6 = __toModule(require("obsidian"));
-var import_obsidian_community_lib2 = __toModule(require_dist3());
+var import_obsidian7 = __toModule(require("obsidian"));
 
 // src/ui/modals/discardModal.ts
-var import_obsidian5 = __toModule(require("obsidian"));
-var DiscardModal = class extends import_obsidian5.Modal {
+var import_obsidian6 = __toModule(require("obsidian"));
+var DiscardModal = class extends import_obsidian6.Modal {
   constructor(app, deletion, filename) {
     super(app);
     this.deletion = deletion;
@@ -8006,7 +7860,7 @@ function create_fragment(ctx) {
       span1 = element("span");
       t4 = text(t4_value);
       attr(span0, "class", "path svelte-1ncg2cs");
-      attr(span0, "aria-label-position", "left");
+      attr(span0, "aria-label-position", ctx[2]);
       attr(span0, "aria-label", span0_aria_label_value = ctx[0].path.split("/").last() != ctx[0].path ? ctx[0].path : "");
       attr(div0, "data-icon", "feather-skip-back");
       attr(div0, "aria-label", "Discard");
@@ -8028,20 +7882,20 @@ function create_fragment(ctx) {
       append(main, div3);
       append(div3, div2);
       append(div2, div0);
-      ctx[9](div0);
+      ctx[10](div0);
       append(div2, t2);
       append(div2, div1);
-      ctx[10](div1);
+      ctx[11](div1);
       append(div3, t3);
       append(div3, span1);
       append(span1, t4);
       if (!mounted) {
         dispose = [
-          listen(span0, "mouseover", ctx[2]),
-          listen(span0, "click", ctx[3]),
-          listen(span0, "focus", ctx[8]),
-          listen(div0, "click", ctx[5]),
-          listen(div1, "click", ctx[4])
+          listen(span0, "mouseover", ctx[3]),
+          listen(span0, "click", ctx[4]),
+          listen(span0, "focus", ctx[9]),
+          listen(div0, "click", ctx[6]),
+          listen(div1, "click", ctx[5])
         ];
         mounted = true;
       }
@@ -8049,6 +7903,9 @@ function create_fragment(ctx) {
     p(ctx2, [dirty]) {
       if (dirty & 1 && t0_value !== (t0_value = ctx2[0].path.split("/").last().replace(".md", "") + ""))
         set_data(t0, t0_value);
+      if (dirty & 4) {
+        attr(span0, "aria-label-position", ctx2[2]);
+      }
       if (dirty & 1 && span0_aria_label_value !== (span0_aria_label_value = ctx2[0].path.split("/").last() != ctx2[0].path ? ctx2[0].path : "")) {
         attr(span0, "aria-label", span0_aria_label_value);
       }
@@ -8063,28 +7920,29 @@ function create_fragment(ctx) {
     d(detaching) {
       if (detaching)
         detach(main);
-      ctx[9](null);
       ctx[10](null);
+      ctx[11](null);
       mounted = false;
       run_all(dispose);
     }
   };
 }
 function instance($$self, $$props, $$invalidate) {
+  let side;
   let { change } = $$props;
   let { view } = $$props;
   let { manager } = $$props;
   let buttons = [];
-  setImmediate(() => buttons.forEach((b) => (0, import_obsidian6.setIcon)(b, b.getAttr("data-icon"), 16)));
+  setImmediate(() => buttons.forEach((b) => (0, import_obsidian7.setIcon)(b, b.getAttr("data-icon"), 16)));
   const dispatch2 = createEventDispatcher();
   function hover(event) {
     if (!change.path.startsWith(view.app.vault.configDir) || !change.path.startsWith(".")) {
-      (0, import_obsidian_community_lib2.hoverPreview)(event, view, change.path.split("/").last().replace(".md", ""));
+      hoverPreview(event, view, change.path.split("/").last().replace(".md", ""));
     }
   }
   function open(event) {
     if (!(change.path.startsWith(view.app.vault.configDir) || change.path.startsWith(".") || change.working_dir === "D")) {
-      (0, import_obsidian_community_lib2.openOrSwitch)(view.app, change.path, event);
+      openOrSwitch(view.app, change.path, event);
     }
   }
   function stage() {
@@ -8093,7 +7951,7 @@ function instance($$self, $$props, $$invalidate) {
     });
   }
   function discard() {
-    const deleteFile = change.index == "?";
+    const deleteFile = change.working_dir == "U";
     new DiscardModal(view.app, deleteFile, change.path).myOpen().then((shouldDiscard) => {
       if (shouldDiscard === true) {
         if (deleteFile) {
@@ -8127,13 +7985,20 @@ function instance($$self, $$props, $$invalidate) {
     if ("change" in $$props2)
       $$invalidate(0, change = $$props2.change);
     if ("view" in $$props2)
-      $$invalidate(6, view = $$props2.view);
+      $$invalidate(7, view = $$props2.view);
     if ("manager" in $$props2)
-      $$invalidate(7, manager = $$props2.manager);
+      $$invalidate(8, manager = $$props2.manager);
+  };
+  $$self.$$.update = () => {
+    if ($$self.$$.dirty & 128) {
+      $:
+        $$invalidate(2, side = view.leaf.getRoot().side == "left" ? "right" : "left");
+    }
   };
   return [
     change,
     buttons,
+    side,
     hover,
     open,
     stage,
@@ -8148,14 +8013,13 @@ function instance($$self, $$props, $$invalidate) {
 var FileComponent = class extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance, create_fragment, safe_not_equal, { change: 0, view: 6, manager: 7 }, add_css);
+    init(this, options, instance, create_fragment, safe_not_equal, { change: 0, view: 7, manager: 8 }, add_css);
   }
 };
 var fileComponent_default = FileComponent;
 
 // src/ui/sidebar/components/stagedFileComponent.svelte
-var import_obsidian7 = __toModule(require("obsidian"));
-var import_obsidian_community_lib3 = __toModule(require_dist3());
+var import_obsidian8 = __toModule(require("obsidian"));
 function add_css2(target) {
   append_styles(target, "svelte-1m5vxuz", "main.svelte-1m5vxuz.svelte-1m5vxuz.svelte-1m5vxuz{background-color:var(--background-secondary);border-radius:4px;width:98%;display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:2px}main.svelte-1m5vxuz .path.svelte-1m5vxuz.svelte-1m5vxuz{color:var(--text-muted);white-space:nowrap;max-width:75%;overflow:hidden;text-overflow:ellipsis}main.svelte-1m5vxuz .path.svelte-1m5vxuz.svelte-1m5vxuz:hover{color:var(--text-normal);transition:all 200ms}main.svelte-1m5vxuz .tools.svelte-1m5vxuz.svelte-1m5vxuz{display:flex;align-items:center}main.svelte-1m5vxuz .tools .type.svelte-1m5vxuz.svelte-1m5vxuz{height:16px;width:16px;margin:0;display:flex;align-items:center;justify-content:center}main.svelte-1m5vxuz .tools .type[data-type=M].svelte-1m5vxuz.svelte-1m5vxuz{color:orange}main.svelte-1m5vxuz .tools .type[data-type=D].svelte-1m5vxuz.svelte-1m5vxuz{color:red}main.svelte-1m5vxuz .tools .type[data-type=A].svelte-1m5vxuz.svelte-1m5vxuz{color:yellowgreen}main.svelte-1m5vxuz .tools .type[data-type=R].svelte-1m5vxuz.svelte-1m5vxuz{color:violet}main.svelte-1m5vxuz .tools .buttons.svelte-1m5vxuz.svelte-1m5vxuz{display:flex}main.svelte-1m5vxuz .tools .buttons.svelte-1m5vxuz>.svelte-1m5vxuz{color:var(--text-faint);height:16px;width:16px;margin:0;transition:all 0.2s;border-radius:2px;margin-right:1px}main.svelte-1m5vxuz .tools .buttons.svelte-1m5vxuz>.svelte-1m5vxuz:hover{color:var(--text-normal);background-color:var(--interactive-accent)}");
 }
@@ -8189,7 +8053,7 @@ function create_fragment2(ctx) {
       span1 = element("span");
       t3 = text(t3_value);
       attr(span0, "class", "path svelte-1m5vxuz");
-      attr(span0, "aria-label-position", "left");
+      attr(span0, "aria-label-position", ctx[3]);
       attr(span0, "aria-label", span0_aria_label_value = ctx[0].path.split("/").last() != ctx[0].path ? ctx[0].path : "");
       attr(div0, "data-icon", "feather-minus");
       attr(div0, "aria-label", "Unstage");
@@ -8208,16 +8072,16 @@ function create_fragment2(ctx) {
       append(main, div2);
       append(div2, div1);
       append(div1, div0);
-      ctx[9](div0);
+      ctx[10](div0);
       append(div2, t2);
       append(div2, span1);
       append(span1, t3);
       if (!mounted) {
         dispose = [
-          listen(span0, "mouseover", ctx[3]),
-          listen(span0, "focus", ctx[8]),
-          listen(span0, "click", ctx[4]),
-          listen(div0, "click", ctx[5])
+          listen(span0, "mouseover", ctx[4]),
+          listen(span0, "focus", ctx[9]),
+          listen(span0, "click", ctx[5]),
+          listen(div0, "click", ctx[6])
         ];
         mounted = true;
       }
@@ -8225,6 +8089,9 @@ function create_fragment2(ctx) {
     p(ctx2, [dirty]) {
       if (dirty & 4 && t0_value !== (t0_value = ctx2[2].split("/").last().replace(".md", "") + ""))
         set_data(t0, t0_value);
+      if (dirty & 8) {
+        attr(span0, "aria-label-position", ctx2[3]);
+      }
       if (dirty & 1 && span0_aria_label_value !== (span0_aria_label_value = ctx2[0].path.split("/").last() != ctx2[0].path ? ctx2[0].path : "")) {
         attr(span0, "aria-label", span0_aria_label_value);
       }
@@ -8239,7 +8106,7 @@ function create_fragment2(ctx) {
     d(detaching) {
       if (detaching)
         detach(main);
-      ctx[9](null);
+      ctx[10](null);
       mounted = false;
       run_all(dispose);
     }
@@ -8247,20 +8114,21 @@ function create_fragment2(ctx) {
 }
 function instance2($$self, $$props, $$invalidate) {
   let formattedPath;
+  let side;
   let { change } = $$props;
   let { view } = $$props;
   let { manager } = $$props;
   let buttons = [];
   const dispatch2 = createEventDispatcher();
-  setImmediate(() => buttons.forEach((b) => (0, import_obsidian7.setIcon)(b, b.getAttr("data-icon"), 16)));
+  setImmediate(() => buttons.forEach((b) => (0, import_obsidian8.setIcon)(b, b.getAttr("data-icon"), 16)));
   function hover(event) {
     if (!change.path.startsWith(view.app.vault.configDir) || !change.path.startsWith(".")) {
-      (0, import_obsidian_community_lib3.hoverPreview)(event, view, formattedPath.split("/").last().replace(".md", ""));
+      hoverPreview(event, view, formattedPath.split("/").last().replace(".md", ""));
     }
   }
   function open(event) {
     if (!(change.path.startsWith(view.app.vault.configDir) || change.path.startsWith(".") || change.index === "D")) {
-      (0, import_obsidian_community_lib3.openOrSwitch)(view.app, formattedPath, event);
+      openOrSwitch(view.app, formattedPath, event);
     }
   }
   function unstage() {
@@ -8281,20 +8149,25 @@ function instance2($$self, $$props, $$invalidate) {
     if ("change" in $$props2)
       $$invalidate(0, change = $$props2.change);
     if ("view" in $$props2)
-      $$invalidate(6, view = $$props2.view);
+      $$invalidate(7, view = $$props2.view);
     if ("manager" in $$props2)
-      $$invalidate(7, manager = $$props2.manager);
+      $$invalidate(8, manager = $$props2.manager);
   };
   $$self.$$.update = () => {
     if ($$self.$$.dirty & 1) {
       $:
         $$invalidate(2, formattedPath = change.path);
     }
+    if ($$self.$$.dirty & 128) {
+      $:
+        $$invalidate(3, side = view.leaf.getRoot().side == "left" ? "right" : "left");
+    }
   };
   return [
     change,
     buttons,
     formattedPath,
+    side,
     hover,
     open,
     unstage,
@@ -8307,14 +8180,14 @@ function instance2($$self, $$props, $$invalidate) {
 var StagedFileComponent = class extends SvelteComponent {
   constructor(options) {
     super();
-    init(this, options, instance2, create_fragment2, safe_not_equal, { change: 0, view: 6, manager: 7 }, add_css2);
+    init(this, options, instance2, create_fragment2, safe_not_equal, { change: 0, view: 7, manager: 8 }, add_css2);
   }
 };
 var stagedFileComponent_default = StagedFileComponent;
 
 // src/ui/sidebar/gitView.svelte
 function add_css3(target) {
-  append_styles(target, "svelte-j7wjwu", '@charset "UTF-8";.file-view.svelte-j7wjwu.svelte-j7wjwu{margin-left:5px}.opener.svelte-j7wjwu.svelte-j7wjwu{display:flex;justify-content:space-between;align-items:center;padding:0 4px}.opener.svelte-j7wjwu .collapse-icon.svelte-j7wjwu::after{content:"\xA0"}.opener.svelte-j7wjwu div.svelte-j7wjwu{display:flex}.opener.svelte-j7wjwu svg.svelte-j7wjwu{transform:rotate(-90deg)}.opener.open.svelte-j7wjwu svg.svelte-j7wjwu{transform:rotate(0)}.contents.svelte-j7wjwu.svelte-j7wjwu{height:calc(100% - 5rem);overflow-y:scroll;padding-left:10px}main.svelte-j7wjwu.svelte-j7wjwu{height:100%;overflow-y:hidden}.nav-buttons-container.svelte-j7wjwu.svelte-j7wjwu{justify-content:space-between}.group.svelte-j7wjwu.svelte-j7wjwu{display:flex}');
+  append_styles(target, "svelte-f1l5rx", '@charset "UTF-8";.file-view.svelte-f1l5rx.svelte-f1l5rx{margin-left:5px}.opener.svelte-f1l5rx.svelte-f1l5rx{display:flex;justify-content:space-between;align-items:center;padding:0 4px}.opener.svelte-f1l5rx .collapse-icon.svelte-f1l5rx::after{content:"\xA0"}.opener.svelte-f1l5rx div.svelte-f1l5rx{display:flex}.opener.svelte-f1l5rx svg.svelte-f1l5rx{transform:rotate(-90deg)}.opener.open.svelte-f1l5rx svg.svelte-f1l5rx{transform:rotate(0)}.git-view-body.svelte-f1l5rx.svelte-f1l5rx{height:calc(100% - 5rem);overflow-y:scroll;padding-left:10px}main.svelte-f1l5rx.svelte-f1l5rx{height:100%;overflow-y:hidden}.nav-buttons-container.svelte-f1l5rx.svelte-f1l5rx{justify-content:space-between}.group.svelte-f1l5rx.svelte-f1l5rx{display:flex}');
 }
 function get_each_context(ctx, list, i) {
   const child_ctx = ctx.slice();
@@ -8381,7 +8254,7 @@ function create_if_block(ctx) {
       div3 = element("div");
       div2 = element("div");
       div1 = element("div");
-      div1.innerHTML = `<div class="tree-item-icon collapse-icon svelte-j7wjwu" style=""><svg viewBox="0 0 100 100" class="right-triangle svelte-j7wjwu" width="8" height="8"><path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path></svg></div> 
+      div1.innerHTML = `<div class="tree-item-icon collapse-icon svelte-f1l5rx" style=""><svg viewBox="0 0 100 100" class="right-triangle svelte-f1l5rx" width="8" height="8"><path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path></svg></div> 
             <span>Staged Changes</span>`;
       t2 = space();
       span1 = element("span");
@@ -8393,7 +8266,7 @@ function create_if_block(ctx) {
       div7 = element("div");
       div6 = element("div");
       div5 = element("div");
-      div5.innerHTML = `<div class="tree-item-icon collapse-icon svelte-j7wjwu" style=""><svg viewBox="0 0 100 100" class="right-triangle svelte-j7wjwu" width="8" height="8"><path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path></svg></div> 
+      div5.innerHTML = `<div class="tree-item-icon collapse-icon svelte-f1l5rx" style=""><svg viewBox="0 0 100 100" class="right-triangle svelte-f1l5rx" width="8" height="8"><path fill="currentColor" stroke="currentColor" d="M94.9,20.8c-1.4-2.5-4.1-4.1-7.1-4.1H12.2c-3,0-5.7,1.6-7.1,4.1c-1.3,2.4-1.2,5.2,0.2,7.6L43.1,88c1.5,2.3,4,3.7,6.9,3.7 s5.4-1.4,6.9-3.7l37.8-59.6C96.1,26,96.2,23.2,94.9,20.8L94.9,20.8z"></path></svg></div> 
             <span>Changes</span>`;
       t8 = space();
       span3 = element("span");
@@ -8401,14 +8274,14 @@ function create_if_block(ctx) {
       t10 = space();
       if (if_block1)
         if_block1.c();
-      attr(div1, "class", "svelte-j7wjwu");
+      attr(div1, "class", "svelte-f1l5rx");
       attr(span1, "class", "tree-item-flair");
-      attr(div2, "class", "opener tree-item-self is-clickable svelte-j7wjwu");
+      attr(div2, "class", "opener tree-item-self is-clickable svelte-f1l5rx");
       toggle_class(div2, "open", ctx[6]);
       attr(div3, "class", "staged");
-      attr(div5, "class", "svelte-j7wjwu");
+      attr(div5, "class", "svelte-f1l5rx");
       attr(span3, "class", "tree-item-flair");
-      attr(div6, "class", "opener tree-item-self is-clickable svelte-j7wjwu");
+      attr(div6, "class", "opener tree-item-self is-clickable svelte-f1l5rx");
       toggle_class(div6, "open", ctx[5]);
       attr(div7, "class", "changes");
     },
@@ -8537,7 +8410,7 @@ function create_if_block_2(ctx) {
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
-      attr(div, "class", "file-view svelte-j7wjwu");
+      attr(div, "class", "file-view svelte-f1l5rx");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -8667,7 +8540,7 @@ function create_if_block_1(ctx) {
       for (let i = 0; i < each_blocks.length; i += 1) {
         each_blocks[i].c();
       }
-      attr(div, "class", "file-view svelte-j7wjwu");
+      attr(div, "class", "file-view svelte-f1l5rx");
     },
     m(target, anchor) {
       insert(target, div, anchor);
@@ -8781,7 +8654,6 @@ function create_each_block(ctx) {
 }
 function create_fragment3(ctx) {
   let main;
-  let div9;
   let div8;
   let div5;
   let div0;
@@ -8800,7 +8672,7 @@ function create_fragment3(ctx) {
   let input;
   let t6;
   let t7;
-  let div10;
+  let div9;
   let current;
   let mounted;
   let dispose;
@@ -8809,7 +8681,6 @@ function create_fragment3(ctx) {
   return {
     c() {
       main = element("main");
-      div9 = element("div");
       div8 = element("div");
       div5 = element("div");
       div0 = element("div");
@@ -8830,7 +8701,7 @@ function create_fragment3(ctx) {
       if (if_block0)
         if_block0.c();
       t7 = space();
-      div10 = element("div");
+      div9 = element("div");
       if (if_block1)
         if_block1.c();
       attr(div0, "id", "commit-btn");
@@ -8853,7 +8724,7 @@ function create_fragment3(ctx) {
       attr(div4, "class", "nav-action-button");
       attr(div4, "data-icon", "feather-download");
       attr(div4, "aria-label", "Pull");
-      attr(div5, "class", "group svelte-j7wjwu");
+      attr(div5, "class", "group svelte-f1l5rx");
       attr(div6, "id", "refresh");
       attr(div6, "class", "nav-action-button");
       attr(div6, "data-icon", "feather-refresh-cw");
@@ -8863,15 +8734,13 @@ function create_fragment3(ctx) {
       attr(input, "spellcheck", "true");
       attr(input, "placeholder", "Commit Message");
       attr(div7, "class", "search-input-container");
-      attr(div8, "class", "nav-buttons-container svelte-j7wjwu");
-      attr(div9, "class", "control");
-      attr(div10, "class", "contents svelte-j7wjwu");
-      attr(main, "class", "svelte-j7wjwu");
+      attr(div8, "class", "nav-buttons-container svelte-f1l5rx");
+      attr(div9, "class", "git-view-body svelte-f1l5rx");
+      attr(main, "class", "svelte-f1l5rx");
     },
     m(target, anchor) {
       insert(target, main, anchor);
-      append(main, div9);
-      append(div9, div8);
+      append(main, div8);
       append(div8, div5);
       append(div5, div0);
       ctx[14](div0);
@@ -8898,9 +8767,9 @@ function create_fragment3(ctx) {
       if (if_block0)
         if_block0.m(div7, null);
       append(main, t7);
-      append(main, div10);
+      append(main, div9);
       if (if_block1)
-        if_block1.m(div10, null);
+        if_block1.m(div9, null);
       current = true;
       if (!mounted) {
         dispose = [
@@ -8944,7 +8813,7 @@ function create_fragment3(ctx) {
           if_block1 = create_if_block(ctx2);
           if_block1.c();
           transition_in(if_block1, 1);
-          if_block1.m(div10, null);
+          if_block1.m(div9, null);
         }
       } else if (if_block1) {
         group_outros();
@@ -8991,11 +8860,11 @@ function instance3($$self, $$props, $$invalidate) {
   let changesOpen = true;
   let stagedOpen = true;
   let loading = true;
-  const debRefresh = (0, import_obsidian8.debounce)(() => refresh(), 3e5);
+  const debRefresh = (0, import_obsidian9.debounce)(() => refresh(), 3e5);
   const interval = window.setInterval(refresh, 6e5);
   let event;
   plugin.app.workspace.onLayoutReady(() => setImmediate(() => {
-    buttons.forEach((btn) => (0, import_obsidian8.setIcon)(btn, btn.getAttr("data-icon"), 16));
+    buttons.forEach((btn) => (0, import_obsidian9.setIcon)(btn, btn.getAttr("data-icon"), 16));
     refresh();
     event = plugin.app.metadataCache.on("resolved", () => {
       debRefresh();
@@ -9008,6 +8877,7 @@ function instance3($$self, $$props, $$invalidate) {
     plugin.app.metadataCache.offref(event);
   });
   function commit() {
+    $$invalidate(7, loading = true);
     plugin.gitManager.commit(commitMessage).then(() => {
       if (commitMessage !== plugin.settings.commitMessage) {
         $$invalidate(2, commitMessage = "");
@@ -9024,16 +8894,19 @@ function instance3($$self, $$props, $$invalidate) {
     });
   }
   function stageAll() {
+    $$invalidate(7, loading = true);
     plugin.gitManager.stageAll().then(() => {
       refresh();
     });
   }
   function unstageAll() {
+    $$invalidate(7, loading = true);
     plugin.gitManager.unstageAll().then(() => {
       refresh();
     });
   }
   function push() {
+    $$invalidate(7, loading = true);
     plugin.remotesAreSet().then((ready) => {
       if (ready) {
         plugin.gitManager.push().then((pushedFiles) => {
@@ -9044,6 +8917,7 @@ function instance3($$self, $$props, $$invalidate) {
     });
   }
   function pull() {
+    $$invalidate(7, loading = true);
     plugin.pullChangesFromRemote().then(() => {
       refresh();
     });
@@ -9133,7 +9007,7 @@ var GitView = class extends SvelteComponent {
 var gitView_default = GitView;
 
 // src/ui/sidebar/sidebarView.ts
-var GitView2 = class extends import_obsidian9.ItemView {
+var GitView2 = class extends import_obsidian10.ItemView {
   constructor(leaf, plugin) {
     super(leaf);
     this.plugin = plugin;
@@ -9165,7 +9039,7 @@ var GitView2 = class extends import_obsidian9.ItemView {
 };
 
 // src/main.ts
-var ObsidianGit = class extends import_obsidian10.Plugin {
+var ObsidianGit = class extends import_obsidian11.Plugin {
   constructor() {
     super(...arguments);
     this.gitReady = false;
@@ -9243,7 +9117,7 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
       this.addCommand({
         id: "commit-push-specified-message",
         name: "Create backup with specified message",
-        callback: () => new CustomMessageModal(this).open()
+        callback: () => this.promiseQueue.addTask(() => this.createBackup(false, true))
       });
       this.addCommand({
         id: "list-changed-files",
@@ -9309,7 +9183,7 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
             this.displayError("Cannot run git command");
             break;
           case "missing-repo":
-            new import_obsidian10.Notice("Can't find a valid git repository. Please create one via the given command.");
+            new import_obsidian11.Notice("Can't find a valid git repository. Please create one via the given command.");
             break;
           case "valid":
             this.gitReady = true;
@@ -9341,7 +9215,7 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
   createNewRepo() {
     return __async(this, null, function* () {
       yield this.gitManager.init();
-      new import_obsidian10.Notice("Initialized new repo");
+      new import_obsidian11.Notice("Initialized new repo");
     });
   }
   cloneNewRepo() {
@@ -9352,9 +9226,9 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
         let dir = yield new GeneralModal(this.app, [], "Enter directory for clone. It needs to be empty or not existent.").open();
         if (dir) {
           dir = path2.normalize(dir);
-          new import_obsidian10.Notice(`Cloning new repo into "${dir}"`);
+          new import_obsidian11.Notice(`Cloning new repo into "${dir}"`);
           yield this.gitManager.clone(url, dir);
-          new import_obsidian10.Notice("Cloned new repo");
+          new import_obsidian11.Notice("Cloned new repo");
         }
       }
     });
@@ -9387,7 +9261,7 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
       this.setState(PluginState.idle);
     });
   }
-  createBackup(fromAutoBackup, commitMessage) {
+  createBackup(fromAutoBackup, requestCustomMessage = false) {
     return __async(this, null, function* () {
       if (!(yield this.isAllInitialized()))
         return;
@@ -9406,6 +9280,19 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
       }
       const changedFiles = (yield this.gitManager.status()).changed;
       if (changedFiles.length !== 0) {
+        let commitMessage;
+        if (fromAutoBackup && this.settings.customMessageOnAutoBackup || requestCustomMessage) {
+          if (!this.settings.disablePopups && fromAutoBackup) {
+            new import_obsidian11.Notice("Auto backup: Please enter a custom commit message. Leave empty to abort");
+          }
+          const tempMessage = yield new CustomMessageModal(this, true).open();
+          if (tempMessage != void 0 && tempMessage != "" && tempMessage != "...") {
+            commitMessage = tempMessage;
+          } else {
+            this.setState(PluginState.idle);
+            return;
+          }
+        }
         const commitedFiles = yield this.gitManager.commitAll(commitMessage);
         this.displayMessage(`Committed ${commitedFiles} files`);
       } else {
@@ -9442,7 +9329,7 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
   remotesAreSet() {
     return __async(this, null, function* () {
       if (!(yield this.gitManager.branchInfo()).tracking) {
-        new import_obsidian10.Notice("No upstream branch is set. Please select one.");
+        new import_obsidian11.Notice("No upstream branch is set. Please select one.");
         const remoteBranch = yield this.selectRemoteBranch();
         if (remoteBranch == void 0) {
           this.displayError("Did not push. No upstream-branch is set!", 1e4);
@@ -9494,7 +9381,7 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
         "Please resolve them and commit per command (This file will be deleted before the commit).",
         ...conflicted.map((e) => {
           const file = this.app.vault.getAbstractFileByPath(e);
-          if (file instanceof import_obsidian10.TFile) {
+          if (file instanceof import_obsidian11.TFile) {
             const link = this.app.metadataCache.fileToLinktext(file, "/");
             return `- [[${link}]]`;
           } else {
@@ -9571,14 +9458,14 @@ var ObsidianGit = class extends import_obsidian10.Plugin {
     var _a;
     (_a = this.statusBar) == null ? void 0 : _a.displayMessage(message.toLowerCase(), timeout);
     if (!this.settings.disablePopups) {
-      new import_obsidian10.Notice(message);
+      new import_obsidian11.Notice(message);
     }
     console.log(`git obsidian message: ${message}`);
   }
   displayError(message, timeout = 0) {
     var _a;
     message = message.toString();
-    new import_obsidian10.Notice(message);
+    new import_obsidian11.Notice(message);
     console.log(`git obsidian error: ${message}`);
     (_a = this.statusBar) == null ? void 0 : _a.displayMessage(message.toLowerCase(), timeout);
   }
