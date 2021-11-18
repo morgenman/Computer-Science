@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_09:37:51-05:00
+updated: 2021-11-18_07:59:36-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -93,3 +93,4 @@ updated: 2021-11-16_09:37:51-05:00
 	* empathy
 * Emotion as a decision making system
 
+[[Video 2 Feedback]]
