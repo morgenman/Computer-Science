@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[http",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -136,10 +136,10 @@
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
     "Game Development/Game Development.md",
+    "Databases/Databases.md",
     "_Daily_Notes/_Index_of_Fall 2021.md",
     "_Daily_Notes/_Index_of__Daily_Notes.md",
     "_Daily_Notes/Capstone Presentations.md",
-    "Databases/Databases.md",
     "📗Textbooks/📗Textbooks.md",
     "Theory of Computation/Turing Machine.md",
     "Science of Learning.md",
