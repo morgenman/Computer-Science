@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-18_06:09:18-05:00
+updated: 2021-11-18_06:26:43-05:00
 ---
 # Databases
 * https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
@@ -214,6 +214,7 @@ then the above FD is called a trivial FD
 
 ### Nontrivial Functional Dependency
 A1 ... An -> C1 ... Ck
+
 | A1  | ... | An  | C1  | ... | Ck  |
 | --- | --- | --- | --- | --- | --- |
 | a   | a   | a   | c   | c   | c   |

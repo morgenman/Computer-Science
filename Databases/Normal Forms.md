@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_18:34:57-05:00
+updated: 2021-11-18_06:24:25-05:00
 ---
 # Normal Forms
 * 1st Normal Form
@@ -37,6 +37,7 @@ Conditions using keys and FDs of a relation to certify whether a relation schema
 ### Lossless Join?
 e.g.: 
 R(ABC)
+
 | A   | B   | C   |
 | --- | --- | --- |
 | 1   | 2   | 3   |
@@ -45,12 +46,14 @@ R(ABC)
 due to some normal form violation R is decomposed into R1 and R2
 
 R1(A B)
+
 | A   | B   |
 | --- | --- |
 | 1   | 2   |
 | 4   | 2   |
 
 R2(B C)
+
 | B   | C   |
 | --- | --- |
 | 2   | 3   |
@@ -59,6 +62,7 @@ R2(B C)
 After decomposition if R1 $\bowtie$ R2 == R1 then it is a *lossless decomposition*
 
 R1 $\bowtie$ R2
+
 | A   | B   | C   |
 | --- | --- | --- |
 | 1   | 2   | 3   |
@@ -107,6 +111,7 @@ B -> D
 | R4  |     |     |     |     | x   | x   |
 
 E -> G
+
 |     | A   | B   | C   | D   | E   | G   |
 | --- | --- | --- | --- | --- | --- | --- |
 | R1  | x   | x   |     | x   |     |     |
@@ -116,6 +121,7 @@ E -> G
 
 Do it again....
 AD -> E
+
 |     | A   | B   | C   | D   | E   | G   |
 | --- | --- | --- | --- | --- | --- | --- |
 | R1  | x   | x   |     | x   | x   |     |
