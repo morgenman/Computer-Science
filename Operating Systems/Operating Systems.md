@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-15_09:11:14-05:00
+updated: 2021-11-18_12:44:05-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -16,7 +16,6 @@ updated: 2021-11-15_09:11:14-05:00
 		* transfers control to [[trap-handler]] which raises the [[Hardware Privledge Level]] to [[Kernel Mode]]
 * A [[Process]] is an abstraction of a running program
 * Taking an [[Interrupt]] copies the data in the registers and puts it into the **[[K-Stack]]**
-	* What happens to the 
 
 ## What Only Hardware Can do:
 * [[Interrupt]]
