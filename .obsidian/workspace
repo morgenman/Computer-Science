@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "6e715f28a17986ee",
+        "id": "8afe1b266e691c40",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Algorithms of bias movie.md",
-            "mode": "source"
+            "file": "Textbooks/_Index_of_Textbooks.md",
+            "mode": "preview"
           }
         }
       }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "oof",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,8 +56,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md",
+                "file": "Textbooks/_Index_of_Textbooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md"
+                "file": "Textbooks/_Index_of_Textbooks.md"
               }
             }
           },
@@ -121,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Algorithms of bias movie.md",
+                "file": "Textbooks/_Index_of_Textbooks.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,17 +133,17 @@
     "width": 265.14288330078125,
     "collapsed": true
   },
-  "active": "6e715f28a17986ee",
+  "active": "8afe1b266e691c40",
   "lastOpenFiles": [
+    "Textbooks/_Index_of_Textbooks.md",
+    "Textbooks/Textbooks.md",
+    "Textbooks/2003Salen-RulesOfPlay.pdf",
+    "_Index_of_Computer-Science.md",
+    "Theory of Computation/Theory of Computation.md",
     "Professional Practice/Algorithms of bias movie.md",
     "Professional Practice/_Index_of_Professional Practice.md",
     "Professional Practice/Video 2 Feedback.md",
     "Professional Practice/Presentation 1- Feedback.md",
-    "Professional Practice/Professional Practice.md",
-    "Databases/Databases.md",
-    "Databases/Key.md",
-    "Databases/Trivial.md",
-    "Databases/Normal Forms.md",
-    "Databases/Entity-Relationship.md"
+    "Professional Practice/Professional Practice.md"
   ]
 }

@@ -5,7 +5,7 @@
   "indexTagBoolean": true,
   "indexTagSeparator": ", ",
   "indexTagLabel": "tags",
-  "cleanPathBoolean": false,
+  "cleanPathBoolean": true,
   "folderEmoji": ":card_index_dividers:",
   "fileEmoji": ":page_facing_up:",
   "enableEmojis": false,
