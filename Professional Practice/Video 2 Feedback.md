@@ -28,4 +28,12 @@ Microsoft has shown us how not to depict a virtual assistant
 	* 3.2 (fufillment of social responsibilities)
 
 Natural Language processing and the future
-* Synthesizing 
+* Synthesizing virtual assistants with digital faces and voices is already possible
+* going to become more humanlike
+
+Moral and ethical responsibilities to make sure we aren't perpetuating stereotypes
+
+Maybe we shouldn't anthropomorphize them at all?
+
+Purpose is to drive consumerism
+
