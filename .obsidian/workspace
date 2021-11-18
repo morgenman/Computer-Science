@@ -1,17 +1,14 @@
 {
   "main": {
-    "id": "1a8f24977b98f2ef",
+    "id": "8235bbb1da9ab67e",
     "type": "split",
     "children": [
       {
-        "id": "8afe1b266e691c40",
+        "id": "ac92a33031c5ed3a",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Textbooks/_Index_of_Textbooks.md",
-            "mode": "source"
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -77,7 +74,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Textbooks/_Index_of_Textbooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,9 +89,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Textbooks/_Index_of_Textbooks.md"
-              }
+              "state": {}
             }
           },
           {
@@ -120,7 +114,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Textbooks/_Index_of_Textbooks.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -132,7 +125,7 @@
     "direction": "horizontal",
     "width": 265.14288330078125
   },
-  "active": "8afe1b266e691c40",
+  "active": "ac92a33031c5ed3a",
   "lastOpenFiles": [
     "Textbooks/_Index_of_Textbooks.md",
     "Textbooks/Textbooks.md",
