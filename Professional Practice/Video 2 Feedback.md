@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-18_08:27:46-05:00
+updated: 2021-11-18_08:46:37-05:00
 ---
 # Cole
 * ....
@@ -37,3 +37,10 @@ Maybe we shouldn't anthropomorphize them at all?
 
 Purpose is to drive consumerism
 
+# Pawel
+Boston Dynamics & terminator
+Military applications?
+Able to do things just like humans or better
+need precautions
+
+I think the distinction between killer robot and AI should be separated. 
