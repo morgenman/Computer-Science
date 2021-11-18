@@ -37,6 +37,8 @@ Maybe we shouldn't anthropomorphize them at all?
 
 Purpose is to drive consumerism
 
+Slides were a little tacky, light blue is a weird color on presentations
+
 # Pawel
 Boston Dynamics & terminator
 Military applications?
@@ -71,4 +73,5 @@ Human personality is unpredictable
 
 She killed all of them
 
-
+Nice video, good presentation, good video quality. 
+AC was on for one point
