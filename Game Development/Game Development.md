@@ -50,7 +50,7 @@ This is a decision space. We try and
 * group of states of people in neighborhood is my view?
 
 Eg: Game of Life 
-[[https://processing.org/examples/gameoflife.html]]
+[https://processing.org/examples/gameoflife.html]()
 
 |     |     |     |
 | --- | --- | --- |
@@ -87,7 +87,7 @@ walking skeleton
 [drink] -> [coffee|0.5]
 ```
 ## Decorator Pattern
-[[https://www.tutorialspoint.com/design_pattern/decorator_pattern.htm]]
+[https://www.tutorialspoint.com/design_pattern/decorator_pattern.htm]()
 * One of your subtypes can contain a list of base types. 
 
 ```nomnoml
@@ -97,7 +97,7 @@ walking skeleton
 ```
 
 ## Flyweight Pattern
-[[https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm]]
+[https://www.tutorialspoint.com/design_pattern/flyweight_pattern.htm]()
 ![[Pasted image 20211027111206.png]]
 * Basically instancing
 
