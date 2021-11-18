@@ -17,10 +17,10 @@
   "obsidian-nomnoml-diagram",
   "obsidian-advanced-appearance",
   "obsidian-minimal-settings",
-  "obsidian-outliner",
   "quick-latex",
   "obsidian-hide-sidebars-when-narrow",
   "obsidian-codemirror-options",
   "obsidian-pandoc",
-  "update-time-on-edit"
+  "update-time-on-edit",
+  "obsidian-outliner"
 ]

@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
+            "file": "Game Development/Game Development.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Game Development/Game Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Game Development/Game Development.md"
               }
             }
           },
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Game Development/Game Development.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,15 +136,15 @@
   },
   "active": "f83761c040a3e7e4",
   "lastOpenFiles": [
+    "Game Development/Game Development.md",
     "Theory of Computation/Theory of Computation.md",
+    "Databases/Databases.md",
+    "Theory of Computation/Set Theory.md",
     "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
-    "Game Development/Game Development.md",
-    "Databases/Databases.md",
     "Databases/Nihon-Go/Nihon-Go.md",
     "Databases/Entity-Relationship.md",
     "Databases/Normal Forms.md",
-    "Operating Systems/Exam 2 Terms.md",
-    "Operating Systems/Exam 2 Terms.pdf"
+    "Operating Systems/Exam 2 Terms.md"
   ]
 }
