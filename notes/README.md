@@ -1,5 +1,5 @@
 ---
-title: Welcome to Cole's Notes!
+title: 🏠 Welcome to Cole's Notes!
 ---
 
 # [[Databases]]
