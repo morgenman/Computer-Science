@@ -4,35 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e8153df7e1748fda",
-        "type": "split",
-        "children": [
-          {
-            "id": "f83761c040a3e7e4",
-            "type": "leaf",
-            "dimension": 72.4168126094571,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Databases/Databases.md",
-                "mode": "source"
-              }
-            }
-          },
-          {
-            "id": "6e715f28a17986ee",
-            "type": "leaf",
-            "dimension": 27.583187390542907,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Databases/Trivial.md",
-                "mode": "source"
-              }
-            }
+        "id": "6e715f28a17986ee",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Databases/Databases.md",
+            "mode": "source"
           }
-        ],
-        "direction": "horizontal"
+        }
       }
     ],
     "direction": "vertical"
@@ -59,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "key",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -76,12 +56,12 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -154,17 +134,17 @@
     "width": 265.14288330078125,
     "collapsed": true
   },
-  "active": "f83761c040a3e7e4",
+  "active": "6e715f28a17986ee",
   "lastOpenFiles": [
     "Databases/Databases.md",
+    "Databases/_Index_of_Database Systems.md",
+    "Databases/Key.md",
     "Databases/Trivial.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Set Theory.md",
     "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
-    "Databases/Nihon-Go/Nihon-Go.md",
-    "Databases/Entity-Relationship.md",
-    "Databases/Normal Forms.md"
+    "Databases/Nihon-Go/Nihon-Go.md"
   ]
 }

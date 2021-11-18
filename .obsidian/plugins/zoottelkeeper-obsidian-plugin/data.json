@@ -3,5 +3,15 @@
   "indexItemStyle": "list",
   "indexTagValue": "MOC",
   "indexTagBoolean": true,
-  "cleanPathBoolean": true
+  "indexTagSeparator": ", ",
+  "indexTagLabel": "tags",
+  "cleanPathBoolean": false,
+  "folderEmoji": ":card_index_dividers:",
+  "fileEmoji": ":page_facing_up:",
+  "enableEmojis": false,
+  "foldersExcluded": "",
+  "foldersIncluded": "",
+  "sortOrder": "asc",
+  "addSquareBrackets": true,
+  "embedSubIndex": false
 }
