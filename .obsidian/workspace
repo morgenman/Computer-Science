@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Video 2 Feedback.md",
+            "file": "Professional Practice/_Index_of_Professional Practice.md",
             "mode": "source"
           }
         }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
-    "collapsed": true
+    "width": 212.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Video 2 Feedback.md",
+                "file": "Professional Practice/_Index_of_Professional Practice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Video 2 Feedback.md"
+                "file": "Professional Practice/_Index_of_Professional Practice.md"
               }
             }
           },
@@ -121,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Video 2 Feedback.md",
+                "file": "Professional Practice/_Index_of_Professional Practice.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,15 +135,15 @@
   },
   "active": "6e715f28a17986ee",
   "lastOpenFiles": [
+    "Professional Practice/_Index_of_Professional Practice.md",
     "Professional Practice/Video 2 Feedback.md",
+    "Professional Practice/Presentation 1- Feedback.md",
     "Professional Practice/Professional Practice.md",
     "Databases/Databases.md",
     "Databases/Key.md",
     "Databases/Trivial.md",
     "Databases/Normal Forms.md",
     "Databases/Entity-Relationship.md",
-    "Databases/_Index_of_Database Systems.md",
-    "Game Development/Game Development.md",
-    "Theory of Computation/Theory of Computation.md"
+    "Databases/_Index_of_Database Systems.md"
   ]
 }

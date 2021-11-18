@@ -35,7 +35,7 @@ a little too many ums
 Slightly too much going on on slides
 slide with acm 3.7 and 2.1 are not same column size: left is justified, right is hanging
 
-## Trevor Butler
+## Trevor 
 * Experian Hack
 * 15 million customers from tmobile
 * name addresses, ssn, passport driverslicence 
