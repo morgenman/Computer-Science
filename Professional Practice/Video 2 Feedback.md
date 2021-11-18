@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-18_08:46:37-05:00
+updated: 2021-11-18_08:56:41-05:00
 ---
 # Cole
 * ....
@@ -43,4 +43,19 @@ Military applications?
 Able to do things just like humans or better
 need precautions
 
+Could have practiced a little bit more. Video was a bit choppy. 
+Also, Watermark is painful. Window key + G has recording mode
+
 I think the distinction between killer robot and AI should be separated. 
+
+# Trevor
+GLaDOS
+Genetic Lifeform and Disk Operating System
+
+Portal, Deicing purpose
+Should the main character trust GLaDOS?
+
+* Stockholm's Syndrome
+* When Glados is kidnapped, she hates the birds, but later loves them
+* Showing human characteristics
+* 
