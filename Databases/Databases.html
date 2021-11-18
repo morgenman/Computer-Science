@@ -157,7 +157,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-18_05:25:04-05:00</p>
+<p>updated: 2021-11-18_06:09:18-05:00</p>
 <hr>  
 <h1 id="databases"><a class="header" href="#databases">Databases</a></h1>
 <ul>
@@ -239,6 +239,16 @@
 <li><span class="missing-link" style="color:darkred;">Relation</span> is a table (for data)</li>
 <li><a href="Key.html">Key</a></li>
 </ul>
+<p><strong>Key</strong> A key is a single or combination of multiple fields. Its purpose is to access or retrieve data rows from table according to the requirement. The keys are defined in tables to access or sequence the stored data quickly and smoothly. They are also used to create links between different tables.</p>
+<p><strong>Types of Keys</strong></p>
+<p><strong>Primary Key</strong> The attribute or combination of attributes that uniquely identifies a row or record in a relation is known as primary key.</p>
+<p><strong>Secondary key</strong> A field or combination of fields that is basis for retrieval is known as secondary key. Secondary key is a non-unique field. One secondary key value may refer to many records.</p>
+<p><strong>Candidate Key or Alternate key</strong> A relation can have only one primary key. It may contain many fields or combination of fields that can be used as primary key. One field or combination of fields is used as primary key. The fields or combination of fields that are not used as primary key are known as candidate key or alternate key.</p>
+<p><strong>Composite key or concatenate key</strong> A primary key that consists of two or more attributes is known as composite key.</p>
+<p><strong>Sort Or control key</strong> A field or combination of fields that is used to physically sequence the stored data called sort key. It is also known s control key.</p>
+<p>A <strong>superkey</strong> is a combination of attributes that can be uniquely used to identify a database record. A table might have many superkeys. Candidate keys are a special subset of superkeys that do not have any extraneous information in them.</p>
+<p><strong>Example for super key</strong>: Imagine a table with the fields <code>&lt;Name&gt;</code>, <code>&lt;Age&gt;</code>, <code>&lt;SSN&gt;</code> and <code>&lt;Phone Extension&gt;</code>. This table has many possible superkeys. Three of these are <code>&lt;SSN&gt;</code>, <code>&lt;Phone Extension, Name&gt;</code> and <code>&lt;SSN, Name&gt;</code>. Of those listed, only <code>&lt;SSN&gt;</code> is a candidate key, as the others contain information not necessary to uniquely identify records.</p>
+<p><strong>Foreign Key</strong> A foreign key is an attribute or combination of attribute in a relation whose value match a primary key in another relation. The table in which foreign key is created is called as dependent table. The table to which foreign key is refers is known as parent table.</p>
 <h2 id="operations-a-hrefrelational20algebrahtmlrelational-algebraa-form"><a class="header" href="#operations-a-hrefrelational20algebrahtmlrelational-algebraa-form">Operations (<a href="Relational%20Algebra.html">Relational Algebra</a> form)</a></h2>
 <ul>
 <li>
@@ -617,7 +627,6 @@ probably only one row is meaningful, and the rest are pointless</p>
 </ul>
 </li>
 </ol>
-<p><a href="Normal%20Forms.html">Normal Forms</a></p>
 <p>Exam: ER Diagrams, coming up with relation schema, 3rd chapter completely (open book)<br />
 We have done chapters up to 6<br />
 <strong>ER model chapter 4<br />
