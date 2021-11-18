@@ -7,10 +7,9 @@
         "id": "a37250aa1d495f0a",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "Game Development/Game Development.md",
-            "mode": "source"
+            "file": "Game Development/Pasted image 20211027111206.png"
           }
         }
       }
@@ -77,7 +76,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Game Development/Pasted image 20211027111206.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +93,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Game Development/Game Development.md"
+                "file": "Game Development/Pasted image 20211027111206.png"
               }
             }
           },
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Game Development/Game Development.md",
+                "file": "Game Development/Pasted image 20211027111206.png",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,6 +133,7 @@
   },
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
+    "Game Development/Pasted image 20211027111206.png",
     "Game Development/Game Development.md",
     "Databases/Databases.md",
     "_Daily_Notes/_Index_of_Fall 2021.md",
@@ -142,7 +142,6 @@
     "📗Textbooks/📗Textbooks.md",
     "Theory of Computation/Turing Machine.md",
     "Science of Learning.md",
-    "_Index_of_Computer-Science.md",
-    "Operating Systems/Operating Systems.md"
+    "_Index_of_Computer-Science.md"
   ]
 }
