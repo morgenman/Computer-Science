@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[http",
+                "query": "http",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,8 +56,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
