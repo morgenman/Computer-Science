@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-18_08:56:41-05:00
+updated: 2021-11-18_09:02:05-05:00
 ---
 # Cole
 * ....
@@ -44,7 +44,7 @@ Able to do things just like humans or better
 need precautions
 
 Could have practiced a little bit more. Video was a bit choppy. 
-Also, Watermark is painful. Window key + G has recording mode
+Also, Watermark is painful. Window key + G has recording mode, and there are free video editors
 
 I think the distinction between killer robot and AI should be separated. 
 
@@ -56,6 +56,19 @@ Portal, Deicing purpose
 Should the main character trust GLaDOS?
 
 * Stockholm's Syndrome
-* When Glados is kidnapped, she hates the birds, but later loves them
+* When GLaDOS is kidnapped, she hates the birds, but later loves them
 * Showing human characteristics
-* 
+
+Sounds like a good idea to have an AI 
+Scary, if it has a personality
+
+ACM:
+avoid harm
+trustworthy
+system that's secure
+
+Human personality is unpredictable 
+
+She killed all of them
+
+
