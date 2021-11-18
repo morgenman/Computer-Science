@@ -1,7 +1,7 @@
 #+TITLE:  Hosting Obsidian Notes on GitHub Automatically
 
 1. Clone this repository 
-2. Delete the notes, copy in your own. 
+2. Delete the notes, copy in your own and open the folder as a vault in Obsidian
 3. Deal with the .obsidian folder... probably want to keep the git plugin
 4. Go through the following files and adjust:
 
