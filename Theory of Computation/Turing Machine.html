@@ -157,7 +157,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-19_09:50:00-05:00</p>
+<p>updated: 2021-11-19_09:55:40-05:00</p>
 <hr>  
 <h1 id="turing-machine"><a class="header" href="#turing-machine">Turing Machine</a></h1>
 <p>Simple model of computation</p>
@@ -334,12 +334,17 @@ to make more space, move all characters right of #</p>
 </ul>
 <p>Pop is bottom most element, push to end</p>
 <hr>  
-<p>Nondeterministic FA as a turing machine</p>
+<h2 id="nondeterministic-fa-as-a-turing-machine"><a class="header" href="#nondeterministic-fa-as-a-turing-machine">Nondeterministic FA as a turing machine</a></h2>
 <p>L = {0$^{k}$| k is a composite number (non prime)}</p>
 <ol>
 <li>pick 2 numbers n1 and n2 such that 2 &lt; n1 ... n2 ... &lt; k</li>
-<li>write n1 number of 0's an</li>
+<li>write n1 number of 0's and n2 number of 1's to TM tape</li>
+<li>check if n1 * n2 = k; if yes accept; else reject</li>
 </ol>
+<p>How do we do multiplication on a Turing Machine?</p>
+<p>at some point we have n1 = 3 and n2 = 5</p>
+<p>k number of 0s ; # ; n1 (000) # n2 (11111) #<br />
+mark first 0 as b;</p>
 
                 </main>
             </div>
