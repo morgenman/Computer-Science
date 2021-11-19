@@ -162,3 +162,8 @@ mark every other 0 until blank
 
 
 ![[Pasted image 20211112094944.png]]
+
+
+# Multitape Turing Machine
+* 3 tape
+* 
