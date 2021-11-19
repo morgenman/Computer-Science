@@ -157,7 +157,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-19_08:30:46-05:00</p>
+<p>updated: 2021-11-19_08:36:30-05:00</p>
 <hr>  
 <h1 id="operating-systems"><a class="header" href="#operating-systems">Operating Systems</a></h1>
 <h2 id="what-does-it-do"><a class="header" href="#what-does-it-do">What does it do?</a></h2>
@@ -1279,8 +1279,14 @@ vector</li>
 <li>Allows us to 'be' in multiple places in the same program, so to speak</li>
 </ul>
 <h2 id="problems-1"><a class="header" href="#problems-1">Problems:</a></h2>
-<p>When we take an interrupt, it happens between instructions, so we could loose one<br />
-Interrupting between instruct</p>
+<p>When we take an interrupt, it happens between instructions, so we could loose one, leading to wrong values</p>
+<h2 id="solution-1"><a class="header" href="#solution-1">Solution:</a></h2>
+<h3 id="shared-mmu"><a class="header" href="#shared-mmu">Shared MMU</a></h3>
+<ul>
+<li>Context in MMU is shared between threads</li>
+<li>Has a thread control block</li>
+<li>Don't need a process control block</li>
+</ul>
 
                 </main>
             </div>
