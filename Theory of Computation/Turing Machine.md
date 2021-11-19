@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_09:23:58-05:00
+updated: 2021-11-19_09:31:40-05:00
 ---
 # Turing Machine
 
@@ -186,4 +186,12 @@ transition
 by1 -> ax0, RLR
 
 ## 2 Stack
-1.
+1. Put data into two stacks
+2. What does the transititon mean (L,R)
+3. Keep track of head position
+	
+Top of stack 2 is current head
+
+
+Left...
+* replace ai+1 with whatever transition says 
