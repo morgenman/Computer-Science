@@ -218,4 +218,7 @@ at some point we have n1 = 3 and n2 = 5
 
 k number of 0s ; # ; n1 (000) # n2 (11111) # 
 mark first 0 as b;
+ copy 
+
+Nondeterminism comes from picking n1 and n2
 
