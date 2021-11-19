@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_09:50:00-05:00
+updated: 2021-11-19_09:55:40-05:00
 ---
 # Turing Machine
 
@@ -204,10 +204,18 @@ Pop is bottom most element, push to end
 
 ---
 
-Nondeterministic FA as a turing machine
+## Nondeterministic FA as a turing machine
 
 L = {0$^{k}$| k is a composite number (non prime)}
 
-1. pick 2 numbers n1 and n2 such that 2 < n1 ... n2 ... < k
-2. write n1 number of 0's an
+1. pick 2 numbers n1 and n2 such that 2 < n1 ... n2 ... < k 
+2. write n1 number of 0's and n2 number of 1's to TM tape 
+3. check if n1 * n2 = k; if yes accept; else reject
+
+How do we do multiplication on a Turing Machine?
+
+at some point we have n1 = 3 and n2 = 5
+
+k number of 0s ; # ; n1 (000) # n2 (11111) # 
+mark first 0 as b;
 
