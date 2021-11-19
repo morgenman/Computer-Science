@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_09:31:40-05:00
+updated: 2021-11-19_09:44:17-05:00
 ---
 # Turing Machine
 
@@ -195,3 +195,6 @@ Top of stack 2 is current head
 
 Left...
 * replace ai+1 with whatever transition says 
+
+## Queue
+* Pop from front, push to back
