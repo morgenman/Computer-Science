@@ -165,7 +165,7 @@ mark every other 0 until blank
 
 
 # Multitape Turing Machine
-* 3 tape
+## 3 Tape
 
 > Theorem: *Every Multitape TM has an equivalent single tape TM*
 
@@ -182,3 +182,8 @@ we could keep track of various heads with underline
 to make more space, move all characters right of #
 
 transition
+
+by1 -> ax0, RLR
+
+## 2 Stack
+1.
