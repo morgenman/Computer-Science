@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_08:22:48-05:00
+updated: 2021-11-19_08:30:46-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -976,4 +976,5 @@ Smaller page table, less memory
 
 ## Problems:
 When we take an interrupt, it happens between instructions, so we could loose one
+Interrupting between instruct
 
