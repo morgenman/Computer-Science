@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_09:16:33-05:00
+updated: 2021-11-19_09:23:58-05:00
 ---
 # Turing Machine
 
@@ -174,3 +174,11 @@ mark every other 0 until blank
 
 Deliminator here is chosen to be # 
 
+| #   | a   | a   | b   | _   | _   | _   | #   | x   | y   | x   | x   | _   | _   | _   | #   | 1   | 0   | 0   | 1   | 0   | _   | _   | _   | #   |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|     |     |     | ^   |     |     |     |     |     | ^   |     |     |     |     |     |     |     |     | ^   |     |     |     |     |     |     |
+
+we could keep track of various heads with underline
+to make more space, move all characters right of #
+
+transition
