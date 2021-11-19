@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_08:30:46-05:00
+updated: 2021-11-19_08:36:30-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -975,6 +975,11 @@ Smaller page table, less memory
 * Allows us to 'be' in multiple places in the same program, so to speak
 
 ## Problems:
-When we take an interrupt, it happens between instructions, so we could loose one
-Interrupting between instruct
+When we take an interrupt, it happens between instructions, so we could loose one, leading to wrong values
+
+## Solution: 
+### Shared MMU
+* Context in MMU is shared between threads
+* Has a thread control block
+* Don't need a process control block
 
