@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_08:36:30-05:00
+updated: 2021-11-19_08:49:39-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -982,4 +982,8 @@ When we take an interrupt, it happens between instructions, so we could loose on
 * Context in MMU is shared between threads
 * Has a thread control block
 * Don't need a process control block
+
+
+So how do we stop them from writing to the same value without stopping? 
+Lock(i)
 
