@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-16_16:00:25-05:00
+updated: 2021-11-19_09:16:33-05:00
 ---
 # Turing Machine
 
@@ -166,4 +166,11 @@ mark every other 0 until blank
 
 # Multitape Turing Machine
 * 3 tape
-* 
+
+> Theorem: *Every Multitape TM has an equivalent single tape TM*
+
+1. Need to store all tapes input into a single tape
+2. Each tape has to be noted
+
+Deliminator here is chosen to be # 
+
