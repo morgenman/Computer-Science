@@ -974,3 +974,6 @@ Smaller page table, less memory
 # Threading
 * Allows us to 'be' in multiple places in the same program, so to speak
 
+## Problems:
+When we take an interrupt, it happens between instructions, so we could loose one
+
