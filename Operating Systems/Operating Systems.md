@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_08:15:00-05:00
+updated: 2021-11-19_08:22:48-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -971,4 +971,6 @@ Smaller page table, less memory
 
 ---
 
-# ![[Virtualization]]
+# Threading
+* Allows us to 'be' in multiple places in the same program, so to speak
+

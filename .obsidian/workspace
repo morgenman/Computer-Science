@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Virtualization.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Virtualization.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Virtualization.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Virtualization.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,15 +134,15 @@
   },
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
-    "Operating Systems/Virtualization.md",
     "Operating Systems/Operating Systems.md",
+    "Operating Systems/Exam 2 Terms.md",
+    "Operating Systems/Building with Make.md",
+    "Operating Systems/Virtualization.md",
     "Science of Learning.md",
     "Game Development/Pasted image 20211027111206.png",
     "📗Textbooks/📗Textbooks.md",
     "📗Textbooks/_Index_of_📗Textbooks.md",
     "Game Development/Game Development.md",
-    "Databases/Databases.md",
-    "_Daily_Notes/_Index_of_Fall 2021.md",
-    "_Daily_Notes/_Index_of__Daily_Notes.md"
+    "Databases/Databases.md"
   ]
 }
