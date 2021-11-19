@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_09:44:17-05:00
+updated: 2021-11-19_09:50:00-05:00
 ---
 # Turing Machine
 
@@ -198,3 +198,16 @@ Left...
 
 ## Queue
 * Pop from front, push to back
+
+Pop is bottom most element, push to end
+
+
+---
+
+Nondeterministic FA as a turing machine
+
+L = {0$^{k}$| k is a composite number (non prime)}
+
+1. pick 2 numbers n1 and n2 such that 2 < n1 ... n2 ... < k
+2. write n1 number of 0's an
+
