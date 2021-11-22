@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-22_09:29:05-05:00
+updated: 2021-11-22_09:35:10-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -276,4 +276,5 @@ $\delta$(q,\_) = {
 Are decidable and recognizable languages closed under union?
 
 > let l1 and l2 be decidable languages via halting TMs M1 & M2 respectively (both halt)
-> is L1 $\cup$ L2
+> is L1 $\cup$ L2 decidable
+> *yes*... Given input x; x $\in$ L'
