@@ -277,6 +277,8 @@ $\delta$(q,\_) = {
 
 Are decidable and recognizable languages closed under union?
 
+***Reference for Non-determinism in TM: *** [[Turing Machine#Multitape Turing Machine]]
+
 ## Union
 ### Decidable
 > let l1 and l2 be decidable languages via halting TMs M1 & M2 respectively (both halt)
@@ -299,7 +301,16 @@ Are decidable and recognizable languages closed under union?
 >1. Run them simultaneously on x.
 >2. If either accept, accept, else
 >3. loop or reject
+>.
+>If it is turing recognizable $\therefore$ it is also turing decidable
 
 ## Concatenation
 ### Recognizable
->
+> L1 and L2 are TR via TMs M1 and M2 respectively
+> is L1.L2 TR?
+> given input x, where x $\in$ L1.L2
+> First partition x into L1 and L2
+> ***Nondeterministically***...
+> 1. Partition x as  x1.x2
+> 2. Simulate M1 on x1, if M1 rejects, then reject
+> 3. if M1 accepts, s
