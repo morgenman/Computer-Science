@@ -455,6 +455,13 @@ U -&gt; cU | e</li>
 <p>TM<br />
 C = {a^i b^j c^k | i x j = k and i,j,k &gt;= 1}</p>
 <p>L = {a^2i b^i c^2i | i&gt;0}</p>
+<h2 id="theorem-if-a-language-is-regular-then-it-is-decidable"><a class="header" href="#theorem-if-a-language-is-regular-then-it-is-decidable">Theorem: If a language is regular then it is decidable</a></h2>
+<ul>
+<li>Approach, come up with turing machine</li>
+</ul>
+<h3 id="proof-suppose-m-is-a-dfa-for-a-given-regular-language"><a class="header" href="#proof-suppose-m-is-a-dfa-for-a-given-regular-language">Proof: Suppose M is a DFA for a given regular language</a></h3>
+<p>A TM can simulate M by reading the input from left to right while going through the same states as M<br />
+Once you reach the end of input, the TM enters the accept state if M is in accept state</p>
 
                 </main>
             </div>
