@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-22_09:56:50-05:00
+updated: 2021-11-22_10:14:46-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -272,7 +272,7 @@ $\delta$(q,\_) = {
 | ------------- | ------------ | ------------------- |
 | Union         | $\checkmark$ | $\checkmark$        |
 | Concatenation | $\checkmark$ | $\checkmark$        |
-| Intersection  |              |                     |
+| Intersection  | $\checkmark$ | $\checkmark$                    |
 |               |              |                     |
 
 
@@ -318,11 +318,15 @@ Are decidable and recognizable languages closed under union?
 > 3. if M1 accepts, simulate M2 on x2
 >	 * if M2 accepts; accept
 >	 * if M2 rejects; reject
->	 * if M2 loops; loop (implies x2 $\notin$ M2)
-> 4. if M1 loops;loop (implies x1 $\notin$ M1)
+>	 * if M2 loops; loop (implies x2 $\notin$ L2)
+> 4. if M1 loops;loop (implies x1 $\notin$ L1)
 ### Decidable: If it is turing recognizable $\therefore$ it is also turing decidable
 
 ## Intersection
 ### Recognizable
-> M1 and M2 are 
-#
+> L1 and L2 are turing recognizable via TMs M1 and M2 respectively
+> is L1 $\cap$ L2 TR?
+> Given x $\in$ L1 $\cap$ L2
+> 1. Simulate M1 on x, if M1 rejects, then reject
+> 2. If M1 accepts, simulate M2 on x, if M2 accepts; accept; else reject
+> 3. If M1 loop (x $\notin$ L1 and $\therefore$ will loop)
