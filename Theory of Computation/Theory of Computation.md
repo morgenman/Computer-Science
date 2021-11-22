@@ -268,9 +268,11 @@ $\delta$(q,\_) = {
 
 # Closure Properties of decidable and turing recognizable languages
 
-| Operation | Decidable | Turing Recognizable |
-| --------- | --------- | ------------------- |
-| Union     |           |                     |
+| Operation | Decidable    | Turing Recognizable |
+| --------- | ------------ | ------------------- |
+| Union     | $\checkmark$ | $\checkmark$        |
+|           |              |                     |
+
 
 
 Are decidable and recognizable languages closed under union?
@@ -284,11 +286,18 @@ Are decidable and recognizable languages closed under union?
 > 2. Simulate M2 on x ... if M2 accepts then accept else
 > 3. Reject
 
-### Recognizable
+### Recognizable (harder to prove, start with this)
 >let L1 and L2 be turing recognizable languages
 >is L1 $\cup$ L2 turing recognizable
 >M1 is  TM for L1 and 
 >M2 is a TM for L2
 >M1 and M2 may accept or loop
->Say x $\in$ L2
->x
+>(overall x $\in$ L1 $\cup$ L2)
+>Say x $\in$ L2  
+>if we run x on M1 it may loop
+>***Non-determinism***...
+>1. Run them simultaneously on x.
+>2. If either accept, accept, else
+>3. loop or reject
+
+## 
