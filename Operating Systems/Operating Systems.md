@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-19_08:49:39-05:00
+updated: 2021-11-22_04:16:35-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -737,6 +737,7 @@ PTBR: Page table base register (PBR)
 *page*: virtual
 
 # Memory:
+
 | Name            | Size  | Unit                   | Explanation                     |
 | --------------- | ----- | ---------------------- | ------------------------------- |
 | PTBR            | 03010 |                        | Pointer at array of addresses[] |
@@ -840,6 +841,7 @@ need to address 4k, so 12 bits (2^12) for offset
 16 bit address
 
 Allocating this space
+
 |     | RAM   |
 | --- | ----- |
 | 0   | STACK |
@@ -854,6 +856,7 @@ Allocating this space
 |     |       |
 
 Let's make the present bit 1 and location bit 4
+
 | Location (Page #)(Offset)      | P(resent) | D(irty) |     | V(alid) | Frame #               | size |
 | ------------------------------ | --------- | ------- | --- | ------- | --------------------- | ---- |
 | C000  (address stored in PTBR) | 1         | 0       |     | 1       | 4                     | 1B   |
@@ -907,6 +910,7 @@ F - 10_1 0
 > Which accesses(PT lookups) go away when you have a TLB
 
 How do we know when to delete stuff in RAM? Timestamps? no.. too big... add "Reference"
+
 | Location (Page #)(Offset)      | P(resent) | D(irty) | R(eference) | V(alid) | Frame #               | size |
 | ------------------------------ | --------- | ------- | ----------- | ------- | --------------------- | ---- |
 | C000  (address stored in PTBR) | 1         | 0       | 1           | 1       | 4                     | 1B   |
