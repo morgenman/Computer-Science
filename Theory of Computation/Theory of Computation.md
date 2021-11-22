@@ -268,10 +268,12 @@ $\delta$(q,\_) = {
 
 # Closure Properties of decidable and turing recognizable languages
 
-| Operation | Decidable    | Turing Recognizable |
-| --------- | ------------ | ------------------- |
-| Union     | $\checkmark$ | $\checkmark$        |
-|           |              |                     |
+| Operation     | Decidable    | Turing Recognizable |
+| ------------- | ------------ | ------------------- |
+| Union         | $\checkmark$ | $\checkmark$        |
+| Concatenation | $\checkmark$ | $\checkmark$        |
+| Intersection  |              |                     |
+|               |              |                     |
 
 
 
@@ -318,5 +320,9 @@ Are decidable and recognizable languages closed under union?
 >	 * if M2 rejects; reject
 >	 * if M2 loops; loop (implies x2 $\notin$ M2)
 > 4. if M1 loops;loop (implies x1 $\notin$ M1)
+### Decidable: If it is turing recognizable $\therefore$ it is also turing decidable
 
 ## Intersection
+### Recognizable
+> M1 and M2 are 
+#
