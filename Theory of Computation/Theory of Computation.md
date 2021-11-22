@@ -261,4 +261,19 @@ $\delta$(q,\_) = {
 }
 
 ## Theorem: If a language is context free then it is decidable
-### Simulate a TM by using a PDA if PDA goes to accept state at the end of the input then the TM will go to the accept state, otherwise TM will go to reject
+### Proof: Simulate a TM by using a PDA if PDA goes to accept state at the end of the input then the TM will go to the accept state, otherwise TM will go to reject
+
+## Claim: the class of languages accepted by deterministic TM's and Non-deterministic TM's are equal
+
+
+# Closure Properties of decidable and turing recognizable languages
+
+| Operation | Decidable | Turing Recognizable |
+| --------- | --------- | ------------------- |
+| Union     |           |                     |
+
+
+Are decidable and recognizable languages closed under union?
+
+> let l1 and l2 be decidable languages via halting TMs M1 & M2 respectively (both halt)
+> is L1 $\cup$ L2
