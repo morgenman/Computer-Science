@@ -300,4 +300,6 @@ Are decidable and recognizable languages closed under union?
 >2. If either accept, accept, else
 >3. loop or reject
 
-## 
+## Concatenation
+### Recognizable
+>
