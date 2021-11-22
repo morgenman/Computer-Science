@@ -157,7 +157,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-22_09:35:10-05:00</p>
+<p>updated: 2021-11-22_09:42:37-05:00</p>
 <hr>  
 <h1 id="theory-of-computation"><a class="header" href="#theory-of-computation">Theory of Computation</a></h1>
 <ul>
@@ -485,7 +485,13 @@ $\delta$(q,_) = {</p>
 <blockquote>
 <p>let l1 and l2 be decidable languages via halting TMs M1 &amp; M2 respectively (both halt)<br />
 is L1 $\cup$ L2 decidable<br />
-<em>yes</em>... Given input x; x $\in$ L'</p>
+<em>yes</em>... Given input x; x $\in$ L'; L' = L1 $\cup$ L2</p>
+<ol>
+<li>Simulate M1 on x ... if M1 accepts then accept else</li>
+<li>Simulate M2 on x ... if M2 accepts then accept else</li>
+<li>Reject</li>
+</ol>
+<p>L</p>
 </blockquote>
 
                 </main>
