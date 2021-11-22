@@ -247,3 +247,10 @@ L = {a^2i b^i c^2i | i>0}
 A TM can simulate M by reading the input from left to right while going through the same states as M
 Once you reach the end of input, the TM enters the accept state if M is in accept state
 
+Let M = (Q $\Sigma$ $\delta$ q0 f)
+M' (Q $\Sigma$ $\rho$ $\delta'$ q0 qa qr)
+where Q' = Q $\cup$ {qa,qr}
+$\rho$ = $\Sigma$ $\cup$ {\_}
+$\delta'$(q,a) = ($\delta$(q,a),a,R)
+(a is some input not \_) 
+if q $$

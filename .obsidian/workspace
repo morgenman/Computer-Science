@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 270.99999809265137,
-    "collapsed": true
+    "width": 270.99999809265137
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -137,6 +136,7 @@
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
+    "Professional Practice/Professional Practice.md",
     "Theory of Computation/Turing Machine.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/Exam 2 Terms.md",
@@ -144,7 +144,6 @@
     "Operating Systems/Virtualization.md",
     "Science of Learning.md",
     "Game Development/Pasted image 20211027111206.png",
-    "📗Textbooks/📗Textbooks.md",
-    "📗Textbooks/_Index_of_📗Textbooks.md"
+    "📗Textbooks/📗Textbooks.md"
   ]
 }
