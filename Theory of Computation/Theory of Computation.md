@@ -240,3 +240,10 @@ C = {a^i b^j c^k | i x j = k and i,j,k >= 1}
 L = {a^2i b^i c^2i | i>0}
 
 
+## Theorem: If a language is regular then it is decidable
+* Approach, come up with turing machine
+
+### Proof: Suppose M is a DFA for a given regular language
+A TM can simulate M by reading the input from left to right while going through the same states as M
+Once you reach the end of input, the TM enters the accept state if M is in accept state
+

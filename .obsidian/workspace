@@ -60,7 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 212.99999809265137,
+    "width": 270.99999809265137,
     "collapsed": true
   },
   "right": {
@@ -131,13 +131,14 @@
       }
     ],
     "direction": "horizontal",
-    "width": 265.14288330078125
+    "width": 325.1429443359375,
+    "collapsed": true
   },
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
-    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Turing Machine.md",
+    "Operating Systems/Operating Systems.md",
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Building with Make.md",
     "Operating Systems/Virtualization.md",
