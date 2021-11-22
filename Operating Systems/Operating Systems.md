@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-22_04:16:35-05:00
+updated: 2021-11-22_04:39:44-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -282,6 +282,7 @@ Looking for byte 5000k
 See [[processes.pdf]] for this section
 # Memory Block
 Low  to high
+
 | Code  | Data | Heap -> |     | <- Stack |
 | ----- | ---- | ------- | --- | -------- |
 | 00000 |      |         |     | fffff    | 	
@@ -469,8 +470,7 @@ Signature for executable program: `#!`
 | P2  | 0    |
 | --- | ---- |
 | P3  | 1000 |
-|     |      |
-|     |      |
+
 Base register is a step towards having virtual memory
 Bounds allows us to protect memory
 
@@ -518,8 +518,7 @@ return v.data();
 | 4 bit  | 12 bit |
 | ------ | ------ |
 | Page # | offset |
-|        |        |
-|        |        |
+
 
 * offset is going to be the same size for every address
 * PageTable for each process (held by OS, per process, part of context)
