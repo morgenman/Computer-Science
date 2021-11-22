@@ -6296,6 +6296,13 @@ C = {a^i b^j c^k | i x j = k and i,j,k &gt;= 1}</p>
 <h3 id="proof-suppose-m-is-a-dfa-for-a-given-regular-language"><a class="header" href="#proof-suppose-m-is-a-dfa-for-a-given-regular-language">Proof: Suppose M is a DFA for a given regular language</a></h3>
 <p>A TM can simulate M by reading the input from left to right while going through the same states as M<br />
 Once you reach the end of input, the TM enters the accept state if M is in accept state</p>
+<p>Let M = (Q $\Sigma$ $\delta$ q0 f)<br />
+M' (Q $\Sigma$ $\rho$ $\delta'$ q0 qa qr)<br />
+where Q' = Q $\cup$ {qa,qr}<br />
+$\rho$ = $\Sigma$ $\cup$ {_}<br />
+$\delta'$(q,a) = ($\delta$(q,a),a,R)<br />
+(a is some input not _)<br />
+if q $$</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
