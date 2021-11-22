@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Turing Machine.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -136,9 +136,9 @@
   },
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
+    "Operating Systems/Operating Systems.md",
     "Theory of Computation/Turing Machine.md",
     "Theory of Computation/Theory of Computation.md",
-    "Operating Systems/Operating Systems.md",
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Building with Make.md",
     "Operating Systems/Virtualization.md",
