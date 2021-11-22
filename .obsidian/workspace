@@ -13,6 +13,17 @@
             "mode": "source"
           }
         }
+      },
+      {
+        "id": "b2562f4e995ebdba",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Turing Machine.md",
+            "mode": "source"
+          }
+        }
       }
     ],
     "direction": "vertical"
@@ -60,7 +71,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 270.99999809265137
+    "width": 270.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -136,8 +148,8 @@
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
-    "Professional Practice/Professional Practice.md",
     "Theory of Computation/Turing Machine.md",
+    "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Building with Make.md",

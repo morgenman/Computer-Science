@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-22_09:14:28-05:00
+updated: 2021-11-22_09:29:05-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -252,5 +252,13 @@ M' (Q $\Sigma$ $\rho$ $\delta'$ q0 qa qr)
 where Q' = Q $\cup$ {qa,qr}
 $\rho$ = $\Sigma$ $\cup$ {\_}
 $\delta'$(q,a) = ($\delta$(q,a),a,R)
-(a is some input not \_) 
-if q $$
+(a is some input not \_) ($a\in\Sigma$) 
+if q $\in$ Q & a $\ne$ _
+$\delta$(q,\_) = {
+| (qa,\_,R)  | if q $\in$ F  |
+| ---------- | ------------- |
+| (qR,\_,R ) | if q$\notin$F |
+}
+
+## Theorem: If a language is context free then it is decidable
+### Simulate a TM by using a PDA if PDA goes to accept state at the end of the input then the TM will go to the accept state, otherwise TM will go to reject
