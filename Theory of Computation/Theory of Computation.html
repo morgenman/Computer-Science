@@ -157,7 +157,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-22_09:14:28-05:00</p>
+<p>updated: 2021-11-22_09:29:05-05:00</p>
 <hr>  
 <h1 id="theory-of-computation"><a class="header" href="#theory-of-computation">Theory of Computation</a></h1>
 <ul>
@@ -467,8 +467,15 @@ M' (Q $\Sigma$ $\rho$ $\delta'$ q0 qa qr)<br />
 where Q' = Q $\cup$ {qa,qr}<br />
 $\rho$ = $\Sigma$ $\cup$ {_}<br />
 $\delta'$(q,a) = ($\delta$(q,a),a,R)<br />
-(a is some input not _)<br />
-if q $$</p>
+(a is some input not _) ($a\in\Sigma$)<br />
+if q $\in$ Q &amp; a $\ne$ _<br />
+$\delta$(q,_) = {</p>
+<table><thead><tr><th>(qa,_,R)</th><th>if q $\in$ F</th></tr></thead><tbody>
+<tr><td>(qR,_,R )</td><td>if q$\notin$F</td></tr>
+<tr><td>}</td><td></td></tr>
+</tbody></table>
+<h2 id="theorem-if-a-language-is-context-free-then-it-is-decidable"><a class="header" href="#theorem-if-a-language-is-context-free-then-it-is-decidable">Theorem: If a language is context free then it is decidable</a></h2>
+<h3 id="simulate-a-tm-by-using-a-pda-if-pda-goes-to-accept-state-at-the-end-of-the-input-then-the-tm-will-go-to-the-accept-state-otherwise-tm-will-go-to-reject"><a class="header" href="#simulate-a-tm-by-using-a-pda-if-pda-goes-to-accept-state-at-the-end-of-the-input-then-the-tm-will-go-to-the-accept-state-otherwise-tm-will-go-to-reject">Simulate a TM by using a PDA if PDA goes to accept state at the end of the input then the TM will go to the accept state, otherwise TM will go to reject</a></h3>
 
                 </main>
             </div>
