@@ -413,7 +413,7 @@ struct proc {
 
 
 
-# ![[Schedulers]]
+# [[Schedulers]]
 
 
 [[Limited Direct Execution]]
@@ -810,12 +810,15 @@ xxx is 03079
 ---
 ## Example
 File PGM (program)
+
 | ABC |
+| --- |
 | DEF |
 | GHI |
 | JKL |
 | MNO |
 | PQR |
+
 ^Sitting on the disk
 fork and exec
 

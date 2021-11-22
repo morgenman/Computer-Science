@@ -5,8 +5,12 @@ if you want to view the source visit the plugins github repository
 
 'use strict';
 
-var obsidian = require('obsidian');
+var require$$0 = require('obsidian');
 var electron = require('electron');
+
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
+
+var require$$0__default = /*#__PURE__*/_interopDefaultLegacy(require$$0);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -22,22 +26,6 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-/* global Reflect, Promise */
-
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-    return extendStatics(d, b);
-};
-
-function __extends(d, b) {
-    if (typeof b !== "function" && b !== null)
-        throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-    extendStatics(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
 
 function __awaiter(thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -49,33 +37,64 @@ function __awaiter(thisArg, _arguments, P, generator) {
     });
 }
 
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
+var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
+function getDefaultExportFromCjs (x) {
+	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
+
+function createCommonjsModule(fn, basedir, module) {
+	return module = {
+		path: basedir,
+		exports: {},
+		require: function (path, base) {
+			return commonjsRequire(path, (base === undefined || base === null) ? module.path : base);
+		}
+	}, fn(module, module.exports), module.exports;
+}
+
+function commonjsRequire () {
+	throw new Error('Dynamic requires are not currently supported by @rollup/plugin-commonjs');
+}
+
+var assertNever_1 = createCommonjsModule(function (module, exports) {
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
+ * Helper function for exhaustive checks of discriminated unions.
+ * https://basarat.gitbooks.io/typescript/docs/types/discriminated-unions.html
+ *
+ * @example
+ *
+ *    type A = {type: 'a'};
+ *    type B = {type: 'b'};
+ *    type Union = A | B;
+ *
+ *    function doSomething(arg: Union) {
+ *      if (arg.type === 'a') {
+ *        return something;
+ *      }
+ *
+ *      if (arg.type === 'b') {
+ *        return somethingElse;
+ *      }
+ *
+ *      // TS will error if there are other types in the union
+ *      // Will throw an Error when called at runtime.
+ *      // Use `assertNever(arg, true)` instead to fail silently.
+ *      return assertNever(arg);
+ *    }
+ */
+function assertNever(value, noThrow) {
+    if (noThrow) {
+        return value;
+    }
+    throw new Error("Unhandled discriminated union member: " + JSON.stringify(value));
+}
+exports.assertNever = assertNever;
+exports.default = assertNever;
+});
+
+var assertNever = /*@__PURE__*/getDefaultExportFromCjs(assertNever_1);
 
 function unload_math_preview(cm) {
     cm.setOption("hmdFoldMath", {
@@ -84,25 +103,30 @@ function unload_math_preview(cm) {
     });
 }
 function init_math_preview(cm) {
-    if (obsidian.loadMathJax)
-        obsidian.loadMathJax();
+    if (require$$0.loadMathJax)
+        require$$0.loadMathJax();
     if (!document.querySelector("#math-preview")) {
-        var mathPreviewEl = document.createElement("div");
+        const mathPreviewEl = document.createElement("div");
         mathPreviewEl.className = "float-win float-win-hidden";
         mathPreviewEl.id = "math-preview";
-        var mathTitleEl = document.createElement("div");
+        const mathTitleEl = document.createElement("div");
         mathTitleEl.addClass("float-win-title");
         mathPreviewEl.appendChild(mathTitleEl);
-        mathTitleEl.outerHTML = "<div class=\"float-win-title\">\n      <button class=\"float-win-close\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon\" height=\"24\" viewBox=\"0 0 24 24\" width=\"24\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z\"/></svg>\n      </button>\n      Math Preview\n      </div>";
-        var mathContentEl = document.createElement("div");
+        mathTitleEl.outerHTML = `<div class="float-win-title">
+      <button class="float-win-close">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      Math Preview
+      </div>`;
+        const mathContentEl = document.createElement("div");
         mathContentEl.addClass("float-win-content");
         mathContentEl.id = "math-preview-content";
         mathPreviewEl.appendChild(mathContentEl);
         document.body.appendChild(mathPreviewEl);
     }
-    var mathRenderer = null;
-    var win = new FloatWin("math-preview");
-    var supressed = false;
+    let mathRenderer = null;
+    const win = new FloatWin("math-preview");
+    let supressed = false;
     win.closeBtn.addEventListener("click", function () {
         supressed = true; // for current TeX block
     }, false);
@@ -115,7 +139,7 @@ function init_math_preview(cm) {
             mathRenderer.onChanged = function () {
                 // finished rendering. show the window
                 if (!win.visible) {
-                    var cursorPos = cm.charCoords(cm.getCursor(), "window");
+                    const cursorPos = cm.charCoords(cm.getCursor(), "window");
                     win.moveTo(cursorPos.left, cursorPos.bottom);
                 }
                 win.show();
@@ -135,22 +159,22 @@ function init_math_preview(cm) {
     });
 }
 function FloatWin(id) {
-    var win = document.getElementById(id);
+    const win = document.getElementById(id);
     // eslint-disable-next-line @typescript-eslint/no-this-alias
-    var self = this;
+    const self = this;
     /** @type {HTMLDivElement} */
-    var titlebar = win.querySelector(".float-win-title");
+    const titlebar = win.querySelector(".float-win-title");
     titlebar.addEventListener("selectstart", function () {
         return false;
     }, false);
     /** @type {HTMLButtonElement} */
-    var closeBtn = win.querySelector(".float-win-close");
+    const closeBtn = win.querySelector(".float-win-close");
     if (closeBtn) {
         closeBtn.addEventListener("click", function () {
             self.hide();
         }, false);
     }
-    var boxX, boxY, mouseX, mouseY, offsetX, offsetY;
+    let boxX, boxY, mouseX, mouseY, offsetX, offsetY;
     titlebar.addEventListener("mousedown", function (e) {
         if (e.target === closeBtn)
             return;
@@ -164,10 +188,10 @@ function FloatWin(id) {
         document.addEventListener("mouseup", up, false);
     }, false);
     function move(e) {
-        var x = getMouseXY(e).x - offsetX;
-        var y = getMouseXY(e).y - offsetY;
-        var width = document.documentElement.clientWidth - titlebar.offsetWidth;
-        var height = document.documentElement.clientHeight - titlebar.offsetHeight;
+        let x = getMouseXY(e).x - offsetX;
+        let y = getMouseXY(e).y - offsetY;
+        const width = document.documentElement.clientWidth - titlebar.offsetWidth;
+        const height = document.documentElement.clientHeight - titlebar.offsetHeight;
         x = Math.min(Math.max(0, x), width);
         y = Math.min(Math.max(0, y), height);
         win.style.left = x + "px";
@@ -178,7 +202,7 @@ function FloatWin(id) {
         document.removeEventListener("mouseup", up, false);
     }
     function getMouseXY(e) {
-        var x = 0, y = 0;
+        let x = 0, y = 0;
         e = e || window.event;
         if (e.pageX) {
             x = e.pageX;
@@ -200,7 +224,7 @@ function FloatWin(id) {
 FloatWin.prototype.show = function (moveToCenter) {
     if (this.visible)
         return;
-    var el = this.el, 
+    const el = this.el, 
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     self = this;
     this.visible = true;
@@ -218,12 +242,12 @@ FloatWin.prototype.hide = function () {
     this.el.className += " float-win-hidden";
 };
 FloatWin.prototype.moveTo = function (x, y) {
-    var s = this.el.style;
+    const s = this.el.style;
     s.left = x + "px";
     s.top = y + "px";
 };
 
-var DEFAULT_SETTINGS = {
+const DEFAULT_SETTINGS = {
     dynamicCursor: false,
     markSelection: false,
     activeLineOnSelect: false,
@@ -251,488 +275,388 @@ var DEFAULT_SETTINGS = {
     renderMathPreview: false,
     renderBanner: false,
     renderEmbeds: false,
+    renderEmoji: false,
     renderTasks: false,
     showBacklinks: false,
     styleCheckBox: true,
     allowedYamlKeys: "document-font-size",
     tokenList: "em|strong|strikethrough|code|linkText|task|internalLink|highlight",
 };
-var ObsidianCodeMirrorOptionsSettingsTab = /** @class */ (function (_super) {
-    __extends(ObsidianCodeMirrorOptionsSettingsTab, _super);
-    function ObsidianCodeMirrorOptionsSettingsTab(app, plugin) {
-        var _this = _super.call(this, app, plugin) || this;
-        _this.plugin = plugin;
-        return _this;
+class ObsidianCodeMirrorOptionsSettingsTab extends require$$0.PluginSettingTab {
+    constructor(app, plugin) {
+        super(app, plugin);
+        this.plugin = plugin;
     }
-    ObsidianCodeMirrorOptionsSettingsTab.prototype.display = function () {
-        var _this = this;
-        var containerEl = this.containerEl;
+    display() {
+        var _a, _b;
+        const { containerEl } = this;
         containerEl.empty();
         containerEl.addClass("codemirror-options-settings");
-        containerEl.createEl("h3", {
-            text: "Markdown Parsing",
-        });
-        new obsidian.Setting(containerEl)
-            .setName("⚠️ Hide Markdown Tokens")
-            .setDesc("Emulate WYSIWYG while editing by hiding markdown tokens. Markdown tokens will automatically hide once the cursor leaves the element.\n         This mode will apply the class .hmd-inactive-line to all inactive lines and the class .hmd-hidden-token to all hidden tokens.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.editModeHideTokens).onChange(function (value) {
-                _this.plugin.settings.editModeHideTokens = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdHideToken", _this.plugin.settings.editModeHideTokens ? _this.plugin.settings.tokenList : false);
-                _this.plugin.applyBodyClasses();
+        let tokenSettings;
+        if ((_a = this.app.vault.config) === null || _a === void 0 ? void 0 : _a.livePreview) {
+            containerEl.createEl("h3", {
+                text: "⚠️ Notice: Most of this plugin does not function when Live Preview mode is enabled.",
+            });
+        }
+        if (!((_b = this.app.vault.config) === null || _b === void 0 ? void 0 : _b.livePreview)) {
+            containerEl.createEl("h3", {
+                text: "Markdown Parsing",
+            });
+            new require$$0.Setting(containerEl)
+                .setName("⚠️ Hide Markdown Tokens")
+                .setDesc(`Emulate WYSIWYG while editing by hiding markdown tokens. Markdown tokens will automatically hide once the cursor leaves the element.
+         This mode will apply the class .hmd-inactive-line to all inactive lines and the class .hmd-hidden-token to all hidden tokens.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.editModeHideTokens).onChange(value => {
+                this.plugin.settings.editModeHideTokens = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorOption("hmdHideToken", this.plugin.settings.editModeHideTokens ? this.plugin.settings.tokenList : false);
+                this.plugin.applyBodyClasses();
                 // hide the token list if the hide tokens setting is disabled
-                _this.plugin.settings.editModeHideTokens
+                this.plugin.settings.editModeHideTokens
                     ? tokenSettings.settingEl.removeClass("setting-disabled")
                     : tokenSettings.settingEl.addClass("setting-disabled");
-            });
-        });
-        var tokenSettings = new obsidian.Setting(this.containerEl)
-            .setName("⚠️ Token List")
-            .setDesc("These markdown token types will be hidden. The default value will hide all currently supported tokens.\n         Values must be pipe delimted with no spaces. Available options are: em|strong|strikethrough|code|linkText|task|internalLink|highlight")
-            .setClass("token-list-setting")
-            .addText(function (textfield) {
-            textfield.setPlaceholder(String("em|strong|strikethrough|code|linkText|task|internalLink|highlight"));
-            textfield.inputEl.type = "text";
-            textfield.setValue(String(_this.plugin.settings.tokenList));
-            textfield.onChange(function (value) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
+            }));
+            tokenSettings = new require$$0.Setting(this.containerEl)
+                .setName("⚠️ Token List")
+                .setDesc(`These markdown token types will be hidden. The default value will hide all currently supported tokens.
+         Values must be pipe delimted with no spaces. Available options are: em|strong|strikethrough|code|linkText|task|internalLink|highlight`)
+                .setClass("token-list-setting")
+                .addText(textfield => {
+                textfield.setPlaceholder(String("em|strong|strikethrough|code|linkText|task|internalLink|highlight"));
+                textfield.inputEl.type = "text";
+                textfield.setValue(String(this.plugin.settings.tokenList));
+                textfield.onChange((value) => __awaiter(this, void 0, void 0, function* () {
                     this.plugin.settings.tokenList = value;
                     this.plugin.saveData(this.plugin.settings);
                     this.plugin.updateCodeMirrorOption("hmdHideToken", this.plugin.settings.editModeHideTokens ? this.plugin.settings.tokenList : false, true);
-                    return [2 /*return*/];
-                });
-            }); });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("⚠️ Enable OpenMD Mode")
-            .setDesc("Completely replace the HyperMD CodeMirror mode with a modified version of HyperMD that aims to\n                replicate the default Obsidian edit mode parser while adding additional functionality such as\n                improved internal link parsing.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.enableOpenMD).onChange(function (value) {
-                _this.plugin.settings.enableOpenMD = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("mode", _this.plugin.settings.enableOpenMD ? "openmd" : "hypermd");
+                }));
             });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("⚠️ Collapse External Links")
-            .setDesc("This will collapse external links in edit mode so that the URL is hidden and only the link text is shown. \n                The full URL will display once you click into the link text.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.foldLinks).onChange(function (value) {
-                _this.plugin.settings.foldLinks = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.applyBodyClasses();
-                _this.plugin.updateCodeMirrorOption("hmdFold", {
-                    image: _this.plugin.settings.foldImages,
-                    link: _this.plugin.settings.foldLinks,
-                    html: _this.plugin.settings.renderHTML,
-                    code: _this.plugin.settings.renderCode,
-                    math: _this.plugin.settings.renderMath,
-                    embed: _this.plugin.settings.renderEmbeds,
-                });
+            new require$$0.Setting(containerEl)
+                .setName("⚠️ Enable OpenMD Mode")
+                .setDesc(`Completely replace the HyperMD CodeMirror mode with a modified version of HyperMD that aims to
+                replicate the default Obsidian edit mode parser while adding additional functionality such as
+                improved internal link parsing.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.enableOpenMD).onChange(value => {
+                this.plugin.settings.enableOpenMD = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorOption("mode", this.plugin.settings.enableOpenMD ? "openmd" : "hypermd");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("⚠️ Collapse External Links")
+                .setDesc(`This will collapse external links in edit mode so that the URL is hidden and only the link text is shown. 
+                The full URL will display once you click into the link text.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.foldLinks).onChange(value => {
+                this.plugin.settings.foldLinks = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses();
+                this.plugin.updateHmdOptions("hmdFold");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("⚠️ Render Images Inline")
+                .setDesc(`This will render images in edit mode inline. Clicking on the image will collapse the image down to its source view.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.foldImages).onChange(value => {
+                this.plugin.settings.foldImages = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses();
+                this.plugin.updateHmdOptions("hmdFold");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Edit Mode Click Handler")
+                .setDesc(`Allow mouse clicks to toggle checkboxes in edit mode.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.editModeClickHandler).onChange(value => {
+                this.plugin.settings.editModeClickHandler = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorOption("hmdClick", this.plugin.settings.editModeClickHandler);
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Style Checkboxes")
+                .setDesc(`Disable this if you want to do your own styling of edit mode checkboxes. This setting does nothing if Hide Markdown Tokens is disabled`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.styleCheckBox).onChange(value => {
+                this.plugin.settings.styleCheckBox = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses();
+            }));
+            containerEl.createEl("h3", {
+                text: "Edit Mode Code Rendering",
             });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("⚠️ Render Images Inline")
-            .setDesc("This will render images in edit mode inline. Clicking on the image will collapse the image down to its source view.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.foldImages).onChange(function (value) {
-                _this.plugin.settings.foldImages = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.applyBodyClasses();
-                _this.plugin.updateCodeMirrorOption("hmdFold", {
-                    image: _this.plugin.settings.foldImages,
-                    link: _this.plugin.settings.foldLinks,
-                    html: _this.plugin.settings.renderHTML,
-                    code: _this.plugin.settings.renderCode,
-                    math: _this.plugin.settings.renderMath,
-                    embed: _this.plugin.settings.renderEmbeds,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Edit Mode Click Handler")
-            .setDesc("Allow mouse clicks to toggle checkboxes in edit mode.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.editModeClickHandler).onChange(function (value) {
-                _this.plugin.settings.editModeClickHandler = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdClick", _this.plugin.settings.editModeClickHandler);
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Style Checkboxes")
-            .setDesc("Disable this if you want to do your own styling of edit mode checkboxes. This setting does nothing if Hide Markdown Tokens is disabled")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.styleCheckBox).onChange(function (value) {
-                _this.plugin.settings.styleCheckBox = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.applyBodyClasses();
-            });
-        });
-        containerEl.createEl("h3", {
-            text: "Edit Mode Code Rendering",
-        });
-        new obsidian.Setting(containerEl)
-            .setName("⚠️⚠️ Render Embeds")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderEmbeds).onChange(function (value) {
-                _this.plugin.settings.renderEmbeds = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFold", {
-                    image: _this.plugin.settings.foldImages,
-                    link: _this.plugin.settings.foldLinks,
-                    html: _this.plugin.settings.renderHTML,
-                    code: _this.plugin.settings.renderCode,
-                    math: _this.plugin.settings.renderMath,
-                    embed: _this.plugin.settings.renderEmbeds,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render HTML")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderHTML).onChange(function (value) {
-                _this.plugin.settings.renderHTML = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFold", {
-                    image: _this.plugin.settings.foldImages,
-                    link: _this.plugin.settings.foldLinks,
-                    html: _this.plugin.settings.renderHTML,
-                    code: _this.plugin.settings.renderCode,
-                    math: _this.plugin.settings.renderMath,
-                    embed: _this.plugin.settings.renderEmbeds,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Math")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderMath).onChange(function (value) {
-                _this.plugin.settings.renderMath = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFold", {
-                    image: _this.plugin.settings.foldImages,
-                    link: _this.plugin.settings.foldLinks,
-                    html: _this.plugin.settings.renderHTML,
-                    code: _this.plugin.settings.renderCode,
-                    math: _this.plugin.settings.renderMath,
-                    embed: _this.plugin.settings.renderEmbeds,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Math Preview")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderMathPreview).onChange(function (value) {
-                _this.plugin.settings.renderMathPreview = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                if (_this.plugin.settings.renderMathPreview) {
-                    _this.app.workspace.iterateCodeMirrors(function (cm) {
+            new require$$0.Setting(containerEl)
+                .setName("⚠️⚠️ Render Embeds")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderEmbeds).onChange(value => {
+                this.plugin.settings.renderEmbeds = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFold");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render HTML")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderHTML).onChange(value => {
+                this.plugin.settings.renderHTML = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFold");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Math")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderMath).onChange(value => {
+                this.plugin.settings.renderMath = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFold");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Math Preview")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderMathPreview).onChange(value => {
+                this.plugin.settings.renderMathPreview = value;
+                this.plugin.saveData(this.plugin.settings);
+                if (this.plugin.settings.renderMathPreview) {
+                    this.app.workspace.iterateCodeMirrors(cm => {
                         init_math_preview(cm);
                     });
                 }
                 else {
-                    var previewEl = document.querySelector("#math-preview");
+                    const previewEl = document.querySelector("#math-preview");
                     if (previewEl) {
                         document.querySelector("#math-preview").detach();
                     }
-                    _this.app.workspace.iterateCodeMirrors(function (cm) {
+                    this.app.workspace.iterateCodeMirrors(cm => {
                         unload_math_preview(cm);
                     });
                 }
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Code Blocks")
-            .setDesc("If this is disabled, none of the options below will do anything")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderCode).onChange(function (value) {
-                _this.plugin.settings.renderCode = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFold", {
-                    image: _this.plugin.settings.foldImages,
-                    link: _this.plugin.settings.foldLinks,
-                    html: _this.plugin.settings.renderHTML,
-                    code: _this.plugin.settings.renderCode,
-                    math: _this.plugin.settings.renderMath,
-                    embed: _this.plugin.settings.renderEmbeds,
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Code Blocks")
+                .setDesc(`If this is disabled, none of the options below will do anything`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderCode).onChange(value => {
+                this.plugin.settings.renderCode = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFold");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Emoji/Icon Shortcodes")
+                .setDesc(createFragment(el => {
+                el.appendText(`Render emoji/icon `);
+                el.createEl("code", { text: ":shortcodes:" });
+                el.appendText(` inline.`);
+                el.createEl("br");
+                el.createEl("a", {
+                    href: "https://github.com/aidenlx/obsidian-icon-shortcodes",
+                    text: "Icon Shortcodes v0.4.1+",
                 });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Admonitions")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderAdmonition).onChange(function (value) {
-                _this.plugin.settings.renderAdmonition = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this.plugin.settings.renderAdmonition,
-                    chart: _this.plugin.settings.renderChart,
-                    query: _this.plugin.settings.renderQuery,
-                    dataview: _this.plugin.settings.renderDataview,
-                    tasks: _this.plugin.settings.renderTasks,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Charts")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderChart).onChange(function (value) {
-                _this.plugin.settings.renderChart = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this.plugin.settings.renderAdmonition,
-                    chart: _this.plugin.settings.renderChart,
-                    query: _this.plugin.settings.renderQuery,
-                    dataview: _this.plugin.settings.renderDataview,
-                    tasks: _this.plugin.settings.renderTasks,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Embedded Search")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderQuery).onChange(function (value) {
-                _this.plugin.settings.renderQuery = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this.plugin.settings.renderAdmonition,
-                    chart: _this.plugin.settings.renderChart,
-                    query: _this.plugin.settings.renderQuery,
-                    dataview: _this.plugin.settings.renderDataview,
-                    tasks: _this.plugin.settings.renderTasks,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Dataview")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderDataview).onChange(function (value) {
-                _this.plugin.settings.renderDataview = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this.plugin.settings.renderAdmonition,
-                    chart: _this.plugin.settings.renderChart,
-                    query: _this.plugin.settings.renderQuery,
-                    dataview: _this.plugin.settings.renderDataview,
-                    tasks: _this.plugin.settings.renderTasks,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Tasks")
-            .setDesc("")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderTasks).onChange(function (value) {
-                _this.plugin.settings.renderTasks = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this.plugin.settings.renderAdmonition,
-                    chart: _this.plugin.settings.renderChart,
-                    query: _this.plugin.settings.renderQuery,
-                    dataview: _this.plugin.settings.renderDataview,
-                    tasks: _this.plugin.settings.renderTasks,
-                });
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Render Banners")
-            .setDesc("This settings requires that the \"Container Attributes\" setting is enabled")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.renderBanner).onChange(function (value) {
-                _this.plugin.settings.renderBanner = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.applyBodyClasses();
-                _this.app.workspace.iterateCodeMirrors(function (cm) {
+                el.appendText(" Required. ");
+            }))
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderEmoji).onChange(value => {
+                this.plugin.settings.renderEmoji = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses();
+                this.app.workspace.iterateCodeMirrors(cm => {
                     cm.refresh();
                 });
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Admonitions")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderAdmonition).onChange(value => {
+                this.plugin.settings.renderAdmonition = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFoldCode");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Charts")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderChart).onChange(value => {
+                this.plugin.settings.renderChart = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFoldCode");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Embedded Search")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderQuery).onChange(value => {
+                this.plugin.settings.renderQuery = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFoldCode");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Dataview")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderDataview).onChange(value => {
+                this.plugin.settings.renderDataview = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFoldCode");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Tasks")
+                .setDesc(``)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderTasks).onChange(value => {
+                this.plugin.settings.renderTasks = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateHmdOptions("hmdFoldCode");
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Render Banners")
+                .setDesc(`This settings requires that the "Container Attributes" setting is enabled`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.renderBanner).onChange(value => {
+                this.plugin.settings.renderBanner = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses();
+                this.app.workspace.iterateCodeMirrors(cm => {
+                    cm.refresh();
+                });
+            }));
+            containerEl.createEl("h3", {
+                text: "Visual Styling",
             });
-        });
-        containerEl.createEl("h3", {
-            text: "Visual Styling",
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Show Backlinks in Editor")
-            .setDesc("Append a backlinks component to the footer of edit mode documents")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.showBacklinks).onChange(function (value) {
-                _this.plugin.settings.showBacklinks = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.settings.showBacklinks
-                    ? _this.plugin.addBacklinksImmediately()
-                    : _this.plugin.removeBacklinksImmediately();
+            new require$$0.Setting(containerEl)
+                .setName("Show Backlinks in Editor")
+                .setDesc(`Append a backlinks component to the footer of edit mode documents`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.showBacklinks).onChange(value => {
+                this.plugin.settings.showBacklinks = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.settings.showBacklinks
+                    ? this.plugin.addBacklinksImmediately()
+                    : this.plugin.removeBacklinksImmediately();
                 // this.plugin.updateCodeMirrorHandlers("renderLine", this.plugin.onRenderLineBound, value, true);
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Container Attributes")
-            .setDesc("Apply data attributes to the CodeMirror line div elements that describe the contained child elements. Think of\n      this like Contextual Typography for Edit Mode.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.containerAttributes).onChange(function (value) {
-                _this.plugin.settings.containerAttributes = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorHandlers("renderLine", _this.plugin.onRenderLineBound, value, true);
-            });
-        });
-        new obsidian.Setting(this.containerEl)
-            .setName("⚠️ Allowed Front Matter Keys")
-            .setDesc("A comma seperated list of front matter keys to turn into CSS variables and data attributes. This setting requires that the Container Attributes setting is enabled.")
-            .setClass("frontmatter-key-list-setting")
-            .addText(function (textfield) {
-            textfield.setPlaceholder(String(""));
-            textfield.inputEl.type = "text";
-            textfield.setValue(String(_this.plugin.settings.allowedYamlKeys));
-            textfield.onChange(function (value) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Container Attributes")
+                .setDesc(`Apply data attributes to the CodeMirror line div elements that describe the contained child elements. Think of
+      this like Contextual Typography for Edit Mode.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.containerAttributes).onChange(value => {
+                this.plugin.settings.containerAttributes = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorHandlers("renderLine", this.plugin.onRenderLineBound, value, true);
+            }));
+            new require$$0.Setting(this.containerEl)
+                .setName("⚠️ Allowed Front Matter Keys")
+                .setDesc(`A comma seperated list of front matter keys to turn into CSS variables and data attributes. This setting requires that the Container Attributes setting is enabled.`)
+                .setClass("frontmatter-key-list-setting")
+                .addText(textfield => {
+                textfield.setPlaceholder(String(""));
+                textfield.inputEl.type = "text";
+                textfield.setValue(String(this.plugin.settings.allowedYamlKeys));
+                textfield.onChange((value) => __awaiter(this, void 0, void 0, function* () {
                     this.plugin.settings.allowedYamlKeys = value;
                     this.plugin.saveData(this.plugin.settings);
-                    return [2 /*return*/];
-                });
-            }); });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Auto Align Tables")
-            .setDesc("Automatically align markdown tables as they are being built. Note: This setting currently requires that OpenMD Mode be enabled.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.autoAlignTables).onChange(function (value) {
-                _this.plugin.settings.autoAlignTables = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("hmdTableAlign", _this.plugin.settings.autoAlignTables);
+                }));
             });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Dynamic cursor size")
-            .setDesc("When enabled, the cursor height will be determined by the max height of the entire line. \n         When disabled, the cursor's height is based on the height of the adjacent reference character.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.dynamicCursor).onChange(function (value) {
-                _this.plugin.settings.dynamicCursor = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("singleCursorHeightPerLine", !_this.plugin.settings.dynamicCursor);
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Style active selection")
-            .setDesc("When enabled, selected text will be marked with the CSS class .CodeMirror-selectedtext. \n         Useful to force the styling of selected text when ::selection is not sufficient.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.markSelection).onChange(function (value) {
-                _this.plugin.settings.markSelection = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("styleSelectedText", _this.plugin.settings.markSelection);
-                _this.plugin.applyBodyClasses();
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Retain active line on selection")
-            .setDesc("When enabled, text selection will not remove the .active-line class on the current line. \n         When disabled text selection on the active line will remove the .active-line class.")
-            .addToggle(function (toggle) {
-            return toggle.setValue(_this.plugin.settings.activeLineOnSelect).onChange(function (value) {
-                _this.plugin.settings.activeLineOnSelect = value;
-                _this.plugin.saveData(_this.plugin.settings);
-                _this.plugin.updateCodeMirrorOption("styleActiveLine", _this.plugin.settings.activeLineOnSelect ? { nonEmpty: true } : true);
-            });
-        });
-        new obsidian.Setting(containerEl)
-            .setName("Cursor Blink Rate")
-            .setDesc("Value is in milliseconds. Default is 530. Set to 0 to disable blinking.")
-            .addText(function (textfield) {
-            textfield.setPlaceholder(String(530));
-            textfield.inputEl.type = "number";
-            textfield.setValue(String(_this.plugin.settings.cursorBlinkRate));
-            textfield.onChange(function (value) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
+            new require$$0.Setting(containerEl)
+                .setName("Auto Align Tables")
+                .setDesc(`Automatically align markdown tables as they are being built. Note: This setting currently requires that OpenMD Mode be enabled.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.autoAlignTables).onChange(value => {
+                this.plugin.settings.autoAlignTables = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorOption("hmdTableAlign", this.plugin.settings.autoAlignTables);
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Dynamic cursor size")
+                .setDesc(`When enabled, the cursor height will be determined by the max height of the entire line. 
+         When disabled, the cursor's height is based on the height of the adjacent reference character.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.dynamicCursor).onChange(value => {
+                this.plugin.settings.dynamicCursor = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorOption("singleCursorHeightPerLine", !this.plugin.settings.dynamicCursor);
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Style active selection")
+                .setDesc(`When enabled, selected text will be marked with the CSS class .CodeMirror-selectedtext. 
+         Useful to force the styling of selected text when ::selection is not sufficient.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.markSelection).onChange(value => {
+                this.plugin.settings.markSelection = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorOption("styleSelectedText", this.plugin.settings.markSelection);
+                this.plugin.applyBodyClasses();
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Retain active line on selection")
+                .setDesc(`When enabled, text selection will not remove the .active-line class on the current line. 
+         When disabled text selection on the active line will remove the .active-line class.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.activeLineOnSelect).onChange(value => {
+                this.plugin.settings.activeLineOnSelect = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.updateCodeMirrorOption("styleActiveLine", this.plugin.settings.activeLineOnSelect ? { nonEmpty: true } : true);
+            }));
+            new require$$0.Setting(containerEl)
+                .setName("Cursor Blink Rate")
+                .setDesc(`Value is in milliseconds. Default is 530. Set to 0 to disable blinking.`)
+                .addText(textfield => {
+                textfield.setPlaceholder(String(530));
+                textfield.inputEl.type = "number";
+                textfield.setValue(String(this.plugin.settings.cursorBlinkRate));
+                textfield.onChange((value) => __awaiter(this, void 0, void 0, function* () {
                     this.plugin.settings.cursorBlinkRate = Number(value);
                     this.plugin.saveData(this.plugin.settings);
                     this.plugin.updateCodeMirrorOption("cursorBlinkRate", this.plugin.settings.cursorBlinkRate);
-                    return [2 /*return*/];
-                });
-            }); });
-        });
+                }));
+            });
+        }
         containerEl.createEl("h3", {
             text: "Syntax Highlighting",
         });
-        var lineNums, copyButton, copyButtonPre;
+        let lineNums, copyButton, copyButtonPre;
         if (
         //@ts-ignore
         this.app.plugins.plugins["cm-editor-syntax-highlight-obsidian"]) {
-            new obsidian.Setting(containerEl)
+            new require$$0.Setting(containerEl)
                 .setName("Enable Edit Mode Syntax Highlighting Themes")
-                .setDesc("Apply syntax highlighting themes to code blocks in edit mode. The default theme is Material Pale Night\n                but additional themes are available via the Style Settings plugin")
-                .addToggle(function (toggle) {
-                return toggle.setValue(_this.plugin.settings.syntaxHighlighting).onChange(function (value) {
-                    _this.plugin.settings.syntaxHighlighting = value;
-                    _this.plugin.saveData(_this.plugin.settings);
-                    _this.plugin.applyBodyClasses(true);
-                });
-            });
-            new obsidian.Setting(containerEl)
+                .setDesc(`Apply syntax highlighting themes to code blocks in edit mode. The default theme is Material Pale Night
+                but additional themes are available via the Style Settings plugin`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.syntaxHighlighting).onChange(value => {
+                this.plugin.settings.syntaxHighlighting = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses(true);
+            }));
+            new require$$0.Setting(containerEl)
                 .setName("Enable Preview Mode Syntax Highlighting Themes")
-                .setDesc("Apply syntax highlighting themes to code blocks in preview mode. The default theme is Material Pale Night\n        but additional themes are available via the Style Settings plugin")
-                .addToggle(function (toggle) {
-                return toggle.setValue(_this.plugin.settings.enablePrismJSStyling).onChange(function (value) {
-                    _this.plugin.settings.enablePrismJSStyling = value;
-                    _this.plugin.saveData(_this.plugin.settings);
-                    _this.plugin.applyBodyClasses(true);
-                });
-            });
-            new obsidian.Setting(containerEl)
+                .setDesc(`Apply syntax highlighting themes to code blocks in preview mode. The default theme is Material Pale Night
+        but additional themes are available via the Style Settings plugin`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.enablePrismJSStyling).onChange(value => {
+                this.plugin.settings.enablePrismJSStyling = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses(true);
+            }));
+            new require$$0.Setting(containerEl)
                 .setName("Use CodeMirror for syntax highlighting in preview mode")
-                .setDesc("This setting creates consistent highlighting between edit and preview by using CodeMirror to highlight code in both modes.")
-                .addToggle(function (toggle) {
-                return toggle.setValue(_this.plugin.settings.enableCMinPreview).onChange(function (value) {
-                    _this.plugin.settings.enableCMinPreview = value;
-                    _this.plugin.saveData(_this.plugin.settings);
-                    _this.plugin.applyBodyClasses(true);
-                    _this.plugin.settings.enableCMinPreview
-                        ? (lineNums.settingEl.removeClass("setting-disabled"),
-                            copyButton.settingEl.removeClass("setting-disabled"),
-                            copyButtonPre.settingEl.removeClass("setting-disabled"))
-                        : (lineNums.settingEl.addClass("setting-disabled"),
-                            copyButton.settingEl.addClass("setting-disabled"),
-                            copyButtonPre.settingEl.addClass("setting-disabled"));
-                });
-            });
-            lineNums = new obsidian.Setting(containerEl)
+                .setDesc(`This setting creates consistent highlighting between edit and preview by using CodeMirror to highlight code in both modes.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.enableCMinPreview).onChange(value => {
+                this.plugin.settings.enableCMinPreview = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses(true);
+                this.plugin.settings.enableCMinPreview
+                    ? (lineNums.settingEl.removeClass("setting-disabled"),
+                        copyButton.settingEl.removeClass("setting-disabled"),
+                        copyButtonPre.settingEl.removeClass("setting-disabled"))
+                    : (lineNums.settingEl.addClass("setting-disabled"),
+                        copyButton.settingEl.addClass("setting-disabled"),
+                        copyButtonPre.settingEl.addClass("setting-disabled"));
+            }));
+            lineNums = new require$$0.Setting(containerEl)
                 .setName("⚠️ Show line numbers for code blocks in preview mode")
-                .setDesc("This setting will add line numbers to code blocks in preview mode.")
-                .addToggle(function (toggle) {
-                return toggle.setValue(_this.plugin.settings.showLineNums).onChange(function (value) {
-                    _this.plugin.settings.showLineNums = value;
-                    _this.plugin.saveData(_this.plugin.settings);
-                    _this.plugin.applyBodyClasses(true);
-                });
-            });
-            copyButton = new obsidian.Setting(containerEl)
+                .setDesc(`This setting will add line numbers to code blocks in preview mode.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.showLineNums).onChange(value => {
+                this.plugin.settings.showLineNums = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses(true);
+            }));
+            copyButton = new require$$0.Setting(containerEl)
                 .setName("Enable copy button to code blocks in preview mode")
-                .setDesc("This setting will add a copy button to the bottom left corner of code blocks in preview mode. The button will show up on code block hover.")
-                .addToggle(function (toggle) {
-                return toggle.setValue(_this.plugin.settings.copyButton).onChange(function (value) {
-                    _this.plugin.settings.copyButton = value;
-                    _this.plugin.saveData(_this.plugin.settings);
-                    _this.plugin.applyBodyClasses(true);
-                });
-            });
-            copyButtonPre = new obsidian.Setting(containerEl)
+                .setDesc(`This setting will add a copy button to the bottom left corner of code blocks in preview mode. The button will show up on code block hover.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.copyButton).onChange(value => {
+                this.plugin.settings.copyButton = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses(true);
+            }));
+            copyButtonPre = new require$$0.Setting(containerEl)
                 .setName("⚠️ Enable copy button to all PRE blocks in preview mode")
-                .setDesc("This setting will add a copy button to any PRE element. This could negatively impact certain plugins that render PRE blocks.")
-                .addToggle(function (toggle) {
-                return toggle.setValue(_this.plugin.settings.copyButtonOnPRE).onChange(function (value) {
-                    _this.plugin.settings.copyButtonOnPRE = value;
-                    _this.plugin.saveData(_this.plugin.settings);
-                    _this.plugin.applyBodyClasses(true);
-                });
-            });
+                .setDesc(`This setting will add a copy button to any PRE element. This could negatively impact certain plugins that render PRE blocks.`)
+                .addToggle(toggle => toggle.setValue(this.plugin.settings.copyButtonOnPRE).onChange(value => {
+                this.plugin.settings.copyButtonOnPRE = value;
+                this.plugin.saveData(this.plugin.settings);
+                this.plugin.applyBodyClasses(true);
+            }));
         }
         else {
-            new obsidian.Setting(containerEl)
+            new require$$0.Setting(containerEl)
                 .setName("Use CodeMirror for syntax highlighting in preview mode")
                 .setDesc('⚠️ Install the plugin "Editor Syntax Highlight" in order to use this feature')
                 .setClass("info");
@@ -740,14 +664,15 @@ var ObsidianCodeMirrorOptionsSettingsTab = /** @class */ (function (_super) {
         containerEl.createEl("h3", {
             text: "Syntax Highlighting Theme",
         });
-        new obsidian.Setting(containerEl)
+        new require$$0.Setting(containerEl)
             .setName("Refer to the Style Settings plugin")
-            .setDesc("To customize the syntax highlighting theme, \n    install the Style Settings plugin and expand the \"CodeMirror Options\" section")
+            .setDesc(`To customize the syntax highlighting theme, 
+    install the Style Settings plugin and expand the "CodeMirror Options" section`)
             .setClass("info");
         // update dynamic setting visibility
         this.plugin.settings.editModeHideTokens
-            ? tokenSettings.settingEl.removeClass("setting-disabled")
-            : tokenSettings.settingEl.addClass("setting-disabled");
+            ? tokenSettings === null || tokenSettings === void 0 ? void 0 : tokenSettings.settingEl.removeClass("setting-disabled")
+            : tokenSettings === null || tokenSettings === void 0 ? void 0 : tokenSettings.settingEl.addClass("setting-disabled");
         this.plugin.settings.enableCMinPreview
             ? (lineNums === null || lineNums === void 0 ? void 0 : lineNums.settingEl.removeClass("setting-disabled"),
                 copyButton === null || copyButton === void 0 ? void 0 : copyButton.settingEl.removeClass("setting-disabled"),
@@ -755,9 +680,8 @@ var ObsidianCodeMirrorOptionsSettingsTab = /** @class */ (function (_super) {
             : (lineNums === null || lineNums === void 0 ? void 0 : lineNums.settingEl.addClass("setting-disabled"),
                 copyButton === null || copyButton === void 0 ? void 0 : copyButton.settingEl.addClass("setting-disabled"),
                 copyButtonPre === null || copyButtonPre === void 0 ? void 0 : copyButtonPre.settingEl.addClass("setting-disabled"));
-    };
-    return ObsidianCodeMirrorOptionsSettingsTab;
-}(obsidian.PluginSettingTab));
+    }
+}
 
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: https://codemirror.net/LICENSE
@@ -767,7 +691,8 @@ function leftFillNum(num, targetLength) {
 }
 
 CodeMirror.runMode = function (string, modespec, callback, options) {
-  var mode = CodeMirror.getMode(CodeMirror.defaults, modespec);
+  var modeRef = CodeMirror.findModeByName(modespec);
+  var mode = CodeMirror.getMode(CodeMirror.defaults, modeRef?.mime);
   var lineNumber = 1;
   if (callback.nodeType == 1) {
     var tabSize = (options && options.tabSize) || CodeMirror.defaults.tabSize;
@@ -1064,22 +989,6 @@ CodeMirror.colorize = (function () {
     updateActiveLines(cm, sel.ranges);
   }
 });
-
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function createCommonjsModule(fn, basedir, module) {
-	return module = {
-		path: basedir,
-		exports: {},
-		require: function (path, base) {
-			return commonjsRequire(path, (base === undefined || base === null) ? module.path : base);
-		}
-	}, fn(module, module.exports), module.exports;
-}
-
-function commonjsRequire () {
-	throw new Error('Dynamic requires are not currently supported by @rollup/plugin-commonjs');
-}
 
 createCommonjsModule(function (module) {
 /*!
@@ -3830,7 +3739,7 @@ var ___extends = (function () {
           _this.startFoldImmediately(line, cm.getViewport().to + 1);
         }
       };
-      this.checkForPreview = obsidian.debounce(
+      this.checkForPreview = require$$0.debounce(
         function () {
           document.querySelector("#math-preview")?.addClass("float-win-hidden");
         },
@@ -4590,7 +4499,7 @@ var ___extends = (function () {
         }
       }
 
-      var widgetChanged = obsidian.debounce(updateWidget, 250);
+      var widgetChanged = require$$0.debounce(updateWidget, 250);
 
       let observer = new ResizeObserver((mutations, observer) => {
         try {
@@ -5573,7 +5482,7 @@ var gte_1 = gte;
     const adType = info.lang.substring(3);
     var el = document.createElement("div");
     var asyncRenderer;
-    var ctx = new obsidian.Component();
+    var ctx = new require$$0.Component();
     ctx.sourcePath = info.editor.state.fileName;
     if (dependencyCheck()) {
       asyncRenderer = async () => {
@@ -5625,7 +5534,7 @@ var gte_1 = gte;
   };
   var ChartRenderer = function (code, info) {
     var el = document.createElement("div");
-    var ctx = new obsidian.Component();
+    var ctx = new require$$0.Component();
     if (dependencyCheck()) {
       var asyncRenderer = () => {
         try {
@@ -5759,7 +5668,7 @@ var gte_1 = gte;
   };
   var DataviewRenderer = function (code, info) {
     var el = document.createElement("div");
-    var ctx = new obsidian.Component();
+    var ctx = new require$$0.Component();
     ctx.sourcePath = info.editor.state.fileName;
     if (dependencyCheck()) {
       if (info.lang === "dataview") {
@@ -5813,7 +5722,7 @@ var gte_1 = gte;
   };
   var TasksRenderer = function (code, info) {
     var el = document.createElement("div");
-    var ctx = new obsidian.Component();
+    var ctx = new require$$0.Component();
     ctx.sourcePath = info.editor.filePath;
     if (dependencyCheck()) {
       const renderer = window.app.plugins.getPlugin("obsidian-tasks-plugin").queryRenderer.addQueryRenderChild;
@@ -5901,13 +5810,13 @@ var gte_1 = gte;
         // Renderer
         var code = cm.getRange(from, to);
         var el = document.createElement("div");
-        var ctx = new obsidian.Component();
+        var ctx = new require$$0.Component();
         ctx.sourcePath = cm.state.fileName;
         const previewMode = window.app.workspace.activeLeaf.view.previewMode,
           renderer = previewMode.renderer;
         try {
           // process the markdown
-          obsidian.MarkdownRenderer.renderMarkdown(code, el, cm.state.fileName, ctx);
+          require$$0.MarkdownRenderer.renderMarkdown(code, el, cm.state.fileName, ctx);
           // kick off the preview mode process that renders the embed
           renderer.owner.postProcess({ el: el }, [], renderer.frontmatter);
           var targetChild;
@@ -5940,7 +5849,7 @@ var gte_1 = gte;
             found[0].changed();
           }
         }
-        var updateWidgetByElDebounced = obsidian.debounce(updateWidgetByEl, 250);
+        var updateWidgetByElDebounced = require$$0.debounce(updateWidgetByEl, 250);
         function watchInlineSize(w, h, el) {
           try {
             if (debug) ;
@@ -6157,6 +6066,184 @@ var gte_1 = gte;
   fold_1.registerFolder("embed", exports.EmbedFolder, true);
 });
 
+var lib = createCommonjsModule(function (module, exports) {
+/*
+THIS IS A GENERATED/BUNDLED FILE BY ESBUILD
+if you want to view the source visit the plugins github repository
+*/
+
+var t=Object.create;var o=Object.defineProperty;var a=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var d=Object.getPrototypeOf,l=Object.prototype.hasOwnProperty;var r=n=>o(n,"__esModule",{value:!0});var g=(n,e)=>{r(n);for(var i in e)o(n,i,{get:e[i],enumerable:!0});},c=(n,e,i)=>{if(e&&typeof e=="object"||typeof e=="function")for(let s of p(e))!l.call(n,s)&&s!=="default"&&o(n,s,{get:()=>e[s],enumerable:!(i=a(e,s))||i.enumerable});return n},u=n=>c(r(o(n!=null?t(d(n)):{},"default",n&&n.__esModule&&"default"in n?{get:()=>n.default,enumerable:!0}:{value:n,enumerable:!0})),n);g(exports,{getApi:()=>P,isPluginEnabled:()=>f});u(require$$0__default["default"]);var P=n=>{var e;return n?(e=n.app.plugins.plugins["obsidian-icon-shortcodes"])==null?void 0:e.api:window.IconSCAPIv0},f=n=>n.app.plugins.enabledPlugins.has("obsidian-icon-shortcodes");
+});
+
+createCommonjsModule(function (module) {
+// HyperMD, copyright (c) by laobubu
+// Distributed under an MIT license: http://laobubu.net/HyperMD/LICENSE
+//
+// DESCRIPTION: Fold and render emoji :smile:
+//
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { getApi } = lib;
+(function (mod) {
+  //[HyperMD] UMD patched!
+  /*plain env*/ mod(
+    null,
+    (HyperMD.FoldEmoji = HyperMD.FoldEmoji || {}),
+    CodeMirror,
+    HyperMD,
+    HyperMD.Fold
+  );
+})(function (require, exports, CodeMirror, core_1, fold_1) {
+  Object.defineProperty(exports, "__esModule", { value: true });
+  exports.defaultDict =
+    exports.defaultChecker =
+    exports.defaultRenderer =
+    exports.suggestedOption =
+    exports.EmojiFolder =
+    exports.getAddon =
+    exports.defaultOption =
+    exports.FoldEmoji =
+      void 0;
+  /********************************************************************************** */
+  //#region Folder
+  /**
+   * Detect if a token is emoji and fold it
+   *
+   * @see FolderFunc in ./fold.ts
+   */
+  const EmojiPattern = /\+1|-1|[\w-]+/,
+    AllowedChar = /^[\w-+]+$/;
+
+  exports.EmojiFolder = function (stream, token) {
+    if (token.string !== ":") return;
+    const nextColon = stream.findNext((t) => t.string === ":", false),
+      nextToken = stream.findNext(() => true);
+
+    // if nearest colon is next token, it's not an emoji
+    if (!nextToken || !nextColon || nextColon.i_token <= nextToken.i_token)
+      return;
+    let name = "";
+    for (let i = stream.i_token + 1; i < nextColon.i_token; i++) {
+      const t = stream.lineTokens[i];
+      // if warpped tokens not plain text, it's not an emoji
+      if (t.type !== null || !AllowedChar.test(t.string)) return;
+      name += t.string;
+    }
+    // filter text that is too long to be shortcode
+    if (name.length > 55) return;
+    // filter using common shortcode pattern
+    if (!EmojiPattern.test(name)) return;
+
+    var cm = stream.cm;
+    var addon = exports.getAddon(cm);
+    if (!addon.isEmoji(name)) return null;
+
+    var from = {
+      line: stream.lineNo,
+      ch: token.start,
+    };
+    var end = nextColon.token.end;
+    var to = { line: stream.lineNo, ch: end };
+
+    var reqAns = stream.requestRange(from, to);
+    if (reqAns !== fold_1.RequestRangeResult.OK) return null;
+    // now we are ready to fold and render!
+    var marker = addon.foldEmoji(name, from, to);
+    return marker;
+  };
+  //#endregion
+  fold_1.registerFolder("emoji", exports.EmojiFolder, true);
+  exports.defaultRenderer = (text) => {
+    const icon = getApi()?.getIcon(text);
+    if (!icon) {
+      return null;
+    } else if (typeof icon === "string") {
+      return createSpan({ text: icon });
+    } else {
+      return icon;
+    }
+  };
+  exports.defaultChecker = (text) => getApi()?.hasIcon(text) === true;
+  exports.defaultOption = {
+    myEmoji: {},
+    emojiRenderer: exports.defaultRenderer,
+    emojiChecker: exports.defaultChecker,
+  };
+  exports.suggestedOption = {};
+  core_1.suggestedEditorConfig.hmdFoldEmoji = exports.suggestedOption;
+  CodeMirror.defineOption(
+    "hmdFoldEmoji",
+    exports.defaultOption,
+    function (cm, newVal) {
+      ///// convert newVal's type to `Partial<Options>`, if it is not.
+      if (!newVal) {
+        newVal = {};
+      }
+      ///// apply config and write new values into cm
+      var inst = exports.getAddon(cm);
+      for (var k in exports.defaultOption) {
+        inst[k] = k in newVal ? newVal[k] : exports.defaultOption[k];
+      }
+    }
+  );
+  //#endregion
+  /********************************************************************************** */
+  //#region Addon Class
+  var FoldEmoji = /** @class */ (function (str) {
+    function FoldEmoji(cm) {
+      this.cm = cm;
+      // options will be initialized to defaultOption when constructor is finished
+    }
+    FoldEmoji.prototype.isEmoji = function (text) {
+      return text in this.myEmoji || this.emojiChecker(text);
+    };
+    FoldEmoji.prototype.foldEmoji = function (text, from, to) {
+      var cm = this.cm;
+      var el =
+        (text in this.myEmoji && this.myEmoji[text](text)) ||
+        this.emojiRenderer(text);
+      if (!el || !el.tagName) return null;
+      if (el.className.indexOf("hmd-emoji") === -1)
+        el.className += " hmd-emoji";
+      var marker = cm.markText(from, to, {
+        replacedWith: el,
+      });
+      el.addEventListener(
+        "click",
+        fold_1.breakMark.bind(this, cm, marker, 1),
+        false
+      );
+      if (el.tagName.toLowerCase() === "img") {
+        el.addEventListener(
+          "load",
+          function () {
+            return marker.changed();
+          },
+          false
+        );
+        el.addEventListener(
+          "dragstart",
+          function (ev) {
+            return ev.preventDefault();
+          },
+          false
+        );
+      }
+      return marker;
+    };
+    return FoldEmoji;
+  })();
+  exports.FoldEmoji = FoldEmoji;
+  //#endregion
+  /** ADDON GETTER (Singleton Pattern): a editor can have only one FoldEmoji instance */
+  exports.getAddon = core_1.Addon.Getter(
+    "FoldEmoji",
+    FoldEmoji,
+    exports.defaultOption /** if has options */
+  );
+});
+//#endregion
+});
+
 // HyperMD, copyright (c) by laobubu
 
 (function (mod) {
@@ -6303,9 +6390,9 @@ var gte_1 = gte;
         if (!this.dependencyCheck()) {
           el.innerHTML = '<span class="mod-warning">Obsidian v0.12.16+ is needed to render Mathjax</span>';
         } else {
-          el.innerHTML = obsidian.renderMath(expr, { display: true }).outerHTML;
+          el.innerHTML = require$$0.renderMath(expr, { display: true }).outerHTML;
           // this.container.appendChild(this.el);
-          obsidian.finishRenderMath();
+          require$$0.finishRenderMath();
         }
       } catch (err) {
         // failed to render!
@@ -6540,10 +6627,9 @@ var gte_1 = gte;
 });
 
 function onRenderLine(cm, line, el) {
-    var _this = this;
-    var parentElement = el.parentElement;
+    const parentElement = el.parentElement;
     if (!parentElement)
-        el.addEventListener("DOMNodeInserted", function (event) { return procLine(cm, line, el, event.relatedNode, _this); }, { once: true });
+        el.addEventListener("DOMNodeInserted", (event) => procLine(cm, line, el, event.relatedNode, this), { once: true });
 }
 function procLine(cm, line, el, parentEl, plugin) {
     var _a, _b, _c, _d, _e;
@@ -6555,60 +6641,57 @@ function procLine(cm, line, el, parentEl, plugin) {
     // clear existing data keys
     clearDataKeys(parentEl.dataset);
     // split child classes
-    var childClasses = (_b = (_a = line.styleClasses) === null || _a === void 0 ? void 0 : _a.textClass) === null || _b === void 0 ? void 0 : _b.split(" ");
+    const childClasses = (_b = (_a = line.styleClasses) === null || _a === void 0 ? void 0 : _a.textClass) === null || _b === void 0 ? void 0 : _b.split(" ");
     // line.styles is an array of multi-class strings
     // we combine all of the styles into a single string and then dedupe it
-    var childElementClasses = (_c = line.styles) === null || _c === void 0 ? void 0 : _c.filter(function (style) { return typeof style === "string"; }).join(" ").split(" ").filter(function (v, i, a) { return a.indexOf(v) === i; });
+    const childElementClasses = (_c = line.styles) === null || _c === void 0 ? void 0 : _c.filter((style) => typeof style === "string").join(" ").split(" ").filter((v, i, a) => a.indexOf(v) === i);
     // raise yaml frontmatter attributes up as CSS vars and attrs
     if (childElementClasses.contains("hmd-frontmatter") && line.text !== "---") {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
-        var display = cm.display;
-        var viewEl_1 = (_e = (_d = display === null || display === void 0 ? void 0 : display.wrapper) === null || _d === void 0 ? void 0 : _d.parentElement) === null || _e === void 0 ? void 0 : _e.parentElement;
-        var approvedAttrs_1 = plugin.settings.allowedYamlKeys.split(",").map(function (item) { return item.trim(); });
+        const display = cm.display;
+        const viewEl = (_e = (_d = display === null || display === void 0 ? void 0 : display.wrapper) === null || _d === void 0 ? void 0 : _d.parentElement) === null || _e === void 0 ? void 0 : _e.parentElement;
+        const approvedAttrs = plugin.settings.allowedYamlKeys.split(",").map(item => item.trim());
         if (plugin.settings.renderBanner) {
-            approvedAttrs_1.push("banner_x", "banner_y", "banner", "banner-height", "banner-style");
+            approvedAttrs.push("banner_x", "banner_y", "banner", "banner-height", "banner-style");
         }
         // try and parse the frontmatter into yaml key/value pairs
-        var kv = void 0;
+        let kv;
         try {
-            var parsedYaml = obsidian.parseYaml(line.text);
-            kv = Object.entries(parsedYaml).map(function (_a) {
-                var key = _a[0], value = _a[1];
-                return ({ key: key, value: value });
-            });
+            const parsedYaml = require$$0.parseYaml(line.text);
+            kv = Object.entries(parsedYaml).map(([key, value]) => ({ key, value }));
         }
         catch (_f) {
             kv = [];
         }
-        kv.forEach(function (item) {
+        kv.forEach(item => {
             // if the key is not registered, skip
-            if (!approvedAttrs_1.includes(item.key))
+            if (!approvedAttrs.includes(item.key))
                 return;
             // if the value looks like a file, try and resolve the full path
             if (/\.(jpg|jpeg|md|png|gif)$/.test(item.value)) {
-                var file = void 0, filePath = void 0;
+                let file, filePath;
                 try {
                     (file = plugin.app.metadataCache.getFirstLinkpathDest(decodeURIComponent(item.value), "")) &&
                         (filePath = plugin.app.vault.getResourcePath(file));
                 }
                 catch (_a) { }
                 if (file && filePath) {
-                    viewEl_1.style.setProperty("--" + item.key, "url(" + filePath + ")");
+                    viewEl.style.setProperty(`--${item.key}`, `url(${filePath})`);
                 }
                 else {
-                    viewEl_1.style.setProperty("--" + item.key, "" + item.value);
+                    viewEl.style.setProperty(`--${item.key}`, `${item.value}`);
                 }
             }
             else {
                 // special handling for the banner plugin to turn decimals into percents
                 if (/^banner_[xy]$/.test(item.key)) {
-                    item.value = item.value * 100 + "%";
+                    item.value = `${item.value * 100}%`;
                 }
-                viewEl_1.style.setProperty("--" + item.key, "" + item.value);
+                viewEl.style.setProperty(`--${item.key}`, `${item.value}`);
             }
             try {
-                viewEl_1.setAttribute("data-" + item.key, item.value);
+                viewEl.setAttribute(`data-${item.key}`, item.value);
             }
             catch (_b) { }
         });
@@ -6616,40 +6699,39 @@ function procLine(cm, line, el, parentEl, plugin) {
     // look for anything labeled as a header
     // extract its full text value (minus the initial hash)
     if (childClasses === null || childClasses === void 0 ? void 0 : childClasses.includes("HyperMD-header")) {
-        var _match = line.text.match(/^[#]+[\s]+(.+)/);
+        const _match = line.text.match(/^[#]+[\s]+(.+)/);
         parentEl.dataset["heading"] = (_match === null || _match === void 0 ? void 0 : _match.length) > 0 ? line.text.match(/^[#]+[\s]+(.+)/)[1].trim() : "";
     }
     // check line for any hashtags and add them to a new data key
-    var tokens = cm.getLineTokens(line.lineNo());
-    var parsedTokens = parseLineTokens(tokens);
+    const tokens = cm.getLineTokens(line.lineNo());
+    const parsedTokens = parseLineTokens(tokens);
     if (parsedTokens)
         parentEl.dataset["hashtags"] = parseLineTokens(tokens);
     // infer html tag type based on style classes
-    var htmlTag = childElementClasses ? lookupTag(childElementClasses) : null;
+    const htmlTag = childElementClasses ? lookupTag(childElementClasses) : null;
     if (htmlTag) {
         parentEl.dataset["tagName"] = htmlTag;
     }
 }
 function clearDataKeys(keys) {
     if (keys) {
-        Object.keys(keys).forEach(function (dataKey) {
+        Object.keys(keys).forEach(dataKey => {
             delete keys[dataKey];
         });
     }
 }
 function parseLineTokens(tokens) {
-    tokens = tokens.filter(function (token) { var _a; return (_a = token.type) === null || _a === void 0 ? void 0 : _a.includes("hashtag-end"); });
+    tokens = tokens.filter((token) => { var _a; return (_a = token.type) === null || _a === void 0 ? void 0 : _a.includes("hashtag-end"); });
     if (tokens.length) {
-        var hashtags = tokens.map(function (token) { return token.string; }).join(" ");
+        const hashtags = tokens.map((token) => token.string).join(" ");
         if (hashtags.length) {
-            return tokens.map(function (token) { return token.string; }).join(" ");
+            return tokens.map((token) => token.string).join(" ");
         }
     }
 }
 function lookupTag(classes) {
-    var htmlTag;
-    for (var _i = 0, classes_1 = classes; _i < classes_1.length; _i++) {
-        var className = classes_1[_i];
+    let htmlTag;
+    for (const className of classes) {
         switch (className) {
             case "formatting-list-ol":
                 htmlTag = "ol";
@@ -6726,85 +6808,74 @@ function around1(obj, method, createWrapper) {
     }
 }
 
-var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
-    __extends(ObsidianCodeMirrorOptionsPlugin, _super);
-    function ObsidianCodeMirrorOptionsPlugin() {
-        var _this_1 = _super !== null && _super.apply(this, arguments) || this;
-        _this_1.onImageContextMenu = function (event, target) {
+class ObsidianCodeMirrorOptionsPlugin extends require$$0.Plugin {
+    constructor() {
+        super(...arguments);
+        this.onImageContextMenu = (event, target) => {
             // the "editor-menu" event does not include the MouseEvent or the target HTMLElement
             // so instead, we create this stanadard context menu event handler and hook it into
             // the "editor-menu" event temporarily
-            var boundFunc = _this_1.onEditorMenu.bind(_this_1, target);
-            _this_1.app.workspace.on("editor-menu", boundFunc);
-            setTimeout(function () {
-                _this_1.app.workspace.off("editor-menu", boundFunc);
+            const boundFunc = this.onEditorMenu.bind(this, target);
+            this.app.workspace.on("editor-menu", boundFunc);
+            setTimeout(() => {
+                this.app.workspace.off("editor-menu", boundFunc);
             }, 100);
         };
-        _this_1.onEditorMenu = function (target, menu) {
-            var file;
+        this.onEditorMenu = (target, menu) => {
+            let file;
             if (target.dataset.path) {
-                file = _this_1.app.vault.getAbstractFileByPath(target.dataset.path);
-                if (!(file instanceof obsidian.TFile))
+                file = this.app.vault.getAbstractFileByPath(target.dataset.path);
+                if (!(file instanceof require$$0.TFile))
                     return;
             }
             else if (/^http/i.test(target.getAttribute("src"))) {
                 file = target.getAttribute("src");
             }
             if (file)
-                _this_1.addContextMenuItem(menu, file);
+                this.addContextMenuItem(menu, file);
         };
-        _this_1.addContextMenuItem = function (menu, imageFile) {
-            menu.addItem(function (menuItem) {
+        this.addContextMenuItem = (menu, imageFile) => {
+            menu.addItem(menuItem => {
                 menuItem.setTitle("Copy Image to Clipboard");
                 menuItem.setIcon("image-file");
-                menuItem.onClick(function () { return __awaiter(_this_1, void 0, void 0, function () {
-                    var blob, buffer, arr, item;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                if (!(imageFile instanceof obsidian.TFile)) return [3 /*break*/, 2];
-                                return [4 /*yield*/, this.app.vault.adapter.readBinary(imageFile.path)];
-                            case 1:
-                                buffer = _a.sent();
-                                arr = new Uint8Array(buffer);
-                                blob = new Blob([arr], { type: "image/png" });
-                                return [3 /*break*/, 5];
-                            case 2: return [4 /*yield*/, fetch(imageFile)];
-                            case 3: return [4 /*yield*/, (_a.sent()).blob()];
-                            case 4:
-                                blob = _a.sent();
-                                _a.label = 5;
-                            case 5:
-                                item = new ClipboardItem({ "image/png": blob });
-                                //@ts-ignore
-                                window.navigator.clipboard.write([item]);
-                                return [2 /*return*/];
-                        }
-                    });
-                }); });
+                menuItem.onClick(() => __awaiter(this, void 0, void 0, function* () {
+                    let blob;
+                    if (imageFile instanceof require$$0.TFile) {
+                        const buffer = yield this.app.vault.adapter.readBinary(imageFile.path);
+                        const arr = new Uint8Array(buffer);
+                        blob = new Blob([arr], { type: "image/png" });
+                    }
+                    else {
+                        blob = yield (yield fetch(imageFile)).blob();
+                    }
+                    //@ts-ignore
+                    const item = new ClipboardItem({ "image/png": blob });
+                    //@ts-ignore
+                    window.navigator.clipboard.write([item]);
+                }));
             });
         };
-        _this_1.onFileLoad = function (file, contentEl, editor, leaf) {
+        this.onFileLoad = (file, contentEl, editor, leaf) => {
             editor.state.fileName = file.path;
-            if (_this_1.settings.showBacklinks) {
-                _this_1.addBackLinks(file, editor, leaf);
+            if (this.settings.showBacklinks) {
+                this.addBackLinks(file, editor, leaf);
             }
         };
-        _this_1.onFileUnload = function (file, contentEl, editor, leaf) {
+        this.onFileUnload = (file, contentEl, editor, leaf) => {
             try {
-                _this_1.resetCodeMirrorState(file, contentEl, editor);
+                this.resetCodeMirrorState(file, contentEl, editor);
                 editor.doc.clearHistory();
                 editor.clearGutter("CodeMirror-foldgutter");
-                _this_1.hideMathPreview();
+                this.hideMathPreview();
             }
             catch (_a) {
                 // console.log("unable to clear editor");
             }
         };
-        _this_1.onEditorClose = function (file, contentEl, editor, leaf) {
-            _this_1.removeBackLinks(editor);
-            _this_1.unsetCodeMirrorOptions(editor);
-            setTimeout(function () {
+        this.onEditorClose = (file, contentEl, editor, leaf) => {
+            this.removeBackLinks(editor);
+            this.unsetCodeMirrorOptions(editor);
+            setTimeout(() => {
                 var _a, _b;
                 try {
                     editor.display.renderedView = [];
@@ -6813,27 +6884,22 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
                     editor.display = null;
                     editor.blockHTMLObserver.disconnect();
                     editor.blockHTMLObserver = null;
-                    Object.keys(editor._handlers).forEach(function (handler) { return (editor._handlers[handler] = null); });
+                    Object.keys(editor._handlers).forEach(handler => (editor._handlers[handler] = null));
                 }
                 catch (_c) { }
             }, 500);
         };
-        _this_1.mdProcessor = function (el) { return __awaiter(_this_1, void 0, void 0, function () {
-            var _this_1 = this;
-            return __generator(this, function (_a) {
-                setTimeout(function () {
-                    _this_1.injectCM(el);
-                }, 100);
-                return [2 /*return*/];
-            });
-        }); };
-        _this_1.onRenderLineBound = onRenderLine.bind(_this_1);
-        _this_1.onImageClick = function (args) {
+        this.mdProcessor = (el) => __awaiter(this, void 0, void 0, function* () {
+            setTimeout(() => {
+                this.injectCM(el);
+            }, 100);
+        });
+        this.onRenderLineBound = onRenderLine.bind(this);
+        this.onImageClick = args => {
             args.breakMark(args.editor, args.marker);
         };
-        _this_1.updateCodeMirrorOption = obsidian.debounce(function (optionKey, optionValue, refresh) {
-            if (refresh === void 0) { refresh = false; }
-            _this_1.app.workspace.iterateCodeMirrors(function (cm) {
+        this.updateCodeMirrorOption = require$$0.debounce((optionKey, optionValue, refresh = false) => {
+            this.app.workspace.iterateCodeMirrors(cm => {
                 if (cm && cm.getOption(optionKey) != optionValue) {
                     cm.setOption(optionKey, optionValue);
                     if (refresh)
@@ -6841,10 +6907,8 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
                 }
             });
         }, 400, true);
-        _this_1.updateCodeMirrorHandlers = obsidian.debounce(function (eventType, callback, enable, refresh) {
-            if (enable === void 0) { enable = true; }
-            if (refresh === void 0) { refresh = false; }
-            _this_1.app.workspace.iterateCodeMirrors(function (cm) {
+        this.updateCodeMirrorHandlers = require$$0.debounce((eventType, callback, enable = true, refresh = false) => {
+            this.app.workspace.iterateCodeMirrors(cm => {
                 if (enable)
                     cm.on(eventType, callback);
                 else
@@ -6853,111 +6917,93 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
                     cm.refresh();
             });
         }, 0, true);
-        return _this_1;
     }
-    ObsidianCodeMirrorOptionsPlugin.prototype.onload = function () {
+    onload() {
         var _a, _b;
-        return __awaiter(this, void 0, void 0, function () {
-            var _this_1 = this;
-            return __generator(this, function (_c) {
-                switch (_c.label) {
-                    case 0:
-                        // patch the default Obsidian methods, ASAP
-                        //@ts-ignore
-                        if (!((_a = this.app.vault.config) === null || _a === void 0 ? void 0 : _a.livePreview))
-                            this.applyMonkeyPatches();
-                        // load settings
-                        return [4 /*yield*/, this.loadSettings()];
-                    case 1:
-                        // load settings
-                        _c.sent();
-                        // add the settings tab
-                        this.addSettingTab(new ObsidianCodeMirrorOptionsSettingsTab(this.app, this));
-                        //@ts-ignore
-                        if (!((_b = this.app.vault.config) === null || _b === void 0 ? void 0 : _b.livePreview)) {
-                            // initial-file-load is a custom event emitted by a patched MarkdownView.onLoadFile
-                            this.registerEvent(this.app.workspace.on("initial-file-load", this.onFileLoad));
-                            // file-unload is a custom event emitted by a patched MarkdownView.onUnloadFile
-                            this.registerEvent(this.app.workspace.on("file-unload", this.onFileUnload));
-                            // editor-close is a custom event emitted by a patched MarkdownView.onClose
-                            this.registerEvent(this.app.workspace.on("editor-close", this.onEditorClose));
-                            this.app.workspace.onLayoutReady(function () {
-                                _this_1.registerCodeMirrorSettings();
-                                _this_1.applyBodyClasses();
-                                _this_1.registerCommands();
-                                setTimeout(function () {
-                                    // workaround to ensure our plugin registers properly with Style Settings
-                                    _this_1.app.workspace.trigger("css-change");
-                                }, 1000);
-                            });
-                            document.on("contextmenu", "img.hmd-image", this.onImageContextMenu, false);
-                            document.on("contextmenu", ".rendered-widget img:not(.hmd-image)", this.onImageContextMenu, false);
-                        }
-                        return [2 /*return*/];
-                }
+        return __awaiter(this, void 0, void 0, function* () {
+            // patch the default Obsidian methods, ASAP
+            //@ts-ignore
+            if (!((_a = this.app.vault.config) === null || _a === void 0 ? void 0 : _a.livePreview))
+                this.applyMonkeyPatches();
+            // load settings
+            yield this.loadSettings();
+            // add the settings tab
+            this.addSettingTab(new ObsidianCodeMirrorOptionsSettingsTab(this.app, this));
+            //@ts-ignore
+            if (!((_b = this.app.vault.config) === null || _b === void 0 ? void 0 : _b.livePreview)) {
+                // initial-file-load is a custom event emitted by a patched MarkdownView.onLoadFile
+                this.registerEvent(this.app.workspace.on("initial-file-load", this.onFileLoad));
+                // file-unload is a custom event emitted by a patched MarkdownView.onUnloadFile
+                this.registerEvent(this.app.workspace.on("file-unload", this.onFileUnload));
+                // editor-close is a custom event emitted by a patched MarkdownView.onClose
+                this.registerEvent(this.app.workspace.on("editor-close", this.onEditorClose));
+                this.app.workspace.onLayoutReady(() => {
+                    this.registerCodeMirrorSettings();
+                    this.registerCommands();
+                    setTimeout(() => {
+                        // workaround to ensure our plugin registers properly with Style Settings
+                        this.app.workspace.trigger("css-change");
+                    }, 1000);
+                });
+                document.on("contextmenu", `img.hmd-image`, this.onImageContextMenu, false);
+                document.on("contextmenu", `.rendered-widget img:not(.hmd-image)`, this.onImageContextMenu, false);
+            }
+            this.app.workspace.onLayoutReady(() => {
+                this.applyBodyClasses();
+                setTimeout(() => {
+                    // workaround to ensure our plugin registers properly with Style Settings
+                    this.app.workspace.trigger("css-change");
+                }, 1000);
             });
         });
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.loadSettings = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var _a, _b, _c, _d;
-            return __generator(this, function (_e) {
-                switch (_e.label) {
-                    case 0:
-                        _a = this;
-                        _c = (_b = Object).assign;
-                        _d = [{}, DEFAULT_SETTINGS];
-                        return [4 /*yield*/, this.loadData()];
-                    case 1:
-                        _a.settings = _c.apply(_b, _d.concat([_e.sent()]));
-                        return [2 /*return*/];
-                }
-            });
+    }
+    loadSettings() {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.settings = Object.assign({}, DEFAULT_SETTINGS, yield this.loadData());
         });
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.resetCodeMirrorState = function (file, contentEl, editor) {
+    }
+    resetCodeMirrorState(file, contentEl, editor) {
         // remove any attributes and styles created by the Container Attributes feature
         if (contentEl) {
-            Object.keys(contentEl.dataset).forEach(function (el) { return contentEl.removeAttribute("data-" + el); });
+            Object.keys(contentEl.dataset).forEach(el => contentEl.removeAttribute("data-" + el));
             contentEl.style = null;
         }
         // add the current file path to the CodeMirror state for access by native CM methods
         editor.hmd.Fold.clearAll();
         editor.hmd.FoldCode.clearAll();
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.removeBackLinks = function (editor) {
+    }
+    removeBackLinks(editor) {
         if (editor.backlinksWidget) {
             editor.backlinksWidget.unload();
             editor.display.lineDiv.parentElement.removeChild(editor.backlinksWidget.contentEl);
             editor.backlinksWidget = null;
         }
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.removeBacklinksImmediately = function () {
-        var _this_1 = this;
+    }
+    removeBacklinksImmediately() {
         try {
             //@ts-ignore
-            this.app.workspace.iterateRootLeaves(function (leaf) { return _this_1.removeBackLinks(leaf.view.editor.cm); });
+            this.app.workspace.iterateRootLeaves(leaf => this.removeBackLinks(leaf.view.editor.cm));
         }
         catch (err) {
             // console.log(err);
         }
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.addBacklinksImmediately = function () {
-        var _this_1 = this;
+    }
+    addBacklinksImmediately() {
         try {
             //@ts-ignore
-            this.app.workspace.iterateRootLeaves(function (leaf) { return _this_1.addBackLinks(leaf.view.file, leaf.view.editor.cm, leaf); });
+            this.app.workspace.iterateRootLeaves(leaf => this.addBackLinks(leaf.view.file, leaf.view.editor.cm, leaf));
         }
         catch (_a) { }
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.addBackLinks = function (file, editor, leaf) {
+    }
+    addBackLinks(file, editor, leaf) {
         if (!editor.backlinksWidget) {
             //@ts-ignore
             editor.backlinksWidget = this.app.viewRegistry.getViewCreatorByType("backlink")(leaf);
+            editor.backlinksWidget.contentEl.setAttribute("cm-ignore-events", "true");
             editor.display.lineDiv.parentElement.appendChild(editor.backlinksWidget.contentEl);
         }
         editor.backlinksWidget.backlink.update = function () {
-            var e = file;
+            const e = file;
             this.backlinkFile !== e && this.recomputeBacklink(e), this.unlinkedFile !== e && this.recomputeUnlinked(e);
             this.updateHeaderTooltip(this.backlinkHeaderEl, this.backlinkCollapsed),
                 this.updateHeaderTooltip(this.unlinkedHeaderEl, this.unlinkedCollapsed);
@@ -6965,18 +7011,18 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
         if (!editor.backlinksWidget._loaded) {
             editor.backlinksWidget.load();
         }
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.hideMathPreview = function () {
-        var previewEl = document.querySelector("#math-preview");
+    }
+    hideMathPreview() {
+        const previewEl = document.querySelector("#math-preview");
         if (previewEl && !previewEl.hasClass("float-win-hidden")) {
             previewEl.addClass("float-win-hidden");
         }
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.applyMonkeyPatches = function () {
+    }
+    applyMonkeyPatches() {
         // patching onLoadFile to clear CM specific state in order to avoid fold related memory leaks
         // we also add the current file name to the CM state so that CM native actions have a reference
-        var patchFileLifecycle = around(obsidian.MarkdownView.prototype, {
-            onLoadFile: function (old) {
+        const patchFileLifecycle = around(require$$0.MarkdownView.prototype, {
+            onLoadFile(old) {
                 return function (file) {
                     try {
                         this.app.workspace.trigger("initial-file-load", file, this.contentEl, this.editor.cm, this.leaf);
@@ -6986,9 +7032,9 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
                 };
             },
             // @ts-ignore
-            onUnloadFile: function (old) {
+            onUnloadFile(old) {
                 return function (file) {
-                    var result = old.call(this);
+                    const result = old.call(this);
                     try {
                         this.app.workspace.trigger("file-unload", this.file, this.contentEl, this.editor.cm, this.leaf);
                     }
@@ -6997,7 +7043,7 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
                 };
             },
             // @ts-ignore
-            onClose: function (old) {
+            onClose(old) {
                 return function () {
                     try {
                         this.app.workspace.trigger("editor-close", this.file, this.contentEl, this.editor.cm, this.leaf);
@@ -7009,16 +7055,16 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
         });
         this.register(patchFileLifecycle);
         // patch the preview mode click handlers so that we get preview context menus on edit mode rendered widgets
-        var patchSourceView = around(obsidian.MarkdownSourceView.prototype, {
-            attachDomEvents: function (old) {
+        const patchSourceView = around(require$$0.MarkdownSourceView.prototype, {
+            attachDomEvents(old) {
                 return function () {
                     // eslint-disable-next-line @typescript-eslint/no-this-alias
-                    var _this = this, editorEl = this.editorEl;
+                    const _this = this, editorEl = this.editorEl;
                     editorEl.addEventListener("mousedown", this.onCodeMirrorMousedown.bind(this)),
                         editorEl.addEventListener("contextmenu", function (event) {
                             if (event &&
                                 event.path.length &&
-                                event.path.filter(function (el) { return el.hasClass && el.hasClass("rendered-widget"); }).length &&
+                                event.path.filter(el => el.hasClass && el.hasClass("rendered-widget")).length &&
                                 event.path[0].tagName !== "IMG") {
                                 return;
                             }
@@ -7029,48 +7075,47 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
             },
         });
         this.register(patchSourceView);
-        var patchRenderer = around(obsidian.MarkdownPreviewRenderer.prototype, {
-            onInternalLinkContextMenu: function (old) {
+        const patchRenderer = around(require$$0.MarkdownPreviewRenderer.prototype, {
+            onInternalLinkContextMenu(old) {
                 return function (event, el) {
-                    var href = this.getInternalLinkHref(el);
+                    const href = this.getInternalLinkHref(el);
                     href && this.owner.onInternalLinkRightClick(event, el, href);
                 };
             },
-            onResize: function (old) {
+            onResize(old) {
                 return function () {
-                    var _this_1 = this;
-                    setTimeout(function () {
+                    setTimeout(() => {
                         var _a, _b, _c;
-                        var editor = (_c = (_b = (_a = _this_1.owner.app.workspace.activeLeaf) === null || _a === void 0 ? void 0 : _a.view) === null || _b === void 0 ? void 0 : _b.sourceMode) === null || _c === void 0 ? void 0 : _c.editorEl;
-                        if (editor && !_this_1.widgetHandlersRegistered && _this_1.owner.type === "preview") {
-                            _this_1.widgetHandlersRegistered = true;
-                            editor.on("click", ".rendered-widget a.internal-link", _this_1.onInternalLinkClick.bind(_this_1));
-                            editor.on("auxclick", ".rendered-widget a.internal-link", _this_1.onInternalLinkClick.bind(_this_1));
-                            editor.on("contextmenu", ".rendered-widget a.internal-link", _this_1.onInternalLinkContextMenu.bind(_this_1));
+                        const editor = (_c = (_b = (_a = this.owner.app.workspace.activeLeaf) === null || _a === void 0 ? void 0 : _a.view) === null || _b === void 0 ? void 0 : _b.sourceMode) === null || _c === void 0 ? void 0 : _c.editorEl;
+                        if (editor && !this.widgetHandlersRegistered && this.owner.type === "preview") {
+                            this.widgetHandlersRegistered = true;
+                            editor.on("click", ".rendered-widget a.internal-link", this.onInternalLinkClick.bind(this));
+                            editor.on("auxclick", ".rendered-widget a.internal-link", this.onInternalLinkClick.bind(this));
+                            editor.on("contextmenu", ".rendered-widget a.internal-link", this.onInternalLinkContextMenu.bind(this));
                             // editor.on("mouseover", ".rendered-widget a.internal-link", this.onInternalLinkMouseover.bind(this));
-                            editor.on("click", ".rendered-widget a.external-link", _this_1.onExternalLinkClick.bind(_this_1));
-                            editor.on("click", ".rendered-widget a.footnote-link", _this_1.onFootnoteLinkClick.bind(_this_1));
-                            editor.on("click", ".rendered-widget .task-list-item-checkbox", _this_1.onCheckboxClick.bind(_this_1));
-                            editor.on("click", ".rendered-widget a.tag", _this_1.onTagClick.bind(_this_1));
-                            editor.on("click", ".rendered-widget a.internal-query", _this_1.onInternalQueryClick.bind(_this_1));
-                            editor.on("click", ".rendered-widget .heading-collapse-indicator", _this_1.onHeadingCollapseClick.bind(_this_1));
-                            editor.on("click", ".rendered-widget li > .list-collapse-indicator", _this_1.onListCollapseClick.bind(_this_1));
+                            editor.on("click", ".rendered-widget a.external-link", this.onExternalLinkClick.bind(this));
+                            editor.on("click", ".rendered-widget a.footnote-link", this.onFootnoteLinkClick.bind(this));
+                            editor.on("click", ".rendered-widget .task-list-item-checkbox", this.onCheckboxClick.bind(this));
+                            editor.on("click", ".rendered-widget a.tag", this.onTagClick.bind(this));
+                            editor.on("click", ".rendered-widget a.internal-query", this.onInternalQueryClick.bind(this));
+                            editor.on("click", ".rendered-widget .heading-collapse-indicator", this.onHeadingCollapseClick.bind(this));
+                            editor.on("click", ".rendered-widget li > .list-collapse-indicator", this.onListCollapseClick.bind(this));
                             // editor.on("click", ".rendered-widget img", this.onImageClick.bind(this));
                         }
                     }, 100);
                     return old.call(this);
                 };
             },
-            belongsToMe: function (old) {
+            belongsToMe(old) {
                 return function (el) {
                     // save the original element so we can pass it to the original method
-                    var _el = el;
+                    const _el = el;
                     // check to see if the element is a sibling of a rendered widget
                     for (; el;) {
                         if (el.hasClass("rendered-widget") && el.tagName !== "IMG") {
                             return true;
                         }
-                        var parentEl = el.parentElement;
+                        const parentEl = el.parentElement;
                         if (!parentEl)
                             return old.call(this, _el);
                         el = parentEl;
@@ -7079,140 +7124,131 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
             },
         });
         this.register(patchRenderer);
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.registerCommands = function () {
-        var _this_1 = this;
+    }
+    getHmdOptions(type) {
+        switch (type) {
+            case "hmdFold":
+                return {
+                    image: this.settings.foldImages,
+                    link: this.settings.foldLinks,
+                    html: this.settings.renderHTML,
+                    code: this.settings.renderCode,
+                    math: this.settings.renderMath,
+                    embed: this.settings.renderEmbeds,
+                    emoji: this.settings.renderEmoji,
+                };
+            case "hmdFoldCode":
+                return {
+                    admonition: this.settings.renderAdmonition,
+                    chart: this.settings.renderChart,
+                    query: this.settings.renderQuery,
+                    dataview: this.settings.renderDataview,
+                    tasks: this.settings.renderTasks,
+                };
+            default:
+                assertNever(type);
+        }
+    }
+    updateHmdOptions(type) {
+        return this.updateCodeMirrorOption(type, this.getHmdOptions(type));
+    }
+    registerCommands() {
         this.addCommand({
             id: "toggle-openmd",
             name: "Toggle OpenMD Mode",
-            callback: function () {
-                _this_1.settings.enableOpenMD = !_this_1.settings.enableOpenMD;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorOption("mode", _this_1.settings.enableOpenMD ? "openmd" : "hypermd");
+            callback: () => {
+                this.settings.enableOpenMD = !this.settings.enableOpenMD;
+                this.saveData(this.settings);
+                this.updateCodeMirrorOption("mode", this.settings.enableOpenMD ? "openmd" : "hypermd");
             },
         });
         this.addCommand({
             id: "toggle-hide-tokens",
             name: "Toggle Hide Markdown Tokens",
-            callback: function () {
-                _this_1.settings.editModeHideTokens = !_this_1.settings.editModeHideTokens;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorOption("hmdHideToken", _this_1.settings.editModeHideTokens ? _this_1.settings.tokenList : false);
-                _this_1.applyBodyClasses();
+            callback: () => {
+                this.settings.editModeHideTokens = !this.settings.editModeHideTokens;
+                this.saveData(this.settings);
+                this.updateCodeMirrorOption("hmdHideToken", this.settings.editModeHideTokens ? this.settings.tokenList : false);
+                this.applyBodyClasses();
             },
         });
         this.addCommand({
             id: "toggle-click-handler",
             name: "Toggle Edit Mode Click Handler",
-            callback: function () {
-                _this_1.settings.editModeClickHandler = !_this_1.settings.editModeClickHandler;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorOption("hmdClick", _this_1.settings.editModeClickHandler);
+            callback: () => {
+                this.settings.editModeClickHandler = !this.settings.editModeClickHandler;
+                this.saveData(this.settings);
+                this.updateCodeMirrorOption("hmdClick", this.settings.editModeClickHandler);
             },
         });
         this.addCommand({
             id: "toggle-collapse-links",
             name: "Toggle Collapse External Links",
-            callback: function () {
-                _this_1.settings.foldLinks = !_this_1.settings.foldLinks;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFold", {
-                    image: _this_1.settings.foldImages,
-                    link: _this_1.settings.foldLinks,
-                    html: _this_1.settings.renderHTML,
-                    code: _this_1.settings.renderCode,
-                    math: _this_1.settings.renderMath,
-                    embed: _this_1.settings.renderEmbeds,
-                });
+            callback: () => {
+                this.settings.foldLinks = !this.settings.foldLinks;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFold");
             },
         });
         this.addCommand({
             id: "toggle-render-images-inline",
             name: "Toggle Render Images Inline",
-            callback: function () {
-                _this_1.settings.foldImages = !_this_1.settings.foldImages;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFold", {
-                    image: _this_1.settings.foldImages,
-                    link: _this_1.settings.foldLinks,
-                    html: _this_1.settings.renderHTML,
-                    code: _this_1.settings.renderCode,
-                    math: _this_1.settings.renderMath,
-                    embed: _this_1.settings.renderEmbeds,
-                });
+            callback: () => {
+                this.settings.foldImages = !this.settings.foldImages;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFold");
             },
         });
         this.addCommand({
             id: "toggle-render-html",
             name: "Toggle Render HTML",
-            callback: function () {
-                _this_1.settings.renderHTML = !_this_1.settings.renderHTML;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFold", {
-                    image: _this_1.settings.foldImages,
-                    link: _this_1.settings.foldLinks,
-                    html: _this_1.settings.renderHTML,
-                    code: _this_1.settings.renderCode,
-                    math: _this_1.settings.renderMath,
-                    embed: _this_1.settings.renderEmbeds,
-                });
+            callback: () => {
+                this.settings.renderHTML = !this.settings.renderHTML;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFold");
             },
         });
         this.addCommand({
             id: "toggle-render-embeds",
             name: "Toggle Render Embeds",
-            callback: function () {
-                _this_1.settings.renderEmbeds = !_this_1.settings.renderEmbeds;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFold", {
-                    image: _this_1.settings.foldImages,
-                    link: _this_1.settings.foldLinks,
-                    html: _this_1.settings.renderHTML,
-                    code: _this_1.settings.renderCode,
-                    math: _this_1.settings.renderMath,
-                    embed: _this_1.settings.renderEmbeds,
-                });
+            callback: () => {
+                this.settings.renderEmbeds = !this.settings.renderEmbeds;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFold");
             },
         });
         this.addCommand({
             id: "toggle-render-math",
             name: "Toggle Render Math",
-            callback: function () {
-                _this_1.settings.renderMath = !_this_1.settings.renderMath;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFold", {
-                    image: _this_1.settings.foldImages,
-                    link: _this_1.settings.foldLinks,
-                    html: _this_1.settings.renderHTML,
-                    code: _this_1.settings.renderCode,
-                    math: _this_1.settings.renderMath,
-                    embed: _this_1.settings.renderEmbeds,
-                });
+            callback: () => {
+                this.settings.renderMath = !this.settings.renderMath;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFold");
             },
         });
         this.addCommand({
             id: "toggle-render-math-preview",
             name: "Toggle Render Math Preview",
-            callback: function () {
-                _this_1.settings.renderMathPreview = !_this_1.settings.renderMathPreview;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                if (_this_1.settings.renderMathPreview) {
-                    _this_1.app.workspace.iterateCodeMirrors(function (cm) {
+            callback: () => {
+                this.settings.renderMathPreview = !this.settings.renderMathPreview;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                if (this.settings.renderMathPreview) {
+                    this.app.workspace.iterateCodeMirrors(cm => {
                         init_math_preview(cm);
                     });
                 }
                 else {
-                    var previewEl = document.querySelector("#math-preview");
+                    const previewEl = document.querySelector("#math-preview");
                     if (previewEl) {
                         document.querySelector("#math-preview").detach();
                     }
-                    _this_1.app.workspace.iterateCodeMirrors(function (cm) {
+                    this.app.workspace.iterateCodeMirrors(cm => {
                         unload_math_preview(cm);
                     });
                 }
@@ -7221,206 +7257,169 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
         this.addCommand({
             id: "toggle-render-code",
             name: "Toggle Render Code",
-            callback: function () {
-                _this_1.settings.renderCode = !_this_1.settings.renderCode;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFold", {
-                    image: _this_1.settings.foldImages,
-                    link: _this_1.settings.foldLinks,
-                    html: _this_1.settings.renderHTML,
-                    code: _this_1.settings.renderCode,
-                    math: _this_1.settings.renderMath,
-                    embed: _this_1.settings.renderEmbeds,
-                });
+            callback: () => {
+                this.settings.renderCode = !this.settings.renderCode;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFold");
             },
         });
         this.addCommand({
             id: "toggle-render-dataview",
             name: "Toggle Render Dataview",
-            callback: function () {
-                _this_1.settings.renderDataview = !_this_1.settings.renderDataview;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this_1.settings.renderAdmonition,
-                    chart: _this_1.settings.renderChart,
-                    query: _this_1.settings.renderQuery,
-                    dataview: _this_1.settings.renderDataview,
-                    tasks: _this_1.settings.renderTasks,
-                });
+            callback: () => {
+                this.settings.renderDataview = !this.settings.renderDataview;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFoldCode");
             },
         });
         this.addCommand({
             id: "toggle-render-chart",
             name: "Toggle Render Charts",
-            callback: function () {
-                _this_1.settings.renderChart = !_this_1.settings.renderChart;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this_1.settings.renderAdmonition,
-                    chart: _this_1.settings.renderChart,
-                    query: _this_1.settings.renderQuery,
-                    dataview: _this_1.settings.renderDataview,
-                    tasks: _this_1.settings.renderTasks,
-                });
+            callback: () => {
+                this.settings.renderChart = !this.settings.renderChart;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFoldCode");
             },
         });
         this.addCommand({
             id: "toggle-render-admonition",
             name: "Toggle Render Admonitions",
-            callback: function () {
-                _this_1.settings.renderAdmonition = !_this_1.settings.renderAdmonition;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this_1.settings.renderAdmonition,
-                    chart: _this_1.settings.renderChart,
-                    query: _this_1.settings.renderQuery,
-                    dataview: _this_1.settings.renderDataview,
-                    tasks: _this_1.settings.renderTasks,
-                });
+            callback: () => {
+                this.settings.renderAdmonition = !this.settings.renderAdmonition;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFoldCode");
             },
         });
         this.addCommand({
             id: "toggle-render-query",
             name: "Toggle Render Search Queries",
-            callback: function () {
-                _this_1.settings.renderQuery = !_this_1.settings.renderQuery;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this_1.settings.renderAdmonition,
-                    chart: _this_1.settings.renderChart,
-                    query: _this_1.settings.renderQuery,
-                    dataview: _this_1.settings.renderDataview,
-                    tasks: _this_1.settings.renderTasks,
-                });
+            callback: () => {
+                this.settings.renderQuery = !this.settings.renderQuery;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFoldCode");
             },
         });
         this.addCommand({
             id: "toggle-render-tasks",
             name: "Toggle Render Tasks",
-            callback: function () {
-                _this_1.settings.renderTasks = !_this_1.settings.renderTasks;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses();
-                _this_1.updateCodeMirrorOption("hmdFoldCode", {
-                    admonition: _this_1.settings.renderAdmonition,
-                    chart: _this_1.settings.renderChart,
-                    query: _this_1.settings.renderQuery,
-                    dataview: _this_1.settings.renderDataview,
-                    tasks: _this_1.settings.renderTasks,
-                });
+            callback: () => {
+                this.settings.renderTasks = !this.settings.renderTasks;
+                this.saveData(this.settings);
+                this.applyBodyClasses();
+                this.updateHmdOptions("hmdFoldCode");
             },
         });
         this.addCommand({
             id: "toggle-backlinks-in-editor",
             name: "Toggle Backlinks in Editor",
-            callback: function () {
-                _this_1.settings.showBacklinks = !_this_1.settings.showBacklinks;
-                _this_1.saveData(_this_1.settings);
-                _this_1.settings.showBacklinks ? _this_1.addBacklinksImmediately() : _this_1.removeBacklinksImmediately();
+            callback: () => {
+                this.settings.showBacklinks = !this.settings.showBacklinks;
+                this.saveData(this.settings);
+                this.settings.showBacklinks ? this.addBacklinksImmediately() : this.removeBacklinksImmediately();
             },
         });
         this.addCommand({
             id: "toggle-container-attributes",
             name: "Toggle Container Attributes",
-            callback: function () {
-                _this_1.settings.containerAttributes = !_this_1.settings.containerAttributes;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorHandlers("renderLine", _this_1.onRenderLineBound, _this_1.settings.containerAttributes, true);
+            callback: () => {
+                this.settings.containerAttributes = !this.settings.containerAttributes;
+                this.saveData(this.settings);
+                this.updateCodeMirrorHandlers("renderLine", this.onRenderLineBound, this.settings.containerAttributes, true);
             },
         });
         this.addCommand({
             id: "toggle-dynamic-cursor-size",
             name: "Toggle Dynamic Cursor Size",
-            callback: function () {
-                _this_1.settings.dynamicCursor = !_this_1.settings.dynamicCursor;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorOption("singleCursorHeightPerLine", !_this_1.settings.dynamicCursor);
+            callback: () => {
+                this.settings.dynamicCursor = !this.settings.dynamicCursor;
+                this.saveData(this.settings);
+                this.updateCodeMirrorOption("singleCursorHeightPerLine", !this.settings.dynamicCursor);
             },
         });
         this.addCommand({
             id: "toggle-style-active-selection",
             name: "Toggle Style Active Selection",
-            callback: function () {
-                _this_1.settings.markSelection = !_this_1.settings.markSelection;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorOption("styleSelectedText", _this_1.settings.markSelection);
-                _this_1.applyBodyClasses();
+            callback: () => {
+                this.settings.markSelection = !this.settings.markSelection;
+                this.saveData(this.settings);
+                this.updateCodeMirrorOption("styleSelectedText", this.settings.markSelection);
+                this.applyBodyClasses();
             },
         });
         this.addCommand({
             id: "toggle-retain-active-line",
             name: "Toggle Retain Active Line on Selection",
-            callback: function () {
-                _this_1.settings.activeLineOnSelect = !_this_1.settings.activeLineOnSelect;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorOption("styleActiveLine", _this_1.settings.activeLineOnSelect ? { nonEmpty: true } : true);
+            callback: () => {
+                this.settings.activeLineOnSelect = !this.settings.activeLineOnSelect;
+                this.saveData(this.settings);
+                this.updateCodeMirrorOption("styleActiveLine", this.settings.activeLineOnSelect ? { nonEmpty: true } : true);
             },
         });
         this.addCommand({
             id: "toggle-edit-mode-syntax",
             name: "Toggle Edit Mode Syntax Highlighting",
-            callback: function () {
-                _this_1.settings.syntaxHighlighting = !_this_1.settings.syntaxHighlighting;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses(true);
+            callback: () => {
+                this.settings.syntaxHighlighting = !this.settings.syntaxHighlighting;
+                this.saveData(this.settings);
+                this.applyBodyClasses(true);
             },
         });
         this.addCommand({
             id: "toggle-preview-mode-syntax",
             name: "Toggle Preview Mode Syntax Highlighting",
-            callback: function () {
-                _this_1.settings.enablePrismJSStyling = !_this_1.settings.enablePrismJSStyling;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses(true);
+            callback: () => {
+                this.settings.enablePrismJSStyling = !this.settings.enablePrismJSStyling;
+                this.saveData(this.settings);
+                this.applyBodyClasses(true);
             },
         });
         this.addCommand({
             id: "toggle-codemirror-in-preview-mode",
             name: "Toggle CodeMirror in Preview Mode",
-            callback: function () {
-                _this_1.settings.enableCMinPreview = !_this_1.settings.enableCMinPreview;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses(true);
+            callback: () => {
+                this.settings.enableCMinPreview = !this.settings.enableCMinPreview;
+                this.saveData(this.settings);
+                this.applyBodyClasses(true);
             },
         });
         this.addCommand({
             id: "toggle-cm-line-numbers-in-preview-mode",
             name: "Toggle CM Line Numbers in Preview Mode",
-            callback: function () {
-                _this_1.settings.showLineNums = !_this_1.settings.showLineNums;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses(true);
+            callback: () => {
+                this.settings.showLineNums = !this.settings.showLineNums;
+                this.saveData(this.settings);
+                this.applyBodyClasses(true);
             },
         });
         this.addCommand({
             id: "toggle-cm-copy-button-in-preview-mode",
             name: "Toggle Copy Button in Preview Mode",
-            callback: function () {
-                _this_1.settings.copyButton = !_this_1.settings.copyButton;
-                _this_1.saveData(_this_1.settings);
-                _this_1.applyBodyClasses(true);
+            callback: () => {
+                this.settings.copyButton = !this.settings.copyButton;
+                this.saveData(this.settings);
+                this.applyBodyClasses(true);
             },
         });
         this.addCommand({
             id: "toggle-auto-align-table",
             name: "Toggle Auto Align Tables",
-            callback: function () {
-                _this_1.settings.autoAlignTables = !_this_1.settings.autoAlignTables;
-                _this_1.saveData(_this_1.settings);
-                _this_1.updateCodeMirrorOption("hmdTableAlign", _this_1.settings.autoAlignTables);
+            callback: () => {
+                this.settings.autoAlignTables = !this.settings.autoAlignTables;
+                this.saveData(this.settings);
+                this.updateCodeMirrorOption("hmdTableAlign", this.settings.autoAlignTables);
             },
         });
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.injectCM = function (el) {
+    }
+    injectCM(el) {
         var _a;
         // only get code block elements with a language but not any that have already been colorized
-        var preElement = el.firstChild;
-        var codeElement = (_a = el.firstChild) === null || _a === void 0 ? void 0 : _a.firstChild;
+        const preElement = el.firstChild;
+        const codeElement = (_a = el.firstChild) === null || _a === void 0 ? void 0 : _a.firstChild;
         if (!codeElement)
             return;
         if (codeElement.tagName !== "CODE")
@@ -7436,10 +7435,10 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
         }
         if (preElement.classList.value.includes("cm-s-obsidian"))
             return;
-        codeElement.classList.forEach(function (className) {
+        codeElement.classList.forEach((className) => {
             if (className.startsWith("language-")) {
                 // set data-lang to the code block language for easier colorize usage
-                var language = className.replace("language-", "");
+                let language = className.replace("language-", "");
                 switch (language) {
                     case "html":
                         language = "htmlmixed";
@@ -7458,65 +7457,50 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
         CodeMirror.colorize([codeElement], null, this.settings.showLineNums);
         preElement.querySelector(".copy-code-button").remove();
         this.addCopyButton(preElement);
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.addCopyButton = function (element) {
+    }
+    addCopyButton(element) {
         if (this.settings.copyButton) {
-            var codeBlock_1 = element;
-            var copyButton_1 = document.createElement("button");
-            copyButton_1.className = "copy";
-            copyButton_1.type = "button";
+            const codeBlock = element;
+            const copyButton = document.createElement("button");
+            copyButton.className = "copy";
+            copyButton.type = "button";
             // copyButton.ariaLabel = 'Copy code to clipboard';
-            copyButton_1.innerText = "Copy";
-            codeBlock_1.append(copyButton_1);
-            copyButton_1.addEventListener("click", function () {
+            copyButton.innerText = "Copy";
+            codeBlock.append(copyButton);
+            copyButton.addEventListener("click", function () {
                 // exclude line numbers when copying code to clipboard
-                var code = codeBlock_1.querySelector("code");
-                var clone = code.cloneNode(true);
-                clone.findAll("span.cm-linenumber").forEach(function (e) { return e.remove(); });
-                var codeText = clone.textContent.trim();
+                const code = codeBlock.querySelector("code");
+                const clone = code.cloneNode(true);
+                clone.findAll("span.cm-linenumber").forEach(e => e.remove());
+                const codeText = clone.textContent.trim();
                 window.navigator.clipboard.writeText(codeText);
-                copyButton_1.innerText = "Copied";
+                copyButton.innerText = "Copied";
                 setTimeout(function () {
-                    copyButton_1.innerText = "Copy";
+                    copyButton.innerText = "Copy";
                 }, 4000);
             });
         }
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.registerCodeMirrorSettings = function () {
-        var _this_1 = this;
-        this.registerCodeMirror(function (cm) {
-            cm.setOption("styleSelectedText", _this_1.settings.markSelection);
-            cm.setOption("singleCursorHeightPerLine", !_this_1.settings.dynamicCursor);
-            cm.setOption("styleActiveLine", _this_1.settings.activeLineOnSelect ? { nonEmpty: true } : true);
-            if (_this_1.settings.enableOpenMD)
+    }
+    registerCodeMirrorSettings() {
+        this.registerCodeMirror(cm => {
+            cm.setOption("styleSelectedText", this.settings.markSelection);
+            cm.setOption("singleCursorHeightPerLine", !this.settings.dynamicCursor);
+            cm.setOption("styleActiveLine", this.settings.activeLineOnSelect ? { nonEmpty: true } : true);
+            if (this.settings.enableOpenMD)
                 cm.setOption("mode", "openmd");
-            cm.setOption("hmdHideToken", _this_1.settings.editModeHideTokens ? _this_1.settings.tokenList : false);
-            cm.setOption("hmdClick", _this_1.settings.editModeClickHandler);
-            cm.setOption("hmdTableAlign", _this_1.settings.autoAlignTables);
-            cm.setOption("cursorBlinkRate", _this_1.settings.cursorBlinkRate);
-            cm.setOption("hmdFold", {
-                image: _this_1.settings.foldImages,
-                link: _this_1.settings.foldLinks,
-                html: _this_1.settings.renderHTML,
-                code: _this_1.settings.renderCode,
-                math: _this_1.settings.renderMath,
-                embed: _this_1.settings.renderEmbeds,
-            });
-            cm.setOption("hmdFoldCode", {
-                admonition: _this_1.settings.renderAdmonition,
-                chart: _this_1.settings.renderChart,
-                query: _this_1.settings.renderQuery,
-                dataview: _this_1.settings.renderDataview,
-                tasks: _this_1.settings.renderTasks,
-            });
-            if (_this_1.settings.renderMathPreview)
+            cm.setOption("hmdHideToken", this.settings.editModeHideTokens ? this.settings.tokenList : false);
+            cm.setOption("hmdClick", this.settings.editModeClickHandler);
+            cm.setOption("hmdTableAlign", this.settings.autoAlignTables);
+            cm.setOption("cursorBlinkRate", this.settings.cursorBlinkRate);
+            cm.setOption("hmdFold", this.getHmdOptions("hmdFold"));
+            cm.setOption("hmdFoldCode", this.getHmdOptions("hmdFoldCode"));
+            if (this.settings.renderMathPreview)
                 init_math_preview(cm);
-            if (_this_1.settings.containerAttributes)
-                _this_1.updateCodeMirrorHandlers("renderLine", _this_1.onRenderLineBound, true, true);
+            if (this.settings.containerAttributes)
+                this.updateCodeMirrorHandlers("renderLine", this.onRenderLineBound, true, true);
         });
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.applyBodyClasses = function (refresh) {
-        if (refresh === void 0) { refresh = false; }
+    }
+    applyBodyClasses(refresh = false) {
         this.settings.editModeHideTokens
             ? !document.body.hasClass("hide-tokens")
                 ? document.body.addClass("hide-tokens")
@@ -7569,17 +7553,17 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
             : document.body.removeClass("cm-render-banners");
         this.settings.enableCMinPreview
             ? this.registerMarkdownPostProcessor(this.mdProcessor)
-            : obsidian.MarkdownPreviewRenderer.unregisterPostProcessor(this.mdProcessor);
+            : require$$0.MarkdownPreviewRenderer.unregisterPostProcessor(this.mdProcessor);
         if (refresh)
             this.refreshPanes();
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.unsetCodeMirrorOptions = function (cm) {
+    }
+    unsetCodeMirrorOptions(cm) {
         cm.setOption("styleSelectedText", false);
         cm.setOption("singleCursorHeightPerLine", true);
         cm.setOption("styleActiveLine", true);
         cm.setOption("mode", "hypermd");
         cm.setOption("hmdHideToken", false);
-        cm.setOption("hmdFold", { image: false, link: false, html: false, code: false, math: false });
+        cm.setOption("hmdFold", { image: false, link: false, html: false, code: false, math: false, emoji: false });
         cm.setOption("hmdTableAlign", false);
         cm.setOption("hmdClick", false);
         cm.setOption("cursorBlinkRate", 530);
@@ -7587,10 +7571,9 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
         unload_math_preview(cm);
         // cm.off("imageClicked", this.onImageClick);
         cm.refresh();
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.unsetAllCodeMirrorOptions = function () {
-        var _this_1 = this;
-        this.app.workspace.iterateCodeMirrors(function (cm) {
+    }
+    unsetAllCodeMirrorOptions() {
+        this.app.workspace.iterateCodeMirrors(cm => {
             // revert CodeMirror options back to the CM/Obsidian defaults
             try {
                 //@ts-ignore
@@ -7599,35 +7582,34 @@ var ObsidianCodeMirrorOptionsPlugin = /** @class */ (function (_super) {
                 cm.hmd.FoldCode.clearAll();
             }
             catch (_a) { }
-            _this_1.unsetCodeMirrorOptions(cm);
+            this.unsetCodeMirrorOptions(cm);
         });
         document.body.classList.remove("style-active-selection", "style-check-box", "hide-tokens", "fallback-highlighting");
         document.body.classList.remove("cm-render-banners", "cm-collapse-external-links", "cm-render-images-inline");
         document.body.classList.remove("unified-cm-highlighting", "cm-show-copy-button-on-pre", "cm-show-line-nums");
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.refreshPanes = function () {
-        this.app.workspace.getLeavesOfType("markdown").forEach(function (leaf) {
-            if (leaf.view instanceof obsidian.MarkdownView) {
+    }
+    refreshPanes() {
+        this.app.workspace.getLeavesOfType("markdown").forEach(leaf => {
+            if (leaf.view instanceof require$$0.MarkdownView) {
                 leaf.view.previewMode.rerender(true);
             }
         });
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.getActiveCmEditor = function () {
+    }
+    getActiveCmEditor() {
         var _a;
-        var view = this.app.workspace.getActiveViewOfType(obsidian.MarkdownView);
+        const view = this.app.workspace.getActiveViewOfType(require$$0.MarkdownView);
         //@ts-ignore
         if (view)
             return (_a = view.sourceMode) === null || _a === void 0 ? void 0 : _a.cmEditor;
         return null;
-    };
-    ObsidianCodeMirrorOptionsPlugin.prototype.onunload = function () {
+    }
+    onunload() {
         this.unsetAllCodeMirrorOptions();
-        obsidian.MarkdownPreviewRenderer.unregisterPostProcessor(this.mdProcessor);
+        require$$0.MarkdownPreviewRenderer.unregisterPostProcessor(this.mdProcessor);
         this.refreshPanes();
-        document.off("contextmenu", "img.hmd-image", this.onImageContextMenu, false);
-        document.off("contextmenu", ".rendered-widget img:not(.hmd-image)", this.onImageContextMenu, false);
-    };
-    return ObsidianCodeMirrorOptionsPlugin;
-}(obsidian.Plugin));
+        document.off("contextmenu", `img.hmd-image`, this.onImageContextMenu, false);
+        document.off("contextmenu", `.rendered-widget img:not(.hmd-image)`, this.onImageContextMenu, false);
+    }
+}
 
 module.exports = ObsidianCodeMirrorOptionsPlugin;
