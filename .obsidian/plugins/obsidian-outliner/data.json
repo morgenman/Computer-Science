@@ -2,7 +2,7 @@
   "styleLists": false,
   "debug": false,
   "stickCursor": false,
-  "betterEnter": true,
+  "betterEnter": false,
   "selectAll": false,
   "disableZoomNotification": false,
   "hideWarning": false

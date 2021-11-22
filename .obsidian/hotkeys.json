@@ -1,4 +1,8 @@
 {
   "obsidian-outliner:fold": [],
-  "obsidian-outliner:unfold": []
+  "obsidian-outliner:unfold": [],
+  "app:go-back": [],
+  "app:go-forward": [],
+  "obsidian-outliner:move-list-item-down": [],
+  "obsidian-outliner:move-list-item-up": []
 }
