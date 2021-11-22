@@ -6313,7 +6313,8 @@ $\delta$(q,_) = {</p>
 <h2 id="claim-the-class-of-languages-accepted-by-deterministic-tms-and-non-deterministic-tms-are-equal"><a class="header" href="#claim-the-class-of-languages-accepted-by-deterministic-tms-and-non-deterministic-tms-are-equal">Claim: the class of languages accepted by deterministic TM's and Non-deterministic TM's are equal</a></h2>
 <h1 id="closure-properties-of-decidable-and-turing-recognizable-languages"><a class="header" href="#closure-properties-of-decidable-and-turing-recognizable-languages">Closure Properties of decidable and turing recognizable languages</a></h1>
 <table><thead><tr><th>Operation</th><th>Decidable</th><th>Turing Recognizable</th></tr></thead><tbody>
-<tr><td>Union</td><td></td><td></td></tr>
+<tr><td>Union</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
+<tr><td></td><td></td><td></td></tr>
 </tbody></table>
 <p>Are decidable and recognizable languages closed under union?</p>
 <h2 id="union-2"><a class="header" href="#union-2">Union</a></h2>
@@ -6328,16 +6329,24 @@ is L1 $\cup$ L2 decidable<br />
 <li>Reject</li>
 </ol>
 </blockquote>
-<h3 id="recognizable"><a class="header" href="#recognizable">Recognizable</a></h3>
+<h3 id="recognizable-harder-to-prove-start-with-this"><a class="header" href="#recognizable-harder-to-prove-start-with-this">Recognizable (harder to prove, start with this)</a></h3>
 <blockquote>
 <p>let L1 and L2 be turing recognizable languages<br />
 is L1 $\cup$ L2 turing recognizable<br />
 M1 is  TM for L1 and<br />
 M2 is a TM for L2<br />
 M1 and M2 may accept or loop<br />
+(overall x $\in$ L1 $\cup$ L2)<br />
 Say x $\in$ L2<br />
-x</p>
+if we run x on M1 it may loop<br />
+<em><strong>Non-determinism</strong></em>...</p>
+<ol>
+<li>Run them simultaneously on x.</li>
+<li>If either accept, accept, else</li>
+<li>loop or reject</li>
+</ol>
 </blockquote>
+<h2 id="-1"><a class="header" href="#-1"></a></h2>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
@@ -6714,7 +6723,7 @@ B -&gt; BB1 | 2</p>
 <ul>
 <li></li>
 </ul>
-<h2 id="-1"><a class="header" href="#-1"></a></h2>
+<h2 id="-2"><a class="header" href="#-2"></a></h2>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
@@ -8472,7 +8481,7 @@ tags: [MOC]</p>
 </script>
 <h1 id="sqrt2-is-irrational"><a class="header" href="#sqrt2-is-irrational">sqrt(2) is irrational</a></h1>
 <h3 id="a-number-is-rational-if-it-is-a-fraction-of-form-mn-where-m-and-n-are-integers"><a class="header" href="#a-number-is-rational-if-it-is-a-fraction-of-form-mn-where-m-and-n-are-integers">A number is rational if it is a fraction of form $m/n$, where m and n are integers</a></h3>
-<h3 id="-2"><a class="header" href="#-2"></a></h3>
+<h3 id="-3"><a class="header" href="#-3"></a></h3>
 <h2 id="proof-by-contradiction"><a class="header" href="#proof-by-contradiction">Proof by Contradiction:</a></h2>
 <p><strong>Assume</strong> $\sqrt(2)$ is rational</p>
 <p>sqrt(2) = m/n where m and n are integers</p>
