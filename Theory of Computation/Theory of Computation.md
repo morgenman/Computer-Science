@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-22_09:42:37-05:00
+updated: 2021-11-22_09:56:50-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -310,7 +310,13 @@ Are decidable and recognizable languages closed under union?
 > is L1.L2 TR?
 > given input x, where x $\in$ L1.L2
 > First partition x into L1 and L2
-> ***Nondeterministically***...
+> ***Nondeterministically***... (ie: try every possible split)
 > 1. Partition x as  x1.x2
 > 2. Simulate M1 on x1, if M1 rejects, then reject
-> 3. if M1 accepts, s
+> 3. if M1 accepts, simulate M2 on x2
+>	 * if M2 accepts; accept
+>	 * if M2 rejects; reject
+>	 * if M2 loops; loop (implies x2 $\notin$ M2)
+> 4. if M1 loops;loop (implies x1 $\notin$ M1)
+
+## Intersection
