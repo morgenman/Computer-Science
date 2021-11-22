@@ -277,7 +277,7 @@ $\delta$(q,\_) = {
 
 Are decidable and recognizable languages closed under union?
 
-***Reference for Non-determinism in TM: *** [[Turing Machine#Multitape Turing Machine]]
+** * Reference for Non-determinism in TM: * ** [[Turing Machine#Multitape Turing Machine]]
 
 ## Union
 ### Decidable
