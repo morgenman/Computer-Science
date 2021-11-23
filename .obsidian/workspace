@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Exam Prep.md",
-            "mode": "source"
+            "file": "Theory of Computation/Turing Machine.md",
+            "mode": "preview"
           }
         }
       }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ww",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,12 +56,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 304
+    "width": 304,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Exam Prep.md",
+                "file": "Theory of Computation/Turing Machine.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Exam Prep.md"
+                "file": "Theory of Computation/Turing Machine.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Exam Prep.md",
+                "file": "Theory of Computation/Turing Machine.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,12 +134,12 @@
   },
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
-    "Theory of Computation/Exam Prep.md",
-    "Theory of Computation/Pumping Lemma.md",
-    "Theory of Computation/Non-Context Free Languages.md",
-    "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Turing Machine.md",
+    "Theory of Computation/Theory of Computation.md",
     "Professional Practice/Professional Practice.md",
+    "Theory of Computation/Non-Context Free Languages.md",
+    "Theory of Computation/Pumping Lemma.md",
+    "Theory of Computation/Exam Prep.md",
     "Operating Systems/Operating Systems.md",
     "Professional Practice/Video 2 Feedback.md",
     "Professional Practice/_Index_of_Professional Practice.md",
