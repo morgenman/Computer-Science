@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-23_13:44:33-05:00</p>
+<p>updated: 2021-11-23_13:52:50-05:00</p>
 <hr>  
 <h1 id="databases"><a class="header" href="#databases">Databases</a></h1>
 <ul>
@@ -682,6 +682,15 @@ CREATE TABLE Studio(
 	name char(30) PRIMARY KEY,  
 	address varchar(255),  
 	Presc# int CHECK (Presc#&gt;100000)  
+);  
+</code></pre>
+<p>Consistency Condition</p>
+<p>Modifying Constraints: <em>Needs to be named first!</em></p>
+<pre><code class="language-SQL">CREATE TABLE Studio(  
+	name char(30) CONSTRAINT NameIsKeyPRIMARY KEY,  
+	address varchar(255),  
+	Presc# int,  
+  
 );  
 </code></pre>
 <h2 id="triggers"><a class="header" href="#triggers">Triggers</a></h2>
