@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_13:38:09-05:00
+updated: 2021-11-23_13:44:33-05:00
 ---
 # Databases
 * [Database
@@ -437,7 +437,7 @@ Normal Forms chapter 3**
 ## How do we use Constraints in SQL?
 *Tuple Constraints*: constraints on *values*
 *Foreign key Constraint*:  (Referential constraint)
-### E
+### Referential Integrity 
 ![[Pasted image 20211123132617.png]]
 
 To add a tuple into instructor table the department name must be unique and present in department table
@@ -476,5 +476,24 @@ CREATE TABLE Studio(
 );
 ```
 
+### Constraints on Attributes and Tuples 
+(attribute not null)
+
+```SQL
+CREATE TABLE Studio(
+	name char(30) PRIMARY KEY,
+	address varchar(255) NOT NULL,
+	Presc# int
+);
+```
+
+(tuple at least 6 digits)
+```SQL
+CREATE TABLE Studio(
+	name char(30) PRIMARY KEY,
+	address varchar(255),
+	Presc# int CHECK (Presc#>100000)
+);
+``` 
 ## Triggers
 ## Assertions
