@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_13:52:50-05:00
+updated: 2021-11-23_14:00:49-05:00
 ---
 # Databases
 * [Database
@@ -501,12 +501,11 @@ Consistency Condition
 Modifying Constraints: *Needs to be named first!*
 ```SQL
 CREATE TABLE Studio(
-	name char(30) CONSTRAINT NameIsKeyPRIMARY KEY,
+	name char(30) CONSTRAINT NameIsKey PRIMARY KEY,
 	address varchar(255),
-	Presc# int,
-
+	Presc# int
 );
+ALTER TABLE Moviestar DROP CONSTRAINT CorrectTitle; // Add, check also ok
 ```
 
-## Triggers
 ## Assertions
