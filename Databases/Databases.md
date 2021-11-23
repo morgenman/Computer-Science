@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-18_13:08:08-05:00
+updated: 2021-11-23_13:22:22-05:00
 ---
 # Databases
 * [Database
@@ -433,5 +433,9 @@ We have done chapters up to 6
 Normal Forms chapter 3**
 
 
-Co
-
+# Constraints and Triggers
+## How do we use Constraints in SQL?
+*Tuple Constraints*: constraints on *values*
+*Foreign key Constraint*:  (Referential constraint)
+## Triggers
+## Assertions
