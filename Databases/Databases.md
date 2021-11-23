@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_13:44:33-05:00
+updated: 2021-11-23_13:52:50-05:00
 ---
 # Databases
 * [Database
@@ -495,5 +495,18 @@ CREATE TABLE Studio(
 	Presc# int CHECK (Presc#>100000)
 );
 ``` 
+
+Consistency Condition 
+
+Modifying Constraints: *Needs to be named first!*
+```SQL
+CREATE TABLE Studio(
+	name char(30) CONSTRAINT NameIsKeyPRIMARY KEY,
+	address varchar(255),
+	Presc# int,
+
+);
+```
+
 ## Triggers
 ## Assertions
