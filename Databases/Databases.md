@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_13:22:22-05:00
+updated: 2021-11-23_13:27:22-05:00
 ---
 # Databases
 * [Database
@@ -437,5 +437,21 @@ Normal Forms chapter 3**
 ## How do we use Constraints in SQL?
 *Tuple Constraints*: constraints on *values*
 *Foreign key Constraint*:  (Referential constraint)
+
+![[Pasted image 20211123132617.png]]
+
+To add a tuple into instructor table the department name must be unique and present in department table
+How do we tell SQL about this limitation?
+
+```SQL
+REFERENCES <table>(<attributes>);
+...
+CREATE TABLE Studio(
+	name char(30) PRIMARY KEY,
+	address varchar(255),
+	Presc# int REFERENCES MovieExec(cert#)
+);
+```
+
 ## Triggers
 ## Assertions
