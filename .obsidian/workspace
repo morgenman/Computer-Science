@@ -13,6 +13,17 @@
             "mode": "source"
           }
         }
+      },
+      {
+        "id": "c3b7db3a240182a0",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Theory of Computation.md",
+            "mode": "preview"
+          }
+        }
       }
     ],
     "direction": "vertical"
@@ -131,7 +142,7 @@
     "direction": "horizontal",
     "width": 325.1429443359375
   },
-  "active": "a37250aa1d495f0a",
+  "active": "c3b7db3a240182a0",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Turing Machine.md",

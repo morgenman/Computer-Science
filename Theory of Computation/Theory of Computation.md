@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-22_10:14:46-05:00
+updated: 2021-11-23_04:40:58-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -330,3 +330,5 @@ Are decidable and recognizable languages closed under union?
 > 1. Simulate M1 on x, if M1 rejects, then reject
 > 2. If M1 accepts, simulate M2 on x, if M2 accepts; accept; else reject
 > 3. If M1 loop (x $\notin$ L1 and $\therefore$ will loop)
+
+
