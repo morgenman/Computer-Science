@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_14:00:49-05:00
+updated: 2021-11-23_14:07:22-05:00
 ---
 # Databases
 * [Database
@@ -511,3 +511,4 @@ ALTER TABLE Moviestar DROP CONSTRAINT CorrectTitle; // Add, check also ok
 ## Assertions
 Boolean valued SQL Expressions which *must* be true at all times!
 ## Triggers
+A series of actions that are associate with certain events
