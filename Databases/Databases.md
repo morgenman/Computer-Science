@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_13:27:22-05:00
+updated: 2021-11-23_13:32:34-05:00
 ---
 # Databases
 * [Database
@@ -450,6 +450,13 @@ CREATE TABLE Studio(
 	name char(30) PRIMARY KEY,
 	address varchar(255),
 	Presc# int REFERENCES MovieExec(cert#)
+);
+or...
+CREATE TABLE Studio(
+	name char(30) PRIMARY KEY,
+	address varchar(255),
+	Presc# int,
+	FOREIGN KEY(Presc#) REFERENCES MovieExec(cert#)
 );
 ```
 
