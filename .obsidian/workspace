@@ -9,19 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
+            "file": "Operating Systems/Operating Systems.md",
             "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "c3b7db3a240182a0",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
-            "mode": "preview"
           }
         }
       }
@@ -71,7 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 270.99999809265137
+    "width": 304
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -88,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Operating Systems/Operating Systems.md"
               }
             }
           },
@@ -130,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Operating Systems/Operating Systems.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -142,17 +131,17 @@
     "direction": "horizontal",
     "width": 325.1429443359375
   },
-  "active": "c3b7db3a240182a0",
+  "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
-    "Theory of Computation/Theory of Computation.md",
-    "Theory of Computation/Turing Machine.md",
-    "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
+    "Professional Practice/Professional Practice.md",
+    "Theory of Computation/Theory of Computation.md",
+    "Professional Practice/Video 2 Feedback.md",
+    "Theory of Computation/Turing Machine.md",
     "Operating Systems/Exam 2 Terms.md",
     "Operating Systems/Building with Make.md",
     "Operating Systems/Virtualization.md",
     "Science of Learning.md",
-    "Game Development/Pasted image 20211027111206.png",
-    "📗Textbooks/📗Textbooks.md"
+    "Game Development/Pasted image 20211027111206.png"
   ]
 }
