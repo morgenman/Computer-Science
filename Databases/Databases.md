@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_13:32:34-05:00
+updated: 2021-11-23_13:38:09-05:00
 ---
 # Databases
 * [Database
@@ -437,7 +437,7 @@ Normal Forms chapter 3**
 ## How do we use Constraints in SQL?
 *Tuple Constraints*: constraints on *values*
 *Foreign key Constraint*:  (Referential constraint)
-
+### E
 ![[Pasted image 20211123132617.png]]
 
 To add a tuple into instructor table the department name must be unique and present in department table
@@ -457,6 +457,22 @@ CREATE TABLE Studio(
 	address varchar(255),
 	Presc# int,
 	FOREIGN KEY(Presc#) REFERENCES MovieExec(cert#)
+);
+```
+
+Referential Integrity: What do you do if a value is null, deleted, or updated?
+1. Default policy 
+2. Cascade policy (you have to manually specify this to get it to do it)
+3. Set null policy (specifically say what happens to null values)
+
+```SQL
+CREATE TABLE Studio(
+	name char(30) PRIMARY KEY,
+	address varchar(255),
+	Presc# int,
+	FOREIGN KEY(Presc#) REFERENCES MovieExec(cert#),
+	ON DELETE SET NULL,
+	ON UPDATE CASCADE
 );
 ```
 

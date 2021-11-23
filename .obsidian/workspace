@@ -4,12 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "da712bb6234836eb",
+        "id": "c8b255c41d9dc9ef",
         "type": "split",
         "children": [
           {
-            "id": "a37250aa1d495f0a",
+            "id": "996a3a4736e5d2b8",
             "type": "leaf",
+            "dimension": 61.08949416342413,
             "state": {
               "type": "markdown",
               "state": {
@@ -21,6 +22,7 @@
           {
             "id": "6f4fd14850f1b871",
             "type": "leaf",
+            "dimension": 38.91050583657588,
             "state": {
               "type": "markdown",
               "state": {
@@ -151,7 +153,7 @@
     "width": 325.1429443359375,
     "collapsed": true
   },
-  "active": "a37250aa1d495f0a",
+  "active": "996a3a4736e5d2b8",
   "lastOpenFiles": [
     "Databases/Databases.md",
     "Professional Practice/Video 2 Feedback.md",
