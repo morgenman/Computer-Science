@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
+            "file": "Theory of Computation/Turing Machine.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Theory of Computation/Turing Machine.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Theory of Computation/Turing Machine.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Theory of Computation/Turing Machine.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -134,8 +134,8 @@
   },
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
-    "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Turing Machine.md",
+    "Theory of Computation/Theory of Computation.md",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Non-Context Free Languages.md",
     "Theory of Computation/Pumping Lemma.md",
