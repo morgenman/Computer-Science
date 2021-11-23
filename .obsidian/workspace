@@ -4,35 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c8b255c41d9dc9ef",
-        "type": "split",
-        "children": [
-          {
-            "id": "996a3a4736e5d2b8",
-            "type": "leaf",
-            "dimension": 43.57976653696498,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Databases/Databases.md",
-                "mode": "source"
-              }
-            }
-          },
-          {
-            "id": "6f4fd14850f1b871",
-            "type": "leaf",
-            "dimension": 56.42023346303502,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Professional Practice/Video 2 Feedback.md",
-                "mode": "source"
-              }
-            }
+        "id": "6f4fd14850f1b871",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Professional Practice/Video 2 Feedback.md",
+            "mode": "source"
           }
-        ],
-        "direction": "horizontal"
+        }
       }
     ],
     "direction": "vertical"
@@ -98,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Professional Practice/Video 2 Feedback.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Professional Practice/Video 2 Feedback.md"
               }
             }
           },
@@ -140,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Professional Practice/Video 2 Feedback.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -153,10 +133,10 @@
     "width": 325.1429443359375,
     "collapsed": true
   },
-  "active": "996a3a4736e5d2b8",
+  "active": "6f4fd14850f1b871",
   "lastOpenFiles": [
-    "Databases/Databases.md",
     "Professional Practice/Video 2 Feedback.md",
+    "Databases/Databases.md",
     "Professional Practice/Presentation 1- Feedback.md",
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Turing Machine.md",
