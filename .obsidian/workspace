@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Turing Machine.md",
-            "mode": "preview"
+            "file": "Theory of Computation/Exam Prep.md",
+            "mode": "source"
           }
         }
       }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ww",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,7 +56,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Theory of Computation/Exam Prep.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md"
+                "file": "Theory of Computation/Exam Prep.md"
               }
             }
           },
@@ -119,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Turing Machine.md",
+                "file": "Theory of Computation/Exam Prep.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -133,15 +134,15 @@
   },
   "active": "a37250aa1d495f0a",
   "lastOpenFiles": [
-    "Theory of Computation/Turing Machine.md",
+    "Theory of Computation/Exam Prep.md",
+    "Theory of Computation/Pumping Lemma.md",
+    "Theory of Computation/Non-Context Free Languages.md",
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Turing Machine.md",
     "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
     "Professional Practice/Video 2 Feedback.md",
     "Professional Practice/_Index_of_Professional Practice.md",
-    "Operating Systems/Exam 2 Terms.md",
-    "Operating Systems/Building with Make.md",
-    "Operating Systems/Virtualization.md",
-    "Science of Learning.md"
+    "Operating Systems/Exam 2 Terms.md"
   ]
 }
