@@ -432,3 +432,6 @@ We have done chapters up to 6
 **ER model chapter 4
 Normal Forms chapter 3**
 
+
+Co
+
