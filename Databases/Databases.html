@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-23_13:27:22-05:00</p>
+<p>updated: 2021-11-23_13:32:34-05:00</p>
 <hr>  
 <h1 id="databases"><a class="header" href="#databases">Databases</a></h1>
 <ul>
@@ -644,6 +644,13 @@ CREATE TABLE Studio(
 	name char(30) PRIMARY KEY,  
 	address varchar(255),  
 	Presc# int REFERENCES MovieExec(cert#)  
+);  
+or...  
+CREATE TABLE Studio(  
+	name char(30) PRIMARY KEY,  
+	address varchar(255),  
+	Presc# int,  
+	FOREIGN KEY(Presc#) REFERENCES MovieExec(cert#)  
 );  
 </code></pre>
 <h2 id="triggers"><a class="header" href="#triggers">Triggers</a></h2>
