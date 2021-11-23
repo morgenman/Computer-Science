@@ -509,3 +509,5 @@ ALTER TABLE Moviestar DROP CONSTRAINT CorrectTitle; // Add, check also ok
 ```
 
 ## Assertions
+Boolean valued SQL Expressions which *must* be true at all times!
+## Triggers
