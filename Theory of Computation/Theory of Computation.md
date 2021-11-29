@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-29_09:33:35-05:00
+updated: 2021-11-29_09:38:56-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -274,7 +274,7 @@ $\delta$(q,\_) = {
 | Concatenation | $\checkmark$ | $\checkmark$        |
 | Intersection  | $\checkmark$ | $\checkmark$        |
 | Star          | $\checkmark$ | $\checkmark$        |
-| Complement    |  $\checkmark$             |    $\$                  |
+| Complement    |  $\checkmark$             |   NO               |
 
 
 
@@ -352,5 +352,10 @@ Are decidable and recognizable languages closed under union?
 ### Recognizable? No
 > If it doesn't reject (but loops), this will not accept
 > so it can't be recognizable
-> 
 
+## *L is decidable iff L and $\bar{L}$ are turing recognizable*
+1. if L is decidable, by closure properties, L and $\bar{L}$  are decidable
+2. if L and $\bar{L}$ are turing recognizable, is L decidable?
+> let L be TR via M
+> $\bar{L}$ be TR via M1
+> construct a mac
