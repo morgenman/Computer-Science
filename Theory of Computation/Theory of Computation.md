@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-29_09:20:52-05:00
+updated: 2021-11-29_09:33:35-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -272,8 +272,9 @@ $\delta$(q,\_) = {
 | ------------- | ------------ | ------------------- |
 | Union         | $\checkmark$ | $\checkmark$        |
 | Concatenation | $\checkmark$ | $\checkmark$        |
-| Intersection  | $\checkmark$ | $\checkmark$          |
+| Intersection  | $\checkmark$ | $\checkmark$        |
 | Star          | $\checkmark$ | $\checkmark$        |
+| Complement    |  $\checkmark$             |    $\$                  |
 
 
 
@@ -322,17 +323,6 @@ Are decidable and recognizable languages closed under union?
 > 4. if M1 loops;loop (implies x1 $\notin$ L1)
 ### Decidable: If it is turing recognizable $\therefore$ it is also turing decidable
 
-## Star 
-### Recognizable 
-> L1 is TR via Turing Machine M1
-> Proof: 
-> Given input x where x in L1*
-> 1. Nondeterministically guess a number t
-> 2. partition x as x1.x2 ... xt
-> 3. Simulate the machine M1  on the strings x1,x2 ... xt in sequence
-	> if 
-> 
-
 ## Intersection
 ### Recognizable
 > L1 and L2 are turing recognizable via TMs M1 and M2 respectively
@@ -342,4 +332,25 @@ Are decidable and recognizable languages closed under union?
 > 2. If M1 accepts, simulate M2 on x, if M2 accepts; accept; else reject
 > 3. If M1 loop (x $\notin$ L1 and $\therefore$ will loop)
 
+## Star 
+### Recognizable 
+> L1 is TR via Turing Machine M1
+> Proof: 
+> Given input x where x in L1*
+> 1. Nondeterministically guess a number t
+> 2. partition x as x1.x2 ... xt
+> 3. Simulate the machine M1  on the strings x1,x2 ... xt in sequence
+	> if M1 accepts, accept....etc
+
+## Complement
+### Decidable
+> L is decidable via halting TM M
+> given input x where x $\in \bar{L}$
+> 1. Simulate M on x; 
+> 2. If M accepts, reject; else accept
+
+### Recognizable? No
+> If it doesn't reject (but loops), this will not accept
+> so it can't be recognizable
+> 
 
