@@ -377,5 +377,7 @@ Are decidable and recognizable languages closed under union?
 * 2. If D accepts then accept; else reject
 2. E_DFA (empty DFA)
 * is it decidable?
-* E_DFA = {<D>|D is a DFA and L(D)=0}
+* E_DFA = { < D >|D is a DFA and L(D)=0}
+* 1. Check to see if there is a path from start state to an accept state
+* 2. If no path exists then accept; else reject
 	
