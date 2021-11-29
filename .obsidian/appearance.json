@@ -4,6 +4,6 @@
   "translucency": false,
   "cssTheme": "Primary",
   "enabledCssSnippets": [
-    "obsidian-default-theme"
+    "custom"
   ]
 }

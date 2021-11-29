@@ -1,0 +1,7 @@
+.markdown-source-view {
+  font-family: "IBM Plex Mono" !important;
+}
+
+:root {
+  --font-sans: "IBM Plex Mono", sans-serif;
+}
