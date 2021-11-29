@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-29_09:48:17-05:00
+updated: 2021-11-29_09:54:47-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -370,4 +370,12 @@ Are decidable and recognizable languages closed under union?
 1. Is A<sub>DFA</sub> decidable?
 * A<sub>DFA</sub> = {<D,w>| D is a DFA and w $\in$ L(D)}
 * <D,W> encoding of a DFA and a string w
-* 
+* is A<sub>DFA</sub> decidable? yes
+* Machine M:
+* given input <D,w>
+* 1. Simulate D on w
+* 2. If D accepts then accept; else reject
+2. E_DFA (empty DFA)
+* is it decidable?
+* E_DFA = {<D>|D is a DFA and L(D)=0}
+	
