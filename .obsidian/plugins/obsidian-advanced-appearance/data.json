@@ -1,9 +1,9 @@
 {
   "theme": "moonstone",
-  "accentHue": 213,
+  "accentHue": 0,
   "accentSat": 59,
   "accentLight": 64,
-  "bgHue": 220,
+  "bgHue": 0,
   "bgSat": 18,
   "bgLight": 97,
   "trimNames": false,
