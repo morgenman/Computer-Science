@@ -1,7 +1,18 @@
-.markdown-source-view {
-  font-family: "IBM Plex Mono" !important;
-}
-
 :root {
   --font-sans: "IBM Plex Mono", sans-serif;
+  --font-extra-bold: 400;
+  --font-scale-000: 0.547rem;
+  --font-scale-00: 0.676rem;
+  --font-scale-0: 0.81rem;
+  --font-scale-0-5: 0.875rem;
+  --font-scale-1: 1rem;
+  --font-scale-2: 1.198rem;
+  --font-scale-3: 1.48rem;
+  --font-scale-4: 1.774rem;
+  --font-scale-5: 1.19rem;
+  --font-scale-6: 1.625rem;
+  --font-scale-7: 2.242rem;
+  --font-scale-8: 3.885rem;
+  --font-scale-9: 4.798rem;
+  --font-scale-10: 5.75rem;
 }
