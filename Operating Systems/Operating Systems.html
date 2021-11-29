@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-11-29_08:36:55-05:00</p>
+<p>updated: 2021-11-29_08:43:26-05:00</p>
 <hr>  
 <h1 id="operating-systems"><a class="header" href="#operating-systems">Operating Systems</a></h1>
 <h2 id="what-does-it-do"><a class="header" href="#what-does-it-do">What does it do?</a></h2>
@@ -1287,9 +1287,23 @@ vector</li>
 Lock(i)</p>
 <hr>  
 <h1 id="locks"><a class="header" href="#locks">Locks</a></h1>
-<p><em>Let's imagine we have two locks:</em></p>
-<pre><code>lock a  
-lock b  
+<p><em>Let's imagine we have two locks:</em><br />
+lock a<br />
+lock b</p>
+<pre><code class="language-c++">// T1  
+locka.lock();  
+lockb.lock();  
+a = b+1;  
+b++;  
+lockb.unlock();  
+locka.unlock();  
+// T2  
+lockb.lock();  
+locka.lock();  
+b=a*z;  
+a = a/3;  
+locka.unlock();  
+lockb.unlock();  
 </code></pre>
 
                 </main>
