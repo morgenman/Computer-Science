@@ -6401,7 +6401,7 @@ $\delta$(q,_) = {</p>
 <tr><td>Union</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
 <tr><td>Concatenation</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
 <tr><td>Intersection</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
-<tr><td></td><td></td><td></td></tr>
+<tr><td>Star</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
 </tbody></table>
 <p>Are decidable and recognizable languages closed under union?</p>
 <p>** * Reference for Non-determinism in TM: * ** <span class="missing-link" style="color:darkred;">Turing Machine#Multitape Turing Machine</span></p>
@@ -6462,7 +6462,14 @@ First partition x into L1 and L2<br />
 <h3 id="recognizable-1"><a class="header" href="#recognizable-1">Recognizable</a></h3>
 <blockquote>
 <p>L1 is TR via Turing Machine M1<br />
-Proof:</p>
+Proof:<br />
+Given input x where x in L1*</p>
+<ol>
+<li>Nondeterministically guess a number t</li>
+<li>partition x as x1.x2 ... xt</li>
+<li>Simulate the machine M1  on the strings x1,x2 ... xt in sequence<br />
+if</li>
+</ol>
 </blockquote>
 <h2 id="intersection"><a class="header" href="#intersection">Intersection</a></h2>
 <h3 id="recognizable-2"><a class="header" href="#recognizable-2">Recognizable</a></h3>
