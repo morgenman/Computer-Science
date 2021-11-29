@@ -15,10 +15,10 @@
   --font-scale-8: 3.885rem;
   --font-scale-9: 4.798rem;
   --font-scale-10: 5.75rem;
-
 }
 
+.HyperMD-codeblock-bg.CodeMirror-linebackground {
+  background: transparent !important;
+  background-color: transparent !important;
 
-pre.HyperMD-codeblock.CodeMirror-line.hmd-inactive-line {
-  background-color: #00000000 !important;
 }
