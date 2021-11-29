@@ -272,8 +272,8 @@ $\delta$(q,\_) = {
 | ------------- | ------------ | ------------------- |
 | Union         | $\checkmark$ | $\checkmark$        |
 | Concatenation | $\checkmark$ | $\checkmark$        |
-| Intersection  | $\checkmark$ | $\checkmark$                    |
-|               |              |                     |
+| Intersection  | $\checkmark$ | $\checkmark$          |
+| Star          | $\checkmark$ | $\checkmark$        |
 
 
 
@@ -326,7 +326,11 @@ Are decidable and recognizable languages closed under union?
 ### Recognizable 
 > L1 is TR via Turing Machine M1
 > Proof: 
-> 
+> Given input x where x in L1*
+> 1. Nondeterministically guess a number t
+> 2. partition x as x1.x2 ... xt
+> 3. Simulate the machine M1  on the strings x1,x2 ... xt in sequence
+	> if 
 > 
 
 ## Intersection
