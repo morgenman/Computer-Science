@@ -621,7 +621,17 @@ construct a machine...</p>
 </ol>
 <ul>
 <li>is it decidable?</li>
-<li>E_DFA = {<D>|D is a DFA and L(D)=0}</li>
+<li>E_DFA = { &lt; D &gt;|D is a DFA and L(D)=0}</li>
+<li>
+<ol>
+<li>Check to see if there is a path from start state to an accept state</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>If no path exists then accept; else reject</li>
+</ol>
+</li>
 </ul>
 
                 </main>
