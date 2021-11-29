@@ -3,5 +3,7 @@
   "theme": "obsidian",
   "translucency": false,
   "cssTheme": "Primary",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [
+    "obsidian-default-theme"
+  ]
 }
