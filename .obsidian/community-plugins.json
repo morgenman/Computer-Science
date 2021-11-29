@@ -18,5 +18,6 @@
   "update-time-on-edit",
   "obsidian-outliner",
   "obsidian-codemirror-options",
-  "obsidian-tabs"
+  "obsidian-tabs",
+  "cm-editor-syntax-highlight-obsidian"
 ]

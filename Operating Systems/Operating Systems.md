@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-29_08:36:55-05:00
+updated: 2021-11-29_08:43:26-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -998,7 +998,22 @@ Lock(i)
 # Locks
 
 *Let's imagine we have two locks:*
-```
 lock a
 lock b
+
+```c++
+// T1
+locka.lock();
+lockb.lock();
+a = b+1;
+b++;
+lockb.unlock();
+locka.unlock();
+// T2
+lockb.lock();
+locka.lock();
+b=a*z;
+a = a/3;
+locka.unlock();
+lockb.unlock();
 ```
