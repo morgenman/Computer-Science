@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-18_14:25:05-05:00
+updated: 2021-11-29_10:27:54-05:00
 ---
 # Game Development
 * Building text-adventure games (3 of them)
@@ -174,3 +174,8 @@ Peer to peer vs server client
 ## Distributed Trust Algorithms
 
 Encryption without latency?
+
+
+# History of Video Games
+1958: Tennis for two 
+1961: Spacewar
