@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-29_09:38:56-05:00
+updated: 2021-11-29_09:48:17-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -364,7 +364,10 @@ Are decidable and recognizable languages closed under union?
 > 3. for every x you will halt
 
 
-# Properties of Decidable Languages
+# Decidable properties of RLs and CFLs
 *we are looking at RLs and CFLs*
 
-1. Is A$_{DFA}$ decidable?
+1. Is A<sub>DFA</sub> decidable?
+* A<sub>DFA</sub> = {<D,w>| D is a DFA and w $\in$ L(D)}
+* <D,W> encoding of a DFA and a string w
+* 
