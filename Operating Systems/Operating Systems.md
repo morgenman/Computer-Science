@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-22_04:39:44-05:00
+updated: 2021-11-29_08:36:55-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -993,3 +993,12 @@ When we take an interrupt, it happens between instructions, so we could loose on
 So how do we stop them from writing to the same value without stopping? 
 Lock(i)
 
+---
+
+# Locks
+
+*Let's imagine we have two locks:*
+```
+lock a
+lock b
+```
