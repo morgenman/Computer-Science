@@ -358,4 +358,13 @@ Are decidable and recognizable languages closed under union?
 2. if L and $\bar{L}$ are turing recognizable, is L decidable?
 > let L be TR via M
 > $\bar{L}$ be TR via M1
-> construct a mac
+> construct a machine...
+> 1. Simulate M on x and M1 on x simultaneously
+> 2. if M accepts, accept; if M1 accepts, reject
+> 3. for every x you will halt
+
+
+# Properties of Decidable Languages
+*we are looking at RLs and CFLs*
+
+1. Is A$_{DFA}$ decidable?
