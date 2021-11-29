@@ -325,7 +325,8 @@ Are decidable and recognizable languages closed under union?
 ## Star 
 ### Recognizable 
 > L1 is TR via Turing Machine M1
-> Proof:
+> Proof: 
+> 
 > 
 
 ## Intersection
