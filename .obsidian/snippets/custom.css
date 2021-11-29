@@ -18,6 +18,7 @@
 
 }
 
-pre.HyperMD-codeblock.HyperMD-codeblock-begin.CodeMirror-line.hmd-inactive-line {
-  background-color: #ce2c2cc9 !important;
+
+pre.HyperMD-codeblock.CodeMirror-line.hmd-inactive-line {
+  background-color: #00000000 !important;
 }
