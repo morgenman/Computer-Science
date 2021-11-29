@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-23_04:40:58-05:00
+updated: 2021-11-29_09:13:03-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -321,6 +321,12 @@ Are decidable and recognizable languages closed under union?
 >	 * if M2 loops; loop (implies x2 $\notin$ L2)
 > 4. if M1 loops;loop (implies x1 $\notin$ L1)
 ### Decidable: If it is turing recognizable $\therefore$ it is also turing decidable
+
+## Star 
+### Recognizable 
+> L1 is TR via Turing Machine M1
+> Proof:
+> 
 
 ## Intersection
 ### Recognizable
