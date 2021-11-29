@@ -17,3 +17,7 @@
   --font-scale-10: 5.75rem;
 
 }
+
+pre.HyperMD-codeblock.HyperMD-codeblock-begin.CodeMirror-line.hmd-inactive-line {
+  background-color: #ce2c2cc9 !important;
+}
