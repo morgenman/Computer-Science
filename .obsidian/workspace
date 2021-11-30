@@ -1,14 +1,17 @@
 {
   "main": {
-    "id": "cfea5ffcefd6d154",
+    "id": "a52eba11132437cf",
     "type": "split",
     "children": [
       {
-        "id": "d61186023fec4fb2",
+        "id": "8e7cbc3133ae082e",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Game Development/Untitled.md",
+            "mode": "source"
+          }
         }
       }
     ],
@@ -74,6 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Game Development/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,7 +93,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Game Development/Untitled.md"
+              }
             }
           },
           {
@@ -113,6 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Game Development/Untitled.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -124,7 +131,7 @@
     "direction": "horizontal",
     "width": 325.1429443359375
   },
-  "active": "d61186023fec4fb2",
+  "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
     "Game Development/Untitled.md",
     "Game Development/Game Development.md",
