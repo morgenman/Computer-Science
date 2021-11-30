@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-18_07:59:36-05:00
+updated: 2021-11-30_16:07:38-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -94,3 +94,6 @@ updated: 2021-11-18_07:59:36-05:00
 * Emotion as a decision making system
 
 [[Video 2 Feedback]]
+
+[[Is Professional Practice at Risk Notes]]
+

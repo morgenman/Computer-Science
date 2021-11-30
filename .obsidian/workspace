@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Professional Practice.md",
+            "file": "Professional Practice/Is Professional Practice at Risk Notes.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "prox",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +61,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304
+    "width": 304,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +79,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Professional Practice/Is Professional Practice at Risk Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +96,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Professional Practice.md"
+                "file": "Professional Practice/Is Professional Practice at Risk Notes.md"
               }
             }
           },
@@ -120,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Professional Practice/Is Professional Practice at Risk Notes.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -130,10 +131,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.1429443359375
+    "width": 325.1429443359375,
+    "collapsed": true
   },
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
+    "Professional Practice/Is Professional Practice at Risk Notes.md",
     "Professional Practice/Professional Practice.md",
     "Operating Systems/Operating Systems.md",
     "Game Development/Untitled.md",
@@ -142,7 +145,6 @@
     "Theory of Computation/Turing Machine.md",
     "Professional Practice/Video 2 Feedback.md",
     "Databases/Databases.md",
-    "Professional Practice/Presentation 1- Feedback.md",
-    "Theory of Computation/Non-Context Free Languages.md"
+    "Professional Practice/Presentation 1- Feedback.md"
   ]
 }
