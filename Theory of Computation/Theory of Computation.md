@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-29_09:54:47-05:00
+updated: 2021-12-01_09:18:15-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -381,3 +381,11 @@ Are decidable and recognizable languages closed under union?
 * 1. Check to see if there is a path from start state to an accept state
 * 2. If no path exists then accept; else reject
 	
+	
+	---
+Exam Review
+
+
+----
+
+
