@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-12-01_09:44:03-05:00</p>
+<p>updated: 2021-12-01_09:50:14-05:00</p>
 <hr>  
 <h1 id="theory-of-computation"><a class="header" href="#theory-of-computation">Theory of Computation</a></h1>
 <ul>
@@ -635,7 +635,24 @@ construct a machine...</p>
 </ul>
 <p>Is EQ<sub>DFA</sub> = {&lt; D1, D2 &gt; | D1 and D2 are DFA's and L(D1) = L(D2) }<br />
 (they accept the same language) <em>this is only possible if...</em><br />
-L(D1)=L(D2) <em>iff</em> {(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1)) = ∅</p>
+L(D1)=L(D2) <em>iff</em> {(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1))} = ∅</p>
+<p>Using closure properties:</p>
+<ul>
+<li>$\exists$ a regular language L such that L = ({(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1))} = ∅)
+<ul>
+<li>L1 = L(DFA1) (implies regular language)</li>
+<li>L2 = L(DFA2) (implies regular language)</li>
+<li>L is regular because regularity is closed under union</li>
+</ul>
+</li>
+<li>This implies $\exists$ DFA D such that L(D) = L
+<ul>
+<li>This DFA accepts only empty strings</li>
+<li>Check if D $\in$ E<sub>DFA</sub></li>
+<li></li>
+</ul>
+</li>
+</ul>
 
                 </main>
             </div>
