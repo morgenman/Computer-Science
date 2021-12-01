@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-01_08:30:52-05:00
+updated: 2021-12-01_08:37:09-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1021,6 +1021,9 @@ lockb.unlock();
  
 *Spin locks* aren't fair (who get's to the front of a ready queue first, may be thread that just released)
 ## Ticket Locks
-* 
+* either use queue, how many people waiting etc OR just use two ints; increment them modulo some value (usually number of threads, has to be at least that)
+
+
+# ***Final Exam Question: Why does that value have to be greater than the number of threads??***
 
 
