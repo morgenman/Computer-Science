@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-01_08:19:02-05:00
+updated: 2021-12-01_08:30:52-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1017,4 +1017,10 @@ a = a/3;
 locka.unlock();
 lockb.unlock();
 ```
+
+ 
+*Spin locks* aren't fair (who get's to the front of a ready queue first, may be thread that just released)
+## Ticket Locks
+* 
+
 
