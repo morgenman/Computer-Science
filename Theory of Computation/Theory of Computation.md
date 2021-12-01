@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-01_09:18:15-05:00
+updated: 2021-12-01_09:44:03-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -382,10 +382,4 @@ Are decidable and recognizable languages closed under union?
 * 2. If no path exists then accept; else reject
 	
 	
-	---
-Exam Review
-
-
-----
-
-
+They are equal when they 

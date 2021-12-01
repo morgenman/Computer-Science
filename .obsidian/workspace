@@ -12,7 +12,20 @@
             "file": "Theory of Computation/Theory of Computation.md",
             "mode": "source"
           }
-        }
+        },
+        "group": "e77158f45174ba8e"
+      },
+      {
+        "id": "ffaf4e20990a0362",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Theory of Computation.md",
+            "mode": "preview"
+          }
+        },
+        "group": "e77158f45174ba8e"
       }
     ],
     "direction": "vertical"
