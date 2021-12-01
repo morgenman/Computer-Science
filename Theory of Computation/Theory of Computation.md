@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-01_09:44:03-05:00
+updated: 2021-12-01_09:50:14-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -383,4 +383,14 @@ Are decidable and recognizable languages closed under union?
 	
 Is EQ<sub>DFA</sub> = {< D1, D2 > | D1 and D2 are DFA's and L(D1) = L(D2) }
 (they accept the same language) *this is only possible if...*
-L(D1)=L(D2) *iff* {(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1)) = ∅
+L(D1)=L(D2) *iff* {(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1))} = ∅
+
+Using closure properties:
+* $\exists$ a regular language L such that L = ({(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1))} = ∅)
+	* L1 = L(DFA1) (implies regular language)
+	* L2 = L(DFA2) (implies regular language)
+	* L is regular because regularity is closed under union	
+* This implies $\exists$ DFA D such that L(D) = L
+	* This DFA accepts only empty strings
+	* Check if D $\in$ E<sub>DFA</sub>
+	* 
