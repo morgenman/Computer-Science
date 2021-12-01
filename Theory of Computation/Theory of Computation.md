@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-01_09:50:14-05:00
+updated: 2021-12-01_09:57:34-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -393,4 +393,12 @@ Using closure properties:
 * This implies $\exists$ DFA D such that L(D) = L
 	* This DFA accepts only empty strings
 	* Check if D $\in$ E<sub>DFA</sub>
-	* 
+* $\therefore$ EQ_DFA is decidable 
+
+---
+
+A<sub>CFG</sub> = { < G, w > | G is CFG and w $\in$ L(G) }
+is A<sub>CFG</sub> decidable?
+We need to figure out how many number of steps...
+Use [[Chomsky Normal Form]]
+
