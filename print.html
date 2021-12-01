@@ -4167,9 +4167,9 @@ lockb.unlock();
 <p><em>Spin locks</em> aren't fair (who get's to the front of a ready queue first, may be thread that just released)</p>
 <h2 id="ticket-locks"><a class="header" href="#ticket-locks">Ticket Locks</a></h2>
 <ul>
-<li>either use queue, how many people waiting etc OR just use two ints; increment them modulo some value (usually number of threads, has to be at least that)</li>
+<li>either use queue, how many people waiting etc OR just use two ints; increment then modulo number of tickets (usually number of threads, has to be at least that)</li>
 </ul>
-<h1 id="final-exam-question-why-does-that-value-have-to-be-greater-than-the-number-of-threads"><a class="header" href="#final-exam-question-why-does-that-value-have-to-be-greater-than-the-number-of-threads"><em><strong>Final Exam Question: Why does that value have to be greater than the number of threads??</strong></em></a></h1>
+<h1 id="final-exam-question-why-does-the-number-of-tickets-have-to-be-greater-than-the-number-of-threads"><a class="header" href="#final-exam-question-why-does-the-number-of-tickets-have-to-be-greater-than-the-number-of-threads"><em><strong>Final Exam Question: Why does the number of tickets have to be greater than the number of threads??</strong></em></a></h1>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
