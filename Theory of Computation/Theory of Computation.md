@@ -381,5 +381,6 @@ Are decidable and recognizable languages closed under union?
 * 1. Check to see if there is a path from start state to an accept state
 * 2. If no path exists then accept; else reject
 	
-	
-They are equal when they 
+Is EQ<sub>DFA</sub> = {< D1, D2 > | D1 and D2 are DFA's and L(D1) = L(D2) }
+(they accept the same language) *this is only possible if...*
+L(D1)=L(D2) *iff* {(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1)) = ∅
