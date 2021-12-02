@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-02_14:05:45-05:00
+updated: 2021-12-02_14:12:18-05:00
 ---
 # Databases
 * [Database
@@ -513,6 +513,16 @@ Boolean valued SQL Expressions which *must* be true at all times!
 ## Triggers
 A series of actions that are associate with certain events
 
+```SQL
+create table MovieExec(name,address,cert#,networth); // pseudo code
+CREATE TRIGGER NetWorthTrigger
+	AFTER UPDATE of networth ON MovieExec
+	REFERENCING
+		OLD ROW as OLDTuple
+		NEW ROW as NewTuple
+	FOR EACH ROW 
+	WHEN (OLDTuple.networth)
+```
 
 
 
