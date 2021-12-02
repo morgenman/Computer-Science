@@ -1,5 +1,5 @@
 ---
-updated: 2021-11-30_16:07:38-05:00
+updated: 2021-12-02_08:04:36-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -97,3 +97,4 @@ updated: 2021-11-30_16:07:38-05:00
 
 [[Is Professional Practice at Risk Notes]]
 
+[[Ethics Free Presentations]]

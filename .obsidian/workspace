@@ -9,18 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
-            "mode": "source"
-          }
-        }
-      },
-      {
-        "id": "70472bbbeebd78a7",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Theory of Computation/Chomsky Normal Form.md",
+            "file": "Professional Practice/Ethics Free Presentations.md",
             "mode": "source"
           }
         }
@@ -71,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304
+    "width": 304,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -88,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Professional Practice/Ethics Free Presentations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Professional Practice/Ethics Free Presentations.md"
               }
             }
           },
@@ -130,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Professional Practice/Ethics Free Presentations.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -144,15 +134,15 @@
   },
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
+    "Professional Practice/Ethics Free Presentations.md",
+    "Professional Practice/Professional Practice.md",
     "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/Chomsky Normal Form.md",
     "Operating Systems/Operating Systems.md",
     "Professional Practice/Is Professional Practice at Risk Notes.md",
-    "Professional Practice/Professional Practice.md",
     "Game Development/Untitled.md",
     "Game Development/Game Development.md",
     "Theory of Computation/Turing Machine.md",
-    "Professional Practice/Video 2 Feedback.md",
-    "Databases/Databases.md"
+    "Professional Practice/Video 2 Feedback.md"
   ]
 }
