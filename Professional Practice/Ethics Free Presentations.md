@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-02_08:18:24-05:00
+updated: 2021-12-02_08:24:56-05:00
 ---
 # Nick
 * Tesla
@@ -13,7 +13,7 @@ updated: 2021-12-02_08:18:24-05:00
 	* least individual influence, greatest collective
 	* is code adequately tested?
 	* Costs associated with these things
-	* if concerns are ignored by management, whistleblower
+	* if concerns are ignored by management, whistle blower
 		* high personal cost
 * Team Lead
 	* more influence, not to steer company
@@ -25,7 +25,7 @@ updated: 2021-12-02_08:18:24-05:00
 	* most direct influence
 	* Address all three concerns
 	* "listen to those who work for you"
-	* Encourage interdepartment communication
+	* Encourage inter-department communication
 	* Get advice about software's suitability for public release
 * Ethical course of action for everyone is pretty much the same
 * Personal risks if marginalized individuals is higher
@@ -47,13 +47,13 @@ updated: 2021-12-02_08:18:24-05:00
 	* Compliance with rules
 * 2.8 billion penalty
 * discovered on accident
-* ACM CoE not conculted when making 'defeat software'
+* ACM CoE not consulted when making 'defeat software'
 * Nice looking slides, too much reading from the paper, basically just reading the paper
 * too slow, it's several minutes in and you haven't gotten to junior, team, lead section
 * Needs to practice more
 * Corporate Ethics vs ACM Ethics
 * Marginalized group shouldn't be a factor?
 * Cost is health risks
-* 
+* Corporate culture punishes whistle blowers 
 
  
