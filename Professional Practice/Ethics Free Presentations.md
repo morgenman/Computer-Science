@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-02_08:12:13-05:00
+updated: 2021-12-02_08:18:24-05:00
 ---
 # Nick
 * Tesla
@@ -30,3 +30,12 @@ updated: 2021-12-02_08:12:13-05:00
 * Ethical course of action for everyone is pretty much the same
 * Personal risks if marginalized individuals is higher
 * Cost can change, but ethics are the same
+
+# Pawel
+* Volkswagen
+* 2006, 'clean diesel'
+* used software to cheat emissions
+* 40x higher emissions than US standards
+* Could not meet these standards
+* Driven on a road vs being tested
+* Some concerns, involved discussions,  
