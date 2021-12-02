@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-02_08:06:54-05:00
+updated: 2021-12-02_08:12:13-05:00
 ---
 # Nick
 * Tesla
@@ -17,4 +17,16 @@ updated: 2021-12-02_08:06:54-05:00
 		* high personal cost
 * Team Lead
 	* more influence, not to steer company
-	* Help facilitate the actions that 
+	* Help facilitate the actions that individual developers can take on a greater scale
+	* encourage everyone to voice their concerns
+	* speak on behalf of the team
+		* cost could be to take the 'blame' for pushback
+* Senior Developer
+	* most direct influence
+	* Address all three concerns
+	* "listen to those who work for you"
+	* Encourage interdepartment communication
+	* Get advice about software's suitability for public release
+* Ethical course of action for everyone is pretty much the same
+* Personal risks if marginalized individuals is higher
+* Cost can change, but ethics are the same
