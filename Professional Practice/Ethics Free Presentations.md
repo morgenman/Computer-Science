@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-02_08:24:56-05:00
+updated: 2021-12-02_08:45:00-05:00
 ---
 # Nick
 * Tesla
@@ -74,5 +74,15 @@ updated: 2021-12-02_08:24:56-05:00
 	* Nice job showing the sections of ACM, a small 2 word summary, and an explanation
 	* Very easy to skim
 * Public Good, avoid deception, regarding issues
-* 
- 
+* Unaware if engineer's concerns were addressed
+	* (vagueness is bad)
+* Junior
+	* Explain consequences of public beta testing
+	* Reputation when speaking out against Tesla, Loss of Job/trust
+* Team Manager
+	* stop beta testing
+	* costs: loss of job, safety of users, team moral shift
+* Lead Programmer
+	* Stop testing
+	* most impact
+	* higher ups looking to change
