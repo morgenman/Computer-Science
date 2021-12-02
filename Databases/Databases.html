@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-12-02_14:05:45-05:00</p>
+<p>updated: 2021-12-02_14:12:18-05:00</p>
 <hr>  
 <h1 id="databases"><a class="header" href="#databases">Databases</a></h1>
 <ul>
@@ -697,6 +697,15 @@ ALTER TABLE Moviestar DROP CONSTRAINT CorrectTitle; // Add, check also ok
 <p>Boolean valued SQL Expressions which <em>must</em> be true at all times!</p>
 <h2 id="triggers"><a class="header" href="#triggers">Triggers</a></h2>
 <p>A series of actions that are associate with certain events</p>
+<pre><code class="language-SQL">create table MovieExec(name,address,cert#,networth); // pseudo code  
+CREATE TRIGGER NetWorthTrigger  
+	AFTER UPDATE of networth ON MovieExec  
+	REFERENCING  
+		OLD ROW as OLDTuple  
+		NEW ROW as NewTuple  
+	FOR EACH ROW   
+	WHEN (OLDTuple.networth)  
+</code></pre>
 
                 </main>
             </div>
