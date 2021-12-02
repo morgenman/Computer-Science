@@ -521,7 +521,11 @@ CREATE TRIGGER NetWorthTrigger
 		OLD ROW as OLDTuple
 		NEW ROW as NewTuple
 	FOR EACH ROW 
-	WHEN (OLDTuple.networth)
+	WHEN (OLDTuple.networth > NewTuple.networth)
+		UPDATE MovieExec
+		SET networth = OldTuple.networth
+		WHERE cert# = NewTuple.cert#
+		
 ```
 
 
