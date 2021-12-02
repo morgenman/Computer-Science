@@ -38,4 +38,22 @@ updated: 2021-12-02_08:18:24-05:00
 * 40x higher emissions than US standards
 * Could not meet these standards
 * Driven on a road vs being tested
-* Some concerns, involved discussions,  
+* Some concerns, involved discussions, told to destroy documents
+* If you under perform, you will be replaced
+* Code of conduct:
+	* promotion of interest
+		* make sure opinions don't harm the group
+	* silence must be maintained
+	* Compliance with rules
+* 2.8 billion penalty
+* discovered on accident
+* ACM CoE not conculted when making 'defeat software'
+* Nice looking slides, too much reading from the paper, basically just reading the paper
+* too slow, it's several minutes in and you haven't gotten to junior, team, lead section
+* Needs to practice more
+* Corporate Ethics vs ACM Ethics
+* Marginalized group shouldn't be a factor?
+* Cost is health risks
+* 
+
+ 
