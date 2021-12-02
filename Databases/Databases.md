@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-02_14:12:18-05:00
+updated: 2021-12-02_14:22:32-05:00
 ---
 # Databases
 * [Database
@@ -520,11 +520,11 @@ CREATE TRIGGER NetWorthTrigger
 	REFERENCING
 		OLD ROW as OLDTuple
 		NEW ROW as NewTuple
-	FOR EACH ROW 
+	FOR EACH ROW // Could be FOR EACH STATEMENT
 	WHEN (OLDTuple.networth > NewTuple.networth)
 		UPDATE MovieExec
 		SET networth = OldTuple.networth
-		WHERE cert# = NewTuple.cert#
+		WHERE cert# = NewTuple.cert#;
 		
 ```
 
