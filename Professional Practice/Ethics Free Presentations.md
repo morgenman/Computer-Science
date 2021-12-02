@@ -30,6 +30,7 @@ updated: 2021-12-02_08:24:56-05:00
 * Ethical course of action for everyone is pretty much the same
 * Personal risks if marginalized individuals is higher
 * Cost can change, but ethics are the same
+* Nice relaxed pacing
 
 # Pawel
 * Volkswagen
@@ -56,4 +57,22 @@ updated: 2021-12-02_08:24:56-05:00
 * Cost is health risks
 * Corporate culture punishes whistle blowers 
 
+
+# Trevor
+* Decent slides, kinda long text across the screen, maybe make text ~60% of the screen, not 90%
+* Tesla
+* AEB did not brake
+* driver didn't take any action
+* no defects with design or performance of autopilot
+	* performed as designed
+* False sense of security
+	* SAE level 2: partial automation
+	* most people believe that it's SAE level 4: high automation
+* Good job not looking at notes. Nice relaxed pacing
+* Has notes, but doesn't look at them unless you forget something: 💯
+* CoE: ACM
+	* Nice job showing the sections of ACM, a small 2 word summary, and an explanation
+	* Very easy to skim
+* Public Good, avoid deception, regarding issues
+* 
  
