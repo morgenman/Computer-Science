@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-03_09:30:08-05:00
+updated: 2021-12-03_09:36:48-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -381,7 +381,7 @@ Are decidable and recognizable languages closed under union?
 * 1. Check to see if there is a path from start state to an accept state
 * 2. If no path exists then accept; else reject
 	
-Is EQ<sub>DFA</sub> = {< D1, D2 > | D1 and D2 are DFA's and L(D1) = L(D2) }
+# Is EQ<sub>DFA</sub> = {< D1, D2 > | D1 and D2 are DFA's and L(D1) = L(D2) }
 (they accept the same language) *this is only possible if...*
 L(D1)=L(D2) *iff* {(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1))} = ∅
 
@@ -410,5 +410,12 @@ Use [[Chomsky Normal Form]]
 # Quiz: E_CFG = { < G > | G is a CFG and L(G) = null} 
 1. Look at rules backwards. If you see a terminal, mark it. 
 2. Repeat the following until no new variables can be marked
-	1. 
+	1. $\exists$ a rule A-> A1...AK
+	2. Mark A if all A1...AK are marked
 3. If S is marked, reject; else accept
+
+$\therefore$ E_CFG is decidable
+
+# EQ_CFG = { <G1, G2> | G1 & G2 are CFG ^ L(G1)=L(G2)}
+they derive the same languages
+*Is it decidable?*
