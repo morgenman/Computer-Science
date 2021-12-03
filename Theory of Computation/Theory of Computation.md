@@ -427,5 +427,13 @@ $\therefore$ EQ_CFG is undecidable
 # Proof: There are Non-Turing Recognizable Languages
 ## Diagonalization Proof
 *when we say strings, we mean languages*
-| | S1 | S2
+Languages/problems (x) vs solutions (y)
+|     | S1  | S2  | S3  | ... | Sn  | Language of Machine |
+| --- | --- | --- | --- | --- | --- | ------------------- |
+| M1  | **A**   | R   | R   |     |     | L(M1){S1,S4...}     |
+| M2  | R   | **R**   | R   |     |     | L(M2){S4...}        |
+| M3  | R   | R   | **A**   |     |     | L(M3){S3...}     |
+Let we call the diagonal line d = {S1, S3, ...}
+Let there be $\bar{d}$ = {Every string that is not in d}
+Let us say $\bar M$ decides $$
 
