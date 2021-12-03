@@ -13,6 +13,17 @@
             "mode": "source"
           }
         }
+      },
+      {
+        "id": "0f309e9e002650af",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Theory of Computation/Context Free Language.md",
+            "mode": "source"
+          }
+        }
       }
     ],
     "direction": "vertical"
@@ -135,6 +146,7 @@
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/Context Free Language.md",
     "Operating Systems/Operating Systems.md",
     "Databases/Databases.md",
     "Databases/Person of Interest Discussion.md",
@@ -142,7 +154,6 @@
     "Professional Practice/Professional Practice.md",
     "Theory of Computation/Chomsky Normal Form.md",
     "Professional Practice/Is Professional Practice at Risk Notes.md",
-    "Game Development/Untitled.md",
-    "Game Development/Game Development.md"
+    "Game Development/Untitled.md"
   ]
 }
