@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-01_08:37:09-05:00
+updated: 2021-12-03_08:56:51-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1026,5 +1026,6 @@ lockb.unlock();
 
 # ***Final Exam Question: Why does the number of tickets have to be greater than the number of threads??***
 
+One of the last three on the sheet
 
 
