@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-03_09:24:12-05:00
+updated: 2021-12-03_09:30:08-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -408,3 +408,7 @@ Use [[Chomsky Normal Form]]
 3. A<sub>CFG</sub> is decidable 
 
 # Quiz: E_CFG = { < G > | G is a CFG and L(G) = null} 
+1. Look at rules backwards. If you see a terminal, mark it. 
+2. Repeat the following until no new variables can be marked
+	1. 
+3. If S is marked, reject; else accept
