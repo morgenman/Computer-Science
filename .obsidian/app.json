@@ -53,7 +53,8 @@
     "GLaDOS",
     "Lifeform",
     "Multitape",
-    "Nondeterministically"
+    "Nondeterministically",
+    "Diagonalization"
   ],
   "autoPairMarkdown": false,
   "newFileLocation": "current",

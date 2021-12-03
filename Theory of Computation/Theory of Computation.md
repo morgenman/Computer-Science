@@ -270,11 +270,11 @@ $\delta$(q,\_) = {
 
 | Operation     | Decidable    | Turing Recognizable |
 | ------------- | ------------ | ------------------- |
-| Union         | $\checkmark$ | $\checkmark$        |
-| Concatenation | $\checkmark$ | $\checkmark$        |
-| Intersection  | $\checkmark$ | $\checkmark$        |
-| Star          | $\checkmark$ | $\checkmark$        |
-| Complement    |  $\checkmark$             |   NO               |
+| Union         | $\checkmark$            | $\checkmark$                 |
+| Concatenation | $\checkmark$            | $\checkmark$                  |
+| Intersection  | $\checkmark$            | $\checkmark$                  |
+| Star          | $\checkmark$            | $\checkmark$                  |
+| Complement    | $\checkmark$            | NO                  |
 
 
 
@@ -424,4 +424,8 @@ Regular Languages are closed under union and set difference, CFL are closed unde
 
 $\therefore$ EQ_CFG is undecidable 
 
-# 
+# Proof: There are Non-Turing Recognizable Languages
+## Diagonalization Proof
+*when we say strings, we mean languages*
+| | S1 | S2
+
