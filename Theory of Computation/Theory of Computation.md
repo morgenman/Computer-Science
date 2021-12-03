@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-03_09:41:53-05:00
+updated: 2021-12-03_09:54:47-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -433,7 +433,10 @@ Languages/problems (x) vs solutions (y)
 | M1  | **A**   | R   | R   |     |     | L(M1){S1,S4...}     |
 | M2  | R   | **R**   | R   |     |     | L(M2){S4...}        |
 | M3  | R   | R   | **A**   |     |     | L(M3){S3...}     |
+
 Let we call the diagonal line d = {S1, S3, ...}
 Let there be $\bar{d}$ = {Every string that is not in d}
-Let us say $\bar M$ decides $$
+Let us say $\bar M$ decides $\bar d$ 
+At position Sn where Sn = $\bar d$, $\bar M$ should accept, but cannot, since it is defined as not
+
 
