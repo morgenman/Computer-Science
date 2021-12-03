@@ -6835,8 +6835,16 @@ Use <a href="Theory%20of%20Computation/Chomsky%20Normal%20Form.html">Chomsky Nor
 <p>$\therefore$ EQ_CFG is undecidable</p>
 <h1 id="proof-there-are-non-turing-recognizable-languages"><a class="header" href="#proof-there-are-non-turing-recognizable-languages">Proof: There are Non-Turing Recognizable Languages</a></h1>
 <h2 id="diagonalization-proof"><a class="header" href="#diagonalization-proof">Diagonalization Proof</a></h2>
-<p><em>when we say strings, we mean languages</em></p>
-<p>| | S1 | S2</p>
+<p><em>when we say strings, we mean languages</em><br />
+Languages/problems (x) vs solutions (y)</p>
+<table><thead><tr><th></th><th>S1</th><th>S2</th><th>S3</th><th>...</th><th>Sn</th><th>Language of Machine</th></tr></thead><tbody>
+<tr><td>M1</td><td><strong>A</strong></td><td>R</td><td>R</td><td></td><td></td><td>L(M1){S1,S4...}</td></tr>
+<tr><td>M2</td><td>R</td><td><strong>R</strong></td><td>R</td><td></td><td></td><td>L(M2){S4...}</td></tr>
+<tr><td>M3</td><td>R</td><td>R</td><td><strong>A</strong></td><td></td><td></td><td>L(M3){S3...}</td></tr>
+<tr><td>Let we call the diagonal line d = {S1, S3, ...}</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Let there be $\bar{d}$ = {Every string that is not in d}</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Let us say $\bar M$ decides $$</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
