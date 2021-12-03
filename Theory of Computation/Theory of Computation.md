@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-03_09:36:48-05:00
+updated: 2021-12-03_09:41:53-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -419,3 +419,9 @@ $\therefore$ E_CFG is decidable
 # EQ_CFG = { <G1, G2> | G1 & G2 are CFG ^ L(G1)=L(G2)}
 they derive the same languages
 *Is it decidable?*
+
+Regular Languages are closed under union and set difference, CFL are closed under union but not set difference
+
+$\therefore$ EQ_CFG is undecidable 
+
+# 
