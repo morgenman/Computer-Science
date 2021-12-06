@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-12-06_08:13:40-05:00</p>
+<p>updated: 2021-12-06_08:21:01-05:00</p>
 <hr>  
 <h1 id="operating-systems"><a class="header" href="#operating-systems">Operating Systems</a></h1>
 <h2 id="what-does-it-do"><a class="header" href="#what-does-it-do">What does it do?</a></h2>
@@ -1319,11 +1319,12 @@ lockb.unlock();
 <pre><code class="language-c++">Philosopher(int n) {}  
 void run(){  
 	while (true){  
-		think;  
+		while (!hungry) think();  
 		getRight();  
 		getLeft();  
-		eat;  
-		set chopsticks;  
+		eat();  
+		release_right_chopstick();  
+		release_left_chopstick();  
 	}  
 }  
 </code></pre>
