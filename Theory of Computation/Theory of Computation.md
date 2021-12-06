@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_09:39:36-05:00
+updated: 2021-12-06_09:48:22-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -477,6 +477,9 @@ We care converting to a PCP *with solution*
 ```
 
 $\Sigma$ = {0,1}
-$\rho$ = {0,1,X,_}
+$\rho$ = {0,1,X,\_}
+#### Seven Steps
+input 010
+
 
 
