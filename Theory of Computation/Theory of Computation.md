@@ -481,6 +481,7 @@ $\rho$ = {0,1,X,\_}
 #### Seven Steps
 input 010
 ![[Pasted image 20211206095915.png]]
+![[Pasted image 20211206100354.png]]
 
 
 
