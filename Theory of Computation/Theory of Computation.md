@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-03_10:03:54-05:00
+updated: 2021-12-06_09:15:04-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -439,4 +439,12 @@ Let there be $\bar{d}$ = {Every string that is not in d}
 Let us say $\bar M$ decides $\bar d$ 
 At position Sn where Sn = $\bar d$, $\bar M$ should accept, but cannot, since it is defined as not
 
-# PCP 
+# Halting Problem
+All Turing machines are undecidable
+
+## Proof
+Let's say Halting problem is decidable
+H(P,i) where p is program and i is input, does output-> halt or not
+
+Assume H'(X):
+if (H(X,X))
