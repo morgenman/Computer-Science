@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_09:48:22-05:00
+updated: 2021-12-06_09:59:48-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -480,6 +480,7 @@ $\Sigma$ = {0,1}
 $\rho$ = {0,1,X,\_}
 #### Seven Steps
 input 010
+![[Pasted image 20211206095915.png]]
 
 
 
