@@ -465,7 +465,18 @@ Reduce to pcp that has solution, then
 
 ## How to convert any TM to a PCP Problem
 
+PCP is undicidable:
+### Proof Represent an undecidable problem n in the form of PCP
+Proof by reduction, then we can say PCP is undecidable
+Acceptance  problem of a TM is undecidable: 
+We care converting to a PCP *with solution*
 
+```nomnoml
+[q1] 0=> X,R -> [q2]
+[q2]1=>X,L -> [q3]
+```
 
+$\Sigma$ = {0,1}
+$\rho$ = {0,1,X,_}
 
 
