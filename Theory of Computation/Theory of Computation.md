@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_09:22:47-05:00
+updated: 2021-12-06_09:33:59-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -458,4 +458,7 @@ proof is through a program that does the opposite of a halting program
 # Post Correspondence Problem (PCP/Domino Problem)
 dominoes?
 * b/ca a/ab ca/a abc/c
-* 
+
+
+**Find a solution**
+Start with 
