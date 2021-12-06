@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_08:13:40-05:00
+updated: 2021-12-06_08:21:01-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1037,11 +1037,12 @@ They know which seat they are in.
 Philosopher(int n) {}
 void run(){
 	while (true){
-		think;
+		while (!hungry) think();
 		getRight();
 		getLeft();
-		eat;
-		set chopsticks;
+		eat();
+		release_right_chopstick();
+		release_left_chopstick();
 	}
 }
 ```
