@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_09:33:59-05:00
+updated: 2021-12-06_09:39:36-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -459,6 +459,13 @@ proof is through a program that does the opposite of a halting program
 dominoes?
 * b/ca a/ab ca/a abc/c
 
+Proof by reduction
+![[Pasted image 20211206093941.png]]
+Reduce to pcp that has solution, then 
 
-**Find a solution**
-Start with 
+## How to convert any TM to a PCP Problem
+
+
+
+
+
