@@ -6883,6 +6883,16 @@ proof is through a program that does the opposite of a halting program</p>
 <a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206093941.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206093941.png" alt="Pasted image 20211206093941"/></a></p>
 <p>Reduce to pcp that has solution, then</p>
 <h2 id="how-to-convert-any-tm-to-a-pcp-problem"><a class="header" href="#how-to-convert-any-tm-to-a-pcp-problem">How to convert any TM to a PCP Problem</a></h2>
+<p>PCP is undicidable:</p>
+<h3 id="proof-represent-an-undecidable-problem-n-in-the-form-of-pcp"><a class="header" href="#proof-represent-an-undecidable-problem-n-in-the-form-of-pcp">Proof Represent an undecidable problem n in the form of PCP</a></h3>
+<p>Proof by reduction, then we can say PCP is undecidable<br />
+Acceptance  problem of a TM is undecidable:<br />
+We care converting to a PCP <em>with solution</em></p>
+<pre><code class="language-nomnoml">[q1] 0=&gt; X,R -&gt; [q2]  
+[q2]1=&gt;X,L -&gt; [q3]  
+</code></pre>
+<p>$\Sigma$ = {0,1}<br />
+$\rho$ = {0,1,X,_}</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
