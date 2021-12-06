@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-03_08:56:51-05:00
+updated: 2021-12-06_08:02:56-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1028,4 +1028,6 @@ lockb.unlock();
 
 One of the last three on the sheet
 
+# Dining philosophers
+They know which 
 
