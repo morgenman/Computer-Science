@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_08:08:36-05:00
+updated: 2021-12-06_08:13:40-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1034,12 +1034,14 @@ They know which seat they are in.
 ![[Pasted image 20211206081017.png]]
 
 ```c++
-Philosophen(int n) {}
+Philosopher(int n) {}
 void run(){
 	while (true){
 		think;
 		getRight();
-		getLeft()
+		getLeft();
+		eat;
+		set chopsticks;
 	}
 }
 ```
