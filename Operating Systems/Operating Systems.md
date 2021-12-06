@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_08:02:56-05:00
+updated: 2021-12-06_08:08:36-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1029,5 +1029,17 @@ lockb.unlock();
 One of the last three on the sheet
 
 # Dining philosophers
-They know which 
+They know which seat they are in. 
+5 of them, five chopsticks. Each needs two.
+![[Pasted image 20211206081017.png]]
 
+```c++
+Philosophen(int n) {}
+void run(){
+	while (true){
+		think;
+		getRight();
+		getLeft()
+	}
+}
+```
