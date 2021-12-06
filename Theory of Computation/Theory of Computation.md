@@ -447,4 +447,7 @@ Let's say Halting problem is decidable
 H(P,i) where p is program and i is input, does output-> halt or not
 
 Assume H'(X):
-if (H(X,X))
+if (H(X,X)== halt){
+	loop forever;
+}
+else return;
