@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-02_14:22:32-05:00
+updated: 2021-12-09_13:22:12-05:00
 ---
 # Databases
 * [Database
@@ -529,5 +529,6 @@ CREATE TRIGGER NetWorthTrigger
 ```
 
 
+*Constraints only go in the create table segment*
 
 
