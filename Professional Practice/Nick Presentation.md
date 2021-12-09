@@ -19,4 +19,4 @@ updated: 2021-12-09_08:12:03-05:00
 	* Republican Jewish Coalition convened in Las Vegas, web advertisements pledging cruz's support to israel were shown exclusively in the hotel
 	* very small grained
 * Is it ethical to make targeted political advertisements
-* 
+* 75% of advertisement buying power 
