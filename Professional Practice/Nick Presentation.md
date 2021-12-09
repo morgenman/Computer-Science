@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-09_08:06:28-05:00
+updated: 2021-12-09_08:12:03-05:00
 ---
 # Microtargeting
 
@@ -13,3 +13,10 @@ updated: 2021-12-09_08:06:28-05:00
 * Sounds like advertisements etc... grouping people into buckets
 * Nice slides, decent pacing
 * relaxed 
+* Value of voter can rise and fall 
+* Cambridge Analytica
+	* 40 million us voters' FB profiles to rank based on personality traits
+	* Republican Jewish Coalition convened in Las Vegas, web advertisements pledging cruz's support to israel were shown exclusively in the hotel
+	* very small grained
+* Is it ethical to make targeted political advertisements
+* 
