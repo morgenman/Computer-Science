@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-09_08:19:26-05:00
+updated: 2021-12-09_08:46:35-05:00
 ---
 # Microtargeting
 
@@ -27,4 +27,13 @@ updated: 2021-12-09_08:19:26-05:00
 * Media companies also group their viewers
 
 ## Facebook Whistleblower
-* 
+* 60 minutes interview Frances Haugen. 
+	* Anonymous complaints with law enforcement
+* Haugen worked in an area to combat misinformation
+* Safeguards were disbanded too early
+	* contributed to January 6th riots
+* Algorithm has been deliberately tuned to favor hateful and rousing content to retain user attention
+* Well aware of instagram's affects on teen girls
+	* concerns raised internally, regarding changes to algorithm to amplify hate
+	* rejected systematic approaches to reduce hateful and divisive posts
+		* they prefer to decide on a case by case b
