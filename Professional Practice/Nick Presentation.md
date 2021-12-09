@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-09_08:46:35-05:00
+updated: 2021-12-09_08:52:36-05:00
 ---
 # Microtargeting
 
@@ -36,4 +36,10 @@ updated: 2021-12-09_08:46:35-05:00
 * Well aware of instagram's affects on teen girls
 	* concerns raised internally, regarding changes to algorithm to amplify hate
 	* rejected systematic approaches to reduce hateful and divisive posts
-		* they prefer to decide on a case by case b
+		* they prefer to decide on a case by case basis
+* high profile users get exempted from rule enforcement, including hate speech and misinformation
+* They have made a ton of money, from ad revenue
+* Inflammatory content pays well, motivating fb to *not* police it
+
+* Insightful, interesting, citations on every slide, nice slides, additional sources
+* 
