@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Professional Practice.md",
+            "file": "Databases/Databases.md",
             "mode": "source"
           }
         }
@@ -60,7 +60,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304
+    "width": 304,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Databases/Databases.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Professional Practice.md"
+                "file": "Databases/Databases.md"
               }
             }
           },
@@ -119,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Professional Practice.md",
+                "file": "Databases/Databases.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -129,17 +130,18 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.1429443359375
+    "width": 325.1429443359375,
+    "collapsed": true
   },
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
+    "Databases/Databases.md",
     "Professional Practice/Professional Practice.md",
     "Professional Practice/Nick Presentation.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
     "Theory of Computation/Context Free Language.md",
-    "Databases/Databases.md",
     "Databases/Person of Interest Discussion.md",
     "Professional Practice/Ethics Free Presentations.md",
     "Theory of Computation/Chomsky Normal Form.md"
