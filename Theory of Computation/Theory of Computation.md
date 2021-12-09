@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-09_13:16:18-05:00
+updated: 2021-12-09_13:25:27-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -486,3 +486,4 @@ input 010
 
 ![[Pasted image 20211209131535.png]]
 
+![[Pasted image 20211209132454.png]]
