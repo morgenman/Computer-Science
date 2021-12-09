@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-09_08:02:22-05:00
+updated: 2021-12-09_09:07:57-05:00
 ---
 # Professional Practice
 * Metacognition video lecture
@@ -101,3 +101,5 @@ updated: 2021-12-09_08:02:22-05:00
 
 
 [[Nick Presentation]]
+
+

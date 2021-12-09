@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Professional Practice/Nick Presentation.md",
+            "file": "Professional Practice/Professional Practice.md",
             "mode": "source"
           }
         }
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Practice/Nick Presentation.md",
+                "file": "Professional Practice/Professional Practice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Practice/Nick Presentation.md"
+                "file": "Professional Practice/Professional Practice.md"
               }
             }
           },
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Practice/Nick Presentation.md",
+                "file": "Professional Practice/Professional Practice.md",
                 "linksCollapsed": true,
                 "unlinkedCollapsed": false
               }
@@ -135,8 +135,8 @@
   },
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
-    "Professional Practice/Nick Presentation.md",
     "Professional Practice/Professional Practice.md",
+    "Professional Practice/Nick Presentation.md",
     "Theory of Computation/Theory of Computation.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
