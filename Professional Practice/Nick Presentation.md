@@ -25,4 +25,6 @@ updated: 2021-12-09_08:19:26-05:00
 * creating small groups leads to disconnection between groups. 
 * Gaslighting a population because everyone believes something completely different
 * Media companies also group their viewers
+
+## Facebook Whistleblower
 * 
