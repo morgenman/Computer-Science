@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-09_08:12:03-05:00
+updated: 2021-12-09_08:19:26-05:00
 ---
 # Microtargeting
 
@@ -19,4 +19,10 @@ updated: 2021-12-09_08:12:03-05:00
 	* Republican Jewish Coalition convened in Las Vegas, web advertisements pledging cruz's support to israel were shown exclusively in the hotel
 	* very small grained
 * Is it ethical to make targeted political advertisements
-* 75% of advertisement buying power 
+* 75% of advertisement buying power is television
+
+## Polarization
+* creating small groups leads to disconnection between groups. 
+* Gaslighting a population because everyone believes something completely different
+* Media companies also group their viewers
+* 
