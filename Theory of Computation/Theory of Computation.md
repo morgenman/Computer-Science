@@ -489,5 +489,21 @@ input 010
 ![[Pasted image 20211209132454.png]]
 
 # Homework Review
-* 
+* Concatenation
+* EQ_TM is not turing recognizable 
+* Con_TM { < M1 M2 M3> | M1, M2, M3 are three TMS and L(M1)=L(M2)=L(M3)}
+* EQ_TM <=m CON_TM  (reduction)
 
+## Reduction 
+Instance of EQ_TM
+Two TM
+**input < M1, M2>**
+1. Set N1 := M1
+2. Set N2 := M2
+3. Design a TM N3 that accepts only the string e
+
+
+**Output <N1, N2, N3>** (Instance of CON_TM)
+## Proof of Correctness 
+Let <M1, M2> $\in$ EQ_TM
+ie L(M1)= L()
