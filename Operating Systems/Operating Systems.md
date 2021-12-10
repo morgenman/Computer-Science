@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_08:19:15-05:00
+updated: 2021-12-10_08:26:52-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1051,3 +1051,4 @@ void run(){
 *External Fragmentation*: visible to allocator (has space, but not contiguous), so like you need three chunks, but none are contiguous
 *Internal Fragmentation*: when you don't use the whole chunk of virtual
 
+While pagefault is loading disk -> RAM, process is *blocked*
