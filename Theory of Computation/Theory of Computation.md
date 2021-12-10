@@ -488,7 +488,7 @@ input 010
 
 ![[Pasted image 20211209132454.png]]
 
-# Homework Review
+# Review
 * Concatenation
 * EQ_TM is not turing recognizable 
 * Con_TM { < M1 M2 M3> | M1, M2, M3 are three TMS and L(M1)=L(M2)=L(M3)}
