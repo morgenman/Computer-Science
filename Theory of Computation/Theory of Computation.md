@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_09:44:27-05:00
+updated: 2021-12-10_09:50:35-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -554,8 +554,15 @@ We show how to test whether M accepts such a string
 Let T RL containing all strings longer than p
 
 Find CFG H that generates L(G) $\cap$ T
-One is empty, one is not. 
+it could be empty or not empty 
 if its empty, it's not an infinite language
 
+E_CFG is decidable
+Use E_CFG to test
+whether L(H) is empty
+Accept if L(H) is not empty
+* accept if E_CFG reject
+Reject otherwise 
+* reject if E_CFG accepts
 
-
+Show that d is decidable
