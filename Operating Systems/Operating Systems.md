@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_08:32:30-05:00
+updated: 2021-12-10_08:45:52-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1063,3 +1063,6 @@ Physical: 32b
 12b offset (4k)
 
 Either the page # or frame # could be bigger. 
+K stack is hw assist provided for hw to work
+so is memory management 
+

@@ -135,6 +135,7 @@
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
     "Operating Systems/Operating Systems.md",
+    "Operating Systems/K-Stack.md",
     "Databases/Databases.md",
     "Theory of Computation/Theory of Computation.md",
     "Professional Practice/Ethics Free Presentations.md",
@@ -142,7 +143,6 @@
     "Professional Practice/Nick Presentation.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
     "Theory of Computation/Context Free Language.md",
-    "Databases/Person of Interest Discussion.md",
-    "Theory of Computation/Chomsky Normal Form.md"
+    "Databases/Person of Interest Discussion.md"
   ]
 }
