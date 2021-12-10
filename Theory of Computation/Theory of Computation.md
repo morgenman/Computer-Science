@@ -565,4 +565,6 @@ Accept if L(H) is not empty
 Reject otherwise 
 * reject if E_CFG accepts
 
-Show that d is decidable
+---
+
+
