@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_08:26:52-05:00
+updated: 2021-12-10_08:32:30-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1052,3 +1052,14 @@ void run(){
 *Internal Fragmentation*: when you don't use the whole chunk of virtual
 
 While pagefault is loading disk -> RAM, process is *blocked*
+Size of page and frame is always the same. Offset is always the same.
+
+Virtual: 20b
+8b Page # (each program has 256 pages)
+12b offset (4k)
+
+Physical: 32b
+20b Frame # (1 million frames)
+12b offset (4k)
+
+Either the page # or frame # could be bigger. 
