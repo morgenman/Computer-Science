@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_09:08:32-05:00
+updated: 2021-12-10_09:22:57-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -495,6 +495,7 @@ input 010
 * EQ_TM <=m CON_TM  (reduction)
 
 ## Reduction 
+*we are reducing the problem to a known 'undecidable' problem, in this case, EQ_TM (from CON_TM)*
 Instance of EQ_TM
 Two TM
 **input < M1, M2>**
@@ -519,11 +520,13 @@ L(M1) $\ne$ L(M2)
 L(N1) $\ne$ L(N2)
 L(N1) $\ne$ L(N2).{e}
 L(N1) $\ne$ L(N2).L(N3)
-<N1, N2, N3>
+<N1, N2, N3> $\notin$ CON_TM
+
+EQ_TM $\leq$m CON_TM
 
 TR
 TNR
 TD If turing decidable, then no others
 TU
 
-TNR, TU, basically the same
+TNR, TU, basically the same so if not recognizable, then undecidable
