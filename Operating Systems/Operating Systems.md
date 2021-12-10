@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-06_08:21:01-05:00
+updated: 2021-12-10_08:19:15-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1046,3 +1046,8 @@ void run(){
 	}
 }
 ```
+
+# Some sort of memory allocation stuff
+*External Fragmentation*: visible to allocator (has space, but not contiguous), so like you need three chunks, but none are contiguous
+*Internal Fragmentation*: when you don't use the whole chunk of virtual
+
