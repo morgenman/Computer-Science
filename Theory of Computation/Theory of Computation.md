@@ -506,4 +506,24 @@ Two TM
 **Output <N1, N2, N3>** (Instance of CON_TM)
 ## Proof of Correctness 
 Let <M1, M2> $\in$ EQ_TM
-ie L(M1)= L()
+ie L(M1)= L(M2)
+L(N1) = L(N2) by reduction method
+
+= L(N2).{e}
+= L(N2).L(N3)
+L(N1) = L(N2).L(N3)
+<N1,N2,N3> $\in$ CON_TM
+
+2. Let <M1,M2> $\notin$ EQ_TM
+L(M1) $\ne$ L(M2)
+L(N1) $\ne$ L(N2)
+L(N1) $\ne$ L(N2).{e}
+L(N1) $\ne$ L(N2).L(N3)
+<N1, N2, N3>
+
+TR
+TNR
+TD If turing decidable, then no others
+TU
+
+TNR, TU, basically the same
