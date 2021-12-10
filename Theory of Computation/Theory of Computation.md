@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_09:22:57-05:00
+updated: 2021-12-10_09:38:10-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -530,3 +530,23 @@ TD If turing decidable, then no others
 TU
 
 TNR, TU, basically the same so if not recognizable, then undecidable
+
+
+# More Review
+AeCFG = { < G > | G is a CFG that generates E}
+
+
+4.11 Infinite PDA
+M is a PDA and L(M) is infinite
+
+Decidable or not?
+**Decidable**
+
+Proof:
+
+Given < M > ,  a description of a PDA
+Convert it to a CFG G
+Compute  G's Pumping length 
+
+
+
