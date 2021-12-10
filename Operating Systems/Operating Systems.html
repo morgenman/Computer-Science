@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-12-10_08:45:52-05:00</p>
+<p>updated: 2021-12-10_08:51:57-05:00</p>
 <hr>  
 <h1 id="operating-systems"><a class="header" href="#operating-systems">Operating Systems</a></h1>
 <h2 id="what-does-it-do"><a class="header" href="#what-does-it-do">What does it do?</a></h2>
@@ -1339,9 +1339,18 @@ Size of page and frame is always the same. Offset is always the same.</p>
 <p>Physical: 32b<br />
 20b Frame # (1 million frames)<br />
 12b offset (4k)</p>
+<p>Can't go over the page size, because we are doing OR operation on the 12 bits.</p>
 <p>Either the page # or frame # could be bigger.<br />
 K stack is hw assist provided for hw to work<br />
-so is memory management</p>
+so is memory management<br />
+base/bounds<br />
+segments (registers)</p>
+<p>Filesystems for persistence<br />
+virtualization (processor/memory)<br />
+concurrency</p>
+<ul>
+<li>some atomic instructions exist, we build concurrency primitives on it (lock)</li>
+</ul>
 
                 </main>
             </div>
