@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_09:38:10-05:00
+updated: 2021-12-10_09:44:27-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -546,7 +546,16 @@ Proof:
 
 Given < M > ,  a description of a PDA
 Convert it to a CFG G
-Compute  G's Pumping length 
+Compute  G's Pumping length. (CNF, ... P = N ^ (|V| +1) v is variables set, n is largest number of symbols in rhs of r)
+
+PDA M accepts a string longer than PL iff M's language is infinite
+We show how to test whether M accepts such a string
+
+Let T RL containing all strings longer than p
+
+Find CFG H that generates L(G) $\cap$ T
+One is empty, one is not. 
+if its empty, it's not an infinite language
 
 
 
