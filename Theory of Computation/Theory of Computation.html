@@ -757,7 +757,25 @@ Two TM<br />
 <p><strong>Output &lt;N1, N2, N3&gt;</strong> (Instance of CON_TM)</p>
 <h2 id="proof-of-correctness"><a class="header" href="#proof-of-correctness">Proof of Correctness</a></h2>
 <p>Let &lt;M1, M2&gt; $\in$ EQ_TM<br />
-ie L(M1)= L()</p>
+ie L(M1)= L(M2)<br />
+L(N1) = L(N2) by reduction method</p>
+<p>= L(N2).{e}<br />
+= L(N2).L(N3)<br />
+L(N1) = L(N2).L(N3)<br />
+&lt;N1,N2,N3&gt; $\in$ CON_TM</p>
+<ol start="2">
+<li>Let &lt;M1,M2&gt; $\notin$ EQ_TM<br />
+L(M1) $\ne$ L(M2)<br />
+L(N1) $\ne$ L(N2)<br />
+L(N1) $\ne$ L(N2).{e}<br />
+L(N1) $\ne$ L(N2).L(N3)<br />
+&lt;N1, N2, N3&gt;</li>
+</ol>
+<p>TR<br />
+TNR<br />
+TD If turing decidable, then no others<br />
+TU</p>
+<p>TNR, TU, basically the same</p>
 
                 </main>
             </div>
