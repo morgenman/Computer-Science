@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_08:45:52-05:00
+updated: 2021-12-10_08:51:57-05:00
 ---
 # Operating Systems
 ## What does it do?
@@ -1062,7 +1062,15 @@ Physical: 32b
 20b Frame # (1 million frames)
 12b offset (4k)
 
+Can't go over the page size, because we are doing OR operation on the 12 bits. 
+
 Either the page # or frame # could be bigger. 
 K stack is hw assist provided for hw to work
 so is memory management 
+base/bounds
+segments (registers) 
 
+Filesystems for persistence
+virtualization (processor/memory)
+concurrency
+* some atomic instructions exist, we build concurrency primitives on it (lock)
