@@ -740,8 +740,24 @@ $\rho$ = {0,1,X,_}</p>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211209132454.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211209132454.png" alt="Pasted image 20211209132454"/></a></p>
 <h1 id="homework-review"><a class="header" href="#homework-review">Homework Review</a></h1>
 <ul>
-<li></li>
+<li>Concatenation</li>
+<li>EQ_TM is not turing recognizable</li>
+<li>Con_TM { &lt; M1 M2 M3&gt; | M1, M2, M3 are three TMS and L(M1)=L(M2)=L(M3)}</li>
+<li>EQ_TM &lt;=m CON_TM  (reduction)</li>
 </ul>
+<h2 id="reduction"><a class="header" href="#reduction">Reduction</a></h2>
+<p>Instance of EQ_TM<br />
+Two TM<br />
+<strong>input &lt; M1, M2&gt;</strong></p>
+<ol>
+<li>Set N1 := M1</li>
+<li>Set N2 := M2</li>
+<li>Design a TM N3 that accepts only the string e</li>
+</ol>
+<p><strong>Output &lt;N1, N2, N3&gt;</strong> (Instance of CON_TM)</p>
+<h2 id="proof-of-correctness"><a class="header" href="#proof-of-correctness">Proof of Correctness</a></h2>
+<p>Let &lt;M1, M2&gt; $\in$ EQ_TM<br />
+ie L(M1)= L()</p>
 
                 </main>
             </div>
