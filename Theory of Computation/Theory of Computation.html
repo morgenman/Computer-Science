@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2021-12-10_09:44:27-05:00</p>
+<p>updated: 2021-12-10_09:50:35-05:00</p>
 <hr>  
 <h1 id="theory-of-computation"><a class="header" href="#theory-of-computation">Theory of Computation</a></h1>
 <ul>
@@ -792,8 +792,18 @@ Compute  G's Pumping length. (CNF, ... P = N ^ (|V| +1) v is variables set, n is
 We show how to test whether M accepts such a string</p>
 <p>Let T RL containing all strings longer than p</p>
 <p>Find CFG H that generates L(G) $\cap$ T<br />
-One is empty, one is not.<br />
+it could be empty or not empty<br />
 if its empty, it's not an infinite language</p>
+<p>E_CFG is decidable<br />
+Use E_CFG to test<br />
+whether L(H) is empty<br />
+Accept if L(H) is not empty</p>
+<ul>
+<li>accept if E_CFG reject<br />
+Reject otherwise</li>
+<li>reject if E_CFG accepts</li>
+</ul>
+<p>Show that d is decidable</p>
 
                 </main>
             </div>
