@@ -1,10 +1,11 @@
 ---
-updated: 2021-12-09_13:22:12-05:00
+updated: 2021-12-13_22:48:43-05:00
 ---
-# Databases
-* [Database Textbook we will be using in class is hosted here](https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
+# Databases: Overview
+* [Database Textbook we will be using in class is hosted here](https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html)
   
 > DB Project: [[Nihon-Go]]
+
 * DBMS (Database Management System)
 	* 2 part system
 		* Collecting Data
@@ -17,7 +18,6 @@ updated: 2021-12-09_13:22:12-05:00
 	* Concurrent access 
 		* needed for performance
 		* uncontrolled can lead to inconsistencies
-
 * [[Levels of Abstraction]]
 * [[Data Models]]
 * We will be using the [[Relational Model]] a lot
@@ -57,7 +57,7 @@ A **superkey** is a combination of attributes that can be uniquely used to ident
 **Foreign Key** A foreign key is an attribute or combination of attribute in a relation whose value match a primary key in another relation. The table in which foreign key is created is called as dependent table. The table to which foreign key is refers is known as parent table.
 
 
-## Operations ([[Relational Algebra]] form)
+# [[Relational Algebra]] Operations 
 * [[Select]]
 * [[Project]]
 * [[Cartesian Product]]
@@ -68,59 +68,37 @@ A **superkey** is a combination of attributes that can be uniquely used to ident
 * [[Set Difference]]
 * [[Assignment Operation]]
 * [[Rename Operation]]
-
 * [[Union]], [[Set Difference]], and [[Set Difference]] must have the *same* attributes in both tables
-
 
 * Combining operations result in a [[Relational Algebra]] Expression
 * EG: ![[Pasted image 20210907142700.png]]
 
-
 ## Equivalent Queries:
 ![[Pasted image 20210914135844.png]]
-## [[SQL]]: ![[SQL#Commands]]
 
-HW: Sql & output
+# [[SQL]]: [[SQL#Commands]]
 
 [[Review Difficult Questions for HW 1 - Relational Algebra]]
 
-
-## JSON 
-* Key value pairings
-* MAP is every {}
-
-Eg:
-```json
-{ 
-	"id":"value",
-	"text": "this is some text"
-}
-```
-
-Doing the project right. Build the web interface first and use the university db
+# [[JSON]]
 
 # Database Designs using the E-R Model
 ## Two pitfalls: incompleteness/redundancy
 
-## ![[Entity-Relationship]] Model
-## ![[Normal Forms]]
-
+## [[Entity-Relationship]] Model
+## [[Normal Forms]]
 
 [[Exam 1 Corrections]]
 
-
 # Database Subtopics
-
 ## Anomalies:
 * *focus* on these problems when designing databases to avoid these issues
 * Problems that occur when we try and cram too much information into a single relation:
 1. Redundancy: information may be repeated unnecessarily in several tuples
 2. Update: we may change info in one tuple but leave the same info unchanged in another
-3. Delete: If a set of values become empty, we may lose other information as a sideffect 
-
+3. Delete: If a set of values become empty, we may lose other information as a side-effect 
 
 ***Referential Integrity***
-
 Cascading deletions helps
 
 
@@ -146,12 +124,8 @@ Cascading deletions helps
 	* ie: the only key for E is all its attributes
 3. No relationships involving E more than once
 
-## Weak Entity Sets
-
-
 # Referential Integrity
 * The RI constraint is that a value appearing in one context must appear in another
-
 
 ## Weak Entity
 * Let weak entity set then the key consists of:
@@ -159,8 +133,6 @@ Cascading deletions helps
 2. key attributes from entity set are reached by certain many_to_one relationships from E to other entity sets
 
 (supporting relationship)
-
-
 
 # Converting E/R diagram to relational design
 

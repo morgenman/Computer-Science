@@ -136,14 +136,14 @@
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
     "Databases/Databases.md",
+    "Databases/Relational Algebra.md",
+    "Databases/JSON.md",
+    "Databases/Database Architecture.md",
+    "Databases/Levels of Abstraction.md",
     "Databases/Database Engine.md",
     "Professional Practice/Resume.md",
     "Databases/Nihon-Go/Database Proposal.pdf",
     "Databases/Nihon-Go/Nihon-Go.md",
-    "Databases/Nihon-Go/_Index_of_Nihon-Go.md",
-    "Databases/_Index_of_Databases.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Operating Systems/Operating Systems.md",
-    "Operating Systems/K-Stack.md"
+    "Databases/Nihon-Go/_Index_of_Nihon-Go.md"
   ]
 }
