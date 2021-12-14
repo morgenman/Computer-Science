@@ -22,3 +22,7 @@
   background-color: transparent !important;
 
 }
+
+.outliner-plugin-bls .markdown-source-view .CodeMirror-line .cm-hmd-list-indent::before {
+  background-size: 4ch 1px;
+}
