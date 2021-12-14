@@ -2,8 +2,9 @@
 updated: 2021-12-09_13:22:12-05:00
 ---
 # Databases
-* [Database
-  we will be using in class is hosted here](https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
+* [Database Textbook we will be using in class is hosted here](https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html
+  
+> DB Project: [[Nihon-Go]]
 * DBMS (Database Management System)
 	* 2 part system
 		* Collecting Data
@@ -17,22 +18,15 @@ updated: 2021-12-09_13:22:12-05:00
 		* needed for performance
 		* uncontrolled can lead to inconsistencies
 
-> DB Project: [[Nihon-Go]]
- 
 * [[Levels of Abstraction]]
 * [[Data Models]]
 * We will be using the [[Relational Model]] a lot
 * [[Data Definition Language]] (DDL) language that stores the metadata and notation for defining [[Schema]]
-* in this, we are learning the difference between the [[Primary Key]] and the [[Foreign Key]]
+* We are learning the difference between the [[Primary Key]] and the [[Foreign Key]]
 * The [[Data Manipulation Language]](DML/[[SQL]]) language for accessing and manipulating data organized by the data model
 	* [[SQL]] is the most popular
-
-
 * [[Database Design]]: the process of designing the general structure of the database
-
-
 * [[Database Engine]] has three components
-
 * there are several types of [[Database Architecture]]
 
 ## Key terminology
