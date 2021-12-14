@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-13_23:49:59-05:00
+updated: 2021-12-13_23:56:28-05:00
 ---
 # Databases: Overview
 * [Database Textbook we will be using in class is hosted here](https://www.db-book.com/db7/university-lab-dir/sample_tables-dir/index.html)
@@ -489,3 +489,4 @@ CREATE TRIGGER NetWorthTrigger
 ![[Pasted image 20211213235209.png]]
 ![[Pasted image 20211213235402.png]]
 
+![[Pasted image 20211213235556.png]]

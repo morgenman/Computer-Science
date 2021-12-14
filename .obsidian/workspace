@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Databases/Databases.md",
+            "file": "Databases/Prime Attribute.md",
             "mode": "source"
           }
         }
@@ -60,8 +60,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304,
-    "collapsed": true
+    "width": 304
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Databases/Prime Attribute.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Databases/Databases.md"
+                "file": "Databases/Prime Attribute.md"
               }
             }
           },
@@ -120,7 +119,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Databases/Databases.md",
+                "file": "Databases/Prime Attribute.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -130,20 +129,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.1429443359375,
-    "collapsed": true
+    "width": 325.1429443359375
   },
   "active": "8e7cbc3133ae082e",
   "lastOpenFiles": [
+    "Databases/Prime Attribute.md",
     "Databases/Databases.md",
+    "Databases/Referential Integrity.md",
+    "Databases/Entity-Relationship.md",
+    "Databases/SQL.md",
     "Databases/Relational Algebra.md",
+    "_Daily_Notes/2021-09-14.md",
     "Databases/JSON.md",
     "Databases/Database Architecture.md",
-    "Databases/Levels of Abstraction.md",
-    "Databases/Database Engine.md",
-    "Professional Practice/Resume.md",
-    "Databases/Nihon-Go/Database Proposal.pdf",
-    "Databases/Nihon-Go/Nihon-Go.md",
-    "Databases/Nihon-Go/_Index_of_Nihon-Go.md"
+    "Databases/Levels of Abstraction.md"
   ]
 }

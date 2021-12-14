@@ -1,3 +1,6 @@
+---
+updated: 2021-12-13_23:59:03-05:00
+---
 # Entity-Relationship
 
 Models enterprise as a collection of entities and relationships
@@ -127,11 +130,6 @@ Converts to...
 Use triangle for design, is a : `ISA`
 ![[Pasted image 20211019142424.png]]
 * Some entities in an entity set may have special properties not
-
-
-
-
-
 * Entity relations with curve, connecting entity must exist
 
 What is a weak entity set?
