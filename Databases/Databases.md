@@ -90,7 +90,7 @@ A **superkey** is a combination of attributes that can be uniquely used to ident
 
 [[Exam 1 Corrections]]
 
-# Database Subtopics
+# Various Subtopics
 ## Anomalies:
 * *focus* on these problems when designing databases to avoid these issues
 * Problems that occur when we try and cram too much information into a single relation:
@@ -101,7 +101,6 @@ A **superkey** is a combination of attributes that can be uniquely used to ident
 ***Referential Integrity***
 Cascading deletions helps
 
-
 ## Design Principals 
 ### Faithfulness
 * The entity sets and their attributes should reflect reality
@@ -111,7 +110,6 @@ Cascading deletions helps
 ### Simplicity 
 ### Choosing the right relationships
 * Should not add every possible relationship between entities to the design
-
 ### Picking the right kind of elements
 
 ## Conditions in which we prefer to use attribute instead:
@@ -124,15 +122,7 @@ Cascading deletions helps
 	* ie: the only key for E is all its attributes
 3. No relationships involving E more than once
 
-# Referential Integrity
-* The RI constraint is that a value appearing in one context must appear in another
-
-## Weak Entity
-* Let weak entity set then the key consists of:
-1. zero or more of it's own attributes and 
-2. key attributes from entity set are reached by certain many_to_one relationships from E to other entity sets
-
-(supporting relationship)
+# ![[Referential Integrity]]
 
 # Converting E/R diagram to relational design
 

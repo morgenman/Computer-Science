@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "",
+  "search": "path:Databases",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": true,
@@ -17,6 +17,6 @@
   "repelStrength": 10.5378151260504,
   "linkStrength": 1,
   "linkDistance": 88,
-  "scale": 0.7270898575646269,
-  "close": true
+  "scale": 1.5376322189806972,
+  "close": false
 }
