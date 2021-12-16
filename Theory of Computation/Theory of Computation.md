@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-16_10:29:57-05:00
+updated: 2021-12-16_10:36:00-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -568,4 +568,15 @@ Reject otherwise
 ---
 
 ![[Pasted image 20211210100628.png]]
-![](https://p1-play.edge4k.com/img/potplayer.png)
+A_TM is  TR
+
+![[Pasted image 20211216103833.png]]
+![[Pasted image 20211216103846.png]]
+
+
+
+![[Pasted image 20211216103912.png]]
+![[Pasted image 20211216103936.png]]
+![[Pasted image 20211216103956.png]]
+
+
