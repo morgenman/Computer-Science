@@ -598,5 +598,6 @@ A_TM is  TR
 ![[Pasted image 20211216104449.png]]
 ![[Pasted image 20211216104519.png]]
 
+![[Pasted image 20211216104540.png]]
 
 
