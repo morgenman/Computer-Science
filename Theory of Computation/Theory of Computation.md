@@ -5,7 +5,6 @@ updated: 2021-12-16_10:43:16-05:00
 * ^^ Fundamental Capabilities and limitations of computers
 	* Also known as [[Automata Theory]] 
 
-
 If a language is regular, it is also Context free, and Turing recognizable
 
 If it is a non-regular language, some may be context free, some may be not context free
@@ -45,7 +44,6 @@ Theorem: [[DeMorgans Law]]
 
 Theorem: ![[sqrt(2) is irrational]]
 
-
 ## Building Blocks of TOC
 ### Symbol: a,b,\*, etc
 ### From symbols, we can form an alphabet: $\Sigma$  
@@ -67,7 +65,6 @@ Theorem: ![[sqrt(2) is irrational]]
 * 1 = set of all strings of length 1
 * n = all strings of length n
 * etc..
-
 
 How do we describe Automatas?
 
@@ -115,7 +112,6 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 
 * * includes empty set
 
-
 # NFA to DFA
 * Why?
 	* NFA is not serial, making it a DFA you can predict runtime etc
@@ -130,7 +126,6 @@ $M$ recognizes language $A$ if $A=\{w|M$ accepts $w\}$
 * How to simplify states
 	* if no input states, remove state
 
-
 # ![[Regular Language]]
 
 We are now going to learn about:
@@ -138,9 +133,6 @@ We are now going to learn about:
 
 # Converting R into an NFA
 ![[Pasted image 20210922095823.png]]
-
-
-
 
 # ![[DFA to Regular Expression]]
 
@@ -156,23 +148,16 @@ We are now going to learn about:
 * Closed book
 * Everything we have learned so far
 
-
 # ![[Non-Regular Language]]
 
-
 # ![[Pumping Lemma]]
-
-
 
 # Context free stuff
 * [[Context Free Language]]
 	* has a [[Context Free Language#Context Free Grammar]]
 * [[Push Down Automata]]
 
-
-
 # ![[Chomsky Normal Form]]
-
 
 Let's do another example for ada? pda? didn't hear her right... :
 
@@ -217,7 +202,6 @@ Let's do another example for ada? pda? didn't hear her right... :
 	* if it were, then it would be closed under intersection because of DeMorgan's Law
 	* A$\cap$B = $\overline{\overline{A}\cup\overline{B}}$
 
-
 * a^i b^j c^k | i =/= j or j=/=k 
 	* **find the grammar for this**
 
@@ -225,10 +209,7 @@ Let's do another example for ada? pda? didn't hear her right... :
 [[Non-Context Free Languages#Theorem]]
 [[Non-Context Free Languages#Pumping Lemma]]
 
-
 ![[Exam Prep]]
-
-
 
 # ![[Turing Machine]]
 
@@ -238,7 +219,6 @@ TM
 C = {a^i b^j c^k | i x j = k and i,j,k >= 1}
 
 L = {a^2i b^i c^2i | i>0}
-
 
 ## Theorem: If a language is regular then it is decidable
 * Approach, come up with turing machine
@@ -265,7 +245,6 @@ $\delta$(q,\_) = {
 
 ## Claim: the class of languages accepted by deterministic TM's and Non-deterministic TM's are equal
 
-
 # Closure Properties of decidable and turing recognizable languages
 
 | Operation     | Decidable    | Turing Recognizable |
@@ -275,8 +254,6 @@ $\delta$(q,\_) = {
 | Intersection  | $\checkmark$            | $\checkmark$                  |
 | Star          | $\checkmark$            | $\checkmark$                  |
 | Complement    | $\checkmark$            | NO                  |
-
-
 
 Are decidable and recognizable languages closed under union?
 
@@ -362,7 +339,6 @@ Are decidable and recognizable languages closed under union?
 > 1. Simulate M on x and M1 on x simultaneously
 > 2. if M accepts, accept; if M1 accepts, reject
 > 3. for every x you will halt
-
 
 # Decidable properties of RLs and CFLs
 *we are looking at RLs and CFLs*
@@ -483,7 +459,6 @@ input 010
 ![[Pasted image 20211206095915.png]]
 ![[Pasted image 20211206100354.png]]
 
-
 ![[Pasted image 20211209131535.png]]
 
 ![[Pasted image 20211209132454.png]]
@@ -502,7 +477,6 @@ Two TM
 1. Set N1 := M1
 2. Set N2 := M2
 3. Design a TM N3 that accepts only the string e
-
 
 **Output <N1, N2, N3>** (Instance of CON_TM)
 ## Proof of Correctness 
@@ -531,10 +505,8 @@ TU
 
 TNR, TU, basically the same so if not recognizable, then undecidable
 
-
 # More Review
 AeCFG = { < G > | G is a CFG that generates E}
-
 
 4.11 Infinite PDA
 M is a PDA and L(M) is infinite
@@ -573,8 +545,6 @@ A_TM is  TR
 ![[Pasted image 20211216103833.png]]
 ![[Pasted image 20211216103846.png]]
 
-
-
 ![[Pasted image 20211216103912.png]]
 ![[Pasted image 20211216103936.png]]
 
@@ -588,8 +558,6 @@ A_TM is  TR
 ![[Pasted image 20211216104225.png]]
 ![[Pasted image 20211216104244.png]]
 
-
-
 ![[Pasted image 20211216104323.png]]
 ![[Pasted image 20211216104358.png]]
 
@@ -599,5 +567,4 @@ A_TM is  TR
 ![[Pasted image 20211216104519.png]]
 
 ![[Pasted image 20211216104540.png]]
-
 
