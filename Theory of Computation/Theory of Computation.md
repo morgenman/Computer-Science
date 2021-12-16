@@ -1,5 +1,5 @@
 ---
-updated: 2021-12-10_10:10:22-05:00
+updated: 2021-12-16_10:29:57-05:00
 ---
 # Theory of Computation
 * ^^ Fundamental Capabilities and limitations of computers
@@ -78,7 +78,7 @@ How do we describe Automatas?
 
 * Any Language that can be represented by a [[DFA]] is called a [[Regular Language]]
 
-## ![[Regular Language]]
+## [[Regular Language]]
 
 ## Formal Definition of Computation
 let $M=(Q,\Sigma,\delta,q_0,f)$ be a finite automata 
