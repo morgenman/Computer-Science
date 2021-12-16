@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Theory of Computation/Theory of Computation.md",
+            "file": "Theory of Computation/_Index_of_Theory of Computation.md",
             "mode": "source"
           }
         }
@@ -56,8 +56,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -79,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Theory of Computation/_Index_of_Theory of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md"
+                "file": "Theory of Computation/_Index_of_Theory of Computation.md"
               }
             }
           },
@@ -121,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Theory of Computation/Theory of Computation.md",
+                "file": "Theory of Computation/_Index_of_Theory of Computation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -136,8 +135,8 @@
   },
   "active": "d80746e443307650",
   "lastOpenFiles": [
-    "Theory of Computation/Theory of Computation.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
+    "Theory of Computation/Theory of Computation.md",
     "Databases/Databases.md",
     "Databases/Prime Attribute.md",
     "Databases/Referential Integrity.md",
