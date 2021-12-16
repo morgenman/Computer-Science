@@ -137,6 +137,7 @@
   "active": "d80746e443307650",
   "lastOpenFiles": [
     "Theory of Computation/Theory of Computation.md",
+    "Theory of Computation/_Index_of_Theory of Computation.md",
     "Databases/Databases.md",
     "Databases/Prime Attribute.md",
     "Databases/Referential Integrity.md",
@@ -144,7 +145,6 @@
     "Databases/SQL.md",
     "Databases/Relational Algebra.md",
     "_Daily_Notes/2021-09-14.md",
-    "Databases/JSON.md",
-    "Databases/Database Architecture.md"
+    "Databases/JSON.md"
   ]
 }
