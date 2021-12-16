@@ -65,8 +65,8 @@
   "pdfExportSettings": {
     "pageSize": "Letter",
     "landscape": false,
-    "margin": "2",
-    "downscalePercent": 79
+    "margin": "1",
+    "downscalePercent": 61
   },
   "strictLineBreaks": false,
   "fileSortOrder": "byModifiedTime"
