@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "file:\"Theory of Computation\" ![[non",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +61,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304
+    "width": 304,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",

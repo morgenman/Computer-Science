@@ -222,8 +222,8 @@ Let's do another example for ada? pda? didn't hear her right... :
 	* **find the grammar for this**
 
 ![[Non-Context Free Languages]]
-![[Non-Context Free Languages#Theorem]]
-![[Non-Context Free Languages#Pumping Lemma]]
+[[Non-Context Free Languages#Theorem]]
+[[Non-Context Free Languages#Pumping Lemma]]
 
 
 ![[Exam Prep]]
@@ -568,3 +568,4 @@ Reject otherwise
 ---
 
 ![[Pasted image 20211210100628.png]]
+![](https://p1-play.edge4k.com/img/potplayer.png)
