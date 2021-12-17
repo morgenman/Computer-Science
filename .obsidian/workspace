@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "path:\"Theory of Computation\" ![[",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -56,12 +56,12 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 304
+    "width": 304,
+    "collapsed": true
   },
   "right": {
     "id": "832b6d9595f64d6b",
