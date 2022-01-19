@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-19_11:25:31-05:00
+updated: 2022-01-19_11:32:12-05:00
 ---
 # Internship
 ## 'Project Dashboard'
@@ -21,6 +21,7 @@ updated: 2022-01-19_11:25:31-05:00
 * Database
 * environment, dev & prod containers
 	* interaction and remote access
-* 
+* er studio datas architect
+* mysql workbench 
 
 ## Project Timeline
