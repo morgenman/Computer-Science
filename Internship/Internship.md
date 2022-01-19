@@ -10,4 +10,10 @@ updated: 2022-01-19_11:14:05-05:00
 * Display first, then backend
 
 ## Project Decomposition
+* Select architecture
+* Develop wire frames and mockups
+* Design database
+* review mockups with user constituency
+* 
+
 ## Project Timeline
