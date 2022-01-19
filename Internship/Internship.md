@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-19_11:09:02-05:00
+updated: 2022-01-19_11:14:05-05:00
 ---
 # Internship
 ## 'Project Dashboard'
@@ -7,4 +7,7 @@ updated: 2022-01-19_11:09:02-05:00
 * Resources
 * Timeline
 * ![[Pasted image 20220119110830.png]]
-* Display first, then 
+* Display first, then backend
+
+## Project Decomposition
+## Project Timeline
