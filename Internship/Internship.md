@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-19_11:32:12-05:00
+updated: 2022-01-19_11:37:39-05:00
 ---
 # Internship
 ## 'Project Dashboard'
@@ -23,5 +23,11 @@ updated: 2022-01-19_11:32:12-05:00
 	* interaction and remote access
 * er studio datas architect
 * mysql workbench 
+
+* [ ] Outcome of meeting with ladd: Environment map of development spaces
+* [ ] Connectivity to them
+
+
+
 
 ## Project Timeline
