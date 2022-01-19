@@ -69,5 +69,7 @@
     "downscalePercent": 61
   },
   "strictLineBreaks": false,
-  "fileSortOrder": "byModifiedTime"
+  "fileSortOrder": "byModifiedTime",
+  "legacyEditor": false,
+  "livePreview": true
 }

@@ -10,7 +10,8 @@
           "type": "markdown",
           "state": {
             "file": "Operating Systems/Operating Systems.md",
-            "mode": "source"
+            "mode": "source",
+            "source": false
           }
         }
       }
