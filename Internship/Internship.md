@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-19_11:20:08-05:00
+updated: 2022-01-19_11:25:31-05:00
 ---
 # Internship
 ## 'Project Dashboard'
@@ -15,6 +15,12 @@ updated: 2022-01-19_11:20:08-05:00
 * Design database
 * review mockups with user constituency
 * ![[Pasted image 20220119112130.png]]
+* ![[Pasted image 20220119112455.png]]
+### Pieces of the project
+* Website
+* Database
+* environment, dev & prod containers
+	* interaction and remote access
 * 
 
 ## Project Timeline
