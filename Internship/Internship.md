@@ -1,4 +1,9 @@
 ---
-updated: 2022-01-19_10:57:10-05:00
+updated: 2022-01-19_11:03:49-05:00
 ---
 # Internship
+*  Project Dashboard
+* Project parameters
+* resources
+* timeline
+* 
