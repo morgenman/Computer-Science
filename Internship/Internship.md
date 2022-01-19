@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-19_11:14:05-05:00
+updated: 2022-01-19_11:20:08-05:00
 ---
 # Internship
 ## 'Project Dashboard'
@@ -14,6 +14,7 @@ updated: 2022-01-19_11:14:05-05:00
 * Develop wire frames and mockups
 * Design database
 * review mockups with user constituency
+* ![[Pasted image 20220119112130.png]]
 * 
 
 ## Project Timeline
