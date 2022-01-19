@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Operating Systems/Operating Systems.md",
+            "file": "Internship/Internship.md",
             "mode": "source",
             "source": false
           }
@@ -61,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304,
-    "collapsed": true
+    "width": 304
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -79,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Internship/Internship.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Operating Systems/Operating Systems.md"
+                "file": "Internship/Internship.md"
               }
             }
           },
@@ -121,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Operating Systems/Operating Systems.md",
+                "file": "Internship/Internship.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -136,6 +135,7 @@
   },
   "active": "d80746e443307650",
   "lastOpenFiles": [
+    "Internship/Internship.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
     "Theory of Computation/RL Closure under Intersection.md",
@@ -144,7 +144,6 @@
     "Databases/Prime Attribute.md",
     "Databases/Referential Integrity.md",
     "Databases/Entity-Relationship.md",
-    "Databases/SQL.md",
-    "Databases/Relational Algebra.md"
+    "Databases/SQL.md"
   ]
 }

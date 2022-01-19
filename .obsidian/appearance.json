@@ -1,8 +1,8 @@
 {
   "baseFontSize": 27,
-  "theme": "obsidian",
+  "theme": "moonstone",
   "translucency": false,
-  "cssTheme": "Minimal",
+  "cssTheme": "Spectrum",
   "enabledCssSnippets": [
     "custom"
   ]
