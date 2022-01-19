@@ -27,7 +27,4 @@ updated: 2022-01-19_11:37:39-05:00
 * [ ] Outcome of meeting with ladd: Environment map of development spaces
 * [ ] Connectivity to them
 
-
-
-
 ## Project Timeline
