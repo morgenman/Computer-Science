@@ -26,3 +26,6 @@
 .outliner-plugin-bls .markdown-source-view .CodeMirror-line .cm-hmd-list-indent::before {
   background-size: 4ch 1px;
 }
+span.cm-header {
+    font-family: IBM Plex Sans;
+}
