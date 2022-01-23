@@ -1,0 +1,1406 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title>Operating Systems - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../../highlight.css">
+    <link rel="stylesheet" href="../../tomorrow-night.css">
+    <link rel="stylesheet" href="../../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item expanded "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/Nihon-Go.html">Nihon-Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/_Index_of_Nihon-Go.html">_Index_of_Nihon-Go</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/JSON.html">JSON</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Normal Forms.html">Normal Forms</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Referential Integrity.html">Referential Integrity</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/SQL.html">SQL</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item expanded "><a href="../../Fall 2021/Operating Systems/Operating Systems.html" class="active">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Ethics Free Presentations.html">Ethics Free Presentations</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Is Professional Practice at Risk Notes.html">Is Professional Practice at Risk Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Nick Presentation.html">Nick Presentation</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Picture a Scientist Notes.html">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Video 2 Feedback.html">Video 2 Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Theory of Computation.html">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Exam Prep.html">Exam Prep</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li></ol></li><li class="chapter-item "><div>Spring 2022</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Algorithms/Algorithms.html">Algorithms</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Algorithms/_Index_of_Algorithms.html">_Index_of_Algorithms</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/Internship/Internship.html">Internship</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Internship/_Index_of_Internship.html">_Index_of_Internship</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/_Index_of_Spring 2022.html">_Index_of_Spring 2022</a></li></ol></li><li class="chapter-item "><div>_Daily_Notes</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../../_Daily_Notes/_Index_of__Daily_Notes.html">_Index_of__Daily_Notes</a></li></ol></li><li class="chapter-item "><a href="../../📗Textbooks/📗Textbooks.html">📗Textbooks</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../📗Textbooks/_Index_of_📗Textbooks.html">_Index_of_📗Textbooks</a></li></ol></li><li class="chapter-item "><a href="../../index.html">🏠 Welcome to Cole's Notes!</a></li><li class="chapter-item "><a href="../../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i id="iconToggle" class="fa fa-moon-o"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title">Operating Systems</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<hr>  
+<p>updated: 2021-12-10_08:51:57-05:00</p>
+<hr>  
+<h1 id="operating-systems"><a class="header" href="#operating-systems">Operating Systems</a></h1>
+<h2 id="what-does-it-do"><a class="header" href="#what-does-it-do">What does it do?</a></h2>
+<ul>
+<li>Handle physical resources and <span class="missing-link" style="color:darkred;">Virtualization</span> them</li>
+<li>Handle <span class="missing-link" style="color:darkred;">Concurrency</span></li>
+<li>Store data with <a href="Persistence.html">Persistence</a></li>
+</ul>
+<h2 id="components"><a class="header" href="#components">Components</a></h2>
+<ul>
+<li>Libraries</li>
+<li>File System</li>
+<li><a href="System%20Call.html">System Call</a> vs <span class="missing-link" style="color:darkred;">Procedure Call</span>
+<ul>
+<li><a href="System%20Call.html">System Call</a> transfers control into OS while raising the <a href="Hardware%20Privledge%20Level.html">Hardware Privledge Level</a>
+<ul>
+<li>Runs in <a href="User%20Mode.html">User Mode</a></li>
+<li>transfers control to <span class="missing-link" style="color:darkred;">trap-handler</span> which raises the <a href="Hardware%20Privledge%20Level.html">Hardware Privledge Level</a> to <a href="Kernel%20Mode.html">Kernel Mode</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>A <a href="Process.html">Process</a> is an abstraction of a running program</li>
+<li>Taking an <a href="Interrupt.html">Interrupt</a> copies the data in the registers and puts it into the <strong><a href="K-Stack.html">K-Stack</a></strong></li>
+</ul>
+<h2 id="what-only-hardware-can-do"><a class="header" href="#what-only-hardware-can-do">What Only Hardware Can do:</a></h2>
+<ul>
+<li>
+<p><a href="Interrupt.html">Interrupt</a></p>
+</li>
+<li>
+<p><a href="Privilege%20Bit.html">Privilege Bit</a></p>
+</li>
+<li>
+<p><a href="System%20Call.html">System Call</a></p>
+</li>
+<li>
+<p><span class="missing-link" style="color:darkred;">Address Translation</span></p>
+</li>
+<li>
+<p><span class="missing-link" style="color:darkred;">Atomic Instructions</span></p>
+</li>
+<li>
+<p>The CPU <span class="missing-link" style="color:darkred;">Status Register</span> has a <a href="Privilege%20Bit.html">Privilege Bit</a>:</p>
+<ul>
+<li>0 -&gt; <a href="User%20Mode.html">User Mode</a></li>
+<li>1 -&gt; <a href="Kernel%20Mode.html">Kernel Mode</a></li>
+</ul>
+</li>
+<li>
+<p><a href="K-Stack.html">K-Stack</a> is in the <span class="missing-link" style="color:darkred;">Interrupt Service Vector</span></p>
+</li>
+<li>
+<p>In the <a href="K-Stack.html">K-Stack</a> is a pointer at the <span class="missing-link" style="color:darkred;">Interrupt Handler</span></p>
+</li>
+</ul>
+<h2 id="what-is-a-span-classmissing-link-stylecolordarkredjump-tablespan"><a class="header" href="#what-is-a-span-classmissing-link-stylecolordarkredjump-tablespan">What is a <span class="missing-link" style="color:darkred;">Jump Table</span>?</a></h2>
+<ul>
+<li>
+<p>Outside world provides a number</p>
+</li>
+<li>
+<p>Inside we have an array of pointers at code</p>
+</li>
+<li>
+<p>A <a href="Process.html">Process</a> is simply a <span class="missing-link" style="color:darkred;">Program</span> with context</p>
+</li>
+</ul>
+<h2 id="programming-data-types-etc"><a class="header" href="#programming-data-types-etc">Programming, Data Types, etc.</a></h2>
+<ul>
+<li>
+<p><a href="Abstract%20Data%20Type.html">ADT</a>: Data structure where you <em>don't have to understand how it's implemented</em></p>
+</li>
+<li>
+<p><a href="Pointers.html">Pointers</a></p>
+</li>
+<li>
+<p>A <span class="missing-link" style="color:darkred;">Quantum</span> is a unit of time for a cpu process to run (think when it switches back and forth, each time it runs is a quantum)</p>
+</li>
+</ul>
+<h1 id="a-computer-is"><a class="header" href="#a-computer-is">A Computer is...</a></h1>
+<h3 id="cpu"><a class="header" href="#cpu">CPU</a></h3>
+<ul>
+<li><span class="missing-link" style="color:darkred;">Registers</span></li>
+<li><span class="missing-link" style="color:darkred;">Program Couter</span></li>
+<li>fetch-decode-execute (<a href="Von%20Neumann%20Model%20of%20computing.html">Von Neumann Model of computing</a>)</li>
+</ul>
+<h3 id="ram"><a class="header" href="#ram">RAM</a></h3>
+<h3 id="io-devices"><a class="header" href="#io-devices">I/O devices</a></h3>
+<h2 id="computing-resources"><a class="header" href="#computing-resources">Computing Resources</a></h2>
+<ul>
+<li>CPU <em>Cycles</em></li>
+<li>RAM <em>address spaces</em></li>
+<li>RAM <em>safe concurrent access</em></li>
+<li>Device <em>interaction</em></li>
+<li>Persistent storage <em>organization</em></li>
+</ul>
+<h2 id="mechanism-vs-policy"><a class="header" href="#mechanism-vs-policy">Mechanism vs Policy</a></h2>
+<ul>
+<li>Mechanism: a low level capability. <strong>How</strong> the system works
+<ul>
+<li>How does the OS switch contexts of two processes</li>
+</ul>
+</li>
+<li>Policy: a high level strategy. <strong>Which</strong> resources go to which process
+<ul>
+<li>Which process is scheduled to have the CPU after we interrupt the current one?</li>
+</ul>
+</li>
+<li><strong>Policies</strong> are implemented by making use of <strong>Mechanisms</strong></li>
+</ul>
+<h2 id="an-os-is-a-resource-manager-for-one-or-more-processes-using-the-computer-hardware-concurrently"><a class="header" href="#an-os-is-a-resource-manager-for-one-or-more-processes-using-the-computer-hardware-concurrently">An OS is a Resource Manager for one or more processes using the computer hardware concurrently</a></h2>
+<ul>
+<li>
+<p>Concurrent: happening at the same time, overlapping duration</p>
+</li>
+<li>
+<p>What services does it offer:</p>
+<ul>
+<li>Multiprocessing
+<ul>
+<li>Sharing CPU/RAM</li>
+<li>Process Management - loading/unloading, starting/pausing/stopping</li>
+<li>Scheduling based on some criteria</li>
+</ul>
+</li>
+<li>Safe Sharing (of resources like RAM)
+<ul>
+<li>Uncontrolled concurrent access of a single physical resource is inherently unsafe</li>
+</ul>
+</li>
+<li>Device Interface
+<ul>
+<li>Multiple devices attach to the computer</li>
+<li>a <em>facade</em> place in front of all devices raises the level of abstraction at which they are used</li>
+<li>Example of a common interface:
+<ul>
+<li>What is a file?
+<ul>
+<li>sequence of bytes</li>
+<li>must be opened/closed after interaction</li>
+<li>A naming scheme is provided to find resources</li>
+<li>persists longer than one process execution</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="Persistence.html">Persistence</a> (files)</li>
+<li>Error detection/correction/recovery</li>
+</ul>
+</li>
+<li>
+<p>Program is the file, process is what's actually running</p>
+</li>
+</ul>
+<h1 id="devices-how-does-the-os-talk-to-devices"><a class="header" href="#devices-how-does-the-os-talk-to-devices">Devices: How does the OS talk to devices</a></h1>
+<ul>
+<li>
+<p>Status, control, data registers</p>
+</li>
+<li>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210920081216.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210920081216.png" alt="Pasted image 20210920081216"/></a></p>
+</li>
+<li>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210920081244.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210920081244.png" alt="Pasted image 20210920081244"/></a></p>
+</li>
+<li>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210920080406.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210920080406.png" alt="Pasted image 20210920080406"/></a></p>
+</li>
+<li>
+<p>In RAM, there is a segment that linked to the status register on the hw device</p>
+</li>
+</ul>
+<pre><code>While (STATUS == BUSY) wait for interrupt; // wait until device is not busy   
+	Write data to DATA register   
+	Write command to COMMAND register (starts the device and executes the command)   
+	While (STATUS == BUSY) wait for interrupt; // wait until device is done with your request  
+</code></pre>
+<ul>
+<li>Using interrupts ensures that you are not wasting CPU Cycles 'Spinning
+<ul>
+<li>Are interrupts worse?<br />
+Yes, they can cause a livelock (flood of network packets)</li>
+</ul>
+</li>
+<li>Techniques
+<ul>
+<li>hybrid</li>
+<li>interrupt coalescing</li>
+</ul>
+</li>
+</ul>
+<h2 id="status-checks-polling-vs-interrupts"><a class="header" href="#status-checks-polling-vs-interrupts">Status Checks: Polling vs Interrupts</a></h2>
+<ul>
+<li>Polling:
+<ul>
+<li>wait until resource is available</li>
+</ul>
+</li>
+<li>Interrupts:
+<ul>
+<li>take process off cpu until next interrupt</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-pio-program-io-vs-dma-direct-memory-access"><a class="header" href="#data-pio-program-io-vs-dma-direct-memory-access">Data: PIO (Program IO) vs DMA (Direct Memory Access)</a></h2>
+<ul>
+<li>PIO
+<ul>
+<li>CPU directly tells device what data is</li>
+</ul>
+</li>
+<li>DMA
+<ul>
+<li>CPU leaves data in memory</li>
+<li>device reads it directly</li>
+</ul>
+</li>
+</ul>
+<h2 id="control-special-instructions-vs-memory-mapped-io"><a class="header" href="#control-special-instructions-vs-memory-mapped-io">Control: special instructions vs Memory Mapped IO</a></h2>
+<ul>
+<li>Special Instructions
+<ul>
+<li>each device has a port</li>
+<li>in/out instructions to communicate with device</li>
+</ul>
+</li>
+<li>Memory Mapped IO
+<ul>
+<li>HW Maps registers into address space</li>
+<li>loads/stores sent to device</li>
+</ul>
+</li>
+</ul>
+<h2 id="problem-too-many-devices-solution-drivers"><a class="header" href="#problem-too-many-devices-solution-drivers">Problem: too many devices; Solution: drivers</a></h2>
+<ul>
+<li>70% of linux source code is drivers</li>
+<li>Encapsulation!</li>
+<li>mix and match devices, schedulers, file systems</li>
+</ul>
+<h2 id="storage-loosing-half-a-sector-on-average-per-file"><a class="header" href="#storage-loosing-half-a-sector-on-average-per-file">Storage: loosing half a sector on average per file</a></h2>
+<ul>
+<li>On the HDD, there is an array of inodes</li>
+<li>Three names for files:
+<ol>
+<li>inode
+<ul>
+<li>Permanent name for a collection of datablocks</li>
+<li>Access Rights</li>
+<li>owner</li>
+<li>ref count</li>
+<li>Direct block array: Inode has blocks of where the file is stored (file data)</li>
+<li>Indirect -&gt; points at a block which contains block numbers
+<ul>
+<li>this block is 4k long</li>
+<li>4 byte block addresses</li>
+<li>= 1k block</li>
+<li>So if a file is more than 10 blocks, the inode has an indirect block which contains more block references</li>
+</ul>
+</li>
+<li>if I need more than one indirect, I use a block of indirects (double indirect), then triple indirect etc.</li>
+<li>Inode structure is Preallocated,</li>
+</ul>
+</li>
+<li>FD
+<ul>
+<li>File Descriptor</li>
+<li>Internal view of a file in a running process</li>
+<li>OS has an array with a bunch of File Control Blocks</li>
+<li>holds metainformation</li>
+<li>shortlived</li>
+<li>only as long as the process needs to read a file</li>
+<li>keeps track of where you are in a file</li>
+<li>stores File Control Blocks which store links to inodes</li>
+</ul>
+</li>
+<li>pathname
+<ul>
+<li>hierarchal</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>OS owned file array per process</p>
+<ul>
+<li>this array holds an block
+<ul>
+<li>block has</li>
+<li>index i refers to the FD index in the FCB</li>
+</ul>
+</li>
+</ul>
+<p>Inode table block 2 (superblock) fixed<br />
+FCB table holds in use now blocks with inode # (in memory)<br />
+File Array table also in memory per process<br />
+FD is the index of this table ^^</p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/PXL_20210924_122457556.jpg" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/PXL_20210924_122457556.jpg" alt="PXL_20210924_122457556"/></a></p>
+<h3 id="filenames"><a class="header" href="#filenames">FileNames</a></h3>
+<ul>
+<li>Three types: (see <span class="missing-link" style="color:darkred;">Operating Systems#Storage loosing half a sector on average per file</span>)
+<ul>
+<li>inode number</li>
+<li>path</li>
+<li>file descriptor</li>
+</ul>
+</li>
+<li>Special Calls
+<ul>
+<li><code>fsync(int fd)</code>
+<ul>
+<li>synchronizes file on device</li>
+</ul>
+</li>
+<li><code>rename(char *oldpath, char *newpath)</code>
+<ul>
+<li>adds file to new directory table</li>
+<li>removes file from old directory table</li>
+</ul>
+</li>
+<li><code>flock(int fd,int operation)</code></li>
+</ul>
+</li>
+<li>Deleting a File:
+<ul>
+<li>remove references to file, which <em>should</em> lower the ref count on a file</li>
+</ul>
+</li>
+</ul>
+<h3 id="contents-of-a-file-in-our-filesystem"><a class="header" href="#contents-of-a-file-in-our-filesystem">Contents of a File (in our filesystem)</a></h3>
+<ul>
+<li>data block
+<ul>
+<li>Set aside blocks for data</li>
+</ul>
+</li>
+<li>inode block
+<ul>
+<li>Set aside some sectors/blocks to store inodes (determines how many files you can store)</li>
+<li>16-32 inodes for block</li>
+<li>Contents:
+<ul>
+<li>type</li>
+<li>uid</li>
+<li>rwx</li>
+<li>size</li>
+<li>blocks</li>
+<li>time</li>
+<li>ctime</li>
+<li>links_count</li>
+<li>addrs[N]</li>
+</ul>
+</li>
+<li>Offset for inode 0?
+<ul>
+<li>256 byte sector</li>
+<li>3:0 (block 3 offset 0)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>indirect block</li>
+<li>directories</li>
+<li>data bitmap</li>
+<li>inode bitmap</li>
+<li>superblock</li>
+</ul>
+<h2 id="file-system-integrity-check-fsck"><a class="header" href="#file-system-integrity-check-fsck">File System integrity check (fsck)</a></h2>
+<ul>
+<li>inodes are correct</li>
+<li>rebuild bitmap from data</li>
+</ul>
+<h2 id="superblock"><a class="header" href="#superblock">Superblock</a></h2>
+<p>Need to know FS Metadata</p>
+<ul>
+<li>block size</li>
+<li>how many inodes are there</li>
+<li>how much free data</li>
+<li>allows mount operation<br />
+Store this in the Superblock</li>
+</ul>
+<h2 id="bitmaps-are-there-for-speed-not-required"><a class="header" href="#bitmaps-are-there-for-speed-not-required">Bitmaps are there for speed, not required</a></h2>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211001082407.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211001082407.png" alt="Pasted image 20211001082407"/></a></p>
+<p>mkfs: make filesystem</p>
+<h2 id="formatting-a-disk"><a class="header" href="#formatting-a-disk">Formatting a disk</a></h2>
+<ul>
+<li>Setting up all the data on the disk</li>
+<li>establishing /x/k, writing 'a' in file k,</li>
+<li>mkdir /x/</li>
+<li>touch /x/y</li>
+</ul>
+<table><thead><tr><th>inodes</th><th>data</th><th>Explanation</th></tr></thead><tbody>
+<tr><td>0 [d a:3 d:0]</td><td>0 [..:0,.:0,x:1]</td><td>(dir, access ct:ref count, d:data block)(.. refers to 0)</td></tr>
+<tr><td>1 [d a:2 d:1]</td><td>1 [..:0,.:1,k:2]</td><td></td></tr>
+<tr><td>2 [f a:1 d:2]</td><td>2 [a]</td><td></td></tr>
+</tbody></table>
+<p>todo ^^ :</p>
+<ol>
+<li><code>mkdir /x</code>
+<ul>
+<li>Search for <code>/</code></li>
+</ul>
+</li>
+<li>open</li>
+<li>write</li>
+<li>link</li>
+<li>unlink</li>
+</ol>
+<h2 id="cache-needs-a-calculable-access-pattern"><a class="header" href="#cache-needs-a-calculable-access-pattern">Cache needs a calculable access pattern</a></h2>
+<p>delay due to moving head track to track<br />
+t-t 5ms<br />
+rotation 0.2ms<br />
+transfer 0.1ms</p>
+<p>Exam:</p>
+<pre><code class="language-bash">mv /x /t/y  
+	link(/t/y,/x)  
+	unlink(/x)  
+</code></pre>
+<p>Block # = byte/block size<br />
+5000k/4k: 1250<br />
+-1032</p>
+<p>Looking for byte 5000k<br />
+5000k/4000k = 1250<br />
+1250 - 1028 - 8 = 218</p>
+<hr />
+<p>See <a href="https://morgenman.github.io/Computer-Science/assets/processes.pdf">processes.pdf</a><br />
+for this section</p>
+<h1 id="memory-block"><a class="header" href="#memory-block">Memory Block</a></h1>
+<p>Low  to high</p>
+<table><thead><tr><th>Code</th><th>Data</th><th>Heap -&gt;</th><th></th><th>&lt;- Stack</th></tr></thead><tbody>
+<tr><td>00000</td><td></td><td></td><td></td><td>fffff</td></tr>
+</tbody></table>
+<p>Stack allocated variables?<br />
+Allows recursion<br />
+Context is like a local variable<br />
+gets stored on the stack</p>
+<ul>
+<li>Context stored in registers
+<ul>
+<li>one of bits in the flags register is privledge</li>
+</ul>
+</li>
+</ul>
+<h2 id="span-classmissing-link-stylecolordarkredinterrupt-service-vectorspan-in-memory"><a class="header" href="#span-classmissing-link-stylecolordarkredinterrupt-service-vectorspan-in-memory"><span class="missing-link" style="color:darkred;">Interrupt Service Vector</span> in memory?</a></h2>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211013081732.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211013081732.png" alt="Pasted image 20211013081732"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211013081715.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211013081715.png" alt="Pasted image 20211013081715"/></a></p>
+<ul>
+<li>This shows us that the <span class="missing-link" style="color:darkred;">k-stack</span> is only used when switching context</li>
+<li>When we take the interrupt, the context of the user process is transferred into the <a href="K-Stack.html">K-Stack</a></li>
+</ul>
+<p><a href="http://pages.cs.wisc.edu/%7Eharter/537/slides.html">Slides</a><br />
+<a href="https://pages.cs.wisc.edu/%7Eremzi/OSTEP/cpu-intro.pdf">Notes</a></p>
+<h1 id="data-structures-in-a-process"><a class="header" href="#data-structures-in-a-process">Data Structures in a process</a></h1>
+<p>Process List:</p>
+<pre><code class="language-C">// the registers xv6 will save and restore  
+// to stop and subsequently restart a process  
+struct context {  
+  int eip;  
+  int esp;  
+  int ebx;  
+  int ecx;  
+  int edx;  
+  int esi;  
+  int edi;  
+  int ebp;  
+};  
+// the different states a process can be in  
+enum proc_state { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };  
+// the information xv6 tracks about each process  
+// including its register context and state  
+struct proc {  
+  char *mem;     // Start of process memory  
+  uint sz;       // Size of process memory  
+  char *kstack;  // Bottom of kernel stack  
+  // for this process  
+  enum proc_state state;       // Process state  
+  int pid;                     // Process ID  
+  struct proc *parent;         // Parent process  
+  void *chan;                  // If !zero, sleeping on chan  
+  int killed;                  // If !zero, has been killed  
+  struct file *ofile[NOFILE];  // Open files  
+  struct inode *cwd;           // Current directory  
+  struct context context;      // Switch here to run process  
+  struct trapframe *tf;        // Trap frame for the  
+  // current interrupt  
+};  
+</code></pre>
+<ul>
+<li>
+<p>Register Context will hold stopped process, contents of registers.</p>
+</li>
+<li>
+<p>c++ filesystem</p>
+</li>
+</ul>
+<h2 id="forking"><a class="header" href="#forking">Forking</a></h2>
+<ul>
+<li><code>vector</code> is the dynamic array</li>
+</ul>
+<p>Program = process + context</p>
+<h1 id="what-is-context"><a class="header" href="#what-is-context">what is context?</a></h1>
+<p>states:<br />
+<strong>Ready</strong> (init or through descheduling) -&gt; <strong>Running</strong> (through scheduling) -&gt; <strong>blocked</strong> (I/0 Initiate) -&gt; back to ready (I/0 Done)</p>
+<h2 id="cpu-time-sharing"><a class="header" href="#cpu-time-sharing">CPU Time Sharing</a></h2>
+<h3 id="two-goals"><a class="header" href="#two-goals">Two goals</a></h3>
+<ul>
+<li>efficiency</li>
+<li>control
+<ul>
+<li>processes shouldn't do bad things when running</li>
+</ul>
+</li>
+</ul>
+<h3 id="solution"><a class="header" href="#solution">Solution:</a></h3>
+<p><a href="Limited%20Direct%20Execution.html">Limited Direct Execution</a></p>
+<h2 id="how-does-a-a-hrefprivilege20bithtmlprivilege-bita-work"><a class="header" href="#how-does-a-a-hrefprivilege20bithtmlprivilege-bita-work">How does a <a href="Privilege%20Bit.html">Privilege Bit</a> work?</a></h2>
+<p><a href="Privilege%20Bit.html">Privilege Bit</a></p>
+<p>STANDARD QUESTION:<br />
+<strong>Let's pretend that we allow people to write the Interrupt service vector, how would that violate OS, how would it be bad??</strong><br />
+<em>Answer: Invalidates privilege bit, Only in privilege mode when we take an interrupt, so if we can change it and point at my code, we can do anything</em></p>
+<h1 id="context-switching"><a class="header" href="#context-switching">Context Switching</a></h1>
+<p>When to switch process contexts?</p>
+<p>Direct Execution =&gt; OS can't run while process runs<br />
+How can the OS do anything when it's not running?</p>
+<p>Answer:<br />
+Cooperative scheduling is one option, but process can 'steal' time<br />
+actual answer...</p>
+<h2 id="timer-interrupts"><a class="header" href="#timer-interrupts">Timer Interrupts</a></h2>
+<ul>
+<li>non-cooperative approach</li>
+<li>set up before processes</li>
+<li>hw does not let processes prevent this</li>
+<li>switches on a timer interrupt</li>
+</ul>
+<p>Process A, timer interrupt save regs(A) to <span class="missing-link" style="color:darkred;">k-stack</span>(A) move to kernel mode jump to interrupt<br />
+etc etc</p>
+<h1 id="per-process-state"><a class="header" href="#per-process-state">Per Process State</a></h1>
+<pre><code class="language-C">// Per-process state  
+  
+struct proc {  
+ uint sz; // Size of process memory (bytes)  
+ pde_t* pgdir; // Page table  
+ char *kstack; // Bottom of kern stack for this proc  
+ enum procstate state; // Process state  
+ volatile int pid; // Process ID  
+ struct proc *parent; // Parent process  
+ struct trapframe *tf; // Trap frame for current syscall  
+ struct context *context; // swtch() here to run process  
+ void *chan; // If non-zero, sleeping on chan  
+ int killed; // If non-zero, have been killed  
+ struct file *ofile[NOFILE]; // Open files. Index 0 of this is current directory?  
+ struct inode *cwd; // Current directory  
+ char name[16]; // Process name (debugging)  
+};  
+</code></pre>
+<h1 id="a-hrefschedulershtmlschedulersa"><a class="header" href="#a-hrefschedulershtmlschedulersa"><a href="Schedulers.html">Schedulers</a></a></h1>
+<p><a href="Limited%20Direct%20Execution.html">Limited Direct Execution</a></p>
+<h1 id="where-do-we-keep-processes-when-they-are-in-these-states"><a class="header" href="#where-do-we-keep-processes-when-they-are-in-these-states">Where do we keep processes when they are in these states?</a></h1>
+<p><em>Run/Ready/Block</em></p>
+<pre><code class="language-c">c = fork();  
+if(c&gt;0)  
+	parent  
+else  
+	child  
+</code></pre>
+<p>parent and child are blocks of code<br />
+calls exec, which loads a new context into a process</p>
+<p><strong>Fork</strong>: create a new process, with all the context copied</p>
+<p>copied into the <span class="missing-link" style="color:darkred;">Process Control Block</span><br />
+new PID</p>
+<p>Open files are in context</p>
+<p>Same address in the instruction pointer<br />
+fork does return in both processes<br />
+so the code above runs<br />
+environment is also passed</p>
+<p>How does the shell run ls?</p>
+<h2 id="whats-in-the-parent-block"><a class="header" href="#whats-in-the-parent-block">What's in the parent block?</a></h2>
+<ul>
+<li>could be wait(&amp; info)</li>
+</ul>
+<p><code>ctrl + d is end of file marker</code></p>
+<p>single &gt; is making a new file,  &gt;&gt; is for appending<br />
+ls . | sort<br />
+output of ls is piped into sort</p>
+<p>Signature for executable program: <code>#!</code></p>
+<h2 id="where-does-the-copy-get-put"><a class="header" href="#where-does-the-copy-get-put">Where does the copy get put?</a></h2>
+<ul>
+<li>ready state?</li>
+</ul>
+<h1 id="following-a-process-into-memory"><a class="header" href="#following-a-process-into-memory">Following a process into memory</a></h1>
+<table><thead><tr><th>P2</th><th>0</th></tr></thead><tbody>
+<tr><td>P3</td><td>1000</td></tr>
+</tbody></table>
+<p>Base register is a step towards having virtual memory<br />
+Bounds allows us to protect memory</p>
+<h1 id="paged-memory"><a class="header" href="#paged-memory">Paged Memory</a></h1>
+<h2 id="physical-memory-frames"><a class="header" href="#physical-memory-frames">Physical Memory [Frames]</a></h2>
+<ul>
+<li>Physical hardware is divided into frames</li>
+</ul>
+<h2 id="process-address-space-pages"><a class="header" href="#process-address-space-pages">Process Address Space [Pages]</a></h2>
+<ul>
+<li>Stores table with forwards to actual memory</li>
+<li>Virtual addresses (per process)</li>
+</ul>
+<p><a href="Exam%202%20Terms.html">Exam 2 Terms</a></p>
+<hr>  
+<p>After exam 2</p>
+<p>Passing a vector as a 2d array</p>
+<p>Vector is an array with some data, a length, and some field that might be called allocated</p>
+<p>Like an arraylist</p>
+<p>Data is stored contiguously</p>
+<pre><code class="language-c++">vector&lt;const char *&gt; v;  
+for (string str: args){  
+	v.push_back(str.c_str());  
+}  
+v.push_back(nullptr);  
+return v.data();  
+  
+</code></pre>
+<hr>  
+<h1 id="paged-memory-1"><a class="header" href="#paged-memory-1">Paged memory</a></h1>
+<ul>
+<li>Address translation
+<ul>
+<li>How do you translate an address</li>
+<li>Look it up in table to see..??</li>
+</ul>
+</li>
+<li>Virtual Address:
+<ul>
+<li>16 bit for now</li>
+<li>page numbers are the virtual numbers, they refer to frames</li>
+</ul>
+</li>
+</ul>
+<table><thead><tr><th>4 bit</th><th>12 bit</th></tr></thead><tbody>
+<tr><td>Page #</td><td>offset</td></tr>
+</tbody></table>
+<ul>
+<li>offset is going to be the same size for every address</li>
+<li>PageTable for each process (held by OS, per process, part of context)
+<ul>
+<li>will have 16 entries</li>
+<li>divided into Metadata and 20 bits for each frame</li>
+<li>each entry in page table points to frame which holds 4k (2^12 from 12 bit offset)</li>
+<li>page number is 4 bits (2^4 = 16 pages per process)<br />
+Physical memory will become 20 bits</li>
+</ul>
+</li>
+</ul>
+<p>Process address Space:</p>
+<ul>
+<li>holds all the code from the process you are running<br />
+16 pages</li>
+</ul>
+<p>Translated to:<br />
+(4 bit page number-&gt;20 bit frame number = 20bit) + 12 bit offset from virtual address = 32 bits</p>
+<ul>
+<li>
+<p>Translation example: <code>11111111111100</code></p>
+</li>
+<li>
+<p>1111-&gt; lookup in page table</p>
+<ul>
+<li>get back 00000000000000000000</li>
+</ul>
+</li>
+<li>
+<p>1111111100 offset</p>
+</li>
+<li>
+<p>whenever I use address it's a per process virtual address</p>
+</li>
+<li>
+<p>whenever running in non-privileged mode</p>
+</li>
+</ul>
+<p>Let's try that again:</p>
+<p>&lt;page #, offset&gt;<br />
+<em>page #</em>:which element in page table<br />
+<em>offset</em>: which byte in the page we are referring to</p>
+<frame #, offset>  
+*frame #*: which block in actual memory  
+*offset*: which byte in frame (same as page)  
+<p>Types of questions:<br />
+How big are these things?</p>
+<hr>  
+<h1 id="fork-vs-exec"><a class="header" href="#fork-vs-exec">Fork() vs Exec()</a></h1>
+<h2 id="fork"><a class="header" href="#fork">Fork</a></h2>
+<ul>
+<li>creates a new PCB - OS specific data structure, access must be privileged</li>
+<li>is a library wrapper around a <em>system call</em></li>
+<li>Trap(software generated interrupt) to the OS. <em>k-stack</em> saved to current (parent) PCB</li>
+<li><strong>duplicate parent PCB</strong>, duplicate all file descriptors, duplicate memory assignment but separate writable pages</li>
+<li><strong>Policy</strong>: Prefer parent or child process by returning from the system call to one or the other</li>
+</ul>
+<h2 id="exec"><a class="header" href="#exec">Exec</a></h2>
+<ul>
+<li>loads new program code into memory and starts loaded program <em>from the beginning</em></li>
+<li>Will read from <em>filesystem</em>. Will modify <em>context</em>.</li>
+<li>Privileged operations</li>
+<li>exec() is a library wrapper around a <em>system call</em></li>
+<li>has to change Instruction Pointer</li>
+<li>Trap to OS. Save context to PCB. Release user memory (will keep FD and most of PCB the same)</li>
+<li>load beginning of code segment of <code>cmd</code> file. Allocate new memory for <em>heap</em> and <em>stack</em> for a new program
+<ul>
+<li><em>heap</em> is where we get memory when we call new</li>
+<li><em>stack</em> is the memory that stores calls? not sure</li>
+</ul>
+</li>
+<li>put string <code>cmd</code> and provided arguments in memory according to OS convention</li>
+<li>Modify context so IP contains virtual starting address for a new program</li>
+<li>return from interrupt</li>
+<li><strong>no PCB created</strong> (kept the old one, PID stayed the same)</li>
+</ul>
+<h1 id="address-space"><a class="header" href="#address-space">Address Space</a></h1>
+<p>An <em>address space</em> is all of the memory that a process/machine can address</p>
+<ul>
+<li>if the address refers to actual RAM locations, they are <strong>physical</strong> addresses in a physical address space</li>
+<li>if addresses must be translated before they refer to actual RAM locations, they are <strong>virtual</strong> addresses in a virtual address space</li>
+<li>everything we work with is byte addressable</li>
+<li>if it ends in 00 it's a multiple of 4</li>
+</ul>
+<p>the something or another is $2^k$</p>
+<h2 id="virtualization-of-memory"><a class="header" href="#virtualization-of-memory">Virtualization of Memory</a></h2>
+<ul>
+<li>should be transparent, process should be unaware</li>
+<li>the process sees a contiguous address space beginning at 0</li>
+<li>all addresses in process (contents of IP, pointers, <code>load/store</code> instruction targets) are virtual</li>
+<li>indirect addressing, through an OS supported translator, is always applied for user space machine code</li>
+<li>user space machine code cannot access memory directly</li>
+</ul>
+<h2 id="how-to-do-address-translation-contiguous-allocation-not-paged"><a class="header" href="#how-to-do-address-translation-contiguous-allocation-not-paged">How to do Address Translation (contiguous allocation, not paged)</a></h2>
+<ul>
+<li>We want memory translation (moving memory without linking)
+<ul>
+<li>dynamic memory relocation</li>
+</ul>
+</li>
+<li>A <strong>base register</strong> is a CPU or MMU register that permits dynamic memory relocation</li>
+<li>the <em>physical</em> address is calculated by adding the virtual address to the value in the base register</li>
+<li>base register alone can permit user programs to generate dangerous addresses</li>
+<li>combined with <strong>bounds register</strong>, making the translation safer</li>
+</ul>
+<h3 id="problems"><a class="header" href="#problems">Problems...</a></h3>
+<p>Using single base/bounds pair for a process permits dynamic relocation of the <em>who virtual address space</em><br />
+This requires contiguous <strong>physical</strong> memory that can contain the <strong>virtual</strong> address space<br />
+Fixed size process will probably over-allocate, leading to internal fragmentation (inside of allocated memory not using all internal memory)<br />
+Variable sized process spaces will lead to external fragmentation (in actual physical memory)</p>
+<h3 id="solution-multiple-basebounds-pairs"><a class="header" href="#solution-multiple-basebounds-pairs">Solution? multiple base/bounds pairs</a></h3>
+<p>easier to fit if virtual address space is broken down into multiple pieces, each with it's own base/bounds pair<br />
+can break down by <strong>segment</strong></p>
+<ul>
+<li>4 registers = left most pair indicate which segment
+<ul>
+<li>effectively the base/bounds chunk of memory has been quartered</li>
+<li><em><strong>code;heap;stack;data</strong></em></li>
+<li>exe on disk has:
+<ul>
+<li>code and data (global)</li>
+<li>anything static or global</li>
+</ul>
+</li>
+<li>heap is dynamically allocated</li>
+<li>stack is all the local variables and parameters
+<ul>
+<li><em>current running functions &amp; their activation records</em></li>
+</ul>
+</li>
+<li>code is where instructions for functions and stuff are held</li>
+</ul>
+</li>
+<li>OS can allocate 4 blocks, each a quarter of the size of the virtual address space</li>
+<li>still variable size, capable of fragmenting</li>
+<li>all of this assumes you use the full address space</li>
+<li>speed of addition <code>O(log(bits))</code>
+<ul>
+<li>we are doing addition</li>
+</ul>
+</li>
+<li>If we have a 32 bit address in hex
+<ul>
+<li>lets say I have 256 byte pages (kinda small)</li>
+<li>if every page is this size I couldd split it to:</li>
+<li>| six hex digits | 2 hex digits|</li>
+<li>| frame/page #   | offset      |</li>
+<li>offset tends to be the same size</li>
+<li>every hex is 4 bits</li>
+</ul>
+</li>
+</ul>
+<h3 id="problem-external-fragmentation"><a class="header" href="#problem-external-fragmentation">Problem: External fragmentation</a></h3>
+<p>Between in use memory</p>
+<h3 id="solution-only-issue-one-size-of-object"><a class="header" href="#solution-only-issue-one-size-of-object">Solution? only issue one size of object</a></h3>
+<ul>
+<li>only allocating a single size of block</li>
+</ul>
+<h3 id="problem-dissonance-between-picking-big-and-small-block-sizes"><a class="header" href="#problem-dissonance-between-picking-big-and-small-block-sizes">Problem: dissonance between picking big and small block sizes</a></h3>
+<ul>
+<li>Big: fewer base registers needed; more internal fragmentation</li>
+<li>Small: less fragmentation; more base registers</li>
+<li>registers are expensive</li>
+</ul>
+<h3 id="solution-paged-virtual-memory"><a class="header" href="#solution-paged-virtual-memory">Solution: Paged Virtual Memory</a></h3>
+<p><em>frame</em>: physical<br />
+<em>page</em>: virtual</p>
+<p>small page size with translation information accessed indirectly from RAM</p>
+<p>We need something in the CPU though:<br />
+<em>page table base register</em> (pbr): CPU/MMU register that contains the physical address of the beginning of the page table</p>
+<pre><code class="language-nomnoml">[PBR] -&gt; [Page Table|PTE: Page Table entries which store frame numbers]  
+</code></pre>
+<ul>
+<li>PBR is part of context</li>
+<li>per process</li>
+<li>Address translation is done by separating to two parts</li>
+<li>| Page # | Offset |</li>
+<li>offset can only address x amount of bytes, so we <em>don't need</em> a bound's register</li>
+</ul>
+<h2 id="page-translation"><a class="header" href="#page-translation">Page Translation:</a></h2>
+<ol>
+<li>split virtual address &lt;page,offset&gt;</li>
+<li>use page as an index into the page table array</li>
+<li>get frame out of page table</li>
+<li>combine &lt;frame,offset&gt; into physical address</li>
+</ol>
+<p><em>the idea is we are using small memory blocks, but keeping the addresses in ram, not in registers</em></p>
+<blockquote>
+<p>Side note:<br />
+Caching...<br />
+locality of reference, predictability of reference<br />
+We can speed up slowness by caching<br />
+We can fix the fragmentation with small pages</p>
+</blockquote>
+<pre><code class="language-c++">Fetch  
+	Page Size	4KB  
+	IP			0000210C (virtual address)  
+	PBR			F0000000  
+	sizeof(PTE)	4B  
+Offset Bits		12b to address 4KB (3 hex digits)  
+				10b to address 1KB, 2b to address 4  
+				|20b page (5hex) | 12b offset(3hex)|  
+Page #			00002  
+Offset			10C  
+Address of PTE	F0000000 ...  
+				(addressing into array, index*size of entry + index)  
+				F0000000 + 4 * 00002 = F0000008  
+RAM[F0000008] =	007F2  
+Physical Address:  
+				007F210C  
+</code></pre>
+<p>If privilege bit is not set, must be translated<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211105084449.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211105084449.png" alt="Pasted image 20211105084449"/></a></p>
+<h3 id="metadata-in-pte"><a class="header" href="#metadata-in-pte">Metadata in PTE</a></h3>
+<ul>
+<li>present
+<ul>
+<li>is the content of that page in a frame?</li>
+<li>if no: it's on a disk and has to be loaded OR needs to be allocated if brand new</li>
+<li>if new:
+<ul>
+<li>page fault</li>
+<li>pause process</li>
+<li>start pulling from disk</li>
+<li>set present bit to 1</li>
+<li>restart instruction</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>dirty
+<ul>
+<li>The data in the page has differed from the thing it was loaded from on disk</li>
+<li>let's say value of i is in page, but i has been changed</li>
+<li>we need to save the contents if we 'clear' this page to use it</li>
+<li>take whole thing, write to swap, mark as non present so all the data is saved</li>
+<li>swap on disk</li>
+<li>generally this would stay 1 forever, since it's been modified</li>
+</ul>
+</li>
+<li>reference
+<ul>
+<li>has this page been referenced recently?</li>
+<li>if we need to load a frame from disk we have to 'choose a victim', choose one with reference of 0</li>
+<li>every once in a while we clear the reference bits on all of them, and see which ones are going to be used</li>
+</ul>
+</li>
+<li>valid
+<ul>
+<li>if false, OS or compiler has dictated that we cannot actually use that bit of memory</li>
+</ul>
+</li>
+</ul>
+<p>PTBR: Page table base register (PBR)</p>
+<p>2$^{10}$ 1KB<br />
+2$^{16}$ 64KB (2$^{6}$ = 64)<br />
+2$^{20}$ 1MB<br />
+2$^{30}$ 1GB</p>
+<p><em>frame</em>: physical<br />
+<em>page</em>: virtual</p>
+<h1 id="memory"><a class="header" href="#memory">Memory:</a></h1>
+<table><thead><tr><th>Name</th><th>Size</th><th>Unit</th><th>Explanation</th></tr></thead><tbody>
+<tr><td>PTBR</td><td>03010</td><td></td><td>Pointer at array of addresses[]</td></tr>
+<tr><td>Page/Frame Size</td><td>256B</td><td>8 bits/offset or 2 Hex</td><td></td></tr>
+<tr><td>Metadata</td><td>9b</td><td></td><td></td></tr>
+<tr><td>Physical</td><td>1MB</td><td>20 bits/address</td><td></td></tr>
+<tr><td>Virtual</td><td>64kB</td><td>16 bits/address</td><td></td></tr>
+</tbody></table>
+<p>bits per...</p>
+<p>frame #?</p>
+<ul>
+<li>how many frames? Physical/page size</li>
+<li>20 - 8 = 12 bits / frame #</li>
+<li>2$^{12}$ = 4k</li>
+</ul>
+<p>page #?</p>
+<ul>
+<li>how many pages?</li>
+<li>16 - 8 = 12 bits / page #</li>
+<li>2$^{8}$ = 256</li>
+</ul>
+<h2 id="example"><a class="header" href="#example">Example:</a></h2>
+<pre><code class="language-scheme">230c load  R1, 1308  
+2310 addi RI, R1, 1  
+2314 store R1, 1308  
+</code></pre>
+<h3 id="virtual"><a class="header" href="#virtual">Virtual</a></h3>
+<p>What are the virtual addresses you get from running these lines:</p>
+<ul>
+<li>fetch: <code>230C</code> is where we start</li>
+<li>load: then we pull instruction at <code>1308</code>(v) to R1</li>
+</ul>
+<hr>  
+<ul>
+<li>fetch: <code>2310</code> add 1 to register 1</li>
+</ul>
+<hr>  
+<ul>
+<li>fetch: <code>2314</code></li>
+<li>store: <code>1308</code></li>
+</ul>
+<h3 id="physical"><a class="header" href="#physical">Physical</a></h3>
+<p>What are the physical addresses?<br />
+<code>23</code>:page# <code>0C</code>:offset<br />
+now we need frame number...</p>
+<p>XXX|0C<br />
+what is XXX?</p>
+<ul>
+<li>Page table entry 23</li>
+<li>We need the sizeof(PTE[])
+<ul>
+<li>frame#(in bits) + metadata(bits) rounded up to nearest 8 bits</li>
+<li>12 bits + 9 bits = 21 bits =&gt; round up to 32 bits = 3B</li>
+</ul>
+</li>
+<li>23(hex)* 3B = 69(hex)</li>
+</ul>
+<p>xxx is 03079</p>
+<p><strong>Arithmetic is in Hex</strong></p>
+<table><thead><tr><th>PTE[]</th><th>Address</th><th>Result</th><th>Explanation</th></tr></thead><tbody>
+<tr><td>PTE[23]</td><td>03079</td><td>971XXX</td><td>03010 + 69</td></tr>
+<tr><td></td><td>9710C</td><td></td><td>Now we have physical for 230C</td></tr>
+<tr><td>PTE[13]</td><td>03049</td><td>0F7XXX</td><td>03010 + 13 * 3</td></tr>
+<tr><td></td><td>0F708</td><td></td><td>Now we have physical for 1308</td></tr>
+<tr><td>PTE[23]</td><td>03079</td><td>971XXX</td><td>03010 + 23 * 3</td></tr>
+<tr><td></td><td>97110</td><td></td><td>Now we have physical for 2310</td></tr>
+<tr><td>PTE[23]</td><td>03079</td><td>971XXX</td><td></td></tr>
+<tr><td></td><td>97114</td><td></td><td>Now we have physical for 2314</td></tr>
+<tr><td>PTE[13]</td><td>03049</td><td>0F7XXX</td><td></td></tr>
+<tr><td></td><td>0F708</td><td></td><td>Now we have physical for 1308</td></tr>
+</tbody></table>
+<hr>  
+<h2 id="example-1"><a class="header" href="#example-1">Example</a></h2>
+<p>File PGM (program)</p>
+<table><thead><tr><th>ABC</th></tr></thead><tbody>
+<tr><td>DEF</td></tr>
+<tr><td>GHI</td></tr>
+<tr><td>JKL</td></tr>
+<tr><td>MNO</td></tr>
+<tr><td>PQR</td></tr>
+</tbody></table>
+<p>^Sitting on the disk<br />
+fork and exec</p>
+<p>Creates PGM PageTable:</p>
+<table><thead><tr><th></th><th>P(resent)</th><th>D(irty)</th><th></th><th>V(alid)</th><th>Frame</th></tr></thead><tbody>
+<tr><td>0</td><td>0</td><td>0</td><td></td><td>1</td><td></td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td></td><td>1</td><td></td></tr>
+<tr><td>2</td><td>0</td><td>0</td><td></td><td>1</td><td></td></tr>
+<tr><td>3</td><td>0</td><td>0</td><td></td><td>1</td><td></td></tr>
+<tr><td>4</td><td>0</td><td>0</td><td></td><td>1</td><td></td></tr>
+<tr><td>5</td><td>0</td><td>0</td><td></td><td>1</td><td></td></tr>
+<tr><td>6</td><td>0</td><td>0</td><td></td><td>0</td><td></td></tr>
+<tr><td>7</td><td>0</td><td>0</td><td></td><td>0</td><td></td></tr>
+<tr><td></td><td>...</td><td>...</td><td></td><td>...</td><td>...</td></tr>
+<tr><td>F(16)</td><td>1</td><td></td><td></td><td>1</td><td>0</td></tr>
+</tbody></table>
+<p>first 6 are valid because it knew how big the file is<br />
+How big is an address<br />
+4 bit page number<br />
+need to address 4k, so 12 bits (2^12) for offset<br />
+16 bit address</p>
+<p>Allocating this space</p>
+<table><thead><tr><th></th><th>RAM</th></tr></thead><tbody>
+<tr><td>0</td><td>STACK</td></tr>
+<tr><td>1</td><td></td></tr>
+<tr><td>2</td><td></td></tr>
+<tr><td>3</td><td></td></tr>
+<tr><td>4</td><td></td></tr>
+<tr><td>5</td><td></td></tr>
+<tr><td>6</td><td></td></tr>
+<tr><td>7</td><td></td></tr>
+<tr><td>...</td><td></td></tr>
+<tr><td></td><td></td></tr>
+</tbody></table>
+<p>Let's make the present bit 1 and location bit 4</p>
+<table><thead><tr><th>Location (Page #)(Offset)</th><th>P(resent)</th><th>D(irty)</th><th></th><th>V(alid)</th><th>Frame #</th><th>size</th></tr></thead><tbody>
+<tr><td>C000  (address stored in PTBR)</td><td>1</td><td>0</td><td></td><td>1</td><td>4</td><td>1B</td></tr>
+<tr><td></td><td>0</td><td>0</td><td></td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td></td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td></td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td></td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td></td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td></td><td>0</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td></td><td>0</td><td></td><td></td></tr>
+<tr><td></td><td>...</td><td>...</td><td></td><td>...</td><td>...</td><td></td></tr>
+<tr><td>C00F</td><td>1</td><td>1</td><td></td><td>1</td><td>0 (where stack lives)</td><td></td></tr>
+</tbody></table>
+<p>All programs start at 0 (assumption)</p>
+<p>let's say first addresses for PGM are:</p>
+<h3 id="virtual-address-trace"><a class="header" href="#virtual-address-trace">Virtual Address Trace</a></h3>
+<p>0000 (Fetch)<br />
+0004 (Fetch)<br />
+0008 (Fetch)<br />
+FFFC (Store)</p>
+<h3 id="physical-address-trace"><a class="header" href="#physical-address-trace">Physical Address Trace</a></h3>
+<ol>
+<li>Get PTE (Replace Page # with Frame #)</li>
+<li>Get Physical</li>
+</ol>
+<p>C000 (Fetch) C000 + 0 * 1B<br />
+4000 (4 comes from value in frame)</p>
+<p>C000<br />
+4004</p>
+<p>C000<br />
+4008</p>
+<p>C00F<br />
+0FFC</p>
+<h3 id="problem-too-many-duplicate-requests"><a class="header" href="#problem-too-many-duplicate-requests">Problem: Too many duplicate requests</a></h3>
+<p>looking up C000 too many times</p>
+<h3 id="solution-cache"><a class="header" href="#solution-cache">Solution: Cache</a></h3>
+<p><em>called Table Lookaside Buffer (TLB)</em><br />
+Cache is empty. Looks up C000<br />
+0 - 10_1 4<br />
+...<br />
+F - 10_1 0</p>
+<blockquote>
+<p>Exam Question:<br />
+Do Virtual address trace<br />
+turn into physical address trace assume no TLB<br />
+Which accesses(PT lookups) go away when you have a TLB</p>
+</blockquote>
+<p>How do we know when to delete stuff in RAM? Timestamps? no.. too big... add &quot;Reference&quot;</p>
+<table><thead><tr><th>Location (Page #)(Offset)</th><th>P(resent)</th><th>D(irty)</th><th>R(eference)</th><th>V(alid)</th><th>Frame #</th><th>size</th></tr></thead><tbody>
+<tr><td>C000  (address stored in PTBR)</td><td>1</td><td>0</td><td>1</td><td>1</td><td>4</td><td>1B</td></tr>
+<tr><td></td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td>0</td><td>1</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td></td><td>0</td><td>0</td><td>0</td><td>0</td><td></td><td></td></tr>
+<tr><td></td><td>...</td><td>...</td><td></td><td>...</td><td>...</td><td></td></tr>
+<tr><td>C00F</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0 (where stack lives)</td><td></td></tr>
+</tbody></table>
+<p>Find one that's not referenced, remove it</p>
+<p>Test is a week from next monday</p>
+<h1 id="c-stuff"><a class="header" href="#c-stuff">C++ Stuff</a></h1>
+<pre><code class="language-c++">friend void function();  
+friend class();  
+</code></pre>
+<p>friend allows access to private functions</p>
+<h2 id="lamda-functions"><a class="header" href="#lamda-functions">Lamda Functions</a></h2>
+<p>[](int input){return input++;}</p>
+<p>32b virtual/physical</p>
+<p>4b metadata</p>
+<p>4KB page</p>
+<p>20b frame/page (Number of pages is $2^{20}$ ~= 1 MB, that's how many it can address)<br />
+12b offset</p>
+<p>How many bits in the pte?</p>
+<p>|PTE| = $\lceil$(20 + 4)/8$\rceil$ = 3B</p>
+<p>|Page Table| = # Pages * |PTE| =  3 MB</p>
+<hr>  
+<p>Assignment:<br />
+what's important?</p>
+<ul>
+<li>PTE
+<ul>
+<li>PageTable<br />
+vector</li>
+</ul>
+</li>
+<li>Frame
+<ul>
+<li>RAM</li>
+</ul>
+</li>
+</ul>
+<hr>  
+<p>What if we broke up the page# and offset into page table + page #</p>
+<p>Smaller page table, less memory</p>
+<hr>  
+<h1 id="threading"><a class="header" href="#threading">Threading</a></h1>
+<ul>
+<li>Allows us to 'be' in multiple places in the same program, so to speak</li>
+</ul>
+<h2 id="problems-1"><a class="header" href="#problems-1">Problems:</a></h2>
+<p>When we take an interrupt, it happens between instructions, so we could loose one, leading to wrong values</p>
+<h2 id="solution-1"><a class="header" href="#solution-1">Solution:</a></h2>
+<h3 id="shared-mmu"><a class="header" href="#shared-mmu">Shared MMU</a></h3>
+<ul>
+<li>Context in MMU is shared between threads</li>
+<li>Has a thread control block</li>
+<li>Don't need a process control block</li>
+</ul>
+<p>So how do we stop them from writing to the same value without stopping?<br />
+Lock(i)</p>
+<hr>  
+<h1 id="locks"><a class="header" href="#locks">Locks</a></h1>
+<p><em>Let's imagine we have two locks:</em><br />
+lock a<br />
+lock b</p>
+<pre><code class="language-c++">// T1  
+locka.lock();  
+lockb.lock();  
+a = b+1;  
+b++;  
+lockb.unlock();  
+locka.unlock();  
+// T2  
+lockb.lock();  
+locka.lock();  
+b=a*z;  
+a = a/3;  
+locka.unlock();  
+lockb.unlock();  
+</code></pre>
+<p><em>Spin locks</em> aren't fair (who get's to the front of a ready queue first, may be thread that just released)</p>
+<h2 id="ticket-locks"><a class="header" href="#ticket-locks">Ticket Locks</a></h2>
+<ul>
+<li>either use queue, how many people waiting etc OR just use two ints; increment then modulo number of tickets (usually number of threads, has to be at least that)</li>
+</ul>
+<h1 id="final-exam-question-why-does-the-number-of-tickets-have-to-be-greater-than-the-number-of-threads"><a class="header" href="#final-exam-question-why-does-the-number-of-tickets-have-to-be-greater-than-the-number-of-threads"><em><strong>Final Exam Question: Why does the number of tickets have to be greater than the number of threads??</strong></em></a></h1>
+<p>One of the last three on the sheet</p>
+<h1 id="dining-philosophers"><a class="header" href="#dining-philosophers">Dining philosophers</a></h1>
+<p>They know which seat they are in.<br />
+5 of them, five chopsticks. Each needs two.<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206081017.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206081017.png" alt="Pasted image 20211206081017"/></a></p>
+<pre><code class="language-c++">Philosopher(int n) {}  
+void run(){  
+	while (true){  
+		while (!hungry) think();  
+		getRight();  
+		getLeft();  
+		eat();  
+		release_right_chopstick();  
+		release_left_chopstick();  
+	}  
+}  
+</code></pre>
+<h1 id="some-sort-of-memory-allocation-stuff"><a class="header" href="#some-sort-of-memory-allocation-stuff">Some sort of memory allocation stuff</a></h1>
+<p><em>External Fragmentation</em>: visible to allocator (has space, but not contiguous), so like you need three chunks, but none are contiguous<br />
+<em>Internal Fragmentation</em>: when you don't use the whole chunk of virtual</p>
+<p>While pagefault is loading disk -&gt; RAM, process is <em>blocked</em><br />
+Size of page and frame is always the same. Offset is always the same.</p>
+<p>Virtual: 20b<br />
+8b Page # (each program has 256 pages)<br />
+12b offset (4k)</p>
+<p>Physical: 32b<br />
+20b Frame # (1 million frames)<br />
+12b offset (4k)</p>
+<p>Can't go over the page size, because we are doing OR operation on the 12 bits.</p>
+<p>Either the page # or frame # could be bigger.<br />
+K stack is hw assist provided for hw to work<br />
+so is memory management<br />
+base/bounds<br />
+segments (registers)</p>
+<p>Filesystems for persistence<br />
+virtualization (processor/memory)<br />
+concurrency</p>
+<ul>
+<li>some atomic instructions exist, we build concurrency primitives on it (lock)</li>
+</ul>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
+    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
+    <script>
+        var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+        var i = 0;
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) {
+            theme = 'dark';
+        }
+        while (nomnomls.length > 0) {
+            var name = 'target-canvas';
+            name += i;
+            var source;
+            if (theme == 'dark') source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n';
+            else source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #22262f\n#fill: #fafafa; #ffffff\n';
+            source += nomnomls[0].textContent;
+            nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '">\n</canvas>');
+            var canvas = document.getElementById(name);
+            nomnoml.draw(canvas, source);
+            let rect = canvas.getBoundingClientRect();
+            nomnoml.draw(canvas, source, 4);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            nomnomls[0].parentElement.removeChild(nomnomls[0].parentElement.firstChild);
+            nomnomls[0].remove();
+            nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+            i++;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

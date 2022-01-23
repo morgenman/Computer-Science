@@ -1,0 +1,527 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title>Normal Forms - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../../highlight.css">
+    <link rel="stylesheet" href="../../tomorrow-night.css">
+    <link rel="stylesheet" href="../../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item expanded "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Fall 2021/Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/Nihon-Go.html">Nihon-Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/_Index_of_Nihon-Go.html">_Index_of_Nihon-Go</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/JSON.html">JSON</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item expanded "><a href="../../Fall 2021/Databases/Normal Forms.html" class="active">Normal Forms</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Referential Integrity.html">Referential Integrity</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/SQL.html">SQL</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Operating Systems.html">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Ethics Free Presentations.html">Ethics Free Presentations</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Is Professional Practice at Risk Notes.html">Is Professional Practice at Risk Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Nick Presentation.html">Nick Presentation</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Picture a Scientist Notes.html">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Video 2 Feedback.html">Video 2 Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Theory of Computation.html">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Exam Prep.html">Exam Prep</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li></ol></li><li class="chapter-item "><div>Spring 2022</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Algorithms/Algorithms.html">Algorithms</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Algorithms/_Index_of_Algorithms.html">_Index_of_Algorithms</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/Internship/Internship.html">Internship</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Internship/_Index_of_Internship.html">_Index_of_Internship</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/_Index_of_Spring 2022.html">_Index_of_Spring 2022</a></li></ol></li><li class="chapter-item "><div>_Daily_Notes</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../../_Daily_Notes/_Index_of__Daily_Notes.html">_Index_of__Daily_Notes</a></li></ol></li><li class="chapter-item "><a href="../../📗Textbooks/📗Textbooks.html">📗Textbooks</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../📗Textbooks/_Index_of_📗Textbooks.html">_Index_of_📗Textbooks</a></li></ol></li><li class="chapter-item "><a href="../../index.html">🏠 Welcome to Cole's Notes!</a></li><li class="chapter-item "><a href="../../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i id="iconToggle" class="fa fa-moon-o"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title">Normal Forms</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<hr>  
+<p>updated: 2021-11-18_06:24:25-05:00</p>
+<hr>  
+<h1 id="normal-forms"><a class="header" href="#normal-forms">Normal Forms</a></h1>
+<ul>
+<li>1st Normal Form</li>
+<li>2nd Normal Form</li>
+<li>3rd Normal Form</li>
+<li>Boyce Codd Normal Form</li>
+</ul>
+<p>It's good when we are in a boyce codd form<br />
+Formalize what designs are bad, test for them</p>
+<h2 id="normal-forms-114"><a class="header" href="#normal-forms-114">Normal Forms (11/4)</a></h2>
+<ul>
+<li>
+<p>1NF</p>
+<ul>
+<li>no multivalued attributes</li>
+</ul>
+</li>
+<li>
+<p>2NF</p>
+</li>
+<li>
+<p>3NF</p>
+</li>
+<li>
+<p>BCNF</p>
+<ul>
+<li>2-&gt;BC: depends on keys and FDs</li>
+</ul>
+</li>
+<li>
+<p>4NF</p>
+<ul>
+<li>Multivalued FD</li>
+</ul>
+</li>
+<li>
+<p>*5NF keys, join dependencies.</p>
+</li>
+</ul>
+<h2 id="normalization"><a class="header" href="#normalization">Normalization</a></h2>
+<p><em>the process of decomposing unsatisfactory relations by breaking up their attributes into smaller relations</em></p>
+<h2 id="formal-definition"><a class="header" href="#formal-definition">Formal Definition:</a></h2>
+<p>Conditions using keys and FDs of a relation to certify whether a relation schema is a particular in normal form</p>
+<h2 id="decomposition-of-relation-to-get-it-into-normal-form"><a class="header" href="#decomposition-of-relation-to-get-it-into-normal-form">Decomposition of Relation (to get it into normal form):</a></h2>
+<ol>
+<li>Lossless Join</li>
+<li>Dependency Preservation</li>
+</ol>
+<h3 id="lossless-join"><a class="header" href="#lossless-join">Lossless Join?</a></h3>
+<p>e.g.:<br />
+R(ABC)</p>
+<table><thead><tr><th>A</th><th>B</th><th>C</th></tr></thead><tbody>
+<tr><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>4</td><td>2</td><td>5</td></tr>
+</tbody></table>
+<p>due to some normal form violation R is decomposed into R1 and R2</p>
+<p>R1(A B)</p>
+<table><thead><tr><th>A</th><th>B</th></tr></thead><tbody>
+<tr><td>1</td><td>2</td></tr>
+<tr><td>4</td><td>2</td></tr>
+</tbody></table>
+<p>R2(B C)</p>
+<table><thead><tr><th>B</th><th>C</th></tr></thead><tbody>
+<tr><td>2</td><td>3</td></tr>
+<tr><td>2</td><td>5</td></tr>
+</tbody></table>
+<p>After decomposition if R1 $\bowtie$ R2 == R1 then it is a <em>lossless decomposition</em></p>
+<p>R1 $\bowtie$ R2</p>
+<table><thead><tr><th>A</th><th>B</th><th>C</th></tr></thead><tbody>
+<tr><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>1</td><td>2</td><td>5</td></tr>
+<tr><td>4</td><td>2</td><td>3</td></tr>
+<tr><td>4</td><td>2</td><td>5</td></tr>
+</tbody></table>
+<p>R1 $\bowtie$ R2 $\neq$ R $\therefore$ the decomposition was lossy</p>
+<p>If you don't have the table to compare...</p>
+<h4 id="the-chase-test-for-lossless-join-a-better-method-of-determining-lossiness"><a class="header" href="#the-chase-test-for-lossless-join-a-better-method-of-determining-lossiness">The Chase Test for lossless join: A better method of determining lossiness</a></h4>
+<p>R(A B C D E G)</p>
+<p>R1(A B)<br />
+R2(B C)<br />
+R3(A B D E)<br />
+R4(E G)</p>
+<p>FD that hold:<br />
+AD 	-&gt; E<br />
+B 	-&gt; D<br />
+E 	-&gt; G</p>
+<p>Draw a table</p>
+<table><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>G</th></tr></thead><tbody>
+<tr><td>R1</td><td>x</td><td>x</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>R2</td><td></td><td>x</td><td>x</td><td></td><td></td><td></td></tr>
+<tr><td>R3</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td></td></tr>
+<tr><td>R4</td><td></td><td></td><td></td><td></td><td>x</td><td>x</td></tr>
+</tbody></table>
+<p>For each FD, <em>look for a row that has both the LHS &amp; RHS are marked</em>, if found, find all rows that match the LHS. Fill in the symbol on that row that matches the RHS</p>
+<p>AD -&gt; E</p>
+<ul>
+<li>no rows that match AD  but don't have E</li>
+</ul>
+<p>B -&gt; D</p>
+<table><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>G</th></tr></thead><tbody>
+<tr><td>R1</td><td>x</td><td>x</td><td></td><td>x</td><td></td><td></td></tr>
+<tr><td>R2</td><td></td><td>x</td><td>x</td><td>x</td><td></td><td></td></tr>
+<tr><td>R3</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td></td></tr>
+<tr><td>R4</td><td></td><td></td><td></td><td></td><td>x</td><td>x</td></tr>
+</tbody></table>
+<p>E -&gt; G</p>
+<table><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>G</th></tr></thead><tbody>
+<tr><td>R1</td><td>x</td><td>x</td><td></td><td>x</td><td></td><td></td></tr>
+<tr><td>R2</td><td></td><td>x</td><td>x</td><td>x</td><td></td><td></td></tr>
+<tr><td>R3</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td></tr>
+<tr><td>R4</td><td></td><td></td><td></td><td></td><td>x</td><td>x</td></tr>
+</tbody></table>
+<p>Do it again....<br />
+AD -&gt; E</p>
+<table><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>G</th></tr></thead><tbody>
+<tr><td>R1</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td></td></tr>
+<tr><td>R2</td><td></td><td>x</td><td>x</td><td>x</td><td>x</td><td></td></tr>
+<tr><td>R3</td><td>x</td><td>x</td><td></td><td>x</td><td>x</td><td>x</td></tr>
+<tr><td>R4</td><td></td><td></td><td></td><td></td><td>x</td><td>x</td></tr>
+</tbody></table>
+<p>Keep doing it until you can't anymore (we are done here)</p>
+<p>Is there a row where all columns are marked?</p>
+<ul>
+<li><em>yes</em>: decomposition is lossless</li>
+<li><em>no</em>: decomposition is lossy</li>
+</ul>
+<h3 id="dependency-preservation"><a class="header" href="#dependency-preservation">Dependency Preservation?</a></h3>
+<p>R(A B C D E G)<br />
+F={	AB-&gt;C<br />
+AC-&gt;B<br />
+AD-&gt;E<br />
+B-&gt;D<br />
+BC-&gt;A<br />
+E-&gt;G<br />
+}</p>
+<p>Let's say R is decomposed into:<br />
+R1(A B)<br />
+R2(B C)<br />
+R3(A B C D E)<br />
+R4(E G)</p>
+<p>We need to check to see if the dependencies have been maintained<br />
+B-&gt;D:<br />
+R3 has B-&gt;D<br />
+E-&gt;G:<br />
+R4<br />
+AD-&gt;E:<br />
+R3<br />
+AB-&gt;C:<br />
+<em>none</em><br />
+AC-&gt;B:<br />
+<em>none</em><br />
+BC-&gt;A:<br />
+<em>none</em><br />
+<strong>If you don't have the symbols in the FD in the decomposition, it does not maintain FDs</strong><br />
+If either of these things happen, you did not decompose it right!</p>
+<h1 id="defining-normal-forms"><a class="header" href="#defining-normal-forms">Defining Normal Forms:</a></h1>
+<p>if BCNF, then 1st, 2nd, and 3rd</p>
+<pre><code class="language-nomnoml">[1st NF|[2rd NF|[3rd NF|[BCNF]]]]  
+  
+</code></pre>
+<h2 id="first-normal-form"><a class="header" href="#first-normal-form">First Normal Form</a></h2>
+<p>Do not allow composite attributes and multivalued attributes</p>
+<ul>
+<li>eg multivalued: address with street, city etc...
+<ul>
+<li>one attribute, multiple &quot;fields&quot;</li>
+</ul>
+</li>
+<li>eg composite: name with first, middle, last
+<ul>
+<li>multiple attributes representing one thing (like fname &amp; lname)</li>
+</ul>
+</li>
+<li>Most db are in first normal</li>
+</ul>
+<h2 id="second-normal-form"><a class="header" href="#second-normal-form">Second Normal Form</a></h2>
+<p>A relation schema R is in second normal form if in first normal form and every non-prime attribute is fully functionally dependent on primary key</p>
+<p><a href="Prime%20Attribute.html">Prime Attribute</a></p>
+<blockquote>
+<p>eg (ssn, pnumber, hours, ename, pname, ploc) becomes<br />
+(ssn, pnumber, hours)<br />
+(ssn ename)<br />
+(pnumber pname ploc)</p>
+</blockquote>
+<h2 id="third-normal-form"><a class="header" href="#third-normal-form">Third Normal Form</a></h2>
+<p>A relation schema R is in third normal form if it is 2nd normal form &amp; no non-prime attribute A in R is <strong>transitively dependent</strong> on the primary key</p>
+<ul>
+<li>For each non-<a href="Trivial.html">Trivial</a> FD, either the LHS is superkey OR the RHS consists of prime attributes only (not both)</li>
+</ul>
+<h3 id="decomposition-algorithm-to-get-it-into-3rd-normal-form"><a class="header" href="#decomposition-algorithm-to-get-it-into-3rd-normal-form">Decomposition Algorithm to get it into 3rd Normal Form:</a></h3>
+<ol>
+<li>Find Minimal basis(<em>the minimum number of FD's to describe a relation)</em>) for FD's (say G) (I have notes somewhere...)</li>
+<li>For each FD X-&gt;A in G
+<ol>
+<li>use XA as schema</li>
+</ol>
+</li>
+<li>if none of the schemas from step 2 is a superkey of original schema R, then add another relation whose schema is a key of R</li>
+</ol>
+<p>Eg:<br />
+R(A B C D E)<br />
+FD={<br />
+AB	-&gt; C<br />
+C	-&gt; B<br />
+A	-&gt; D<br />
+}</p>
+<p>all nontrivial (RHS is not subset of LHS)</p>
+<p>is R in 3rd normal form? <em>no</em></p>
+<p>how to find the superkeys?<br />
+find the closure:<br />
+{AB}+ = {A B C D}<br />
+{ABE}+ = {A B C D E} (found one)<br />
+{ACE}+ = {A B C D E} (found another)<br />
+find a couple of them<br />
+superkey={ABE,ACE...}<br />
+None of the LHS for FD's are superkeys, so RHS for all must be a prime attribute (a part of super key)<br />
+D will never be a super key, so A-&gt;D Fails</p>
+<p>Minimal FD's for Relation R<br />
+find minimal</p>
+<ol>
+<li>AB	-&gt; C</li>
+<li>C	-&gt; B</li>
+<li>A	-&gt; D</li>
+</ol>
+<p>this is the minimal, how do we know</p>
+<p>If you remove  AB -&gt; C, then can I get to AB -&gt; C with the other two?<br />
+C+ closure = B<br />
+A+ closure = D<br />
+AB Closure without #1 = {A B D}</p>
+<p>To find minimum: remove each FD and find closure of others to see if we get to that relation</p>
+<p>2nd step:<br />
+(ABC) (CB) (AD)<br />
+R2 subset R1 so got rid of it<br />
+so we have (ABC) (AD) , none are superkeys</p>
+<p>choose superkey, add to relation<br />
+R1(ABC) R3(AD) <strong>R4(ABE)</strong></p>
+<h2 id="boyce-codd-normal-form-bcnf"><a class="header" href="#boyce-codd-normal-form-bcnf">Boyce Codd Normal Form (BCNF)</a></h2>
+<p>In a relation R for every non-trivial FD:<br />
+A1 A2 ... An -&gt; B1 B2 ... Bn<br />
+Left hand side must have a <a href="Key.html">Key</a></p>
+<h3 id="decomposition-algo-for-bcnf"><a class="header" href="#decomposition-algo-for-bcnf">Decomposition Algo. for BCNF:</a></h3>
+<ol>
+<li>Let X-&gt;Y be a BCNF violation
+<ol>
+<li>find x+ (closure)</li>
+<li>let R1 = x+ and then R2 = x ^ attributes in R that are not x+</li>
+</ol>
+</li>
+<li>compute FD's on R1 and R2</li>
+<li>check for BCNF violations in R1 &amp; R2. If  there are, repeat</li>
+</ol>
+<blockquote>
+<p>Theorem:<br />
+if a relation has only two attributes is in BCNF</p>
+</blockquote>
+<h3 id="example"><a class="header" href="#example">Example:</a></h3>
+<p><em>R(A B C D)</em><br />
+FD+ = AB -&gt; C,  C-&gt;D, D-&gt; A</p>
+<p>A+ 	= A<br />
+B+ 	= B<br />
+C+ 	= A C D<br />
+D+ 	= A D<br />
+AB+	= A B C D<br />
+BC+	= A B C D<br />
+AC+ = A C D<br />
+AD+	= A D<br />
+BD+	= A B C D<br />
+CD+ = A C D</p>
+<p>continuing isn't relevant since LHS is max AB</p>
+<p>Keys = {AB, BC, BD}</p>
+<p><strong>C -&gt; D violates BCNF</strong></p>
+<ul>
+<li>Closure of C gives us A C D</li>
+<li>R1 = A C D</li>
+<li>R2 = C B (anything not in R1)
+<ul>
+<li>Only 2 attributes, so already in BCNF</li>
+</ul>
+</li>
+</ul>
+<p><em>R1(A C D)</em></p>
+<p>Is R1 in BCNF?<br />
+A+ = A<br />
+C+ = A C D<br />
+D+ = A D</p>
+<p><strong>D -&gt; A violates BCNF</strong></p>
+<ul>
+<li>Closure of D gives us A D</li>
+<li>R11 = A D</li>
+<li>R12 = C D</li>
+</ul>
+<p>I think we are done?</p>
+<pre><code class="language-nomnoml">#direction:down  
+[R(ABCD)] - [R1(ACD)]  
+[R(ABCD)] - [R2(BC)]  
+[R1(ACD)] - [R11(AD)]  
+[R1(ACD)] - [R12(CD)]  
+</code></pre>
+<h2 id="delfourth-normal-form-bcnf-for-multivalued-depdel"><a class="header" href="#delfourth-normal-form-bcnf-for-multivalued-depdel"><del>Fourth Normal Form BCNF for multivalued dep.</del></a></h2>
+<p>Not useful to learn these last two...</p>
+<h2 id="delfifth-normal-formdel"><a class="header" href="#delfifth-normal-formdel"><del>Fifth Normal Form</del></a></h2>
+<h1 id="multivalued-dependencies"><a class="header" href="#multivalued-dependencies">Multivalued Dependencies</a></h1>
+<p>Denoted with double arrows</p>
+<p>A1 ... An -&gt;&gt; B1 ... Bn<br />
+in a relation R</p>
+<p>$\bar A$ could represent a set of values?</p>
+<p>$\forall$ t,u $\in$ R: t[$\bar A$]= u[$\bar A$] then<br />
+$\exists$ v $\in$ R | v[$\bar A$] = t[$\bar A$] and<br />
+v[$\bar B$] = t[$\bar B$] and<br />
+v[$\bar{rest}$] = t[$\bar {rest}$]</p>
+<p>|     | A1...AK ($\bar A$) | B1...Bk ($\bar B$) | Rest |<br />
+| --- | ------------------ | ------------------ | ---- |<br />
+| t   | $\bar a$           | .....              |      |</p>
+<p>aanyways... Took a pic of this chart 11/11/2021 @ 2pmish</p>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
+    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
+    <script>
+        var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+        var i = 0;
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) {
+            theme = 'dark';
+        }
+        while (nomnomls.length > 0) {
+            var name = 'target-canvas';
+            name += i;
+            var source;
+            if (theme == 'dark') source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n';
+            else source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #22262f\n#fill: #fafafa; #ffffff\n';
+            source += nomnomls[0].textContent;
+            nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '">\n</canvas>');
+            var canvas = document.getElementById(name);
+            nomnoml.draw(canvas, source);
+            let rect = canvas.getBoundingClientRect();
+            nomnoml.draw(canvas, source, 4);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            nomnomls[0].parentElement.removeChild(nomnomls[0].parentElement.firstChild);
+            nomnomls[0].remove();
+            nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+            i++;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

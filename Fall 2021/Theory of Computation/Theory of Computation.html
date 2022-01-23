@@ -1,0 +1,879 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title>Theory of Computation - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../../highlight.css">
+    <link rel="stylesheet" href="../../tomorrow-night.css">
+    <link rel="stylesheet" href="../../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item expanded "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/Nihon-Go.html">Nihon-Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/_Index_of_Nihon-Go.html">_Index_of_Nihon-Go</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/JSON.html">JSON</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Normal Forms.html">Normal Forms</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Referential Integrity.html">Referential Integrity</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/SQL.html">SQL</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Operating Systems.html">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Ethics Free Presentations.html">Ethics Free Presentations</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Is Professional Practice at Risk Notes.html">Is Professional Practice at Risk Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Nick Presentation.html">Nick Presentation</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Picture a Scientist Notes.html">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Video 2 Feedback.html">Video 2 Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item expanded "><a href="../../Fall 2021/Theory of Computation/Theory of Computation.html" class="active">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Exam Prep.html">Exam Prep</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li></ol></li><li class="chapter-item "><div>Spring 2022</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Algorithms/Algorithms.html">Algorithms</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Algorithms/_Index_of_Algorithms.html">_Index_of_Algorithms</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/Internship/Internship.html">Internship</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Internship/_Index_of_Internship.html">_Index_of_Internship</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/_Index_of_Spring 2022.html">_Index_of_Spring 2022</a></li></ol></li><li class="chapter-item "><div>_Daily_Notes</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../../_Daily_Notes/_Index_of__Daily_Notes.html">_Index_of__Daily_Notes</a></li></ol></li><li class="chapter-item "><a href="../../📗Textbooks/📗Textbooks.html">📗Textbooks</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../📗Textbooks/_Index_of_📗Textbooks.html">_Index_of_📗Textbooks</a></li></ol></li><li class="chapter-item "><a href="../../index.html">🏠 Welcome to Cole's Notes!</a></li><li class="chapter-item "><a href="../../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i id="iconToggle" class="fa fa-moon-o"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title">Theory of Computation</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<hr>  
+<p>updated: 2021-12-16_10:59:43-05:00</p>
+<hr>  
+<h1 id="theory-of-computation"><a class="header" href="#theory-of-computation">Theory of Computation</a></h1>
+<ul>
+<li>^^ Fundamental Capabilities and limitations of computers
+<ul>
+<li>Also known as <a href="Automata%20Theory.html">Automata Theory</a></li>
+</ul>
+</li>
+</ul>
+<p>If a language is regular, it is also Context free, and Turing recognizable</p>
+<p>If it is a non-regular language, some may be context free, some may be not context free</p>
+<ul>
+<li><span class="missing-link" style="color:darkred;">Complexity</span> --&gt; Why are some problems harder than others?</li>
+<li><a href="Computability.html">Computability</a> --&gt; Are there problems that cannot be solved by computers?</li>
+<li>What is an <a href="Automata%20Theory.html">Automata Theory</a>?
+<ul>
+<li>A mathematical model of computation which could be used to address the two above questions</li>
+</ul>
+</li>
+<li><span class="missing-link" style="color:darkred;">Complexity</span> example:
+<ul>
+<li>Problem: Sorting a deck of 100 uniquely numbered cards
+<ul>
+<li>Easy, Computable</li>
+</ul>
+</li>
+<li>Problem: Checking whether such a deck exists
+<ul>
+<li>What is the input? Given a box of cards? or?</li>
+<li>This is why we need to know the <span class="missing-link" style="color:darkred;">Domain</span></li>
+</ul>
+</li>
+<li>Problem (Complex): Scheduling 100 unique classes with 25 instructors into 9 class rooms with 3 time slots a day 4 days a week
+<ul>
+<li>Constraint: Avoiding room or instructor conflicts</li>
+<li>Computable but complex</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How do we deal with <span class="missing-link" style="color:darkred;">complexity</span>?
+<ul>
+<li>Abstraction and simplification</li>
+<li>
+<ol>
+<li>Alter the root of difficulty</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Settle for a less than perfect solution</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>Only hard in the worst case situation</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>History Lesson:
+<ul>
+<li>1900: David Hilbert proposed in Paris 23 mathematical problems for the century
+<ul>
+<li># 10: test if a polynomial has an integral root</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>In order to study this we will be reviewing <a href="Set%20Theory.html">Set Theory</a></li>
+</ul>
+<h2 id="functions-and-relations"><a class="header" href="#functions-and-relations">Functions and Relations</a></h2>
+<ul>
+<li>f(a) = b
+<ul>
+<li>f maps a to b</li>
+</ul>
+</li>
+<li>Add function.. Domain is the set of ordered pairs</li>
+<li><strong>Binary Function</strong>: A function with two arguments</li>
+<li><strong>Relation:</strong> A property who's domain is a set of k-tuples</li>
+</ul>
+<p><strong>Special Binary Relation:</strong> <a href="Equivalence%20Relation.html">Equivalence Relation</a></p>
+<p>Theorem: <a href="DeMorgans%20Law.html">DeMorgans Law</a></p>
+<p>Theorem: <a href="sqrt(2)%20is%20irrational.html">sqrt(2) is irrational</a></p>
+<h2 id="building-blocks-of-toc"><a class="header" href="#building-blocks-of-toc">Building Blocks of TOC</a></h2>
+<h3 id="symbol-ab-etc"><a class="header" href="#symbol-ab-etc">Symbol: a,b,*, etc</a></h3>
+<h3 id="from-symbols-we-can-form-an-alphabet-sigma"><a class="header" href="#from-symbols-we-can-form-an-alphabet-sigma">From symbols, we can form an alphabet: $\Sigma$</a></h3>
+<ul>
+<li>collection of symbols</li>
+</ul>
+<h3 id="string-a-sequence-of-symbols"><a class="header" href="#string-a-sequence-of-symbols">String: a sequence of symbols</a></h3>
+<ul>
+<li>Consider an alphabet $\Sigma$ = {a,b}</li>
+<li>how many strings of length n?
+<ul>
+<li>2^n strings</li>
+</ul>
+</li>
+<li>if the alphabet is $\Sigma$ then a number of symbols in $\Sigma$ = |$\Sigma$|</li>
+<li>the number of strings over $\Sigma$ is $|\Sigma|^n$</li>
+</ul>
+<h3 id="language-is-a-collection-of-strings"><a class="header" href="#language-is-a-collection-of-strings">Language is a collection of Strings</a></h3>
+<h3 id="powers-of-sigma"><a class="header" href="#powers-of-sigma">Powers of $\Sigma$</a></h3>
+<ul>
+<li>* = 0 union 1 union 2 etc (set of all possible strings)
+<ul>
+<li>universal set</li>
+</ul>
+</li>
+<li>0 = {$\epsilon$}</li>
+<li>1 = set of all strings of length 1</li>
+<li>n = all strings of length n</li>
+<li>etc..</li>
+</ul>
+<p>How do we describe Automatas?</p>
+<h2 id="computational-model"><a class="header" href="#computational-model">Computational Model</a></h2>
+<h3 id="a-hrefstate20diagramhtmlstate-diagrama"><a class="header" href="#a-hrefstate20diagramhtmlstate-diagrama"><a href="State%20Diagram.html">State Diagram</a></a></h3>
+<ul>
+<li>
+<p>State diagrams usually describe <a href="DFA.html">DFA</a>s, which are a type of <a href="Finite%20Automata.html">Finite Automata</a></p>
+</li>
+<li>
+<p>Any Language that can be represented by a <a href="DFA.html">DFA</a> is called a <a href="Regular%20Language.html">Regular Language</a></p>
+</li>
+</ul>
+<h2 id="a-hrefregular20languagehtmlregular-languagea"><a class="header" href="#a-hrefregular20languagehtmlregular-languagea"><a href="Regular%20Language.html">Regular Language</a></a></h2>
+<h2 id="formal-definition-of-computation"><a class="header" href="#formal-definition-of-computation">Formal Definition of Computation</a></h2>
+<p>let $M=(Q,\Sigma,\delta,q_0,f)$ be a finite automata<br />
+and let $w_1...w_n$ be a string where $w_i\in\Sigma$<br />
+then $M$ accepts $w$ if a sequence of states $r_0,r_1...r_n$ in $Q$ exists such that<br />
+$r_0=q_0$<br />
+$\delta(r_i,w_{i+1})=r_{i+1}$ for $i=0...n-1$<br />
+$r_n\in f$<br />
+$M$ recognizes language $A$ if $A={w|M$ accepts $w}$</p>
+<ul>
+<li><a href="Closure.html">Closure</a></li>
+</ul>
+<h2 id="regular-language-a-hrefclosurehtmlclosurea"><a class="header" href="#regular-language-a-hrefclosurehtmlclosurea">Regular Language <a href="Closure.html">Closure</a>:</a></h2>
+<ul>
+<li>Regular Languages are closed under:
+<ul>
+<li><a href="RL%20Closure%20under%20Complement.html">Complementation</a> (NOT)</li>
+<li><a href="RL%20Closure%20under%20Union.html">Union</a></li>
+<li><a href="RL%20Closure%20under%20Intersection.html">Intersection</a></li>
+<li><a href="RL%20Closure%20under%20Concatenation.html">Concatenation</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/DFA Multiple of 4.svg" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/DFA Multiple of 4.svg" alt="DFA Multiple of 4"/></a></p>
+<h2 id="generalized-form-for-multiple-of-m"><a class="header" href="#generalized-form-for-multiple-of-m">Generalized form for multiple of M</a></h2>
+<ul>
+<li>Sum of digits is a multiple of m</li>
+<li>$(Q,\Sigma,\delta,q_0,f)$</li>
+<li>$Q={q_0...q_{m-1}}$</li>
+<li>$\Sigma = {0,1,2,3,4,5,6,7,8,9}$</li>
+<li>$q_0=q_0$</li>
+<li>$\delta(q_2,3)=q_1$</li>
+<li>$(i+d)mod(m)$</li>
+</ul>
+<h2 id="looking-at-nfas"><a class="header" href="#looking-at-nfas">Looking at NFA's:</a></h2>
+<p><a href="Nondeterministic Finite Automata#example Finite Automata that accepts all strings of form 0 k where k is a multiple of 2 or 3">Nondeterministic Finite Automata#Example Finite Automata that accepts all strings of form 0 k where k is a multiple of 2 or 3</a><br />
+<a href="Nondeterministic Finite Automata#example the language of strings of length at least 2 that begin with 0 and end in 1">Nondeterministic Finite Automata#Example the language of strings of length at least 2 that begin with 0 and end in 1</a>]<br />
+<a href="Nondeterministic Finite Automata#example the language of strings of length at least 2 that have a 1 in the second to last position">Nondeterministic Finite Automata#Example the language of strings of length at least 2 that have a 1 in the second to last position</a></p>
+<ul>
+<li>
+<ul>
+<li>includes empty set</li>
+</ul>
+</li>
+</ul>
+<h1 id="nfa-to-dfa"><a class="header" href="#nfa-to-dfa">NFA to DFA</a></h1>
+<ul>
+<li>Why?
+<ul>
+<li>NFA is not serial, making it a DFA you can predict runtime etc</li>
+</ul>
+</li>
+</ul>
+<h2 id="every-nfa-has-a-dfa"><a class="header" href="#every-nfa-has-a-dfa">Every NFA has a DFA</a></h2>
+<ul>
+<li>For every ambiguous transition (where it goes to 2 or more states), unify them as a 'combo state'
+<ul>
+<li>instead of 0 going to q0 and q1, it goes to q0q1</li>
+<li>Table method</li>
+<li>Only read epsilon symbol after character (on transition table)</li>
+<li>Start state can be different</li>
+</ul>
+</li>
+<li>Domain of DFA includes the powerset of the sets in the NFA (think epsilon transitions)</li>
+<li>How to simplify states
+<ul>
+<li>if no input states, remove state</li>
+</ul>
+</li>
+</ul>
+<h1 id="a-hrefregular20languagehtmlregular-languagea-1"><a class="header" href="#a-hrefregular20languagehtmlregular-languagea-1"><a href="Regular%20Language.html">Regular Language</a></a></h1>
+<p>We are now going to learn about:</p>
+<h1 id="a-hrefregular20expressionhtmlregular-expressiona"><a class="header" href="#a-hrefregular20expressionhtmlregular-expressiona"><a href="Regular%20Expression.html">Regular Expression</a></a></h1>
+<h1 id="converting-r-into-an-nfa"><a class="header" href="#converting-r-into-an-nfa">Converting R into an NFA</a></h1>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210922095823.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210922095823.png" alt="Pasted image 20210922095823"/></a></p>
+<h1 id="a-hrefdfa20to20regular20expressionhtmldfa-to-regular-expressiona"><a class="header" href="#a-hrefdfa20to20regular20expressionhtmldfa-to-regular-expressiona"><a href="DFA%20to%20Regular%20Expression.html">DFA to Regular Expression</a></a></h1>
+<h2 id="example-nfa-dfa"><a class="header" href="#example-nfa-dfa">Example: NFA-&gt;DFA</a></h2>
+<ul>
+<li>
+<p>States without incoming transitions can be ignored</p>
+</li>
+<li>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210927095841.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210927095841.png" alt="Pasted image 20210927095841"/></a></p>
+</li>
+<li>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210927100027.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20210927100027.png" alt="Pasted image 20210927100027"/></a></p>
+</li>
+<li></li>
+</ul>
+<h1 id="exam-1"><a class="header" href="#exam-1">Exam 1</a></h1>
+<ul>
+<li>shouldn't take more than the class time.</li>
+<li>can start 5m early</li>
+<li>Closed book</li>
+<li>Everything we have learned so far</li>
+</ul>
+<h1 id="a-hrefnon-regular20languagehtmlnon-regular-languagea"><a class="header" href="#a-hrefnon-regular20languagehtmlnon-regular-languagea"><a href="Non-Regular%20Language.html">Non-Regular Language</a></a></h1>
+<h1 id="a-hrefpumping20lemmahtmlpumping-lemmaa"><a class="header" href="#a-hrefpumping20lemmahtmlpumping-lemmaa"><a href="Pumping%20Lemma.html">Pumping Lemma</a></a></h1>
+<h1 id="context-free-stuff"><a class="header" href="#context-free-stuff">Context free stuff</a></h1>
+<ul>
+<li><a href="Context%20Free%20Language.html">Context Free Language</a>
+<ul>
+<li>has a <span class="missing-link" style="color:darkred;">Context Free Language#Context Free Grammar</span></li>
+</ul>
+</li>
+<li><a href="Push%20Down%20Automata.html">Push Down Automata</a></li>
+</ul>
+<h1 id="a-hrefchomsky20normal20formhtmlchomsky-normal-forma"><a class="header" href="#a-hrefchomsky20normal20formhtmlchomsky-normal-forma"><a href="Chomsky%20Normal%20Form.html">Chomsky Normal Form</a></a></h1>
+<p>Let's do another example for ada? pda? didn't hear her right... :</p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020100213.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211020100213.png" alt="Pasted image 20211020100213"/></a></p>
+<h1 id="closure-properties-of-cfl"><a class="header" href="#closure-properties-of-cfl">Closure properties of CFL</a></h1>
+<p>*Regular languages are closed under $\cup$,$\cap$,-,$\cdot$,* *</p>
+<ol>
+<li>The class of context free languages is closed under union, concatenation, and star operations.
+<ul>
+<li>L1 and L2 are two CFL then L1 $\cup$ L2 is also CFL (L1 L2 =&gt; CFL)</li>
+<li>L1$^\star$ or L2$^\star$ is also CFL</li>
+<li>You could do this with PDA, but let's do it with CFG<br />
+<strong>Union</strong>:</li>
+<li>S -&gt; S1 | S2<br />
+CFG of L1<br />
+CFG of L2<br />
+<strong>Concatenation</strong>:</li>
+<li>L1 and L2 are CFLs<br />
+let s1 be the start variable for L1's grammar<br />
+let s2 be the start variable for L2<br />
+L = L1 L2</li>
+<li>S -&gt; S1 S2<br />
+CFG of L1<br />
+CFG of L2<br />
+<strong>Star</strong>:</li>
+<li>S -&gt; S S1 | e<br />
+CFG of L1</li>
+<li>L = L$^{\star}$  CFG</li>
+</ul>
+</li>
+<li>The class of CFL are <em>not</em> closed under intersection or compliment (one implies the other)
+<ul>
+<li>Easiest to do this as an example, rather than a proper proof (proof by example)<br />
+<strong>Intersection</strong>:</li>
+<li>Consider the language L1= {$a^nb^nc^i|i,n\geq0$}<br />
+S -&gt; TU<br />
+T -&gt; aTb | e<br />
+U -&gt; cU | e</li>
+<li>Now consider the language L2 = {$a^ib^nc^{n}|i,n\geq 0$}</li>
+<li>Both are CFG</li>
+<li>L1 $\cap$ L2 = {$a^nb^nc^n|n\geq0$}</li>
+<li><strong>this is not a CFG</strong></li>
+<li><em>we will go over this next class</em><br />
+<strong>Complementation</strong>:</li>
+<li>if it were, then it would be closed under intersection because of DeMorgan's Law</li>
+<li>A$\cap$B = $\overline{\overline{A}\cup\overline{B}}$</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>a^i b^j c^k | i =/= j or j=/=k
+<ul>
+<li><strong>find the grammar for this</strong></li>
+</ul>
+</li>
+</ul>
+<p><a href="Non-Context%20Free%20Languages.html">Non-Context Free Languages</a><br />
+<span class="missing-link" style="color:darkred;">Non-Context Free Languages#Theorem</span><br />
+<span class="missing-link" style="color:darkred;">Non-Context Free Languages#Pumping Lemma</span></p>
+<p><a href="Exam%20Prep.html">Exam Prep</a></p>
+<h1 id="a-hrefturing20machinehtmlturing-machinea"><a class="header" href="#a-hrefturing20machinehtmlturing-machinea"><a href="Turing%20Machine.html">Turing Machine</a></a></h1>
+<p>HW (sorta, for practice)</p>
+<p>TM<br />
+C = {a^i b^j c^k | i x j = k and i,j,k &gt;= 1}</p>
+<p>L = {a^2i b^i c^2i | i&gt;0}</p>
+<h2 id="theorem-if-a-language-is-regular-then-it-is-decidable"><a class="header" href="#theorem-if-a-language-is-regular-then-it-is-decidable">Theorem: If a language is regular then it is decidable</a></h2>
+<ul>
+<li>Approach, come up with turing machine</li>
+</ul>
+<h3 id="proof-suppose-m-is-a-dfa-for-a-given-regular-language"><a class="header" href="#proof-suppose-m-is-a-dfa-for-a-given-regular-language">Proof: Suppose M is a DFA for a given regular language</a></h3>
+<p>A TM can simulate M by reading the input from left to right while going through the same states as M<br />
+Once you reach the end of input, the TM enters the accept state if M is in accept state</p>
+<p>Let M = (Q $\Sigma$ $\delta$ q0 f)<br />
+M' (Q $\Sigma$ $\rho$ $\delta'$ q0 qa qr)<br />
+where Q' = Q $\cup$ {qa,qr}<br />
+$\rho$ = $\Sigma$ $\cup$ {_}<br />
+$\delta'$(q,a) = ($\delta$(q,a),a,R)<br />
+(a is some input not _) ($a\in\Sigma$)<br />
+if q $\in$ Q &amp; a $\ne$ _<br />
+$\delta$(q,_) = {</p>
+<table><thead><tr><th>(qa,_,R)</th><th>if q $\in$ F</th></tr></thead><tbody>
+<tr><td>(qR,_,R )</td><td>if q$\notin$F</td></tr>
+<tr><td>}</td><td></td></tr>
+</tbody></table>
+<h2 id="theorem-if-a-language-is-context-free-then-it-is-decidable"><a class="header" href="#theorem-if-a-language-is-context-free-then-it-is-decidable">Theorem: If a language is context free then it is decidable</a></h2>
+<h3 id="proof-simulate-a-tm-by-using-a-pda-if-pda-goes-to-accept-state-at-the-end-of-the-input-then-the-tm-will-go-to-the-accept-state-otherwise-tm-will-go-to-reject"><a class="header" href="#proof-simulate-a-tm-by-using-a-pda-if-pda-goes-to-accept-state-at-the-end-of-the-input-then-the-tm-will-go-to-the-accept-state-otherwise-tm-will-go-to-reject">Proof: Simulate a TM by using a PDA if PDA goes to accept state at the end of the input then the TM will go to the accept state, otherwise TM will go to reject</a></h3>
+<h2 id="claim-the-class-of-languages-accepted-by-deterministic-tms-and-non-deterministic-tms-are-equal"><a class="header" href="#claim-the-class-of-languages-accepted-by-deterministic-tms-and-non-deterministic-tms-are-equal">Claim: the class of languages accepted by deterministic TM's and Non-deterministic TM's are equal</a></h2>
+<h1 id="closure-properties-of-decidable-and-turing-recognizable-languages"><a class="header" href="#closure-properties-of-decidable-and-turing-recognizable-languages">Closure Properties of decidable and turing recognizable languages</a></h1>
+<table><thead><tr><th>Operation</th><th>Decidable</th><th>Turing Recognizable</th></tr></thead><tbody>
+<tr><td>Union</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
+<tr><td>Concatenation</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
+<tr><td>Intersection</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
+<tr><td>Star</td><td>$\checkmark$</td><td>$\checkmark$</td></tr>
+<tr><td>Complement</td><td>$\checkmark$</td><td>NO</td></tr>
+</tbody></table>
+<p>Are decidable and recognizable languages closed under union?</p>
+<p>** * Reference for Non-determinism in TM: * ** <span class="missing-link" style="color:darkred;">Turing Machine#Multitape Turing Machine</span></p>
+<h2 id="union"><a class="header" href="#union">Union</a></h2>
+<h3 id="decidable"><a class="header" href="#decidable">Decidable</a></h3>
+<blockquote>
+<p>let l1 and l2 be decidable languages via halting TMs M1 &amp; M2 respectively (both halt)<br />
+is L1 $\cup$ L2 decidable<br />
+<em>yes</em>... Given input x; x $\in$ L'; L' = L1 $\cup$ L2</p>
+<ol>
+<li>Simulate M1 on x ... if M1 accepts then accept else</li>
+<li>Simulate M2 on x ... if M2 accepts then accept else</li>
+<li>Reject</li>
+</ol>
+</blockquote>
+<h3 id="recognizable-harder-to-prove-start-with-this"><a class="header" href="#recognizable-harder-to-prove-start-with-this">Recognizable (harder to prove, start with this)</a></h3>
+<blockquote>
+<p>let L1 and L2 be turing recognizable languages<br />
+is L1 $\cup$ L2 turing recognizable<br />
+M1 is  TM for L1 and<br />
+M2 is a TM for L2<br />
+M1 and M2 may accept or loop<br />
+(overall x $\in$ L1 $\cup$ L2)<br />
+Say x $\in$ L2<br />
+if we run x on M1 it may loop<br />
+<em><strong>Non-determinism</strong></em>...</p>
+<ol>
+<li>Run them simultaneously on x.</li>
+<li>If either accept, accept, else</li>
+<li>loop or reject<br />
+.<br />
+If it is turing recognizable $\therefore$ it is also turing decidable</li>
+</ol>
+</blockquote>
+<h2 id="concatenation"><a class="header" href="#concatenation">Concatenation</a></h2>
+<h3 id="recognizable"><a class="header" href="#recognizable">Recognizable</a></h3>
+<blockquote>
+<p>L1 and L2 are TR via TMs M1 and M2 respectively<br />
+is L1.L2 TR?<br />
+given input x, where x $\in$ L1.L2<br />
+First partition x into L1 and L2<br />
+<em><strong>Nondeterministically</strong></em>... (ie: try every possible split)</p>
+<ol>
+<li>Partition x as  x1.x2</li>
+<li>Simulate M1 on x1, if M1 rejects, then reject</li>
+<li>if M1 accepts, simulate M2 on x2
+<ul>
+<li>if M2 accepts; accept</li>
+<li>if M2 rejects; reject</li>
+<li>if M2 loops; loop (implies x2 $\notin$ L2)</li>
+</ul>
+</li>
+<li>if M1 loops;loop (implies x1 $\notin$ L1)</li>
+</ol>
+</blockquote>
+<h3 id="decidable-if-it-is-turing-recognizable-therefore-it-is-also-turing-decidable"><a class="header" href="#decidable-if-it-is-turing-recognizable-therefore-it-is-also-turing-decidable">Decidable: If it is turing recognizable $\therefore$ it is also turing decidable</a></h3>
+<h2 id="intersection"><a class="header" href="#intersection">Intersection</a></h2>
+<h3 id="recognizable-1"><a class="header" href="#recognizable-1">Recognizable</a></h3>
+<blockquote>
+<p>L1 and L2 are turing recognizable via TMs M1 and M2 respectively<br />
+is L1 $\cap$ L2 TR?<br />
+Given x $\in$ L1 $\cap$ L2</p>
+<ol>
+<li>Simulate M1 on x, if M1 rejects, then reject</li>
+<li>If M1 accepts, simulate M2 on x, if M2 accepts; accept; else reject</li>
+<li>If M1 loop (x $\notin$ L1 and $\therefore$ will loop)</li>
+</ol>
+</blockquote>
+<h2 id="star"><a class="header" href="#star">Star</a></h2>
+<h3 id="recognizable-2"><a class="header" href="#recognizable-2">Recognizable</a></h3>
+<blockquote>
+<p>L1 is TR via Turing Machine M1<br />
+Proof:<br />
+Given input x where x in L1*</p>
+<ol>
+<li>Nondeterministically guess a number t</li>
+<li>partition x as x1.x2 ... xt</li>
+<li>Simulate the machine M1  on the strings x1,x2 ... xt in sequence<br />
+if M1 accepts, accept....etc</li>
+</ol>
+</blockquote>
+<h2 id="complement"><a class="header" href="#complement">Complement</a></h2>
+<h3 id="decidable-1"><a class="header" href="#decidable-1">Decidable</a></h3>
+<blockquote>
+<p>L is decidable via halting TM M<br />
+given input x where x $\in \bar{L}$</p>
+<ol>
+<li>Simulate M on x;</li>
+<li>If M accepts, reject; else accept</li>
+</ol>
+</blockquote>
+<h3 id="recognizable-no"><a class="header" href="#recognizable-no">Recognizable? No</a></h3>
+<blockquote>
+<p>If it doesn't reject (but loops), this will not accept<br />
+so it can't be recognizable</p>
+</blockquote>
+<h2 id="l-is-decidable-iff-l-and-barl-are-turing-recognizable"><a class="header" href="#l-is-decidable-iff-l-and-barl-are-turing-recognizable"><em>L is decidable iff L and $\bar{L}$ are turing recognizable</em></a></h2>
+<ol>
+<li>if L is decidable, by closure properties, L and $\bar{L}$  are decidable</li>
+<li>if L and $\bar{L}$ are turing recognizable, is L decidable?</li>
+</ol>
+<blockquote>
+<p>let L be TR via M<br />
+$\bar{L}$ be TR via M1<br />
+construct a machine...</p>
+<ol>
+<li>Simulate M on x and M1 on x simultaneously</li>
+<li>if M accepts, accept; if M1 accepts, reject</li>
+<li>for every x you will halt</li>
+</ol>
+</blockquote>
+<h1 id="decidable-properties-of-rls-and-cfls"><a class="header" href="#decidable-properties-of-rls-and-cfls">Decidable properties of RLs and CFLs</a></h1>
+<p><em>we are looking at RLs and CFLs</em></p>
+<ol>
+<li>Is A<sub>DFA</sub> decidable?</li>
+</ol>
+<ul>
+<li>A<sub>DFA</sub> = {&lt;D,w&gt;| D is a DFA and w $\in$ L(D)}</li>
+<li>&lt;D,W&gt; encoding of a DFA and a string w</li>
+<li>is A<sub>DFA</sub> decidable? yes</li>
+<li>Machine M:</li>
+<li>given input &lt;D,w&gt;</li>
+<li>
+<ol>
+<li>Simulate D on w</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>If D accepts then accept; else reject</li>
+</ol>
+</li>
+</ul>
+<ol start="2">
+<li>E_DFA (empty DFA)</li>
+</ol>
+<ul>
+<li>is it decidable?</li>
+<li>E_DFA = { &lt; D &gt;|D is a DFA and L(D)=0}</li>
+<li>
+<ol>
+<li>Check to see if there is a path from start state to an accept state</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>If no path exists then accept; else reject</li>
+</ol>
+</li>
+</ul>
+<h1 id="is-eqsubdfasub---d1-d2---d1-and-d2-are-dfas-and-ld1--ld2-"><a class="header" href="#is-eqsubdfasub---d1-d2---d1-and-d2-are-dfas-and-ld1--ld2-">Is EQ<sub>DFA</sub> = {&lt; D1, D2 &gt; | D1 and D2 are DFA's and L(D1) = L(D2) }</a></h1>
+<p>(they accept the same language) <em>this is only possible if...</em><br />
+L(D1)=L(D2) <em>iff</em> {(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1))} = ∅</p>
+<p>Using closure properties:</p>
+<ul>
+<li>$\exists$ a regular language L such that L = ({(L(D1)/L(D2)) $\cup$ (L(D2)/L(D1))} = ∅)
+<ul>
+<li>L1 = L(DFA1) (implies regular language)</li>
+<li>L2 = L(DFA2) (implies regular language)</li>
+<li>L is regular because regularity is closed under union</li>
+</ul>
+</li>
+<li>This implies $\exists$ DFA D such that L(D) = L
+<ul>
+<li>This DFA accepts only empty strings</li>
+<li>Check if D $\in$ E<sub>DFA</sub></li>
+</ul>
+</li>
+<li>$\therefore$ EQ_DFA is decidable</li>
+</ul>
+<hr>  
+<p>A<sub>CFG</sub> = { &lt; G, w &gt; | G is CFG and w $\in$ L(G) }<br />
+is A<sub>CFG</sub> decidable?<br />
+We need to figure out how many number of steps...<br />
+Use <a href="Chomsky%20Normal%20Form.html">Chomsky Normal Form</a></p>
+<ol>
+<li>if w = $\epsilon$ then $\exists$ a derivation of w with respect to G' having 1 step
+<ol>
+<li>if w $\ne$ $\epsilon$ then $\exists$ a derivation of w with respect to G' having 2 |w| - 1 steps</li>
+</ol>
+</li>
+<li>list all derivations of length 2 |w| - 1
+<ol>
+<li>if w is generated by one such derivation then accept; otherwise reject</li>
+</ol>
+</li>
+<li>A<sub>CFG</sub> is decidable</li>
+</ol>
+<h1 id="quiz-e_cfg----g---g-is-a-cfg-and-lg--null"><a class="header" href="#quiz-e_cfg----g---g-is-a-cfg-and-lg--null">Quiz: E_CFG = { &lt; G &gt; | G is a CFG and L(G) = null}</a></h1>
+<ol>
+<li>Look at rules backwards. If you see a terminal, mark it.</li>
+<li>Repeat the following until no new variables can be marked
+<ol>
+<li>$\exists$ a rule A-&gt; A1...AK</li>
+<li>Mark A if all A1...AK are marked</li>
+</ol>
+</li>
+<li>If S is marked, reject; else accept</li>
+</ol>
+<p>$\therefore$ E_CFG is decidable</p>
+<h1 id="eq_cfg---g1-g2--g1--g2-are-cfg--lg1lg2"><a class="header" href="#eq_cfg---g1-g2--g1--g2-are-cfg--lg1lg2">EQ_CFG = { &lt;G1, G2&gt; | G1 &amp; G2 are CFG ^ L(G1)=L(G2)}</a></h1>
+<p>they derive the same languages<br />
+<em>Is it decidable?</em></p>
+<p>Regular Languages are closed under union and set difference, CFL are closed under union but not set difference</p>
+<p>$\therefore$ EQ_CFG is undecidable</p>
+<h1 id="proof-there-are-non-turing-recognizable-languages"><a class="header" href="#proof-there-are-non-turing-recognizable-languages">Proof: There are Non-Turing Recognizable Languages</a></h1>
+<h2 id="diagonalization-proof"><a class="header" href="#diagonalization-proof">Diagonalization Proof</a></h2>
+<p><em>when we say strings, we mean languages</em><br />
+Languages/problems (x) vs solutions (y)</p>
+<table><thead><tr><th></th><th>S1</th><th>S2</th><th>S3</th><th>...</th><th>Sn</th><th>Language of Machine</th></tr></thead><tbody>
+<tr><td>M1</td><td><strong>A</strong></td><td>R</td><td>R</td><td></td><td></td><td>L(M1){S1,S4...}</td></tr>
+<tr><td>M2</td><td>R</td><td><strong>R</strong></td><td>R</td><td></td><td></td><td>L(M2){S4...}</td></tr>
+<tr><td>M3</td><td>R</td><td>R</td><td><strong>A</strong></td><td></td><td></td><td>L(M3){S3...}</td></tr>
+</tbody></table>
+<p>Let we call the diagonal line d = {S1, S3, ...}<br />
+Let there be $\bar{d}$ = {Every string that is not in d}<br />
+Let us say $\bar M$ decides $\bar d$<br />
+At position Sn where Sn = $\bar d$, $\bar M$ should accept, but cannot, since it is defined as not</p>
+<h1 id="halting-problem"><a class="header" href="#halting-problem">Halting Problem</a></h1>
+<p>All Turing machines are undecidable</p>
+<h2 id="proof"><a class="header" href="#proof">Proof</a></h2>
+<p>Let's say Halting problem is decidable<br />
+H(P,i) where p is program and i is input, does output-&gt; halt or not</p>
+<p>Assume H'(X):<br />
+if (H(X,X)== halt){<br />
+loop forever;<br />
+}<br />
+else return;</p>
+<p>Problem: <em>not all programs can halt</em><br />
+proof is through a program that does the opposite of a halting program</p>
+<h1 id="post-correspondence-problem-pcpdomino-problem"><a class="header" href="#post-correspondence-problem-pcpdomino-problem">Post Correspondence Problem (PCP/Domino Problem)</a></h1>
+<p>dominoes?</p>
+<ul>
+<li>b/ca a/ab ca/a abc/c</li>
+</ul>
+<p>Proof by reduction<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206093941.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206093941.png" alt="Pasted image 20211206093941"/></a></p>
+<p>Reduce to pcp that has solution, then</p>
+<h2 id="how-to-convert-any-tm-to-a-pcp-problem"><a class="header" href="#how-to-convert-any-tm-to-a-pcp-problem">How to convert any TM to a PCP Problem</a></h2>
+<p>PCP is undicidable:</p>
+<h3 id="proof-represent-an-undecidable-problem-n-in-the-form-of-pcp"><a class="header" href="#proof-represent-an-undecidable-problem-n-in-the-form-of-pcp">Proof Represent an undecidable problem n in the form of PCP</a></h3>
+<p>Proof by reduction, then we can say PCP is undecidable<br />
+Acceptance  problem of a TM is undecidable:<br />
+We care converting to a PCP <em>with solution</em></p>
+<pre><code class="language-nomnoml">[q1] 0=&gt; X,R -&gt; [q2]  
+[q2]1=&gt;X,L -&gt; [q3]  
+</code></pre>
+<p>$\Sigma$ = {0,1}<br />
+$\rho$ = {0,1,X,_}</p>
+<h4 id="seven-steps"><a class="header" href="#seven-steps">Seven Steps</a></h4>
+<p>input 010<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206095915.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206095915.png" alt="Pasted image 20211206095915"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206100354.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211206100354.png" alt="Pasted image 20211206100354"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211209131535.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211209131535.png" alt="Pasted image 20211209131535"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211209132454.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211209132454.png" alt="Pasted image 20211209132454"/></a></p>
+<h1 id="review"><a class="header" href="#review">Review</a></h1>
+<ul>
+<li>Concatenation</li>
+<li>EQ_TM is not turing recognizable</li>
+<li>Con_TM { &lt; M1 M2 M3&gt; | M1, M2, M3 are three TMS and L(M1)=L(M2)=L(M3)}</li>
+<li>EQ_TM &lt;=m CON_TM  (reduction)</li>
+</ul>
+<h2 id="reduction"><a class="header" href="#reduction">Reduction</a></h2>
+<p><em>we are reducing the problem to a known 'undecidable' problem, in this case, EQ_TM (from CON_TM)</em><br />
+Instance of EQ_TM<br />
+Two TM<br />
+<strong>input &lt; M1, M2&gt;</strong></p>
+<ol>
+<li>Set N1 := M1</li>
+<li>Set N2 := M2</li>
+<li>Design a TM N3 that accepts only the string e</li>
+</ol>
+<p><strong>Output &lt;N1, N2, N3&gt;</strong> (Instance of CON_TM)</p>
+<h2 id="proof-of-correctness"><a class="header" href="#proof-of-correctness">Proof of Correctness</a></h2>
+<p>Let &lt;M1, M2&gt; $\in$ EQ_TM<br />
+ie L(M1)= L(M2)<br />
+L(N1) = L(N2) by reduction method</p>
+<p>= L(N2).{e}<br />
+= L(N2).L(N3)<br />
+L(N1) = L(N2).L(N3)<br />
+&lt;N1,N2,N3&gt; $\in$ CON_TM</p>
+<ol start="2">
+<li>Let &lt;M1,M2&gt; $\notin$ EQ_TM<br />
+L(M1) $\ne$ L(M2)<br />
+L(N1) $\ne$ L(N2)<br />
+L(N1) $\ne$ L(N2).{e}<br />
+L(N1) $\ne$ L(N2).L(N3)<br />
+&lt;N1, N2, N3&gt; $\notin$ CON_TM</li>
+</ol>
+<p>EQ_TM $\leq$m CON_TM</p>
+<p>TR<br />
+TNR<br />
+TD If turing decidable, then no others<br />
+TU</p>
+<p>TNR, TU, basically the same so if not recognizable, then undecidable</p>
+<h1 id="more-review"><a class="header" href="#more-review">More Review</a></h1>
+<p>AeCFG = { &lt; G &gt; | G is a CFG that generates E}</p>
+<p>4.11 Infinite PDA<br />
+M is a PDA and L(M) is infinite</p>
+<p>Decidable or not?<br />
+<strong>Decidable</strong></p>
+<p>Proof:</p>
+<p>Given &lt; M &gt; ,  a description of a PDA<br />
+Convert it to a CFG G<br />
+Compute  G's Pumping length. (CNF, ... P = N ^ (|V| +1) v is variables set, n is largest number of symbols in rhs of r)</p>
+<p>PDA M accepts a string longer than PL iff M's language is infinite<br />
+We show how to test whether M accepts such a string</p>
+<p>Let T RL containing all strings longer than p</p>
+<p>Find CFG H that generates L(G) $\cap$ T<br />
+it could be empty or not empty<br />
+if its empty, it's not an infinite language</p>
+<p>E_CFG is decidable<br />
+Use E_CFG to test<br />
+whether L(H) is empty<br />
+Accept if L(H) is not empty</p>
+<ul>
+<li>accept if E_CFG reject<br />
+Reject otherwise</li>
+<li>reject if E_CFG accepts</li>
+</ul>
+<hr>  
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211210100628.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211210100628.png" alt="Pasted image 20211210100628"/></a></p>
+<p>A_TM is  TR</p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103833.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103833.png" alt="Pasted image 20211216103833"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103846.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103846.png" alt="Pasted image 20211216103846"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103912.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103912.png" alt="Pasted image 20211216103912"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103936.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103936.png" alt="Pasted image 20211216103936"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103956.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216103956.png" alt="Pasted image 20211216103956"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104050.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104050.png" alt="Pasted image 20211216104050"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104112.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104112.png" alt="Pasted image 20211216104112"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104132.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104132.png" alt="Pasted image 20211216104132"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104148.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104148.png" alt="Pasted image 20211216104148"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104206.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104206.png" alt="Pasted image 20211216104206"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104225.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104225.png" alt="Pasted image 20211216104225"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104244.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104244.png" alt="Pasted image 20211216104244"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104323.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104323.png" alt="Pasted image 20211216104323"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104358.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104358.png" alt="Pasted image 20211216104358"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104424.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104424.png" alt="Pasted image 20211216104424"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104449.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104449.png" alt="Pasted image 20211216104449"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104519.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104519.png" alt="Pasted image 20211216104519"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104540.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20211216104540.png" alt="Pasted image 20211216104540"/></a></p>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
+    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
+    <script>
+        var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+        var i = 0;
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) {
+            theme = 'dark';
+        }
+        while (nomnomls.length > 0) {
+            var name = 'target-canvas';
+            name += i;
+            var source;
+            if (theme == 'dark') source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n';
+            else source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #22262f\n#fill: #fafafa; #ffffff\n';
+            source += nomnomls[0].textContent;
+            nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '">\n</canvas>');
+            var canvas = document.getElementById(name);
+            nomnoml.draw(canvas, source);
+            let rect = canvas.getBoundingClientRect();
+            nomnoml.draw(canvas, source, 4);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            nomnomls[0].parentElement.removeChild(nomnomls[0].parentElement.firstChild);
+            nomnomls[0].remove();
+            nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+            i++;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
