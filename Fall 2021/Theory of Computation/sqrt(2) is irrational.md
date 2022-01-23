@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:30-05:00
+---
 # sqrt(2) is irrational
 ### A number is rational if it is a fraction of form $m/n$, where m and n are integers
 ### 

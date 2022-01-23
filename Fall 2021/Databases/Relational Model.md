@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Relational Model
 * Everything is in tables
 * Elements have an ID and other attributes

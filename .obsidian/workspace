@@ -7,8 +7,12 @@
         "id": "d80746e443307650",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Spring 2022/Internship/Internship.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -74,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spring 2022/Internship/Internship.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,7 +94,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Spring 2022/Internship/Internship.md"
+              }
             }
           },
           {
@@ -113,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spring 2022/Internship/Internship.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,6 +134,7 @@
   },
   "active": "d80746e443307650",
   "lastOpenFiles": [
+    "Spring 2022/Internship/Internship.md",
     "Internship/Internship.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
@@ -134,7 +143,6 @@
     "Databases/Databases.md",
     "Databases/Prime Attribute.md",
     "Databases/Referential Integrity.md",
-    "Databases/Entity-Relationship.md",
-    "Databases/SQL.md"
+    "Databases/Entity-Relationship.md"
   ]
 }

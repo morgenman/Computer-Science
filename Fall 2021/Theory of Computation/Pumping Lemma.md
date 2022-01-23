@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:30-05:00
+---
 # Pumping Lemma
 
 [Pumping Lemma PPT](https://www.cs.swarthmore.edu/~sindhu/cs46/s16/PumpingLemma.pdf)

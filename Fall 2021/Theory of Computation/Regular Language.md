@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:30-05:00
+---
 # Regular Language
 * A language that can be defined by a [[DFA]]
 * See also: [[Finite Automata]],

@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:30-05:00
+---
 ## Theorem: The class of regular languages is closed under complementation
 
 ### Proof:

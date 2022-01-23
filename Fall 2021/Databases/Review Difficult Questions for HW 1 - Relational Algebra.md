@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Review Difficult Questions for HW 1 - Relational Algebra
 
 * ![[Pasted image 20210923135208.png]]

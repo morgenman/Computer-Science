@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Select
 * select tuples that satisfy a given predicate 
 * ![[Pasted image 20210907141544.png]]

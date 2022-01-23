@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Database Engine
 Three Parts:
 * **Storage Manager**: a program module that provides the interface between low level data and programs/queries submitted

@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Dithered Drawing
 * Direct data link to monitor
 	* Monitor has double buffer system in place

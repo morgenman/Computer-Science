@@ -1,4 +1,7 @@
 ---
+updated: 2022-01-23_12:32:31-05:00
+---
+---
 updated: 2021-11-18_06:25:56-05:00
 ---
 Trivial Functional Dependency

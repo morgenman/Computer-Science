@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Data Definition Language
 eg: ``` create table instructor(
 			ID char(5),

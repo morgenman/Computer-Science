@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Equivalence Relation
 A binary relation R is an equivalence relation if R satisfies these three conditions:
 1. R is reflexive

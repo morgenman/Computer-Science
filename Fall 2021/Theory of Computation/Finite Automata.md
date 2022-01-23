@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Finite Automata
 * A 5-tuple denoted by:
 	* Q, $\Sigma$, $\delta$, $V_o$ , F

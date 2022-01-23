@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Chomsky Normal Form
 
 ## Guarantied to resolve a [[Push Down Automata]] in `(2n-1)` steps 

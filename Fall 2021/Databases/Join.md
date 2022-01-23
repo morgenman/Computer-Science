@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Join
 ## AKA Natural Join or Theta Join
 ### Natural Join only shows rows where matching attributes are the same in both tables

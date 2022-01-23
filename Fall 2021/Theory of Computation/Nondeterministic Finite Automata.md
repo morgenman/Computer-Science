@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # Nondeterministic Finite Automata
 ## Formal Definition:
 * A nondeterministic finite automaton is a 5-tuple $(Q,\Sigma, \delta, q_0,f)$ where 

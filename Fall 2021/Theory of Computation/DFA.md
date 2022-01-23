@@ -1,3 +1,6 @@
+---
+updated: 2022-01-23_12:32:31-05:00
+---
 # DFA
 * [[Deterministic]] [[Finite Automata]]
 * Every state needs to have a transition for every possible input
