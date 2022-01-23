@@ -7,8 +7,12 @@
         "id": "d80746e443307650",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Spring 2022/Algorithms/Algorithms.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -57,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304,
-    "collapsed": true
+    "width": 304
   },
   "right": {
     "id": "832b6d9595f64d6b",
@@ -75,6 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spring 2022/Algorithms/Algorithms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,7 +94,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Spring 2022/Algorithms/Algorithms.md"
+              }
             }
           },
           {
@@ -114,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spring 2022/Algorithms/Algorithms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -123,10 +130,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.1429443359375
+    "width": 325.1429443359375,
+    "collapsed": true
   },
   "active": "d80746e443307650",
   "lastOpenFiles": [
+    "Spring 2022/Algorithms/Algorithms.md",
     "Internship/Internship.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
@@ -135,7 +144,6 @@
     "Databases/Databases.md",
     "Databases/Prime Attribute.md",
     "Databases/Referential Integrity.md",
-    "Databases/Entity-Relationship.md",
-    "Databases/SQL.md"
+    "Databases/Entity-Relationship.md"
   ]
 }
