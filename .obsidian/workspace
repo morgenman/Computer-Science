@@ -1,37 +1,29 @@
 {
   "main": {
-    "id": "a52eba11132437cf",
+    "id": "52bccab515ec32eb",
     "type": "split",
     "children": [
       {
-        "id": "d80746e443307650",
+        "id": "0ad6c57c36ea8aab",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-<<<<<<< HEAD
-            "file": "Spring 2022/Internship/Internship.md",
-=======
-            "file": "Spring 2022/Algorithms/Algorithms.md",
->>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
-            "mode": "source",
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "931110c3abd3ae6c",
+    "id": "31462b144bfdc6bc",
     "type": "split",
     "children": [
       {
-        "id": "d621a60cd38d848b",
+        "id": "32a6aa9538711dd7",
         "type": "tabs",
         "children": [
           {
-            "id": "1f6a6f3e41358e49",
+            "id": "e887abae232e2633",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -39,7 +31,7 @@
             }
           },
           {
-            "id": "618b30f70ed45fd5",
+            "id": "c7952e2ae45c44e9",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -54,7 +46,7 @@
             }
           },
           {
-            "id": "2076a6de3cb27f6e",
+            "id": "116d8cae0bee16d6",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -65,105 +57,57 @@
       }
     ],
     "direction": "horizontal",
-    "width": 304
+    "width": 300
   },
   "right": {
-    "id": "832b6d9595f64d6b",
+    "id": "78053effe92f6b21",
     "type": "split",
     "children": [
       {
-        "id": "6b03118a787b6833",
+        "id": "0a44f306315adc46",
         "type": "tabs",
-        "dimension": 36.48293963254593,
         "children": [
           {
-            "id": "03af6559eba08ad9",
+            "id": "2f3b833a9bc2bbd2",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-<<<<<<< HEAD
-                "file": "Spring 2022/Internship/Internship.md",
-=======
-                "file": "Spring 2022/Algorithms/Algorithms.md",
->>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "371c8677630a4fbf",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-<<<<<<< HEAD
-                "file": "Spring 2022/Internship/Internship.md"
-=======
-                "file": "Spring 2022/Algorithms/Algorithms.md"
->>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
-              }
-            }
-          },
-          {
-            "id": "d98e8ec2eea93d45",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
-          }
-        ]
-      },
-      {
-        "id": "284e0326b95de8de",
-        "type": "tabs",
-        "dimension": 63.51706036745407,
-        "children": [
-          {
-            "id": "90c97ecc0260d249",
+            "id": "eb398117cf66936d",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-<<<<<<< HEAD
-                "file": "Spring 2022/Internship/Internship.md",
-=======
-                "file": "Spring 2022/Algorithms/Algorithms.md",
->>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
                 "linksCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               }
+            }
+          },
+          {
+            "id": "7063a69376deb659",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 325.1429443359375,
-    "collapsed": true
+    "width": 300
   },
-  "active": "d80746e443307650",
-  "lastOpenFiles": [
-<<<<<<< HEAD
-    "Spring 2022/Internship/Internship.md",
-=======
-    "Spring 2022/Algorithms/Algorithms.md",
->>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
-    "Internship/Internship.md",
-    "Operating Systems/Operating Systems.md",
-    "Theory of Computation/_Index_of_Theory of Computation.md",
-    "Theory of Computation/RL Closure under Intersection.md",
-    "Theory of Computation/Theory of Computation.md",
-    "Databases/Databases.md",
-    "Databases/Prime Attribute.md",
-    "Databases/Referential Integrity.md",
-    "Databases/Entity-Relationship.md"
-  ]
+  "active": "0ad6c57c36ea8aab",
+  "lastOpenFiles": []
 }
