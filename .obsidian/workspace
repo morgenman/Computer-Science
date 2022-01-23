@@ -9,7 +9,11 @@
         "state": {
           "type": "markdown",
           "state": {
+<<<<<<< HEAD
             "file": "Spring 2022/Internship/Internship.md",
+=======
+            "file": "Spring 2022/Algorithms/Algorithms.md",
+>>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
             "mode": "source",
             "source": false
           }
@@ -78,7 +82,11 @@
             "state": {
               "type": "backlink",
               "state": {
+<<<<<<< HEAD
                 "file": "Spring 2022/Internship/Internship.md",
+=======
+                "file": "Spring 2022/Algorithms/Algorithms.md",
+>>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +103,11 @@
             "state": {
               "type": "outline",
               "state": {
+<<<<<<< HEAD
                 "file": "Spring 2022/Internship/Internship.md"
+=======
+                "file": "Spring 2022/Algorithms/Algorithms.md"
+>>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
               }
             }
           },
@@ -120,7 +132,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+<<<<<<< HEAD
                 "file": "Spring 2022/Internship/Internship.md",
+=======
+                "file": "Spring 2022/Algorithms/Algorithms.md",
+>>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -130,11 +146,16 @@
       }
     ],
     "direction": "horizontal",
-    "width": 325.1429443359375
+    "width": 325.1429443359375,
+    "collapsed": true
   },
   "active": "d80746e443307650",
   "lastOpenFiles": [
+<<<<<<< HEAD
     "Spring 2022/Internship/Internship.md",
+=======
+    "Spring 2022/Algorithms/Algorithms.md",
+>>>>>>> 6ebb74e3336787eb9ba7260861821db4881d3cb5
     "Internship/Internship.md",
     "Operating Systems/Operating Systems.md",
     "Theory of Computation/_Index_of_Theory of Computation.md",
