@@ -3,5 +3,7 @@
   "theme": "moonstone",
   "translucency": false,
   "cssTheme": "Spectrum",
-  "enabledCssSnippets": []
+  "enabledCssSnippets": [
+    "custom"
+  ]
 }
