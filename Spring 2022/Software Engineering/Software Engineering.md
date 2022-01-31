@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-31_11:11:55-05:00
+updated: 2022-01-31_11:32:52-05:00
 ---
 # Software Engineering
 * Process course
@@ -10,4 +10,5 @@ updated: 2022-01-31_11:11:55-05:00
 	* Django
 	* Docker
 	* Selenium
-* 
+* What is SCRUM?
+	* 
