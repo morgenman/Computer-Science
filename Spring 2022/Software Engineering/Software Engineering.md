@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-31_11:32:52-05:00
+updated: 2022-01-31_11:43:39-05:00
 ---
 # Software Engineering
 * Process course
@@ -21,3 +21,10 @@ updated: 2022-01-31_11:32:52-05:00
 	* welcome changing requirements
 		* even late in dev. process
 	* business & dev ppl must work together daily
+	* build projects around motivated individuals
+		* give them environment and support they need
+		* trust them to get the job done
+	* communicate face-to-face
+	* **working software is the primary measure of progress**
+	* sustainable development
+	* 
