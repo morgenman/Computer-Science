@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-01_10:20:56-05:00
+updated: 2022-02-01_10:29:39-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -48,4 +48,8 @@ Three Goals:
 * How often will the data be searched?
 * Can data be deleted?
 * Each structure has costs and benefits
-* 
+
+## Data Types
+* a representation (set of values) together with operations
+* Values + Operations
+### Abstract Data Ty
