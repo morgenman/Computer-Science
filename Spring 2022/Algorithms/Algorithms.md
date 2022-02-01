@@ -36,4 +36,14 @@ Three Goals:
 * a **program** is an instantiation of an algorithm
 
 ## Data Structure
-* a **data structure** is a collection of data items with a particu
+* a **data structure** is a collection of data items with a particular organization and operations
+* it is always possible to process data in structure
+* using a suitable one can mean the difference between seconds and days in processing
+* in order to choose one we need to analyze the problem to determine performance goals
+
+1. Analyze the problem to determine the operations that must be supported (add/delete/search)
+2. Quantify resource constraints for each operation
+3. Select the data structure that meets the constraints
+
+* How often will the data be searched?
+* Can data be deleted
