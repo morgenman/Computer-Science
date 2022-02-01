@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-01_10:14:55-05:00
+updated: 2022-02-01_10:20:56-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -46,4 +46,6 @@ Three Goals:
 3. Select the data structure that meets the constraints
 
 * How often will the data be searched?
-* Can data be deleted
+* Can data be deleted?
+* Each structure has costs and benefits
+* 
