@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-31_11:43:39-05:00
+updated: 2022-01-31_11:50:26-05:00
 ---
 # Software Engineering
 * Process course
@@ -27,4 +27,5 @@ updated: 2022-01-31_11:43:39-05:00
 	* communicate face-to-face
 	* **working software is the primary measure of progress**
 	* sustainable development
-	* 
+	* continuous attention to technical excellence and good design enhances agility
+	* simplicity & efficiency 
