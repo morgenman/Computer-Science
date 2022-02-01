@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-01_10:29:39-05:00
+updated: 2022-02-01_10:36:36-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -58,3 +58,4 @@ Three Goals:
 * Example: lists, stacks, queues
 * ADT does not reveal how the data type is implemented
 * data structure is used to implement the ADT
+* 
