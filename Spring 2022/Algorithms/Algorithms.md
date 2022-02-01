@@ -52,4 +52,9 @@ Three Goals:
 ## Data Types
 * a representation (set of values) together with operations
 * Values + Operations
-### Abstract Data Ty
+
+### Abstract Data Type
+* The implementation of a logical data type as a software component with a physical form
+* Example: lists, stacks, queues
+* ADT does not reveal how the data type is implemented
+* data structure is used to implement the ADT
