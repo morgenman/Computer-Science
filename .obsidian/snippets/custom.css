@@ -18,6 +18,9 @@
   --default-font: "IBM Plex Mono"!important;
 }
 
+.theme-dark{
+  --default-font: "IBM Plex Mono";
+}
 
 .HyperMD-codeblock-bg.CodeMirror-linebackground {
   background: transparent !important;
