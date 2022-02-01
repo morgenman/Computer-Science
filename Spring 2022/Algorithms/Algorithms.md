@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-01_10:09:20-05:00
+updated: 2022-02-01_10:14:55-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -15,11 +15,25 @@ Three Goals:
 * an **efficient** solution is one that solves the problem within the stated resource constraints
 * the **cost** of a solution is the amount of resources consumed (space and time)
 
-## Proble
+## Problem
 * a **problem** is a task to be performed subject to resource constraints
 * the problem definition should not contain any constraints on how the problem should be solved
 * problems can be viewed as a specification of inputs and outputs like a math function
 * a specific set of inputs is an **instance** of the problem
 
+## Algorithm
 * an **algorithm** is a process followed to solve a problem
-* P
+* Properties:
+
+1. **Correctness**: the algorithm implements the intended function
+2. It is composed of **concrete steps**. *concrete: each step is well defined and doable*
+3. The determination of the next step is **unambiguous**
+4. The number of steps is **finite**
+5. It must **terminate**
+
+
+## Program
+* a **program** is an instantiation of an algorithm
+
+## Data Structure
+* a **data structure** is a collection of data items with a particu
