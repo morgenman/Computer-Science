@@ -29,3 +29,5 @@ updated: 2022-01-31_11:50:26-05:00
 	* sustainable development
 	* continuous attention to technical excellence and good design enhances agility
 	* simplicity & efficiency 
+* What is Scrum?
+	* im
