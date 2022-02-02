@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-23_12:32:31-05:00
+updated: 2022-02-02_10:34:47-05:00
 ---
 # Dithered Drawing
 * Direct data link to monitor
