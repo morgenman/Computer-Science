@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_11:22:02-05:00
+updated: 2022-02-02_11:27:39-05:00
 ---
 # Software Engineering
 * Process course
@@ -50,3 +50,4 @@ updated: 2022-02-02_11:22:02-05:00
 	* All team members should meet face-to-face 
 	* Cost of scrum is difficulty with remote workers
 	* SCRUM board is a visualization of the state of the project
+	* burndown chart
