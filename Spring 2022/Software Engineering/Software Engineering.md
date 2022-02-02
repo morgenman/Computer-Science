@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-31_11:50:26-05:00
+updated: 2022-02-02_11:09:39-05:00
 ---
 # Software Engineering
 * Process course
@@ -30,4 +30,14 @@ updated: 2022-01-31_11:50:26-05:00
 	* continuous attention to technical excellence and good design enhances agility
 	* simplicity & efficiency 
 * What is Scrum?
-	* im
+	* implementation of agile
+	* (name is a reference to rugby)
+	* team moves as a unit not as a relay
+	* Steps:
+		* Stories - gathering requirements 
+			* non-technical
+			* eg: when I check equipment I want to know all the information about it
+		* Tasks - technical requirements needed for stories
+			* technical
+			* eg: host a db of equipment, track equipment with barcodes, barcodes to sql queries, display results to user
+		* Sprints
