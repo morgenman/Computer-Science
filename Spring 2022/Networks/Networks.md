@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_10:44:12-05:00
+updated: 2022-02-02_10:49:14-05:00
 ---
 # Networks
 
@@ -19,7 +19,10 @@ updated: 2022-02-02_10:44:12-05:00
 # Data Transmission
 Packets of data of length **L** bits
 Transmits into access network at transmission rate **R**
-Link transmission rate is 
+*Link transmission rate* is a metric of bandwidth
 
 
-
+*Transmission Delay*
+*Propagation Delay*
+*Processing Delay*
+*Queueing Delay*
