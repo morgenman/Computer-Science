@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_11:44:30-05:00
+updated: 2022-02-02_11:50:38-05:00
 ---
 # Software Engineering
 * Process course
@@ -57,6 +57,9 @@ updated: 2022-02-02_11:44:30-05:00
 		* Meetings
 			* Sprint Planning (30m)
 			* Daily Scrum (15m)
+			* Backlog Refinement (30m max)
+			* Sprint R&R planning (15m)
 		* Work Sessions (as a team)
+			* regularly scheduled or on the fly
 		* Individual Development Time
 	
