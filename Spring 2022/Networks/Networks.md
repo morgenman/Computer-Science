@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_09:54:10-05:00
+updated: 2022-02-02_10:08:21-05:00
 ---
 # Networks
 
@@ -12,5 +12,7 @@ updated: 2022-02-02_09:54:10-05:00
 * **frequency division multiplexing**: different channels transmitted in different bands
 * ![[Pasted image 20220131104412.png]]
 * Link Layer vs Network Layer...
+
+
 
 
