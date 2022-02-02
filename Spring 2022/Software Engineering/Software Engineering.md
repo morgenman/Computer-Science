@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_11:39:24-05:00
+updated: 2022-02-02_11:44:30-05:00
 ---
 # Software Engineering
 * Process course
@@ -55,6 +55,8 @@ updated: 2022-02-02_11:39:24-05:00
 	* 3-4h outside of class for every credit the course is
 	* 9-12h a week for this class
 		* Meetings
+			* Sprint Planning (30m)
+			* Daily Scrum (15m)
 		* Work Sessions (as a team)
 		* Individual Development Time
-		* 
+	
