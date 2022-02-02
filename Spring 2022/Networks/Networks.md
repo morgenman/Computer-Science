@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_10:08:21-05:00
+updated: 2022-02-02_10:44:12-05:00
 ---
 # Networks
 
@@ -13,6 +13,13 @@ updated: 2022-02-02_10:08:21-05:00
 * ![[Pasted image 20220131104412.png]]
 * Link Layer vs Network Layer...
 
+* Cell towers ~= 10km range
+
+
+# Data Transmission
+Packets of data of length **L** bits
+Transmits into access network at transmission rate **R**
+Link transmission rate is 
 
 
 
