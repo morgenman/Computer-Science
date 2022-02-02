@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_11:09:39-05:00
+updated: 2022-02-02_11:16:04-05:00
 ---
 # Software Engineering
 * Process course
@@ -40,4 +40,10 @@ updated: 2022-02-02_11:09:39-05:00
 		* Tasks - technical requirements needed for stories
 			* technical
 			* eg: host a db of equipment, track equipment with barcodes, barcodes to sql queries, display results to user
-		* Sprints
+		* Sprints - working code at fixed intervals
+			* sets a pace for the project
+			* 1-4 weeks per sprint
+		* Post-Sprint
+			* demo software to customer
+			* discuss direction of the project
+			* adjust as needed
