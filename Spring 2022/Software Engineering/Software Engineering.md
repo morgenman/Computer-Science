@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_11:27:39-05:00
+updated: 2022-02-02_11:39:24-05:00
 ---
 # Software Engineering
 * Process course
@@ -52,3 +52,9 @@ updated: 2022-02-02_11:27:39-05:00
 	* SCRUM board is a visualization of the state of the project
 	* burndown chart
 * Time
+	* 3-4h outside of class for every credit the course is
+	* 9-12h a week for this class
+		* Meetings
+		* Work Sessions (as a team)
+		* Individual Development Time
+		* 
