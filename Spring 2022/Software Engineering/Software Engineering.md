@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_11:16:04-05:00
+updated: 2022-02-02_11:22:02-05:00
 ---
 # Software Engineering
 * Process course
@@ -47,3 +47,6 @@ updated: 2022-02-02_11:16:04-05:00
 			* demo software to customer
 			* discuss direction of the project
 			* adjust as needed
+	* All team members should meet face-to-face 
+	* Cost of scrum is difficulty with remote workers
+	* SCRUM board is a visualization of the state of the project
