@@ -51,3 +51,4 @@ updated: 2022-02-02_11:27:39-05:00
 	* Cost of scrum is difficulty with remote workers
 	* SCRUM board is a visualization of the state of the project
 	* burndown chart
+* Time
