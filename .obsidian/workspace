@@ -110,13 +110,21 @@
                 "file": "Spring 2022/Data Analysis/Data Analysis.md"
               }
             }
+          },
+          {
+            "id": "a2a38bd24aaec6ad",
+            "type": "leaf",
+            "state": {
+              "type": "wordle-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 267.1664733886719
   },
   "active": "0ad6c57c36ea8aab",
   "lastOpenFiles": [

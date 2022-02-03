@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-03_13:15:44-05:00
+updated: 2022-02-03_13:24:04-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -24,4 +24,6 @@ appropriate visualization is important...
 * Variety: Different types of data available
 
 What is Data? A set of values of qualitative or quantitative variables.
+
+
 
