@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-03_12:36:49-05:00
+updated: 2022-02-03_12:56:18-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -17,3 +17,8 @@ appropriate visualization is important...
 
 
 
+# Big Data
+## Volume, Velocity, Variety: Qualities of Big Data
+* Volume: Large datasets
+* Velocity: Data generated and collected very quickly
+* Variety: 
