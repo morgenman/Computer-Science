@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-03_13:24:04-05:00
+updated: 2022-02-03_13:31:11-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -25,5 +25,10 @@ appropriate visualization is important...
 
 What is Data? A set of values of qualitative or quantitative variables.
 
+EMR: Electronic Medical Records (messy data)
+
+
+## Questions come before data
+* Ask a question *before* you
 
 
