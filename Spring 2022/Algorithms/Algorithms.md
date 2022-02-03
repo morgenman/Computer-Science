@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-03_09:49:32-05:00
+updated: 2022-02-03_09:59:26-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -62,4 +62,6 @@ Three Goals:
 
 # Putting the Science in Computer Science
 * Science or Engineering?
-* 
+* Hypothesis not just a prediction, must be testable, verifiable, and testable
+
+

@@ -61,7 +61,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -120,10 +121,10 @@
   "active": "0ad6c57c36ea8aab",
   "lastOpenFiles": [
     "Spring 2022/Algorithms/Algorithms.md",
+    "Spring 2022/Internship/Internship.md",
     "Spring 2022/Software Engineering/Software Engineering.md",
     "Spring 2022/Networks/Networks.md",
     "Fall 2021/Game Development/Dithered Drawing.md",
-    "Spring 2022/Data Analysis/Data Analysis.md",
-    "Spring 2022/Internship/Internship.md"
+    "Spring 2022/Data Analysis/Data Analysis.md"
   ]
 }
