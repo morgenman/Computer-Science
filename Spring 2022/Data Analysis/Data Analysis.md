@@ -22,4 +22,6 @@ appropriate visualization is important...
 * Volume: Large datasets
 * Velocity: Data generated and collected very quickly
 * Variety: Different types of data available
-* 
+
+What is Data? A set of values of qualitative or quantitative variables.
+
