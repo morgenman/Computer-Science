@@ -8,7 +8,6 @@ Public Data https://archive.ics.uci.edu/ml/index.php
 
 
 # Information Visualization
-
 appropriate visualization is important...
 
 > What is Data Science?
@@ -29,6 +28,7 @@ EMR: Electronic Medical Records (messy data)
 
 
 ## Questions come before data
-* Ask a question *before* you
+* Ask a question *before* you start looking at data. Look for data that is relevant
+
 
 
