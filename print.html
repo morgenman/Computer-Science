@@ -10024,12 +10024,17 @@ Transmits into access network at transmission rate <strong>R</strong><br />
 <p><em>Guided Media</em>: Signals propagate in solid media (copper, fiber, coax)<br />
 <em>Unguided Media</em>: Signals propagate freely (radio, wifi)</p>
 <p>$\lceil$ Message size / 1500 $\rceil$ = no. of packets</p>
-<p>Packet transmission delay = time needed to transmit l bit packet into link = L(bits)/R(bits/sec)</p>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204101632.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204101632.png" alt="Pasted image 20220204101632"/></a></p>
+<p>Packet transmission delay = time needed to transmit l bit packet into link = L(bits)/R(bits/sec)<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204101632.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204101632.png" alt="Pasted image 20220204101632"/></a></p>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204102004.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204102004.png" alt="Pasted image 20220204102004"/></a></p>
 <h2 id="transmission-delay"><a class="header" href="#transmission-delay">Transmission Delay</a></h2>
+<p>$\frac{L}{R}$</p>
 <ul>
-<li>L/R seconds to transmit L-bit packet</li>
+<li>L/R seconds to transmit L-bit packet into link at R bps</li>
+<li><strong>Store and Forward</strong>: entire packet must arrive at router before it can be transmitted on next link</li>
 </ul>
+<h2 id="end-to-end-delay"><a class="header" href="#end-to-end-delay">End to End Delay</a></h2>
+<p>$2L/R$</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
