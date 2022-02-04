@@ -9988,7 +9988,7 @@ Somebody who combines the skills of software programmer, statistician, and story
     });
 </script>
 <hr>  
-<p>updated: 2022-02-04_10:24:50-05:00</p>
+<p>updated: 2022-02-04_10:30:51-05:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -10030,10 +10030,6 @@ Transmits into access network at transmission rate <strong>R</strong><br />
 <ul>
 <li>Split into packets</li>
 </ul>
-<h2 id="circuit-switching"><a class="header" href="#circuit-switching">Circuit Switching</a></h2>
-<ul>
-<li></li>
-</ul>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204102004.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204102004.png" alt="Pasted image 20220204102004"/></a></p>
 <h2 id="transmission-delay"><a class="header" href="#transmission-delay">Transmission Delay</a></h2>
 <p>$\frac{L}{R}$</p>
@@ -10044,12 +10040,17 @@ Transmits into access network at transmission rate <strong>R</strong><br />
 <h2 id="end-to-end-delay"><a class="header" href="#end-to-end-delay">End to End Delay</a></h2>
 <p>$\frac{2L}{R}$</p>
 <ul>
-<li>^^ Assuming zero propagation delay</li>
+<li>^^ Assuming zero propagation delay and only for diagram above. The two is there because the packets are put on the link twice (one when first sent, one when it hits the middle node)</li>
 </ul>
-<h2 id="queuing-delay"><a class="header" href="#queuing-delay">Queuing Delay</a></h2>
+<h2 id="packet-queueing-and-loss"><a class="header" href="#packet-queueing-and-loss">Packet Queueing and Loss</a></h2>
 <ul>
 <li>If arrive rate (bps) is bigger than transmission rate (bps) packets will queue, waiting to be transmitted</li>
 <li>Could be dropped if buffer fills</li>
+</ul>
+<h2 id="routing-algorithm"><a class="header" href="#routing-algorithm">Routing Algorithm</a></h2>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204102844.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220204102844.png" alt="Pasted image 20220204102844"/></a></p>
+<h2 id="circuit-switching"><a class="header" href="#circuit-switching">Circuit Switching</a></h2>
+<ul>
 <li></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
