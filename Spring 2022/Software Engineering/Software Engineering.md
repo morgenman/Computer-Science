@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_11:29:00-05:00
+updated: 2022-02-04_11:34:58-05:00
 ---
 # Software Engineering
 * Process course
@@ -79,7 +79,8 @@ M-F Work Days
 
 Daily Scrum
 M - 1pm
-T - 
+T - 9am
+W - 
 
 
 Prod & Builds
