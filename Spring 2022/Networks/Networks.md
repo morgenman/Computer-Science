@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:49:35-05:00
+updated: 2022-02-04_10:55:25-05:00
 ---
 # Networks
 
@@ -74,3 +74,4 @@ Two methods:
 	* Bursty data? Packet Switching for sure
 
 Prepare until slide 32
+
