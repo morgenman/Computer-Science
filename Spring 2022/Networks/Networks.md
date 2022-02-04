@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:11:32-05:00
+updated: 2022-02-04_10:17:04-05:00
 ---
 # Networks
 
@@ -34,3 +34,7 @@ $\lceil$ Message size / 1500 $\rceil$ = no. of packets
 
 Packet transmission delay = time needed to transmit l bit packet into link = L(bits)/R(bits/sec)
 
+![[Pasted image 20220204101632.png]]
+
+## Transmission Delay
+* L/R seconds to transmit L-bit packet 
