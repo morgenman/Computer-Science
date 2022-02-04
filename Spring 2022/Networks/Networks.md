@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_09:54:55-05:00
+updated: 2022-02-04_10:06:21-05:00
 ---
 # Networks
 
@@ -26,4 +26,9 @@ Transmits into access network at transmission rate **R**
 *Propagation Delay*
 *Processing Delay*
 *Queueing Delay*
+
+*Guided Media*: Signals propagate in solid media (copper, fiber, coax)
+*Unguided Media*: Signals propagate freely (radio, wifi)
+
+Message size / 1500 = no. of packets
 
