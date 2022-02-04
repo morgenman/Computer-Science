@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_11:50:38-05:00
+updated: 2022-02-04_11:10:29-05:00
 ---
 # Software Engineering
 * Process course
@@ -62,4 +62,6 @@ updated: 2022-02-02_11:50:38-05:00
 		* Work Sessions (as a team)
 			* regularly scheduled or on the fly
 		* Individual Development Time
-	
+
+
+* Team Repo on Gitea with Dr. Grabowski
