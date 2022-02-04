@@ -71,3 +71,4 @@ updated: 2022-02-04_11:18:02-05:00
 * Daily Scrum
 * Backlog Refinement
 * Sprint R&R Plan
+* Every Friday is R&R (review & reflection)
