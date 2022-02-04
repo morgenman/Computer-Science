@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_11:18:02-05:00
+updated: 2022-02-04_11:23:51-05:00
 ---
 # Software Engineering
 * Process course
@@ -70,5 +70,9 @@ updated: 2022-02-04_11:18:02-05:00
 * Sprint Planning Meeting
 * Daily Scrum
 * Backlog Refinement
-* Sprint R&R Plan
+* Sprint R&R Planning
 * Every Friday is R&R (review & reflection)
+* What is check-in deadline?
+
+1:10pm Friday - Backlog Refinement * Spring Planning
+M-F Word Days
