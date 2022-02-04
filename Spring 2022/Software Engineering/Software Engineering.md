@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_11:34:58-05:00
+updated: 2022-02-04_11:45:20-05:00
 ---
 # Software Engineering
 * Process course
@@ -74,14 +74,14 @@ updated: 2022-02-04_11:34:58-05:00
 * Every Friday is R&R (review & retrospective)
 * What is check-in deadline?
 
-1:10pm Friday - Backlog Refinement * Spring Planning
+1:10pm Friday - Backlog Refinement & Sprint Planning
 M-F Work Days
 
 Daily Scrum
-M  - 1pm (Virtual)
-Tu - 9am (Virtual)
-W  - 10:50 am-11:10 am ()
-Th - 5:30-(7pm latest) pm Daily Scrum and R&R planning 
-F  - 1:10pm
+M  - 1pm (Virtual)  Daily Scrum
+Tu - 9am (Virtual)  Daily Scrum
+W  - 10:50 am-11:10 am (In person in 208) Daily Scrum
+Th - 5:30pm-(7pm latest) Daily Scrum and R&R planning (Virtual)
+F  - 1:10pm Backlog Refinement & Sprint Planning(In person in Lounge or other location)
 
 Prod & Builds
