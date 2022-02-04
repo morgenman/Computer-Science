@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:06:21-05:00
+updated: 2022-02-04_10:11:32-05:00
 ---
 # Networks
 
@@ -29,6 +29,8 @@ Transmits into access network at transmission rate **R**
 
 *Guided Media*: Signals propagate in solid media (copper, fiber, coax)
 *Unguided Media*: Signals propagate freely (radio, wifi)
+ 
+$\lceil$ Message size / 1500 $\rceil$ = no. of packets
 
-Message size / 1500 = no. of packets
+Packet transmission delay = time needed to transmit l bit packet into link = L(bits)/R(bits/sec)
 
