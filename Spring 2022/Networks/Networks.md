@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-02_10:49:14-05:00
+updated: 2022-02-04_09:54:55-05:00
 ---
 # Networks
 
@@ -26,3 +26,4 @@ Transmits into access network at transmission rate **R**
 *Propagation Delay*
 *Processing Delay*
 *Queueing Delay*
+
