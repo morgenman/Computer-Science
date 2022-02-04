@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_11:10:29-05:00
+updated: 2022-02-04_11:18:02-05:00
 ---
 # Software Engineering
 * Process course
@@ -65,3 +65,9 @@ updated: 2022-02-04_11:10:29-05:00
 
 
 * Team Repo on Gitea with Dr. Grabowski
+
+
+* Sprint Planning Meeting
+* Daily Scrum
+* Backlog Refinement
+* Sprint R&R Plan
