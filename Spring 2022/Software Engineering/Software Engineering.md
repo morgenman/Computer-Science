@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_11:23:51-05:00
+updated: 2022-02-04_11:29:00-05:00
 ---
 # Software Engineering
 * Process course
@@ -75,4 +75,11 @@ updated: 2022-02-04_11:23:51-05:00
 * What is check-in deadline?
 
 1:10pm Friday - Backlog Refinement * Spring Planning
-M-F Word Days
+M-F Work Days
+
+Daily Scrum
+M - 1pm
+T - 
+
+
+Prod & Builds
