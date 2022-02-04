@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:37:45-05:00
+updated: 2022-02-04_10:42:58-05:00
 ---
 # Networks
 
@@ -56,4 +56,16 @@ $\frac{2L}{R}$
 ![[Pasted image 20220204103433.png]]
 * Dedicated Resources: no sharing
 * circuit-like guaranteed performance
-* Waste of resources if each circ
+* Waste of resources if each circuit isn't being constantly used
+
+Two methods:
+![[Pasted image 20220204104034.png]]
+### Frequency Division Multiplexing (FDM)
+* narrow frequency bands 
+* Full bandwidth for narrow frequency band
+
+### Time Division Multiplexing (TDM)
+* Time divided into slots
+* Full bandwidth for full frequency band
+
+
