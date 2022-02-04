@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:30:51-05:00
+updated: 2022-02-04_10:37:45-05:00
 ---
 # Networks
 
@@ -50,5 +50,10 @@ $\frac{2L}{R}$
 * Could be dropped if buffer fills
 ## Routing Algorithm
 ![[Pasted image 20220204102844.png]]
+* Part of Network Layer
+* Local Forwarding Table holds header value and output link
 ## Circuit Switching
-* 
+![[Pasted image 20220204103433.png]]
+* Dedicated Resources: no sharing
+* circuit-like guaranteed performance
+* Waste of resources if each circ
