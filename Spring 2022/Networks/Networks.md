@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:17:04-05:00
+updated: 2022-02-04_10:24:50-05:00
 ---
 # Networks
 
@@ -34,12 +34,19 @@ $\lceil$ Message size / 1500 $\rceil$ = no. of packets
 
 Packet transmission delay = time needed to transmit l bit packet into link = L(bits)/R(bits/sec)
 ![[Pasted image 20220204101632.png]]
-
-
+## Packet Switching
+* Split into packets
+## Circuit Switching
+* 
 ![[Pasted image 20220204102004.png]]
 ## Transmission Delay
 $\frac{L}{R}$
 * L/R seconds to transmit L-bit packet into link at R bps
 * **Store and Forward**: entire packet must arrive at router before it can be transmitted on next link
 ## End to End Delay
-$2L/R$
+$\frac{2L}{R}$
+* ^^ Assuming zero propagation delay
+## Queuing Delay
+* If arrive rate (bps) is bigger than transmission rate (bps) packets will queue, waiting to be transmitted
+* Could be dropped if buffer fills
+* 
