@@ -68,4 +68,6 @@ Two methods:
 * Time divided into slots
 * Full bandwidth for full frequency band
 
-
+## Packet vs. Circuit
+* Packet = more users, since users rarely are working at the same time
+* 
