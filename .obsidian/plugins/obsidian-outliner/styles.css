@@ -1,46 +1,69 @@
 /* lists */
-.outliner-plugin-bls .cm-s-obsidian .HyperMD-list-line {
-  padding-top: 0.4em;
+.outliner-plugin-better-lists .cm-s-obsidian .HyperMD-list-line {
+  padding-top: 8px;
 }
 
 /* bullets */
-.outliner-plugin-bls .cm-s-obsidian span.cm-formatting-list {
-  letter-spacing: 3px;
-}
-
-.outliner-plugin-bls .cm-s-obsidian span.cm-formatting-list-ul {
-  color: var(--background-primary) !important;
-}
-
-.outliner-plugin-bls .cm-s-obsidian span.cm-formatting-list-ul:before {
+.outliner-plugin-better-bullets
+  .cm-s-obsidian:not(.is-live-preview)
+  .cm-formatting-list-ul:before,
+.outliner-plugin-better-bullets
+  .cm-s-obsidian.is-live-preview
+  .list-bullet:before {
+  visibility: visible;
   content: "•";
+  font-size: 150%;
   position: absolute;
+  margin-top: -6px;
   margin-left: -3px;
-  margin-top: -5px;
-  font-size: 24px;
   color: var(--text-muted);
-  visibility: visible !important;
+}
+
+.outliner-plugin-better-bullets
+  .cm-s-obsidian.is-live-preview
+  .list-bullet::after {
+  content: none;
 }
 
 /* lines */
-.outliner-plugin-bls .cm-s-obsidian .HyperMD-list-line {
+.outliner-plugin-list-lines-scroller {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 10px 17px;
+  pointer-events: none;
   overflow: hidden;
 }
 
-.cm-hmd-list-indent {
+.outliner-plugin-list-lines-content-container {
+  padding-left: 10px;
   position: relative;
 }
 
-.outliner-plugin-bls .CodeMirror-line .cm-hmd-list-indent::before {
-  content: '';
-  display: block;
+.markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width
+  .outliner-plugin-list-lines-content-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.outliner-plugin-list-line {
+  pointer-events: auto;
   position: absolute;
-  background-image: linear-gradient(to right, var(--text-faint) 1px, transparent 1px);
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/length#units */
-  background-size: 1.8ch 1px;
-  background-position-x: 3px;
-  width: 100%;
-  left: 0;
-  top: -1.6em;
-  padding-bottom: 999em;
+  width: 5px;
+  margin-left: calc(0.5ch + 10px);
+  margin-top: calc(2em + 6px);
+  z-index: 1;
+  cursor: pointer;
+  background: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--text-faint) 1px,
+    transparent 1px
+  );
+  background-position-x: 2px;
+  background-repeat: no-repeat;
+}
+
+.outliner-plugin-list-line:hover {
+  background: var(--text-faint);
 }

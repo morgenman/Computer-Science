@@ -33,8 +33,13 @@ Transmits into access network at transmission rate **R**
 $\lceil$ Message size / 1500 $\rceil$ = no. of packets
 
 Packet transmission delay = time needed to transmit l bit packet into link = L(bits)/R(bits/sec)
-
 ![[Pasted image 20220204101632.png]]
 
+
+![[Pasted image 20220204102004.png]]
 ## Transmission Delay
-* L/R seconds to transmit L-bit packet 
+$\frac{L}{R}$
+* L/R seconds to transmit L-bit packet into link at R bps
+* **Store and Forward**: entire packet must arrive at router before it can be transmitted on next link
+## End to End Delay
+$2L/R$
