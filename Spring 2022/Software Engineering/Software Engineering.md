@@ -71,16 +71,17 @@ updated: 2022-02-04_11:34:58-05:00
 * Daily Scrum
 * Backlog Refinement
 * Sprint R&R Planning
-* Every Friday is R&R (review & reflection)
+* Every Friday is R&R (review & retrospective)
 * What is check-in deadline?
 
 1:10pm Friday - Backlog Refinement * Spring Planning
 M-F Work Days
 
 Daily Scrum
-M - 1pm
-T - 9am
-W - 
-
+M  - 1pm (Virtual)
+Tu - 9am (Virtual)
+W  - 10:50 am-11:10 am ()
+Th - 5:30-(7pm latest) pm Daily Scrum and R&R planning 
+F  - 1:10pm
 
 Prod & Builds
