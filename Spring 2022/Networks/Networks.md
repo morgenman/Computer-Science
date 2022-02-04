@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:42:58-05:00
+updated: 2022-02-04_10:49:35-05:00
 ---
 # Networks
 
@@ -70,4 +70,7 @@ Two methods:
 
 ## Packet vs. Circuit
 * Packet = more users, since users rarely are working at the same time
-* 
+* How are you using the network?
+	* Bursty data? Packet Switching for sure
+
+Prepare until slide 32
