@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_11:45:20-05:00
+updated: 2022-02-07_11:07:58-05:00
 ---
 # Software Engineering
 * Process course
@@ -85,3 +85,17 @@ Th - 5:30pm-(7pm latest) Daily Scrum and R&R planning (Virtual)
 F  - 1:10pm Backlog Refinement & Sprint Planning(In person in Lounge or other location)
 
 Prod & Builds
+
+# Scrum
+## Roles
+1. Product Owner
+	* responsible for what will be developed, in what order
+	* define features, release date
+	* responsible for profitability of product (ROI)
+	* prioritize features according to market value
+	* adjust features and priority every iteration, as needed
+	* accept or reject work results
+2. Scrum Master
+	* 
+3. Development Team
+	* 
