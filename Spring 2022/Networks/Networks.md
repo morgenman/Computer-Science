@@ -130,4 +130,11 @@ Two methods:
 ## Measuring Delay
 ![[Pasted image 20220207104939.png]]
 
- 
+```
+traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
+ 1  Cole-Xiaomi15.mshome.net (172.23.192.1)  0.344 ms  0.287 ms  0.266 ms
+ 2  137.143.63.254 (137.143.63.254)  11.186 ms  11.466 ms  11.451 ms
+ 3  199.109.9.105 (199.109.9.105)  17.718 ms  18.857 ms  18.833 ms
+ ```
+
+ Average, min, max
