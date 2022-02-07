@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-07_10:43:32-05:00</p>
+<p>updated: 2022-02-07_10:49:32-05:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -302,8 +302,18 @@ End to end:</p>
 <h2 id="impact-of-queueing-delay"><a class="header" href="#impact-of-queueing-delay">Impact of Queueing Delay</a></h2>
 <ul>
 <li>R: link bandwidth (bps)</li>
-<li>L:</li>
+<li>L: packet length (bits)</li>
+<li>a: average packet arrival rate</li>
+<li>Analysis:
+<ul>
+<li>La/R ~  0 : avg. queueing delay small</li>
+<li>La/R -&gt; 1 : avg. queueing delay large</li>
+<li>La/R &gt;  1 : avg. queueing delay infinite</li>
 </ul>
+</li>
+</ul>
+<h2 id="measuring-delay"><a class="header" href="#measuring-delay">Measuring Delay</a></h2>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220207104939.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220207104939.png" alt="Pasted image 20220207104939"/></a></p>
 
                 </main>
             </div>
