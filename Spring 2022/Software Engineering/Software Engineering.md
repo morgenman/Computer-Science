@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_11:07:58-05:00
+updated: 2022-02-07_11:13:28-05:00
 ---
 # Software Engineering
 * Process course
@@ -96,6 +96,14 @@ Prod & Builds
 	* adjust features and priority every iteration, as needed
 	* accept or reject work results
 2. Scrum Master
-	* 
+	* represent management to the project
+	* responsible for enacting scrum values & practices
+	* shield the team from external interferences
+	* remove impediments
+	* ensure team is fully functional and productive
+	* enable close cooperation across all roles and functions
 3. Development Team
-	* 
+	* usually 5-9
+	* cross functional:
+		* programmers, testers, ux designers
+	* full time
