@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_11:30:48-05:00
+updated: 2022-02-07_11:41:06-05:00
 ---
 # Software Engineering
 * Process course
@@ -115,6 +115,10 @@ Prod & Builds
 * Reprioritized at start of sprint
 * Each item has value to users or customers
 * User centered view. 
+* *Grooming*: creating/refining product backlog
+* each item is sized, relative sizes
+	* 'story points' vs 'ideal days'
+		* real days needed vs best case days needed
 ## Sprint Backlog
 * Technical centered view
 * 
