@@ -73,4 +73,5 @@ Two methods:
 * How are you using the network?
 	* Bursty data? Packet Switching for sure
 	* on demand 
+* 
 
