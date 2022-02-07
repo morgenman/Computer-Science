@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_11:13:28-05:00
+updated: 2022-02-07_11:23:57-05:00
 ---
 # Software Engineering
 * Process course
@@ -107,3 +107,5 @@ Prod & Builds
 	* cross functional:
 		* programmers, testers, ux designers
 	* full time
+
+## Product Backlog
