@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_10:21:36-05:00
+updated: 2022-02-07_10:29:57-05:00
 ---
 # Networks
 
@@ -48,6 +48,12 @@ $\frac{2L}{R}$
 ## Packet Queueing and Loss
 * If arrive rate (bps) is bigger than transmission rate (bps) packets will queue, waiting to be transmitted
 * Could be dropped if buffer fills
+* when arrival rate > output link capacity
+
+## Queueing Delay
+* Memory size of cache
+* how much 
+
 ## Routing Algorithm
 ![[Pasted image 20220204102844.png]]
 * Part of Network Layer
@@ -74,5 +80,7 @@ Two methods:
 	* Bursty data? Packet Switching for sure
 	* on demand 
 * ![[Pasted image 20220207102544.png]]
-* 
+
+# All about delays
+![[Pasted image 20220207103110.png]]
 
