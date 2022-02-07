@@ -114,11 +114,14 @@ Prod & Builds
 * Product owner responsible for determining and managing the sequence of work
 * Reprioritized at start of sprint
 * Each item has value to users or customers
-* User centered view. 
+* User centered view (sprint backlog has technical requirements)
 * *Grooming*: creating/refining product backlog
 * each item is sized, relative sizes
 	* 'story points' vs 'ideal days'
 		* real days needed vs best case days needed
-## Sprint Backlog
-* Technical centered view
+## Sprints
+* Typically 2-4 weeks
+* constant duration, better rhythm
+* designed, coded, tested during sprint
 * 
+ 
