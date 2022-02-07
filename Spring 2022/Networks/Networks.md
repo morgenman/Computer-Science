@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_10:49:32-05:00
+updated: 2022-02-07_18:26:05-05:00
 ---
 # Networks
 
@@ -117,7 +117,7 @@ Two methods:
  $3=(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})$
  End to end:
 
- $\left(\frac{L}{R}+ \frac{d}{s}\right)+(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{1} +(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{2} +(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{3}$
+ $\left(\frac{L}{R}+ \frac{d}{s}\right)+(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{1} +$$(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{2} +(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{3}$
  ## Impact of Queueing Delay
  * R: link bandwidth (bps)
  * L: packet length (bits)
