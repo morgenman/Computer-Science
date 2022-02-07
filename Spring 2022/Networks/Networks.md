@@ -95,4 +95,22 @@ Two methods:
 ## Propagation Delay
 * based on distance of link
 * d: length of physical link
-* s: propagation speed (~2)
+* s: propagation speed (~2x10$^8$ m/s)
+* $d_{prop}=\frac{d}{s}$
+## Transmission Delay
+* L: packet length (bits)
+* R: link transmission rate (bps)
+* $d_{trans}=\frac{L}{R}$
+
+## Example end to end
+
+```nomnoml
+[S] 0- R,d,s[X1]
+[X1] 1- R,d,s [X2]
+[X2] 2- R,d,s[X3]
+[X3] 3- R,d,s [D]
+ ```
+
+ $0=(\frac{L}{R}+ \frac{d}{s})$
+ $1=(d_{proc}+d_qu)$
+ 
