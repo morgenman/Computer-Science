@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_11:41:06-05:00
+updated: 2022-02-07_11:47:45-05:00
 ---
 # Software Engineering
 * Process course
@@ -120,8 +120,13 @@ Prod & Builds
 	* 'story points' vs 'ideal days'
 		* real days needed vs best case days needed
 ## Sprints
-* Typically 2-4 weeks
+* typically 2-4 weeks
 * constant duration, better rhythm
 * designed, coded, tested during sprint
-* 
- 
+* timeboxed
+* no goal altering changes, or personnel changes during sprint
+### Sprint goal
+* a short statement of what the work will be focused on during the sprint
+	* "support sql server in addition to oracle"
+	* "support more technical indicators than company ABC with realtime data"
+	 
