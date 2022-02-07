@@ -16,7 +16,7 @@ updated: 2022-02-07_10:29:57-05:00
 * Cell towers ~= 10km range
 
 
-# Data Transmission
+# Data Transmission Introduction
 Packets of data of length **L** bits
 Transmits into access network at transmission rate **R**
 *Link transmission rate* is a metric of bandwidth
@@ -84,3 +84,15 @@ Two methods:
 # All about delays
 ![[Pasted image 20220207103110.png]]
 
+## Processing Delay
+* How long does it take for the router to:
+	* check bit errors
+	* determine output link
+* typically < msec
+## Queueing Delay
+* time waiting at output link for transmission
+* depends on congestion level of router
+## Propagation Delay
+* based on distance of link
+* d: length of physical link
+* s: propagation speed (~2)
