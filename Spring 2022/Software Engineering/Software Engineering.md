@@ -111,6 +111,9 @@ Prod & Builds
 ## Product Backlog
 * Prioritized list of work to be done
 * Most valuable work done first
+* Product owner responsible for determining and managing the sequence of work
+* Reprioritized at start of sprint
+* Each item has value to users or customers
 * User centered view. 
 ## Sprint Backlog
 * Technical centered view
