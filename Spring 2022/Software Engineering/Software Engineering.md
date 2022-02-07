@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_11:23:57-05:00
+updated: 2022-02-07_11:30:48-05:00
 ---
 # Software Engineering
 * Process course
@@ -109,3 +109,9 @@ Prod & Builds
 	* full time
 
 ## Product Backlog
+* Prioritized list of work to be done
+* Most valuable work done first
+* User centered view. 
+## Sprint Backlog
+* Technical centered view
+* 
