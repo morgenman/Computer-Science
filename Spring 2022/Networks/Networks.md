@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-04_10:55:25-05:00
+updated: 2022-02-07_10:13:50-05:00
 ---
 # Networks
 
@@ -72,6 +72,5 @@ Two methods:
 * Packet = more users, since users rarely are working at the same time
 * How are you using the network?
 	* Bursty data? Packet Switching for sure
-
-Prepare until slide 32
+	* on demand 
 
