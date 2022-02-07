@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_10:13:50-05:00
+updated: 2022-02-07_10:21:36-05:00
 ---
 # Networks
 
@@ -73,5 +73,6 @@ Two methods:
 * How are you using the network?
 	* Bursty data? Packet Switching for sure
 	* on demand 
+* ![[Pasted image 20220207102544.png]]
 * 
 
