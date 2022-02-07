@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_10:43:32-05:00
+updated: 2022-02-07_10:49:32-05:00
 ---
 # Networks
 
@@ -120,5 +120,14 @@ Two methods:
  $\left(\frac{L}{R}+ \frac{d}{s}\right)+(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{1} +(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{2} +(d_{proc}+d_{que}+ \frac{L}{R}+ \frac{d}{s})_{3}$
  ## Impact of Queueing Delay
  * R: link bandwidth (bps)
- * L:
+ * L: packet length (bits)
+ * a: average packet arrival rate
+ * Analysis:
+	 * La/R ~  0 : avg. queueing delay small
+	 * La/R -> 1 : avg. queueing delay large
+	 * La/R >  1 : avg. queueing delay infinite
+
+## Measuring Delay
+![[Pasted image 20220207104939.png]]
+
  
