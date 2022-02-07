@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Spring 2022/Networks/Networks.md",
+            "file": "Spring 2022/Software Engineering/Software Engineering.md",
             "mode": "source",
             "source": false
           }
@@ -61,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 205.99999809265137,
-    "collapsed": true
+    "width": 205.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -78,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring 2022/Networks/Networks.md",
+                "file": "Spring 2022/Software Engineering/Software Engineering.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring 2022/Networks/Networks.md",
+                "file": "Spring 2022/Software Engineering/Software Engineering.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,7 +106,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring 2022/Networks/Networks.md"
+                "file": "Spring 2022/Software Engineering/Software Engineering.md"
               }
             }
           },
@@ -129,9 +128,9 @@
   },
   "active": "0ad6c57c36ea8aab",
   "lastOpenFiles": [
+    "Spring 2022/Software Engineering/Software Engineering.md",
     "Spring 2022/Networks/Networks.md",
     "Spring 2022/Internship/Internship.md",
-    "Spring 2022/Software Engineering/Software Engineering.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Algorithms/Algorithms.md",
     "Fall 2021/Game Development/Dithered Drawing.md"
