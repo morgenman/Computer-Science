@@ -10110,8 +10110,23 @@ Transmits into access network at transmission rate <strong>R</strong><br />
 <ul>
 <li>based on distance of link</li>
 <li>d: length of physical link</li>
-<li>s: propagation speed (~2)</li>
+<li>s: propagation speed (~2x10$^8$ m/s)</li>
+<li>$d_{prop}=\frac{d}{s}$</li>
 </ul>
+<h2 id="transmission-delay-1"><a class="header" href="#transmission-delay-1">Transmission Delay</a></h2>
+<ul>
+<li>L: packet length (bits)</li>
+<li>R: link transmission rate (bps)</li>
+<li>$d_{trans}=\frac{L}{R}$</li>
+</ul>
+<h2 id="example-end-to-end"><a class="header" href="#example-end-to-end">Example end to end</a></h2>
+<pre><code class="language-nomnoml">[S] 0- R,d,s[X1]  
+[X1] 1- R,d,s [X2]  
+[X2] 2- R,d,s[X3]  
+[X3] 3- R,d,s [D]  
+</code></pre>
+<p>$0=(\frac{L}{R}+ \frac{d}{s})$<br />
+$1=(d_{proc}+d_qu)$</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>

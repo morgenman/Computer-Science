@@ -278,8 +278,23 @@ Transmits into access network at transmission rate <strong>R</strong><br />
 <ul>
 <li>based on distance of link</li>
 <li>d: length of physical link</li>
-<li>s: propagation speed (~2)</li>
+<li>s: propagation speed (~2x10$^8$ m/s)</li>
+<li>$d_{prop}=\frac{d}{s}$</li>
 </ul>
+<h2 id="transmission-delay-1"><a class="header" href="#transmission-delay-1">Transmission Delay</a></h2>
+<ul>
+<li>L: packet length (bits)</li>
+<li>R: link transmission rate (bps)</li>
+<li>$d_{trans}=\frac{L}{R}$</li>
+</ul>
+<h2 id="example-end-to-end"><a class="header" href="#example-end-to-end">Example end to end</a></h2>
+<pre><code class="language-nomnoml">[S] 0- R,d,s[X1]  
+[X1] 1- R,d,s [X2]  
+[X2] 2- R,d,s[X3]  
+[X3] 3- R,d,s [D]  
+</code></pre>
+<p>$0=(\frac{L}{R}+ \frac{d}{s})$<br />
+$1=(d_{proc}+d_qu)$</p>
 
                 </main>
             </div>
