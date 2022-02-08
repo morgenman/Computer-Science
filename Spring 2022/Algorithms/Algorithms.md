@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_09:41:51-05:00
+updated: 2022-02-08_09:48:13-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -74,6 +74,7 @@ Three Goals:
 * shows a conditional statement p -> q
 * if p is true q is also tru
 * combination p true and q false never happens
+* Usually presented in paragraph form
 * Outline:
 1. State assumption "we assume p is true"
 2. State what we are prove
@@ -81,5 +82,6 @@ Three Goals:
 4. State what you proved
 
 
-Example:
-if m & n are perfect 
+## Contradiction
+Is we want to prove p is true, and we can find a contradiction, q, such that not p -> q is true
+because q is fal
