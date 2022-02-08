@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:06:56-05:00
+updated: 2022-02-08_13:12:25-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -59,6 +59,14 @@ x <- c('a', 'b', 'c') # concatination, replace x with a b c
 x <- 5 # x is a double
 x <- as.integer(x) # x is now an integer
 
+m <- matrix(nrow=2, ncol=3) # matrix initialized with NA
+dim(m) # print rows,columns
+
+attributes(m) # also prints rows and columns?
+
+n <- matrix(1:25,5,5)
+#
+
 ```
 
 * <- is assignment operator
@@ -82,3 +90,4 @@ x <- as.integer(x) # x is now an integer
 * userdefined
 
 ## Objects
+* matrix()
