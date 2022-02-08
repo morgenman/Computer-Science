@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_10:13:39-05:00
+updated: 2022-02-08_10:19:42-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -58,11 +58,6 @@ Three Goals:
 * Example: lists, stacks, queues
 * ADT does not reveal how the data type is implemented
 * data structure is used to implement the ADT
-
-
-## Performance Metrics
-
-
 
 # Putting the Science in Computer Science
 * Science or Engineering?
@@ -127,3 +122,5 @@ because q is false
 
 
 # Recurrence Relations
+What is Recursion?
+Induction vs. Recursion
