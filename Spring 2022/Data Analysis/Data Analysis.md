@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:25:17-05:00
+updated: 2022-02-08_13:30:36-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -102,14 +102,25 @@ x <- list(1, "a", TRUE) # Stores values as vectors of vectors
 # [[3]]
 # [1] TRUE
 
-factor(c("yes","yes","no","yes","no")) # Levels will become labels?
+x <- factor(c("yes","yes","no","yes","no")) # Levels will become labels?
 # [1] yes yes no  yes no 
 # Levels: no yes
 
 class(x) # Check the class
 # "factor"
 
-uncla
+unclass(x) # basically categorize 
+# [1] 2 2 1 2 1
+# attr(,"levels")
+# [1] "no"  "yes"
+
+factor (c(...), levels = c("yes","no")) # manually defining levels
+
+is.na(x) # is value empty?
+is.nan(x) # is it NaN
+
+
+
 
 ```
 
