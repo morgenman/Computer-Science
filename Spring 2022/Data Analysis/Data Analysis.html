@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-08_12:50:04-05:00</p>
+<p>updated: 2022-02-08_12:55:44-05:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -182,21 +182,6 @@ Somebody who combines the skills of software programmer, statistician, and story
 <li>Ask a question <em>before</em> you start looking at data. Look for data that is relevant</li>
 </ul>
 <h1 id="r"><a class="header" href="#r">R</a></h1>
-<ul>
-<li>&lt;- is assignment operator</li>
-<li>one source file per</li>
-<li>Everything is an object (by default vector)</li>
-</ul>
-<h2 id="types-of-data"><a class="header" href="#types-of-data">Types of Data</a></h2>
-<ul>
-<li>char</li>
-<li>numeric (real numbers)</li>
-<li>integer</li>
-<li>complex</li>
-<li>logical</li>
-<li>vector (only one kind of data)</li>
-<li>list (array), can have more than one kind of data</li>
-</ul>
 <pre><code class="language-R">getwd() # Pwd  
 myfunction &lt;- function(){  
 	x &lt;- rnorm(100) # 100 random numbers  
@@ -211,7 +196,40 @@ msg &lt;- &quot;hello&quot;
   
 x &lt;- 1:30 # x now holds 1 2 3 4 ... 30  
   
+x &lt;- 20 # x is Numeric  
+x &lt;- 20L # x is integer  
+  
+typeof(x) # returns type  
+  
+x &lt;- NaN # not a number  
+  
 </code></pre>
+<ul>
+<li>&lt;- is assignment operator</li>
+<li>one source file per</li>
+<li>Everything is an object (by default vector)</li>
+</ul>
+<h2 id="types-of-data"><a class="header" href="#types-of-data">Types of Data</a></h2>
+<ul>
+<li>char</li>
+<li>numeric (real numbers, double precision)</li>
+<li>integer</li>
+<li>complex</li>
+<li>logical</li>
+<li>vector (only one kind of data)</li>
+<li>list (array), can have more than one kind of data</li>
+<li></li>
+</ul>
+<h2 id="data-attributes"><a class="header" href="#data-attributes">Data Attributes</a></h2>
+<ul>
+<li>name</li>
+<li>dimnames</li>
+<li>dimensions</li>
+<li>class</li>
+<li>length</li>
+<li>userdefined</li>
+</ul>
+<h2 id="ob"><a class="header" href="#ob">Ob</a></h2>
 
                 </main>
             </div>
