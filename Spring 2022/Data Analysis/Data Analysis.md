@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_12:35:06-05:00
+updated: 2022-02-08_12:41:28-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -30,7 +30,15 @@ EMR: Electronic Medical Records (messy data)
 ## Questions come before data
 * Ask a question *before* you start looking at data. Look for data that is relevant
 
+
+# R
+* <- is assignment operator
+
 ```R
 getwd() # Pwd
+myfunction <- function(){
+	x <- rnorm(100)
+	mean(x)
+}
 
 ```
