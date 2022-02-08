@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_12:41:28-05:00
+updated: 2022-02-08_12:50:04-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -34,7 +34,15 @@ EMR: Electronic Medical Records (messy data)
 # R
 * <- is assignment operator
 * one source file per 
-* Everything is a vector
+* Everything is an object (by default vector)
+## Types of Data
+* char
+* numeric (real numbers)
+* integer
+* complex
+* logical
+* vector (only one kind of data)
+* list (array), can have more than one kind of data
 
 ```R
 getwd() # Pwd
@@ -49,6 +57,6 @@ print(x) # print x
 
 msg <- "hello" 
 
-x <-
+x <- 1:30 # x now holds 1 2 3 4 ... 30
 
 ```
