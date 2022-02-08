@@ -64,8 +64,29 @@ dim(m) # print rows,columns
 
 attributes(m) # also prints rows and columns?
 
-n <- matrix(1:25,5,5)
-#
+n <- matrix( 1:25 ,5 ,5 ) # fills columns then rows
+# Output:
+#      [,1] [,2] [,3] [,4] [,5]
+# [1,]    1    6   11   16   21
+# [2,]    2    7   12   17   22
+# [3,]    3    8   13   18   23
+# [4,]    4    9   14   19   24
+# [5,]    5   10   15   20   25
+
+m <- 1:10
+# [1] 1 2 3 4 5 6 7 8 9 10
+dim(m) <- c(2,5) # change dimension of m 
+#      [,1] [,2] [,3] [,4] [,5]
+# [1,]    1    3    5    7    9
+# [2,]    2    4    6    8   10
+
+x <- 1:3
+y <- 10:12
+cbind(x,y) # Column bind
+#      x  y
+# [1,] 1 10
+# [2,] 2 11
+# [3,] 3 12
 
 ```
 
