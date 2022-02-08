@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_09:48:13-05:00
+updated: 2022-02-08_09:56:14-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -91,3 +91,13 @@ because q is false
 3. Set up the contradiction
 4. Show the contradiction 
 5. State what was proven 
+
+## Mathematical Induction
+* Used to prove statements that assert P(n) is true for all positive integers n, where P(n) is a propositional function
+
+1. State what you are proving
+2. Basis: Verify P(1) is true
+3. Induction assumption (inductive hypothesis): assume P(k) is true for some arbitrary positive integer k (pick a k, not all k's)
+4. Inductive step: show that P(k) -> P(k+1) is true for all positive integers k
+5. State what you proved
+
