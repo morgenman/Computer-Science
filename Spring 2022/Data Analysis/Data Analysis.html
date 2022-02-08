@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-08_13:00:57-05:00</p>
+<p>updated: 2022-02-08_13:06:56-05:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -199,13 +199,14 @@ x &lt;- 1:30 # x now holds 1 2 3 4 ... 30
 x &lt;- 20 # x is Numeric  
 x &lt;- 20L # x is integer  
   
-typeof(x) # returns type  
+typeof(x) # returns type, class seems to do the same thing  
   
 x &lt;- NaN # not a number  
   
 x &lt;- c('a', 'b', 'c') # concatination, replace x with a b c  
   
-  
+x &lt;- 5 # x is a double  
+x &lt;- as.integer(x) # x is now an integer  
   
 </code></pre>
 <ul>
@@ -215,8 +216,8 @@ x &lt;- c('a', 'b', 'c') # concatination, replace x with a b c
 </ul>
 <h2 id="types-of-data"><a class="header" href="#types-of-data">Types of Data</a></h2>
 <ul>
-<li>char</li>
-<li>numeric (real numbers, double precision)</li>
+<li>char (string)</li>
+<li>numeric <strong>AKA Double</strong> (real numbers, double precision)</li>
 <li>integer</li>
 <li>complex</li>
 <li>logical</li>
