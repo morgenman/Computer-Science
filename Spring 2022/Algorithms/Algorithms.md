@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_10:41:24-05:00
+updated: 2022-02-08_11:29:23-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -135,3 +135,4 @@ Induction vs. Recursion
 	* Permutations (ordered arrangement of a distinct set)
 	* Combinations
 
+![[Pasted image 20220208112850.png]]
