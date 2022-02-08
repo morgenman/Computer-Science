@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_12:55:44-05:00
+updated: 2022-02-08_13:00:57-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -54,6 +54,10 @@ typeof(x) # returns type
 
 x <- NaN # not a number
 
+x <- c('a', 'b', 'c') # concatination, replace x with a b c
+
+
+
 ```
 
 * <- is assignment operator
@@ -67,7 +71,7 @@ x <- NaN # not a number
 * logical
 * vector (only one kind of data)
 * list (array), can have more than one kind of data
-* 
+
 ## Data Attributes
 * name
 * dimnames
@@ -76,4 +80,4 @@ x <- NaN # not a number
 * length
 * userdefined
 
-## Ob
+## Objects
