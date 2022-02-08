@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-08_13:36:17-05:00</p>
+<p>updated: 2022-02-08_13:42:22-05:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -277,7 +277,12 @@ x &lt;- data.frame (foo=1:4, bar=c(T,T,F,T)) # Matrix with labels
   
 data &lt;- read.csv(&quot;input.csv&quot;) # data from csv into data.frame  
   
+sal &lt;- max(data$salary) # calculate the max value from the data  dataframe from column salary  
   
+help(&quot;read.csv&quot;) # pull up a help document  
+  
+x &lt;- 1:3  
+names(x) &lt;- c(&quot;foo&quot;,&quot;bar&quot;,&quot;xyz&quot;) # name columns of x  
   
 </code></pre>
 <ul>
