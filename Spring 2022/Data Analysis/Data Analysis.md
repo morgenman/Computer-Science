@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:30:36-05:00
+updated: 2022-02-08_13:36:17-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -119,6 +119,14 @@ factor (c(...), levels = c("yes","no")) # manually defining levels
 is.na(x) # is value empty?
 is.nan(x) # is it NaN
 
+x <- data.frame (foo=1:4, bar=c(T,T,F,T)) # Matrix with labels
+#   foo   bar
+# 1   1  TRUE
+# 2   2  TRUE
+# 3   3 FALSE
+# 4   4  TRUE
+
+data <- read.csv("input.csv") # data from csv into data.frame
 
 
 
