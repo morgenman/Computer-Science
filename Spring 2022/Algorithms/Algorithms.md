@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_10:07:29-05:00
+updated: 2022-02-08_10:13:39-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -60,6 +60,10 @@ Three Goals:
 * data structure is used to implement the ADT
 
 
+## Performance Metrics
+
+
+
 # Putting the Science in Computer Science
 * Science or Engineering?
 * Hypothesis not just a prediction, must be testable, verifiable, and testable
@@ -118,4 +122,8 @@ because q is false
 3. **Decide on the base case for the parameter and show that the theorem is true for this base case:** Base case n = 1. A binary tree with 1 node has 2 empty subtrees. The theorem is true for the base case
 4. **State your induction assumption (hypothesis) bounded from below by your base case:** Assume that the theorem is true for a tree T with k nodes, where k >= 1. That is, tree T has k nodes and k+1 empty subtrees
 5. **State what you are going to prove:** We must show that the theorem is true for a tree T' with k+1 nodes. That is T' has k+2 empty subtrees. 
-6. **Start with the new case and restate it in terms of your induction assumption from step 3:** Consider T' with k+1 nodes. If we remove a node from T', we now have a tree T with k nodes. By our induction assumption, this tree has k+1 empty subtrees. Now, add a node onto tree T, thus restoring 
+6. **Start with the new case and restate it in terms of your induction assumption from step 3:** Consider T' with k+1 nodes. If we remove a node from T', we now have a tree T with k nodes. By our induction assumption, this tree has k+1 empty subtrees. Now, add a node onto tree T, thus restoring tree T'. This removes an empty subtree of T, but adds on 2 more empty subtrees to the restored node, so T' has a total of k+1-1+2 empty subtrees (k+2) ... and k+1 nodes.
+7. **State what you proved:** Thus, we have shown that a tree of n nodes has n + 1 empty subtrees. Therefore, the theorem is true by process of mathematical induction
+
+
+# Recurrence Relations
