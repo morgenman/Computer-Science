@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_10:19:42-05:00
+updated: 2022-02-08_10:35:48-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -124,3 +124,10 @@ because q is false
 # Recurrence Relations
 What is Recursion?
 Induction vs. Recursion
+* Induction works from the base case, recursion works to the base case
+
+## Counting Problems
+*  eg Time cost of an algorithm..
+* Simple counting methods:
+	* Summations
+	* 
