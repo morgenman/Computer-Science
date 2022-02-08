@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_09:35:58-05:00
+updated: 2022-02-08_09:41:51-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -69,3 +69,17 @@ Three Goals:
 * A proof is an argument
 	* structure, completion
 	* state what you will prove, then state what you proved
+	
+## Direct
+* shows a conditional statement p -> q
+* if p is true q is also tru
+* combination p true and q false never happens
+* Outline:
+1. State assumption "we assume p is true"
+2. State what we are prove
+3. Present the steps of your argument
+4. State what you proved
+
+
+Example:
+if m & n are perfect 
