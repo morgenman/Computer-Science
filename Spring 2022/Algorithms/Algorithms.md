@@ -101,3 +101,20 @@ because q is false
 4. Inductive step: show that P(k) -> P(k+1) is true for all positive integers k
 5. State what you proved
 
+(alternate)
+1. State what you will prove
+2. State what parameter you are doing the induction on
+3. Decide the base case for the parameter, show that the theorem is true for this base case
+4. State your induction assumption bounded from below by you base case\
+5. State what you are going to prove in inductive step
+6. Start with the new case and restate it in terms of your induction assumption from step 4 
+7. State what you proved
+
+(Example)
+**Prove: The number of empty subtrees in a non-empty binary tree is one more than the number of nodes in the tree**
+
+1. **State what you are proving:** We must prove the theorem that the number of empty subtrees in a non-empty binary tree is one more than the number of nodes in the tree.
+2. **State what parameter you are doing the induction on:** Proof by induction on n, the number of nodes in the tree
+3. **Decide on the base case for the parameter and show that the theorem is true for this base case:** Base case n = 1. A binary tree with 1 node has 2 empty subtrees. The theorem is true for the base case
+```nomnoml
+direction=v
