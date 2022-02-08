@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:12:25-05:00
+updated: 2022-02-08_13:18:41-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -87,12 +87,27 @@ cbind(x,y) # Column bind
 # [1,] 1 10
 # [2,] 2 11
 # [3,] 3 12
+rbind(x,y) # Row bind
+#   [,1] [,2] [,3]
+# x    1    2    3
+# y   10   11   12
+
+x <- list(1, "a", TRUE) # Stores values as vectors of vectors
+# [[1]]
+# [1] 1
+# 
+# [[2]]
+# [1] "a"
+# 
+# [[3]]
+# [1] TRUE
 
 ```
 
 * <- is assignment operator
 * one source file per 
 * Everything is an object (by default vector)
+* ![[Pasted image 20220208132128.png]]
 ## Types of Data
 * char (string)
 * numeric **AKA Double** (real numbers, double precision)
@@ -110,5 +125,4 @@ cbind(x,y) # Column bind
 * length
 * userdefined
 
-## Objects
-* matrix()
+
