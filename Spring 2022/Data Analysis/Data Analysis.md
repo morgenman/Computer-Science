@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:00:57-05:00
+updated: 2022-02-08_13:06:56-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -50,13 +50,14 @@ x <- 1:30 # x now holds 1 2 3 4 ... 30
 x <- 20 # x is Numeric
 x <- 20L # x is integer
 
-typeof(x) # returns type
+typeof(x) # returns type, class seems to do the same thing
 
 x <- NaN # not a number
 
 x <- c('a', 'b', 'c') # concatination, replace x with a b c
 
-
+x <- 5 # x is a double
+x <- as.integer(x) # x is now an integer
 
 ```
 
@@ -64,8 +65,8 @@ x <- c('a', 'b', 'c') # concatination, replace x with a b c
 * one source file per 
 * Everything is an object (by default vector)
 ## Types of Data
-* char
-* numeric (real numbers, double precision)
+* char (string)
+* numeric **AKA Double** (real numbers, double precision)
 * integer
 * complex
 * logical
