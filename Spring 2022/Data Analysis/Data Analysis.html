@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-08_13:25:17-05:00</p>
+<p>updated: 2022-02-08_13:30:36-05:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -251,14 +251,25 @@ x &lt;- list(1, &quot;a&quot;, TRUE) # Stores values as vectors of vectors
 # &lt;span class=&quot;missing-link&quot; style=&quot;color:darkred;&quot;&gt;3&lt;/span&gt;  
 # [1] TRUE  
   
-factor(c(&quot;yes&quot;,&quot;yes&quot;,&quot;no&quot;,&quot;yes&quot;,&quot;no&quot;)) # Levels will become labels?  
+x &lt;- factor(c(&quot;yes&quot;,&quot;yes&quot;,&quot;no&quot;,&quot;yes&quot;,&quot;no&quot;)) # Levels will become labels?  
 # [1] yes yes no  yes no   
 # Levels: no yes  
   
 class(x) # Check the class  
 # &quot;factor&quot;  
   
-uncla  
+unclass(x) # basically categorize   
+# [1] 2 2 1 2 1  
+# attr(,&quot;levels&quot;)  
+# [1] &quot;no&quot;  &quot;yes&quot;  
+  
+factor (c(...), levels = c(&quot;yes&quot;,&quot;no&quot;)) # manually defining levels  
+  
+is.na(x) # is value empty?  
+is.nan(x) # is it NaN  
+  
+  
+  
   
 </code></pre>
 <ul>
