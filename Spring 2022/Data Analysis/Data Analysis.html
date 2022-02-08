@@ -184,12 +184,22 @@ Somebody who combines the skills of software programmer, statistician, and story
 <h1 id="r"><a class="header" href="#r">R</a></h1>
 <ul>
 <li>&lt;- is assignment operator</li>
+<li>one source file per</li>
+<li>Everything is a vector</li>
 </ul>
 <pre><code class="language-R">getwd() # Pwd  
 myfunction &lt;- function(){  
-	x &lt;- rnorm(100)  
-	mean(x)  
+	x &lt;- rnorm(100) # 100 random numbers  
+	mean(x) # return the mean  
 }  
+  
+source(&quot;mean.r&quot;) # source file, replaces previous source file  
+x # print x  
+print(x) # print x  
+  
+msg &lt;- &quot;hello&quot;   
+  
+x &lt;-  
   
 </code></pre>
 
