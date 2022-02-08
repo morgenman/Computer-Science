@@ -84,4 +84,10 @@ Three Goals:
 
 ## Contradiction
 Is we want to prove p is true, and we can find a contradiction, q, such that not p -> q is true
-because q is fal
+because q is false
+
+1. State the proposition
+2. Suppose $\neg$ p is true, and state what that means
+3. Set up the contradiction
+4. Show the contradiction 
+5. State what was proven 
