@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_10:35:48-05:00
+updated: 2022-02-08_10:41:24-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -125,9 +125,13 @@ because q is false
 What is Recursion?
 Induction vs. Recursion
 * Induction works from the base case, recursion works to the base case
+* A **recurrence relation** for the sequence {$a_n$} is an equation that expresses $a_n$ in terms of one or more of the previous terms of the sequence, namely a0, a1, ..., an-1 for all integers n with n>=n0 where n0 is a nonnegative integer
+* A sequence is called a **solution** of a recurrence relation if its terms satisfy the recurrence relation
 
 ## Counting Problems
 *  eg Time cost of an algorithm..
 * Simple counting methods:
-	* Summations
-	* 
+	* Summations (sum for function)
+	* Permutations (ordered arrangement of a distinct set)
+	* Combinations
+
