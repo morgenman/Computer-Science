@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-08_09:56:14-05:00</p>
+<p>updated: 2022-02-08_10:07:29-05:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -290,9 +290,10 @@ because q is false</p>
 <li><strong>State what you are proving:</strong> We must prove the theorem that the number of empty subtrees in a non-empty binary tree is one more than the number of nodes in the tree.</li>
 <li><strong>State what parameter you are doing the induction on:</strong> Proof by induction on n, the number of nodes in the tree</li>
 <li><strong>Decide on the base case for the parameter and show that the theorem is true for this base case:</strong> Base case n = 1. A binary tree with 1 node has 2 empty subtrees. The theorem is true for the base case</li>
+<li><strong>State your induction assumption (hypothesis) bounded from below by your base case:</strong> Assume that the theorem is true for a tree T with k nodes, where k &gt;= 1. That is, tree T has k nodes and k+1 empty subtrees</li>
+<li><strong>State what you are going to prove:</strong> We must show that the theorem is true for a tree T' with k+1 nodes. That is T' has k+2 empty subtrees.</li>
+<li><strong>Start with the new case and restate it in terms of your induction assumption from step 3:</strong> Consider T' with k+1 nodes. If we remove a node from T', we now have a tree T with k nodes. By our induction assumption, this tree has k+1 empty subtrees. Now, add a node onto tree T, thus restoring</li>
 </ol>
-<pre><code class="language-nomnoml">direction=v  
-</code></pre>
 
                 </main>
             </div>
