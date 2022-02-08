@@ -33,12 +33,22 @@ EMR: Electronic Medical Records (messy data)
 
 # R
 * <- is assignment operator
+* one source file per 
+* Everything is a vector
 
 ```R
 getwd() # Pwd
 myfunction <- function(){
-	x <- rnorm(100)
-	mean(x)
+	x <- rnorm(100) # 100 random numbers
+	mean(x) # return the mean
 }
+
+source("mean.r") # source file, replaces previous source file
+x # print x
+print(x) # print x
+
+msg <- "hello" 
+
+x <-
 
 ```
