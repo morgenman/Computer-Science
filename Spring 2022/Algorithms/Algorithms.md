@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-03_09:59:26-05:00
+updated: 2022-02-08_09:35:58-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -65,3 +65,7 @@ Three Goals:
 * Hypothesis not just a prediction, must be testable, verifiable, and testable
 
 
+# Proofs
+* A proof is an argument
+	* structure, completion
+	* state what you will prove, then state what you proved
