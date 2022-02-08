@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-08_13:30:36-05:00</p>
+<p>updated: 2022-02-08_13:36:17-05:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -268,6 +268,14 @@ factor (c(...), levels = c(&quot;yes&quot;,&quot;no&quot;)) # manually defining 
 is.na(x) # is value empty?  
 is.nan(x) # is it NaN  
   
+x &lt;- data.frame (foo=1:4, bar=c(T,T,F,T)) # Matrix with labels  
+#   foo   bar  
+# 1   1  TRUE  
+# 2   2  TRUE  
+# 3   3 FALSE  
+# 4   4  TRUE  
+  
+data &lt;- read.csv(&quot;input.csv&quot;) # data from csv into data.frame  
   
   
   
