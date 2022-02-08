@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:18:41-05:00
+updated: 2022-02-08_13:25:17-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -102,11 +102,21 @@ x <- list(1, "a", TRUE) # Stores values as vectors of vectors
 # [[3]]
 # [1] TRUE
 
+factor(c("yes","yes","no","yes","no")) # Levels will become labels?
+# [1] yes yes no  yes no 
+# Levels: no yes
+
+class(x) # Check the class
+# "factor"
+
+uncla
+
 ```
 
 * <- is assignment operator
 * one source file per 
 * Everything is an object (by default vector)
+* factors are usually for categorical data
 * ![[Pasted image 20220208132128.png]]
 ## Types of Data
 * char (string)
