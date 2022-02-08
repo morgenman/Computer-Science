@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:36:17-05:00
+updated: 2022-02-08_13:42:22-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -128,7 +128,12 @@ x <- data.frame (foo=1:4, bar=c(T,T,F,T)) # Matrix with labels
 
 data <- read.csv("input.csv") # data from csv into data.frame
 
+sal <- max(data$salary) # calculate the max value from the data  dataframe from column salary
 
+help("read.csv") # pull up a help document
+
+x <- 1:3
+names(x) <- c("foo","bar","xyz") # name columns of x
 
 ```
 
