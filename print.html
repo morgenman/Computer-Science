@@ -10011,7 +10011,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-02-08_13:12:25-05:00</p>
+<p>updated: 2022-02-08_13:18:41-05:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -10068,14 +10068,50 @@ dim(m) # print rows,columns
   
 attributes(m) # also prints rows and columns?  
   
-n &lt;- matrix(1:25,5,5)  
-#  
+n &lt;- matrix( 1:25 ,5 ,5 ) # fills columns then rows  
+# Output:  
+#      [,1] [,2] [,3] [,4] [,5]  
+# [1,]    1    6   11   16   21  
+# [2,]    2    7   12   17   22  
+# [3,]    3    8   13   18   23  
+# [4,]    4    9   14   19   24  
+# [5,]    5   10   15   20   25  
+  
+m &lt;- 1:10  
+# [1] 1 2 3 4 5 6 7 8 9 10  
+dim(m) &lt;- c(2,5) # change dimension of m   
+#      [,1] [,2] [,3] [,4] [,5]  
+# [1,]    1    3    5    7    9  
+# [2,]    2    4    6    8   10  
+  
+x &lt;- 1:3  
+y &lt;- 10:12  
+cbind(x,y) # Column bind  
+#      x  y  
+# [1,] 1 10  
+# [2,] 2 11  
+# [3,] 3 12  
+rbind(x,y) # Row bind  
+#   [,1] [,2] [,3]  
+# x    1    2    3  
+# y   10   11   12  
+  
+x &lt;- list(1, &quot;a&quot;, TRUE) # Stores values as vectors of vectors  
+# &lt;span class=&quot;missing-link&quot; style=&quot;color:darkred;&quot;&gt;1&lt;/span&gt;  
+# [1] 1  
+#   
+# &lt;span class=&quot;missing-link&quot; style=&quot;color:darkred;&quot;&gt;2&lt;/span&gt;  
+# [1] &quot;a&quot;  
+#   
+# &lt;span class=&quot;missing-link&quot; style=&quot;color:darkred;&quot;&gt;3&lt;/span&gt;  
+# [1] TRUE  
   
 </code></pre>
 <ul>
 <li>&lt;- is assignment operator</li>
 <li>one source file per</li>
 <li>Everything is an object (by default vector)</li>
+<li><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220208132128.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220208132128.png" alt="Pasted image 20220208132128"/></a></li>
 </ul>
 <h2 id="types-of-data"><a class="header" href="#types-of-data">Types of Data</a></h2>
 <ul>
@@ -10095,10 +10131,6 @@ n &lt;- matrix(1:25,5,5)
 <li>class</li>
 <li>length</li>
 <li>userdefined</li>
-</ul>
-<h2 id="objects"><a class="header" href="#objects">Objects</a></h2>
-<ul>
-<li>matrix()</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
