@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-09_10:28:37-05:00
+updated: 2022-02-09_10:33:59-05:00
 ---
 # Networks
 
@@ -155,4 +155,5 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 	 * Ethernet, 802.11 (WiFi), PPP
 * **physical**: bits “on the wire”
 * ![[Pasted image 20220209102753.png]]
+
 
