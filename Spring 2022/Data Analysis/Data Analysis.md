@@ -135,6 +135,10 @@ help("read.csv") # pull up a help document
 x <- 1:3
 names(x) <- c("foo","bar","xyz") # name columns of x
 
+list(a=1,b=2) #name them right off the bet
+
+dimnames(x) <- list(c("a","b"), c("c","d")) # name rows then columns
+
 ```
 
 * <- is assignment operator
