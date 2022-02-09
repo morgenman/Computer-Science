@@ -1,7 +1,8 @@
 ---
-updated: 2022-02-09_11:45:01-05:00
+updated: 2022-02-09_11:51:05-05:00
 ---
 # CompTIA Security + Overview
+[[601_study_guide.pdf]]
 ## CIA Triad
 ![[Pasted image 20220209113213.png]]
 1. Confidentiality
