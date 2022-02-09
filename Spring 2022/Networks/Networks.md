@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-09_10:02:40-05:00
+updated: 2022-02-09_10:11:01-05:00
 ---
 # Networks
 
@@ -139,4 +139,9 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 
  Average, min, max
 
- 
+ ## Throughput
+ * rate at which bits are being sent from sender to receiver
+ * based on lowest link speed:
+ * ![[Pasted image 20220209100943.png]]
+ * $R_{S}$ is the limiting factor (*bottleneck link*)
+ * 
