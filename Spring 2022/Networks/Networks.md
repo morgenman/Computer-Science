@@ -144,4 +144,4 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
  * based on lowest link speed:
  * ![[Pasted image 20220209100943.png]]
  * $R_{S}$ is the limiting factor (*bottleneck link*)
- * 
+ 
