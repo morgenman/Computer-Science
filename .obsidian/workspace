@@ -61,8 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 205.99999809265137,
-    "collapsed": true
+    "width": 205.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -130,6 +129,7 @@
   "active": "dd8f290ac54459f1",
   "lastOpenFiles": [
     "Spring 2022/Comptia Security+/Comptia Security+.md",
+    "Spring 2022/Comptia Security+/Non-repudiation.md",
     "Spring 2022/Networks/Networks.md",
     "Fall 2021/2022-02-09.md",
     "Spring 2022/Data Analysis/Data Analysis.md",

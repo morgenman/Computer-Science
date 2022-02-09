@@ -30,5 +30,13 @@ updated: 2022-02-09_11:37:34-05:00
 ### Accounting
 * ensures tracking of data, computer usage, and network resources are maintained
 * log file
-* [[Non-repudiation]] occurs when you have proof that someone has taken an 
+* [[Non-repudiation]] occurs when you have proof that someone has taken an action
 
+## Security Threats
+### Malware
+* short-hand term for malicious software
+
+### Unauthorized Access
+* when access to computer resources & data happens without the consent of the owner
+
+### 
