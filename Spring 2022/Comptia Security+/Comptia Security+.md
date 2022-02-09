@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-09_11:37:34-05:00
+updated: 2022-02-09_11:45:01-05:00
 ---
 # CompTIA Security + Overview
 ## CIA Triad
@@ -39,4 +39,10 @@ updated: 2022-02-09_11:37:34-05:00
 ### Unauthorized Access
 * when access to computer resources & data happens without the consent of the owner
 
-### 
+### System Failure
+* when a computer crashes or an application fails
+
+### Social Engineering
+* manipulating users into revealing confidential information or performing other detrimental actions
+
+## 
