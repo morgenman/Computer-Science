@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-09_10:11:01-05:00
+updated: 2022-02-09_10:28:37-05:00
 ---
 # Networks
 
@@ -144,4 +144,15 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
  * based on lowest link speed:
  * ![[Pasted image 20220209100943.png]]
  * $R_{S}$ is the limiting factor (*bottleneck link*)
- 
+ # Protocol Layers
+ * **application**: supporting network applications 
+	 * IMAP, SMTP, HTTP
+ * **transport**: process-process data transfer 
+	 * TCP, UDP
+ * **network**: routing of datagrams from source to destination 
+	 * IP, routing protocols
+ * **link**: data transfer between neighboring network elements 
+	 * Ethernet, 802.11 (WiFi), PPP
+* **physical**: bits “on the wire”
+* ![[Pasted image 20220209102753.png]]
+
