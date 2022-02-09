@@ -2,7 +2,7 @@
   "baseFontSize": 27,
   "theme": "moonstone",
   "translucency": false,
-  "cssTheme": "Primary",
+  "cssTheme": "Spectrum",
   "enabledCssSnippets": [
     "custom"
   ]
