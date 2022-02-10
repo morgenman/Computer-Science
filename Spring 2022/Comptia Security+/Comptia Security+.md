@@ -13,7 +13,7 @@ updated: 2022-02-09_11:51:05-05:00
 	* hashing helps verify this
 3. Availability
 	* information is available to be accessed, stored, and protected at all time
-	* information without availability is useless
+	* information without availability is useless 
 
 ## Three A's of security
 ### Authentication
