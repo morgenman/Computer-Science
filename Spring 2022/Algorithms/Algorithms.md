@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_09:52:53-05:00
+updated: 2022-02-10_10:03:05-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -174,9 +174,15 @@ T(n) = ...
  > Example 1:
  > T(n) = T(n-1) + 1 ; T(1) =0
  > a. *expand*
- > K = 1; T(n) = T(n-1) + 1
-	 > T(n-1) = T(n-1-1)+1 = T()
- > K = 2;
+ > **K = 1** 
+ > T(n) = T(n-1) + 1
+	 > T(n-1) = T(n-1-1) + 1 = T(n-2) + 1
+ > T(n) = T(n-2) + 1 + 1 
+ > T(n) = T(n-2) + 2
+ > **K = 2**
+ > T(n) = T(n-2) + 2
+	 > T(n-2) = T(n-2-1) + 2 = T(n-3) + 2
+ > T(n) = T(n-3) + 2 + 1
  > 
  > 
 
