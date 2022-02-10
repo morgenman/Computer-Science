@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_10:03:05-05:00
+updated: 2022-02-10_10:08:59-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
