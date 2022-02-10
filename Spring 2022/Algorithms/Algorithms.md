@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_10:24:19-05:00
+updated: 2022-02-10_10:31:15-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -172,7 +172,7 @@ T(n) = ...
  4. We have *not* proven we have the correct closed form -- just that we guessed the pattern. We **need** to use an induction proof
 
  > Example 1:
- > T(n) = T(n-1) + 1 ; T(1) =0
+ > T(n) = T(n-1) + 1 ; T(1) = 0
  > 
  > a. *expand*
  > **K = 1** 
@@ -200,7 +200,18 @@ T(n) = ...
  > T(n) = T(n-(n-1)) + (n-1)
  > T(n) = T(1) + (n-1)
  > T(n) = n-1
- > 
+
+> Example 1 Proof of Correctness:
+> TBP:
+> The closed form for the recurrence relation 
+> T(n) = T(n-1) + 1 ; T(1) = 0 
+> is T(n) = n-1 for n $\geq$ 1
+> 
+> Proof by Mathematical Induction on n
+> **Basis:**  T(2) = T(1)
+> 
+> 
+ 
 
  > Example 2:
  > 
