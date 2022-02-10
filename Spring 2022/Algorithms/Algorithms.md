@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_10:40:21-05:00
+updated: 2022-02-10_10:51:06-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -229,9 +229,8 @@ T(n) = ...
  > b. *generalize*
  > T(n) = 1 + ... + (n-2) + (n-1) + n
  > T(n) = 1 + 2 + 3 + ... + n
- > .
- > .
  > 
+ > $\sum_{i=1}^{n}i = \frac{n(n+1)}{2}$  
  > 
 
  > Example 3:
