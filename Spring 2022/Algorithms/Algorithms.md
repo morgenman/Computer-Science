@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_10:17:55-05:00
+updated: 2022-02-10_10:24:19-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -191,11 +191,19 @@ T(n) = ...
  > b. *generalize using n + k* 
  > T(n) = T(n-k) + k
  > 
- > c. *use base case*
+ > c. *use base case to define k* 
  > T(1), k = ?
- > n-k = 1 (we are setting this  based on what w)
+ > n-k = 1 (we are setting this based on what we know of base case)
+ > T(n-(n-1)) = T(1)
+ > 
+ > d. *substitute new definition of k into general RR form*
+ > T(n) = T(n-(n-1)) + (n-1)
+ > T(n) = T(1) + (n-1)
+ > T(n) = n-1
  > 
 
  > Example 2:
+ > 
+ > 
 
  > Example 3:
