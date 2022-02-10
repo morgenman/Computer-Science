@@ -288,6 +288,11 @@ list(a=1,b=2) #name them right off the bet
   
 dimnames(x) &lt;- list(c(&quot;a&quot;,&quot;b&quot;), c(&quot;c&quot;,&quot;d&quot;)) # name rows then columns  
   
+dput(x,file = &quot;y.R&quot;) # text form of R object  
+y &lt;- deget(&quot;y.R&quot;) # R object from text  
+  
+x &lt;- &quot;foo&quot;  
+y &lt;- data.frame(a=1)  
 </code></pre>
 <ul>
 <li>&lt;- is assignment operator</li>
