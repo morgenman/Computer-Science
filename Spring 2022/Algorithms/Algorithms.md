@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_10:08:59-05:00
+updated: 2022-02-10_10:17:55-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -182,7 +182,8 @@ T(n) = ...
  > **K = 2**
  > T(n) = T(n-2) + 2
 	 > T(n-2) = T(n-2-1) + 2 = T(n-3) + 2
- > T(n) = T(n-3) + 2 + 2
+ > T(n) = T(n-3) + 2 + 1
+ > **K = 3**
  > 
  > 
 
