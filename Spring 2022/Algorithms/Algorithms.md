@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_10:31:15-05:00
+updated: 2022-02-10_10:40:21-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -222,7 +222,16 @@ T(n) = ...
 	 > T(n-1) = T((n-1)-1)+(n-1) = T(n-2) + (n-1)
  > **K = 2**
  > T(n) = T(n-2) + (n-1) + n
-	 > T(n-2) = T((n-1))
+	 > T(n-2) = T((n-2)-1) + (n-2) = T(n-3) + (n-2)
+ > **K = 3**
+ > T(n) = T(n-3) + (n-2) + (n-1) + n
+ > 
+ > b. *generalize*
+ > T(n) = 1 + ... + (n-2) + (n-1) + n
+ > T(n) = 1 + 2 + 3 + ... + n
+ > .
+ > .
+ > 
  > 
 
  > Example 3:
