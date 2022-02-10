@@ -9998,8 +9998,8 @@ $f_{n} = f_{n-1} + f_{n-2}$</p>
 </ol>
 <blockquote>
 <p>Example 1:<br />
-T(n) = T(n-1) + 1 ; T(1) =0<br />
-a. <em>expand</em><br />
+T(n) = T(n-1) + 1 ; T(1) =0</p>
+<p>a. <em>expand</em><br />
 <strong>K = 1</strong><br />
 T(n) = T(n-1) + 1<br />
 &gt; T(n-1) = T(n-1-1) + 1 = T(n-2) + 1<br />
@@ -10007,9 +10007,16 @@ T(n) = T(n-2) + 1 + 1<br />
 T(n) = T(n-2) + 2<br />
 <strong>K = 2</strong><br />
 T(n) = T(n-2) + 2<br />
-&gt; T(n-2) = T(n-2-1) + 2 = T(n-3) + 2<br />
+&gt; T(n-2) = T(n-2-1) + 1 = T(n-3) + 1<br />
 T(n) = T(n-3) + 2 + 1<br />
-<strong>K = 3</strong></p>
+<strong>K = 3</strong><br />
+T(n) = T(n-3) + 3<br />
+&gt; T(n-3) = T(n-3-1) + 1 = T(n-4) + 1</p>
+<p>b. <em>generalize using n + k</em><br />
+T(n) = T(n-k) + k</p>
+<p>c. <em>use base case</em><br />
+T(1), k = ?<br />
+n-k = 1 (we are setting this  based on what w)</p>
 </blockquote>
 <blockquote>
 <p>Example 2:</p>
