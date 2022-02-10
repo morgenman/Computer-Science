@@ -139,6 +139,11 @@ list(a=1,b=2) #name them right off the bet
 
 dimnames(x) <- list(c("a","b"), c("c","d")) # name rows then columns
 
+dput(x,file = "y.R") # text form of R object
+y <- deget("y.R") # R object from text
+
+x <- "foo"
+y <- data.frame(a=1)
 ```
 
 * <- is assignment operator
