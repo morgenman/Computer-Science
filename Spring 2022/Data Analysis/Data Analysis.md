@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_13:18:47-05:00
+updated: 2022-02-10_13:29:44-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -190,6 +190,8 @@ u <- x >"a"
 # [1] FALSE TRUE TRUE FALSE TRUE FALSE
 x[u]
 # [1] "b" "c" "e"
+
+complete.cases(x,y) # truth table
 
 ```
 * I think a list is a collection of vectors
