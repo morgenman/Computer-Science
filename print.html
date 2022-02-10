@@ -10201,7 +10201,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-02-10_12:52:07-05:00</p>
+<p>updated: 2022-02-10_12:58:04-05:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -10341,6 +10341,13 @@ y &lt;- data.frame(a=1, b=&quot;a&quot;)
 dump(c(&quot;x&quot;,&quot;y&quot;),file = &quot;data.R&quot;)  
 rm(x,y)  
 source(&quot;data.R&quot;)  
+  
+con &lt;- file(&quot;input.txt&quot;,&quot;r&quot;) # read  
+data &lt;- read.csv(con)  
+  
+con &lt;- url(&quot;https://swirlstats.com/students.html&quot;,&quot;r&quot;)   
+x &lt;- readLines(con,10)   
+  
   
 </code></pre>
 <ul>
