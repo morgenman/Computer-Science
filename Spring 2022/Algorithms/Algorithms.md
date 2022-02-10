@@ -172,6 +172,12 @@ T(n) = ...
  4. We have *not* proven we have the correct closed form -- just that we guessed the pattern. We **need** to use an induction proof
 
  > Example 1:
+ > T(n) = T(n-1) + 1 ; T(1) =0
+ > a. *expand*
+ > K = 1; T(n) = T(n-1) + 1
+	 > T(n-1) = T(n-1-1)+1 = T()
+ > K = 2;
+ > 
  > 
 
  > Example 2:
