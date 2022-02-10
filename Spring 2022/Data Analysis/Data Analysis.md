@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_13:29:44-05:00
+updated: 2022-02-10_13:37:18-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -193,5 +193,10 @@ x[u]
 
 complete.cases(x,y) # truth table
 
+
+
 ```
 * I think a list is a collection of vectors
+* x * y vs x % * % y
+* ![[Pasted image 20220210133755.png]]
+* 
