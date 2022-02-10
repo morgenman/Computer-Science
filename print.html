@@ -10379,8 +10379,18 @@ x &lt;- readLines(con,10)
 <h2 id="notation-1"><a class="header" href="#notation-1">Notation</a></h2>
 <ul>
 <li>double square brackets [[]] always returns  a list</li>
-<li></li>
+<li>Single brackets, you can put a range in</li>
+<li>You can also put in a condition ie:</li>
 </ul>
+<pre><code class="language-R">x &lt;- c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;a&quot;,&quot;e&quot;,&quot;a&quot;)  
+x[x&gt;&quot;a&quot;]  
+# [1] &quot;b&quot; &quot;c&quot; &quot;e&quot;  
+u &lt;- x &gt;&quot;a&quot;  
+# [1] FALSE TRUE TRUE FALSE TRUE FALSE  
+x[u]  
+# [1] &quot;b&quot; &quot;c&quot; &quot;e&quot;  
+  
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
