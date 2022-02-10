@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_09:41:18-05:00
+updated: 2022-02-10_09:47:16-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -124,13 +124,16 @@ because q is false
 # Recurrence Relations
 What is Recursion?
 Induction vs. Recursion
+
+T(n) = ... 
+
 * Induction works from the base case, recursion works to the base case
 * A **recurrence relation** for the sequence {$a_n$} is an equation that expresses $a_n$ in terms of one or more of the previous terms of the sequence, namely a0, a1, ..., an-1 for all integers n with n>=n0 where n0 is a nonnegative integer
 * A sequence is called a **solution** of a recurrence relation if its terms satisfy the recurrence relation
 
 
 ## Counting Problems
-*  eg Time cost of an algorithm..
+* eg Time cost of an algorithm..
 * Simple counting methods:
 	* Summations (sum for function)
 	* Permutations (ordered arrangement of a distinct set)
@@ -155,3 +158,12 @@ Induction vs. Recursion
 > 
 
 ![[Pasted image 20220210094229.png]]
+## Solving Recurrence Relations
+*Solving a recurrence relation is finding a closed form of a recurrence relation*
+
+* Closed form is an algebraic equation with the same value as the recurrence relation
+
+### Backwards Substitution/Iteration (only for simplest sequences with only one term)
+ 1. Replace occurrence of T on rhs with it's definition
+	 * repeatedly substitute until you see a pattern
+	 * write a formula 
