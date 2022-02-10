@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Spring 2022/Algorithms/Algorithms.md",
+            "file": "Spring 2022/Data Analysis/Data Analysis.md",
             "mode": "source",
             "source": false
           }
@@ -61,7 +61,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 231.99999809265137
+    "width": 231.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -77,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring 2022/Algorithms/Algorithms.md",
+                "file": "Spring 2022/Data Analysis/Data Analysis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring 2022/Algorithms/Algorithms.md",
+                "file": "Spring 2022/Data Analysis/Data Analysis.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring 2022/Algorithms/Algorithms.md"
+                "file": "Spring 2022/Data Analysis/Data Analysis.md"
               }
             }
           },
@@ -128,12 +129,12 @@
   },
   "active": "dd8f290ac54459f1",
   "lastOpenFiles": [
+    "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Comptia Security+/Comptia Security+.md",
     "Spring 2022/Comptia Security+/Non-repudiation.md",
     "Spring 2022/Networks/Networks.md",
     "Fall 2021/2022-02-09.md",
-    "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Software Engineering/Software Engineering.md",
     "Spring 2022/Internship/Internship.md",
     "Fall 2021/Game Development/Dithered Drawing.md"

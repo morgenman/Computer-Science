@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_13:42:22-05:00
+updated: 2022-02-10_12:44:34-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -162,5 +162,3 @@ dimnames(x) <- list(c("a","b"), c("c","d")) # name rows then columns
 * class
 * length
 * userdefined
-
-
