@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_12:44:34-05:00
+updated: 2022-02-10_12:52:07-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -143,7 +143,11 @@ dput(x,file = "y.R") # text form of R object
 y <- deget("y.R") # R object from text
 
 x <- "foo"
-y <- data.frame(a=1)
+y <- data.frame(a=1, b="a")
+dump(c("x","y"),file = "data.R")
+rm(x,y)
+source("data.R")
+
 ```
 
 * <- is assignment operator
