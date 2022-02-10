@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_12:58:04-05:00
+updated: 2022-02-10_13:10:33-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -178,3 +178,6 @@ x <- readLines(con,10)
 * class
 * length
 * userdefined
+## Notation
+* double square brackets \[\[\]\] always returns  a list
+* 
