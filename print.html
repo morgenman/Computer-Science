@@ -9806,7 +9806,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-02-10_10:31:15-05:00</p>
+<p>updated: 2022-02-10_10:40:21-05:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -10042,7 +10042,14 @@ T(n) = T(n-1) + n<br />
 &gt; T(n-1) = T((n-1)-1)+(n-1) = T(n-2) + (n-1)<br />
 <strong>K = 2</strong><br />
 T(n) = T(n-2) + (n-1) + n<br />
-&gt; T(n-2) = T((n-1))</p>
+&gt; T(n-2) = T((n-2)-1) + (n-2) = T(n-3) + (n-2)<br />
+<strong>K = 3</strong><br />
+T(n) = T(n-3) + (n-2) + (n-1) + n</p>
+<p>b. <em>generalize</em><br />
+T(n) = 1 + ... + (n-2) + (n-1) + n<br />
+T(n) = 1 + 2 + 3 + ... + n<br />
+.<br />
+.</p>
 </blockquote>
 <blockquote>
 <p>Example 3:</p>
