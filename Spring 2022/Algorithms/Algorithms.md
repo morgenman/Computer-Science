@@ -208,13 +208,21 @@ T(n) = ...
 > is T(n) = n-1 for n $\geq$ 1
 > 
 > Proof by Mathematical Induction on n
-> **Basis:**  T(2) = T(1)
-> 
+> **Basis:** 
+> (will be done tuesday)
 > 
  
 
  > Example 2:
+ > T(n) = T(n-1) + n ; T(1) = 1
  > 
+ > a. *expand*
+ > **K = 1**
+ > T(n) = T(n-1) + n
+	 > T(n-1) = T((n-1)-1)+(n-1) = T(n-2) + (n-1)
+ > **K = 2**
+ > T(n) = T(n-2) + (n-1) + n
+	 > T(n-2) = T((n-1))
  > 
 
  > Example 3:
