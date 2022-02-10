@@ -9806,7 +9806,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-02-10_09:52:53-05:00</p>
+<p>updated: 2022-02-10_10:03:05-05:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -10000,9 +10000,15 @@ $f_{n} = f_{n-1} + f_{n-2}$</p>
 <p>Example 1:<br />
 T(n) = T(n-1) + 1 ; T(1) =0<br />
 a. <em>expand</em><br />
-K = 1; T(n) = T(n-1) + 1<br />
-&gt; T(n-1) = T(n-1-1)+1 = T()<br />
-K = 2;</p>
+<strong>K = 1</strong><br />
+T(n) = T(n-1) + 1<br />
+&gt; T(n-1) = T(n-1-1) + 1 = T(n-2) + 1<br />
+T(n) = T(n-2) + 1 + 1<br />
+T(n) = T(n-2) + 2<br />
+<strong>K = 2</strong><br />
+T(n) = T(n-2) + 2<br />
+&gt; T(n-2) = T(n-2-1) + 2 = T(n-3) + 2<br />
+T(n) = T(n-3) + 2 + 1</p>
 </blockquote>
 <blockquote>
 <p>Example 2:</p>
