@@ -173,6 +173,7 @@ T(n) = ...
 
  > Example 1:
  > T(n) = T(n-1) + 1 ; T(1) =0
+ > 
  > a. *expand*
  > **K = 1** 
  > T(n) = T(n-1) + 1
@@ -181,10 +182,18 @@ T(n) = ...
  > T(n) = T(n-2) + 2
  > **K = 2**
  > T(n) = T(n-2) + 2
-	 > T(n-2) = T(n-2-1) + 2 = T(n-3) + 2
+	 > T(n-2) = T(n-2-1) + 1 = T(n-3) + 1
  > T(n) = T(n-3) + 2 + 1
  > **K = 3**
+ > T(n) = T(n-3) + 3
+	 > T(n-3) = T(n-3-1) + 1 = T(n-4) + 1
  > 
+ > b. *generalize using n + k* 
+ > T(n) = T(n-k) + k
+ > 
+ > c. *use base case*
+ > T(1), k = ?
+ > n-k = 1 (we are setting this  based on what w)
  > 
 
  > Example 2:
