@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-10_09:41:18-05:00</p>
+<p>updated: 2022-02-10_09:47:16-05:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -298,6 +298,7 @@ because q is false</p>
 <h1 id="recurrence-relations"><a class="header" href="#recurrence-relations">Recurrence Relations</a></h1>
 <p>What is Recursion?<br />
 Induction vs. Recursion</p>
+<p>T(n) = ...</p>
 <ul>
 <li>Induction works from the base case, recursion works to the base case</li>
 <li>A <strong>recurrence relation</strong> for the sequence {$a_n$} is an equation that expresses $a_n$ in terms of one or more of the previous terms of the sequence, namely a0, a1, ..., an-1 for all integers n with n&gt;=n0 where n0 is a nonnegative integer</li>
@@ -329,6 +330,20 @@ $f_{n} = f_{n-1} + f_{n-2}$</p>
 <p><em>Fibonacci Sequence</em></p>
 </blockquote>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220210094229.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220210094229.png" alt="Pasted image 20220210094229"/></a></p>
+<h2 id="solving-recurrence-relations"><a class="header" href="#solving-recurrence-relations">Solving Recurrence Relations</a></h2>
+<p><em>Solving a recurrence relation is finding a closed form of a recurrence relation</em></p>
+<ul>
+<li>Closed form is an algebraic equation with the same value as the recurrence relation</li>
+</ul>
+<h3 id="backwards-substitutioniteration-only-for-simplest-sequences-with-only-one-term"><a class="header" href="#backwards-substitutioniteration-only-for-simplest-sequences-with-only-one-term">Backwards Substitution/Iteration (only for simplest sequences with only one term)</a></h3>
+<ol>
+<li>Replace occurrence of T on rhs with it's definition
+<ul>
+<li>repeatedly substitute until you see a pattern</li>
+<li>write a formula</li>
+</ul>
+</li>
+</ol>
 
                 </main>
             </div>
