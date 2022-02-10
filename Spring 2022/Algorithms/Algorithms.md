@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_09:47:16-05:00
+updated: 2022-02-10_09:52:53-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -148,7 +148,7 @@ T(n) = ...
 > Rabbits don't breed until 2months
 > after, each produce another pair of rabbits each month
 > recurrence relation for number of rabbit pairs on island after n months, assuming none die
-> .
+> 
 > $f_{n}$ = number of pairs after n months
 > $f_{1}$ = 1
 > $f_{2}$ = 1
@@ -166,4 +166,14 @@ T(n) = ...
 ### Backwards Substitution/Iteration (only for simplest sequences with only one term)
  1. Replace occurrence of T on rhs with it's definition
 	 * repeatedly substitute until you see a pattern
-	 * write a formula 
+	 * write a formula for T(n) in terms of n and the number of substitutions, which we commonly call k
+ 2. **Goal:** detect a pattern that will let us rewrite the recurrence in terms of summation (expand recurrence as many steps as you need to see the pattern)
+ 3. Ideally, we end up with a summation we can give in a closed form
+ 4. We have *not* proven we have the correct closed form -- just that we guessed the pattern. We **need** to use an induction proof
+
+ > Example 1:
+ > 
+
+ > Example 2:
+
+ > Example 3:
