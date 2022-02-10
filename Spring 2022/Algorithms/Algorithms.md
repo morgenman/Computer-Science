@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_09:35:16-05:00
+updated: 2022-02-10_09:41:18-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -139,10 +139,19 @@ Induction vs. Recursion
 ![[Pasted image 20220208112850.png]]
 
 
-> Modelling with Recurrence Relations
+> **Modelling with Recurrence Relations**
+> 
 > A pair of rabbits 1m1f placed on island
 > Rabbits don't breed until 2months
 > after, each produce another pair of rabbits each month
 > recurrence relation for number of rabbit pairs on island after n months, assuming none die
+> .
+> $f_{n}$ = number of pairs after n months
+> $f_{1}$ = 1
+> $f_{2}$ = 1
+> $f_{n} = f_{n-1} + f_{n-2}$ 
+> 
+> *Fibonacci Sequence*
+> 
 
-
+![[Pasted image 20220210094229.png]]
