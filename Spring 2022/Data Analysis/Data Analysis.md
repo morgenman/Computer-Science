@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_12:52:07-05:00
+updated: 2022-02-10_12:58:04-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -147,6 +147,13 @@ y <- data.frame(a=1, b="a")
 dump(c("x","y"),file = "data.R")
 rm(x,y)
 source("data.R")
+
+con <- file("input.txt","r") # read
+data <- read.csv(con)
+
+con <- url("https://swirlstats.com/students.html","r") 
+x <- readLines(con,10) 
+
 
 ```
 
