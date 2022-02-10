@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_13:10:33-05:00
+updated: 2022-02-10_13:18:47-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -192,3 +192,4 @@ x[u]
 # [1] "b" "c" "e"
 
 ```
+* I think a list is a collection of vectors
