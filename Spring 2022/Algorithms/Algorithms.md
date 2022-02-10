@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-08_11:29:23-05:00
+updated: 2022-02-10_09:35:16-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -128,6 +128,7 @@ Induction vs. Recursion
 * A **recurrence relation** for the sequence {$a_n$} is an equation that expresses $a_n$ in terms of one or more of the previous terms of the sequence, namely a0, a1, ..., an-1 for all integers n with n>=n0 where n0 is a nonnegative integer
 * A sequence is called a **solution** of a recurrence relation if its terms satisfy the recurrence relation
 
+
 ## Counting Problems
 *  eg Time cost of an algorithm..
 * Simple counting methods:
@@ -136,3 +137,12 @@ Induction vs. Recursion
 	* Combinations
 
 ![[Pasted image 20220208112850.png]]
+
+
+> Modelling with Recurrence Relations
+> A pair of rabbits 1m1f placed on island
+> Rabbits don't breed until 2months
+> after, each produce another pair of rabbits each month
+> recurrence relation for number of rabbit pairs on island after n months, assuming none die
+
+
