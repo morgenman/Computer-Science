@@ -180,4 +180,15 @@ x <- readLines(con,10)
 * userdefined
 ## Notation
 * double square brackets \[\[\]\] always returns  a list
-* 
+* Single brackets, you can put a range in
+* You can also put in a condition ie:
+```R
+x <- c("a","b","c","a","e","a")
+x[x>"a"]
+# [1] "b" "c" "e"
+u <- x >"a"
+# [1] FALSE TRUE TRUE FALSE TRUE FALSE
+x[u]
+# [1] "b" "c" "e"
+
+```
