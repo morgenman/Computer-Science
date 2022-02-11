@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-11_11:22:57-05:00</p>
+<p>updated: 2022-02-11_11:33:42-05:00</p>
 <hr>  
 <h1 id="software-engineering"><a class="header" href="#software-engineering">Software Engineering</a></h1>
 <ul>
@@ -370,9 +370,11 @@ F  - 1:10pm Backlog Refinement &amp; Sprint Planning(In person in Lounge or othe
 </ul>
 </li>
 </ul>
-<pre><code class="language-nomnoml">[Engine| Data structure holding user information &amp; game state | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player con]]  
+<pre><code class="language-nomnoml">[Engine| [Database | User Login | SaveGames | Statistics] | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player &amp; AI connection | Authentication]] &lt;-&gt; [AI Client | Simple Rule Set | ML Option]  
+[Engine] &lt;-&gt; [Frontend Implementation | decodeGameState() | drawBoard()]  
   
 </code></pre>
+<p>TODO: Write User Stories</p>
 
                 </main>
             </div>
