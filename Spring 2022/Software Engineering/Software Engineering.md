@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-07_11:47:45-05:00
+updated: 2022-02-11_11:01:23-05:00
 ---
 # Software Engineering
 * Process course
@@ -129,4 +129,8 @@ Prod & Builds
 * a short statement of what the work will be focused on during the sprint
 	* "support sql server in addition to oracle"
 	* "support more technical indicators than company ABC with realtime data"
+
+
+
+#
 	 
