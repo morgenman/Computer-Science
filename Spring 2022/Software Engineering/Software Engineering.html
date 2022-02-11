@@ -370,8 +370,8 @@ F  - 1:10pm Backlog Refinement &amp; Sprint Planning(In person in Lounge or othe
 </ul>
 </li>
 </ul>
-<pre><code class="language-nomnoml">[Engine| [Database | User Login | SaveGames | Statistics] | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player &amp; AI connection | Authentication]] &lt;-&gt; [AI Client | Simple Rule Set | ML Option]  
-[Engine] &lt;-&gt; [Frontend Implementation | decodeGameState() | drawBoard()]  
+<pre><code class="language-nomnoml">[Engine| [Database | User Login | SaveGames | Statistics] | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player &amp; AI connection | Authentication | PlayerLobby ]] &lt;-&gt; [AI Client | Simple Rule Set | ML Option]  
+[Engine] &lt;-&gt; [Frontend Implementation | decodeGameState() | drawBoard() | Observe Running Games Page]  
   
 </code></pre>
 <p>TODO: Write User Stories</p>
