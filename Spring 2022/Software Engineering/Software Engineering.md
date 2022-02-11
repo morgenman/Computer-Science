@@ -131,9 +131,10 @@ Prod & Builds
 	* "support more technical indicators than company ABC with realtime data"
 
 ```nomnoml
-[Engine| [Database | User Login | SaveGames | Statistics] | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player & AI connection | Authentication]] <-> [AI Client | Simple Rule Set | ML Option]
-[Engine] <-> [Frontend Implementation | decodeGameState() | drawBoard()]
+[Engine| [Database | User Login | SaveGames | Statistics] | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player & AI connection | Authentication | PlayerLobby ]] <-> [AI Client | Simple Rule Set | ML Option]
+[Engine] <-> [Frontend Implementation | decodeGameState() | drawBoard() | Observe Running Games Page]
 
 ```
 
 TODO: Write User Stories
+
