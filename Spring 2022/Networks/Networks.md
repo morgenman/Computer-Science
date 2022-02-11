@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-11_10:41:45-05:00
+updated: 2022-02-11_10:47:21-05:00
 ---
 # Networks
 
@@ -159,7 +159,10 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 
 # Network Applications
 * two general paradigms: Client/Server and P2P
-* Adressing processes
 
 ## Sockets
 * Socket is IP:port
+
+## Application Layer
+* Protocols for transferring information 
+* 
