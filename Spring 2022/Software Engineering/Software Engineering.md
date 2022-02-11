@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-11_11:22:57-05:00
+updated: 2022-02-11_11:33:42-05:00
 ---
 # Software Engineering
 * Process course
@@ -131,7 +131,9 @@ Prod & Builds
 	* "support more technical indicators than company ABC with realtime data"
 
 ```nomnoml
-[Engine| Data structure holding user information & game state | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player con]]
+[Engine| [Database | User Login | SaveGames | Statistics] | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player & AI connection | Authentication]] <-> [AI Client | Simple Rule Set | ML Option]
+[Engine] <-> [Frontend Implementation | decodeGameState() | drawBoard()]
 
 ```
-	 
+
+TODO: Write User Stories
