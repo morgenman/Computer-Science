@@ -130,5 +130,8 @@ Prod & Builds
 	* "support sql server in addition to oracle"
 	* "support more technical indicators than company ABC with realtime data"
 
-#
+```nomnoml
+[Engine| Data structure holding user information & game state | [Game Logic | isValid() | isWon() | decodeGameState()] | [Server| player con]]
+
+```
 	 
