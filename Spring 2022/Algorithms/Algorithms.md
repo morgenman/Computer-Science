@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-10_11:56:39-05:00
+updated: 2022-02-12_11:45:38-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -234,3 +234,7 @@ T(n) = ...
  > 
 
  > Example 3:
+
+
+ ![[Pasted image 20220212114505.png]]
+ 
