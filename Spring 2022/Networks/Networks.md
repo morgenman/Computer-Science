@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-11_10:47:21-05:00
+updated: 2022-02-14_10:04:24-05:00
 ---
 # Networks
 
@@ -165,4 +165,11 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 
 ## Application Layer
 * Protocols for transferring information 
-* 
+
+## Transport Layer
+*What does the transport layer provide to an app?*
+* data integrity
+* throughput
+	* **Elastic**: when an app is capable of operating with whatever throughput is available
+* timing
+* security
