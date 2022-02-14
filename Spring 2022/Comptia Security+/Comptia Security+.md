@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_15:24:14-05:00
+updated: 2022-02-14_15:29:51-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -81,4 +81,11 @@ updated: 2022-02-14_15:24:14-05:00
 * Timeliness: up to date
 * Relevancy: relevant to your situation?
 * Accuracy: valid and true
-* Confidence level: 
+* Confidence level: grading quality of info
+	* MISP project - uses **admiralty scale** for grading data and estimative language
+		* Source reliability [A-F] (how trustworthy)
+		* Information content [1-6] (confirmed & logical)
+### Sources
+* proprietary
+	* threat intelligence as a commercial service provided with subscription fee
+* closed-sour
