@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_15:04:41-05:00
+updated: 2022-02-14_15:18:42-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -52,6 +52,11 @@ updated: 2022-02-14_15:04:41-05:00
 * alarms, locks, cameras, id cards, security guards
 ### Technical Controls
 * smart cards, encryption, access control lists (ACLs), intrusion detection systems, network authentication
-### Administrative Controls
+### Administrative Controls (managerial)
 * Policies, procedures, security awareness training, contingency planning, disaster recovery plans
 * Two types: internal policy and legal policy
+## Hackers
+* White: non-malicious, at their request. Paid by company. AKA penetration testers
+* Black: malicious
+* Grey: no malicious intent, but not authorized or paid by company
+* Blue: 
