@@ -135,8 +135,9 @@ Prod & Builds
 [Engine] <-> [Frontend Implementation | decodeGameState() | drawBoard() | Observe Running Games Page]
 
 ```
+
 ```nomnoml
-[Docker-Compose Group[web| web server 80:80][api|Game Logic | Server][db| database][AI Client| probably a python image]]
+[Docker-Compose Group |[web| web server 80:80]|[api|Game Logic | Server]|[db| database]|[AI Client| probably a python image]]
 ```
 TODO: Write User Stories
 
