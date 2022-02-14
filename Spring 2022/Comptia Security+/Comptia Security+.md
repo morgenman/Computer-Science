@@ -55,7 +55,7 @@ updated: 2022-02-14_15:24:14-05:00
 ### Administrative Controls (managerial)
 * Policies, procedures, security awareness training, contingency planning, disaster recovery plans
 * Two types: internal policy and legal policy
-## Hackers
+## Hackers (ethicality)
 * **White**: non-malicious, at their request. Paid by company. AKA penetration testers
 * **Black**: malicious
 * **Grey**: no malicious intent, but not authorized or paid by company
@@ -66,11 +66,19 @@ updated: 2022-02-14_15:24:14-05:00
 	* very rare
 	* who actually makes exploits
 * **Script kiddies**: limited skill, using other peoples exploits and tools
-## Thread Actors
+## Thread Actors (motivation)
 * Script Kiddies
 * Hacktivist
 	* eg: Anonymous
 * Organized Crime
 	* well funded
 	* sophisticated
-* Persisten
+* Advanced Persistent Threats (APTs)
+	* highly trained & funded groups with covert & open-source intelligence
+	* often funded by nation states
+	* very good at staying quiet
+## Threat Intelligence - Sources
+* Timeliness: up to date
+* Relevancy: relevant to your situation?
+* Accuracy: valid and true
+* Confidence level: 
