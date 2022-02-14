@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_15:18:42-05:00
+updated: 2022-02-14_15:24:14-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -56,7 +56,21 @@ updated: 2022-02-14_15:18:42-05:00
 * Policies, procedures, security awareness training, contingency planning, disaster recovery plans
 * Two types: internal policy and legal policy
 ## Hackers
-* White: non-malicious, at their request. Paid by company. AKA penetration testers
-* Black: malicious
-* Grey: no malicious intent, but not authorized or paid by company
-* Blue: 
+* **White**: non-malicious, at their request. Paid by company. AKA penetration testers
+* **Black**: malicious
+* **Grey**: no malicious intent, but not authorized or paid by company
+* **Blue**: permission by company, but not employed by company
+	* hacker one: centralized bug bounty program
+* **Elite**: find and exploit vulnerabilities before anyone else. Can be white/black/grey..
+	* 1/10,000
+	* very rare
+	* who actually makes exploits
+* **Script kiddies**: limited skill, using other peoples exploits and tools
+## Thread Actors
+* Script Kiddies
+* Hacktivist
+	* eg: Anonymous
+* Organized Crime
+	* well funded
+	* sophisticated
+* Persisten
