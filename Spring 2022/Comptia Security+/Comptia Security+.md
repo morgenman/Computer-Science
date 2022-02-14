@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_14:13:46-05:00
+updated: 2022-02-14_15:04:41-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -47,10 +47,11 @@ updated: 2022-02-14_14:13:46-05:00
 * manipulating users into revealing confidential information or performing other detrimental actions
 
 ## Mitigating Threats
+* **User training is the most cost effective security control to use**
 ### Physical Controls
 * alarms, locks, cameras, id cards, security guards
 ### Technical Controls
 * smart cards, encryption, access control lists (ACLs), intrusion detection systems, network authentication
 ### Administrative Controls
 * Policies, procedures, security awareness training, contingency planning, disaster recovery plans
-* Tw
+* Two types: internal policy and legal policy
