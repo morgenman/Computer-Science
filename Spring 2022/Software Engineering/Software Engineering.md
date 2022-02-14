@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-11_11:40:53-05:00
+updated: 2022-02-14_11:05:56-05:00
 ---
 # Software Engineering
 * Process course
@@ -137,4 +137,6 @@ Prod & Builds
 ```
 
 TODO: Write User Stories
+
+Friday: demo of docker+django project. Working tutorial site.
 
