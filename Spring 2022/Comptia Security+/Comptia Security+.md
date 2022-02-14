@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_15:45:17-05:00
+updated: 2022-02-14_18:52:59-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -120,3 +120,8 @@ updated: 2022-02-14_15:45:17-05:00
 		* logs, filesystem changes etc etc
 * need to assume the existing rules have **failed** when hunting
 
+## Attack Framework
+* lockheed martin kill chain
+	* 7 step
+* mitre att&ck framework
+* diamond model
