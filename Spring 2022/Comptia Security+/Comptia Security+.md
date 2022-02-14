@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_15:35:35-05:00
+updated: 2022-02-14_15:45:17-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -118,4 +118,5 @@ updated: 2022-02-14_15:35:35-05:00
 	* profiling threat actors and activities (what TTPs might they use, who might they be, what is their objective)
 	* hunting
 		* logs, filesystem changes etc etc
-* need to assume the existing rules have **failed** 
+* need to assume the existing rules have **failed** when hunting
+
