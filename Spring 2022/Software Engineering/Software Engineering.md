@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_11:17:39-05:00
+updated: 2022-02-14_11:25:35-05:00
 ---
 # Software Engineering
 * Process course
@@ -156,4 +156,3 @@ UNTIL (product complete)
 * provides implementation feedback (does it work?)
 	* Adds to a **regression suite**: set of tests designed to ensure that software is accurate and correct
 * provides design feedback (is it well structured?)
-	* 
