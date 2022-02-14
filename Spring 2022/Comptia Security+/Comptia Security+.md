@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_15:29:51-05:00
+updated: 2022-02-14_15:35:35-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -88,4 +88,21 @@ updated: 2022-02-14_15:29:51-05:00
 ### Sources
 * proprietary
 	* threat intelligence as a commercial service provided with subscription fee
-* closed-sour
+* closed-source
+	* data derived from own research and analysis 
+	* Fire Eye
+* open-source
+	* able to use without subscription
+	* reputation lists
+	* EG:
+		* US-CERT (computer emergency readiness team)
+		* UK NCSC (national cyber security center)
+		* AT&T OTX
+		* MISP (malware information sharing project)
+		* VirusTotal
+		* Spamhaus
+		* SANS ISC Suspicious Domains
+
+> Threat feeds are a form of *explicit* knowledge, but *implicit* knowledge from experienced practitioners is also useful
+
+**Explicit Knowled**
