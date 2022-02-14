@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_11:05:56-05:00
+updated: 2022-02-14_11:17:39-05:00
 ---
 # Software Engineering
 * Process course
@@ -140,3 +140,8 @@ TODO: Write User Stories
 
 Friday: demo of docker+django project. Working tutorial site.
 
+# TDD
+* Test driven development
+* Agile: class of dev. approaches that help developers handle uncertainty through ability to adapt to change
+* Test constantly and keep code simple
+* 
