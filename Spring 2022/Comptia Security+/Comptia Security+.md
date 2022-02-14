@@ -105,4 +105,17 @@ updated: 2022-02-14_15:35:35-05:00
 
 > Threat feeds are a form of *explicit* knowledge, but *implicit* knowledge from experienced practitioners is also useful
 
-**Explicit Knowled**
+**Explicit Knowledge:** knowledge you can write down, see, feel, and touch
+**Implicit**: 'more of a feeling based on experience'
+
+**OSINT:** Open source intelligence
+
+## Threat Hunting
+* finding threats not discovered by monitoring (proactive, not reactive)
+* less disruptive than penetration 
+* Process:
+	* establish a hypothesis (focusing on likelihood and impact)
+	* profiling threat actors and activities (what TTPs might they use, who might they be, what is their objective)
+	* hunting
+		* logs, filesystem changes etc etc
+* need to assume the existing rules have **failed** 
