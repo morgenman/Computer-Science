@@ -173,3 +173,7 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 	* **Elastic**: when an app is capable of operating with whatever throughput is available
 * timing
 * security
+
+
+![[Pasted image 20220214100912.png]]
+![[Pasted image 20220214100934.png]]
