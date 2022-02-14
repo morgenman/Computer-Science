@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_10:10:06-05:00
+updated: 2022-02-14_10:45:24-05:00
 ---
 # Networks
 
@@ -177,3 +177,4 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 
 ![[Pasted image 20220214100912.png]]
 ![[Pasted image 20220214100934.png]]
+![[Pasted image 20220214104452.png]]
