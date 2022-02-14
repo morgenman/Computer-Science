@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_11:33:24-05:00
+updated: 2022-02-14_11:41:35-05:00
 ---
 # Software Engineering
 * Process course
@@ -160,4 +160,6 @@ UNTIL (product complete)
 ## Acceptance test
 * implement a feature by writing an acceptance test
 	* exercises the functionality of a particular feature
+## Walking Skeleton
+* working implementation of thinnest possible slice of real functionality
 * 
