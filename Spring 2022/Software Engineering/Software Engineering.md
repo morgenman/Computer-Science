@@ -144,4 +144,16 @@ Friday: demo of docker+django project. Working tutorial site.
 * Test driven development
 * Agile: class of dev. approaches that help developers handle uncertainty through ability to adapt to change
 * Test constantly and keep code simple
-* 
+* **Testing is part of design**
+* tests are written *before* implementation
+```
+REPEAT
+	write a test (failing)
+	make test pass by writing some code
+	refactor code
+UNTIL (product complete)
+```
+* provides implementation feedback (does it work?)
+	* Adds to a **regression suite**: set of tests designed to ensure that software is accurate and correct
+* provides design feedback (is it well structured?)
+	* 
