@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-15_11:50:05-05:00</p>
+<p>updated: 2022-02-15_11:58:50-05:00</p>
 <hr>  
 <h1 id="comptia-security--overview"><a class="header" href="#comptia-security--overview">CompTIA Security + Overview</a></h1>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/601_study_guide.pdf">601_study_guide.pdf</a></p>
@@ -594,7 +594,15 @@
 <p><em>Dropper</em>: Malware designed to install or run other types of malware embedded in a payload on an infected host</p>
 <p><em>Downloader</em>: Piece of code that downloads other tools</p>
 <p><em>Shellcode</em>: Any lightweight code designed to run an exploit on a target (not just shell on target system, as defined by PenTest+)</p>
-<p><em>Code Injection</em>: Exploit technique that runs malicious code  with the identification number of a legitimate</p>
+<p><em>Code Injection</em>: Exploit technique that runs malicious code  with the identification number of a legitimate process</p>
+<ul>
+<li>Masquerading (dropper replaces genuine executable with malicious)</li>
+<li>DLL injection (forces a process to load as part of DLL)</li>
+<li>DLL sideloading (exploit a vulnerability in legitimate program's manifest to load a malicious dll at runtime)</li>
+<li>Process Hollowing (Starts a process in suspended state and rewrites memory locations)</li>
+</ul>
+<p><em>Anti-forensics Techniques</em>: encryption, compression, obfuscation</p>
+<p><em>Living off the Land</em>: Using standard system tools and packages to perform intrusions (ie using powershell to attack)</p>
 
                 </main>
             </div>
