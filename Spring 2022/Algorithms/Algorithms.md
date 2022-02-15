@@ -275,9 +275,26 @@ T(n) = ...
 >  T(n)=2$^{n-1}$+$2^{n-2}+2^{n-3}+\dots+2^{2}+2^{1}+2^0$
  > T(n)=$\sum_{i=0}^{n-1}2^{i}$
  > 
+ > d. known closed form
+ > T(n)=$\sum_{i=0}^{n-1}2^{i}=2^{(n-1)+1}-1=2^{n}-1$
  > 
+ > $\therefore$ T(n)=$2^{n}$-1
  > 
 
+>  Example 3 Proof of Correctness:
+>  
+>  TBP: The closed form of T(n) = 2T(n-1)+1; T(1) = 1 
+>  is T(n)=$2^{n}$-1
+>  
+>  Proof by Mathematical Induction on n:
+>
+>  **Basis:**
+>  n = 1; T(1) = 2$^1$-1 = 1 $\checkmark$
+>  
+>  **Inductive Hypothesis:**
+>  Suppose T(k)=2$^k$
+>  
+>  
 
  ![[Pasted image 20220212114505.png]]
 
