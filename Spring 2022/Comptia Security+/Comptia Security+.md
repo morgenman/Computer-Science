@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:11:38-05:00
+updated: 2022-02-14_19:18:29-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -129,4 +129,21 @@ updated: 2022-02-14_19:11:38-05:00
 * mitre att&ck framework
 * diamond model
 # Malware
-* 
+## Virus
+* Malicious code that runs without a user's knowledge
+* Requires *user action*
+* Ten Types:
+	* Boot Sector
+		* first sector of hdd, loaded into memory on bootup
+	* Macro virus
+		* embedded into a document
+	* Program
+		* infect executable programs
+	* Multipartite
+		* combines
+	* Encrypted
+	* Polymorphic
+	* Metamorphic
+	* Stealth
+	* Armored
+	* Hoax
