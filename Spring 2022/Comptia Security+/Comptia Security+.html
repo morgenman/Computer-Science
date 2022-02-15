@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-15_11:36:24-05:00</p>
+<p>updated: 2022-02-15_11:50:05-05:00</p>
 <hr>  
 <h1 id="comptia-security--overview"><a class="header" href="#comptia-security--overview">CompTIA Security + Overview</a></h1>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/601_study_guide.pdf">601_study_guide.pdf</a></p>
@@ -464,6 +464,7 @@
 <li>Admin permissions is probably Ring 1</li>
 <li>Often if they gain access they can hide their existence</li>
 <li><strong>Shim:</strong> software between two components that intercepts calls and redirects them.</li>
+<li>Very hard to detect, reimage or reinstall</li>
 </ul>
 <h3 id="dll-injection"><a class="header" href="#dll-injection">DLL Injection</a></h3>
 <ul>
@@ -551,7 +552,36 @@
 <li>Provide user security awareness training</li>
 </ol>
 <p>If a boot sector virus is suspected, reboot computer from external device</p>
-<p>Or put the drive on a new machine</p>
+<p>Or put the drive on a new machine and scan from there</p>
+<h2 id="malware-prevention"><a class="header" href="#malware-prevention">Malware prevention</a></h2>
+<ul>
+<li>Virus protection</li>
+<li>Updates w/ patches</li>
+<li>Good host-based firewall</li>
+<li>Encrypted websites (ssl)</li>
+<li>Worms, Trojans, and Ransomware detected best with anti-malware solutions</li>
+<li>anti-spyware software
+<ul>
+<li>symptom: homepage is different</li>
+</ul>
+</li>
+</ul>
+<h2 id="exploit-technique"><a class="header" href="#exploit-technique">Exploit Technique</a></h2>
+<ul>
+<li>We used to have malware that would modify executable so when file is run virus is loaded
+<ul>
+<li>Worm Malware infected memory and RPC over network to hit other hosts</li>
+</ul>
+</li>
+<li>Modern Malware usually tries to avoid files to prevent detection from security based systems</li>
+<li>APTs are going to use a <em>dropper</em>/downloader
+<ul>
+<li>fileless shellcode (stage 1 dropper)</li>
+<li>wants to maintain access</li>
+<li>install a downloader (stage 2 downloader)</li>
+</ul>
+</li>
+</ul>
 
                 </main>
             </div>
