@@ -1,5 +1,5 @@
 {
-  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\nsigma : $\\Sigma$\nepsilon : $\\varepsilon$\ndot : $\\cdot$\nnull : $\\emptyset$\nsd : $nl$```nomnoml $nl$ [<hidden>.]->  $here$ $nl$ $nl$ ```\n?= : $\\stackrel{?}{=}$ ",
+  "snippets_file": "snippets : It is an obsidian plugin, that replaces your selected text.\nsigma : $\\Sigma$\nepsilon : $\\varepsilon$\ndot : $\\cdot$\nnull : $\\emptyset$\nsd : $nl$```nomnoml $nl$ [<hidden>.]->  $here$ $nl$ $nl$ ```\nqe : $\\stackrel{?}{=}$ ",
   "snippets": [
     "snippets : It is an obsidian plugin, that replaces your selected text.",
     "sigma : $\\Sigma$",
@@ -7,7 +7,7 @@
     "dot : $\\cdot$",
     "null : $\\emptyset$",
     "sd : $nl$```nomnoml $nl$ [<hidden>.]->  $here$ $nl$ $nl$ ```",
-    "?= : $\\stackrel{?}{=}$ "
+    "qe : $\\stackrel{?}{=}$ "
   ],
   "endSymbol": "$end$",
   "newlineSymbol": "$nl$",
@@ -15,5 +15,5 @@
   "pasteSymbol": "$pst$",
   "useTab": true,
   "useSpace": false,
-  "wordDelimiters": "$()[]{}<>,.!?;:'\"\\/"
+  "wordDelimiters": "$()[]{}<>,.!;:'\"\\/?"
 }
