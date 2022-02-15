@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-15_09:50:33-05:00</p>
+<p>updated: 2022-02-15_09:56:20-05:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -419,10 +419,14 @@ T(n) = 2T(n-1) + 1; T(1) = 1</p>
 <p>a. <em>expand</em><br />
 <strong>k=1</strong><br />
 T(n)=2T(n-1)+1<br />
-&gt; T(n-1)=2T(n-2)+1</p>
+&gt; T(n-1)=2T(n-2)+1<br />
+T(n)=2(2T(n-2)+1)+1</p>
 <p><strong>k=2</strong><br />
-T(n)=2(2T(n-2)+1)+1<br />
-&gt; T(n-2)=</p>
+T(n)=2$^2$T(n-2)+2+1<br />
+&gt; T(n-2)=2T(n-3)+1<br />
+T(n)=2$^2$()</p>
+<p><strong>k=3</strong><br />
+T(n)=2(2(2T(n-3)+1))</p>
 </blockquote>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220212114505.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220212114505.png" alt="Pasted image 20220212114505"/></a></p>
 
