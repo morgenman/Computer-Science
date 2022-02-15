@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_11:44:14-05:00
+updated: 2022-02-15_11:50:05-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -258,3 +258,12 @@ Or put the drive on a new machine and scan from there
 * Worms, Trojans, and Ransomware detected best with anti-malware solutions 
 * anti-spyware software
 	* symptom: homepage is different
+
+## Exploit Technique
+* We used to have malware that would modify executable so when file is run virus is loaded
+	* Worm Malware infected memory and RPC over network to hit other hosts
+* Modern Malware usually tries to avoid files to prevent detection from security based systems
+* APTs are going to use a *dropper*/downloader
+	* fileless shellcode (stage 1 dropper)
+	* wants to maintain access
+	* install a downloader (stage 2 downloader)
