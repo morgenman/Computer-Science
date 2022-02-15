@@ -170,5 +170,16 @@ updated: 2022-02-14_19:41:55-05:00
 
 ## Spyware
 * malicious software that gathers user information
-* ****
+* **Adware is a type of spyware**
+* Grayware (jokeware)
+	* benign nor malicious, but causes weird behavior
+	* (crazymouse)
+
+## Rootkit
+* software designed to gain admin level control over a system without permission
+* Trying to get to Ring 0 ([[Kernel Mode]])
+* Admin permissions is probably Ring 1
+* Often if they gain access they can hide their existence
+* **Shim:** software between two components that intercepts calls and redirects them. 
+* 
 

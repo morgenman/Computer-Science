@@ -1,5 +1,5 @@
 ---
-updated: 2022-01-23_12:32:31-05:00
+updated: 2022-02-14_19:46:47-05:00
 ---
 # Kernel Mode
 * Different to [[User Mode]]
