@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_09:36:58-05:00
+updated: 2022-02-15_09:44:48-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -210,8 +210,18 @@ T(n) = ...
 > Proof by Mathematical Induction on n
 > **Basis:**  (use solution)
 > T(1)=1-1=0 $\checkmark$
-> **Inductive Hypothesis**
 > 
+> **Inductive Hypothesis:**
+> Suppose T(k)=k-1 for some k $\geq$ 1
+> 
+> **Inductive Step:**
+> We must show that the statement is true for T(k+1). 
+> That is.. 
+> T(k+1)=T(k+1-1)+1
+> T(k+1)=T(k)+1
+> now we want the rhs to reflect the original rr
+> By our inductive hypothesis
+> T(K)
  
 
  > Example 2:
