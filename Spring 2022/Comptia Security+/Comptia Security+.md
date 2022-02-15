@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_12:07:44-05:00
+updated: 2022-02-15_12:31:34-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -273,6 +273,7 @@ Or put the drive on a new machine and scan from there
 	* lateral movement to increase footprint
 	* Actions on Objectives (whatever they want to do)
 	* Concealment
+![[Pasted image 20220215123102.png]]
 
 *Dropper*: Malware designed to install or run other types of malware embedded in a payload on an infected host
 
