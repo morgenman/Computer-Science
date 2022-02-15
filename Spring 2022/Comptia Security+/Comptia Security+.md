@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:54:47-05:00
+updated: 2022-02-15_11:14:13-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -197,3 +197,10 @@ updated: 2022-02-14_19:54:47-05:00
 
 ### SPIM (Spam Over Instant Messaging)
 
+# Malware
+## Common Delivery Methods
+* Software, messaging, media
+* Watering Hole
+	* When sites/apps that users use daily gets compromised
+*  Typosquatting
+	* Buying 'similar' urls and putting malware on it
