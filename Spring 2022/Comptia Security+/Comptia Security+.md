@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_11:14:13-05:00
+updated: 2022-02-15_11:21:09-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -196,11 +196,19 @@ updated: 2022-02-15_11:14:13-05:00
 * You are liable for your server to the FTC if it's being used to send spam
 
 ### SPIM (Spam Over Instant Messaging)
-
-# Malware
 ## Common Delivery Methods
 * Software, messaging, media
 * Watering Hole
 	* When sites/apps that users use daily gets compromised
 *  Typosquatting
 	* Buying 'similar' urls and putting malware on it
+* Phishing
+	* PhishInsight (test your users)
+
+## Botnet & Zombie
+* C2: Control node or command node
+* most common: ddos
+* bitcoin mining
+
+## Active Interception
+* basically man in the middl
