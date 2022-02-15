@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:49:28-05:00
+updated: 2022-02-14_19:54:47-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -194,4 +194,6 @@ updated: 2022-02-14_19:49:28-05:00
 #### CAN-SPAM
 * established first national standards for sending commercial emails
 * You are liable for your server to the FTC if it's being used to send spam
-### 
+
+### SPIM (Spam Over Instant Messaging)
+
