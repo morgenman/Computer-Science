@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_10:25:21-05:00
+updated: 2022-02-15_10:31:59-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -305,8 +305,9 @@ T(n) = ...
 >  $\therefore$ True, T(n)=$2^n$-1 for n $\geq$ 1
 >  
 
-?= 
  
  ![[Pasted image 20220212114505.png]]
 
- 
+
+ # Analysis
+ * Running time
