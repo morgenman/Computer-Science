@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:41:55-05:00
+updated: 2022-02-14_19:49:28-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -181,5 +181,17 @@ updated: 2022-02-14_19:41:55-05:00
 * Admin permissions is probably Ring 1
 * Often if they gain access they can hide their existence
 * **Shim:** software between two components that intercepts calls and redirects them. 
-* 
 
+### DLL Injection
+	* loaded at runtime
+### Kernel-mode device drivers
+
+## Spam
+* abuse of messaging systems
+
+### Open Mail Relay
+* email servers have the ability to send mail on behalf of other email servers
+#### CAN-SPAM
+* established first national standards for sending commercial emails
+* You are liable for your server to the FTC if it's being used to send spam
+### 
