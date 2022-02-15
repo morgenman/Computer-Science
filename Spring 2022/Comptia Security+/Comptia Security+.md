@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_11:50:05-05:00
+updated: 2022-02-15_11:58:50-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -280,4 +280,12 @@ Or put the drive on a new machine and scan from there
 
 *Shellcode*: Any lightweight code designed to run an exploit on a target (not just shell on target system, as defined by PenTest+)
 
-*Code Injection*: Exploit technique that runs malicious code  with the identification number of a legitimate 
+*Code Injection*: Exploit technique that runs malicious code  with the identification number of a legitimate process
+* Masquerading (dropper replaces genuine executable with malicious)
+* DLL injection (forces a process to load as part of DLL)
+* DLL sideloading (exploit a vulnerability in legitimate program's manifest to load a malicious dll at runtime)
+* Process Hollowing (Starts a process in suspended state and rewrites memory locations)
+
+*Anti-forensics Techniques*: encryption, compression, obfuscation
+
+*Living off the Land*: Using standard system tools and packages to perform intrusions (ie using powershell to attack)
