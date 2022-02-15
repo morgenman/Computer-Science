@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-02-15_10:14:50-05:00</p>
+<p>updated: 2022-02-15_10:25:21-05:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -449,7 +449,13 @@ is T(n)=$2^{n}$-1</p>
 <p><strong>Basis:</strong><br />
 n = 1; T(1) = 2$^1$-1 = 1 $\checkmark$</p>
 <p><strong>Inductive Hypothesis:</strong><br />
-Suppose T(k)=2$^k$</p>
+Suppose T(k)=2$^k$-1 is true for some k $\geq$ 1</p>
+<p><strong>Inductive Step:</strong><br />
+Need to show that T(k+1) $\stackrel{?}{=}$ 2T((k+1)-1)+1<br />
+T(k+1) $\stackrel{?}{=}$ 2T(k)+1<br />
+T(k+1) $\stackrel{?}{=}$  2(2$^k$-1)+1<br />
+T(k+1) $\stackrel{?}{=}$ 2$^{k+1}$-2+1<br />
+T(k+1) $\stackrel{?}{=}$ 2$^{k+1}$-1</p>
 </blockquote>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220212114505.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220212114505.png" alt="Pasted image 20220212114505"/></a></p>
 
