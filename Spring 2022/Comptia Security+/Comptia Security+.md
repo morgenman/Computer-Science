@@ -267,3 +267,17 @@ Or put the drive on a new machine and scan from there
 	* fileless shellcode (stage 1 dropper)
 	* wants to maintain access
 	* install a downloader (stage 2 downloader)
+	* install remote access trojan 
+	* trying to find systems of higher values
+		* servers/domain controllers
+	* lateral movement to increase footprint
+	* Actions on Objectives (whatever they want to do)
+	* Concealment
+
+*Dropper*: Malware designed to install or run other types of malware embedded in a payload on an infected host
+
+*Downloader*: Piece of code that downloads other tools
+
+*Shellcode*: Any lightweight code designed to run an exploit on a target (not just shell on target system, as defined by PenTest+)
+
+*Code Injection*: Exploit technique that runs malicious code  with the identification number of a legitimate 
