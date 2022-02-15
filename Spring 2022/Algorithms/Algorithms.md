@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_10:31:59-05:00
+updated: 2022-02-15_10:38:18-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -309,5 +309,7 @@ T(n) = ...
  ![[Pasted image 20220212114505.png]]
 
 
- # Analysis
- * Running time
+ # Asymptotic Analysis
+ * measure efficiency of an algorithm as input size grows
+ * estimation technique
+ * Time & Space 
