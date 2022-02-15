@@ -289,3 +289,7 @@ Or put the drive on a new machine and scan from there
 *Anti-forensics Techniques*: encryption, compression, obfuscation
 
 *Living off the Land*: Using standard system tools and packages to perform intrusions (ie using powershell to attack)
+
+# Security Tools
+## Firewalls
+* P
