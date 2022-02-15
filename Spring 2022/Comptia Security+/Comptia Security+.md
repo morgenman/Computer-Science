@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_11:36:24-05:00
+updated: 2022-02-15_11:44:14-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -181,6 +181,7 @@ updated: 2022-02-15_11:36:24-05:00
 * Admin permissions is probably Ring 1
 * Often if they gain access they can hide their existence
 * **Shim:** software between two components that intercepts calls and redirects them. 
+* Very hard to detect, reimage or reinstall
 
 ### DLL Injection
 	* loaded at runtime
@@ -247,4 +248,13 @@ MS17-010: 10th patch by ms in 2017 (wannacry fix)
 
 If a boot sector virus is suspected, reboot computer from external device
 
-Or put the drive on a new machine
+Or put the drive on a new machine and scan from there
+
+## Malware prevention
+* Virus protection
+* Updates w/ patches
+* Good host-based firewall
+* Encrypted websites (ssl)
+* Worms, Trojans, and Ransomware detected best with anti-malware solutions 
+* anti-spyware software
+	* symptom: homepage is different
