@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-12_11:45:38-05:00
+updated: 2022-02-15_09:36:58-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -208,8 +208,9 @@ T(n) = ...
 > is T(n) = n-1 for n $\geq$ 1
 > 
 > Proof by Mathematical Induction on n
-> **Basis:** 
-> (will be done tuesday)
+> **Basis:**  (use solution)
+> T(1)=1-1=0 $\checkmark$
+> **Inductive Hypothesis**
 > 
  
 
@@ -237,4 +238,5 @@ T(n) = ...
 
 
  ![[Pasted image 20220212114505.png]]
+
  
