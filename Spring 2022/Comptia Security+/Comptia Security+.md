@@ -235,4 +235,16 @@ MS17-010: 10th patch by ms in 2017 (wannacry fix)
 * malicious code inserted into a program to run when certain conditions are met
 * ie: disgruntled employee
 
-## Symptoms of infection
+## Steps to deal with malware
+0. Backup
+1. Identify symptoms to identify malware
+2. Quarantine to stop malware from spreading
+3. Disable System Restore if using Windows
+4. Remove malware using software, safe mode etc.
+5. Schedule automatic updates and scans (weekly)
+6. Enable system restore and create new restore point
+7. Provide user security awareness training
+
+If a boot sector virus is suspected, reboot computer from external device
+
+Or put the drive on a new machine
