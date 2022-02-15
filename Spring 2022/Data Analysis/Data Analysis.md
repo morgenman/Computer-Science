@@ -204,3 +204,6 @@ complete.cases(x,y) # truth table
 Scope:
 * ls(environment(cube))
 * like scheme: functional programming
+* if it cannot find a variable locally, it will look globally etc higher and higher up
+
+date/time
