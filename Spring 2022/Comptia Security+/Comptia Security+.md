@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:18:29-05:00
+updated: 2022-02-14_19:26:32-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -148,7 +148,15 @@ updated: 2022-02-14_19:18:29-05:00
 		* advanced form of encryption
 		* every time executed alters decryption module
 	* Metamorphic
-		* rewrites 
+		* advanced form of polymorphic
+		* rewrites entire code before infecting a file
 	* Stealth
+		* category which includes encrypted, polymorphic, metamorphic
 	* Armored
+		* layer of protection to cause confusion
 	* Hoax
+		* Not a virus, more of an attempt to put a virus on their machine
+
+## Worm
+* virus with self replication
+* 
