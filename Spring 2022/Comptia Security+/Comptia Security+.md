@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_18:52:59-05:00
+updated: 2022-02-14_19:02:43-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -123,5 +123,8 @@ updated: 2022-02-14_18:52:59-05:00
 ## Attack Framework
 * lockheed martin kill chain
 	* 7 step
+	* ![[Pasted image 20220214190209.png]]
+	* C2: weaponized code establishes an outbound channel to a remote server
+	* 
 * mitre att&ck framework
 * diamond model
