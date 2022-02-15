@@ -162,4 +162,7 @@ updated: 2022-02-14_19:32:13-05:00
 
 ## Trojans
 * Malicious program that performs both desired functionality *and* malicious code.  
+
 ### RAT (Remote Access Trojan)
+
+## 
