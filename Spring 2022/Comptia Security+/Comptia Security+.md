@@ -211,4 +211,10 @@ updated: 2022-02-15_11:21:09-05:00
 * bitcoin mining
 
 ## Active Interception
-* basically man in the middl
+* basically man in the middle attack
+
+## Privilege Escalation
+* exploit to gain access to resources that a normal user isn't able to access
+
+![[Pasted image 20220215112447.png]]
+MS17-010: 10th patch by ms in 2017 (wannacry fix)
