@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_10:14:50-05:00
+updated: 2022-02-15_10:25:21-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -292,8 +292,14 @@ T(n) = ...
 >  n = 1; T(1) = 2$^1$-1 = 1 $\checkmark$
 >  
 >  **Inductive Hypothesis:**
->  Suppose T(k)=2$^k$
+>  Suppose T(k)=2$^k$-1 is true for some k $\geq$ 1
 >  
+>  **Inductive Step:**
+>  Need to show that T(k+1) $\stackrel{?}{=}$ 2T((k+1)-1)+1
+>  T(k+1) $\stackrel{?}{=}$ 2T(k)+1
+>  T(k+1) $\stackrel{?}{=}$  2(2$^k$-1)+1
+>  T(k+1) $\stackrel{?}{=}$ 2$^{k+1}$-2+1
+>  T(k+1) $\stackrel{?}{=}$ 2$^{k+1}$-1
 >  
 
  ![[Pasted image 20220212114505.png]]
