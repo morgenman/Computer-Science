@@ -140,10 +140,15 @@ updated: 2022-02-14_19:18:29-05:00
 	* Program
 		* infect executable programs
 	* Multipartite
-		* combines
+		* combines boot sector and program virus
+		* persistent, could reinstall into os
 	* Encrypted
+		* encrypts contents to evade antivirus
 	* Polymorphic
+		* advanced form of encryption
+		* every time executed alters decryption module
 	* Metamorphic
+		* rewrites 
 	* Stealth
 	* Armored
 	* Hoax
