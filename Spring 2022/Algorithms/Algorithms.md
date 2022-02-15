@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_09:44:48-05:00
+updated: 2022-02-15_09:50:33-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -220,9 +220,11 @@ T(n) = ...
 > T(k+1)=T(k+1-1)+1
 > T(k+1)=T(k)+1
 > now we want the rhs to reflect the original rr
-> By our inductive hypothesis
-> T(K)
- 
+> By our inductive hypothesis T(k)=k-1
+> T(k+1)=(k-1)+1
+> T(k+1)=k
+> which is true since T(k)=k-1
+> $\therefore$ T(n)=n-1 has been shown true and the closed form T(n)=n-1 is correct for the RR T(n)=T(n-1)+1,T(1)=0 for n $\geq$ 1
 
  > Example 2:
  > T(n) = T(n-1) + n ; T(1) = 1
@@ -245,6 +247,8 @@ T(n) = ...
  > 
 
  > Example 3:
+ > 
+ > 
 
 
  ![[Pasted image 20220212114505.png]]
