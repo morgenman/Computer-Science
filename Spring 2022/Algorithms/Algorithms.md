@@ -301,7 +301,12 @@ T(n) = ...
 >  T(k+1) $\stackrel{?}{=}$ 2$^{k+1}$-2+1
 >  T(k+1) $\stackrel{?}{=}$ 2$^{k+1}$-1
 >  
+>  $\therefore$ CF is equivalent
+>  $\therefore$ True, T(n)=$2^n$-1 for n $\geq$ 1
+>  
 
+?= 
+ 
  ![[Pasted image 20220212114505.png]]
 
  
