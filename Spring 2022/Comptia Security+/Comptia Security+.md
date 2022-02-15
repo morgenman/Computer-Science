@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:02:43-05:00
+updated: 2022-02-14_19:11:38-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -128,3 +128,5 @@ updated: 2022-02-14_19:02:43-05:00
 	* 
 * mitre att&ck framework
 * diamond model
+# Malware
+* 
