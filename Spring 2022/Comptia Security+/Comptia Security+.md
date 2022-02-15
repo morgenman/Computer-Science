@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_11:58:50-05:00
+updated: 2022-02-15_12:07:44-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -292,4 +292,5 @@ Or put the drive on a new machine and scan from there
 
 # Security Tools
 ## Firewalls
-* P
+* Host based firewalls
+	* personal firewalls based on software that protect a single computer or server from unwanted internet traffic
