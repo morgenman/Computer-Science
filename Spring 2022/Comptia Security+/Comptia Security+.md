@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:32:13-05:00
+updated: 2022-02-14_19:41:55-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -165,4 +165,10 @@ updated: 2022-02-14_19:32:13-05:00
 
 ### RAT (Remote Access Trojan)
 
-## 
+## Ransomware
+* most of the time you do not get your data back
+
+## Spyware
+* malicious software that gathers user information
+* ****
+
