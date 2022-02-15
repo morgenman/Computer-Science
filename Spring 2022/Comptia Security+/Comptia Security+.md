@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_19:26:32-05:00
+updated: 2022-02-14_19:32:13-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -159,4 +159,7 @@ updated: 2022-02-14_19:26:32-05:00
 
 ## Worm
 * virus with self replication
-* 
+
+## Trojans
+* Malicious program that performs both desired functionality *and* malicious code.  
+### RAT (Remote Access Trojan)
