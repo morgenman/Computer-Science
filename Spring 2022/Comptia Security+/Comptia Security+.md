@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_11:21:09-05:00
+updated: 2022-02-15_11:36:24-05:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -218,3 +218,21 @@ updated: 2022-02-15_11:21:09-05:00
 
 ![[Pasted image 20220215112447.png]]
 MS17-010: 10th patch by ms in 2017 (wannacry fix)
+
+## Backdoor
+* Used to bypass security functions
+* Created in 80s by manufacturers & programmers to update and do maintenance 
+* Very bad
+
+## Remote Access Trojan (RAT)
+* hostile backdoor placed by malware
+
+## Easter Egg
+* non-malicious code as a joke
+* Could be bad
+
+## Logic Bomb
+* malicious code inserted into a program to run when certain conditions are met
+* ie: disgruntled employee
+
+## Symptoms of infection
