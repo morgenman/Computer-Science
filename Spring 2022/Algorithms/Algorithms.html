@@ -437,6 +437,19 @@ T(n)=2$^k$+$2^{k-1}+2^{k-2}+\dots+2^{2}+2^{1}+2^0$</p>
 <p>c. put in terms of n<br />
 T(n)=2$^{n-1}$+$2^{n-2}+2^{n-3}+\dots+2^{2}+2^{1}+2^0$<br />
 T(n)=$\sum_{i=0}^{n-1}2^{i}$</p>
+<p>d. known closed form<br />
+T(n)=$\sum_{i=0}^{n-1}2^{i}=2^{(n-1)+1}-1=2^{n}-1$</p>
+<p>$\therefore$ T(n)=$2^{n}$-1</p>
+</blockquote>
+<blockquote>
+<p>Example 3 Proof of Correctness:</p>
+<p>TBP: The closed form of T(n) = 2T(n-1)+1; T(1) = 1<br />
+is T(n)=$2^{n}$-1</p>
+<p>Proof by Mathematical Induction on n:</p>
+<p><strong>Basis:</strong><br />
+n = 1; T(1) = 2$^1$-1 = 1 $\checkmark$</p>
+<p><strong>Inductive Hypothesis:</strong><br />
+Suppose T(k)=2$^k$</p>
 </blockquote>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220212114505.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220212114505.png" alt="Pasted image 20220212114505"/></a></p>
 
