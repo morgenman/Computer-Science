@@ -191,3 +191,6 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 
 ## SMTP
 * Security using TCP (transport layer)
+## DNS
+* application layer protocol
+* 
