@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-16_10:35:42-05:00
+updated: 2022-02-16_10:44:44-05:00
 ---
 # Networks
 
@@ -190,4 +190,4 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 	* Http/3 has better security
 
 ## SMTP
-* 
+* Security using TCP (transport layer)
