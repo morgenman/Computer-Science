@@ -179,3 +179,5 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 ![[Pasted image 20220214100934.png]]
 ![[Pasted image 20220214104452.png]]
 * Proxy server caches often
+
+## Calculating link utilization
