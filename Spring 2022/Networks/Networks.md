@@ -181,7 +181,7 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 * Proxy server caches often
 
 * Conditional get:
-	* if-modified-since: <date\>
+	* if-modified-since: </date>
 
 * HTTP/1 vs HTTP/2:
 	* ![[Pasted image 20220216103315.png]]
