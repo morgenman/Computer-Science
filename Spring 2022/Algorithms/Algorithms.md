@@ -314,4 +314,8 @@ T(n) = ...
 * estimation technique
 * Time & Space 
 ## Known Time Costs
-* 
+```java
+static int largest(int[] A){
+	int first = A[0]
+}
+```
