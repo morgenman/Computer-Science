@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_10:46:18-05:00
+updated: 2022-02-17_09:39:24-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -314,8 +314,23 @@ T(n) = ...
 * estimation technique
 * Time & Space 
 ## Known Time Costs
+### T(n) = C
 ```java
 static int largest(int[] A){
-	int first = A[0]
+	int first = A[0];
+	return first;
+}
+```
+### T(n) = n
+
+### T(n) = n^2
+```Java
+int foo(int n){
+	int sum = 0;
+	for(int i = 1; i <= n; i++){   // n
+		for (int j = 1; j <= n; j++){ // n
+			sum++
+		}
+	}
 }
 ```
