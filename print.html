@@ -9806,7 +9806,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-02-15_10:46:18-05:00</p>
+<p>updated: 2022-02-17_09:39:24-05:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -10117,8 +10117,21 @@ $\therefore$ True, T(n)=$2^n$-1 for n $\geq$ 1</p>
 <li>Time &amp; Space</li>
 </ul>
 <h2 id="known-time-costs"><a class="header" href="#known-time-costs">Known Time Costs</a></h2>
+<h3 id="tn--c"><a class="header" href="#tn--c">T(n) = C</a></h3>
 <pre><code class="language-java">static int largest(int[] A){  
-	int first = A[0]  
+	int first = A[0];  
+	return first;  
+}  
+</code></pre>
+<h3 id="tn--n"><a class="header" href="#tn--n">T(n) = n</a></h3>
+<h3 id="tn--n2"><a class="header" href="#tn--n2">T(n) = n^2</a></h3>
+<pre><code class="language-Java">int foo(int n){  
+	int sum = 0;  
+	for(int i = 1; i &lt;= n; i++){   // n  
+		for (int j = 1; j &lt;= n; j++){ // n  
+			sum++  
+		}  
+	}  
 }  
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
