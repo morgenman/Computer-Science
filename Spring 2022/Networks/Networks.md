@@ -204,5 +204,8 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 * distributed database storing resource records (RR)
 	* format: `(name, value, type, ttl)`
 	* ![[Pasted image 20220218103226.png]]
+	* ns stores the authoritative name server 
 	* ![[Pasted image 20220218103426.png]]
-	* 	* 
+## P2P
+![[Pasted image 20220218103854.png]]
+* 
