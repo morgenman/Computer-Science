@@ -218,4 +218,5 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 		* $D_{P2P}\geq max\{ \frac{F}{u_s},\frac{F}{d_{min}},N\frac{F}{(u_{s}+ \sum u_{i})}\}$
 		* increases linearly with N, but peer brings service capacity
 		* ![[Pasted image 20220218104809.png]]
-		* 
+
+> idea: P2P protocol which uses traditional ip/server as client
