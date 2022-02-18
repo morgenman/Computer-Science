@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-18_10:21:40-05:00
+updated: 2022-02-18_10:33:10-05:00
 ---
 # Networks
 
@@ -199,3 +199,10 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 * Educause owns .edu
 * Network Solutions owns .com .net
 * Authoritative DNS servers
+
+### RR Format
+* distributed database storing resource records (RR)
+	* format: `(name, value, type, ttl)`
+	* ![[Pasted image 20220218103226.png]]
+	* ![[Pasted image 20220218103426.png]]
+	* 	* 
