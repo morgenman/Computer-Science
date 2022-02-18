@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-18_10:33:10-05:00
+updated: 2022-02-18_10:48:46-05:00
 ---
 # Networks
 
@@ -213,6 +213,9 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 	* Client-server:
 		* $D_{c-s}\geq max\{N\frac{F}{u_s},\frac{F}{d_{min}}\}$
 		*  ($d_{min}$ is the minimum client download rate)
-		* increases linearly with N
+		* increases linearly with N clients
 	* P2P:
+		* $D_{P2P}\geq max\{ \frac{F}{u_s},\frac{F}{d_{min}},N\frac{F}{(u_{s}+ \sum u_{i})}\}$
+		* increases linearly with N, but peer brings service capacity
+		* ![[Pasted image 20220218104809.png]]
 		* 
