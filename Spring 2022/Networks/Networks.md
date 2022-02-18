@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-18_10:15:32-05:00
+updated: 2022-02-18_10:21:40-05:00
 ---
 # Networks
 
@@ -196,3 +196,6 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 ![[Pasted image 20220218101500.png]]
 * ICANN
 * only 13 root servers
+* Educause owns .edu
+* Network Solutions owns .com .net
+* Authoritative DNS servers
