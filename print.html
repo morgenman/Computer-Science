@@ -10918,7 +10918,7 @@ complete.cases(x,y) # truth table
     });
 </script>
 <hr>  
-<p>updated: 2022-02-18_10:33:10-05:00</p>
+<p>updated: 2022-02-18_10:48:46-05:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -11232,11 +11232,20 @@ End to end:</p>
 <ul>
 <li>$D_{c-s}\geq max{N\frac{F}{u_s},\frac{F}{d_{min}}}$</li>
 <li>($d_{min}$ is the minimum client download rate)</li>
-<li>increases linearly with N</li>
+<li>increases linearly with N clients</li>
 </ul>
 </li>
 <li>P2P:
 <ul>
+<li>
+<p>$D_{P2P}\geq max{ \frac{F}{u_s},\frac{F}{d_{min}},N\frac{F}{(u_{s}+ \sum u_{i})}}$</p>
+</li>
+<li>
+<p>increases linearly with N, but peer brings service capacity</p>
+</li>
+<li>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220218104809.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220218104809.png" alt="Pasted image 20220218104809"/></a></p>
+</li>
 <li></li>
 </ul>
 </li>
