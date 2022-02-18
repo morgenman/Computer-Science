@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-16_10:44:44-05:00
+updated: 2022-02-18_10:15:32-05:00
 ---
 # Networks
 
@@ -193,4 +193,6 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 * Security using TCP (transport layer)
 ## DNS
 * application layer protocol
-* 
+![[Pasted image 20220218101500.png]]
+* ICANN
+* only 13 root servers
