@@ -208,4 +208,11 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 	* ![[Pasted image 20220218103426.png]]
 ## P2P
 ![[Pasted image 20220218103854.png]]
-* 
+* Client-Server vs P2P
+	* Time to transfer file sized F to N peers?
+	* Client-server:
+		* $D_{c-s}\geq max\{N\frac{F}{u_s},\frac{F}{d_{min}}\}$
+		*  ($d_{min}$ is the minimum client download rate)
+		* increases linearly with N
+	* P2P:
+		* 
