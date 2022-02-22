@@ -221,3 +221,5 @@ Raw -> Preprocessing -> clean data -> data analysis -> presentation
 Data: A set of values of qualitative or quantitative variables, belonging to a set of items
 
 Need to document the process for processing
+
+Raw? {no }
