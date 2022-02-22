@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-22_13:07:47-05:00
+updated: 2022-02-22_13:16:05-05:00
 ---
 5---
 updated: 2022-02-15_13:09:32-05:00
@@ -222,4 +222,9 @@ Data: A set of values of qualitative or quantitative variables, belonging to a s
 
 Need to document the process for processing
 
-Raw? {no }
+Raw: No manipulation, at all
+
+* Make sure there's only one measured variable per column
+* one observation of said variable per row
+* one variable per table
+* one table per file
