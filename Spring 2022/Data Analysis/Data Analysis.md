@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-22_12:59:54-05:00
+updated: 2022-02-22_13:07:47-05:00
 ---
 5---
 updated: 2022-02-15_13:09:32-05:00
@@ -219,3 +219,5 @@ date/time
 Raw -> Preprocessing -> clean data -> data analysis -> presentation
 
 Data: A set of values of qualitative or quantitative variables, belonging to a set of items
+
+Need to document the process for processing
