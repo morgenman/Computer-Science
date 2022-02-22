@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-22_10:12:24-05:00
+updated: 2022-02-22_10:48:57-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -342,4 +342,4 @@ $\Theta$ (f(n)) : average
 
 ![[Pasted image 20220222101141.png]]
 ![[Pasted image 20220222101152.png]]
-
+$\testing {}$
