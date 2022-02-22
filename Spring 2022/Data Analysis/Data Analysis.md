@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-22_12:43:12-05:00
+updated: 2022-02-22_12:59:54-05:00
 ---
 5---
 updated: 2022-02-15_13:09:32-05:00
@@ -215,4 +215,5 @@ date/time
 
 # Data Preprocessing
 * This comes before data analysis
-* 
+
+Raw -> Preprocessing -> clean data -> data analysis -> presentation
