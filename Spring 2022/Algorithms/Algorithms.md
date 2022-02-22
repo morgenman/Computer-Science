@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-17_09:39:24-05:00
+updated: 2022-02-22_09:31:09-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -327,10 +327,12 @@ static int largest(int[] A){
 ```Java
 int foo(int n){
 	int sum = 0;
-	for(int i = 1; i <= n; i++){   // n
+	for (int i = 1; i <= n; i++){   // n
 		for (int j = 1; j <= n; j++){ // n
 			sum++
 		}
 	}
 }
 ```
+
+
