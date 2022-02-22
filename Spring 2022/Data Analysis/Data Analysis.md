@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-17_12:24:06-05:00
+updated: 2022-02-22_12:43:12-05:00
 ---
 5---
 updated: 2022-02-15_13:09:32-05:00
@@ -210,3 +210,9 @@ Scope:
 * if it cannot find a variable locally, it will look globally etc higher and higher up
 
 date/time
+
+
+
+# Data Preprocessing
+* This comes before data analysis
+* 
