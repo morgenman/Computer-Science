@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-22_09:54:13-05:00
+updated: 2022-02-22_10:01:05-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -339,3 +339,5 @@ int foo(int n){
 $\Omega$ (f(n)) : lower bound
 $\mathbb{O}$ (f(n)) : upper bound
 $\Theta$ (f(n)) : average
+
+
