@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-22_10:01:05-05:00
+updated: 2022-02-22_10:12:24-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -340,4 +340,6 @@ $\Omega$ (f(n)) : lower bound
 $\mathbb{O}$ (f(n)) : upper bound
 $\Theta$ (f(n)) : average
 
+![[Pasted image 20220222101141.png]]
+![[Pasted image 20220222101152.png]]
 
