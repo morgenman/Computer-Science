@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-18_10:48:46-05:00
+updated: 2022-02-23_10:37:07-05:00
 ---
 # Networks
 
@@ -220,3 +220,10 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 		* ![[Pasted image 20220218104809.png]]
 
 > idea: P2P protocol which uses traditional ip/server as client
+
+
+
+## DASH
+* Dynamic Adaptive Streaming over HTTP
+* Each chunk is encoded at different rates
+* manifest provides urls for different chunks
