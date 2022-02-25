@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-25_10:11:54-05:00
+updated: 2022-02-25_10:17:24-05:00
 ---
 # Networks
 
@@ -232,4 +232,7 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 # Transport Layer vs Network Layer
 ## Multiplexing/Demultiplexing
 * done by transport layer
-* 
+* Sender/Receiver 
+```nomnoml
+[Packet[Segment[IP Datagram -> S,D]]]
+```
