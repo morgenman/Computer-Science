@@ -1,9 +1,11 @@
 ---
-updated: 2022-02-22_10:48:57-05:00
+updated: 2022-02-25_10:57:38-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
 25% off monday
+
+[[Midterm 1 Study Guide]]
 
 # Introduction
 Three Goals:

@@ -1,0 +1,15 @@
+---
+updated: 2022-02-25_10:58:15-05:00
+---
+- THE SHORT VERSION: Covers Chapters 1, 2, 3 (less emphasis on Ch. 1). If you've done it on a homework or seen it in a lecture example, it's fair game on the midterm.
+- THE LONGER VERSION: **IMPORTANT NOTE: This list may not be exhaustive. The exam will include ALL material that we have covered to date.**  
+    - Recurrence relations
+    - Proofs: direct proof, proof by contradiction, mathematical (weak) induction
+    - Calculate the processing speedup of one machine compared to another
+    - Explain the meaning of _O,_ Ω, Θ and why they are useful and important in CS  
+    - For some pair of functions _f(n)_ and _g(n)_, determine whether _f(n)_ is in _O(g(n)), _f(n)__ is in Ω_(g(n)),_ _or _f(n)_=_Θ__(g(n))__
+    - Determine Θ for code fragments
+    - Write an algorithm that improves on the efficiency (in time, space, or both) of a given algorithm
+    - Determine upper or lower bounds of an algorithm
+    - Discuss applying asymptotic analysis to problems
+    - Difference between bounds and cases
