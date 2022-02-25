@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-23_10:37:07-05:00
+updated: 2022-02-25_10:06:23-05:00
 ---
 # Networks
 
@@ -227,3 +227,5 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 * Dynamic Adaptive Streaming over HTTP
 * Each chunk is encoded at different rates
 * manifest provides urls for different chunks
+
+
