@@ -234,5 +234,5 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 * done by transport layer
 * Sender/Receiver 
 ```nomnoml
-[Packet[Segment[IP Datagram -> S,D]]]
+[Packet|Segment|IP Datagram]
 ```
