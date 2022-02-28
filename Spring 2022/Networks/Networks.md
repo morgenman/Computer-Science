@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-28_10:06:22-05:00
+updated: 2022-02-28_10:21:51-05:00
 ---
 # Networks
 
@@ -241,6 +241,14 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 
 Checksum
 
-Flow Control (receiver side)
+Flow Control (**receiver side**)
 vs
-Conjestion control (network side)
+Congestion control (**network side**)
+
+# R(eliable) D(ata) T(ransfer)
+## RDT 1.0
+* Checksum to detect bit errors
+* ![[Pasted image 20220228102354.png]]
+
+## RDT 2.0
+* Adding A
