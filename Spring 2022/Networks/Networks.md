@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-28_10:21:51-05:00
+updated: 2022-02-28_10:30:45-05:00
 ---
 # Networks
 
@@ -256,4 +256,5 @@ Congestion control (**network side**)
 * retransmit on NAK
 * Stop and wait
 * ![[Pasted image 20220228102454.png]]
+* Flaw is: What happens if the Ack is lost?
 * 
