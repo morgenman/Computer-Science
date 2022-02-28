@@ -251,4 +251,9 @@ Congestion control (**network side**)
 * ![[Pasted image 20220228102354.png]]
 
 ## RDT 2.0
-* Adding A
+* Adding Acknowledgements
+* Adding Negative Acknowledgements (NAKs)
+* retransmit on NAK
+* Stop and wait
+* ![[Pasted image 20220228102454.png]]
+* 
