@@ -240,3 +240,7 @@ traceroute to google.com (142.251.40.238), 30 hops max, 60 byte packets
 ![[Pasted image 20220225103203.png]]
 
 Checksum
+
+Flow Control (receiver side)
+vs
+Conjestion control (network side)
