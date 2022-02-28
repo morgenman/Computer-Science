@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-28_10:30:45-05:00
+updated: 2022-02-28_10:43:00-05:00
 ---
 # Networks
 
@@ -257,4 +257,10 @@ Congestion control (**network side**)
 * Stop and wait
 * ![[Pasted image 20220228102454.png]]
 * Flaw is: What happens if the Ack is lost?
-* 
+
+## RDT 2.1
+* Uses a sequence of 01010101 to keep track of whether ack/nak is needed
+
+## RDT 2.2 
+* NAK free!
+* ACK for last pkt received OK
