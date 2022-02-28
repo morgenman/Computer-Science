@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-14_11:41:35-05:00
+updated: 2022-02-28_11:04:31-05:00
 ---
 # Software Engineering
 * Process course
@@ -165,4 +165,6 @@ UNTIL (product complete)
 	* exercises the functionality of a particular feature
 ## Walking Skeleton
 * working implementation of thinnest possible slice of real functionality
+
+# Sprint Planning
 * 
