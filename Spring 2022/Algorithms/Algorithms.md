@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_10:36:50-05:00
+updated: 2022-03-01_10:45:29-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -360,3 +360,4 @@ Lower bound is maximum lower bound
 * O(n^k)
 * considered *tractable*
 	* a solution may exist, but it would take a prohibitively long time to compute
+	* 
