@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-25_10:57:38-05:00
+updated: 2022-03-01_09:33:16-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -342,6 +342,8 @@ $\Omega$ (f(n)) : lower bound
 $\mathbb{O}$ (f(n)) : upper bound
 $\Theta$ (f(n)) : average
 
+cases deal with particular size of input
+Lower bound is maximum lower bound
+
 ![[Pasted image 20220222101141.png]]
 ![[Pasted image 20220222101152.png]]
-$\testing {}$
