@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_10:03:23-05:00
+updated: 2022-03-01_10:24:22-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -352,3 +352,12 @@ Lower bound is maximum lower bound
 * If an array of n integer requires c bytes per n, $\Theta$(n)
 * Overhead: need to store extra information about the data structure itself
 * Lookup table: using space to reduce computations
+
+
+
+# Polynomial Time
+* S = f(n)
+* n^2 etc
+* NP Complete
+* NP Hard
+* P space
