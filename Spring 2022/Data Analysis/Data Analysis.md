@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-22_14:46:02-05:00
+updated: 2022-03-01_12:35:30-05:00
 ---
 5---
 updated: 2022-02-15_13:09:32-05:00
@@ -229,3 +229,11 @@ Raw: No manipulation, at all
 * one variable per table
 * one table per file
 
+# Project
+* Choose a dataset
+* Come up with hypothesis/questions
+13th 
+Report of project:
+1. Where is data coming from? (public)
+2. 1 ppg what is it about?
+3. Questions 
