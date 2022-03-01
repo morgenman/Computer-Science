@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_09:33:16-05:00
+updated: 2022-03-01_09:39:53-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -340,7 +340,7 @@ int foo(int n){
 # Big O, Big Omega, Big Theta
 $\Omega$ (f(n)) : lower bound
 $\mathbb{O}$ (f(n)) : upper bound
-$\Theta$ (f(n)) : average
+$\Theta$ (f(n)) : when they meet with a constant factor
 
 cases deal with particular size of input
 Lower bound is maximum lower bound
