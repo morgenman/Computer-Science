@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_10:24:22-05:00
+updated: 2022-03-01_10:36:50-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -356,8 +356,7 @@ Lower bound is maximum lower bound
 
 
 # Polynomial Time
-* S = f(n)
-* n^2 etc
-* NP Complete
-* NP Hard
-* P space
+* we can get an exact solution to these problems within some 'reasonable' amount of time
+* O(n^k)
+* considered *tractable*
+* 
