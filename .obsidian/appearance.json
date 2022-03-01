@@ -1,7 +1,7 @@
 {
   "baseFontSize": 27,
   "theme": "moonstone",
-  "translucency": false,
+  "translucency": true,
   "cssTheme": "California Coast_Mod_morgenman",
   "enabledCssSnippets": [
     "custom"

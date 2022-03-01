@@ -359,4 +359,4 @@ Lower bound is maximum lower bound
 * we can get an exact solution to these problems within some 'reasonable' amount of time
 * O(n^k)
 * considered *tractable*
-* 
+	* a solution may exist, but it would take a prohibitively long time to compute
