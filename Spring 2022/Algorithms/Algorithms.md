@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_09:39:53-05:00
+updated: 2022-03-01_09:45:52-05:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -347,3 +347,4 @@ Lower bound is maximum lower bound
 
 ![[Pasted image 20220222101141.png]]
 ![[Pasted image 20220222101152.png]]
+
