@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_12:35:30-05:00
+updated: 2022-03-01_12:40:48-05:00
 ---
 5---
 updated: 2022-02-15_13:09:32-05:00
@@ -233,7 +233,10 @@ Raw: No manipulation, at all
 * Choose a dataset
 * Come up with hypothesis/questions
 13th 
+
 Report of project:
 1. Where is data coming from? (public)
-2. 1 ppg what is it about?
-3. Questions 
+2. 1 paragraph what is it about?
+3. 5+ questions you want to answer with data.
+
+Going to be a class presentation with an R file (well documented)
