@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-02_10:38:10-05:00
+updated: 2022-03-02_10:44:46-05:00
 ---
 # Networks
 
@@ -282,4 +282,5 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 	* They can't be close to each other. 
 * ![[Pasted image 20220302103250.png]]
 * ![[Pasted image 20220302103738.png]]
-* ACK number is the number of the next byte expected
+* ACK number is the number of the **next byte expected**
+* Out of order packets stored in buffer
