@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-02_10:29:36-05:00
+updated: 2022-03-02_10:38:10-05:00
 ---
 # Networks
 
@@ -281,4 +281,4 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 * Window size to sequence numbers
 	* They can't be close to each other. 
 * ![[Pasted image 20220302103250.png]]
-* 
+* ![[Pasted image 20220302103738.png]]
