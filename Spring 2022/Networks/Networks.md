@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-02_10:14:35-05:00
+updated: 2022-03-02_10:21:04-05:00
 ---
 # Networks
 
@@ -274,3 +274,6 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 ![[Pasted image 20220302101108.png]]
 ### Solution! Pipelining
 ![[Pasted image 20220302101403.png]]
+* Ack are delayed. 
+	* if packets 5,6,7,8,9 have been sent but 6 doesn't get there, receiver sends ACK 5 until he gets 6. Then he sends ACK9 and the stream continues
+	* 
