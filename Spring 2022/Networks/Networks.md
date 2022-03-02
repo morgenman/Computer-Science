@@ -267,3 +267,10 @@ Congestion control (**network side**)
 
 ## RDT 3.0
 * timeout
+* Performance suffers though
+
+$U_{sender}:$ utilization - fraction of time sender busy sending
+![[Pasted image 20220302101045.png]]
+![[Pasted image 20220302101108.png]]
+### Solution! Pipelining
+![[Pasted image 20220302101403.png]]
