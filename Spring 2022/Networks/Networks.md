@@ -276,4 +276,7 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 ![[Pasted image 20220302101403.png]]
 * Ack are delayed. 
 	* if packets 5,6,7,8,9 have been sent but 6 doesn't get there, receiver sends ACK 5 until he gets 6. Then he sends ACK9 and the stream continues
-	* 
+	* it will only send the packed of the one not recieved
+
+* Window size to packets
+* 
