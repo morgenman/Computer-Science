@@ -553,12 +553,17 @@ Congestion control (<strong>network side</strong>)</p>
 <h3 id="solution-pipelining"><a class="header" href="#solution-pipelining">Solution! Pipelining</a></h3>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220302101403.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220302101403.png" alt="Pasted image 20220302101403"/></a></p>
 <ul>
-<li>Ack are delayed.
+<li>
+<p>Ack are delayed.</p>
 <ul>
 <li>if packets 5,6,7,8,9 have been sent but 6 doesn't get there, receiver sends ACK 5 until he gets 6. Then he sends ACK9 and the stream continues</li>
-<li></li>
+<li>it will only send the packed of the one not recieved</li>
 </ul>
 </li>
+<li>
+<p>Window size to packets</p>
+</li>
+<li></li>
 </ul>
 
                 </main>
