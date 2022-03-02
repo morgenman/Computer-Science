@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-28_10:43:00-05:00
+updated: 2022-03-02_10:07:29-05:00
 ---
 # Networks
 
@@ -264,3 +264,6 @@ Congestion control (**network side**)
 ## RDT 2.2 
 * NAK free!
 * ACK for last pkt received OK
+
+## RDT 3.0
+* timeout
