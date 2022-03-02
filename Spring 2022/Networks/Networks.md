@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-02_10:21:04-05:00
+updated: 2022-03-02_10:29:36-05:00
 ---
 # Networks
 
@@ -278,5 +278,7 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 	* if packets 5,6,7,8,9 have been sent but 6 doesn't get there, receiver sends ACK 5 until he gets 6. Then he sends ACK9 and the stream continues
 	* it will only send the packed of the one not recieved
 
-* Window size to packets
+* Window size to sequence numbers
+	* They can't be close to each other. 
+* ![[Pasted image 20220302103250.png]]
 * 
