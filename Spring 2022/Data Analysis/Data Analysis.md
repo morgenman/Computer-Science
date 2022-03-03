@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_12:40:48-05:00
+updated: 2022-03-03_12:36:39-05:00
 ---
 5---
 updated: 2022-02-15_13:09:32-05:00
@@ -240,3 +240,8 @@ Report of project:
 3. 5+ questions you want to answer with data.
 
 Going to be a class presentation with an R file (well documented)
+
+
+# Regression Algorithms
+* Machine Learning regression algorith:
+	* Trying to draw conclusions from data
