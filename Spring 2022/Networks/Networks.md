@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-02_10:44:46-05:00
+updated: 2022-03-12_11:21:04-05:00
 ---
 # Networks
 
@@ -284,3 +284,6 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 * ![[Pasted image 20220302103738.png]]
 * ACK number is the number of the **next byte expected**
 * Out of order packets stored in buffer
+
+* Receive window: how much free space in receiver buffer. 
+	* *dynamic* 
