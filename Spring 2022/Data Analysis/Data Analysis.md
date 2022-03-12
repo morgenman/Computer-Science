@@ -1,8 +1,5 @@
 ---
-updated: 2022-03-03_12:36:39-05:00
----
-5---
-updated: 2022-02-15_13:09:32-05:00
+updated: 2022-03-12_14:05:13-05:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
