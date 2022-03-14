@@ -329,4 +329,5 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 * types of records: MX vs...
 
 how does TCP 3.x work?
-* flow control
+* flow control -> receiver side
+* conjestion control -> network
