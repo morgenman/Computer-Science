@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-14_10:17:44-04:00
+updated: 2022-03-14_10:22:58-04:00
 ---
 # Networks
 
@@ -315,3 +315,11 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 * Client-Server vs P2P
 * file distribution: slides 75-77
 * Process is identified with IP:Port
+
+* slides 11 & 12 api & TLS
+* TCP vs UDP
+	* connection oriented, connection less
+	* Neither provide security or guaranteed throughput
+		* only circuit switching
+	* RDT vs no RD
+* Persistent vs non persistent
