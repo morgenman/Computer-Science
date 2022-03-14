@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-12_11:21:04-05:00
+updated: 2022-03-14_10:05:11-04:00
 ---
 # Networks
 
@@ -287,3 +287,14 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 
 * Receive window: how much free space in receiver buffer. 
 	* *dynamic* 
+
+
+
+# Exam 1:
+* What is a protocol? (Set of rules for everyone to follow). Defined by RFC (Request for commenting)
+* Performance
+	* different types of delay:
+		* d_trans = L/R
+		* bits/bps or B/Bps
+		* K
+* packet vs circuit switching
