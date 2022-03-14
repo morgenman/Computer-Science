@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-14_10:11:33-04:00
+updated: 2022-03-14_10:17:44-04:00
 ---
 # Networks
 
@@ -307,4 +307,11 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 	* Traffic intensity:
 		* $\frac{La}{R}$ a = avg packet arrival rate
 		* if 0, small queueing delay
-		* ->1
+		* -> 1 larg
+		* > 1 inf
+* Ping and Traceroute
+* DOS & DDOS
+
+* Client-Server vs P2P
+* file distribution: slides 75-77
+* Process is identified with IP:Port
