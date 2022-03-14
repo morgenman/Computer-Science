@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-14_10:05:11-04:00
+updated: 2022-03-14_10:11:33-04:00
 ---
 # Networks
 
@@ -290,7 +290,7 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 
 
 
-# Exam 1:
+	# Exam 1:
 * What is a protocol? (Set of rules for everyone to follow). Defined by RFC (Request for commenting)
 * Performance
 	* different types of delay:
@@ -301,3 +301,10 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 		* d_{proc}= given
 		* d_{queue}=given
 * packet vs circuit switching
+	* Sharing the link:
+		* FDM (frequency division multiplexing)
+		* TDM (time)
+	* Traffic intensity:
+		* $\frac{La}{R}$ a = avg packet arrival rate
+		* if 0, small queueing delay
+		* ->1
