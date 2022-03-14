@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-14_10:22:58-04:00
+updated: 2022-03-14_10:29:18-04:00
 ---
 # Networks
 
@@ -321,5 +321,12 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 	* connection oriented, connection less
 	* Neither provide security or guaranteed throughput
 		* only circuit switching
-	* RDT vs no RD
+	* RDT vs no RDT
+	* Conjestion/flow control vs not
 * Persistent vs non persistent
+* Proxy server reduces load
+* DNS Authoritative LTD
+* types of records: MX vs...
+
+how does TCP 3.x work?
+* flow control
