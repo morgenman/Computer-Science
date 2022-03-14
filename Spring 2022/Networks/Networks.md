@@ -296,5 +296,8 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 	* different types of delay:
 		* d_trans = L/R
 		* bits/bps or B/Bps
-		* K
+		* K = 10^{3} M = 10^{6} G=10^{9}
+		* d_{prop}= d/s
+		* d_{proc}= given
+		* d_{queue}=given
 * packet vs circuit switching
