@@ -1,8 +1,8 @@
 {
   "baseFontSize": 27,
-  "theme": "moonstone",
+  "theme": "obsidian",
   "translucency": false,
-  "cssTheme": "Obsidian Windows 98 Edition",
+  "cssTheme": "Spectrum",
   "enabledCssSnippets": [
     "custom"
   ]
