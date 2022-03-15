@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-15_09:34:50-04:00
+updated: 2022-03-15_09:41:14-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -361,4 +361,17 @@ Lower bound is maximum lower bound
 * considered *tractable*
 	* a solution may exist, but it would take a prohibitively long time to compute
 
+
 * A *hard* problem is one where the lower bound is defined by $\Omega$(c$^n$) (exponential)
+
+# Non-determinism
+* a Non-deterministic computer is one that can...
+	* 'guess' the correct solutions to a problem from among all possible solutions
+	* OR widely parallel computer that can simultaneously test all possible solutions (must be in polynomial time)
+* A Non-deterministic algorithm is one that runs on a non-deterministic machine in polynomial time
+	* a problem in **NP: Non-deterministic Polynomial**
+* Solving?
+	* Two step process
+		* 1. non deterministic process that generates a possible solution
+		* 2. look at outcome of the first step and decide if it's a real solution to the problem
+* 
