@@ -276,6 +276,7 @@ select, .dropdown {
 .titlebar-button-container, .view-actions {
   position: static;
   display: flex;
+  /* padding:3px; */
 }
  
 .titlebar-button {
@@ -628,7 +629,7 @@ select, .dropdown {
   border-radius: 0;
   /* min-width: 75px; */
   height: 30px;
-  padding: 
+  padding: 6px 0 0px 0; 
   /* padding: 0 12px; */
 
   box-shadow: inset -1px -1px 0px #000, inset 1px 1px 0px #fff, inset -2px -2px 0px var(--titlebar_inactive_1), inset 2px 2px 0px var(--window);

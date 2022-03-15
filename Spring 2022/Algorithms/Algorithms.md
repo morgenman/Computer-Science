@@ -374,4 +374,8 @@ Lower bound is maximum lower bound
 	* Two step process
 		* 1. non deterministic process that generates a possible solution
 		* 2. look at outcome of the first step and decide if it's a real solution to the problem
-* 
+
+## Sorting
+* Sorting is NP 
+* $P\subseteq NP$
+* Problems in P like sorting have a 
