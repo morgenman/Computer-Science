@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-15_09:41:14-04:00
+updated: 2022-03-15_09:51:50-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -378,4 +378,7 @@ Lower bound is maximum lower bound
 ## Sorting
 * Sorting is NP 
 * $P\subseteq NP$
-* Problems in P like sorting have a 
+* Problems in P like sorting have a *deterministic algorithm*
+## NP Complete problems
+* If we can find a deterministic polynomial solution to one NP complete problem, we have a solution to all of the NP complete problems
+* Used to describe the hardest problems of NP
