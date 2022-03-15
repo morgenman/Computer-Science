@@ -745,8 +745,11 @@ input[type=text] {
   font-size: 11px;
 }
 
+
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 10px;
+  border-radius:0px;
+  
   -webkit-border-radius: 0;
 }
 
@@ -1023,7 +1026,11 @@ input[type=checkbox], input[type=radio] {
 }
 
 .workspace-ribbon.mod-right.is-collapsed {
-  width:10px!important;
+  flex-basis:20px;
+}
+.workspace-ribbon-collapse-btn{
+  width:20px;
+  margin-left:3px;
 }
 
 

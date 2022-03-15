@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-15_10:00:02-04:00
+updated: 2022-03-15_10:23:32-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -386,3 +386,9 @@ Lower bound is maximum lower bound
 * Proof of NP completeness:
 	* show problem is in NP
 	* show it is NP complete by reducing a known NP Complete problem to your problem
+
+
+
+# Data Structures
+## Lists
+* Finite, ordered
