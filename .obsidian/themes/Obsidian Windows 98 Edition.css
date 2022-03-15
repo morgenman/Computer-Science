@@ -631,6 +631,14 @@ select, .dropdown {
 .document-search-container{
   background-color:var(--window)!important;
 }
+.document-search-button{
+  color:black;
+}
+.document-search-input::placeholder{
+  color:black!important;
+  background-color:white;
+  border-color:white!important;
+}
 
 
 .side-dock-ribbon-action {
