@@ -745,13 +745,10 @@ input[type=text] {
   font-size: 11px;
 }
 
-.cm-editor{
-  padding-right:20px;
-  
+.cm-s{
+  padding-right:10px;
 }
-.cm-scroller{
-  width:102%;
-}
+
 ::-webkit-scrollbar {
   width: 24px;
   border-radius:0px;
