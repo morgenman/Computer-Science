@@ -639,6 +639,9 @@ select, .dropdown {
   background-color:white;
   border-color:white!important;
 }
+.document-search-close-button {
+  color: black;
+}
 
 
 .side-dock-ribbon-action {
@@ -1016,7 +1019,14 @@ input[type=checkbox], input[type=radio] {
 /*right panel*/
 .workspace-ribbon.is-collapsed {
   background-color: var(--window);
+
 }
+
+.workspace-ribbon.mod-right.is-collapsed {
+  width:10px!important;
+}
+
+
 .backlink-pane, .outgoing-link-pane {
   background: white;
   font-family: 'Pixelated MS Sans Serif';
