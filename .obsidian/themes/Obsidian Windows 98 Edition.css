@@ -627,7 +627,8 @@ select, .dropdown {
   border: none;
   border-radius: 0;
   /* min-width: 75px; */
-  min-height: 23px;
+  height: 30px;
+  padding: 
   /* padding: 0 12px; */
 
   box-shadow: inset -1px -1px 0px #000, inset 1px 1px 0px #fff, inset -2px -2px 0px var(--titlebar_inactive_1), inset 2px 2px 0px var(--window);
