@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-15_09:51:50-04:00
+updated: 2022-03-15_10:00:02-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -382,3 +382,4 @@ Lower bound is maximum lower bound
 ## NP Complete problems
 * If we can find a deterministic polynomial solution to one NP complete problem, we have a solution to all of the NP complete problems
 * Used to describe the hardest problems of NP
+* Problem reduction: reduce a known problem to an unknown problem.
