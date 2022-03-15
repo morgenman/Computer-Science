@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-01_10:45:29-05:00
+updated: 2022-03-15_09:34:50-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -360,4 +360,5 @@ Lower bound is maximum lower bound
 * O(n^k)
 * considered *tractable*
 	* a solution may exist, but it would take a prohibitively long time to compute
-	* 
+
+* A *hard* problem is one where the lower bound is defined by $\Omega$(c$^n$) (exponential)
