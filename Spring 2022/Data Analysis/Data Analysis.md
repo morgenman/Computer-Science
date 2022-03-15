@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-12_14:05:13-05:00
+updated: 2022-03-15_12:41:43-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -242,3 +242,5 @@ Going to be a class presentation with an R file (well documented)
 # Regression Algorithms
 * Machine Learning regression algorith:
 	* Trying to draw conclusions from data
+
+* midterm: for every activity, for each
