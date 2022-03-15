@@ -378,7 +378,6 @@ select, .dropdown {
 }
 .view-header-icon svg { 
   color: white;
-  margin-top:-2px;
   /* display: none;  */
 }
 .view-header-title {
@@ -386,6 +385,7 @@ select, .dropdown {
   font-size: 11px;
   font-weight: 700;
   line-height: unset;
+  margin-top:-1px
 }
 .workspace-leaf.mod-active .view-header-title {
   color: #fff;
@@ -402,7 +402,7 @@ select, .dropdown {
   min-width: 18px;
   padding: 0;
   margin: 0;
-  top: 0;
+  top: -2px;
 
   background: var(--window);
   box-shadow: inset -1px -1px var(--border), inset 1px 1px #fff, inset -2px -2px var(--titlebar_inactive_1), inset 2px 2px #fff;
@@ -627,6 +627,9 @@ select, .dropdown {
 .nav-action-button.is-active {
   box-shadow: inset -1px -1px #ffffff, inset 1px 1px #000, inset -2px -2px var(--window), inset 2px 2px var(--titlebar_inactive_1);
   background-color: unset;
+}
+.document-search-container{
+  background-color:var(--window)!important;
 }
 
 
