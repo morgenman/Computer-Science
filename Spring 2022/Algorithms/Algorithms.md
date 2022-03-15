@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-15_10:23:32-04:00
+updated: 2022-03-15_10:30:12-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -392,3 +392,17 @@ Lower bound is maximum lower bound
 # Data Structures
 ## Lists
 * Finite, ordered
+* ADT Operations:
+	* clear
+	* insert
+	* append
+	* remove
+	* movetostart
+	* movetoend
+	* previous
+	* next
+	* length
+	* currpos
+	* move
+	* getvalue
+	* 

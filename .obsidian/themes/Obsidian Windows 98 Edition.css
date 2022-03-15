@@ -745,11 +745,16 @@ input[type=text] {
   font-size: 11px;
 }
 
-
-::-webkit-scrollbar {
-  width: 10px;
-  border-radius:0px;
+.cm-editor{
+  margin-right:20px;
   
+}
+.cm-scroller{
+  width:102%;
+}
+::-webkit-scrollbar {
+  width: 24px;
+  border-radius:0px;
   -webkit-border-radius: 0;
 }
 
