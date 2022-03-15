@@ -351,15 +351,16 @@ select, .dropdown {
 }
 
 .view-header {
-  height: 22px;
+  height: 24px;
+  
 }
 .workspace-leaf.mod-active .view-header {
   margin: 2px;
-  height: 24px;
+  height: 20px;
   background: linear-gradient(90deg,var(--titlebar_active_1),var(--titlebar_active_2));
 }
 .workspace-leaf .view-header {
-  height: 24px;
+  height: 20px;
   background: linear-gradient(90deg,var(--titlebar_inactive_1),var(--titlebar_inactive_2));
   border-top: none;
   border-bottom: none;
@@ -369,6 +370,7 @@ select, .dropdown {
   width: 16px;
   height: 16px;
   padding: 1px 2px;
+  margin-top:-2px;
   color: #fff;
   cursor: grab;
   position: relative;
@@ -376,6 +378,7 @@ select, .dropdown {
 }
 .view-header-icon svg { 
   color: white;
+  margin-top:-2px;
   /* display: none;  */
 }
 .view-header-title {

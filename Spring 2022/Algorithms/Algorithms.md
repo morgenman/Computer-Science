@@ -383,3 +383,6 @@ Lower bound is maximum lower bound
 * If we can find a deterministic polynomial solution to one NP complete problem, we have a solution to all of the NP complete problems
 * Used to describe the hardest problems of NP
 * Problem reduction: reduce a known problem to an unknown problem.
+* Proof of NP completeness:
+	* show problem is in NP
+	* show it is NP complete by reducing a known NP Complete problem to your problem
