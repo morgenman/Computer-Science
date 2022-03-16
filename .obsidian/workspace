@@ -4,16 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "1916d087a3b767dd",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Spring 2022/Networks/Networks.md",
-            "mode": "source",
-            "source": false
+        "id": "eb575f072b1f53e6",
+        "type": "split",
+        "children": [
+          {
+            "id": "1916d087a3b767dd",
+            "type": "leaf",
+            "dimension": 72.15411558669001,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring 2022/Networks/Networks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "253a2e33d6d660b6",
+            "type": "leaf",
+            "dimension": 27.845884413309985,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring 2022/Networks/Networks.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        }
+        ],
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
