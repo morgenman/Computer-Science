@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-16_11:23:20-04:00
+updated: 2022-03-16_11:30:15-04:00
 ---
 # Software Engineering
 * Process course
@@ -188,3 +188,13 @@ UNTIL (product complete)
 	* Configuration management to prevent inconsistency
 	* Apply verification to prevent algorithmic faults
 	* Use reviews
+* *Fault Detection*
+	* Testing to provoke failures in a planned way
+	* Debugging to find and remove faults of an observed failure
+	* Monitoring to deliver info about state (used in debugging)
+* *Fault Tolerance*
+	* exception handling
+	* modular redundancy
+>"testing can only show the presence of bugs, not their absence" - Dijkstra
+* Testing is not free...
+	* overhead & practical limitations
