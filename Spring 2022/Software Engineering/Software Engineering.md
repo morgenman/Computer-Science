@@ -171,4 +171,20 @@ UNTIL (product complete)
 * *Erroneous state (error)*: the state in which further processing by the system can lead to a failure
 * *Fault (bug)*: the mechanical or algorithmic cause of a behavior
 * *Validation*: the activity of checking for deviations between the observed behavior of a system and it's specification
-* 
+## Common Problems:
+* Interface Specification Faults
+	* mismatch between client & server
+	* mismatch between requirements and implementation
+* Algorithmic Faults
+	* missing initialization
+	* incorrect branching condition
+	* missing test for null
+* Mechanical Faults
+	* operating temps out of spec
+## Handling Problems:
+* *Modular Redundancy*: Building redundant infrastructure to handle a mechanical fault without going into an error state
+* *Fault Avoidance*
+	* Methodology to reduce complexity
+	* Configuration management to prevent inconsistency
+	* Apply verification to prevent algorithmic faults
+	* Use reviews
