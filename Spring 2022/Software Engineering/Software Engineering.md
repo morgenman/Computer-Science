@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-28_11:04:31-05:00
+updated: 2022-03-16_11:23:20-04:00
 ---
 # Software Engineering
 * Process course
@@ -166,5 +166,9 @@ UNTIL (product complete)
 ## Walking Skeleton
 * working implementation of thinnest possible slice of real functionality
 
-# Sprint Planning
+# Problems in Software Engineering
+* *Failure*: any deviation of observed behavior from the specified behavior
+* *Erroneous state (error)*: the state in which further processing by the system can lead to a failure
+* *Fault (bug)*: the mechanical or algorithmic cause of a behavior
+* *Validation*: the activity of checking for deviations between the observed behavior of a system and it's specification
 * 
