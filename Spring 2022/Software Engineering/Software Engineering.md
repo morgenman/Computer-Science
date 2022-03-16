@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-16_11:30:15-04:00
+updated: 2022-03-16_11:36:03-04:00
 ---
 # Software Engineering
 * Process course
@@ -195,6 +195,16 @@ UNTIL (product complete)
 * *Fault Tolerance*
 	* exception handling
 	* modular redundancy
->"testing can only show the presence of bugs, not their absence" - Dijkstra
+	
+> "testing can only show the presence of bugs, not their absence" - Dijkstra
+
 * Testing is not free...
 	* overhead & practical limitations
+	* we should try and automate it as much as possible
+
+## Our Approach to Minimizing Software Failures
+* use methodology
+* follow good practices
+* adhere to ethical standards
+
+
