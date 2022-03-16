@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-16_11:36:03-04:00
+updated: 2022-03-16_11:47:18-04:00
 ---
 # Software Engineering
 * Process course
@@ -206,5 +206,5 @@ UNTIL (product complete)
 * use methodology
 * follow good practices
 * adhere to ethical standards
-
+* code review?
 
