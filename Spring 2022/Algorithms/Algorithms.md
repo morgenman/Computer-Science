@@ -410,7 +410,7 @@ Lower bound is maximum lower bound
 * n  number of elements
 * P  size of pointer
 * E  size of an element in storage unit
-* D max number of elements that can be store
+* D  max number of elements that can be store
 * Array Based: DE
 * LL : n(P+E)
 * when n > DE/(P+E) array becomes more efficient
