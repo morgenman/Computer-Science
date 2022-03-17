@@ -421,4 +421,5 @@ if we don't know the size of the data, LL is probably the way to go
 arraybased lists are more space efficient if the size is known and stable
 array provides faster access by position
 singly linked lists provide sequential access (O(n))
-insertion/deletion in a linked list is
+insertion/deletion in LL is O(1), but getting to the node is most likely O(n)
+insertion/deletion in Array is O(n), but getting to the node is O(1)
