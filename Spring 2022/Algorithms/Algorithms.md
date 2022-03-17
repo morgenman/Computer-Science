@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-15_10:30:12-04:00
+updated: 2022-03-17_10:30:18-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -405,4 +405,13 @@ Lower bound is maximum lower bound
 	* currpos
 	* move
 	* getvalue
-	* 
+
+### List implementation comparison
+* n  number of elements
+* P  size of pointer
+* E  size of an element in storage unit
+* D max number of elements that can be store
+* Array Based: DE
+* LL : n(P+E)
+* when n > DE/(P+E) array becomes more efficient
+* if P=E break even point is D/2
