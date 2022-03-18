@@ -336,3 +336,5 @@ how does TCP 3.x work?
 # Congestion Management
 * Ex. one router inf buffer. Input/output capacity: R
 	* each rate is R/2
+* AIMD
+	* additive increase, multiplicative decrease
