@@ -26,7 +26,7 @@ updated: 2022-03-16_11:47:18-04:00
 		* trust them to get the job done
 	* communicate face-to-face
 	* **working software is the primary measure of progress**
-	* sustainable development
+	* sustainable development 
 	* continuous attention to technical excellence and good design enhances agility
 	* simplicity & efficiency 
 * What is Scrum?
