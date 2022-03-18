@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-14_10:29:18-04:00
+updated: 2022-03-18_10:04:51-04:00
 ---
 # Networks
 
@@ -330,4 +330,9 @@ $U_{sender}:$ utilization - fraction of time sender busy sending
 
 how does TCP 3.x work?
 * flow control -> receiver side
-* conjestion control -> network
+* congestion control -> network
+
+
+# Congestion Management
+* Ex. one router inf buffer. Input/output capacity: R
+	* each rate is R/2
