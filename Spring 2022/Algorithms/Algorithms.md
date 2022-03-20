@@ -407,14 +407,14 @@ Lower bound is maximum lower bound
 	* getvalue
 
 ### List implementation comparison
-* n  number of elements
-* P  size of pointer
+* *n  number of elements*
+* *P  size of pointer*
 * E  size of an element in storage unit
 * D  max number of elements that can be store
 * Array Based: DE
 * LL : n(P+E)
 * when n > DE/(P+E) array becomes more efficient
-* if P = E break even point is D/2
+* *if P = E break even point is D/2*
 
 Generalizations:
 if we don't know the size of the data, LL is probably the way to go
@@ -423,3 +423,5 @@ array provides faster access by position
 singly linked lists provide sequential access (O(n))
 insertion/deletion in LL is O(1), but getting to the node is most likely O(n)
 insertion/deletion in Array is O(n), but getting to the node is O(1)
+
+![[Pasted image 20220320162551.png]]
