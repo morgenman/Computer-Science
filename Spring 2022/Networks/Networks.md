@@ -338,3 +338,24 @@ how does TCP 3.x work?
 	* each rate is R/2
 * AIMD
 	* additive increase, multiplicative decrease
+
+
+## Reno (delay) vs Tahoe (loss)
+* if congestion window size goes to 0, probably loss (tahoe) protocol
+* Reno
+	* CW : SSThresh + 3
+	* SSThresh : SSThreshPrevious/2
+* Tahoe
+	* CW : 1
+	* SSThresh : SSThreshPrevious/2
+
+## ECN
+* Explicit congestion notification
+* TCP *network-assisted* congestion control
+* 2 bit in IP header ToS by network router to indicate congestion
+* if both 1, it's congested
+
+
+# Network Layer
+* Packet forwarding
+* Routing
