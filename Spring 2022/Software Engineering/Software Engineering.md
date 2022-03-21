@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-21_11:06:05-04:00
+updated: 2022-03-21_11:13:02-04:00
 ---
 # Software Engineering
 * Process course
@@ -212,3 +212,4 @@ UNTIL (product complete)
 # Technical Debt
 * Time spent on not-quite-right code counts as interest on debt
 * Way of talking about development to the business people
+* Team and Organization have to repay that debt
