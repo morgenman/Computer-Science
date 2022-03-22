@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_10:23:16-04:00
+updated: 2022-03-22_10:28:57-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -454,3 +454,5 @@ For both, operations are O(1)
 * queue where you can add and remove from the front and back
 
 ### Array Based Queue
+* circular is cool
+* 
