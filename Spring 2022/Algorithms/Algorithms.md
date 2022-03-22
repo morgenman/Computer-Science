@@ -466,4 +466,10 @@ For both, operations are O(1)
 * not a data structure, but an ADT
 * interface to a collection to store and retrieve data efficiently
 * key/value
-* 
+* implementations:
+	* array based list unsorted
+		* unsorted, inserting is constant
+		* finding and removing is $\Theta$(n) (sequential search)
+	* Linked
+		* same cost as array
+	* Sorted Array
