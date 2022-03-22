@@ -248,7 +248,9 @@ Going to be a class presentation with an R file (well documented)
 # Clustering
 * Sentiment analysis
 
-* Close? -> distance
-* 
+1. Close? -> distance
+2. group
+3. visualize groups
+4. interpret
 ## Hierarchical Clustering
 ## K Means Clustering
