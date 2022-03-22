@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_09:49:02-04:00
+updated: 2022-03-22_09:57:04-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -427,3 +427,4 @@ insertion/deletion in Array is O(n), but getting to the node is O(1)
 ![[Pasted image 20220320162551.png]]
 
 
+* Double linked lists
