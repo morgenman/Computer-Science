@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_12:45:23-04:00
+updated: 2022-03-22_12:53:10-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -247,3 +247,8 @@ Going to be a class presentation with an R file (well documented)
 
 # Clustering
 * Sentiment analysis
+
+* Close? -> distance
+* 
+## Hierarchical Clustering
+## K Means Clustering
