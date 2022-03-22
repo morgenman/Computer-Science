@@ -428,3 +428,13 @@ insertion/deletion in Array is O(n), but getting to the node is O(1)
 
 
 * Double linked lists
+
+## Lists, Stacks, Queues
+* List: most generalized
+	* adding and removing can happen anywhere
+* Stack: 
+	* adding and removing can happen in one place, the top of the list
+* Queue: 
+	* adding happens at tail, removing happens in front (FIFO)
+
+Search & Sort are only supported by list
