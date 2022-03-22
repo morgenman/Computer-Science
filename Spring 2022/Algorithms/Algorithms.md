@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-20_16:28:45-04:00
+updated: 2022-03-22_09:49:02-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -425,4 +425,5 @@ insertion/deletion in LL is O(1), but getting to the node is most likely O(n)
 insertion/deletion in Array is O(n), but getting to the node is O(1)
 
 ![[Pasted image 20220320162551.png]]
+
 
