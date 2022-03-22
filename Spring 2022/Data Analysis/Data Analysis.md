@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_13:01:15-04:00
+updated: 2022-03-22_13:26:53-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -257,4 +257,8 @@ Going to be a class presentation with an R file (well documented)
 > Euclidian: traditional
 > Manhattan
 ## Hierarchical Clustering
+* automatic, dendogram
 ## K Means Clustering
+* partitioning approach
+	* centroids of each cluster
+	* 
