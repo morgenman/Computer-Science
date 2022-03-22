@@ -448,3 +448,7 @@ Search & Sort are only supported by list
 * top pointer, just needs to be updated
 
 For both, operations are O(1)
+
+
+### Deque
+* queue where you can add and rem
