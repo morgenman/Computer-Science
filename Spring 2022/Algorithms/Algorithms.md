@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_10:34:52-04:00
+updated: 2022-03-22_10:43:37-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -473,3 +473,5 @@ For both, operations are O(1)
 	* Linked
 		* same cost as array
 	* Sorted Array
+		* finding is $\Theta$(logn)
+		* insert & remove now is $\Theta$(n)
