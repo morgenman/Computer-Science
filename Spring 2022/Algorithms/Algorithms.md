@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_10:03:00-04:00
+updated: 2022-03-22_10:08:24-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -446,3 +446,5 @@ Search & Sort are only supported by list
 * if n+1, O(1)
 ### Linked Stack
 * top pointer, just needs to be updated
+
+For both, operations are O(1)
