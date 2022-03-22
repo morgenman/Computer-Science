@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_10:28:57-04:00
+updated: 2022-03-22_10:34:52-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -455,4 +455,15 @@ For both, operations are O(1)
 
 ### Array Based Queue
 * circular is cool
+*
+
+* array vs linked queue
+	* both provide constant time for enqueue and dequeue
+	* space are the same as for linked list
+	* avoid arrays
+
+### Dictionaries
+* not a data structure, but an ADT
+* interface to a collection to store and retrieve data efficiently
+* key/value
 * 
