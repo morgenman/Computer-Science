@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-23_10:04:06-04:00
+updated: 2022-03-23_10:13:28-04:00
 ---
 # Networks
 
@@ -365,4 +365,4 @@ how does TCP 3.x work?
 * Control Plane:
 	* network wide logic
 	* Two: traditional (implemented in routers) & SDN (Software defined networking)
-* 
+* Best effort service model is no guarentees
