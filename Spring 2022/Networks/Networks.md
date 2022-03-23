@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-21_10:35:51-04:00
+updated: 2022-03-23_10:04:06-04:00
 ---
 # Networks
 
@@ -359,3 +359,10 @@ how does TCP 3.x work?
 # Network Layer
 * Packet forwarding
 * Routing
+* Data plane:
+	* local per router function
+	* determines how datagram arrive on port is forwarded to output port
+* Control Plane:
+	* network wide logic
+	* Two: traditional (implemented in routers) & SDN (Software defined networking)
+* 
