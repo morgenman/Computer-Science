@@ -213,3 +213,7 @@ UNTIL (product complete)
 * Time spent on not-quite-right code counts as interest on debt
 * Way of talking about development to the business people
 * Team and Organization have to repay that debt
+
+# Velocity
+* amount of work each sprint
+* adding the sizes of PBIs
