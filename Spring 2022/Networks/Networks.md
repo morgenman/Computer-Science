@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-23_10:13:28-04:00
+updated: 2022-03-23_10:23:41-04:00
 ---
 # Networks
 
@@ -366,3 +366,6 @@ how does TCP 3.x work?
 	* network wide logic
 	* Two: traditional (implemented in routers) & SDN (Software defined networking)
 * Best effort service model is no guarentees
+
+* destination based forwarding (traditional)
+* Generalized forwarding (based on header)
