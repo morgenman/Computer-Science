@@ -15,5 +15,6 @@
   "pasteSymbol": "$pst$",
   "useTab": true,
   "useSpace": false,
-  "wordDelimiters": "$()[]{}<>,.!;:'\"\\/?"
+  "wordDelimiters": "$()[]{}<>,.!;:'\"\\/?",
+  "isWYSIWYG": false
 }

@@ -496,5 +496,5 @@ For both, operations are O(1)
 * Full Binary Tree
 	* each node is either (an internal node with exactly two non empty children) or (a leaf)
 * Complete binary tree
-	* shape is restrictued and obtained by starting at the root and filling the tree
+	* shape is restricted and obtained by starting at the root and filling the tree levels from left to right
 	  

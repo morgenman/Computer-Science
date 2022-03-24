@@ -3,7 +3,10 @@
   "debug": false,
   "stickCursor": false,
   "betterEnter": false,
+  "betterTab": true,
   "selectAll": false,
+  "listLines": false,
+  "listLineAction": "none",
   "disableZoomNotification": false,
   "hideWarning": false
 }
