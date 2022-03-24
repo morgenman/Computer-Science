@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_12:49:57-04:00
+updated: 2022-03-24_12:58:29-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -262,6 +262,12 @@ Going to be a class presentation with an R file (well documented)
 	* centroids of each cluster
 
 
-# Principal Compound Analysis (Dimensionality Reduction)
+# Principal Compound Analysis (Singular value decomposition)
 * Matrix can only hold one kind of data, Frame can store different types
-* 
+* demensionality reduction
+* X is a matrix
+	* when you apply the SVD function you get 3 vectors
+	* U: left singular
+	* D: diagonal
+	* V$^T$: (t is transpose, rows to columns...) right singular
+ 
