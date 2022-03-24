@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_13:26:53-04:00
+updated: 2022-03-24_12:34:05-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -13,7 +13,6 @@ appropriate visualization is important...
 > What is Data Science?
 > Using data to answer questions
 > Somebody who combines the skills of software programmer, statistician, and storyteller slash artist
-
 
 
 # Big Data
@@ -261,4 +260,7 @@ Going to be a class presentation with an R file (well documented)
 ## K Means Clustering
 * partitioning approach
 	* centroids of each cluster
-	* 
+
+
+# Principal Compound Analysis
+* 
