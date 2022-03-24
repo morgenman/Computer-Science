@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_09:51:34-04:00
+updated: 2022-03-24_09:58:25-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -478,6 +478,7 @@ For both, operations are O(1)
 
 
 # Binary Tree
+## Basics
 * Root
 	* two subtrees per each node
 	* edge connects them
@@ -485,5 +486,15 @@ For both, operations are O(1)
 * length of path:k-1
 * depth is length of the path from root to the node
 * level is depth
+* height is depth+1
 * leaf has 2 empty children
 	* each node is structured so it has data and two pointers L&R, 
+* Internal nodes have one non-empty child
+
+## Types of Trees
+* Oak 🤣
+* Full Binary Tree
+	* each node is either (an internal node with exactly two non empty children) or (a leaf)
+* Complete binary tree
+	* shape is restrictued and obtained by starting at the root and filling the tree
+	  
