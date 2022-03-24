@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_09:46:26-04:00
+updated: 2022-03-24_09:51:34-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -485,4 +485,5 @@ For both, operations are O(1)
 * length of path:k-1
 * depth is length of the path from root to the node
 * level is depth
-* le
+* leaf has 2 empty children
+	* each node is structured so it has data and two pointers L&R, 
