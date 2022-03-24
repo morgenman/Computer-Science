@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-03-24_10:26:30-04:00</p>
+<p>updated: 2022-03-24_10:34:29-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -746,7 +746,17 @@ Inductive Step: We must show  that the theorem holds for $\mathbb{k}$+1-&gt;(k-1
 a) Tree T has (k-1)+1 = k internal nodes, by the IH<br />
 See tree T: Select internal node i whose children are leaves<br />
 b) remove i's children. i is now a leaf node.<br />
-See Tree T' : T' has k-1 internal nodes so it has k leave by IH</p>
+See Tree T' : T' has k-1 internal nodes so it has k leave by IH<br />
+c) Restore I's children.<br />
+We again have tree T with k internal nodes<br />
+How many leaves in T<br />
+T' had K leaves<br />
+Restoring to T gives k+2<br />
+BUT<br />
+i was counted as a leave in T' and in T is an internal node.<br />
+$\therefore$ the number of leaves in T is k+2-1 = k+1<br />
+$\therefore$ Tree T has k internal nodes and k+1 leaf nodes<br />
+$\therefore$  Theorem is true by PMI for n $\geq$ 0</p>
 </blockquote>
 <pre><code class="language-nomnoml">#direction:down  
 [0]  
