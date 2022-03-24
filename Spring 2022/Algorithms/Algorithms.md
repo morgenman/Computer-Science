@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_10:20:55-04:00
+updated: 2022-03-24_10:26:30-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -511,8 +511,11 @@ For both, operations are O(1)
 > Basis:  0 internal nodes 1 leaf node $\checkmark$
 > 1 internal node, 2 leaf nodes $\checkmark$
 > Inductive Hypothesis: Assume and FBT, T containing k+1 internal nodes has k leaf nodes for some k $\geq$ 1
-> Inductive Step: We must show  that the theorem holds for k+1->(k-1)+1
+> Inductive Step: We must show  that the theorem holds for $\mathbb{k}$+1->(k-1)+1
 > a) Tree T has (k-1)+1 = k internal nodes, by the IH
+> See tree T: Select internal node i whose children are leaves
+> b) remove i's children. i is now a leaf node. 
+> See Tree T' : T' has k-1 internal nodes so it has k leave by IH
 
 
 ```nomnoml
@@ -523,4 +526,24 @@ For both, operations are O(1)
 #direction:down
 [0]-[1]
 [0]-[2]
+```
+
+```nomnoml
+#direction:down
+Tree T
+[0]-[1]
+[0]-[2]
+[1]-[3]
+[1]-[i]
+[i]-[5]
+[i]-[6]
+```
+
+```nomnoml
+#direction:down
+Tree T'
+[0]-[1]
+[0]-[2]
+[1]-[3]
+[1]-[i]
 ```
