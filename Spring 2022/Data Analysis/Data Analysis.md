@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_12:34:05-04:00
+updated: 2022-03-24_12:39:22-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -262,5 +262,5 @@ Going to be a class presentation with an R file (well documented)
 	* centroids of each cluster
 
 
-# Principal Compound Analysis
+# Principal Compound Analysis (Dimensionality Reduction)
 * 
