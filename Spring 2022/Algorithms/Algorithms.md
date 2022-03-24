@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_10:26:30-04:00
+updated: 2022-03-24_10:34:29-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -516,6 +516,16 @@ For both, operations are O(1)
 > See tree T: Select internal node i whose children are leaves
 > b) remove i's children. i is now a leaf node. 
 > See Tree T' : T' has k-1 internal nodes so it has k leave by IH
+> c) Restore I's children. 
+> We again have tree T with k internal nodes
+> How many leaves in T
+> T' had K leaves
+> Restoring to T gives k+2
+> BUT 
+> i was counted as a leave in T' and in T is an internal node. 
+> $\therefore$ the number of leaves in T is k+2-1 = k+1
+> $\therefore$ Tree T has k internal nodes and k+1 leaf nodes
+> $\therefore$  Theorem is true by PMI for n $\geq$ 0 
 
 
 ```nomnoml

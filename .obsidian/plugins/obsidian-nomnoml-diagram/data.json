@@ -6,7 +6,7 @@
   "#edgeMargin": "",
   "#gravity": "2",
   "#edges": "rounded",
-  "#background": "",
+  "#background": "#ffffff80",
   "#fill": "",
   "#fillArrows": false,
   "#font": "",
