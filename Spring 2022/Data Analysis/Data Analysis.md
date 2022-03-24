@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_12:39:22-04:00
+updated: 2022-03-24_12:49:57-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -263,4 +263,5 @@ Going to be a class presentation with an R file (well documented)
 
 
 # Principal Compound Analysis (Dimensionality Reduction)
+* Matrix can only hold one kind of data, Frame can store different types
 * 
