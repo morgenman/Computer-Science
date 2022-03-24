@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_09:58:25-04:00
+updated: 2022-03-24_10:07:07-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -497,4 +497,5 @@ For both, operations are O(1)
 	* each node is either (an internal node with exactly two non empty children) or (a leaf)
 * Complete binary tree
 	* shape is restricted and obtained by starting at the root and filling the tree levels from left to right
-	  
+## Analysis
+* Ratio of internal nodes to leaf nodes
