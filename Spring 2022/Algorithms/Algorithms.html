@@ -783,11 +783,35 @@ Tree T'
 [1]-[i]  
 </code></pre>
 <p>If you take an arbitrary binary tree T, replace every empty subtree with a leaf</p>
-<p>The number of empty subtrees in T is one more than the number of nodes in T.</p>
+<p><strong>The number of empty subtrees in T is one more than the number of nodes in T.</strong></p>
 <hr>  
 <p>Every node in a binary tree has 2 children for a total of 2n children in a tree of n nodes<br />
 Every node by the root has one parent for a total of n-1 nodes with parents.<br />
-There are n-1 non-empty children</p>
+There are n-1 non-empty children.<br />
+2n total children, so n+1 children are empty</p>
+<pre><code class="language-java">public interface BinNode&lt;E&gt;{  
+	// return and set element value  
+	public E element();  
+	public void setElement(E v);  
+  
+	// return the left child  
+	public BinNode&lt;E&gt; left();  
+  
+	// return the right child  
+	public BinNode&lt;E&gt; right();  
+  
+	// return true if is leaf  
+	public boolean isLeaf();  
+}  
+</code></pre>
+<p>Traversal: process for visiting all nodes in some order.<br />
+Three types we will cover:</p>
+<ul>
+<li>Pre order: left side</li>
+<li>In order: bottom  (left to)</li>
+<li>Post order: right side</li>
+</ul>
+<p>Trace a path around the tree. As you pass a node on the proper side, process it</p>
 
                 </main>
             </div>
