@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_10:34:29-04:00
+updated: 2022-03-24_10:39:53-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -504,6 +504,9 @@ For both, operations are O(1)
 	* *all full binary trees with n internal nodes have the same number of leaves*
 	* we can use this to compute space requirements
 ## Full Binary Tree Theorem
+
+***MIDTERM***
+
 * The number of leaves in a non-empty full binary tree is one more than the number of internal nodes
 
 > TBP The number of leaves in a FBT is one more than the number of internal nodes
@@ -557,3 +560,13 @@ Tree T'
 [1]-[3]
 [1]-[i]
 ```
+
+If you take an arbitrary binary tree T, replace every empty subtree with a leaf
+
+The number of empty subtrees in T is one more than the number of nodes in T.
+
+---
+
+Every node in a binary tree has 2 children for a total of 2n children in a tree of n nodes
+Every node by the root has one parent for a total of n-1 nodes with parents. 
+There are n-1 non-empty children 
