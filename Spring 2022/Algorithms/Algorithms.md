@@ -505,4 +505,13 @@ For both, operations are O(1)
 	* we can use this to compute space requirements
 ## Full Binary Tree Theorem
 * The number of leaves in a non-empty full binary tree is one more than the number of internal nodes
-> TBP The number of leaves in a
+
+> TBP The number of leaves in a FBT is one more than the number of internal nodes
+> Proof: By induction, the number of internal nodes
+> Basis:  0 internal nodes 1 leaf node
+
+
+```nomnoml
+direction=down
+[0]
+```
