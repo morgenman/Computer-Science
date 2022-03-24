@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-22_10:43:37-04:00
+updated: 2022-03-24_09:46:26-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -475,3 +475,14 @@ For both, operations are O(1)
 	* Sorted Array
 		* finding is $\Theta$(logn)
 		* insert & remove now is $\Theta$(n)
+
+
+# Binary Tree
+* Root
+	* two subtrees per each node
+	* edge connects them
+* If there is a sequence of nodes n1...nk such that ni is parent of ni+1, it is a **path** from ni to nk
+* length of path:k-1
+* depth is length of the path from root to the node
+* level is depth
+* le
