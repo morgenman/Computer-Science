@@ -6,7 +6,7 @@
   "#edgeMargin": "",
   "#gravity": "2",
   "#edges": "rounded",
-  "#background": "white",
+  "#background": "transparent",
   "#fill": "",
   "#fillArrows": false,
   "#font": "",
