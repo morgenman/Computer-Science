@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_10:39:53-04:00
+updated: 2022-03-24_10:46:23-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -591,8 +591,9 @@ public interface BinNode<E>{
 
 Traversal: process for visiting all nodes in some order.
 Three types we will cover:
-* Pre order: left side
-* In order: bottom  (left to)
-* Post order: right side
+* Pre order: left side (root left right starting at root)
+* In order: bottom  (left to right on a tree ignoring level)
+* Post order: right side (left right root starting at leftmost leaf)
 
 Trace a path around the tree. As you pass a node on the proper side, process it
+
