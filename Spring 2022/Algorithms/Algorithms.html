@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-03-24_10:13:18-04:00</p>
+<p>updated: 2022-03-24_10:20:55-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -739,10 +739,18 @@ insertion/deletion in Array is O(n), but getting to the node is O(1)</p>
 <blockquote>
 <p>TBP The number of leaves in a FBT is one more than the number of internal nodes<br />
 Proof: By induction, the number of internal nodes<br />
-Basis:  0 internal nodes 1 leaf node</p>
+Basis:  0 internal nodes 1 leaf node $\checkmark$<br />
+1 internal node, 2 leaf nodes $\checkmark$<br />
+Inductive Hypothesis: Assume and FBT, T containing k+1 internal nodes has k leaf nodes for some k $\geq$ 1<br />
+Inductive Step: We must show  that the theorem holds for k+1-&gt;(k-1)+1<br />
+a) Tree T has (k-1)+1 = k internal nodes, by the IH</p>
 </blockquote>
-<pre><code class="language-nomnoml">direction=down  
+<pre><code class="language-nomnoml">#direction:down  
 [0]  
+</code></pre>
+<pre><code class="language-nomnoml">#direction:down  
+[0]-[1]  
+[0]-[2]  
 </code></pre>
 
                 </main>
