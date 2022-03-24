@@ -563,10 +563,36 @@ Tree T'
 
 If you take an arbitrary binary tree T, replace every empty subtree with a leaf
 
-The number of empty subtrees in T is one more than the number of nodes in T.
+**The number of empty subtrees in T is one more than the number of nodes in T.**
 
 ---
 
 Every node in a binary tree has 2 children for a total of 2n children in a tree of n nodes
 Every node by the root has one parent for a total of n-1 nodes with parents. 
-There are n-1 non-empty children 
+There are n-1 non-empty children. 
+2n total children, so n+1 children are empty
+
+```java
+public interface BinNode<E>{
+	// return and set element value
+	public E element();
+	public void setElement(E v);
+
+	// return the left child
+	public BinNode<E> left();
+
+	// return the right child
+	public BinNode<E> right();
+
+	// return true if is leaf
+	public boolean isLeaf();
+}
+```
+
+Traversal: process for visiting all nodes in some order.
+Three types we will cover:
+* Pre order: left side
+* In order: bottom  (left to)
+* Post order: right side
+
+Trace a path around the tree. As you pass a node on the proper side, process it
