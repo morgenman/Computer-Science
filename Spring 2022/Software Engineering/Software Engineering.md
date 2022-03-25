@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-23_11:16:49-04:00
+updated: 2022-03-25_11:42:27-04:00
 ---
 # Software Engineering
 * Process course
@@ -217,3 +217,9 @@ UNTIL (product complete)
 # Velocity
 * amount of work each sprint
 * adding the sizes of PBIs
+
+
+
+* Ethics Assignment deliverables (three)
+* No Slides
+* 
