@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-23_10:23:41-04:00
+updated: 2022-03-25_10:24:21-04:00
 ---
 # Networks
 
@@ -369,3 +369,13 @@ how does TCP 3.x work?
 
 * destination based forwarding (traditional)
 * Generalized forwarding (based on header)
+
+
+Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$ 
+
+* Buffer management
+	* drop: which packet to add, drop when buffers are full
+	* tail drop: drop arriving packet
+	* priority: drop/remove on priority basis
+	* marking: which packets to mark to signal congestion
+
