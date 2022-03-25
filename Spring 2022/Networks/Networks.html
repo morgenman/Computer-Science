@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-03-23_10:23:41-04:00</p>
+<p>updated: 2022-03-25_10:24:21-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -741,6 +741,17 @@ Congestion control (<strong>network side</strong>)</p>
 </li>
 <li>
 <p>Generalized forwarding (based on header)</p>
+</li>
+</ul>
+<p>Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$</p>
+<ul>
+<li>Buffer management
+<ul>
+<li>drop: which packet to add, drop when buffers are full</li>
+<li>tail drop: drop arriving packet</li>
+<li>priority: drop/remove on priority basis</li>
+<li>marking: which packets to mark to signal congestion</li>
+</ul>
 </li>
 </ul>
 
