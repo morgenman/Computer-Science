@@ -12010,6 +12010,32 @@ Congestion control (<strong>network side</strong>)</p>
 <li>High priority queue is served first</li>
 </ul>
 </li>
+<li>
+<p>Weighted Fair Queueing</p>
+<ul>
+<li>generalized round robin</li>
+<li>each class, i, has weight, w_i and gets weighted amount of service each cycle:</li>
+<li>$w_i = \frac{1}{\sum_{j=1}^N w_j}$  (this is what the copilot came up with)</li>
+<li>$w_i = \frac{w_j}{\sum_{j=1}^N w_j}$ (correct)</li>
+</ul>
+</li>
+<li>
+<p>Network Neutrality</p>
+<ul>
+<li>technical
+<ul>
+<li>how an ISP should share/allocate it's resources
+<ul>
+<li>packet scheduling, buffer management are mechanisms</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Round Robin</p>
+</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
