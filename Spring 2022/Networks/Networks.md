@@ -389,4 +389,17 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 	* High priority queue
 	* Low priority queue
 	* High priority queue is served first
-	
+
+* Weighted Fair Queueing
+	* generalized round robin
+	* each class, i, has weight, w_i and gets weighted amount of service each cycle:
+	* $w_i = \frac{1}{\sum_{j=1}^N w_j}$  (this is what the copilot came up with)
+	* $w_i = \frac{w_j}{\sum_{j=1}^N w_j}$ (correct)
+
+* Network Neutrality
+	* technical
+		* how an ISP should share/allocate it's resources
+		  * packet scheduling, buffer management are mechanisms
+		
+* Round Robin
+
