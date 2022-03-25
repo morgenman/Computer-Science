@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-25_10:24:21-04:00
+updated: 2022-03-25_10:34:32-04:00
 ---
 # Networks
 
@@ -379,3 +379,14 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 	* priority: drop/remove on priority basis
 	* marking: which packets to mark to signal congestion
 
+* Packet Scheduling:
+	* First come first serve
+	* Priority
+	* Round Robin
+	* Weighted fair queuing
+
+* Priority Scheduling
+	* High priority queue
+	* Low priority queue
+	* High priority queue is served first
+	
