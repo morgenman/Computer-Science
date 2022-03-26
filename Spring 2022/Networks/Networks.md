@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-26_10:16:14-04:00
+updated: 2022-03-26_10:35:20-04:00
 ---
 # Networks
 
@@ -389,7 +389,7 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 	* High priority queue
 	* Low priority queue
 	* High priority queue is served first
-* Head of line blocking
+* Head of line blocking`
 
 * Weighted Fair Queueing
 	* generalized round robin
