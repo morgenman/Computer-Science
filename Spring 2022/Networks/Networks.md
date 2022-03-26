@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-25_10:34:32-04:00
+updated: 2022-03-26_10:00:13-04:00
 ---
 # Networks
 
@@ -401,5 +401,4 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 		* how an ISP should share/allocate it's resources
 		  * packet scheduling, buffer management are mechanisms
 		
-* Round Robin
 
