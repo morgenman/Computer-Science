@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-26_10:00:13-04:00
+updated: 2022-03-26_10:16:14-04:00
 ---
 # Networks
 
@@ -365,7 +365,7 @@ how does TCP 3.x work?
 * Control Plane:
 	* network wide logic
 	* Two: traditional (implemented in routers) & SDN (Software defined networking)
-* Best effort service model is no guarentees
+* Best effort service model is no guarantees
 
 * destination based forwarding (traditional)
 * Generalized forwarding (based on header)
@@ -389,6 +389,7 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 	* High priority queue
 	* Low priority queue
 	* High priority queue is served first
+* Head of line blocking
 
 * Weighted Fair Queueing
 	* generalized round robin
