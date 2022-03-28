@@ -1,0 +1,1 @@
+{"rule":"FEWER_LESS","sentence":"^\\QICMP interconnection message protocol\nUsed for error handling\nIP\nmax length: 64k bytes\ntypically 1500 bytes or less\\E$"}
