@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-28_10:30:07-04:00
+updated: 2022-03-28_10:49:53-04:00
 ---
 # Networks
 
@@ -426,7 +426,8 @@ Datagram on Network layer
 	* CIDR: Classless InterDomain Routing
 	  * pronounced 'cider'
 		* a.b.c.d/x, where x is # of bits in subnet portion of address
-* dhcp
+## DHCP
+* Longest prefix match
 
 
 
