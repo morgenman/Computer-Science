@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-26_10:35:20-04:00
+updated: 2022-03-28_10:00:22-04:00
 ---
 # Networks
 
@@ -402,4 +402,13 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 		* how an ISP should share/allocate it's resources
 		  * packet scheduling, buffer management are mechanisms
 		
-# IP 
+# IP: The Internet Protocol
+Segment on TCP layer
+Packet on application layer
+Datagram on Network layer
+![[Pasted image 20220328100327.png]]
+
+
+
+* ICMP interconnection message protocol
+	* Used for error handling
