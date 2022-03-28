@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-28_10:06:23-04:00
+updated: 2022-03-28_10:14:24-04:00
 ---
 # Networks
 
@@ -415,6 +415,7 @@ Datagram on Network layer
 * IP
 	* max length: 64k bytes
 	* typically 1500 bytes or less
-	* 
+	* **Every interface can have a separate IP**
+	
 
 
