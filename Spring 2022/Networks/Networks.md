@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-28_10:00:22-04:00
+updated: 2022-03-28_10:06:23-04:00
 ---
 # Networks
 
@@ -408,7 +408,13 @@ Packet on application layer
 Datagram on Network layer
 ![[Pasted image 20220328100327.png]]
 
-
+![[Pasted image 20220328100458.png]]
 
 * ICMP interconnection message protocol
 	* Used for error handling
+* IP
+	* max length: 64k bytes
+	* typically 1500 bytes or less
+	* 
+
+
