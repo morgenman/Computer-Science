@@ -416,6 +416,9 @@ Datagram on Network layer
 	* max length: 64k bytes
 	* typically 1500 bytes or less
 	* **Every interface can have a separate IP**
-	
+
+## Subnets
+* Higher order bits vs lower order bits
+  * on an ip address, the 0.0.X.0 is higher than the far right bits
 
 
