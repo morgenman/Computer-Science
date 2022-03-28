@@ -426,6 +426,7 @@ Datagram on Network layer
 	* CIDR: Classless InterDomain Routing
 	  * pronounced 'cider'
 		* a.b.c.d/x, where x is # of bits in subnet portion of address
+* dhcp
 
 
 
