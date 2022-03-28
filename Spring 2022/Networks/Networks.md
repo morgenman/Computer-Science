@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-28_10:14:24-04:00
+updated: 2022-03-28_10:20:59-04:00
 ---
 # Networks
 
@@ -420,5 +420,13 @@ Datagram on Network layer
 ## Subnets
 * Higher order bits vs lower order bits
   * on an ip address, the 0.0.X.0 is higher than the far right bits
+	* Subnet mask vs network mask
+		* subnet: /24
+			* out of 32 bits, 24 bits are common
+	* CIDR: Classless InterDomain Routing
+	  * pronounced 'cider'
+		* a.b.c.d/x, where x is # of bits in subnet portion of address
+
+
 
 
