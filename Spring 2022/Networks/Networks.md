@@ -402,4 +402,4 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 		* how an ISP should share/allocate it's resources
 		  * packet scheduling, buffer management are mechanisms
 		
-
+# IP 
