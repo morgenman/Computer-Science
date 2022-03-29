@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-29_10:00:26-04:00
+updated: 2022-03-29_10:07:02-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -630,6 +630,7 @@ int count (BinNode rt){
 	n += count(rt.right());
 	return n;
 }
+boolean checkBST ()
 ```
 
 
