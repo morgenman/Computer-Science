@@ -658,8 +658,12 @@ boolean checkBST (BinNode<integer> rt, int low, int high){
 	* overhead is about $\frac{2P}{2P+D}=\frac{2}{3}$
 
 EG: 
-all nodes store data, 
-parent pointer
+all nodes store:
+*  data  (4B)
+* parent pointer (4B)
+* 2 child pointers (4B each)
+
+Overhead ratio is $\frac{Ptrs}{Data}=\frac{3(4B)}{3(4B)+4B}=\frac{12B}{16B}=\frac{3}{4}$
 
 
 
