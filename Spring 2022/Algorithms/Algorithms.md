@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_10:46:23-04:00
+updated: 2022-03-29_09:47:53-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -591,9 +591,31 @@ public interface BinNode<E>{
 
 Traversal: process for visiting all nodes in some order.
 Three types we will cover:
-* Pre order: left side (root left right starting at root)
-* In order: bottom  (left to right on a tree ignoring level)
-* Post order: right side (left right root starting at leftmost leaf)
+* **Pre order**: left side (root left right starting at root)
+* **In order**: bottom  (left to right on a tree ignoring level)
+* **Post order**: right side (left right root starting at leftmost leaf)
 
 Trace a path around the tree. As you pass a node on the proper side, process it
+
+```java
+void preorder (BinNode rt){
+	if (rt == null) return; // empty subtree
+	visit(rt);
+	preorder(rt.left());
+	preorder(rt.right());
+}
+void inorder (BinNode rt){
+	if (rt == null) return; // empty subtree
+	inorder(rt.left());
+	visit(rt);
+	inorder(rt.right());
+}
+void postorder (BinNode rt){
+	if (rt == null) return; // empty subtree
+	postorder(rt.left());
+	postorder(rt.right());
+	visit(rt);
+}
+```
+
 
