@@ -609,18 +609,30 @@ void preorder2(BinNode rt){
 	if (rt.left() != null) preorder2(rt.left());
 	if (rt.right() != null) preorder2(rt.right());
 }
+
 void inorder (BinNode rt){
 	if (rt == null) return; // empty subtree
 	inorder(rt.left());
 	visit(rt);
 	inorder(rt.right());
 }
+
 void postorder (BinNode rt){
 	if (rt == null) return; // empty subtree
 	postorder(rt.left());
 	postorder(rt.right());
 	visit(rt);
 }
+int count (BinNode rt){
+	if (rt == null) return 0; // empty subtree
+	int n = 1;
+	n += count(rt.left());
+	n += count(rt.right());
+	return n;
+}
 ```
 
+
+
+## Binary Search Tree
 
