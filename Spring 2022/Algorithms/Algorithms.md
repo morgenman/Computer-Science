@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-29_10:29:38-04:00
+updated: 2022-03-29_10:45:20-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -664,6 +664,9 @@ all nodes store:
 * 2 child pointers (4B each)
 
 Overhead ratio is $\frac{Ptrs}{Data}=\frac{3(4B)}{3(4B)+4B}=\frac{12B}{16B}=\frac{3}{4}$
+
+If you can fully fill it up, an array is most efficient. 
+We can use an array to store the tree, since the shape of the tree is static. 
 
 
 
