@@ -639,6 +639,14 @@ boolean checkBST (BinNode<integer> rt, int low, int high){
 }
 ```
 
+* Overhead fraction/ratio:
+* Space requirements (simple pointer based implementation):
+	* n(2P+D)
+	* n = number of nodes
+	* P = size of pointer
+	* D = size of data
+* Total overhead space for entire tree: 2Pn
+* Tot
 
 
 
