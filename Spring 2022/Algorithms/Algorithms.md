@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-29_10:12:54-04:00
+updated: 2022-03-29_10:24:36-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -639,14 +639,17 @@ boolean checkBST (BinNode<integer> rt, int low, int high){
 }
 ```
 
-* Overhead fraction/ratio:
+## Overhead fraction/ratio:
 * Space requirements (simple pointer based implementation):
 	* n(2P+D)
 	* n = number of nodes
 	* P = size of pointer
 	* D = size of data
 * Total overhead space for entire tree: 2Pn
-* Tot
+* Total overhead fraction = $\frac{2Pn}{n(2P+D)}=\frac{2P}{2P+D}$
+	* if P=D, a full tree has about 2/3 of it's total storage taken up in overhead! 
+	* AND 1/2 of the pointers are NULL (theorem 5.2)
+
 
 
 
