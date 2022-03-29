@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-29_10:45:20-04:00
+updated: 2022-03-29_11:38:32-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -455,7 +455,6 @@ For both, operations are O(1)
 
 ### Array Based Queue
 * circular is cool
-*
 
 * array vs linked queue
 	* both provide constant time for enqueue and dequeue
