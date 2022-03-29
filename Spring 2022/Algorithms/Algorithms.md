@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-29_10:24:36-04:00
+updated: 2022-03-29_10:29:38-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -650,6 +650,16 @@ boolean checkBST (BinNode<integer> rt, int low, int high){
 	* if P=D, a full tree has about 2/3 of it's total storage taken up in overhead! 
 	* AND 1/2 of the pointers are NULL (theorem 5.2)
 
+* What if we remove pointers on leaf nodes
+	* half of nodes are leaf nodes, so that gives us n/2 pointers
+	* $\frac{P}{P+D}$
+* What if we we have internal nodes with pointers but no data, and leaf nodes with no pointers?
+	* 2Pn+D(n+1) units of space
+	* overhead is about $\frac{2P}{2P+D}=\frac{2}{3}$
+
+EG: 
+all nodes store data, 
+parent pointer
 
 
 
