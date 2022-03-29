@@ -9825,7 +9825,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-03-29_10:24:36-04:00</p>
+<p>updated: 2022-03-29_10:29:38-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -10523,7 +10523,8 @@ boolean checkBST (BinNode&lt;integer&gt; rt, int low, int high){
 </code></pre>
 <h2 id="overhead-fractionratio"><a class="header" href="#overhead-fractionratio">Overhead fraction/ratio:</a></h2>
 <ul>
-<li>Space requirements (simple pointer based implementation):
+<li>
+<p>Space requirements (simple pointer based implementation):</p>
 <ul>
 <li>n(2P+D)</li>
 <li>n = number of nodes</li>
@@ -10531,14 +10532,34 @@ boolean checkBST (BinNode&lt;integer&gt; rt, int low, int high){
 <li>D = size of data</li>
 </ul>
 </li>
-<li>Total overhead space for entire tree: 2Pn</li>
-<li>Total overhead fraction = $\frac{2Pn}{n(2P+D)}=\frac{2P}{2P+D}$
+<li>
+<p>Total overhead space for entire tree: 2Pn</p>
+</li>
+<li>
+<p>Total overhead fraction = $\frac{2Pn}{n(2P+D)}=\frac{2P}{2P+D}$</p>
 <ul>
 <li>if P=D, a full tree has about 2/3 of it's total storage taken up in overhead!</li>
 <li>AND 1/2 of the pointers are NULL (theorem 5.2)</li>
 </ul>
 </li>
+<li>
+<p>What if we remove pointers on leaf nodes</p>
+<ul>
+<li>half of nodes are leaf nodes, so that gives us n/2 pointers</li>
+<li>$\frac{P}{P+D}$</li>
 </ul>
+</li>
+<li>
+<p>What if we we have internal nodes with pointers but no data, and leaf nodes with no pointers?</p>
+<ul>
+<li>2Pn+D(n+1) units of space</li>
+<li>overhead is about $\frac{2P}{2P+D}=\frac{2}{3}$</li>
+</ul>
+</li>
+</ul>
+<p>EG:<br />
+all nodes store data,<br />
+parent pointer</p>
 <h2 id="binary-search-tree"><a class="header" href="#binary-search-tree">Binary Search Tree</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
