@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-29_09:47:53-04:00
+updated: 2022-03-29_10:00:26-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -603,6 +603,11 @@ void preorder (BinNode rt){
 	visit(rt);
 	preorder(rt.left());
 	preorder(rt.right());
+}
+void preorder2(BinNode rt){
+	visit(rt); // if root is null, we might have a problem
+	if (rt.left() != null) preorder2(rt.left());
+	if (rt.right() != null) preorder2(rt.right());
 }
 void inorder (BinNode rt){
 	if (rt == null) return; // empty subtree
