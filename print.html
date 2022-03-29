@@ -10558,8 +10558,13 @@ boolean checkBST (BinNode&lt;integer&gt; rt, int low, int high){
 </li>
 </ul>
 <p>EG:<br />
-all nodes store data,<br />
-parent pointer</p>
+all nodes store:</p>
+<ul>
+<li>data  (4B)</li>
+<li>parent pointer (4B)</li>
+<li>2 child pointers (4B each)</li>
+</ul>
+<p>Overhead ratio is $\frac{Ptrs}{Data}=\frac{3(4B)}{3(4B)+4B}=\frac{12B}{16B}=\frac{3}{4}$</p>
 <h2 id="binary-search-tree"><a class="header" href="#binary-search-tree">Binary Search Tree</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
