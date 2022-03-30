@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-28_10:49:53-04:00
+updated: 2022-03-30_09:59:17-04:00
 ---
 # Networks
 
@@ -428,7 +428,4 @@ Datagram on Network layer
 		* a.b.c.d/x, where x is # of bits in subnet portion of address
 ## DHCP
 * Longest prefix match
-
-
-
 

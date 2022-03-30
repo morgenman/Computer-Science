@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-29_11:38:32-04:00
+updated: 2022-03-30_09:57:30-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -670,4 +670,5 @@ We can use an array to store the tree, since the shape of the tree is static.
 
 
 ## Binary Search Tree
+
 
