@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-30_10:39:30-04:00
+updated: 2022-03-30_10:45:03-04:00
 ---
 # Networks
 
@@ -439,4 +439,13 @@ Datagram on Network layer
 	* WAN side conversion to LAN side address
 	* Cannot assign more IPs than the number of ports available
 	* Outgoing datagrams replace source IP & port with NAT IP & new port
-* 
+	
+## IPv6
+* additional motivation:
+	* speed processing/forwarding: 40 byte fixed length header
+	* enable different network layer treatment of flows (QoS)
+	* No need for fragmentation since packets are small
+	* Not all routers can be upgraded simultaneously
+		* no 'flag days'
+			* where you bring the network down
+![[Pasted image 20220330104413.png]]
