@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-30_10:25:03-04:00
+updated: 2022-03-30_10:31:51-04:00
 ---
 # Networks
 
@@ -436,4 +436,6 @@ Datagram on Network layer
 
 ## NAT
 * Network Address Table
-	* WAN side conversion to LAN sid
+	* WAN side conversion to LAN side address
+	* Cannot assign more IPs than the number of ports available
+	* 
