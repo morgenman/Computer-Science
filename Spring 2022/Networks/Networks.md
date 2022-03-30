@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-30_09:59:17-04:00
+updated: 2022-03-30_10:12:23-04:00
 ---
 # Networks
 
@@ -389,7 +389,7 @@ Buffer (with N flows)  = $\frac{RTT\cdot C}{\sqrt(N)}$
 	* High priority queue
 	* Low priority queue
 	* High priority queue is served first
-* Head of line blocking`
+* Head of line blocking
 
 * Weighted Fair Queueing
 	* generalized round robin
@@ -428,4 +428,4 @@ Datagram on Network layer
 		* a.b.c.d/x, where x is # of bits in subnet portion of address
 ## DHCP
 * Longest prefix match
-
+* 
