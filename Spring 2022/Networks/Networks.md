@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-30_10:12:23-04:00
+updated: 2022-03-30_10:25:03-04:00
 ---
 # Networks
 
@@ -428,4 +428,8 @@ Datagram on Network layer
 		* a.b.c.d/x, where x is # of bits in subnet portion of address
 ## DHCP
 * Longest prefix match
+* How does an ISP get a block of addresses?
+	* ICANN - allocates through 5 regional registries (RRs)
+	* manages DNS root zone, including delegation of individual TLS (.com, .edu, ...) management
+	* last chunk of IPv4 addresses to RRs in 2011
 * 
