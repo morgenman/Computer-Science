@@ -432,4 +432,8 @@ Datagram on Network layer
 	* ICANN - allocates through 5 regional registries (RRs)
 	* manages DNS root zone, including delegation of individual TLS (.com, .edu, ...) management
 	* last chunk of IPv4 addresses to RRs in 2011
-* 
+* IPv6 has 128 bit address space
+
+## NAT
+* Network Address Table
+	* WAN side conversion to LAN sid
