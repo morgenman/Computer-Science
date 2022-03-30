@@ -449,3 +449,5 @@ Datagram on Network layer
 		* no 'flag days'
 			* where you bring the network down
 ![[Pasted image 20220330104413.png]]
+* Legacy support for ipv6: tunnel across ipv4 network
+* 
