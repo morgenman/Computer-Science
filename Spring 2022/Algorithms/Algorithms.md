@@ -679,6 +679,7 @@ We can use an array to store the tree, since the shape of the tree is static.
 	* left node has key value less than node
 	* right node has greater or equal to node
 * In-order traversal prints them in order
+
 * Node can be implemented with separate key value and data element as in the books code
 * Finding a record with key value K in BST:
 	* begin at root
@@ -686,5 +687,10 @@ We can use an array to store the tree, since the shape of the tree is static.
 	* otherwise search appropriate subtree
 		* if K < root node's key, left
 		* if K > root node's key, right
+* Deleting is much harder
+	* Find value in R's subtrees that is most like R (least key value >= R or greatest < R)
+	* if no duplicates, it doesn't matter
+	* if there are dupes, must use R subtree
+	* 
 
 
