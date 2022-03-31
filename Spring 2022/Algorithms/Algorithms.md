@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_10:29:11-04:00
+updated: 2022-03-31_10:39:17-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -720,6 +720,9 @@ Unbalanced is a problem
 	* 4 <- 6 -> 10
 	* Left imbalance, right rotation etc.
 * We are taking three elements and rearranging the tree so the median element is on top
+* Example: adding 4 -> 8 -> 6
+	* we want to right rotate to 4 -> 6 -> 8
+	* then we can fix it
 ## Splay
 * don't maintain balance, but improve balance when tree is accessed
 
