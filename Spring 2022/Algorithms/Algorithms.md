@@ -719,6 +719,7 @@ Unbalanced is a problem
 	* to fix this, we are going to rotate grandparent right to the child of the parent
 	* 4 <- 6 -> 10
 	* Left imbalance, right rotation etc.
+* We are taking three elements and rearranging the tree so the median element is on top
 ## Splay
 * don't maintain balance, but improve balance when tree is accessed
 
