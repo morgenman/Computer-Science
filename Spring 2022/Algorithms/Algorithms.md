@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_10:08:06-04:00
+updated: 2022-03-31_10:20:02-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -714,6 +714,7 @@ Unbalanced is a problem
 ## AVL Tree
 * named after adelson-velskii and landis
 * With each insertion or deletion that the depth of each subtree at each node does not differ by more than once
+* Need to be able to maintain balance in $\Theta$(log(n))
 * 
 ## Splay
 * don't maintain balance, but improve balance when tree is accessed
