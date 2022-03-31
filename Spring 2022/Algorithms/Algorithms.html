@@ -899,23 +899,34 @@ all nodes store:</p>
 We can use an array to store the tree, since the shape of the tree is static.</p>
 <h2 id="binary-search-tree"><a class="header" href="#binary-search-tree">Binary Search Tree</a></h2>
 <ul>
-<li>Way of storing a collection of elements so that inserting and searching for records can be done quickly?</li>
-<li>unsorted list is quick insertion, searching is $\Theta$(n) average case</li>
-<li>sorted list
+<li>
+<p>Way of storing a collection of elements so that inserting and searching for records can be done quickly?</p>
+</li>
+<li>
+<p>unsorted list is quick insertion, searching is $\Theta$(n) average case</p>
+</li>
+<li>
+<p>sorted list</p>
 <ul>
 <li>no speed up in searching ll</li>
 <li>array based list: use binary search, so search becomes $\Theta$(n)</li>
 </ul>
 </li>
-<li>For every node in the tree
+<li>
+<p>For every node in the tree</p>
 <ul>
 <li>left node has key value less than node</li>
 <li>right node has greater or equal to node</li>
 </ul>
 </li>
-<li>In-order traversal prints them in order</li>
-<li>Node can be implemented with separate key value and data element as in the books code</li>
-<li>Finding a record with key value K in BST:
+<li>
+<p>In-order traversal prints them in order</p>
+</li>
+<li>
+<p>Node can be implemented with separate key value and data element as in the books code</p>
+</li>
+<li>
+<p>Finding a record with key value K in BST:</p>
 <ul>
 <li>begin at root</li>
 <li>if root stores record with key value K, you're done</li>
@@ -925,6 +936,15 @@ We can use an array to store the tree, since the shape of the tree is static.</p
 <li>if K &gt; root node's key, right</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<p>Deleting is much harder</p>
+<ul>
+<li>Find value in R's subtrees that is most like R (least key value &gt;= R or greatest &lt; R)</li>
+<li>if no duplicates, it doesn't matter</li>
+<li>if there are dupes, must use R subtree</li>
+<li></li>
 </ul>
 </li>
 </ul>
