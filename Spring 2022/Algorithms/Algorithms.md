@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_10:20:02-04:00
+updated: 2022-03-31_10:29:11-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -715,7 +715,10 @@ Unbalanced is a problem
 * named after adelson-velskii and landis
 * With each insertion or deletion that the depth of each subtree at each node does not differ by more than once
 * Need to be able to maintain balance in $\Theta$(log(n))
-* 
+* Example: adding 10 -> 6 -> 4
+	* to fix this, we are going to rotate grandparent right to the child of the parent
+	* 4 <- 6 -> 10
+	* Left imbalance, right rotation etc.
 ## Splay
 * don't maintain balance, but improve balance when tree is accessed
 
