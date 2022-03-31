@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_10:03:01-04:00
+updated: 2022-03-31_10:08:06-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -704,6 +704,17 @@ We can use an array to store the tree, since the shape of the tree is static.
 	* Worst case $\Theta$(n)
 	* inserting n nodes is $\Theta$(n$^2$)
 * Traversal 
-	* $\Theta$(n) 
+	* $\Theta$(n) regardless of the shape
+
+
+Simple to implement, efficient when balanced. 
+Unbalanced is a problem
+
+
+## AVL Tree
+* named after adelson-velskii and landis
+* With each insertion or deletion that the depth of each subtree at each node does not differ by more than once
+## Splay
+* don't maintain balance, but improve balance when tree is accesse
 
 
