@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_09:57:28-04:00
+updated: 2022-03-31_10:03:01-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -692,5 +692,18 @@ We can use an array to store the tree, since the shape of the tree is static.
 	* if no duplicates, it doesn't matter
 	* if there are dupes, must use R subtree
 	* We want to replace the node with this node
+### Cost
+* finding/inserting/removing is depth of node
+* height of tree 
+	* log(n)
+* Balanced Tree
+	* Average operations are $\Theta$(log(n))
+	* if we insert n nodes it's $\Theta$(nlog(n))
+* Unbalanced
+	* height can be as much as n
+	* Worst case $\Theta$(n)
+	* inserting n nodes is $\Theta$(n$^2$)
+* Traversal 
+	* $\Theta$(n) 
 
 
