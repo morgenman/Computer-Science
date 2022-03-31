@@ -671,6 +671,13 @@ We can use an array to store the tree, since the shape of the tree is static.
 
 ## Binary Search Tree
 * Way of storing a collection of elements so that inserting and searching for records can be done quickly?
-* 
+* unsorted list is quick insertion, searching is $\Theta$(n) average case
+* sorted list
+	* no speed up in searching ll
+	* array based list: use binary search, so search becomes $\Theta$(n)
+* For every node in the tree
+	* left node has key value less than node
+	* right node has greater or equal to node
+* In-order traversal prints them in order
 
 
