@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_09:48:44-04:00
+updated: 2022-03-31_09:57:28-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -691,6 +691,6 @@ We can use an array to store the tree, since the shape of the tree is static.
 	* Find value in R's subtrees that is most like R (least key value >= R or greatest < R)
 	* if no duplicates, it doesn't matter
 	* if there are dupes, must use R subtree
-	* 
+	* We want to replace the node with this node
 
 
