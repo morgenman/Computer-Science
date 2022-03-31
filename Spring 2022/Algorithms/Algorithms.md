@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_09:41:19-04:00
+updated: 2022-03-31_09:48:44-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -679,5 +679,12 @@ We can use an array to store the tree, since the shape of the tree is static.
 	* left node has key value less than node
 	* right node has greater or equal to node
 * In-order traversal prints them in order
+* Node can be implemented with separate key value and data element as in the books code
+* Finding a record with key value K in BST:
+	* begin at root
+	* if root stores record with key value K, you're done
+	* otherwise search appropriate subtree
+		* if K < root node's key, left
+		* if K > root node's key, right
 
 
