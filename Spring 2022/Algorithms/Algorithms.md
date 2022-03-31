@@ -714,7 +714,9 @@ Unbalanced is a problem
 ## AVL Tree
 * named after adelson-velskii and landis
 * With each insertion or deletion that the depth of each subtree at each node does not differ by more than once
+* 
 ## Splay
-* don't maintain balance, but improve balance when tree is accesse
+* don't maintain balance, but improve balance when tree is accessed
+
 
 
