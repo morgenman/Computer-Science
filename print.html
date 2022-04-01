@@ -11584,7 +11584,7 @@ Manhattan</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-01_10:29:10-04:00</p>
+<p>updated: 2022-04-01_10:35:02-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -12354,6 +12354,30 @@ Datagram on Network layer<br />
 <li>actions</li>
 <li>priority</li>
 <li>counters</li>
+</ul>
+</li>
+<li>Router
+<ul>
+<li>match: longest destination IP prefix</li>
+<li>action: forward out link</li>
+</ul>
+</li>
+<li>Switch
+<ul>
+<li>match: dest mac</li>
+<li>action: forward/flood</li>
+</ul>
+</li>
+<li>firewall
+<ul>
+<li>match: ip +udp/tcp port</li>
+<li>action: permit/deny</li>
+</ul>
+</li>
+<li>NAT
+<ul>
+<li>match: ip + port</li>
+<li>action: rewrite address &amp; port</li>
 </ul>
 </li>
 </ul>
