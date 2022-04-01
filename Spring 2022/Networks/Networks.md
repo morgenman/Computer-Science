@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-30_10:45:03-04:00
+updated: 2022-04-01_10:09:52-04:00
 ---
 # Networks
 
@@ -450,4 +450,11 @@ Datagram on Network layer
 			* where you bring the network down
 ![[Pasted image 20220330104413.png]]
 * Legacy support for ipv6: tunnel across ipv4 network
-* 
+
+### IP fragmentation/reassembly
+* MTU (max transfer size)
+* Large IP datagram divided within net
+	* 4000 B datagram
+	* MTU = 1500B
+	* fragflag = 0
+	* offse
