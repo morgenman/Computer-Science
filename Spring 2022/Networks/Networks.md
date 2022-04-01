@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-01_10:35:02-04:00
+updated: 2022-04-01_10:45:35-04:00
 ---
 # Networks
 
@@ -486,3 +486,9 @@ Datagram on Network layer
 * NAT 
 	* match: ip + port
 	* action: rewrite address & port
+
+
+# Control Pane
+* control pane = routing
+* data plane = forwarding
+### Distance Vector
