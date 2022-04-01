@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-01_10:29:10-04:00
+updated: 2022-04-01_10:35:02-04:00
 ---
 # Networks
 
@@ -474,3 +474,15 @@ Datagram on Network layer
 	* actions
 	* priority
 	* counters
+* Router
+	* match: longest destination IP prefix
+	* action: forward out link
+* Switch
+	* match: dest mac
+	* action: forward/flood
+* firewall
+	* match: ip +udp/tcp port
+	* action: permit/deny
+* NAT 
+	* match: ip + port
+	* action: rewrite address & port
