@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-01_10:22:58-04:00
+updated: 2022-04-01_10:29:10-04:00
 ---
 # Networks
 
@@ -467,3 +467,10 @@ Datagram on Network layer
 
 # SDN
 * Openflow: match + action 
+## Flow Table
+* flow defined by header fields
+* generalized forwarding: simple packet-handling rules
+	* match
+	* actions
+	* priority
+	* counters
