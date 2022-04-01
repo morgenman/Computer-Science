@@ -491,4 +491,5 @@ Datagram on Network layer
 # Control Pane
 * control pane = routing
 * data plane = forwarding
-### Distance Vector
+### Link State
+* 
