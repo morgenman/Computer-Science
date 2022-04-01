@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-01_10:09:52-04:00
+updated: 2022-04-01_10:16:45-04:00
 ---
 # Networks
 
@@ -456,5 +456,11 @@ Datagram on Network layer
 * Large IP datagram divided within net
 	* 4000 B datagram
 	* MTU = 1500B
+	* 20 B of header per each
+	* 4000/1480
+* How do we identify fragments
+	* Len
+	* ID
 	* fragflag = 0
-	* offse
+	* offset = 0
+* 
