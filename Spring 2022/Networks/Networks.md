@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-04_10:36:50-04:00
+updated: 2022-04-04_10:47:18-04:00
 ---
 # Networks
 
@@ -520,10 +520,6 @@ so 680/8 = 85 (divide by 8 for some reason even though already in bytes)
 * Use when you have complete information about every router on the network (complete topology)
 ![[Pasted image 20220404103221.png]]
 ![[Pasted image 20220404103619.png]]
-| Step | N'  | v   | w   | x   | y    | z    |
-| ---- | --- | --- | --- | --- | ---- | ---- |
-| 0    | u   | 7u  | 3u  | 5u  | ifty | ifty |
-| 1    | uw  | 6w  | 3u  | 5u  | 11w  | ifty |
-| 2    | uw    |     |     |     |      |      |
+![[Pasted image 20220404104647.png]]
 
 ## Distance Vector (Bellman-Ford equation (dynamic programming)
