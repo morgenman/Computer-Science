@@ -464,6 +464,19 @@ Datagram on Network layer
 	* fragflag = 0
 	* offset = 0
 
+> Example
+>
+> 2600 datagram
+> 700 bytes MTU
+> ID = 424
+
+| Frag. # | ID  | Datagram Length | Frag flag | Offset |
+| ------- | --- | --------------- | --------- | ------ |
+| 1       | 424 | 700             | 1         |        |
+| 2       | 424 | 700             | 1         |        |
+| 3       | 424 | 700             | 1         |        |
+| 4       | 424 | 700             | 0         |        |
+
 
 # SDN
 * Openflow: match + action 
@@ -492,4 +505,5 @@ Datagram on Network layer
 * control pane = routing
 * data plane = forwarding
 ### Link State
-* 
+
+
