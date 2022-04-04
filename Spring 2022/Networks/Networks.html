@@ -913,6 +913,18 @@ Datagram on Network layer<br />
 </ul>
 </li>
 </ul>
+<blockquote>
+<p>Example</p>
+<p>2600 datagram<br />
+700 bytes MTU<br />
+ID = 424</p>
+</blockquote>
+<table><thead><tr><th>Frag. #</th><th>ID</th><th>Datagram Length</th><th>Frag flag</th><th>Offset</th></tr></thead><tbody>
+<tr><td>1</td><td>424</td><td>700</td><td>1</td><td></td></tr>
+<tr><td>2</td><td>424</td><td>700</td><td>1</td><td></td></tr>
+<tr><td>3</td><td>424</td><td>700</td><td>1</td><td></td></tr>
+<tr><td>4</td><td>424</td><td>700</td><td>0</td><td></td></tr>
+</tbody></table>
 <h1 id="sdn"><a class="header" href="#sdn">SDN</a></h1>
 <ul>
 <li>Openflow: match + action</li>
@@ -959,9 +971,6 @@ Datagram on Network layer<br />
 <li>data plane = forwarding</li>
 </ul>
 <h3 id="link-state"><a class="header" href="#link-state">Link State</a></h3>
-<ul>
-<li></li>
-</ul>
 
                 </main>
             </div>
