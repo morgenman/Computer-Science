@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-04_10:15:26-04:00
+updated: 2022-04-04_10:22:31-04:00
 ---
 # Networks
 
@@ -433,6 +433,7 @@ Datagram on Network layer
 	* manages DNS root zone, including delegation of individual TLS (.com, .edu, ...) management
 	* last chunk of IPv4 addresses to RRs in 2011
 * IPv6 has 128 bit address space
+* **Provides IP, gateway, and DNS**
 
 ## NAT
 * Network Address Table
@@ -450,7 +451,7 @@ Datagram on Network layer
 			* where you bring the network down
 ![[Pasted image 20220330104413.png]]
 * Legacy support for ipv6: tunnel across ipv4 network
-
+* (encapsulation)
 ### IP fragmentation/reassembly
 * MTU (max transfer size)
 * Large IP datagram divided within net
@@ -474,14 +475,14 @@ Take off 20 bytes from 2600 (original header)
 2580 bytes of data
 Each datagram is going to get that header, so 680 data 20 header
 offset is the bytes divided by 8
-so 680/8 = 85
+so 680/8 = 85 (divide by 8 for some reason even though already in bytes)
 
 | Frag. # | ID  | Datagram Length | Frag flag | Offset |
 | ------- | --- | --------------- | --------- | ------ |
 | 1       | 424 | 700             | 1         |   0     |
 | 2       | 424 | 700             | 1         |  85      |
-| 3       | 424 | 700             | 1         |        |
-| 4       | 424 | ?            | 0         |        |
+| 3       | 424 | 700             | 1         | 170       |
+| 4       | 424 | ?            | 0         |  255      |
 
 
 # SDN
@@ -507,9 +508,12 @@ so 680/8 = 85
 	* action: rewrite address & port
 
 
-# Control Pane
+# Control Pane (routing algorithms)
 * control pane = routing
 * data plane = forwarding
-### Link State
 
 
+## Link State Dijkstra's algorithm
+* ![[Pasted image 20220404102416.png]]
+* **Direct cost is $\infty$ if they are not direct neighbors ** 
+* 
