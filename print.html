@@ -11584,7 +11584,7 @@ Manhattan</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-04_10:15:26-04:00</p>
+<p>updated: 2022-04-04_10:22:31-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -12286,6 +12286,7 @@ Datagram on Network layer<br />
 </ul>
 </li>
 <li>IPv6 has 128 bit address space</li>
+<li><strong>Provides IP, gateway, and DNS</strong></li>
 </ul>
 <h2 id="nat"><a class="header" href="#nat">NAT</a></h2>
 <ul>
@@ -12320,6 +12321,9 @@ Datagram on Network layer<br />
 <li>
 <p>Legacy support for ipv6: tunnel across ipv4 network</p>
 </li>
+<li>
+<p>(encapsulation)</p>
+</li>
 </ul>
 <h3 id="ip-fragmentationreassembly"><a class="header" href="#ip-fragmentationreassembly">IP fragmentation/reassembly</a></h3>
 <ul>
@@ -12351,12 +12355,12 @@ ID = 424</p>
 2580 bytes of data<br />
 Each datagram is going to get that header, so 680 data 20 header<br />
 offset is the bytes divided by 8<br />
-so 680/8 = 85</p>
+so 680/8 = 85 (divide by 8 for some reason even though already in bytes)</p>
 <table><thead><tr><th>Frag. #</th><th>ID</th><th>Datagram Length</th><th>Frag flag</th><th>Offset</th></tr></thead><tbody>
 <tr><td>1</td><td>424</td><td>700</td><td>1</td><td>0</td></tr>
 <tr><td>2</td><td>424</td><td>700</td><td>1</td><td>85</td></tr>
-<tr><td>3</td><td>424</td><td>700</td><td>1</td><td></td></tr>
-<tr><td>4</td><td>424</td><td>?</td><td>0</td><td></td></tr>
+<tr><td>3</td><td>424</td><td>700</td><td>1</td><td>170</td></tr>
+<tr><td>4</td><td>424</td><td>?</td><td>0</td><td>255</td></tr>
 </tbody></table>
 <h1 id="sdn"><a class="header" href="#sdn">SDN</a></h1>
 <ul>
@@ -12398,12 +12402,21 @@ so 680/8 = 85</p>
 </ul>
 </li>
 </ul>
-<h1 id="control-pane"><a class="header" href="#control-pane">Control Pane</a></h1>
+<h1 id="control-pane-routing-algorithms"><a class="header" href="#control-pane-routing-algorithms">Control Pane (routing algorithms)</a></h1>
 <ul>
 <li>control pane = routing</li>
 <li>data plane = forwarding</li>
 </ul>
-<h3 id="link-state"><a class="header" href="#link-state">Link State</a></h3>
+<h2 id="link-state-dijkstras-algorithm"><a class="header" href="#link-state-dijkstras-algorithm">Link State Dijkstra's algorithm</a></h2>
+<ul>
+<li>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220404102416.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220404102416.png" alt="Pasted image 20220404102416"/></a></p>
+</li>
+<li>
+<p>**Direct cost is $\infty$ if they are not direct neighbors **</p>
+</li>
+<li></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
