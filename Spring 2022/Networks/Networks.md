@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-01_10:45:35-04:00
+updated: 2022-04-04_10:15:26-04:00
 ---
 # Networks
 
@@ -470,12 +470,18 @@ Datagram on Network layer
 > 700 bytes MTU
 > ID = 424
 
+Take off 20 bytes from 2600 (original header)
+2580 bytes of data
+Each datagram is going to get that header, so 680 data 20 header
+offset is the bytes divided by 8
+so 680/8 = 85
+
 | Frag. # | ID  | Datagram Length | Frag flag | Offset |
 | ------- | --- | --------------- | --------- | ------ |
-| 1       | 424 | 700             | 1         |        |
-| 2       | 424 | 700             | 1         |        |
+| 1       | 424 | 700             | 1         |   0     |
+| 2       | 424 | 700             | 1         |  85      |
 | 3       | 424 | 700             | 1         |        |
-| 4       | 424 | 700             | 0         |        |
+| 4       | 424 | ?            | 0         |        |
 
 
 # SDN
