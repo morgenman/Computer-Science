@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-04_10:22:31-04:00
+updated: 2022-04-04_10:28:37-04:00
 ---
 # Networks
 
@@ -513,7 +513,11 @@ so 680/8 = 85 (divide by 8 for some reason even though already in bytes)
 * data plane = forwarding
 
 
-## Link State Dijkstra's algorithm
-* ![[Pasted image 20220404102416.png]]
+## Link State (Dijkstra's algorithm)
+* Best for static routes, or routes that change slowly over time
+![[Pasted image 20220404102416.png]]
 * **Direct cost is $\infty$ if they are not direct neighbors ** 
-* 
+* Use when you have complete information about every router on the network (complete topology)
+
+
+## Distance Vector (Bellman-Ford equation (dynamic programming)
