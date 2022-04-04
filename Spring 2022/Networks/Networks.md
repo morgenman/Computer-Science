@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-04_10:28:37-04:00
+updated: 2022-04-04_10:36:50-04:00
 ---
 # Networks
 
@@ -519,5 +519,7 @@ so 680/8 = 85 (divide by 8 for some reason even though already in bytes)
 * **Direct cost is $\infty$ if they are not direct neighbors ** 
 * Use when you have complete information about every router on the network (complete topology)
 ![[Pasted image 20220404103221.png]]
+![[Pasted image 20220404103619.png]]
+
 
 ## Distance Vector (Bellman-Ford equation (dynamic programming)
