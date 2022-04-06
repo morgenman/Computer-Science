@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-06_10:41:30-04:00</p>
+<p>updated: 2022-04-06_10:47:14-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -1023,7 +1023,25 @@ n routers O($n^{2}$) messages sent</p>
 DV: incorrect path cost (I have a low cost path to everywhere black holing)</p>
 <h2 id="how-do-these-scale-up"><a class="header" href="#how-do-these-scale-up">How do these scale up?</a></h2>
 <ul>
+<li>aggregate networks into regions known as autonomous systems</li>
+<li>Intra-AS (intra-domain)
+<ul>
+<li>routing within same AS 'network'</li>
+<li>all routers in AS must run same intradomain protocol</li>
+<li>routers in different AS can run different intra-domain routing protocols</li>
+<li>'gateway router' at edge of it's own as has links to routers in other as's</li>
+</ul>
+</li>
+<li>Inter-AS (inter-domain)
+<ul>
+<li>routing among as's</li>
+<li>gateways perform inter domain routing
+<ul>
 <li></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
                 </main>
