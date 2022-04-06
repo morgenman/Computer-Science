@@ -528,3 +528,11 @@ so 680/8 = 85 (divide by 8 for some reason even though already in bytes)
 ![[Pasted image 20220404104647.png]]
 
 ## Distance Vector (Bellman-Ford equation (dynamic programming)
+Bellman ford equation:
+
+Let $D_{x}(y)$: cost of least-cost path from x to y
+Then...
+$D_{x}(y)= min_{v}\{c_{x,v}+D_{v}(y)\}$
+Recursive
+
+
