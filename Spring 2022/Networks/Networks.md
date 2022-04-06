@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-06_10:14:25-04:00
+updated: 2022-04-06_10:35:05-04:00
 ---
 # Networks
 
@@ -536,3 +536,10 @@ $D_{x}(y)= min_{v}\{c_{x,v}+D_{v}(y)\}$
 Recursive
 
 Whenever a node gets a new value from it's neighbor, it recalculates it's value
+
+Good news travels fast, bad news travels slow
+n routers O($n^{2}$) messages sent
+
+
+LS: incorrect link cost
+DV: incorrect path cost (I have a low cost path to everywhere black holing)
