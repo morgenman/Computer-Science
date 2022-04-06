@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-06_10:35:05-04:00
+updated: 2022-04-06_10:41:30-04:00
 ---
 # Networks
 
@@ -543,3 +543,6 @@ n routers O($n^{2}$) messages sent
 
 LS: incorrect link cost
 DV: incorrect path cost (I have a low cost path to everywhere black holing)
+
+## How do these scale up?
+* 
