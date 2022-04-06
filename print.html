@@ -11584,7 +11584,7 @@ Manhattan</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-06_10:02:49-04:00</p>
+<p>updated: 2022-04-06_10:07:51-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -12410,8 +12410,23 @@ so 680/8 = 85 (divide by 8 for some reason even though already in bytes)</p>
 <h2 id="link-state-dijkstras-algorithm"><a class="header" href="#link-state-dijkstras-algorithm">Link State (Dijkstra's algorithm)</a></h2>
 <ul>
 <li>
-<p>Best for static routes, or routes that change slowly over time<br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220404102416.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220404102416.png" alt="Pasted image 20220404102416"/></a></p>
+<p>Best for static routes, or routes that change slowly over time</p>
+</li>
+<li>
+<p>each n iteration, need to check all nodes.</p>
+<ul>
+<li>n(n+1)/2 comparisons: O($n^{2}$) complexity</li>
+</ul>
+</li>
+<li>
+<p>each router must broadcast its link state information to other n routers</p>
+</li>
+<li>
+<p>When link costs depend on traffic volume, route oscillations are possible</p>
+<ul>
+<li>ie, link being used less, so its a better route, etc<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220404102416.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220404102416.png" alt="Pasted image 20220404102416"/></a></li>
+</ul>
 </li>
 <li>
 <p>**Direct cost is $\infty$ if they are not direct neighbors **</p>
