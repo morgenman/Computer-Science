@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-06_10:41:30-04:00
+updated: 2022-04-06_10:47:14-04:00
 ---
 # Networks
 
@@ -545,4 +545,13 @@ LS: incorrect link cost
 DV: incorrect path cost (I have a low cost path to everywhere black holing)
 
 ## How do these scale up?
-* 
+* aggregate networks into regions known as autonomous systems
+* Intra-AS (intra-domain)
+	* routing within same AS 'network'
+	* all routers in AS must run same intradomain protocol
+	* routers in different AS can run different intra-domain routing protocols
+	* 'gateway router' at edge of it's own as has links to routers in other as's
+* Inter-AS (inter-domain)
+	* routing among as's
+	* gateways perform inter domain routing
+		* 
