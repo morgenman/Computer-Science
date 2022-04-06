@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-06_10:07:51-04:00
+updated: 2022-04-06_10:14:25-04:00
 ---
 # Networks
 
@@ -535,4 +535,4 @@ Then...
 $D_{x}(y)= min_{v}\{c_{x,v}+D_{v}(y)\}$
 Recursive
 
-
+Whenever a node gets a new value from it's neighbor, it recalculates it's value
