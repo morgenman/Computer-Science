@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-06_10:02:49-04:00
+updated: 2022-04-06_10:07:51-04:00
 ---
 # Networks
 
@@ -515,6 +515,11 @@ so 680/8 = 85 (divide by 8 for some reason even though already in bytes)
 
 ## Link State (Dijkstra's algorithm)
 * Best for static routes, or routes that change slowly over time
+* each n iteration, need to check all nodes. 
+	* n(n+1)/2 comparisons: O($n^{2}$) complexity
+* each router must broadcast its link state information to other n routers
+* When link costs depend on traffic volume, route oscillations are possible
+	* ie, link being used less, so its a better route, etc
 ![[Pasted image 20220404102416.png]]
 * **Direct cost is $\infty$ if they are not direct neighbors ** 
 * Use when you have complete information about every router on the network (complete topology)
