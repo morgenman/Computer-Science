@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-24_12:58:29-04:00
+updated: 2022-04-07_12:34:05-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -270,4 +270,11 @@ Going to be a class presentation with an R file (well documented)
 	* U: left singular
 	* D: diagonal
 	* V$^T$: (t is transpose, rows to columns...) right singular
+
+
+
+# iiD
+* P(A$\cap$B)= P(A) * P(B)
+* 
+
  
