@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_13:20:37-04:00
+updated: 2022-04-07_13:30:21-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -332,7 +332,10 @@ P(-|D$^c$)
 P(D | +)
 6. Negative predictive value is the probability of the subject not having the disease given that the test is false
 P(D$^c$ | -)
-7. Prevalence of the disease is the marginal probablity of the disease
+7. Prevalence of the disease is the marginal probability of the disease
 P(D)
 
+P(D|+), P(+|D), P(-|D$^c$)
 
+P(D) = 0.01
+P(D|+) = $\frac{P(+|D)P(D)}{P(+|D)P(D)+ P(+|D$^c$}
