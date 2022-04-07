@@ -292,4 +292,10 @@ Area under a chunk of curve is the probability that something is in that chunk
 Eg:
 The proportion of help calls addressed in a random day:
 f(x) = {2x for 0 < x < 1; 0 otherwise}
-is this a valid PDF?
+is this a valid PDF? (yes, area is 1)
+
+## Cumulative Distribution Function
+A CDF of a random variable C, returns the probability that a random variable X is less than or equal to a value x
+F(x)= P(X<=x)
+
+
