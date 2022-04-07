@@ -327,7 +327,12 @@ P(B/A)
 3. Sensitivity is the probability of getting a positive result given that the subject has the disease
 P(+|D)
 4. Specificity is the probability of getting a negative result given that the subject does not have the disease
+P(-|D$^c$)
 5. Positive predictive value is the probability of the subject having the disease given that the test is true
 P(D | +)
-6. Negative predictive value is the probability of the subject not having the disease given that the test is true
+6. Negative predictive value is the probability of the subject not having the disease given that the test is false
+P(D$^c$ | -)
+7. Prevalence of the disease is the marginal probablity of the disease
+P(D)
+
 
