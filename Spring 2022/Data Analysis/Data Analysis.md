@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_13:14:40-04:00
+updated: 2022-04-07_13:20:37-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -321,4 +321,13 @@ probably of one given roll is odd on a 6 sided die is P(A/B) = P(A$\Cap$B)/P(B)=
 P(B/A)
 * Probability of b given a
 * $\frac{P(A|B)P(B)}{P(A|B)P(B) + P(A|B^{c})P(B^{c})}$
+
+1. + and - are the events that are the result of a diagnostic test (positive and negative)
+2. D and D$^c$ are the events that the subject of the test has or does not have the disease respectively
+3. Sensitivity is the probability of getting a positive result given that the subject has the disease
+P(+|D)
+4. Specificity is the probability of getting a negative result given that the subject does not have the disease
+5. Positive predictive value is the probability of the subject having the disease given that the test is true
+P(D | +)
+6. Negative predictive value is the probability of the subject not having the disease given that the test is true
 
