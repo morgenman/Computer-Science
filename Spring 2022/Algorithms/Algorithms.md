@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_10:24:10-04:00
+updated: 2022-04-07_10:32:17-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -758,7 +758,7 @@ Unbalanced is a problem
 ## Only delete from root
 * Replace with right most leaf
 * sift down
-* 
+* $\mathbb{Theta}(log(n))$
 
 
 # Priority Queue
