@@ -746,3 +746,5 @@ Unbalanced is a problem
 ![[Pasted image 20220407095640.png]]
 
 ![[Pasted image 20220407100446.png]]
+## Sift down
+![[Pasted image 20220407100943.png]]
