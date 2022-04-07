@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_12:34:05-04:00
+updated: 2022-04-07_12:39:22-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -274,7 +274,13 @@ Going to be a class presentation with an R file (well documented)
 
 
 # iiD
+* independent identical distribution
 * P(A$\cap$B)= P(A) * P(B)
-* 
+* Don't multiply probabilities if not an iid
+
+
+# PDF
+* Probability Density Function
+* A
 
  
