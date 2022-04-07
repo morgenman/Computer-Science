@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-31_10:39:17-04:00
+updated: 2022-04-07_09:35:25-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -726,5 +726,5 @@ Unbalanced is a problem
 ## Splay
 * don't maintain balance, but improve balance when tree is accessed
 
-
-
+## Sift Down 
+* 
