@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_12:59:02-04:00
+updated: 2022-04-07_13:06:28-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -314,4 +314,4 @@ So probability of 40% or fewer calls answered in a single day is answered by CDF
 x = 0.4
 CDF = 0.4^2 = 0.16, or 16%
 
-
+When you have a range, 
