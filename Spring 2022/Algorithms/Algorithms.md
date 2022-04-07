@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_10:05:17-04:00
+updated: 2022-04-07_10:16:25-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -748,3 +748,6 @@ Unbalanced is a problem
 ![[Pasted image 20220407100446.png]]
 ## Sift down
 ![[Pasted image 20220407100943.png]]
+## Sift up
+![[Pasted image 20220407101637.png]]
+* do left subtree, then right subtree, then root
