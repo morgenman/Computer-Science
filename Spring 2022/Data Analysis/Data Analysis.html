@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-07_12:51:38-04:00</p>
+<p>updated: 2022-04-07_12:59:02-04:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -465,6 +465,18 @@ is this a valid PDF? (yes, area is 1)</p>
 <h2 id="cumulative-distribution-function"><a class="header" href="#cumulative-distribution-function">Cumulative Distribution Function</a></h2>
 <p>A CDF of a random variable C, returns the probability that a random variable X is less than or equal to a value x<br />
 F(x)= P(X&lt;=x)</p>
+<h2 id="survival-function"><a class="header" href="#survival-function">Survival Function</a></h2>
+<p>A SF of a random variable C, returns the probability that a random variable X is greater than a value x</p>
+<p>S(x)= P(X&gt;x)<br />
+S(x) = 1 - F(x)</p>
+<p>CDF<br />
+F(x)= P(X&lt;=x)<br />
+= 1/2 * base * height<br />
+= 1/2 * x * 2x<br />
+= x^2</p>
+<p>So probability of 40% or fewer calls answered in a single day is answered by CDF<br />
+x = 0.4<br />
+CDF = 0.4^2 = 0.16, or 16%</p>
 
                 </main>
             </div>
