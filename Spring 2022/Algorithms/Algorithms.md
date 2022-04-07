@@ -727,4 +727,12 @@ Unbalanced is a problem
 * don't maintain balance, but improve balance when tree is accessed
 
 ## Sift Down 
-* 
+```nomnoml
+[R] -> [H1]
+[R] -> [H2]
+```
+
+left and right are heaps
+
+A heap is a tree where the parent nodes are greater than the child
+
