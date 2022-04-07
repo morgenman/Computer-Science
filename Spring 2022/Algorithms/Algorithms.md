@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_10:32:17-04:00
+updated: 2022-04-07_10:39:50-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -761,4 +761,6 @@ Unbalanced is a problem
 * $\mathbb{\Theta}(log(n))$
 
 
-# Priority Queue
+# Sorting
+* Let's use dictionary structure, with each record containing a *key*
+*  
