@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_13:35:53-04:00
+updated: 2022-04-07_13:42:54-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -317,9 +317,12 @@ CDF = 0.4^2 = 0.16, or 16%
 
 probably of one given roll is odd on a 6 sided die is P(A/B) = P(A$\Cap$B)/P(B)= 1/3
 
+# Regular 
+* P(A|B)= P(A$\cap$B)/P(B)
+
 # Baye's Rule
 P(B/A)
-* Probability of b given a
+* Probability of b given a (reverse)
 * $\frac{P(A|B)P(B)}{P(A|B)P(B) + P(A|B^{c})P(B^{c})}$
 
 1. + and - are the events that are the result of a diagnostic test (positive and negative)
@@ -344,3 +347,10 @@ P(D|+) = $\frac{P(+|D)P(D)}{P(+|D)P(D)+ P(+|D^c)P(D^c)}$
 ...
 
 6.2% that the subject has the disease 
+
+
+# Independence
+Two events A and B are independent if P(A$\cap$B) = P(A)P(B) 
+equivalency if P(A|B)=P(A)
+
+Two random variables, x and y are independent if P(x$\cap$y) = P(x)P(y)
