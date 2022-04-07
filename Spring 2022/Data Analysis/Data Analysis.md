@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_12:45:10-04:00
+updated: 2022-04-07_12:51:38-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -287,3 +287,9 @@ To be a valid PDF:
 1. It must be larger than or equal to zero everywhere
 2. The total area under it must be 1
 
+Area under a chunk of curve is the probability that something is in that chunk
+
+Eg:
+The proportion of help calls addressed in a random day:
+f(x) = {2x for 0 < x < 1; 0 otherwise}
+is this a valid PDF?
