@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_12:51:38-04:00
+updated: 2022-04-07_12:59:02-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -297,5 +297,21 @@ is this a valid PDF? (yes, area is 1)
 ## Cumulative Distribution Function
 A CDF of a random variable C, returns the probability that a random variable X is less than or equal to a value x
 F(x)= P(X<=x)
+
+## Survival Function
+A SF of a random variable C, returns the probability that a random variable X is greater than a value x
+
+S(x)= P(X>x)
+S(x) = 1 - F(x)
+
+CDF
+F(x)= P(X<=x)
+= 1/2 * base * height
+= 1/2 * x * 2x
+= x^2
+
+So probability of 40% or fewer calls answered in a single day is answered by CDF
+x = 0.4
+CDF = 0.4^2 = 0.16, or 16%
 
 
