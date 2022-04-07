@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_13:06:28-04:00
+updated: 2022-04-07_13:14:40-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -314,4 +314,11 @@ So probability of 40% or fewer calls answered in a single day is answered by CDF
 x = 0.4
 CDF = 0.4^2 = 0.16, or 16%
 
-When you have a range, 
+
+probably of one given roll is odd on a 6 sided die is P(A/B) = P(A$\Cap$B)/P(B)= 1/3
+
+# Baye's Rule
+P(B/A)
+* Probability of b given a
+* $\frac{P(A|B)P(B)}{P(A|B)P(B) + P(A|B^{c})P(B^{c})}$
+
