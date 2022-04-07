@@ -758,7 +758,7 @@ Unbalanced is a problem
 ## Only delete from root
 * Replace with right most leaf
 * sift down
-* $\mathbb{Theta}(log(n))$
+* $\mathbb{\Theta}(log(n))$
 
 
 # Priority Queue
