@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_09:57:14-04:00
+updated: 2022-04-07_10:05:17-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -744,3 +744,5 @@ Unbalanced is a problem
 	* Cost for ONE insertion is  $\mathbb{\Theta}(logn)$  worst case. 
 	* so nlogn for n values
 ![[Pasted image 20220407095640.png]]
+
+![[Pasted image 20220407100446.png]]
