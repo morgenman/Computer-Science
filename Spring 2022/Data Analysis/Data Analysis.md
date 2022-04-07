@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_12:39:22-04:00
+updated: 2022-04-07_12:45:10-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -281,6 +281,9 @@ Going to be a class presentation with an R file (well documented)
 
 # PDF
 * Probability Density Function
-* A
+* Area under PDFs corresponds to the probabilities for that random variable
 
- 
+To be a valid PDF:
+1. It must be larger than or equal to zero everywhere
+2. The total area under it must be 1
+
