@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_10:16:25-04:00
+updated: 2022-04-07_10:24:10-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -730,6 +730,7 @@ Unbalanced is a problem
 # Heaps
 * A complete binary tree
 * values are partially ordered
+* Used to implement a priority queue
 ## Types:
 * Max Heap
 	* every node stores value >= values of children
@@ -748,6 +749,16 @@ Unbalanced is a problem
 ![[Pasted image 20220407100446.png]]
 ## Sift down
 ![[Pasted image 20220407100943.png]]
+* Used 
 ## Sift up
 ![[Pasted image 20220407101637.png]]
 * do left subtree, then right subtree, then root
+* when receiving values one at a time to build, or adding a new one
+
+## Only delete from root
+* Replace with right most leaf
+* sift down
+* 
+
+
+# Priority Queue
