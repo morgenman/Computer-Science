@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_09:42:24-04:00
+updated: 2022-04-07_09:50:36-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -726,13 +726,17 @@ Unbalanced is a problem
 ## Splay
 * don't maintain balance, but improve balance when tree is accessed
 
-## Sift Down 
-```nomnoml
-[R] -> [H1]
-[R] -> [H2]
-```
 
-left and right are heaps
-
-A heap is a tree where the parent nodes are greater than the child
-
+# Heaps
+* A complete binary tree
+* values are partially ordered
+## Types:
+* Max Heap
+	* every node stores value >= values of children
+	* root has biggest value
+* Min Heap
+	* every node stores value <= values of children
+	* root has smallest value
+	
+## Insertion:
+* If heap has n items, insert to n+1
