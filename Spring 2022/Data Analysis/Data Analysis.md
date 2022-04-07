@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_13:30:21-04:00
+updated: 2022-04-07_13:35:53-04:00
 ---
 # Data Analysis & Visualization
 *Capturing your audience and showing them what they want to see in one chart*
@@ -337,5 +337,10 @@ P(D)
 
 P(D|+), P(+|D), P(-|D$^c$)
 
+if a subject from a population with 0.1010 prevalence receives a test, what is the positive predictive value?
 P(D) = 0.01
-P(D|+) = $\frac{P(+|D)P(D)}{P(+|D)P(D)+ P(+|D$^c$}
+P(D|+) = $\frac{P(+|D)P(D)}{P(+|D)P(D)+ P(+|D^c)P(D^c)}$
+
+...
+
+6.2% that the subject has the disease 
