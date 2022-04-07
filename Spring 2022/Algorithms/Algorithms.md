@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_09:50:36-04:00
+updated: 2022-04-07_09:57:14-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -739,4 +739,8 @@ Unbalanced is a problem
 	* root has smallest value
 	
 ## Insertion:
-* If heap has n items, insert to n+1
+* If heap has n items, insert to n+1, then sift to proper place
+	* Height: $\mathbb{\Theta}(logn)$ 
+	* Cost for ONE insertion is  $\mathbb{\Theta}(logn)$  worst case. 
+	* so nlogn for n values
+![[Pasted image 20220407095640.png]]
