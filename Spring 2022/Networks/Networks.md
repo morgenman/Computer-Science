@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-08_10:20:58-04:00
+updated: 2022-04-08_10:32:18-04:00
 ---
 # Networks
 
@@ -563,6 +563,7 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 			* 2 level hierarchy
 			* local & backbone 
 			* Each local can know just the local topology
+			* each othese is NOT a unique AS. Still one AS
 		
 
 * Inter-AS (inter-domain)
