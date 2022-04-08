@@ -11353,7 +11353,7 @@ source(&quot;mean.r&quot;) # source file, replaces previous source file
 x # print x  
 print(x) # print x  
   
-msg &lt;- &quot;hello&quot;   
+msg &lt;- &quot;hello&quot;  
   
 x &lt;- 1:30 # x now holds 1 2 3 4 ... 30  
   
@@ -11385,7 +11385,7 @@ n &lt;- matrix( 1:25 ,5 ,5 ) # fills columns then rows
   
 m &lt;- 1:10  
 # [1] 1 2 3 4 5 6 7 8 9 10  
-dim(m) &lt;- c(2,5) # change dimension of m   
+dim(m) &lt;- c(2,5) # change dimension of m  
 #      [,1] [,2] [,3] [,4] [,5]  
 # [1,]    1    3    5    7    9  
 # [2,]    2    4    6    8   10  
@@ -11405,21 +11405,21 @@ rbind(x,y) # Row bind
 x &lt;- list(1, &quot;a&quot;, TRUE) # Stores values as vectors of vectors  
 # &lt;span class=&quot;missing-link&quot; style=&quot;color:darkred;&quot;&gt;1&lt;/span&gt;  
 # [1] 1  
-#   
+#  
 # &lt;span class=&quot;missing-link&quot; style=&quot;color:darkred;&quot;&gt;2&lt;/span&gt;  
 # [1] &quot;a&quot;  
-#   
+#  
 # &lt;span class=&quot;missing-link&quot; style=&quot;color:darkred;&quot;&gt;3&lt;/span&gt;  
 # [1] TRUE  
   
 x &lt;- factor(c(&quot;yes&quot;,&quot;yes&quot;,&quot;no&quot;,&quot;yes&quot;,&quot;no&quot;)) # Levels will become labels?  
-# [1] yes yes no  yes no   
+# [1] yes yes no  yes no  
 # Levels: no yes  
   
 class(x) # Check the class  
 # &quot;factor&quot;  
   
-unclass(x) # basically categorize   
+unclass(x) # basically categorize  
 # [1] 2 2 1 2 1  
 # attr(,&quot;levels&quot;)  
 # [1] &quot;no&quot;  &quot;yes&quot;  
@@ -11461,8 +11461,8 @@ source(&quot;data.R&quot;)
 con &lt;- file(&quot;input.txt&quot;,&quot;r&quot;) # read  
 data &lt;- read.csv(con)  
   
-con &lt;- url(&quot;https://swirlstats.com/students.html&quot;,&quot;r&quot;)   
-x &lt;- readLines(con,10)   
+con &lt;- url(&quot;https://swirlstats.com/students.html&quot;,&quot;r&quot;)  
+x &lt;- readLines(con,10)  
   
   
 </code></pre>
@@ -11494,7 +11494,7 @@ x &lt;- readLines(con,10)
 </ul>
 <h2 id="notation-1"><a class="header" href="#notation-1">Notation</a></h2>
 <ul>
-<li>double square brackets [[]] always returns  a list</li>
+<li>double square brackets [[]] always returns a list</li>
 <li>Single brackets, you can put a range in</li>
 <li>You can also put in a condition ie:</li>
 </ul>
@@ -11513,7 +11513,7 @@ complete.cases(x,y) # truth table
 </code></pre>
 <ul>
 <li>I think a list is a collection of vectors</li>
-<li>x * y vs x % * % y</li>
+<li>x _ y vs x % _ % y</li>
 <li><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220210133755.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220210133755.png" alt="Pasted image 20220210133755"/></a></li>
 </ul>
 <p>Scope:</p>
@@ -11632,8 +11632,8 @@ F(x)= P(X&lt;=x)</p>
 S(x) = 1 - F(x)</p>
 <p>CDF<br />
 F(x)= P(X&lt;=x)<br />
-= 1/2 * base * height<br />
-= 1/2 * x * 2x<br />
+= 1/2 _ base _ height<br />
+= 1/2 _ x _ 2x<br />
 = x^2</p>
 <p>So probability of 40% or fewer calls answered in a single day is answered by CDF<br />
 x = 0.4<br />
@@ -11676,7 +11676,12 @@ P(D|+) = $\frac{P(+|D)P(D)}{P(+|D)P(D)+ P(+|D^c)P(D^c)}$</p>
 <h1 id="independence"><a class="header" href="#independence">Independence</a></h1>
 <p>Two events A and B are independent if P(A$\cap$B) = P(A)P(B)<br />
 equivalency if P(A|B)=P(A)</p>
-<p>Two random variables, x and y are independent if P(x$\cap$y) = P(x)P(y)</p>
+<p>Two random variables, x and y are independent for two sets A and B<br />
+P([x $\subset$ A]$\cap$[y $\subset$ B]) = P(x$\subset$A)P(y$\subset$B)</p>
+<p>if A is independent of B the probability that the test is true<br />
+A$^c$ is independent of B<br />
+A is independent of B$^c$<br />
+A$^c$ is independent of B$^c$</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
