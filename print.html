@@ -11719,7 +11719,7 @@ A$^c$ is independent of B$^c$</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-06_10:47:14-04:00</p>
+<p>updated: 2022-04-08_10:07:02-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -12586,16 +12586,41 @@ n routers O($n^{2}$) messages sent</p>
 DV: incorrect path cost (I have a low cost path to everywhere black holing)</p>
 <h2 id="how-do-these-scale-up"><a class="header" href="#how-do-these-scale-up">How do these scale up?</a></h2>
 <ul>
-<li>aggregate networks into regions known as autonomous systems</li>
-<li>Intra-AS (intra-domain)
+<li>
+<p>aggregate networks into regions known as <strong>autonomous systems</strong></p>
+</li>
+<li>
+<p>Intra-AS (intra-domain) protocol</p>
 <ul>
 <li>routing within same AS 'network'</li>
 <li>all routers in AS must run same intradomain protocol</li>
 <li>routers in different AS can run different intra-domain routing protocols</li>
 <li>'gateway router' at edge of it's own as has links to routers in other as's</li>
+<li>Common ones:
+<ul>
+<li>(provided by router manufacturer)</li>
+<li>RIP</li>
+<li>EIGRP</li>
+<li>OSPF
+<ul>
+<li>open shortest path first</li>
+<li>classic link state</li>
+<li>multiple link cost metrics, dijkstras for forwarding table</li>
 </ul>
 </li>
-<li>Inter-AS (inter-domain)
+<li>Hierarchical ospf
+<ul>
+<li>2 level hierarchy</li>
+<li>local &amp; backbone</li>
+<li>Each local can know just the local topology</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Inter-AS (inter-domain)</p>
 <ul>
 <li>routing among as's</li>
 <li>gateways perform inter domain routing
