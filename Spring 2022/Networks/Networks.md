@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-08_10:32:18-04:00
+updated: 2022-04-08_10:40:18-04:00
 ---
 # Networks
 
@@ -575,4 +575,5 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 		* Border Gateway Protocol (the de facto inter-domain routing protocol)
 		* Advertised route is: 
 	* Routers talk to each other over TCP
-	* 
+	* Hot potato
+		* Keep multiple routes, choose the one that has the least intra domain cost
