@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-08_10:07:02-04:00
+updated: 2022-04-08_10:13:46-04:00
 ---
 # Networks
 
@@ -563,8 +563,12 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 			* 2 level hierarchy
 			* local & backbone 
 			* Each local can know just the local topology
+		
 
 * Inter-AS (inter-domain)
 	* routing among as's
 	* gateways perform inter domain routing
-		* 
+	* boundary routers connect to backbone
+	*  BGP
+			* Border Gateway Protocol (the de facto inter-domain routing protocol)
+			* holds the internet together
