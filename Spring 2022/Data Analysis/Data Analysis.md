@@ -1,36 +1,39 @@
 ---
 updated: 2022-04-07_13:42:54-04:00
 ---
+
 # Data Analysis & Visualization
-*Capturing your audience and showing them what they want to see in one chart*
+
+_Capturing your audience and showing them what they want to see in one chart_
 
 Public Data https://archive.ics.uci.edu/ml/index.php
 
-
 # Information Visualization
+
 appropriate visualization is important...
 
 > What is Data Science?
 > Using data to answer questions
 > Somebody who combines the skills of software programmer, statistician, and storyteller slash artist
 
-
 # Big Data
+
 ## Volume, Velocity, Variety: Qualities of Big Data
-* Volume: Large datasets
-* Velocity: Data generated and collected very quickly
-* Variety: Different types of data available
+
+- Volume: Large datasets
+- Velocity: Data generated and collected very quickly
+- Variety: Different types of data available
 
 What is Data? A set of values of qualitative or quantitative variables.
 
 EMR: Electronic Medical Records (messy data)
 
-
 ## Questions come before data
-* Ask a question *before* you start looking at data. Look for data that is relevant
 
+- Ask a question _before_ you start looking at data. Look for data that is relevant
 
 # R
+
 ```R
 getwd() # Pwd
 myfunction <- function(){
@@ -42,7 +45,7 @@ source("mean.r") # source file, replaces previous source file
 x # print x
 print(x) # print x
 
-msg <- "hello" 
+msg <- "hello"
 
 x <- 1:30 # x now holds 1 2 3 4 ... 30
 
@@ -74,7 +77,7 @@ n <- matrix( 1:25 ,5 ,5 ) # fills columns then rows
 
 m <- 1:10
 # [1] 1 2 3 4 5 6 7 8 9 10
-dim(m) <- c(2,5) # change dimension of m 
+dim(m) <- c(2,5) # change dimension of m
 #      [,1] [,2] [,3] [,4] [,5]
 # [1,]    1    3    5    7    9
 # [2,]    2    4    6    8   10
@@ -94,21 +97,21 @@ rbind(x,y) # Row bind
 x <- list(1, "a", TRUE) # Stores values as vectors of vectors
 # [[1]]
 # [1] 1
-# 
+#
 # [[2]]
 # [1] "a"
-# 
+#
 # [[3]]
 # [1] TRUE
 
 x <- factor(c("yes","yes","no","yes","no")) # Levels will become labels?
-# [1] yes yes no  yes no 
+# [1] yes yes no  yes no
 # Levels: no yes
 
 class(x) # Check the class
 # "factor"
 
-unclass(x) # basically categorize 
+unclass(x) # basically categorize
 # [1] 2 2 1 2 1
 # attr(,"levels")
 # [1] "no"  "yes"
@@ -150,37 +153,43 @@ source("data.R")
 con <- file("input.txt","r") # read
 data <- read.csv(con)
 
-con <- url("https://swirlstats.com/students.html","r") 
-x <- readLines(con,10) 
+con <- url("https://swirlstats.com/students.html","r")
+x <- readLines(con,10)
 
 
 ```
 
-* <- is assignment operator
-* one source file per 
-* Everything is an object (by default vector)
-* factors are usually for categorical data
-* ![[Pasted image 20220208132128.png]]
+- <- is assignment operator
+- one source file per
+- Everything is an object (by default vector)
+- factors are usually for categorical data
+- ![[Pasted image 20220208132128.png]]
+
 ## Types of Data
-* char (string)
-* numeric **AKA Double** (real numbers, double precision)
-* integer
-* complex
-* logical
-* vector (only one kind of data)
-* list (array), can have more than one kind of data
+
+- char (string)
+- numeric **AKA Double** (real numbers, double precision)
+- integer
+- complex
+- logical
+- vector (only one kind of data)
+- list (array), can have more than one kind of data
 
 ## Data Attributes
-* name
-* dimnames
-* dimensions
-* class
-* length
-* userdefined
+
+- name
+- dimnames
+- dimensions
+- class
+- length
+- userdefined
+
 ## Notation
-* double square brackets \[\[\]\] always returns  a list
-* Single brackets, you can put a range in
-* You can also put in a condition ie:
+
+- double square brackets \[\[\]\] always returns a list
+- Single brackets, you can put a range in
+- You can also put in a condition ie:
+
 ```R
 x <- c("a","b","c","a","e","a")
 x[x>"a"]
@@ -195,22 +204,22 @@ complete.cases(x,y) # truth table
 
 
 ```
-* I think a list is a collection of vectors
-* x * y vs x % * % y
-* ![[Pasted image 20220210133755.png]]
 
+- I think a list is a collection of vectors
+- x _ y vs x % _ % y
+- ![[Pasted image 20220210133755.png]]
 
 Scope:
-* ls(environment(cube))
-* like scheme: functional programming
-* if it cannot find a variable locally, it will look globally etc higher and higher up
+
+- ls(environment(cube))
+- like scheme: functional programming
+- if it cannot find a variable locally, it will look globally etc higher and higher up
 
 date/time
 
-
-
 # Data Preprocessing
-* This comes before data analysis
+
+- This comes before data analysis
 
 Raw -> Preprocessing -> clean data -> data analysis -> presentation
 
@@ -220,70 +229,78 @@ Need to document the process for processing
 
 Raw: No manipulation, at all
 
-* Make sure there's only one measured variable per column
-* one observation of said variable per row
-* one variable per table
-* one table per file
+- Make sure there's only one measured variable per column
+- one observation of said variable per row
+- one variable per table
+- one table per file
 
 # Project
-* Choose a dataset
-* Come up with hypothesis/questions
-13th 
+
+- Choose a dataset
+- Come up with hypothesis/questions
+  13th
 
 Report of project:
+
 1. Where is data coming from? (public)
 2. 1 paragraph what is it about?
 3. 5+ questions you want to answer with data.
 
 Going to be a class presentation with an R file (well documented)
 
-
 # Regression Algorithms
-* Machine Learning regression algorith:
-	* Trying to draw conclusions from data
 
-* midterm: for every activity, for each
+- Machine Learning regression algorith:
+
+  - Trying to draw conclusions from data
+
+- midterm: for every activity, for each
 
 # Clustering
-* Sentiment analysis
+
+- Sentiment analysis
 
 1. Close? -> distance
 2. group
 3. visualize groups
 4. interpret
 
-> How do we measure distance? 
+> How do we measure distance?
 > Euclidian: traditional
 > Manhattan
-## Hierarchical Clustering
-* automatic, dendogram
-## K Means Clustering
-* partitioning approach
-	* centroids of each cluster
 
+## Hierarchical Clustering
+
+- automatic, dendogram
+
+## K Means Clustering
+
+- partitioning approach
+  - centroids of each cluster
 
 # Principal Compound Analysis (Singular value decomposition)
-* Matrix can only hold one kind of data, Frame can store different types
-* demensionality reduction
-* X is a matrix
-	* when you apply the SVD function you get 3 vectors
-	* U: left singular
-	* D: diagonal
-	* V$^T$: (t is transpose, rows to columns...) right singular
 
-
+- Matrix can only hold one kind of data, Frame can store different types
+- demensionality reduction
+- X is a matrix
+  - when you apply the SVD function you get 3 vectors
+  - U: left singular
+  - D: diagonal
+  - V$^T$: (t is transpose, rows to columns...) right singular
 
 # iiD
-* independent identical distribution
-* P(A$\cap$B)= P(A) * P(B)
-* Don't multiply probabilities if not an iid
 
+- independent identical distribution
+- P(A$\cap$B)= P(A) \* P(B)
+- Don't multiply probabilities if not an iid
 
 # PDF
-* Probability Density Function
-* Area under PDFs corresponds to the probabilities for that random variable
+
+- Probability Density Function
+- Area under PDFs corresponds to the probabilities for that random variable
 
 To be a valid PDF:
+
 1. It must be larger than or equal to zero everywhere
 2. The total area under it must be 1
 
@@ -295,10 +312,12 @@ f(x) = {2x for 0 < x < 1; 0 otherwise}
 is this a valid PDF? (yes, area is 1)
 
 ## Cumulative Distribution Function
+
 A CDF of a random variable C, returns the probability that a random variable X is less than or equal to a value x
 F(x)= P(X<=x)
 
 ## Survival Function
+
 A SF of a random variable C, returns the probability that a random variable X is greater than a value x
 
 S(x)= P(X>x)
@@ -306,37 +325,39 @@ S(x) = 1 - F(x)
 
 CDF
 F(x)= P(X<=x)
-= 1/2 * base * height
-= 1/2 * x * 2x
+= 1/2 _ base _ height
+= 1/2 _ x _ 2x
 = x^2
 
 So probability of 40% or fewer calls answered in a single day is answered by CDF
 x = 0.4
 CDF = 0.4^2 = 0.16, or 16%
 
-
 probably of one given roll is odd on a 6 sided die is P(A/B) = P(A$\Cap$B)/P(B)= 1/3
 
-# Regular 
-* P(A|B)= P(A$\cap$B)/P(B)
+# Regular
+
+- P(A|B)= P(A$\cap$B)/P(B)
 
 # Baye's Rule
-P(B/A)
-* Probability of b given a (reverse)
-* $\frac{P(A|B)P(B)}{P(A|B)P(B) + P(A|B^{c})P(B^{c})}$
 
-1. + and - are the events that are the result of a diagnostic test (positive and negative)
+P(B/A)
+
+- Probability of b given a (reverse)
+- $\frac{P(A|B)P(B)}{P(A|B)P(B) + P(A|B^{c})P(B^{c})}$
+
+1. - and - are the events that are the result of a diagnostic test (positive and negative)
 2. D and D$^c$ are the events that the subject of the test has or does not have the disease respectively
 3. Sensitivity is the probability of getting a positive result given that the subject has the disease
-P(+|D)
+   P(+|D)
 4. Specificity is the probability of getting a negative result given that the subject does not have the disease
-P(-|D$^c$)
+   P(-|D$^c$)
 5. Positive predictive value is the probability of the subject having the disease given that the test is true
-P(D | +)
+   P(D | +)
 6. Negative predictive value is the probability of the subject not having the disease given that the test is false
-P(D$^c$ | -)
+   P(D$^c$ | -)
 7. Prevalence of the disease is the marginal probability of the disease
-P(D)
+   P(D)
 
 P(D|+), P(+|D), P(-|D$^c$)
 
@@ -346,11 +367,17 @@ P(D|+) = $\frac{P(+|D)P(D)}{P(+|D)P(D)+ P(+|D^c)P(D^c)}$
 
 ...
 
-6.2% that the subject has the disease 
-
+6.2% that the subject has the disease
 
 # Independence
-Two events A and B are independent if P(A$\cap$B) = P(A)P(B) 
+
+Two events A and B are independent if P(A$\cap$B) = P(A)P(B)
 equivalency if P(A|B)=P(A)
 
-Two random variables, x and y are independent if P(x$\cap$y) = P(x)P(y)
+Two random variables, x and y are independent for two sets A and B
+P([x $\subset$ A]$\cap$[y $\subset$ B]) = P(x$\subset$A)P(y$\subset$B)
+
+if A is independent of B the probability that the test is true
+A$^c$ is independent of B
+A is independent of B$^c$
+A$^c$ is independent of B$^c$
