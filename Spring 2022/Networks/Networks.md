@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-08_10:13:46-04:00
+updated: 2022-04-08_10:20:58-04:00
 ---
 # Networks
 
@@ -570,5 +570,8 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 	* gateways perform inter domain routing
 	* boundary routers connect to backbone
 	*  BGP
-			* Border Gateway Protocol (the de facto inter-domain routing protocol)
-			* holds the internet together
+		* holds the internet together
+		* Border Gateway Protocol (the de facto inter-domain routing protocol)
+		* Advertised route is: 
+	* Routers talk to each other over TCP
+	* 
