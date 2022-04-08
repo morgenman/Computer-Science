@@ -577,3 +577,4 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 	* Routers talk to each other over TCP
 	* Hot potato
 		* Keep multiple routes, choose the one that has the least intra domain cost
+* 
