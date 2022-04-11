@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-11_10:36:57-04:00
+updated: 2022-04-11_10:42:22-04:00
 ---
 # Networks
 
@@ -606,4 +606,7 @@ OR we can used a centralized controller to send them routes
 	* configure
 	* modify state
 	* packet out (send a packet out of a specific port)
-* Example
+* Southbound/Northbound 
+	* northbound: application(network applications)plane <-> control plane
+	* southbound: control plane <-> data plane
+![[Pasted image 20220411104105.png]]
