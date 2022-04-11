@@ -1096,6 +1096,9 @@ OR we can used a centralized controller to send them routes</li>
 <h2 id="why-a-logically-centralized-control-plane"><a class="header" href="#why-a-logically-centralized-control-plane">Why a logically centralized control plane?</a></h2>
 <ul>
 <li>Easier network management: avoid router misconfigurations, greater flexibility of traffic flows</li>
+<li>Routers can be 'dumb': Link is broken? just push updated forwarding tables to adjust, routers don't need to 'react'</li>
+<li>Table-based forwarding allows 'programming' routers</li>
+<li>Open, non-proprietary implementation allows quick innovation</li>
 </ul>
 
                 </main>
