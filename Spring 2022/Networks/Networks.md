@@ -595,3 +595,6 @@ OR we can used a centralized controller to send them routes
 
 ## Why a logically centralized control plane?
 * Easier network management: avoid router misconfigurations, greater flexibility of traffic flows
+* Routers can be 'dumb': Link is broken? just push updated forwarding tables to adjust, routers don't need to 'react'
+* Table-based forwarding allows 'programming' routers
+* Open, non-proprietary implementation allows quick innovation
