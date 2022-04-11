@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_10:39:50-04:00
+updated: 2022-04-11_18:09:05-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -496,12 +496,14 @@ For both, operations are O(1)
 	* each node is either (an internal node with exactly two non empty children) or (a leaf)
 * Complete binary tree
 	* shape is restricted and obtained by starting at the root and filling the tree levels from left to right
+	
 ## Analysis
 * Ratio of internal nodes to leaf nodes?
 	* Upper bound will occur when each internal node has 2 non-empty children
 	* This doesn't tell us what shape of tree will give the highest percentage of non-empty leaves
 	* *all full binary trees with n internal nodes have the same number of leaves*
 	* we can use this to compute space requirements
+	
 ## Full Binary Tree Theorem
 
 ***MIDTERM***
