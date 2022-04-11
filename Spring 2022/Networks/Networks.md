@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-11_10:09:36-04:00
+updated: 2022-04-11_10:18:12-04:00
 ---
 # Networks
 
@@ -598,3 +598,5 @@ OR we can used a centralized controller to send them routes
 * Routers can be 'dumb': Link is broken? just push updated forwarding tables to adjust, routers don't need to 'react'
 * Table-based forwarding allows 'programming' routers
 * Open, non-proprietary implementation allows quick innovation
+* Traffic engineering is difficult with traditional routing
+* 
