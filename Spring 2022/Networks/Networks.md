@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-11_10:18:12-04:00
+updated: 2022-04-11_10:36:57-04:00
 ---
 # Networks
 
@@ -599,4 +599,11 @@ OR we can used a centralized controller to send them routes
 * Table-based forwarding allows 'programming' routers
 * Open, non-proprietary implementation allows quick innovation
 * Traffic engineering is difficult with traditional routing
-* 
+
+## OpenFlow Controller
+* Key controller to switch messages
+	* features?
+	* configure
+	* modify state
+	* packet out (send a packet out of a specific port)
+* Example
