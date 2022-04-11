@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-11_10:04:30-04:00
+updated: 2022-04-11_10:09:36-04:00
 ---
 # Networks
 
@@ -579,8 +579,19 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 		* Keep multiple routes, choose the one that has the least intra domain cost
 
 ## For Exam:
-* link state
-* distance vector
-* ip matching
-* Fragmentation
-* C
+congestion control
+fragmentation
+longest prefix match
+link state
+distance vector
+
+
+# Software Defined Networking (SDN)
+* Congestion is solved by routing
+* Around 2005, there was a renewed interest in rethinking the network control plane
+We can use per router Control Plane...
+* Routing done individually on each node
+OR we can used a centralized controller to send them routes
+
+## Why a logically centralized control plane?
+* Easier network management: avoid router misconfigurations, greater flexibility of traffic flows
