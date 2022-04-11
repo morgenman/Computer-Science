@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-11_18:09:05-04:00
+updated: 2022-04-11_19:26:21-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -595,7 +595,7 @@ Three types we will cover:
 * **Pre order**: left side (root left right starting at root)
 * **In order**: bottom  (left to right on a tree ignoring level)
 * **Post order**: right side (left right root starting at leftmost leaf)
-
+![[Pasted image 20220411192548.png]]
 Trace a path around the tree. As you pass a node on the proper side, process it
 
 ```java
