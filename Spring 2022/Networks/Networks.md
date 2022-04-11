@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-08_10:40:18-04:00
+updated: 2022-04-11_10:04:30-04:00
 ---
 # Networks
 
@@ -577,4 +577,10 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 	* Routers talk to each other over TCP
 	* Hot potato
 		* Keep multiple routes, choose the one that has the least intra domain cost
-* 
+
+## For Exam:
+* link state
+* distance vector
+* ip matching
+* Fragmentation
+* C
