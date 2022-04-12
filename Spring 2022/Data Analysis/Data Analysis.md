@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_12:30:57-04:00
+updated: 2022-04-12_12:37:04-04:00
 ---
 
 # Data Analysis & Visualization
@@ -386,4 +386,14 @@ A$^c$ is independent of B$^c$
 # Expected Values
 * Looking at the characteristics of expected values
 	* How much of entire population does this sample represent?
-	* 
+
+*The Process of making conclusions about a general population from sample data (from the general population)*
+
+Making conclusions: characteristics of the distribution
+
+Mean is characterized as the center
+Variance and SD are characterization of how spread out the distribution is
+
+
+
+
