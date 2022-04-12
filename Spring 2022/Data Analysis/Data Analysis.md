@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_13:30:58-04:00
+updated: 2022-04-12_13:38:24-04:00
 ---
 
 # Data Analysis & Visualization
@@ -455,3 +455,26 @@ E\[x] = 2 * 0.1 + 3 * 0.2 + 4 * 0.3 + 5 * 0.4
 
 Variance = E\[x^2]- E(x)$^2$ = 1
 
+
+Variance of d6
+E(x) =3.5
+
+| x^2 | x   | P   |
+| --- | --- | --- |
+| 1   | 1   | 1/6 |
+| 4   | 2   | 1/6 |
+| 9   | 3   | 1/6 |
+| 16  | 4   | 1/6 |
+| 25  | 5   | 1/6 |
+| 36  | 6   | 1/6 |
+E(x^2)= 1 * 1/6 + 4 * 1/6 ...36 * 1/6 
+E(x^2)-E(x)^2
+
+
+should equal something like 2.92
+
+
+Unbiased coin:
+E(x) = P
+E(x^2)=P
+Variance should b
