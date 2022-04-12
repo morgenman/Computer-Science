@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_09:55:07-04:00
+updated: 2022-04-12_10:04:44-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -769,7 +769,12 @@ Cutoff for midterm
 * Measures of cost: comparisons & swaps
 * n$^2$ algorithms:
 	* insertion
+		* Best case is 0 swaps, n-1 comparisons
+		* Useful if we have an almost sorted list
+		* Worst: n^2/2 swaps and comparisons
+		* Avg: n^2/4
 	* bubble
+		* 
 	* selection
 * nlogn algorithms
 * 
