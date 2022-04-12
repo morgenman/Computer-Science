@@ -420,7 +420,7 @@ E(x)= 0 * 0.5 + 1 * 0.4 = 0.5
 | 1   | 1-P
 E(x) = 0 * P + 1 * (1-P) = P
 
-
-
+## Expected value
+Exactly the center of mass for the density function
 
 
