@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_10:15:39-04:00
+updated: 2022-04-12_10:21:55-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -779,8 +779,8 @@ Cutoff for midterm
 		* Worst: n^2 swaps & comparisons
 		* Average: n^2/4 swaps and n^2/2 comparisons
 	* selection
-		* Best:
-		* Worst:
-		* Average:
+		* Best: 0 swaps, n^2/2 comparisons
+		* Worst: n-1 swaps  n^2/2 comparisons
+		* Average: n swaps n^2/2 comparisons
 * nlogn algorithms
 * 
