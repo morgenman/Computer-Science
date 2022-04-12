@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-07_13:42:54-04:00
+updated: 2022-04-12_12:30:57-04:00
 ---
 
 # Data Analysis & Visualization
@@ -381,3 +381,9 @@ if A is independent of B the probability that the test is true
 A$^c$ is independent of B
 A is independent of B$^c$
 A$^c$ is independent of B$^c$
+
+
+# Expected Values
+* Looking at the characteristics of expected values
+	* How much of entire population does this sample represent?
+	* 
