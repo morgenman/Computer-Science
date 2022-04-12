@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_09:44:19-04:00
+updated: 2022-04-12_09:55:07-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -767,4 +767,9 @@ Cutoff for midterm
 # Sorting
 * Let's use dictionary structure, with each record containing a *key*
 * Measures of cost: comparisons & swaps
+* n$^2$ algorithms:
+	* insertion
+	* bubble
+	* selection
+* nlogn algorithms
 * 
