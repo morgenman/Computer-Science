@@ -440,4 +440,15 @@ Mass: discrete
 
 ## Variance
 * How spread out or clustered data points are
-* 
+* X is a random variable with mean $\mu$ 
+	* variance of x = E\[(x-$\mu$)$^2$\]= E\[$x^2$]-E\[x]$^2$
+
+| x^2 | x   | P   |
+| --- | --- | --- |
+| 4   | 2   | 0.1 |
+| 9   | 3   | 0.2 |
+| 16  | 4   | 0.3 |
+| 25  | 5   | 0.4 |
+
+E\[x^2] = 4 * 0.1 + 9 * 0.2 + 16 * 0.3 + 25 * 0.4
+E\[]
