@@ -433,4 +433,7 @@ Exactly the center of mass for the density function
 3. The sample mean is the center of mass of the sample/observed data
 4. The sample mean is an estimate of the population mean
 5. The Sample mean is unbiased
-6. 
+6. The more data that goes into the sample mean, the more concentrated its density/mass function
+
+Density: continuous
+Mass: discrete
