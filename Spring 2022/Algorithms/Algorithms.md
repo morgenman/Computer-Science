@@ -774,7 +774,7 @@ Cutoff for midterm
 		* Worst: n^2/2 swaps and comparisons
 		* Avg: n^2/4
 	* bubble
-		* 
+		* bubble smallest remaining unsorted value
 	* selection
 * nlogn algorithms
 * 
