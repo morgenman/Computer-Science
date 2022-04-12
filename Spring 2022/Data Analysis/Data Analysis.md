@@ -477,4 +477,6 @@ should equal something like 2.92
 Unbiased coin:
 E(x) = P
 E(x^2)=P
-Variance should b
+Variance should be P-P^2
+
+P(1-P)
