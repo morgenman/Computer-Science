@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-11_19:26:21-04:00
+updated: 2022-04-12_09:34:31-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -762,7 +762,8 @@ Unbalanced is a problem
 * sift down
 * $\mathbb{\Theta}(log(n))$
 
-
+---
+Cutoff for midterm
 # Sorting
 * Let's use dictionary structure, with each record containing a *key*
 *  
