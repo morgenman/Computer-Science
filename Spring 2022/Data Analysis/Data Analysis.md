@@ -394,6 +394,25 @@ Making conclusions: characteristics of the distribution
 Mean is characterized as the center
 Variance and SD are characterization of how spread out the distribution is
 
+## Population Mean
+* x -> random variable
+* PMF (probability mean function) -> P(x)
+* E[x] = SUM xP(x)
+
+So for a fair coin:
+
+| x   | P(x) |
+| --- | ---- |
+| 0   | 0.5  |
+| 1   | 0.5  |
+E(x)= 0 * 0.5 + 1 * 0.4 = 0.5
+
+## Sample Mean
+* $\bar{x}$ = $\sum\limits_{x=1}^{n}x_{i}P(x_{i})$
+* if we have n points that are equally likely:
+* $P(x_{i})$ = 
+
+
 
 
 
