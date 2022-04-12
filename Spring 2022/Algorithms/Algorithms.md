@@ -766,4 +766,5 @@ Unbalanced is a problem
 Cutoff for midterm
 # Sorting
 * Let's use dictionary structure, with each record containing a *key*
-*  
+*  Measures of cost: comparisons & swaps
+* 
