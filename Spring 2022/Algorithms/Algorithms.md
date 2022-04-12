@@ -786,3 +786,6 @@ Cutoff for midterm
 		* Average: n swaps n^2/2 comparisons
 * nlogn algorithms
 	* Merge Sort
+		* Best: 
+		* Worst: 
+		* Average: 
