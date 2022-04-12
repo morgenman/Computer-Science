@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_12:59:48-04:00
+updated: 2022-04-12_13:11:45-04:00
 ---
 
 # Data Analysis & Visualization
@@ -424,5 +424,13 @@ E(x) = 0 * P + 1 * (1-P) = P
 Exactly the center of mass for the density function
 
 
+![[Pasted image 20220412131110.png]]
 
 
+
+1. Expected values are properties of distributions
+2. The population mean is the center of mass of population
+3. The sample mean is the center of mass of the sample/observed data
+4. The sample mean is an estimate of the population mean
+5. The Sample mean is unbiased
+6. 
