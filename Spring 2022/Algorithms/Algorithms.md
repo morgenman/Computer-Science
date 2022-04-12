@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_10:29:41-04:00
+updated: 2022-04-12_10:38:34-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -786,6 +786,7 @@ Cutoff for midterm
 		* Average: n swaps n^2/2 comparisons
 * nlogn algorithms
 	* Merge Sort
+		* twice the space
 		* Best: 
 		* Worst: 
-		* Average: 
+		* Average: n log n
