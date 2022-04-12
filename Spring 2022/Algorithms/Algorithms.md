@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_10:21:55-04:00
+updated: 2022-04-12_10:29:41-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -768,6 +768,8 @@ Cutoff for midterm
 * Let's use dictionary structure, with each record containing a *key*
 * Measures of cost: comparisons & swaps
 * n$^2$ algorithms:
+	* Why do we have n^2 for swap? n(n-1)/2 unique pairs. 
+		* any sort that limits to comparing adjacent elements will cost at least n(n-1)/4 on average or O(n^2)
 	* insertion
 		* Best case is 0 swaps, n-1 comparisons
 		* Useful if we have an almost sorted list
@@ -783,4 +785,4 @@ Cutoff for midterm
 		* Worst: n-1 swaps  n^2/2 comparisons
 		* Average: n swaps n^2/2 comparisons
 * nlogn algorithms
-* 
+	* Merge Sort
