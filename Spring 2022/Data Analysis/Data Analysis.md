@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_13:11:45-04:00
+updated: 2022-04-12_13:21:38-04:00
 ---
 
 # Data Analysis & Visualization
@@ -437,3 +437,7 @@ Exactly the center of mass for the density function
 
 Density: continuous
 Mass: discrete
+
+## Variance
+* How spread out or clustered data points are
+* 
