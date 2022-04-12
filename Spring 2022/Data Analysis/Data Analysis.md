@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_12:37:04-04:00
+updated: 2022-04-12_12:45:12-04:00
 ---
 
 # Data Analysis & Visualization
@@ -410,8 +410,15 @@ E(x)= 0 * 0.5 + 1 * 0.4 = 0.5
 ## Sample Mean
 * $\bar{x}$ = $\sum\limits_{x=1}^{n}x_{i}P(x_{i})$
 * if we have n points that are equally likely:
-* $P(x_{i})$ = 
+	* $P(x_{i})$ = $\frac{1}{n}$
+	* eg: a die
 
+## Biased
+| x   | P(x) |
+| --- | ---- |
+| 0   | P    |
+| 1   | 1-P
+E(x) = 0 * P + 1 * (1-P) = P
 
 
 
