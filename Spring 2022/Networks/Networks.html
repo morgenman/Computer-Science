@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-13_10:35:47-04:00</p>
+<p>updated: 2022-04-13_10:41:46-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -1160,8 +1160,18 @@ Implemented in Network Interface Card (NIC)</p>
 <li>R = $D\cdot 2^{r}$  XOR $R$ (xor is interchangeable with %)</li>
 </ul>
 <p>Example:</p>
-<pre><code>[   G   ][]  
- 1 0 0 1 1 0 1  
+<pre><code>[   G    ][     D      ]  
+ 1 0 0 1 || 1 0 1 1 1 0  
+</code></pre>
+<p>G = 1001 (4 bits)<br />
+r+1 bits<br />
+r = 3 bits<br />
+$2^{r}$ = $2^{3}$=1000<br />
+D * $2^{r}$ :</p>
+<pre><code>101110 x  
+  1000  
+________  
+  
 </code></pre>
 <h2 id="error-correction"><a class="header" href="#error-correction">Error Correction</a></h2>
 <ul>
