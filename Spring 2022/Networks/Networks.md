@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:24:25-04:00
+updated: 2022-04-13_10:30:14-04:00
 ---
 # Networks
 
@@ -630,8 +630,13 @@ Implemented in Network Interface Card (NIC)
 ## Error Detection
 * Errors caused by signal attenation, noise
 * Detection of errors is a key component to reliable delivery
-* 
-
+* Single bit parity: set bit so even number of 1's
+* 2d parity: row & column parity
+![[Pasted image 20220413103057.png]]
+### Cyclic Redundancy Check (CRC)
+* More powerful error detection
+* D: data bits
+* G: bit pattern (generator) of r+1 bits (give)
 ## Error Correction
 * Correction of bit errors without retransmission
 
