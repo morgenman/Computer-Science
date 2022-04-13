@@ -618,3 +618,7 @@ OR we can used a centralized controller to send them routes
 * Network layer 'above' IP
 	* carried in IP datagrams
 * 8 bits: type, code, plus first 8 bytes of IP datagram causing error
+
+# Link Layer
+## Error Detection
+* 
