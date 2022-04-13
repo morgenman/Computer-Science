@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:41:46-04:00
+updated: 2022-04-13_10:47:32-04:00
 ---
 # Networks
 
@@ -639,6 +639,7 @@ Implemented in Network Interface Card (NIC)
 * G: bit pattern (generator) of r+1 bits (given)
 * r: number of bits
 * R: the pattern of bits
+* n: a value that we don't care about, except when checking our work
 * R = $D\cdot 2^{r}$  XOR $R$ (xor is interchangeable with %)
 
 Example: 
@@ -657,6 +658,7 @@ D * $2^{r}$ :
 ________
 
 ```
+![[Pasted image 20220413104430.png]]
 ## Error Correction
 * Correction of bit errors without retransmission
 
