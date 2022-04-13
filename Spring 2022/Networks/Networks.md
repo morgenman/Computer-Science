@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:30:14-04:00
+updated: 2022-04-13_10:35:47-04:00
 ---
 # Networks
 
@@ -636,7 +636,16 @@ Implemented in Network Interface Card (NIC)
 ### Cyclic Redundancy Check (CRC)
 * More powerful error detection
 * D: data bits
-* G: bit pattern (generator) of r+1 bits (give)
+* G: bit pattern (generator) of r+1 bits (given)
+* r: number of bits
+* R: the pattern of bits
+* R = $D\cdot 2^{r}$  XOR $R$ (xor is interchangeable with %)
+
+Example: 
+```
+[   G   ][]
+ 1 0 0 1 1 0 1
+```
 ## Error Correction
 * Correction of bit errors without retransmission
 
