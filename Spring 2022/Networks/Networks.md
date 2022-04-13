@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:02:52-04:00
+updated: 2022-04-13_10:08:17-04:00
 ---
 # Networks
 
@@ -617,4 +617,4 @@ OR we can used a centralized controller to send them routes
 	* echo request/reply (used by ping)
 * Network layer 'above' IP
 	* carried in IP datagrams
-* 
+* 8 bits: type, code, plus first 8 bytes of IP datagram causing error
