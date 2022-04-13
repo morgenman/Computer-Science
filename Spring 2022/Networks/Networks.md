@@ -621,6 +621,16 @@ OR we can used a centralized controller to send them routes
 
 # Link Layer
 No single Link Layer protocol
+## Flow Control
+* Pacing between adjacent sending and receiving nodes
 
 ## Error Detection
 * Errors caused by signal attenation, noise
+* Detection of errors is a key component to reliable delivery
+
+## Error Correction
+* Correction of bit errors without retransmission
+
+## Half/Full Duplex
+* Half: one direction, then another
+* Full: both at the same time
