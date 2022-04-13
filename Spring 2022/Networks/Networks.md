@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-11_10:42:22-04:00
+updated: 2022-04-13_10:02:52-04:00
 ---
 # Networks
 
@@ -610,3 +610,11 @@ OR we can used a centralized controller to send them routes
 	* northbound: application(network applications)plane <-> control plane
 	* southbound: control plane <-> data plane
 ![[Pasted image 20220411104105.png]]
+
+# ICMP (internet control message protocol)
+* used by hosts and routers to communicate network-level information
+	* error reporting: unreachable host, network, port, protocol
+	* echo request/reply (used by ping)
+* Network layer 'above' IP
+	* carried in IP datagrams
+* 
