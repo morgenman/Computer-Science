@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:47:32-04:00
+updated: 2022-04-13_13:10:57-04:00
 ---
 # Networks
 
@@ -659,6 +659,7 @@ ________
 
 ```
 ![[Pasted image 20220413104430.png]]
+![[Pasted image 20220413104930.png]]
 ## Error Correction
 * Correction of bit errors without retransmission
 
