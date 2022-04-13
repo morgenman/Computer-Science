@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:35:47-04:00
+updated: 2022-04-13_10:41:46-04:00
 ---
 # Networks
 
@@ -643,8 +643,19 @@ Implemented in Network Interface Card (NIC)
 
 Example: 
 ```
-[   G   ][]
- 1 0 0 1 1 0 1
+[   G    ][     D      ]
+ 1 0 0 1 || 1 0 1 1 1 0
+```
+G = 1001 (4 bits)
+r+1 bits
+r = 3 bits
+$2^{r}$ = $2^{3}$=1000
+D * $2^{r}$ :
+```
+101110 x
+  1000
+________
+
 ```
 ## Error Correction
 * Correction of bit errors without retransmission
