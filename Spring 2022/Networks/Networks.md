@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:18:25-04:00
+updated: 2022-04-13_10:24:25-04:00
 ---
 # Networks
 
@@ -621,12 +621,16 @@ OR we can used a centralized controller to send them routes
 
 # Link Layer
 No single Link Layer protocol
+Implemented in Network Interface Card (NIC)
+
+![[Pasted image 20220413102628.png]]
 ## Flow Control
 * Pacing between adjacent sending and receiving nodes
 
 ## Error Detection
 * Errors caused by signal attenation, noise
 * Detection of errors is a key component to reliable delivery
+* 
 
 ## Error Correction
 * Correction of bit errors without retransmission
