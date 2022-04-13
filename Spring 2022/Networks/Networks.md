@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_10:08:17-04:00
+updated: 2022-04-13_10:18:25-04:00
 ---
 # Networks
 
@@ -620,5 +620,7 @@ OR we can used a centralized controller to send them routes
 * 8 bits: type, code, plus first 8 bytes of IP datagram causing error
 
 # Link Layer
+No single Link Layer protocol
+
 ## Error Detection
-* 
+* Errors caused by signal attenation, noise
