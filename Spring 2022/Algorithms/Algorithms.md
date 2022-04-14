@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_10:31:02-04:00
+updated: 2022-04-14_10:36:55-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -837,3 +837,11 @@ Cutoff for midterm
 * Sorting is O(n log n) (average, worst cases) because we know of algorithms with this upper bound
 * Sorting I/O takes $\Omega$(n) time (it takes at least this long to just print values)
 * We will now prove $\Omega$(n log n) lower bound for sorting
+
+Lower Bound for any problem that solves our problem is $\Theta$(n log n)
+
+P = sorting
+Upper bound: P is in O (n log n)
+Lower bound: P is in $\Omega$(n)
+
+Should we keep looking? Or can we prove that there is no faster algorithm
