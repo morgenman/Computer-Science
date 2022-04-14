@@ -828,3 +828,12 @@ Cutoff for midterm
 				* Time to find K largest elements: $\Theta$(n+klogn)
 ## Lower Bound for Sorting
 * Goal: understanding and being able to prove the lower bound for all sorting algorithms
+* Cost of the sorting problem:
+	* Upper Bound for the problem
+		* the asymptotic cost of the fastest known algorithm
+	* Lower Bound for the problem
+		* The best possible efficiency for *any* algorithm, including algorithms not yet invented
+	* Once they meet, we know that no future algorithm can be asymptotically more efficient
+* Sorting is O(n log n) (average, worst cases) because we know of algorithms with this upper bound
+* Sorting I/O takes $\Omega$(n) time (it takes at least this long to just print values)
+* We will now prove $\Omega$(n log n) lower bound for sorting
