@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_13:16:58-04:00
+updated: 2022-04-14_13:22:33-04:00
 ---
 
 # Data Analysis & Visualization
@@ -530,3 +530,16 @@ means of random samples of n = s/sqrt n = 1/2sqrt(n)
 
 
 variance is squared, so if we are looking for a range it would be the mean +- the STD
+
+
+# Distributions
+## Bernoulli Distribution
+Binary Outcomes
+
+Bernoulli random variables takes the values 1 and 0
+with probability p and 1-p
+
+Probability Mean Function (PMF) for a Bernoulli Random Variable:
+
+$P(X=x)=p^x(1-p)^{1-x}$
+
