@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_09:59:43-04:00
+updated: 2022-04-14_10:08:17-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -812,4 +812,8 @@ Cutoff for midterm
 			* Recursively call partition on each partition
 		* Time Complexity:
 			* Best performance when we have well balanced partitions
-			* 
+			* Best case: Always partition in half $\Theta$(nlogn)
+			* Worst case: Always get a partition of 0 on one side $\Theta$(n^2)
+			* Average case: big formula
+				* basically $\Theta$(nlogn)
+![[Pasted image 20220414100644.png]]
