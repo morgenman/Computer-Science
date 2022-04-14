@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_13:38:24-04:00
+updated: 2022-04-14_12:28:53-04:00
 ---
 
 # Data Analysis & Visualization
@@ -480,3 +480,5 @@ E(x^2)=P
 Variance should be P-P^2
 
 P(1-P)
+
+
