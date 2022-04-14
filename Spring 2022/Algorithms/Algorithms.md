@@ -790,7 +790,7 @@ Cutoff for midterm
 		* Cost: $\Theta$(n log n)
 		* At each level, $\Theta$(n) work is done to merge
 		* Good for sorting LL
-	* Quick Sort (F/L)
+	* Quick Sort (F/L or R/L)
 		* How do you choose the pivot?
 		* The cost for partition is $\Theta$(n)
 		* Procedure:
@@ -810,3 +810,4 @@ Cutoff for midterm
 			* Once they cross/meet/reach the end, stop scanning
 				* If l found a value, swap l value with pivot
 			* Recursively call partition on each partition
+			* 
