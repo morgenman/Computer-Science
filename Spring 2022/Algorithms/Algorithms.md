@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_10:24:04-04:00
+updated: 2022-04-14_10:31:02-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -826,3 +826,5 @@ Cutoff for midterm
 				* Time to build: $\Theta$(n)
 				* Time to remove n elements: $\Theta$(nlogn)
 				* Time to find K largest elements: $\Theta$(n+klogn)
+## Lower Bound for Sorting
+* Goal: understanding and being able to prove the lower bound for all sorting algorithms
