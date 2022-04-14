@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_12:41:11-04:00
+updated: 2022-04-14_12:56:08-04:00
 ---
 
 # Data Analysis & Visualization
@@ -501,5 +501,9 @@ $s^2$ = $\sum_{i=1}(x_i-\bar{x})^2/n-1$
 	* that is what the sample variance is trying to estimate
 * As you collect more and more data, the sample variance gets more concentrated around the population variance
 
+## STD (sqrt variance)
 
+* Sample variance s^2 estimates the population variance $\sigma^2$ 
+* Distribution of sample variance is centered around $\sigma^2$ 
+* 
 
