@@ -11464,7 +11464,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-14_13:22:33-04:00</p>
+<p>updated: 2022-04-14_13:35:56-04:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -11980,12 +11980,18 @@ where X is the binomial random variable</p>
 <p>Suppose a friend gets 7H from 8 flips of a fair coin...<br />
 If each outcome has an independent 50% prob.<br />
 what is the prob. of getting 7H or more in 8 flips?</p>
-<p>$(^{8}<em>{7})\cdot (0.5)^{7}(1-0.5)^{1}+(^{8}</em>{8})\cdot (0.5)^{8}(1-0.5)^{0}\aprox 0.04$</p>
+<p>$(^{8}<em>{7})\cdot (0.5)^{7}(1-0.5)^{1}+(^{8}</em>{8})\cdot (0.5)^{8}(1-0.5)^{0}\approx 0.04$</p>
 <p>R code:</p>
 <pre><code class="language-r">choose(8,7)* 0.5^n + choose(8,8)*0.5^8  
 # or  
 pbinom(6, size=8, prob=0.5, lower_tail=false)  
 </code></pre>
+<h2 id="normal-distribution-gaussian"><a class="header" href="#normal-distribution-gaussian">Normal Distribution (Gaussian)</a></h2>
+<p>A random variable is said to follow normal or Gaussian distribution with mean $\mu$ and variance $\sigma^2$ is associated density function</p>
+<p>bell curve = $(2\Pi\sigma^{2})^{-1/2}e^{-(x-\mu)^{2}/2\sigma^{2}}$</p>
+<p>if x is a RV with this density, then E[x] = $\mu$<br />
+var(x) = $\sigma^{2}$</p>
+<p>$X~N(\mu,\sigma^{2})$</p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
