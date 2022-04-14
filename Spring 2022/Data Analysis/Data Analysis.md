@@ -557,4 +557,15 @@ the binomial mass $P(X=x)=(^{n}_{x})p^{x}(1-p)^{n-x}$
 
 > $(^{n}_{x})=\frac{n!}{x!(n-x)!}$ 
 
-S
+Suppose a friend gets 7H from 8 flips of a fair coin...
+If each outcome has an independent 50% prob. 
+what is the prob. of getting 7H or more in 8 flips?
+
+$(^{8}_{7})\cdot (0.5)^{7}(1-0.5)^{1}+(^{8}_{8})\cdot (0.5)^{8}(1-0.5)^{0}\aprox 0.04$
+
+R code:
+```r
+choose(8,7)* 0.5^n + choose(8,8)*0.5^8
+# or
+pbinom(6, size=8, prob=0.5, lower_tail=false)
+```
