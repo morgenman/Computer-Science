@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_12:56:08-04:00
+updated: 2022-04-14_13:01:29-04:00
 ---
 
 # Data Analysis & Visualization
@@ -505,5 +505,15 @@ $s^2$ = $\sum_{i=1}(x_i-\bar{x})^2/n-1$
 
 * Sample variance s^2 estimates the population variance $\sigma^2$ 
 * Distribution of sample variance is centered around $\sigma^2$ 
-* 
+* The variance of sample mean s^2/n
+* standard error is s/sqrt(n)
+* s is STD
+
+
+> But what is the standard error?
+> It talks about how variable averages of random samples of size n are from the population
+
+
+
+If variance is 1, STD = sqrt(1) = 1
 
