@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_13:35:56-04:00
+updated: 2022-04-14_13:42:03-04:00
 ---
 
 # Data Analysis & Visualization
@@ -578,4 +578,5 @@ bell curve = $(2\Pi\sigma^{2})^{-1/2}e^{-(x-\mu)^{2}/2\sigma^{2}}$
 if x is a RV with this density, then E[x] = $\mu$
 var(x) = $\sigma^{2}$
 
-$X~N(\mu,\sigma^{2})$
+$X~N(\mu,\sigma^{2})$  when $\mu$ = 0 and r$^2$ = 1, then x is a standard normal random variable
+
