@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_09:52:38-04:00
+updated: 2022-04-14_09:59:43-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -810,4 +810,6 @@ Cutoff for midterm
 			* Once they cross/meet/reach the end, stop scanning
 				* If l found a value, swap l value with pivot
 			* Recursively call partition on each partition
+		* Time Complexity:
+			* Best performance when we have well balanced partitions
 			* 
