@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_12:28:53-04:00
+updated: 2022-04-14_12:35:00-04:00
 ---
 
 # Data Analysis & Visualization
@@ -482,3 +482,9 @@ Variance should be P-P^2
 P(1-P)
 
 
+### Sample Variance 
+If **Population Mean** is the center of mass of the population, the **Sample Mean** is the center of mass for observed data
+
+The **Population Variance** is the expected squared distance of a random variable. 
+
+The **Sample Variance**
