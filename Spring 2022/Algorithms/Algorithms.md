@@ -816,4 +816,7 @@ Cutoff for midterm
 			* Worst case: Always get a partition of 0 on one side $\Theta$(n^2)
 			* Average case: big formula
 				* basically $\Theta$(nlogn)
-![[Pasted image 20220414100644.png]]
+				* Better performance by a linear factor compared to merge sort
+				* ![[Pasted image 20220414100644.png]]
+	* Heap sort 
+		* heap 
