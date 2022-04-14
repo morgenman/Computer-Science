@@ -499,6 +499,7 @@ $s^2$ = $\sum_{i=1}(x_i-\bar{x})^2/n-1$
 	* that distribution has an expected value
 	* that expected value is the population variance
 	* that is what the sample variance is trying to estimate
+* As you collect more and more data, the sample variance gets more concentrated around the population variance
 
 
 
