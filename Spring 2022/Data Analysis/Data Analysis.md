@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_13:01:29-04:00
+updated: 2022-04-14_13:09:50-04:00
 ---
 
 # Data Analysis & Visualization
@@ -517,3 +517,13 @@ $s^2$ = $\sum_{i=1}(x_i-\bar{x})^2/n-1$
 
 If variance is 1, STD = sqrt(1) = 1
 
+
+## Poisson
+* s^2 = variance = 4
+* means of random samples of n
+* s/sqrt(n) = 2/sqrt(n)
+
+
+Variance of faircoin:
+s^2 = 0.25
+means of random samples of n = s/sqrt n = 1/2swrt(n)
