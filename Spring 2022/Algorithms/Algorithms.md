@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-12_10:38:34-04:00
+updated: 2022-04-14_09:35:36-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -786,7 +786,12 @@ Cutoff for midterm
 		* Average: n swaps n^2/2 comparisons
 * nlogn algorithms
 	* Merge Sort
-		* twice the space
-		* Best: 
-		* Worst: 
-		* Average: n log n
+		* Requires twice the space
+		* Cost: $\Theta$(n log n)
+		* At each level, $\Theta$(n) work is done to merge
+		* Good for sorting LL
+	* Quick Sort
+		* How do you choose the pivot?
+		* The cost for partition is $\Theta$(n)
+		* Procedure:
+			* Set Pivot to first element
