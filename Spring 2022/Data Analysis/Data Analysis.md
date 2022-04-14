@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_12:35:00-04:00
+updated: 2022-04-14_12:41:11-04:00
 ---
 
 # Data Analysis & Visualization
@@ -487,4 +487,18 @@ If **Population Mean** is the center of mass of the population, the **Sample Mea
 
 The **Population Variance** is the expected squared distance of a random variable. 
 
-The **Sample Variance**
+$\sigma^2$ is population variance 
+
+The **Sample Variance** is the average squared distance of the observed observations minus the sample mean
+
+$s^2$ = $\sum_{i=1}(x_i-\bar{x})^2/n-1$
+
+* Sample variance is a function of data
+	* it is also a random variable 
+	* it is also a population distribution
+	* that distribution has an expected value
+	* that expected value is the population variance
+	* that is what the sample variance is trying to estimate
+
+
+
