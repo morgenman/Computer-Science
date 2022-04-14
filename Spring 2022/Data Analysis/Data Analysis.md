@@ -543,3 +543,18 @@ Probability Mean Function (PMF) for a Bernoulli Random Variable:
 
 $P(X=x)=p^x(1-p)^{1-x}$
 
+*mean*: P
+*variance*: P(1-p)
+
+### Binomial Trials
+The binomial random variables are obtained as the sum of iid (independent and identically distributed) Bernoulli trials
+let $x_{1}...x_{n}$  be iid Bernoulli
+
+then $X=\sum\limits_{i=1}^{n}x_{i}$
+where X is the binomial random variable
+
+the binomial mass $P(X=x)=(^{n}_{x})p^{x}(1-p)^{n-x}$
+
+> $(^{n}_{x})=\frac{n!}{x!(n-x)!}$ 
+
+S
