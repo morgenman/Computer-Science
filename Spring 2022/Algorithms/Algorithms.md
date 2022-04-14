@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_10:17:22-04:00
+updated: 2022-04-14_10:24:04-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -822,3 +822,7 @@ Cutoff for midterm
 			* Recursively call remove max
 			* Almost always implemented with array
 			* Make heap, sift down, sift up etc etc
+			* Cost:
+				* Time to build: $\Theta$(n)
+				* Time to remove n elements: $\Theta$(nlogn)
+				* Time to find K largest elements: $\Theta$(n+klogn)
