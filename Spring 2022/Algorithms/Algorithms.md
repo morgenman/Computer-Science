@@ -794,4 +794,15 @@ Cutoff for midterm
 		* How do you choose the pivot?
 		* The cost for partition is $\Theta$(n)
 		* Procedure:
-			* Set Pivot to first element
+			* Set Pivot to first element 
+			* F: we want to set this to values that are greater than pivot 
+				* initially set to first element after pivot
+			* l: looking for values less than the pivot
+				* initially set to last element
+			* F scan left to right
+			* L scan right to left
+			* scan until:
+				* they both find their values
+				* they cross
+				* they run out of things to scan
+			* If they found va
