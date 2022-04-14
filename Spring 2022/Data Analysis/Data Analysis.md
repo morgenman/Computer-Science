@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_13:09:50-04:00
+updated: 2022-04-14_13:16:58-04:00
 ---
 
 # Data Analysis & Visualization
@@ -526,4 +526,7 @@ If variance is 1, STD = sqrt(1) = 1
 
 Variance of faircoin:
 s^2 = 0.25
-means of random samples of n = s/sqrt n = 1/2swrt(n)
+means of random samples of n = s/sqrt n = 1/2sqrt(n)
+
+
+variance is squared, so if we are looking for a range it would be the mean +- the STD
