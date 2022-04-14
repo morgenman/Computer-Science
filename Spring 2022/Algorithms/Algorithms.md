@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_10:08:17-04:00
+updated: 2022-04-14_10:17:22-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -818,5 +818,7 @@ Cutoff for midterm
 				* basically $\Theta$(nlogn)
 				* Better performance by a linear factor compared to merge sort
 				* ![[Pasted image 20220414100644.png]]
-	* Heap sort 
-		* heap 
+		* Heap sort 
+			* Recursively call remove max
+			* Almost always implemented with array
+			* Make heap, sift down, sift up etc etc
