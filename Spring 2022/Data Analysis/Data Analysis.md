@@ -580,3 +580,4 @@ var(x) = $\sigma^{2}$
 
 $X~N(\mu,\sigma^{2})$  when $\mu$ = 0 and r$^2$ = 1, then x is a standard normal random variable
 
+![[Pasted image 20220414134354.png]]
