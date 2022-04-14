@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_09:35:36-04:00
+updated: 2022-04-14_09:44:20-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -805,4 +805,7 @@ Cutoff for midterm
 				* they both find their values
 				* they cross
 				* they run out of things to scan
-			* If they found va
+			* If they both found values, swap
+			* Do it again
+			* Once they cross/meet/reach the end, stop scanning
+				* swap l value with pivot
