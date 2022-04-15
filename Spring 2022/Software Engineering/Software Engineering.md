@@ -245,4 +245,7 @@ UNTIL (product complete)
 * Analysis
 	* FCC regulation: WEA
 		* Carriers can choose to offer customers the ability to block all but Presidents messages (WARN act)
-		* 
+		* County based, not very precise
+		* there is an 'improved one', but it depends on carrier, consumer devices, etc. 
+		* only 34% have new system
+	* 
