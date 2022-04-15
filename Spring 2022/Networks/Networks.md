@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_10:07:18-04:00
+updated: 2022-04-15_10:13:03-04:00
 ---
 # Networks
 
@@ -676,9 +676,29 @@ ________
 	* old fashioned shared wire ethernet
 	* upstream HFC in cable based network
 	* wifi, 4g etc
-## Multiple Access Protocol (MAP)
+## Multiple Access Protocol 
 * Distributed algorithm that determines how nodes share channels (ie determine when node can transmit)
 * Communication about channel sharing must use channel itself!
 	* no out-of-band channel for coordination
 
 An ideal multiple access protocol:
+*given*: multiple access channel (MAC) of rate R bps
+*desiderata*: 
+1. when one node wants to transmit, it can send at rate R. 
+2. when M nodes want to transmit, each can send at average rate R/M
+3. fully decentralized: • no special node to coordinate transmissions • no synchronization of clocks, slots
+4. simple
+
+* Three broad classes:
+	* channel partitioning 
+		* divide channel into smaller “pieces” (time slots, frequency, code)
+		* allocate piece to node for exclusive use
+	* random access 
+		* channel not divided, allow collisions  
+		* “recover” from collisions
+	* “taking turns” 
+		* nodes take turns, but nodes with more to send can take longer turns
+
+* TDMA: Time Division Multiple access
+![[Pasted image 20220415101534.png]]
+![[Pasted image 20220415101546.png]]
