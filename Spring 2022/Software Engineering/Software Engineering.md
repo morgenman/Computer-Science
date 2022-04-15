@@ -1,5 +1,5 @@
 ---
-updated: 2022-03-25_11:42:27-04:00
+updated: 2022-04-15_09:26:23-04:00
 ---
 # Software Engineering
 * Process course
@@ -222,4 +222,13 @@ UNTIL (product complete)
 
 * Ethics Assignment deliverables (three)
 * No Slides
-* 
+
+
+
+# 2018 False Missile Alert in Hawaii
+* Overview of incident
+	* TV, Radio, Cellphones
+	* Warning sirens outside
+	* 38m13 seconds before acknowledgement
+* Context
+	* 
