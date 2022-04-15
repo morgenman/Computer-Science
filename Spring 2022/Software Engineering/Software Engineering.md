@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_09:26:23-04:00
+updated: 2022-04-15_09:31:29-04:00
 ---
 # Software Engineering
 * Process course
@@ -229,6 +229,15 @@ UNTIL (product complete)
 * Overview of incident
 	* TV, Radio, Cellphones
 	* Warning sirens outside
-	* 38m13 seconds before acknowledgement
+	* 13m  before state canceled it
+	* 38m before new alert assuring ppl
 * Context
+	* Rising tensions with NK
+	* Students @ UoH had been prepped for nuclear attack from NK
+	* Dec 2017: first test of nuclear siren in >30 years
+	* Vern Miyagi, the administrator of the Hawaii Emergency Management Agency, explained that state leaders "couldn't ignore these constant threats and missile tests from North Korea" and felt the need to prepare residents for the possibility of an attack. Officials also outlined what would happen if an emergency alert were sent: a push alert to smartphones and a message interrupting television and radio broadcasts.
+* Effects
+	* 100mph car speeding
+	* tourists taken to bunker
+	* evacuation
 	* 
