@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_09:57:23-04:00
+updated: 2022-04-15_10:07:18-04:00
 ---
 # Networks
 
@@ -673,7 +673,12 @@ ________
 	* ethernet connection between host and client
 	* PPP for dialup
 * broadcast
-	* old fashioned ethernet
+	* old fashioned shared wire ethernet
 	* upstream HFC in cable based network
 	* wifi, 4g etc
-* 
+## Multiple Access Protocol (MAP)
+* Distributed algorithm that determines how nodes share channels (ie determine when node can transmit)
+* Communication about channel sharing must use channel itself!
+	* no out-of-band channel for coordination
+
+An ideal multiple access protocol:
