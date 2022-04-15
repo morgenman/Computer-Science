@@ -730,3 +730,4 @@ An ideal multiple access protocol:
 * Propagation delay causes two nodes to not hear each other's started transmission
 	* entire packet transmission time wasted
 ![[Pasted image 20220415103448.png]]
+* Efficiency: 
