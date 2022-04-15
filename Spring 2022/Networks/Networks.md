@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_10:30:09-04:00
+updated: 2022-04-15_10:35:21-04:00
 ---
 # Networks
 
@@ -700,8 +700,11 @@ An ideal multiple access protocol:
 	* random access 
 		* channel not divided, allow collisions  
 		* “recover” from collisions
+		* Aloha slotted/unslotted (37%/18.1%)
+		* CSMA
 	* “taking turns” 
 		* nodes take turns, but nodes with more to send can take longer turns
+		* 
 
 * TDMA: Time Division Multiple access
 ### Aloha
@@ -721,4 +724,9 @@ An ideal multiple access protocol:
 * Don't interrupt
 
 * CSMA/CD (with collision detection)
-	* 
+	* Collisions detected
+	* colliding transmissions aborted, reducing channel wastage
+	* easy w/ wired, hard w/ wireless 
+* Propagation delay causes two nodes to not hear each other's started transmission
+	* entire packet transmission time wasted
+![[Pasted image 20220415103448.png]]
