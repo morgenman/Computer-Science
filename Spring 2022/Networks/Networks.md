@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-13_13:10:57-04:00
+updated: 2022-04-15_09:57:23-04:00
 ---
 # Networks
 
@@ -666,3 +666,4 @@ ________
 ## Half/Full Duplex
 * Half: one direction, then another
 * Full: both at the same time
+
