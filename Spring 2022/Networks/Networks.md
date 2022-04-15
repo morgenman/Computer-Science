@@ -667,3 +667,13 @@ ________
 * Half: one direction, then another
 * Full: both at the same time
 
+
+# Access Protocols
+* point to point
+	* ethernet connection between host and client
+	* PPP for dialup
+* broadcast
+	* old fashioned ethernet
+	* upstream HFC in cable based network
+	* wifi, 4g etc
+* 
