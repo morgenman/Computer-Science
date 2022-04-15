@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_10:25:06-04:00
+updated: 2022-04-15_10:30:09-04:00
 ---
 # Networks
 
@@ -681,6 +681,8 @@ ________
 * Communication about channel sharing must use channel itself!
 	* no out-of-band channel for coordination
 
+
+
 An ideal multiple access protocol:
 *given*: multiple access channel (MAC) of rate R bps
 *desiderata*: 
@@ -693,6 +695,8 @@ An ideal multiple access protocol:
 	* channel partitioning 
 		* divide channel into smaller “pieces” (time slots, frequency, code)
 		* allocate piece to node for exclusive use
+		* this is where TDM and FDM come into play
+			* not practical though, only so many frequencies/time atoms
 	* random access 
 		* channel not divided, allow collisions  
 		* “recover” from collisions
@@ -714,3 +718,7 @@ An ideal multiple access protocol:
 * Simple: listen before transmit
 	* idle? send frame
 	* busy? defer
+* Don't interrupt
+
+* CSMA/CD (with collision detection)
+	* 
