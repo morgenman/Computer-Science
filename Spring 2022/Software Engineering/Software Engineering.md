@@ -248,4 +248,16 @@ UNTIL (product complete)
 		* County based, not very precise
 		* there is an 'improved one', but it depends on carrier, consumer devices, etc. 
 		* only 34% have new system
-	* 
+		* Question: Should the government have a right to send information to personal devices
+			* TV as a public broadcasting medium vs phones as personal devices
+			* different class of information
+		* Question: Is it ethical to leave implementation and enforcement up to carriers? 
+			* theoretically carriers could offer quicker alerts, more precise to subscribers but not MVNOs (3rd party carriers using their network)
+			* They do that with data already, it's a bandwidth issue
+	* Chain of command for alerts
+		* Real world impact.
+		* level of responsibility
+		* Security against accidents vs. timeliness for sending alerts
+			* 13 minutes for state to figure out it was wrong
+			* 38 minutes for state to send follow up message
+			* What i
