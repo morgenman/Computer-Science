@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_11:44:06-04:00
+updated: 2022-04-15_11:59:30-04:00
 ---
 # Software Engineering
 * Process course
@@ -260,4 +260,5 @@ UNTIL (product complete)
 		* Security against accidents vs. timeliness for sending alerts
 			* 13 minutes for state to figure out it was wrong
 			* 38 minutes for state to send follow up message
-			* What i
+			* Those kinds of delays *could* cost lives if it was real
+		* Question: Is it better to have less false positives or is it better to have the message go out immediately
