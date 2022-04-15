@@ -240,4 +240,5 @@ UNTIL (product complete)
 	* 100mph car speeding
 	* tourists taken to bunker
 	* evacuation
-	* 
+	* 911 blocking
+	* One man had heart attack minutes after saying what he thought were his last goodbyes to his children
