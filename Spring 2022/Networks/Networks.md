@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_10:35:21-04:00
+updated: 2022-04-15_10:42:05-04:00
 ---
 # Networks
 
@@ -707,7 +707,8 @@ An ideal multiple access protocol:
 		* 
 
 * TDMA: Time Division Multiple access
-### Aloha
+### Randoms
+#### Aloha
 ![[Pasted image 20220415101534.png]]
 ![[Pasted image 20220415101546.png]]
 ![[Pasted image 20220415101755.png]]
@@ -717,7 +718,7 @@ An ideal multiple access protocol:
 	* ![[Pasted image 20220415102432.png]]
 	* Max efficiency is 1/e = 0.37 (37%)
 	* ![[Pasted image 20220415102534.png]]
-### CSMA
+#### CSMA
 * Simple: listen before transmit
 	* idle? send frame
 	* busy? defer
@@ -731,3 +732,12 @@ An ideal multiple access protocol:
 	* entire packet transmission time wasted
 ![[Pasted image 20220415103448.png]]
 * Efficiency: 
+![[Pasted image 20220415104131.png]]
+
+
+### Take your turn
+#### Polling
+![[Pasted image 20220415104408.png]]
+#### Token passing
+![[Pasted image 20220415104425.png]]
+
