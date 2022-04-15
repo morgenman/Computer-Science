@@ -12031,7 +12031,7 @@ var(x) = $\sigma^{2}$</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-15_10:25:06-04:00</p>
+<p>updated: 2022-04-15_10:30:09-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -13102,6 +13102,11 @@ ________
 <ul>
 <li>divide channel into smaller “pieces” (time slots, frequency, code)</li>
 <li>allocate piece to node for exclusive use</li>
+<li>this is where TDM and FDM come into play
+<ul>
+<li>not practical though, only so many frequencies/time atoms</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>random access
@@ -13144,10 +13149,20 @@ ________
 </ul>
 <h3 id="csma"><a class="header" href="#csma">CSMA</a></h3>
 <ul>
-<li>Simple: listen before transmit
+<li>
+<p>Simple: listen before transmit</p>
 <ul>
 <li>idle? send frame</li>
 <li>busy? defer</li>
+</ul>
+</li>
+<li>
+<p>Don't interrupt</p>
+</li>
+<li>
+<p>CSMA/CD (with collision detection)</p>
+<ul>
+<li></li>
 </ul>
 </li>
 </ul>
