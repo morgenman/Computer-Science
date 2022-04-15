@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_10:13:03-04:00
+updated: 2022-04-15_10:18:47-04:00
 ---
 # Networks
 
@@ -702,3 +702,6 @@ An ideal multiple access protocol:
 * TDMA: Time Division Multiple access
 ![[Pasted image 20220415101534.png]]
 ![[Pasted image 20220415101546.png]]
+![[Pasted image 20220415101755.png]]
+![[Pasted image 20220415101804.png]]
+![[Pasted image 20220415101814.png]]
