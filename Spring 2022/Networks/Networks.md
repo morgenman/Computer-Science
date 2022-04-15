@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_10:18:47-04:00
+updated: 2022-04-15_10:25:06-04:00
 ---
 # Networks
 
@@ -700,8 +700,17 @@ An ideal multiple access protocol:
 		* nodes take turns, but nodes with more to send can take longer turns
 
 * TDMA: Time Division Multiple access
+### Aloha
 ![[Pasted image 20220415101534.png]]
 ![[Pasted image 20220415101546.png]]
 ![[Pasted image 20220415101755.png]]
 ![[Pasted image 20220415101804.png]]
 ![[Pasted image 20220415101814.png]]
+* Efficiency: long-run fraction of successful slots
+	* ![[Pasted image 20220415102432.png]]
+	* Max efficiency is 1/e = 0.37 (37%)
+	* ![[Pasted image 20220415102534.png]]
+### CSMA
+* Simple: listen before transmit
+	* idle? send frame
+	* busy? defer
