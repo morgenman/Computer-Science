@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_09:31:29-04:00
+updated: 2022-04-15_11:44:06-04:00
 ---
 # Software Engineering
 * Process course
@@ -242,3 +242,7 @@ UNTIL (product complete)
 	* evacuation
 	* 911 blocking
 	* One man had heart attack minutes after saying what he thought were his last goodbyes to his children
+* Analysis
+	* FCC regulation: WEA
+		* Carriers can choose to offer customers the ability to block all but Presidents messages (WARN act)
+		* 
