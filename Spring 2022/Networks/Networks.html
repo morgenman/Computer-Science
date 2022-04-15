@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-15_10:30:09-04:00</p>
+<p>updated: 2022-04-15_10:35:21-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -1238,11 +1238,14 @@ ________
 <ul>
 <li>channel not divided, allow collisions</li>
 <li>“recover” from collisions</li>
+<li>Aloha slotted/unslotted (37%/18.1%)</li>
+<li>CSMA</li>
 </ul>
 </li>
 <li>“taking turns”
 <ul>
 <li>nodes take turns, but nodes with more to send can take longer turns</li>
+<li></li>
 </ul>
 </li>
 </ul>
@@ -1287,7 +1290,16 @@ ________
 <li>
 <p>CSMA/CD (with collision detection)</p>
 <ul>
-<li></li>
+<li>Collisions detected</li>
+<li>colliding transmissions aborted, reducing channel wastage</li>
+<li>easy w/ wired, hard w/ wireless</li>
+</ul>
+</li>
+<li>
+<p>Propagation delay causes two nodes to not hear each other's started transmission</p>
+<ul>
+<li>entire packet transmission time wasted<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220415103448.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220415103448.png" alt="Pasted image 20220415103448"/></a></li>
 </ul>
 </li>
 </ul>
