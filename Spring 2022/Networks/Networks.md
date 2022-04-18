@@ -573,7 +573,8 @@ DV: incorrect path cost (I have a low cost path to everywhere black holing)
 	*  BGP
 		* holds the internet together
 		* Border Gateway Protocol (the de facto inter-domain routing protocol)
-		* Advertised route is: 
+		*
+		* ![[Pasted image 20220418043504.png]]
 	* Routers talk to each other over TCP
 	* Hot potato
 		* Keep multiple routes, choose the one that has the least intra domain cost
