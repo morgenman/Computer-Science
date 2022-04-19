@@ -9825,7 +9825,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-19_10:11:44-04:00</p>
+<p>updated: 2022-04-19_10:18:07-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -10845,7 +10845,7 @@ Unbalanced is a problem</p>
 </ul>
 </li>
 </ul>
-<h2 id="lower-bound-for-sorting"><a class="header" href="#lower-bound-for-sorting">Lower Bound for Sorting</a></h2>
+<h2 id="lower-bound-for-comparison-based-sorting"><a class="header" href="#lower-bound-for-comparison-based-sorting">Lower Bound for Comparison Based Sorting</a></h2>
 <ul>
 <li>Goal: understanding and being able to prove the lower bound for all sorting algorithms</li>
 <li>Cost of the sorting problem:
@@ -10863,18 +10863,24 @@ Unbalanced is a problem</p>
 <li>Once they meet, we know that no future algorithm can be asymptotically more efficient</li>
 </ul>
 </li>
-<li>Sorting is O(n log n) (average, worst cases) because we know of algorithms with this upper bound</li>
-<li>Sorting I/O takes $\Omega$(n) time (it takes at least this long to just print values)</li>
-<li>We will now prove $\Omega$(n log n) lower bound for sorting</li>
+<li>Sorting is <strong>O(n log n)</strong> (average, worst cases) because we know of algorithms with this upper bound</li>
+<li>Sorting <strong>I/O takes $\Omega$(n)</strong> time (it takes at least this long to just print values)</li>
+<li>We will now prove <strong>$\Omega$(n log n)</strong> lower bound for sorting</li>
 </ul>
 <p>Lower Bound for any problem that solves our problem is $\Theta$(n log n)</p>
 <p>P = sorting<br />
 Upper bound: P is in O (n log n)<br />
 Lower bound: P is in $\Omega$(n)</p>
 <p>Should we keep looking? Or can we prove that there is no faster algorithm</p>
-<ul>
+<blockquote>
+<p>Proof:<br />
+<strong>$\Omega$(n log n)</strong> lower bound for sorting<br />
+Theorem: No sorting algorithm based on key comparisons can possibly be faster than n log n<br />
+That is, P = sorting $\in$  $\Omega$ (nlogn)</p>
+<ol>
 <li></li>
-</ul>
+</ol>
+</blockquote>
 <hr>  
 <p>For Midterm:</p>
 <ul>
