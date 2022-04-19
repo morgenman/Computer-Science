@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-19_10:18:07-04:00
+updated: 2022-04-19_10:24:51-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -850,7 +850,11 @@ Should we keep looking? Or can we prove that there is no faster algorithm
 >  **$\Omega$(n log n)** lower bound for sorting
 >  Theorem: No sorting algorithm based on key comparisons can possibly be faster than n log n
 >  That is, P = sorting $\in$  $\Omega$ (nlogn)
->  1. 
+>  1. Sorting comparison decisions (for any sort), can be modeled as branches in binary decision tree
+>  2. There must be at least n! leaves in the decision tree (each leaf is a possible permutation of the n values)
+>  3. minimum depth of this tree is n log n
+> ![[Pasted image 20220419102410.png]]
+> 
 
 ---
 For Midterm:
