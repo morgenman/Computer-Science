@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-19_10:11:44-04:00
+updated: 2022-04-19_10:18:07-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -826,7 +826,7 @@ Cutoff for midterm
 				* Time to build: $\Theta$(n)
 				* Time to remove n elements: $\Theta$(nlogn)
 				* Time to find K largest elements: $\Theta$(n+klogn)
-## Lower Bound for Sorting
+## Lower Bound for Comparison Based Sorting
 * Goal: understanding and being able to prove the lower bound for all sorting algorithms
 * Cost of the sorting problem:
 	* Upper Bound for the problem
@@ -834,9 +834,9 @@ Cutoff for midterm
 	* Lower Bound for the problem
 		* The best possible efficiency for *any* algorithm, including algorithms not yet invented
 	* Once they meet, we know that no future algorithm can be asymptotically more efficient
-* Sorting is O(n log n) (average, worst cases) because we know of algorithms with this upper bound
-* Sorting I/O takes $\Omega$(n) time (it takes at least this long to just print values)
-* We will now prove $\Omega$(n log n) lower bound for sorting
+* Sorting is **O(n log n)** (average, worst cases) because we know of algorithms with this upper bound
+* Sorting **I/O takes $\Omega$(n)** time (it takes at least this long to just print values)
+* We will now prove **$\Omega$(n log n)** lower bound for sorting
 
 Lower Bound for any problem that solves our problem is $\Theta$(n log n)
 
@@ -846,7 +846,11 @@ Lower bound: P is in $\Omega$(n)
 
 Should we keep looking? Or can we prove that there is no faster algorithm
 
-* 
+> Proof: 
+>  **$\Omega$(n log n)** lower bound for sorting
+>  Theorem: No sorting algorithm based on key comparisons can possibly be faster than n log n
+>  That is, P = sorting $\in$  $\Omega$ (nlogn)
+>  1. 
 
 ---
 For Midterm:
