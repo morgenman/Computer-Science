@@ -850,7 +850,7 @@ Should we keep looking? Or can we prove that there is no faster algorithm
 ---
 For Midterm:
 
-- Know break even point
+- Know break even point (array/ll)
 - Pick a data structure
 - for sorted adt, at the end of every operation, the list is sorted
 - BST: pointers (like a linked list)
@@ -858,4 +858,8 @@ For Midterm:
 		- spot for data and two pointers in *every* node
 	- They use a lot of storage
 - small data, huge amount of searches = consider a BST
-- What does it mean to have uniformly distribut
+- What does it mean to have uniformly distributed values?
+	* this does not mean inserting into BST will result in balance
+* We need solid explanations for choices and rejections
+* Concerned with finding min/max is the only reason to keep the LL sorted
+* 
