@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-19_10:04:46-04:00
+updated: 2022-04-19_10:11:44-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -846,6 +846,7 @@ Lower bound: P is in $\Omega$(n)
 
 Should we keep looking? Or can we prove that there is no faster algorithm
 
+* 
 
 ---
 For Midterm:
@@ -862,4 +863,4 @@ For Midterm:
 	* this does not mean inserting into BST will result in balance
 * We need solid explanations for choices and rejections
 * Concerned with finding min/max is the only reason to keep the LL sorted
-* 
+--- 
