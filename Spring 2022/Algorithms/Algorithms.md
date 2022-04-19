@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-19_09:52:33-04:00
+updated: 2022-04-19_09:57:52-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -852,4 +852,9 @@ For Midterm:
 
 - Know break even point
 - Pick a data structure
+- for sorted adt, at the end of every operation, the list is sorted
+- BST: pointers (like a linked list)
+	- assume base design:
+		- spot for data and two pointers in *every* node
+- small data, huge amount of searches = consider a BST
 - 
