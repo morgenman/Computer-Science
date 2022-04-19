@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-19_09:57:52-04:00
+updated: 2022-04-19_10:04:46-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -856,5 +856,6 @@ For Midterm:
 - BST: pointers (like a linked list)
 	- assume base design:
 		- spot for data and two pointers in *every* node
+	- They use a lot of storage
 - small data, huge amount of searches = consider a BST
-- 
+- What does it mean to have uniformly distribut
