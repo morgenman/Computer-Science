@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-19_09:47:20-04:00
+updated: 2022-04-19_09:52:33-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -847,4 +847,9 @@ Lower bound: P is in $\Omega$(n)
 Should we keep looking? Or can we prove that there is no faster algorithm
 
 
-Know break even point
+---
+For Midterm:
+
+- Know break even point
+- Pick a data structure
+- 
