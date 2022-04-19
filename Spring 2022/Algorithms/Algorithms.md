@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-14_10:36:55-04:00
+updated: 2022-04-19_09:47:20-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -845,3 +845,6 @@ Upper bound: P is in O (n log n)
 Lower bound: P is in $\Omega$(n)
 
 Should we keep looking? Or can we prove that there is no faster algorithm
+
+
+Know break even point
