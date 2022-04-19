@@ -856,7 +856,8 @@ Should we keep looking? Or can we prove that there is no faster algorithm
 > ![[Pasted image 20220419102410.png]]
 > ![[Pasted image 20220419103424.png]]
 > .
-> 
+> Upper and lower bounds are nlog n (within a constant factor)
+> Theta nlogn for comparison based sorting
 
 ---
 For Midterm:
