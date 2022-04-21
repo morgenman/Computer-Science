@@ -12072,6 +12072,20 @@ abline(lsfit(x,y),lwd=2, lty=2,col=&quot;blue&quot;)
 <p>For a particular line, we want to sum up the difference between the y value (actual for points we have) and the y value of the line we are testing</p>
 <p>$\Sigma (y_{i}-\hat{y}_{i})^{2}/n$</p>
 <p>Have to plot base plot first, then run manipulate on ggplot</p>
+<hr>  
+<ol>
+<li>Empirical mean<br />
+$\bar{x}= \frac{1}{n}\sum^{n}<em>{i=1}x</em>{i}$<br />
+if we subtract the mean from data poins we get data that has mean 0<br />
+$\tilde{x}<em>{i}=x</em>{i}-\bar{x}$<br />
+$\tilde{x}_{i}$ is a data point that has mean 0</li>
+</ol>
+<p>We can get the least square solution by minimizing $\sum\limits^{n}<em>{i=1}(x</em>{i}-\mu)^2$</p>
+<ol start="2">
+<li>Empirical SD &amp; Variance<br />
+$s^{2}=\frac{1}{n-1}\sum\limits^{n}<em>{i=1}(x</em>{i}-\bar{x})^2$<br />
+$s^{2}=\frac{1}{n-1}\sum\limits^{n}<em>{i=1}(x</em>{i}-\bar{x}^2)$</li>
+</ol>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
