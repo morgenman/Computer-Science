@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-21_12:59:06-04:00</p>
+<p>updated: 2022-04-21_13:06:34-04:00</p>
 <hr>  
 <h1 id="data-analysis--visualization"><a class="header" href="#data-analysis--visualization">Data Analysis &amp; Visualization</a></h1>
 <p><em>Capturing your audience and showing them what they want to see in one chart</em></p>
@@ -712,6 +712,9 @@ slope &lt;- cor(x,y)*(sd(y)/sd(x))
 intercept &lt;- mean(y) - (slope * mean (x))  
 abline(lsfit(x,y),lwd=2, lty=2,col=&quot;blue&quot;)  
 </code></pre>
+<p>You want to minimize the mean squared error (MSE)</p>
+<p>For a particular line, we want to sum up the difference between the y value (actual for points we have) and the y value of the line we are testing</p>
+<p>$\Sigma (y_{i}-\hat{y}_{i})^{2}/n$</p>
 
                 </main>
             </div>
