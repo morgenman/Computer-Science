@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-21_13:06:34-04:00
+updated: 2022-04-21_13:23:08-04:00
 ---
 
 # Data Analysis & Visualization
@@ -622,6 +622,7 @@ For a particular line, we want to sum up the difference between the y value (act
 
 $\Sigma (y_{i}-\hat{y}_{i})^{2}/n$ 
 
+Have to plot base plot first, then run manipulate on ggplot
 
 
 
