@@ -625,4 +625,17 @@ $\Sigma (y_{i}-\hat{y}_{i})^{2}/n$
 Have to plot base plot first, then run manipulate on ggplot
 
 
+---
+1. Empirical mean
+$\bar{x}= \frac{1}{n}\sum^{n}_{i=1}x_{i}$
+if we subtract the mean from data poins we get data that has mean 0 
+$\tilde{x}_{i}=x_{i}-\bar{x}$
+$\tilde{x}_{i}$ is a data point that has mean 0
+
+We can get the least square solution by minimizing $\sum\limits^{n}_{i=1}(x_{i}-\mu)^2$ 
+2. Empirical SD & Variance
+$s^{2}=\frac{1}{n-1}\sum\limits^{n}_{i=1}(x_{i}-\bar{x})^2$
+$s^{2}=\frac{1}{n-1}\sum\limits^{n}_{i=1}(x_{i}-\bar{x}^2)$
+
+
 
