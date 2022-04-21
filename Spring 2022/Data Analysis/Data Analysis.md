@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-21_12:53:22-04:00
+updated: 2022-04-21_12:59:06-04:00
 ---
 
 # Data Analysis & Visualization
@@ -602,6 +602,20 @@ Least square method
 
 slope is cor(x,y)* sd(y)/sd(x)
 
-B = n
+![[Pasted image 20220421125755.png]]
+y = 2.41x - 0.83
+x = 2 => y = 2.41 * 2 - 0.83 = 3.99
+etc for x = 5,7
+
+```r
+x <- c(1,2,3,4,5,6,7)
+y <- c(1.5, 3.8, 6.7 etc)
+
+slope <- cor(x,y)*(sd(y)/sd(x))
+intercept <- mean(y) - (slope * mean (x))
+abline(lsfit(x,y),lwd=2, lty=2,col="blue")
+```
+
+
 
 
