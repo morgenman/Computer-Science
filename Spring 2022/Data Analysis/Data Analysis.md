@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-21_12:34:39-04:00
+updated: 2022-04-21_12:41:43-04:00
 ---
 
 # Data Analysis & Visualization
@@ -584,3 +584,4 @@ $X~N(\mu,\sigma^{2})$  when $\mu$ = 0 and r$^2$ = 1, then x is a standard normal
 ![[Pasted image 20220414135004.png]]
 
 # Regression 
+* 
