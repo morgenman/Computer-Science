@@ -585,4 +585,15 @@ $X~N(\mu,\sigma^{2})$  when $\mu$ = 0 and r$^2$ = 1, then x is a standard normal
 
 # Regression 
 ## Choosing a regression model
-* 
+Least square method
+
+| x   | y   |     |
+| --- | --- | --- |
+| 1   |     |     |
+| 2   |     |     |
+| 3   |     |     |
+| 4   |     |     |
+| 5   |     |     |
+| 6   |     |     |
+| 7   |     |     |
+
