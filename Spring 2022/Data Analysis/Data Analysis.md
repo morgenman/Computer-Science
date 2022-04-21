@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-21_12:59:06-04:00
+updated: 2022-04-21_13:06:34-04:00
 ---
 
 # Data Analysis & Visualization
@@ -615,6 +615,12 @@ slope <- cor(x,y)*(sd(y)/sd(x))
 intercept <- mean(y) - (slope * mean (x))
 abline(lsfit(x,y),lwd=2, lty=2,col="blue")
 ```
+
+You want to minimize the mean squared error (MSE)
+
+For a particular line, we want to sum up the difference between the y value (actual for points we have) and the y value of the line we are testing
+
+$\Sigma (y_{i}-\hat{y}_{i})^{2}/n$ 
 
 
 
