@@ -584,4 +584,5 @@ $X~N(\mu,\sigma^{2})$  when $\mu$ = 0 and r$^2$ = 1, then x is a standard normal
 ![[Pasted image 20220414135004.png]]
 
 # Regression 
+## Choosing a regression model
 * 
