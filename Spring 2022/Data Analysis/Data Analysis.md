@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-21_13:23:08-04:00
+updated: 2022-04-21_13:43:28-04:00
 ---
 
 # Data Analysis & Visualization
@@ -635,7 +635,11 @@ $\tilde{x}_{i}$ is a data point that has mean 0
 We can get the least square solution by minimizing $\sum\limits^{n}_{i=1}(x_{i}-\mu)^2$ 
 2. Empirical SD & Variance
 $s^{2}=\frac{1}{n-1}\sum\limits^{n}_{i=1}(x_{i}-\bar{x})^2$
-$s^{2}=\frac{1}{n-1}\sum\limits^{n}_{i=1}(x_{i}-\bar{x}^2)$
+$s^{2}=\frac{1}{n-1}(\sum\limits^{n}_{i=1}x_{i}^2-n\bar{x}^2)$
+$s=\sqrt{s^2}$ is standard deviation
+$\frac{x_i}{s}$ => a data point that has standard deviation 1
+
+3. Scaling the data
 
 
 
