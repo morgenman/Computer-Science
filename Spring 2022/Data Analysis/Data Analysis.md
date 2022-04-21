@@ -610,7 +610,7 @@ etc for x = 5,7
 ```r
 x <- c(1,2,3,4,5,6,7)
 y <- c(1.5, 3.8, 6.7 etc)
-
+cor(x,y) will give you a value for how they are correlated
 slope <- cor(x,y)*(sd(y)/sd(x))
 intercept <- mean(y) - (slope * mean (x))
 abline(lsfit(x,y),lwd=2, lty=2,col="blue")
