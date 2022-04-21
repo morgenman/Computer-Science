@@ -12063,7 +12063,7 @@ x = 2 =&gt; y = 2.41 * 2 - 0.83 = 3.99<br />
 etc for x = 5,7</p>
 <pre><code class="language-r">x &lt;- c(1,2,3,4,5,6,7)  
 y &lt;- c(1.5, 3.8, 6.7 etc)  
-  
+cor(x,y) will give you a value for how they are correlated  
 slope &lt;- cor(x,y)*(sd(y)/sd(x))  
 intercept &lt;- mean(y) - (slope * mean (x))  
 abline(lsfit(x,y),lwd=2, lty=2,col=&quot;blue&quot;)  
