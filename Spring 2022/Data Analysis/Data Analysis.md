@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-21_13:43:28-04:00
+updated: 2022-04-22_09:56:23-04:00
 ---
 
 # Data Analysis & Visualization
@@ -640,6 +640,4 @@ $s=\sqrt{s^2}$ is standard deviation
 $\frac{x_i}{s}$ => a data point that has standard deviation 1
 
 3. Scaling the data
-
-
 
