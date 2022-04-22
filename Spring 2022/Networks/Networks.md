@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-18_04:35:39-04:00
+updated: 2022-04-22_10:15:03-04:00
 ---
 # Networks
 
@@ -741,4 +741,5 @@ An ideal multiple access protocol:
 ![[Pasted image 20220415104408.png]]
 #### Token passing
 ![[Pasted image 20220415104425.png]]
-
+### Summary of MAC
+![[Pasted image 20220422101854.png]]
