@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-22_10:15:03-04:00
+updated: 2022-04-22_10:37:58-04:00
 ---
 # Networks
 
@@ -743,3 +743,5 @@ An ideal multiple access protocol:
 ![[Pasted image 20220415104425.png]]
 ### Summary of MAC
 ![[Pasted image 20220422101854.png]]
+* For a link, there may be multiple MAC addresses (but only one IP)
+* the mac address allows us to 
