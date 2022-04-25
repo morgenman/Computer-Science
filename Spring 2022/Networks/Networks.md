@@ -763,4 +763,5 @@ CSMA/CD - binary backoff
 ## Switch
 * link layer device which takes an *active* role
 * Store, forward ethernet frames
-* examine incoming 
+* examine incoming MAC addresses, selectively forward frame to one or more outgoing links when frame is to be forwarded on segment, uses CSMA/CD to access segment
+* 
