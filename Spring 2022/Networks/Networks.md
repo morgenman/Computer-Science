@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-25_10:18:53-04:00
+updated: 2022-04-25_10:39:34-04:00
 ---
 # Networks
 
@@ -765,4 +765,4 @@ CSMA/CD - binary backoff
 * Store, forward ethernet frames
 * examine incoming MAC addresses, selectively forward frame to one or more outgoing links when frame is to be forwarded on segment, uses CSMA/CD to access segment
 * Port based vlans
-	* multiple virtual LANS over single 
+	* multiple virtual LANS over single physical lan infrastructure
