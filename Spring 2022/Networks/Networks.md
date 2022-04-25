@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-25_10:13:20-04:00
+updated: 2022-04-25_10:18:53-04:00
 ---
 # Networks
 
@@ -754,3 +754,13 @@ An ideal multiple access protocol:
 ![[Pasted image 20220425101159.png]]
 * Preamble used to synchronize receiver, sender clock rates
 * Unreliable, connectionless
+CSMA/CD - binary backoff 
+
+
+## 802.3 Ethernet standards
+* many different standards/speeds etc
+
+## Switch
+* link layer device which takes an *active* role
+* Store, forward ethernet frames
+* examine incoming 
