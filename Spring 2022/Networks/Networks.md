@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-22_10:37:58-04:00
+updated: 2022-04-25_10:07:45-04:00
 ---
 # Networks
 
@@ -745,3 +745,8 @@ An ideal multiple access protocol:
 ![[Pasted image 20220422101854.png]]
 * For a link, there may be multiple MAC addresses (but only one IP)
 * the mac address allows us to 
+
+# Ethernet
+* Bus vs Switch
+	* bus is out of date a bit
+	* 
