@@ -766,3 +766,5 @@ CSMA/CD - binary backoff
 * examine incoming MAC addresses, selectively forward frame to one or more outgoing links when frame is to be forwarded on segment, uses CSMA/CD to access segment
 * Port based vlans
 	* multiple virtual LANS over single physical lan infrastructure
+* 802.1q protocol to link switches together in order to span Vlans
+* 
