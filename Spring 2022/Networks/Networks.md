@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-25_10:07:45-04:00
+updated: 2022-04-25_10:13:20-04:00
 ---
 # Networks
 
@@ -749,4 +749,8 @@ An ideal multiple access protocol:
 # Ethernet
 * Bus vs Switch
 	* bus is out of date a bit
-	* 
+
+## Frame Structure
+![[Pasted image 20220425101159.png]]
+* Preamble used to synchronize receiver, sender clock rates
+* Unreliable, connectionless
