@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_10:34:27-04:00
+updated: 2022-04-26_10:44:32-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -929,4 +929,4 @@ Three general approaches:
 	* h is a hash function
 	* array holds values is called Hash Table HT
 * We want a big table, small amount of keys
-* 
+### Mid Square Method (square number and take middle r bits)
