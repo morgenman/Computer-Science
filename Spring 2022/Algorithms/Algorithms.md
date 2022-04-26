@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_10:19:18-04:00
+updated: 2022-04-26_10:26:51-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -921,4 +921,10 @@ Three general approaches:
 ## Linear
 * Search n elements, average access time T(n)
 * ![[Pasted image 20220426102225.png]]
-* 
+## Hashing
+* Balanced binary search tree
+	* effective but not instantaneous
+* Hashing gives us direct access O(c) by key value
+* h(K) = i in the array
+	* h is a hash function
+	* array holds values is called Hash Table HT
