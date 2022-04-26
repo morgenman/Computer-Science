@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_09:47:08-04:00
+updated: 2022-04-26_09:54:06-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -888,5 +888,11 @@ allow more keys than records
 * Can be implemented using any base
 	* Each 'bin' is a linked list
 	* Go from least significant to most significant
+* Cost: $\Theta$(nk+rk)
+	* n numbers, k passes, base r
+	* How do n, k, and r relate
+	* If key range is small, then this can be $\Theta$(n)
+	* If there are n distinct 
 
-[VisuAlgo Site]()
+
+[VisuAlgo Site](https://visualgo.net/en)
