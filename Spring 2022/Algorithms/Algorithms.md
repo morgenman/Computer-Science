@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_10:13:20-04:00
+updated: 2022-04-26_10:19:18-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -910,4 +910,9 @@ TL;DR: Quicksort
 * Exact match: for a specific pair
 * Range query: for all records in range
 
+Three general approaches:
 
+1. Sequential
+2. Hashing
+3. Tree Indexing
+4. (sort first & binary sort)
