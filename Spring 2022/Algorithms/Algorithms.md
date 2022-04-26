@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_09:59:30-04:00
+updated: 2022-04-26_10:06:08-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -899,5 +899,5 @@ allow more keys than records
 $r^{k}\geq n$ or $k\geq log_{r}n$ 
 * So $O(kn) = O(n log_{r} n)$
 
-
+![[Pasted image 20220426100536.png]]
 [VisuAlgo Site](https://visualgo.net/en)
