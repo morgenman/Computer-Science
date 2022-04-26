@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_10:06:08-04:00
+updated: 2022-04-26_10:13:20-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -901,3 +901,13 @@ $r^{k}\geq n$ or $k\geq log_{r}n$
 
 ![[Pasted image 20220426100536.png]]
 [VisuAlgo Site](https://visualgo.net/en)
+
+TL;DR: Quicksort
+
+
+
+# Search
+* Exact match: for a specific pair
+* Range query: for all records in range
+
+
