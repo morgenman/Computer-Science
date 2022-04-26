@@ -895,7 +895,9 @@ allow more keys than records
 	* If there are n distinct keys, then the length of a key must be at least log n
 	* **General case:** $\Theta$(n log n)
 	* As long as the max 
-* 
+* There are k digits in base r, so we need:
+$r^{k}\geq n$ or $k\geq log_{r}n$ 
+* So $O(kn) = O(n log_{r} n)$
 
 
 [VisuAlgo Site](https://visualgo.net/en)
