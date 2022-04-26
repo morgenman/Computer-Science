@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_09:54:06-04:00
+updated: 2022-04-26_09:59:30-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -892,7 +892,10 @@ allow more keys than records
 	* n numbers, k passes, base r
 	* How do n, k, and r relate
 	* If key range is small, then this can be $\Theta$(n)
-	* If there are n distinct 
+	* If there are n distinct keys, then the length of a key must be at least log n
+	* **General case:** $\Theta$(n log n)
+	* As long as the max 
+* 
 
 
 [VisuAlgo Site](https://visualgo.net/en)
