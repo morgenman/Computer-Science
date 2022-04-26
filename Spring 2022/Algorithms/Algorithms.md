@@ -916,3 +916,9 @@ Three general approaches:
 2. Hashing
 3. Tree Indexing
 4. (sort first & binary sort)
+
+
+## Linear
+* Search n elements, average access time T(n)
+* ![[Pasted image 20220426102225.png]]
+* 
