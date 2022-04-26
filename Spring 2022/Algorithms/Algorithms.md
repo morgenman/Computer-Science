@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-26_09:40:28-04:00
+updated: 2022-04-26_09:47:08-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -884,3 +884,9 @@ allow more keys than records
 * Bucketsort is a variation
 
 ### Radix Sort
+* Tiered Binsort
+* Can be implemented using any base
+	* Each 'bin' is a linked list
+	* Go from least significant to most significant
+
+[VisuAlgo Site]()
