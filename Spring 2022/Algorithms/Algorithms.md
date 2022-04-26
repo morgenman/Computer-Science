@@ -879,3 +879,8 @@ For Midterm:
 ### Binsort
 Make each bin the head of a list
 allow more keys than records
+![[Pasted image 20220426094246.png]]
+* $\Theta$(n + max_key_value)
+* Bucketsort is a variation
+
+### Radix Sort
