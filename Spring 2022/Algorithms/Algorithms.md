@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-19_10:34:59-04:00
+updated: 2022-04-26_09:40:28-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -875,3 +875,7 @@ For Midterm:
 * We need solid explanations for choices and rejections
 * Concerned with finding min/max is the only reason to keep the LL sorted
 --- 
+## Non-comparison based sorts
+### Binsort
+Make each bin the head of a list
+allow more keys than records
