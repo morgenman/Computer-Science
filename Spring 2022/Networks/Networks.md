@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-27_10:24:09-04:00
+updated: 2022-04-27_10:30:47-04:00
 ---
 # Networks
 
@@ -787,5 +787,8 @@ Link Layer
 	1. Our own IP
 	2. Addr. of first hop router
 	3. DNS
-2. DHCP ACK
+2. Reply - DHCP ACK
+3. DNS
 	1. 
+4. ARP
+	1. (address resolution protocol)
