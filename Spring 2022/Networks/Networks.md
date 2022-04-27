@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-27_10:05:10-04:00
+updated: 2022-04-27_10:17:30-04:00
 ---
 # Networks
 
@@ -771,4 +771,6 @@ CSMA/CD - binary backoff
 
 # Datacenter Networks
 * thousands of hosts, closely coupled
-* 
+## Load Balancer: Application Layer Routing
+* Receives external client request
+* directs workload within data center
