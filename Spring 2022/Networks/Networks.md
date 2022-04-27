@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-27_10:36:33-04:00
+updated: 2022-04-27_10:45:51-04:00
 ---
 # Networks
 
@@ -794,4 +794,5 @@ Link Layer
 4. TCP (carrying HTTP)
 
 # Security 
+* Bob,Alice vs Trudy (intruder)
 * 
