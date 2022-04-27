@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-25_10:39:34-04:00
+updated: 2022-04-27_10:05:10-04:00
 ---
 # Networks
 
@@ -767,4 +767,8 @@ CSMA/CD - binary backoff
 * Port based vlans
 	* multiple virtual LANS over single physical lan infrastructure
 * 802.1q protocol to link switches together in order to span Vlans
+
+
+# Datacenter Networks
+* thousands of hosts, closely coupled
 * 
