@@ -774,3 +774,13 @@ CSMA/CD - binary backoff
 ## Load Balancer: Application Layer Routing
 * Receives external client request
 * directs workload within data center
+## Protocols
+Link Layer
+* RoCE: remote DMA (RDMA) over converged ethernet
+## Routing Management
+* SDN
+
+# Synthesis: A web request
+*scenario*: Student connects to campus network and requests www.google.com
+
+1. 
