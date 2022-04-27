@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-27_10:17:30-04:00
+updated: 2022-04-27_10:24:09-04:00
 ---
 # Networks
 
@@ -783,4 +783,9 @@ Link Layer
 # Synthesis: A web request
 *scenario*: Student connects to campus network and requests www.google.com
 
-1. 
+1. DHCP Broadcast (gives us) - encapsulated 
+	1. Our own IP
+	2. Addr. of first hop router
+	3. DNS
+2. DHCP ACK
+	1. 
