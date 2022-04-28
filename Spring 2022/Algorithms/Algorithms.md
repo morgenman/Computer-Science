@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_10:22:42-04:00
+updated: 2022-04-28_10:28:19-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -959,6 +959,9 @@ Three general approaches:
 	* i: probe i
 
 * Always use the first available slot
+![[Pasted image 20220428102342.png]]
+
+Linear Probing
 
 
 
