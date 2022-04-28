@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_09:44:07-04:00
+updated: 2022-04-28_09:52:04-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -931,6 +931,9 @@ Three general approaches:
 * We want a big table, small amount of keys
 ### Mid Square Method (square number and take middle r bits)
 * We are trying to minimize the number of collisions
-* 
+
+
+**Folding**: equal weight to all characters, folding all chars together
+
 
 
