@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_12:53:34-04:00
+updated: 2022-04-28_13:01:57-04:00
 ---
 
 # Data Analysis & Visualization
@@ -651,3 +651,5 @@ $\frac{x_i}{s}$ => a data point that has standard deviation 1
 3. ML Model
 4. Quality Metric (maybe go back to manipulate model)
 5. feed back to training data
+
+$\beta_{0}, \beta_{1}$ -> regression 
