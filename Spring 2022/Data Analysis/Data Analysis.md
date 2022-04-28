@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-22_09:56:23-04:00
+updated: 2022-04-28_12:34:05-04:00
 ---
 
 # Data Analysis & Visualization
@@ -641,3 +641,7 @@ $\frac{x_i}{s}$ => a data point that has standard deviation 1
 
 3. Scaling the data
 
+
+# Regression (again)
+* Let's do home pricing:
+* y vs x (price vs. sqr footage)
