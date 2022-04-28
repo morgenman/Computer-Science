@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_13:08:11-04:00
+updated: 2022-04-28_13:26:17-04:00
 ---
 
 # Data Analysis & Visualization
@@ -652,7 +652,7 @@ $\frac{x_i}{s}$ => a data point that has standard deviation 1
 4. Quality Metric (maybe go back to manipulate model)
 5. feed back to training data
 
-$\beta_{0}, \beta_{1}$ -> regression 
+Beta values are the coefficients of each power in a polynomial
 
 
 
