@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-28_10:28:19-04:00</p>
+<p>updated: 2022-04-28_10:39:24-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -1370,8 +1370,18 @@ $r^{k}\geq n$ or $k\geq log_{r}n$</li>
 <p>Linear Probing<br />
 p(K,i) = i</p>
 <ul>
-<li>good: all slots are candidates</li>
-<li>bad: not ever slot is equally likely to be chosen</li>
+<li>
+<p>good: all slots are candidates</p>
+</li>
+<li>
+<p>bad: not ever slot is equally likely to be chosen</p>
+</li>
+<li>
+<p>if slot is already occupied, probability is 0 for next filled</p>
+</li>
+<li>
+<p>Probability of slot 6 is 1/|HT| + each contiguous filled slot</p>
+</li>
 </ul>
 
                 </main>
