@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_10:02:47-04:00
+updated: 2022-04-28_10:10:59-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -934,6 +934,15 @@ Three general approaches:
 
 
 **Folding**: equal weight to all characters, folding all chars together
+
+* Open Hashing 
+	* store collisions outside the HT
+	* Each slot is head of a linked list
+* Closed Hashing
+	* store collisions at another slot in the HT
+
+* Sear
+
 
 
 
