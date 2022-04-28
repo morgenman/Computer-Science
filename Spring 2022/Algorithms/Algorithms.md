@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_10:10:59-04:00
+updated: 2022-04-28_10:16:55-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -940,8 +940,12 @@ Three general approaches:
 	* Each slot is head of a linked list
 * Closed Hashing
 	* store collisions at another slot in the HT
+	* All records are in the HT
+	* $h(k_{R})$: home position for record R with key $k_{R}$
+	* ***Collision Resolution Policy*** - for deciding where to store R (should the slot be occupied) 
+	* Same policy must be followe
 
-* Sear
+
 
 
 
