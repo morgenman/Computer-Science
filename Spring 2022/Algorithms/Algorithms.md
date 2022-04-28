@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_10:28:19-04:00
+updated: 2022-04-28_10:39:24-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -966,6 +966,10 @@ p(K,i) = i
 
 * good: all slots are candidates
 * bad: not ever slot is equally likely to be chosen
+
+* if slot is already occupied, probability is 0 for next filled
+
+* Probability of slot 6 is 1/|HT| + each contiguous filled slot 
 
 
 
