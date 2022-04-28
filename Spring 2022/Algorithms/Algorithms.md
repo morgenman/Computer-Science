@@ -962,6 +962,10 @@ Three general approaches:
 ![[Pasted image 20220428102342.png]]
 
 Linear Probing
+p(K,i) = i
+
+* good: all slots are candidates
+* bad: not ever slot is equally likely to be chosen
 
 
 
