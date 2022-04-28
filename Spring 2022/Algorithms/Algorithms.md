@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_09:52:04-04:00
+updated: 2022-04-28_10:02:47-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -934,6 +934,8 @@ Three general approaches:
 
 
 **Folding**: equal weight to all characters, folding all chars together
+
+
 
 
 
