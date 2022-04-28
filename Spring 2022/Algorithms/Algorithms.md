@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_10:16:55-04:00
+updated: 2022-04-28_10:22:42-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -943,9 +943,22 @@ Three general approaches:
 	* All records are in the HT
 	* $h(k_{R})$: home position for record R with key $k_{R}$
 	* ***Collision Resolution Policy*** - for deciding where to store R (should the slot be occupied) 
-	* Same policy must be followe
+	* Same policy must be followed to retrieve record R
 
 
+### Bucket Hashing
+* closed
+* divided into M/B 
+* (Prof. did not like bucket hashing)
+
+### Probing
+* closed
+* Collision Resolution Strategy must provide a probe sequence
+* p(K,i) - the probe function that provides this sequence 
+	* K: key
+	* i: probe i
+
+* Always use the first available slot
 
 
 
