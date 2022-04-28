@@ -9825,7 +9825,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-04-28_10:16:55-04:00</p>
+<p>updated: 2022-04-28_10:22:42-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -11006,8 +11006,33 @@ $r^{k}\geq n$ or $k\geq log_{r}n$</li>
 <li>All records are in the HT</li>
 <li>$h(k_{R})$: home position for record R with key $k_{R}$</li>
 <li><em><strong>Collision Resolution Policy</strong></em> - for deciding where to store R (should the slot be occupied)</li>
-<li>Same policy must be followe</li>
+<li>Same policy must be followed to retrieve record R</li>
 </ul>
+</li>
+</ul>
+<h3 id="bucket-hashing"><a class="header" href="#bucket-hashing">Bucket Hashing</a></h3>
+<ul>
+<li>closed</li>
+<li>divided into M/B</li>
+<li>(Prof. did not like bucket hashing)</li>
+</ul>
+<h3 id="probing"><a class="header" href="#probing">Probing</a></h3>
+<ul>
+<li>
+<p>closed</p>
+</li>
+<li>
+<p>Collision Resolution Strategy must provide a probe sequence</p>
+</li>
+<li>
+<p>p(K,i) - the probe function that provides this sequence</p>
+<ul>
+<li>K: key</li>
+<li>i: probe i</li>
+</ul>
+</li>
+<li>
+<p>Always use the first available slot</p>
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
