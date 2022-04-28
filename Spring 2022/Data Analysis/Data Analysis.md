@@ -645,4 +645,6 @@ $\frac{x_i}{s}$ => a data point that has standard deviation 1
 # Regression (again)
 * Let's do home pricing:
 * y vs x (price vs. sqr. footage)
-* 
+
+1. Training Data
+2. Feat
