@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-29_10:04:55-04:00
+updated: 2022-04-29_10:17:41-04:00
 ---
 # Networks
 
@@ -801,3 +801,5 @@ The Triad:
 ## Confidentiality
 ## Authentication
 ## Integrity 
+
+Symmetric key crypto: DES
