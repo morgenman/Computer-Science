@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-27_10:45:51-04:00
+updated: 2022-04-29_10:04:55-04:00
 ---
 # Networks
 
@@ -795,4 +795,9 @@ Link Layer
 
 # Security 
 * Bob,Alice vs Trudy (intruder)
-* 
+
+
+The Triad:
+## Confidentiality
+## Authentication
+## Integrity 
