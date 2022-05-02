@@ -847,3 +847,6 @@ m = $c^{d}$ mod n = 12
 
 ![[Pasted image 20220502100819.png]]
 
+
+# Fundamentals of Authentication
+* 
