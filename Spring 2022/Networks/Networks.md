@@ -824,5 +824,19 @@ c = 17
 $c^{d}$ = long num
 m = $c^{d}$ mod n = 12
 ![[Pasted image 20220502100542.png]]
-
+![[Pasted image 20220502100928.png]]
 ## Chinese Remainder Theorem 
+> In mathematics, the **chinese remainder theorem** states that if one knows the remainders of the Euclidean division of an integer n by several integers, then one can determine uniquely the remainder of the division of n by the product of these integers, under the condition that the divisors are pairwise coprime (no two divisors share a common factor other than 1).
+>
+> For example, if we know that the remainder of n divided by 3 is 2, the remainder of n divided by 5 is 3, and the remainder of n divided by 7 is 2, then without knowing the value of n, we can determine that the remainder of n divided by 105 (the product of 3, 5, and 7) is 23. Importantly, this tells us that if n is a natural number less than 105, then 23 is the only possible value of n.
+>
+> The earliest known statement of the theorem is by the Chinese mathematician Sun-tzu in the Sun-tzu Suan-ching in the 3rd century CE.
+>
+> The Chinese remainder theorem is widely used for computing with large integers, as it allows replacing a computation for which one knows a bound on the size of the result by several similar computations on small integers.
+>
+> The Chinese remainder theorem (expressed in terms of congruences) is true over every principal ideal domain. It has been generalized to any ring, with a formulation involving two-sided ideals.
+>
+> [Wikipedia](https://en.wikipedia.org/wiki/Chinese%20remainder%20theorem)
+
+![[Pasted image 20220502100819.png]]
+
