@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-29_10:17:41-04:00
+updated: 2022-05-02_10:05:30-04:00
 ---
 # Networks
 
@@ -809,4 +809,20 @@ Symmetric key crypto: DES
 0. given (n,e) and (n,d) as computed above
 1. to encrypt message m(<n), compute $c=m^{e}mod n$
 2. to decrypt received bit pattern, c, compute $m=c^{d}mod {n}$
-3. 
+
+EG: bob choose p = 5, q = 7. Then n = 35, z = 24 
+e = 5 ( so e, z relatively prime)
+d = 29 ( so ed-1 exactly divisible by z)
+
+bit pattern: 00001000 
+m = 12
+$12^{e}$ = 24832
+c = $m^{e}mod$ n 
+
+decrypt
+c = 17 
+$c^{d}$ = long num
+m = $c^{d}$ mod n = 12
+![[Pasted image 20220502100542.png]]
+
+## Chinese Remainder Theorem 
