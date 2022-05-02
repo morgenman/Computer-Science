@@ -803,3 +803,10 @@ The Triad:
 ## Integrity 
 
 Symmetric key crypto: DES
+
+
+# RSA
+0. given (n,e) and (n,d) as computed above
+1. to encrypt message m(<n), compute $c=m^{e}mod n$
+2. to decrypt received bit pattern, c, compute $m=c^{d}mod {n}$
+3. 
