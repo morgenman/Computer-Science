@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-02_10:30:13-04:00
+updated: 2022-05-02_10:43:54-04:00
 ---
 # Networks
 
@@ -859,3 +859,6 @@ m = $c^{d}$ mod n = 12
 	* goal: fixed length, easy to computer digital fingerprint
 	* (hash)
 	* One way conversion
+
+![[Pasted image 20220502104309.png]]
+Digital signature should be certified
