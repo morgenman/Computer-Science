@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-29_10:17:41-04:00</p>
+<p>updated: 2022-05-02_10:05:30-04:00</p>
 <hr>  
 <h1 id="networks"><a class="header" href="#networks">Networks</a></h1>
 <ul>
@@ -1412,8 +1412,20 @@ CSMA/CD - binary backoff</li>
 <li>given (n,e) and (n,d) as computed above</li>
 <li>to encrypt message m(&lt;n), compute $c=m^{e}mod n$</li>
 <li>to decrypt received bit pattern, c, compute $m=c^{d}mod {n}$</li>
-<li></li>
 </ol>
+<p>EG: bob choose p = 5, q = 7. Then n = 35, z = 24<br />
+e = 5 ( so e, z relatively prime)<br />
+d = 29 ( so ed-1 exactly divisible by z)</p>
+<p>bit pattern: 00001000<br />
+m = 12<br />
+$12^{e}$ = 24832<br />
+c = $m^{e}mod$ n</p>
+<p>decrypt<br />
+c = 17<br />
+$c^{d}$ = long num<br />
+m = $c^{d}$ mod n = 12<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220502100542.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220502100542.png" alt="Pasted image 20220502100542"/></a></p>
+<h2 id="chinese-remainder-theorem"><a class="header" href="#chinese-remainder-theorem">Chinese Remainder Theorem</a></h2>
 
                 </main>
             </div>
