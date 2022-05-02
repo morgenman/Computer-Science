@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-02_10:24:17-04:00
+updated: 2022-05-02_10:30:13-04:00
 ---
 # Networks
 
@@ -851,4 +851,7 @@ m = $c^{d}$ mod n = 12
 # Fundamentals of Authentication
 * ap5.0: use nonce, public key cryptography
 * Flaw: man in the middle attack
-* 
+* Solution: digital fingerprint
+
+## Digital Signatures (protecting message integrity)
+* Signatures using private key
