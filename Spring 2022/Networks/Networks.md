@@ -855,3 +855,7 @@ m = $c^{d}$ mod n = 12
 
 ## Digital Signatures (protecting message integrity)
 * Signatures using private key
+* Message Digests
+	* goal: fixed length, easy to computer digital fingerprint
+	* (hash)
+	* One way conversion
