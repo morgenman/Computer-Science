@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-04-28_10:39:24-04:00</p>
+<p>updated: 2022-05-03_09:34:54-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -1383,8 +1383,26 @@ p(K,i) = i</p>
 <p>Probability of slot 6 is 1/|HT| + each contiguous filled slot</p>
 </li>
 </ul>
+<h2 id="problem-primary-clustering"><a class="header" href="#problem-primary-clustering">Problem: Primary Clustering</a></h2>
+<ul>
+<li>This is caused by linear probing causing the records to clump</li>
+<li>Possible fix: cycle through all slots before returning to home</li>
+<li>for this to work, c must be relatively prime to M (Table size)</li>
+</ul>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" alt="Pasted image 20220503093622"/></a></p>
 <h2 id="closed-hashing-example"><a class="header" href="#closed-hashing-example">Closed Hashing Example</a></h2>
-<p>Slot | Value Stored | Prob. Next | Probe Se</p>
+<table><thead><tr><th>Slot</th><th>Value Stored</th><th>Prob. Next</th><th>Probe Seg.</th></tr></thead><tbody>
+<tr><td>0</td><td></td><td></td><td></td></tr>
+<tr><td>1</td><td></td><td></td><td></td></tr>
+<tr><td>2</td><td></td><td></td><td></td></tr>
+<tr><td>3</td><td></td><td></td><td></td></tr>
+<tr><td>4</td><td></td><td></td><td></td></tr>
+<tr><td>5</td><td></td><td></td><td></td></tr>
+<tr><td>6</td><td></td><td></td><td></td></tr>
+<tr><td>7</td><td></td><td></td><td></td></tr>
+<tr><td>8</td><td></td><td></td><td></td></tr>
+<tr><td>9</td><td></td><td></td><td></td></tr>
+</tbody></table>
 
                 </main>
             </div>
