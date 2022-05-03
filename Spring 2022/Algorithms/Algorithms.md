@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-03_09:49:14-04:00
+updated: 2022-05-03_09:54:30-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -995,6 +995,7 @@ Perm = [2,6,5,1,7,9,3,8,4]
 We use permutation for the offset
 Slot 0 is the home slot
 keys = 2, 22,42,32,12
+p(k,i) = Perm[i-1]
 
 first is 2, 2 mod 10 is 2
 22? (home is 2)
@@ -1005,17 +1006,33 @@ Collision resolution mode
 home is 2, i = 1, first one in sequence
 P(k,i) = 
 
+32 mod 10 = 2
+start process over, i = 1
+p[0]=2
+2 + home = 4, 4 mod 10 is 4, do it again
+i = 2
+home is still 2
+p(k,i)=p[1]=6
+6+2 = 8, 8 is full,
+i = 3
+home is still 2 
+p[2] = 5
+2+5 = 7
+7 mod 10 is 7, 7 is open
+
+
+
 | Slot | Value Stored | Prob. Next | Probe Seg. |
 | ---- | ------------ | ---------- | ---------- |
 | 0    |              |            |            |
 | 1    |              |            |            |
 | 2    | 2            |            |            |
-| 3    |              |            |            |
+| 3    | 1            |            |            |
 | 4    | 22           |            |            |
 | 5    |              |            |            |
 | 6    |              |            |            |
-| 7    |              |            |            |
-| 8    |              |            |            |
+| 7    | 32           |            |            |
+| 8    | 42           |            |            |
 | 9    |              |            |            |
 
 
