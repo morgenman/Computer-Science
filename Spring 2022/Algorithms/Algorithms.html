@@ -1389,19 +1389,30 @@ p(K,i) = i</p>
 <li>Possible fix: cycle through all slots before returning to home</li>
 <li>we multiply the value by a factor called <strong>c</strong></li>
 <li>p(k,i)=ci</li>
-<li>for this to work, c must be relatively prime to M (Table size)</li>
+<li>for this to work, c must be relatively prime to M (Table size)<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" alt="Pasted image 20220503093622"/></a></li>
 </ul>
 <h2 id="pseudo-random-probing"><a class="header" href="#pseudo-random-probing">Pseudo-random probing</a></h2>
 <ul>
-<li>p(k,i) = Perm[i-1]
+<li>
+<p>p(k,i) = Perm[i-1]</p>
 <ul>
-<li>where Perm is an array of length M-1 containing a random permutation of the values of 1 to M-1</li>
+<li>where Perm is an array of length M-1 containing a random permutation of the values of 1 to M-1<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503094555.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503094555.png" alt="Pasted image 20220503094555"/></a></li>
 </ul>
 </li>
-<li>EG: M = 101, Perm[1] = 5</li>
+<li>
+<p>EG: M = 101, Perm[1] = 5, Perm[2] = 2, Perm[3] = 32</p>
+<ul>
+<li>p(k$_{1}$)=30,35,32,62</li>
+<li>p(k$_{2}$)=35,40,37,67</li>
+<li>This didn't make sense</li>
 </ul>
-<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" alt="Pasted image 20220503093622"/></a></p>
-<h2 id="closed-hashing-example"><a class="header" href="#closed-hashing-example">Closed Hashing Example</a></h2>
+</li>
+</ul>
+<h2 id="better-pseudorandom-example"><a class="header" href="#better-pseudorandom-example">Better Pseudorandom Example</a></h2>
+<p>| Table | = 10<br />
+Perm = [2,6,5,1,7,9,3,8,4]</p>
 <table><thead><tr><th>Slot</th><th>Value Stored</th><th>Prob. Next</th><th>Probe Seg.</th></tr></thead><tbody>
 <tr><td>0</td><td></td><td></td><td></td></tr>
 <tr><td>1</td><td></td><td></td><td></td></tr>
