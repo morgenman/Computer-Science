@@ -977,16 +977,22 @@ p(K,i) = i
 * we multiply the value by a factor called **c**
 * p(k,i)=ci
 * for this to work, c must be relatively prime to M (Table size)
-
+![[Pasted image 20220503093622.png]]
 ## Pseudo-random probing
 * p(k,i) = Perm[i-1]
 	* where Perm is an array of length M-1 containing a random permutation of the values of 1 to M-1
-* EG: M = 101, Perm[1] = 5
+![[Pasted image 20220503094555.png]]
+* EG: M = 101, Perm[1] = 5, Perm[2] = 2, Perm[3] = 32
+	* p(k$_{1}$)=30,35,32,62
+	* p(k$_{2}$)=35,40,37,67
+	* This didn't make sense
 
 
-![[Pasted image 20220503093622.png]]
+## Better Pseudorandom Example
+| Table | = 10
+Perm = [2,6,5,1,7,9,3,8,4]
 
-## Closed Hashing Example
+
 | Slot | Value Stored | Prob. Next | Probe Seg. |
 | ---- | ------------ | ---------- | ---------- |
 | 0    |              |            |            |
