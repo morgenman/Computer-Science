@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-03_09:34:54-04:00
+updated: 2022-05-03_09:41:42-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -974,8 +974,14 @@ p(K,i) = i
 ## Problem: Primary Clustering 
 * This is caused by linear probing causing the records to clump
 * Possible fix: cycle through all slots before returning to home
+* we multiply the value by a factor called **c**
+* p(k,i)=ci
 * for this to work, c must be relatively prime to M (Table size)
 
+## Pseudo-random probing
+* p(k,i) = Perm[i-1]
+	* where Perm is an array of length M-1 containing a random permutation of the values of 1 to M-1
+* EG: M = 101, Perm[1] = 5
 
 
 ![[Pasted image 20220503093622.png]]
