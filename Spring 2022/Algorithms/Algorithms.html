@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-05-03_09:41:42-04:00</p>
+<p>updated: 2022-05-03_09:49:14-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -1389,8 +1389,7 @@ p(K,i) = i</p>
 <li>Possible fix: cycle through all slots before returning to home</li>
 <li>we multiply the value by a factor called <strong>c</strong></li>
 <li>p(k,i)=ci</li>
-<li>for this to work, c must be relatively prime to M (Table size)<br />
-<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" alt="Pasted image 20220503093622"/></a></li>
+<li>for this to work, c must be relatively prime to M (Table size)</li>
 </ul>
 <h2 id="pseudo-random-probing"><a class="header" href="#pseudo-random-probing">Pseudo-random probing</a></h2>
 <ul>
@@ -1411,14 +1410,25 @@ p(K,i) = i</p>
 </li>
 </ul>
 <h2 id="better-pseudorandom-example"><a class="header" href="#better-pseudorandom-example">Better Pseudorandom Example</a></h2>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" alt="Pasted image 20220503093622"/></a></p>
 <p>| Table | = 10<br />
-Perm = [2,6,5,1,7,9,3,8,4]</p>
+Perm = [2,6,5,1,7,9,3,8,4]<br />
+We use permutation for the offset<br />
+Slot 0 is the home slot<br />
+keys = 2, 22,42,32,12</p>
+<p>first is 2, 2 mod 10 is 2<br />
+22? (home is 2)</p>
+<p>42 mod 10 = 2.<br />
+2 is occupied<br />
+Collision resolution mode<br />
+home is 2, i = 1, first one in sequence<br />
+P(k,i) =</p>
 <table><thead><tr><th>Slot</th><th>Value Stored</th><th>Prob. Next</th><th>Probe Seg.</th></tr></thead><tbody>
 <tr><td>0</td><td></td><td></td><td></td></tr>
 <tr><td>1</td><td></td><td></td><td></td></tr>
-<tr><td>2</td><td></td><td></td><td></td></tr>
+<tr><td>2</td><td>2</td><td></td><td></td></tr>
 <tr><td>3</td><td></td><td></td><td></td></tr>
-<tr><td>4</td><td></td><td></td><td></td></tr>
+<tr><td>4</td><td>22</td><td></td><td></td></tr>
 <tr><td>5</td><td></td><td></td><td></td></tr>
 <tr><td>6</td><td></td><td></td><td></td></tr>
 <tr><td>7</td><td></td><td></td><td></td></tr>
