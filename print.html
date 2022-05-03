@@ -9825,7 +9825,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-05-03_10:06:25-04:00</p>
+<p>updated: 2022-05-03_10:11:34-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -11107,17 +11107,19 @@ p[2] = 5<br />
 2+5 = 7<br />
 7 mod 10 is 7, 7 is open</p>
 <table><thead><tr><th>Slot</th><th>Value Stored</th><th>Prob. Next</th><th>Probe Seg.</th></tr></thead><tbody>
-<tr><td>0</td><td></td><td>1/10</td><td></td></tr>
+<tr><td>0</td><td></td><td>1/10 + 1/10</td><td></td></tr>
 <tr><td>1</td><td></td><td>1/10</td><td></td></tr>
-<tr><td>2</td><td>2</td><td></td><td>4,8,7,3,<strong>9</strong></td></tr>
-<tr><td>3</td><td>12</td><td></td><td>5,9,8,4,0</td></tr>
-<tr><td>4</td><td>22</td><td></td><td>6,0,9,5,1</td></tr>
-<tr><td>5</td><td></td><td>1/10</td><td></td></tr>
-<tr><td>6</td><td></td><td>1/10</td><td></td></tr>
-<tr><td>7</td><td>32</td><td></td><td>9,3,2,4,6</td></tr>
-<tr><td>8</td><td>42</td><td></td><td>0,4,3,9,5</td></tr>
-<tr><td>9</td><td></td><td>1/10 +</td><td></td></tr>
+<tr><td>2</td><td>2</td><td>0 so sending to 9</td><td>4,8,7,3,<strong>9</strong></td></tr>
+<tr><td>3</td><td>12</td><td>0 so sending to 5</td><td><strong>5</strong>,9,8,4,0</td></tr>
+<tr><td>4</td><td>22</td><td>0 so sending to 6</td><td><strong>6</strong>,0,9,5,1</td></tr>
+<tr><td>5</td><td></td><td>1/10 + 1/10</td><td></td></tr>
+<tr><td>6</td><td></td><td>1/10 + 1/10</td><td></td></tr>
+<tr><td>7</td><td>32</td><td>0 so sending to 9</td><td><strong>9</strong>,3,2,4,6</td></tr>
+<tr><td>8</td><td>42</td><td>0 so sending to 0</td><td><strong>0</strong>,4,3,9,5</td></tr>
+<tr><td>9</td><td></td><td>1/10 + 1/10 + 1/10</td><td></td></tr>
 </tbody></table>
+<h2 id="quadratic-hashing"><a class="header" href="#quadratic-hashing">Quadratic Hashing</a></h2>
+<p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503101337.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503101337.png" alt="Pasted image 20220503101337"/></a></p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
