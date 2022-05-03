@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-03_10:11:34-04:00
+updated: 2022-05-03_12:04:36-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -748,7 +748,7 @@ Unbalanced is a problem
 	* so nlogn for n values
 ![[Pasted image 20220407095640.png]]
 
-![[Pasted image 20220407100446.png]]
+
 ## Sift down
 ![[Pasted image 20220407100943.png]]
 * Used 
