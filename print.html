@@ -9825,7 +9825,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-05-03_09:34:54-04:00</p>
+<p>updated: 2022-05-03_09:41:42-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -11056,7 +11056,18 @@ p(K,i) = i</p>
 <ul>
 <li>This is caused by linear probing causing the records to clump</li>
 <li>Possible fix: cycle through all slots before returning to home</li>
+<li>we multiply the value by a factor called <strong>c</strong></li>
+<li>p(k,i)=ci</li>
 <li>for this to work, c must be relatively prime to M (Table size)</li>
+</ul>
+<h2 id="pseudo-random-probing"><a class="header" href="#pseudo-random-probing">Pseudo-random probing</a></h2>
+<ul>
+<li>p(k,i) = Perm[i-1]
+<ul>
+<li>where Perm is an array of length M-1 containing a random permutation of the values of 1 to M-1</li>
+</ul>
+</li>
+<li>EG: M = 101, Perm[1] = 5</li>
 </ul>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220503093622.png" alt="Pasted image 20220503093622"/></a></p>
 <h2 id="closed-hashing-example"><a class="header" href="#closed-hashing-example">Closed Hashing Example</a></h2>
