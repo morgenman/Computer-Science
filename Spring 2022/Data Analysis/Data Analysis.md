@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_13:26:17-04:00
+updated: 2022-05-03_12:33:00-04:00
 ---
 
 # Data Analysis & Visualization
@@ -7,6 +7,8 @@ updated: 2022-04-28_13:26:17-04:00
 _Capturing your audience and showing them what they want to see in one chart_
 
 Public Data https://archive.ics.uci.edu/ml/index.php
+
+[[Simple Linear Regression Assignment]]
 
 # Information Visualization
 
