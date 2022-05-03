@@ -118,9 +118,17 @@
               "type": "wordle-view",
               "state": {}
             }
+          },
+          {
+            "id": "8e505407aa012a08",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",

@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-28_10:39:24-04:00
+updated: 2022-05-03_09:34:54-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -971,9 +971,27 @@ p(K,i) = i
 
 * Probability of slot 6 is 1/|HT| + each contiguous filled slot 
 
+## Problem: Primary Clustering 
+* This is caused by linear probing causing the records to clump
+* Possible fix: cycle through all slots before returning to home
+* for this to work, c must be relatively prime to M (Table size)
 
+
+
+![[Pasted image 20220503093622.png]]
 
 ## Closed Hashing Example
-Slot | Value Stored | Prob. Next | Probe Se
+| Slot | Value Stored | Prob. Next | Probe Seg. |
+| ---- | ------------ | ---------- | ---------- |
+| 0    |              |            |            |
+| 1    |              |            |            |
+| 2    |              |            |            |
+| 3    |              |            |            |
+| 4    |              |            |            |
+| 5    |              |            |            |
+| 6    |              |            |            |
+| 7    |              |            |            |
+| 8    |              |            |            |
+| 9     |              |            |            |
 
 
