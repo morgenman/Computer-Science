@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-03_09:41:42-04:00
+updated: 2022-05-03_09:49:14-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -977,7 +977,7 @@ p(K,i) = i
 * we multiply the value by a factor called **c**
 * p(k,i)=ci
 * for this to work, c must be relatively prime to M (Table size)
-![[Pasted image 20220503093622.png]]
+
 ## Pseudo-random probing
 * p(k,i) = Perm[i-1]
 	* where Perm is an array of length M-1 containing a random permutation of the values of 1 to M-1
@@ -989,21 +989,33 @@ p(K,i) = i
 
 
 ## Better Pseudorandom Example
+![[Pasted image 20220503093622.png]]
 | Table | = 10
 Perm = [2,6,5,1,7,9,3,8,4]
+We use permutation for the offset
+Slot 0 is the home slot
+keys = 2, 22,42,32,12
 
+first is 2, 2 mod 10 is 2
+22? (home is 2)
+
+42 mod 10 = 2. 
+2 is occupied
+Collision resolution mode
+home is 2, i = 1, first one in sequence
+P(k,i) = 
 
 | Slot | Value Stored | Prob. Next | Probe Seg. |
 | ---- | ------------ | ---------- | ---------- |
 | 0    |              |            |            |
 | 1    |              |            |            |
-| 2    |              |            |            |
+| 2    | 2            |            |            |
 | 3    |              |            |            |
-| 4    |              |            |            |
+| 4    | 22           |            |            |
 | 5    |              |            |            |
 | 6    |              |            |            |
 | 7    |              |            |            |
 | 8    |              |            |            |
-| 9     |              |            |            |
+| 9    |              |            |            |
 
 
