@@ -6,5 +6,7 @@
   "enabledCssSnippets": [
     "custom"
   ],
-  "baseFontSizeAction": false
+  "baseFontSizeAction": false,
+  "textFontFamily": "",
+  "monospaceFontFamily": "Comic Code Ligatures"
 }

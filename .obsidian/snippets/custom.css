@@ -15,22 +15,24 @@
   --font-scale-8: 3.885rem;
   --font-scale-9: 4.798rem;
   --font-scale-10: 5.75rem;
-  --default-font: "IBM Plex Mono"!important;
+  --default-font: "Comic Code Ligatures" !important;
 }
 
-.theme-dark{
-  --default-font: "IBM Plex Mono";
+.theme-dark {
+  --default-font: "Comic Code Ligatures";
 }
 
 .HyperMD-codeblock-bg.CodeMirror-linebackground {
   background: transparent !important;
   background-color: transparent !important;
-
 }
 
-.outliner-plugin-bls .markdown-source-view .CodeMirror-line .cm-hmd-list-indent::before {
+.outliner-plugin-bls
+  .markdown-source-view
+  .CodeMirror-line
+  .cm-hmd-list-indent::before {
   background-size: 4ch 1px;
 }
 span.cm-header {
-    font-family: IBM Plex Sans;
+  font-family: Comic Code Ligatures;
 }
