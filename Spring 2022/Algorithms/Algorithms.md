@@ -1038,3 +1038,4 @@ p[2] = 5
 
 ## Quadratic Hashing
 ![[Pasted image 20220503101337.png]]
+Basically, add i^2 to the home slot
