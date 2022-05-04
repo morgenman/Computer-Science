@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-04_10:13:27-04:00
+updated: 2022-05-04_10:19:40-04:00
 ---
 # Networks
 
@@ -863,5 +863,5 @@ m = $c^{d}$ mod n = 12
 ![[Pasted image 20220502104309.png]]
 Digital signature should be certified
 
-
+![[Pasted image 20220504101908.png]]
 
