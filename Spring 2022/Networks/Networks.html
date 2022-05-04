@@ -1485,6 +1485,12 @@ This also protects against a man-in-the-middle attack</p>
 <li>alice/bob use shared secret to derive set of keys</li>
 </ul>
 </li>
+</ul>
+<p><code>k xor m1 xor k xor m2 </code><br />
+becomes<br />
+<code>m1 xor m2</code><br />
+Using statistical analysis, we can break this</p>
+<ul>
 <li>Data Transfer:
 <ul>
 <li>stream data transfer: data as a series of records</li>
