@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-04_10:28:52-04:00
+updated: 2022-05-04_10:36:33-04:00
 ---
 # Networks
 
@@ -878,4 +878,15 @@ Bob can decrypt #3 with his private key. This allows him to decode #2 (privacy)
 Using the hash function to verify the message content (integrity)
 This also protects against a man-in-the-middle attack
 
-## TLS 1.3: RFC 8846 [2018]
+# TLS 1.3: RFC 8846 [2018]
+* Handshake: 
+	* alice/bob use certificates, private keys to authenticate each other, exchange or create a shared secret
+* Key Derivation: 
+	* alice/bob use shared secret to derive set of keys
+* Data Transfer: 
+	* stream data transfer: data as a series of records
+	* not just one time transactions
+* Connection Closure:
+	* special messages to securely close connection
+
+
