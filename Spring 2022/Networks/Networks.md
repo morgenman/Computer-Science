@@ -883,6 +883,12 @@ This also protects against a man-in-the-middle attack
 	* alice/bob use certificates, private keys to authenticate each other, exchange or create a shared secret
 * Key Derivation: 
 	* alice/bob use shared secret to derive set of keys
+
+`k xor m1 xor k xor m2 `
+becomes
+`m1 xor m2`
+Using statistical analysis, we can break this
+
 * Data Transfer: 
 	* stream data transfer: data as a series of records
 	* not just one time transactions
