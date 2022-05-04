@@ -865,3 +865,12 @@ Digital signature should be certified
 
 ![[Pasted image 20220504101908.png]]
 
+
+Three things:
+1. $K_{A}^{-}(H(m))$
+2. $K_{s}(m)$
+3. $K_{B}^{+}(K_{s})$ 
+
+Anyone can decrypt #1 with alice's public key. This proves alice's identity (Authentic)
+
+Bob can decrypt #3
