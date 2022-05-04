@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-04_10:36:33-04:00
+updated: 2022-05-04_10:43:57-04:00
 ---
 # Networks
 
@@ -888,6 +888,8 @@ This also protects against a man-in-the-middle attack
 becomes
 `m1 xor m2`
 Using statistical analysis, we can break this
+To fix this, we use an agreed upon algorithm to derive a set of keys as big as the number of messages sent
+$\therefore$  we have a set of keys
 
 * Data Transfer: 
 	* stream data transfer: data as a series of records
