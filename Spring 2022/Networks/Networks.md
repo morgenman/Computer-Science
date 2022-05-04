@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-04_10:19:40-04:00
+updated: 2022-05-04_10:28:52-04:00
 ---
 # Networks
 
@@ -871,6 +871,11 @@ Three things:
 2. $K_{s}(m)$
 3. $K_{B}^{+}(K_{s})$ 
 
-Anyone can decrypt #1 with alice's public key. This proves alice's identity (Authentic)
+Anyone can decrypt #1 with alice's public key. This proves alice's identity (Authenticity)
 
-Bob can decrypt #3
+Bob can decrypt #3 with his private key. This allows him to decode #2 (privacy)
+
+Using the hash function to verify the message content (integrity)
+This also protects against a man-in-the-middle attack
+
+## TLS 1.3: RFC 8846 [2018]
