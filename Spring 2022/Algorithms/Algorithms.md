@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_09:37:16-04:00
+updated: 2022-05-05_09:44:15-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -1041,4 +1041,14 @@ p[2] = 5
 Basically, add i^2 to the home slot
 
 ## Collision Resolution
+* Primary clustering is a problem
+	* pseudo/quadradic help, but clustering still occurs 
+* Secondary Clustering
+	* when two keys are assigned to the same home slot
+
+## Double Hashing
+* Helps solve secondary clustering
+* A return to linear probing where the constant is determined using the key K
+
+* p(K,i) = i * h_2 (K)
 * 
