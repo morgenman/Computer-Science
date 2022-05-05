@@ -1487,8 +1487,12 @@ First collsion is 23:</p>
 <ol>
 <li>H(K) = 23%7 = 2; collision<br />
 H$_{2}$(K) = REV(23)%5 = 32%5 = 2<br />
-so, p(K,i) = i * 2 =</li>
-<li></li>
+so, p(K,i) = i * 2 = {2,4,6, ... }</li>
+<li>H(K) = 81%7 = 4; collision<br />
+H$<em>{2}$(K) = REV(81)%5 = 18%5 = 3<br />
+P(K,i) = i * H$</em>{2}$(K) = {3,6,9, ... }<br />
+Base slot = 4, we add the P(K,i) to it<br />
+4+3%7</li>
 </ol>
 <table><thead><tr><th>Slot</th><th>Value Stored</th><th>Explanation</th></tr></thead><tbody>
 <tr><td>0</td><td>14</td><td>h(K) = 14%7 = 0; N.C.</td></tr>
@@ -1496,7 +1500,7 @@ so, p(K,i) = i * 2 =</li>
 <p>| 1    | 15           | h(K) = 15%7 = 1; N.C.        |<br />
 | 2    | 2            | h(K) = 2%7 = 2; no collision |<br />
 | 3    |              |                              |<br />
-| 4    |              |                              |<br />
+| 4    | 23             | See #1                            |<br />
 | 5    |              |                              |<br />
 | 6    |              |                              |</p>
 
