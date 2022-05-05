@@ -2,7 +2,7 @@
   "baseFontSize": 16,
   "theme": "moonstone",
   "translucency": false,
-  "cssTheme": "Primary",
+  "cssTheme": "Cardstock",
   "enabledCssSnippets": [
     "custom"
   ],
