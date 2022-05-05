@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_10:11:17-04:00
+updated: 2022-05-05_10:18:50-04:00
 ---
 # Hashing Implementations
 * Balanced binary search tree
@@ -168,4 +168,15 @@ First collsion is 23:
 # Performance Analysis
 * *a fast method of storing and retrieving keys*
 * All searches require constant time
+* How full the hash table is is the best metric of performance
+## Size considerations
+
+Load Factor: n/k where:
+n = number of entries
+k = number of buckets
+
+As load factor increases, hash table performance slows
+
+* In general, 70 - 75 % fullness is best
 * 
+
