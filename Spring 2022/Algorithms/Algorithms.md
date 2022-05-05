@@ -501,3 +501,6 @@ Three general approaches:
 * Search n elements, average access time T(n)
 * ![[Pasted image 20220426102225.png]]
 ![[Hashing]]
+
+
+ ![[Graphs]]

@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_10:31:23-04:00
+updated: 2022-05-05_10:37:04-04:00
 ---
 # Hashing Implementations
 * Balanced binary search tree
@@ -183,5 +183,5 @@ As load factor increases, hash table performance slows
 * No duplicate records stored in the table
 * deletion cannot undermine later searches
 	* solution is **tombstone**
-* 
+* Hash table will fill up the more tombstones we have
 

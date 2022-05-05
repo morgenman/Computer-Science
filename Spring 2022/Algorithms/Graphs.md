@@ -1,0 +1,2 @@
+# Terminology
+* A graph G = 
