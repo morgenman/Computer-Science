@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Spring 2022/Algorithms/Algorithms.md",
+            "file": "Spring 2022/Algorithms/Hashing.md",
             "mode": "source",
             "source": false
           }
@@ -57,8 +57,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -79,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring 2022/Algorithms/Algorithms.md",
+                "file": "Spring 2022/Algorithms/Hashing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -96,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring 2022/Algorithms/Algorithms.md",
+                "file": "Spring 2022/Algorithms/Hashing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -108,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring 2022/Algorithms/Algorithms.md"
+                "file": "Spring 2022/Algorithms/Hashing.md"
               }
             }
           },
@@ -138,6 +137,7 @@
   },
   "active": "5ed465a06de0ef4e",
   "lastOpenFiles": [
+    "Spring 2022/Algorithms/Hashing.md",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Networks/Networks.md",
     "Spring 2022/Data Analysis/Simple Linear Regression Assignment.md",
@@ -146,7 +146,6 @@
     "Spring 2022/Internship/Internship.md",
     "Spring 2022/Comptia Security+/Comptia Security+.md",
     "Spring 2022/Algorithms/Midterm 1 Study Guide.md",
-    "Fall 2021/2022-02-18.md",
-    "Fall 2021/Operating Systems/Kernel Mode.md"
+    "Fall 2021/2022-02-18.md"
   ]
 }

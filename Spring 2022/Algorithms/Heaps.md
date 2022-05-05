@@ -1,10 +1,6 @@
 ---
-updated: 2022-05-05_10:06:59-04:00
+updated: 2022-05-05_10:07:10-04:00
 ---
-* $\mathcal{E}$
-* Like an empty transition
-* Lets you jump states without input
-
 # Heaps
 * A complete binary tree
 * values are partially ordered

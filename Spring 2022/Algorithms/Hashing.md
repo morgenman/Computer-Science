@@ -1,7 +1,7 @@
 ---
 updated: 2022-05-05_10:05:23-04:00
 ---
-# Hashing
+# Hashing Implementations
 * Balanced binary search tree
 	* effective but not instantaneous
 * Hashing gives us direct access O(c) by key value
@@ -163,3 +163,6 @@ First collsion is 23:
 | 4    | 23           | See #1                       |
 | 5    |              |                              |
 | 6    |              |                              |
+
+
+# Performance Analysis
