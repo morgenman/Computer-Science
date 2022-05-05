@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_10:05:23-04:00
+updated: 2022-05-05_10:11:17-04:00
 ---
 # Hashing Implementations
 * Balanced binary search tree
@@ -166,3 +166,6 @@ First collsion is 23:
 
 
 # Performance Analysis
+* *a fast method of storing and retrieving keys*
+* All searches require constant time
+* 

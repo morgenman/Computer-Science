@@ -2,11 +2,11 @@
   "baseFontSize": 16,
   "theme": "moonstone",
   "translucency": false,
-  "cssTheme": "Spectrum",
+  "cssTheme": "Primary",
   "enabledCssSnippets": [
     "custom"
   ],
   "baseFontSizeAction": false,
-  "textFontFamily": "",
+  "textFontFamily": "Comic Code Ligatures",
   "monospaceFontFamily": "Comic Code Ligatures"
 }
