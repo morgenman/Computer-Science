@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_10:37:04-04:00
+updated: 2022-05-05_11:01:09-04:00
 ---
 # Hashing Implementations
 * Balanced binary search tree
@@ -148,8 +148,8 @@ First collsion is 23:
    H$_{2}$(K) = REV(23)%5 = 32%5 = 2
    so, p(K,i) = i * 2 = {2,4,6, ... }
 2. H(K) = 81%7 = 4; collision
-   H$_{2}$(K) = REV(81)%5 = 18%5 = 3
-   P(K,i) = i * H$_{2}$(K) = {3,6,9, ... }
+   $H_{2}$(K) = REV(81)%5 = 18%5 = 3
+   P(K,i) = i * $H_{2}$(K) = {3,6,9, ... }
    Base slot = 4, we add the P(K,i) to it
    4+3%7=0, collision
    4+6%7=3, N.C.
@@ -161,8 +161,8 @@ First collsion is 23:
 | 2    | 2            | h(K) = 2%7 = 2; no collision |
 | 3    | 81           | See #2                       | 
 | 4    | 23           | See #1                       |
-| 5    |              |                              |
-| 6    |              |                              |
+| 5    | .           |   .                           |
+| 6    | .             | .                             |
 
 
 # Performance Analysis
@@ -184,4 +184,3 @@ As load factor increases, hash table performance slows
 * deletion cannot undermine later searches
 	* solution is **tombstone**
 * Hash table will fill up the more tombstones we have
-

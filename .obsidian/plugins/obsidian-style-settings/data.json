@@ -16,5 +16,8 @@
   "primary-ceciliamay@@font-interface-theme": "\"Karla\", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif",
   "primary-ceciliamay@@inter-alt": false,
   "primary-ceciliamay@@tabular-nums": false,
-  "primary-ceciliamay@@header-size__preset": "header-size__medium"
+  "primary-ceciliamay@@header-size__preset": "header-size__medium",
+  "primary-ceciliamay@@scrollbar-style": "scrollbar__mac",
+  "primary-ceciliamay@@gray-md-formatting": false,
+  "primary-ceciliamay@@no-md-activeline": false
 }
