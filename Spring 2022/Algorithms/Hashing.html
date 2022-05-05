@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-05-05_10:37:04-04:00</p>
+<p>updated: 2022-05-05_11:01:09-04:00</p>
 <hr>  
 <h1 id="hashing-implementations"><a class="header" href="#hashing-implementations">Hashing Implementations</a></h1>
 <ul>
@@ -346,8 +346,8 @@ First collsion is 23:</p>
 H$_{2}$(K) = REV(23)%5 = 32%5 = 2<br />
 so, p(K,i) = i * 2 = {2,4,6, ... }</li>
 <li>H(K) = 81%7 = 4; collision<br />
-H$<em>{2}$(K) = REV(81)%5 = 18%5 = 3<br />
-P(K,i) = i * H$</em>{2}$(K) = {3,6,9, ... }<br />
+$H_{2}$(K) = REV(81)%5 = 18%5 = 3<br />
+P(K,i) = i * $H_{2}$(K) = {3,6,9, ... }<br />
 Base slot = 4, we add the P(K,i) to it<br />
 4+3%7=0, collision<br />
 4+6%7=3, N.C.</li>
@@ -359,8 +359,8 @@ Base slot = 4, we add the P(K,i) to it<br />
 <tr><td>3</td><td>81</td><td>See #2</td></tr>
 </tbody></table>
 <p>| 4    | 23           | See #1                       |<br />
-| 5    |              |                              |<br />
-| 6    |              |                              |</p>
+| 5    | .           |   .                           |<br />
+| 6    | .             | .                             |</p>
 <h1 id="performance-analysis"><a class="header" href="#performance-analysis">Performance Analysis</a></h1>
 <ul>
 <li><em>a fast method of storing and retrieving keys</em></li>
