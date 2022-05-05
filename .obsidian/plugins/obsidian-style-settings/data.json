@@ -6,9 +6,15 @@
   "bubble-space-1@@blp-gif": true,
   "blue-topaz-theme@@color-scheme-options": "color-scheme-options-default",
   "blue-topaz-theme@@background-image-settings-markdown-page-options": "background-image-settings-markdown-page-kawaii",
-  "primary-ceciliamay@@header-color__preset": "header-color__rainbow",
-  "primary-ceciliamay@@vault-title__titlebar": false,
-  "primary-ceciliamay@@vault-title__file-explorer": false,
+  "primary-ceciliamay@@header-color__preset": "header-color__ogv",
+  "primary-ceciliamay@@vault-title__titlebar": true,
+  "primary-ceciliamay@@vault-title__file-explorer": true,
   "primary-ceciliamay@@hide__note-header": true,
-  "primary-ceciliamay@@hide__sidedockribbon": "hide__sidedockribbon-functional"
+  "primary-ceciliamay@@hide__sidedockribbon": "hide__sidedockribbon-functional",
+  "primary-ceciliamay@@font-preview-header": "\"Karla\", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif",
+  "primary-ceciliamay@@font-editor-header": "\"Lora\", Georgia, Times New Roman, serif",
+  "primary-ceciliamay@@font-interface-theme": "\"Karla\", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif",
+  "primary-ceciliamay@@inter-alt": false,
+  "primary-ceciliamay@@tabular-nums": false,
+  "primary-ceciliamay@@header-size__preset": "header-size__medium"
 }
