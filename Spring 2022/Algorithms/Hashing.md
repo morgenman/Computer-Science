@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_10:18:50-04:00
+updated: 2022-05-05_10:31:23-04:00
 ---
 # Hashing Implementations
 * Balanced binary search tree
@@ -182,5 +182,6 @@ As load factor increases, hash table performance slows
 ## Deletion
 * No duplicate records stored in the table
 * deletion cannot undermine later searches
-	* soluti
+	* solution is **tombstone**
+* 
 
