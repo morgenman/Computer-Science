@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_11:01:09-04:00
+updated: 2022-05-05_11:08:04-04:00
 ---
 # Hashing Implementations
 * Balanced binary search tree
@@ -145,7 +145,7 @@ Keys: 2, 15, 14, 23, 81
 2 - 2 mod 7 is 2
 First collsion is 23:
 1. H(K) = 23%7 = 2; collision
-   H$_{2}$(K) = REV(23)%5 = 32%5 = 2
+   $H_{2}$(K) = REV(23)%5 = 32%5 = 2
    so, p(K,i) = i * 2 = {2,4,6, ... }
 2. H(K) = 81%7 = 4; collision
    $H_{2}$(K) = REV(81)%5 = 18%5 = 3
@@ -159,10 +159,10 @@ First collsion is 23:
 | 0    | 14           | h(K) = 14%7 = 0; N.C.        |
 | 1    | 15           | h(K) = 15%7 = 1; N.C.        |
 | 2    | 2            | h(K) = 2%7 = 2; no collision |
-| 3    | 81           | See #2                       | 
-| 4    | 23           | See #1                       |
-| 5    | .           |   .                           |
-| 6    | .             | .                             |
+| 3    | 81           | See number 2                 |
+| 4    | 23           | See number 1                 | 
+| 5    |              |                              |
+| 6    |              |                              |
 
 
 # Performance Analysis

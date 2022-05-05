@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_10:40:51-04:00
+updated: 2022-05-05_11:04:43-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -492,7 +492,7 @@ Cutoff for midterm
 Three general approaches:
 
 1. Sequential
-2. Hashing
+2. [[Hashing]]
 3. Tree Indexing
 4. (sort first & binary sort)
 

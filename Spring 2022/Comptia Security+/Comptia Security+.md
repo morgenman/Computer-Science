@@ -1,5 +1,5 @@
 ---
-updated: 2022-02-15_12:31:34-05:00
+updated: 2022-05-05_11:04:45-04:00
 ---
 # CompTIA Security + Overview
 [[601_study_guide.pdf]]
@@ -10,7 +10,7 @@ updated: 2022-02-15_12:31:34-05:00
 	* encryption
 2. Integrity 
 	* ensuring information has not been modified or altered
-	* hashing helps verify this
+	* [[hashing]] helps verify this
 3. Availability
 	* information is available to be accessed, stored, and protected at all time
 	* information without availability is useless 
