@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-05-05_11:01:09-04:00</p>
+<p>updated: 2022-05-05_11:08:04-04:00</p>
 <hr>  
 <h1 id="hashing-implementations"><a class="header" href="#hashing-implementations">Hashing Implementations</a></h1>
 <ul>
@@ -343,7 +343,7 @@ For this second hash function we chose reverse mod 5. We have to use the key som
 First collsion is 23:</p>
 <ol>
 <li>H(K) = 23%7 = 2; collision<br />
-H$_{2}$(K) = REV(23)%5 = 32%5 = 2<br />
+$H_{2}$(K) = REV(23)%5 = 32%5 = 2<br />
 so, p(K,i) = i * 2 = {2,4,6, ... }</li>
 <li>H(K) = 81%7 = 4; collision<br />
 $H_{2}$(K) = REV(81)%5 = 18%5 = 3<br />
@@ -356,11 +356,11 @@ Base slot = 4, we add the P(K,i) to it<br />
 <tr><td>0</td><td>14</td><td>h(K) = 14%7 = 0; N.C.</td></tr>
 <tr><td>1</td><td>15</td><td>h(K) = 15%7 = 1; N.C.</td></tr>
 <tr><td>2</td><td>2</td><td>h(K) = 2%7 = 2; no collision</td></tr>
-<tr><td>3</td><td>81</td><td>See #2</td></tr>
+<tr><td>3</td><td>81</td><td>See number 2</td></tr>
+<tr><td>4</td><td>23</td><td>See number 1</td></tr>
 </tbody></table>
-<p>| 4    | 23           | See #1                       |<br />
-| 5    | .           |   .                           |<br />
-| 6    | .             | .                             |</p>
+<p>| 5    |              |                              |<br />
+| 6    |              |                              |</p>
 <h1 id="performance-analysis"><a class="header" href="#performance-analysis">Performance Analysis</a></h1>
 <ul>
 <li><em>a fast method of storing and retrieving keys</em></li>

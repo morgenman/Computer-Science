@@ -1045,7 +1045,7 @@ set of table templates stored in a <span class="missing-link" style="color:darkr
     });
 </script>
 <hr>  
-<p>updated: 2022-01-23_12:32:31-05:00</p>
+<p>updated: 2022-05-05_11:04:50-04:00</p>
 <hr>  
 <h1 id="database-engine"><a class="header" href="#database-engine">Database Engine</a></h1>
 <p>Three Parts:</p>
@@ -1054,7 +1054,7 @@ set of table templates stored in a <span class="missing-link" style="color:darkr
 <ul>
 <li>Interaction with OS file manager</li>
 <li>storing, retrieving, and updating data</li>
-<li>indexing, hashing etc.</li>
+<li>indexing, <span class="missing-link" style="color:darkred;">hashing</span> etc.</li>
 </ul>
 </li>
 <li><strong>Query Processing</strong>
@@ -9875,7 +9875,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-05-05_10:40:51-04:00</p>
+<p>updated: 2022-05-05_11:04:43-04:00</p>
 <hr>  
 <h1 id="algorithms"><a class="header" href="#algorithms">Algorithms</a></h1>
 <p>Thursdays one minute before midnight<br />
@@ -10416,7 +10416,7 @@ insertion/deletion in Array is O(n), but getting to the node is O(1)</p>
 <p>Three general approaches:</p>
 <ol>
 <li>Sequential</li>
-<li>Hashing</li>
+<li><a href="Spring%202022/Algorithms/Hashing.html">Hashing</a></li>
 <li>Tree Indexing</li>
 <li>(sort first &amp; binary sort)</li>
 </ol>
@@ -11127,7 +11127,7 @@ Unbalanced is a problem</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-05-05_11:01:09-04:00</p>
+<p>updated: 2022-05-05_11:08:04-04:00</p>
 <hr>  
 <h1 id="hashing-implementations"><a class="header" href="#hashing-implementations">Hashing Implementations</a></h1>
 <ul>
@@ -11314,7 +11314,7 @@ For this second hash function we chose reverse mod 5. We have to use the key som
 First collsion is 23:</p>
 <ol>
 <li>H(K) = 23%7 = 2; collision<br />
-H$_{2}$(K) = REV(23)%5 = 32%5 = 2<br />
+$H_{2}$(K) = REV(23)%5 = 32%5 = 2<br />
 so, p(K,i) = i * 2 = {2,4,6, ... }</li>
 <li>H(K) = 81%7 = 4; collision<br />
 $H_{2}$(K) = REV(81)%5 = 18%5 = 3<br />
@@ -11327,11 +11327,11 @@ Base slot = 4, we add the P(K,i) to it<br />
 <tr><td>0</td><td>14</td><td>h(K) = 14%7 = 0; N.C.</td></tr>
 <tr><td>1</td><td>15</td><td>h(K) = 15%7 = 1; N.C.</td></tr>
 <tr><td>2</td><td>2</td><td>h(K) = 2%7 = 2; no collision</td></tr>
-<tr><td>3</td><td>81</td><td>See #2</td></tr>
+<tr><td>3</td><td>81</td><td>See number 2</td></tr>
+<tr><td>4</td><td>23</td><td>See number 1</td></tr>
 </tbody></table>
-<p>| 4    | 23           | See #1                       |<br />
-| 5    | .           |   .                           |<br />
-| 6    | .             | .                             |</p>
+<p>| 5    |              |                              |<br />
+| 6    |              |                              |</p>
 <h1 id="performance-analysis"><a class="header" href="#performance-analysis">Performance Analysis</a></h1>
 <ul>
 <li><em>a fast method of storing and retrieving keys</em></li>
@@ -11834,7 +11834,7 @@ tags: [MOC]</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-02-15_12:31:34-05:00</p>
+<p>updated: 2022-05-05_11:04:45-04:00</p>
 <hr>  
 <h1 id="comptia-security--overview"><a class="header" href="#comptia-security--overview">CompTIA Security + Overview</a></h1>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/601_study_guide.pdf">601_study_guide.pdf</a></p>
@@ -11850,7 +11850,7 @@ tags: [MOC]</p>
 <li>Integrity
 <ul>
 <li>ensuring information has not been modified or altered</li>
-<li>hashing helps verify this</li>
+<li><span class="missing-link" style="color:darkred;">hashing</span> helps verify this</li>
 </ul>
 </li>
 <li>Availability
