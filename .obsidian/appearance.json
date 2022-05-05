@@ -5,7 +5,7 @@
   "cssTheme": "Primary",
   "enabledCssSnippets": [],
   "baseFontSizeAction": false,
-  "textFontFamily": "",
-  "monospaceFontFamily": "",
+  "textFontFamily": "Comic Code Ligatures",
+  "monospaceFontFamily": "Comic Code Ligatures",
   "interfaceFontFamily": ""
 }

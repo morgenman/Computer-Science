@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_10:41:05-04:00
+updated: 2022-05-05_10:54:07-04:00
 ---
 # Terminology
 * A graph G = (V,E) consists of:
@@ -11,3 +11,4 @@ updated: 2022-05-05_10:41:05-04:00
 
 ![[Pasted image 20220505104325.png]]
 
+A **cycle** is a loop of length >= 3
