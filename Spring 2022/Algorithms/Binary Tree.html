@@ -1,0 +1,850 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+
+<head>
+    <!-- Book generated using mdBook and mdzk -->
+    <meta charset="UTF-8">
+    <title>Binary Tree - Zettelkasten</title>
+    <!-- Custom HTML head -->
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#242424" />
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../../highlight.css">
+    <link rel="stylesheet" href="../../tomorrow-night.css">
+    <link rel="stylesheet" href="../../ayu-highlight.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+    </style>
+
+    <!-- Custom theme stylesheets -->
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../../";
+        var default_theme = "dark";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) { theme = default_theme; }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('light')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter"><li class="chapter-item "><div>Fall 2021</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Databases.html">Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/Nihon-Go.html">Nihon-Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Databases/Nihon-Go/_Index_of_Nihon-Go.html">_Index_of_Nihon-Go</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Assignment Operation.html">Assignment Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Attribute.html">Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Candidate Key.html">Candidate Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Cartesian Product.html">Cartesian Product</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Definition Language.html">Data Definition Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Manipulation Language.html">Data Manipulation Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Data Models.html">Data Models</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Architecture.html">Database Architecture</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Design.html">Database Design</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Database Engine.html">Database Engine</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Entity-Relationship.html">Entity-Relationship</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Exam 1 Corrections.html">Exam 1 Corrections</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Foreign Key.html">Foreign Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/JSON.html">JSON</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Join.html">Join</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Key.html">Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Levels of Abstraction.html">Levels of Abstraction</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Normal Forms.html">Normal Forms</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Primary Key.html">Primary Key</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Prime Attribute.html">Prime Attribute</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Project.html">Project</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Referential Integrity.html">Referential Integrity</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Algebra.html">Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Relational Model.html">Relational Model</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Rename Operation.html">Rename Operation</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Review Difficult Questions for HW 1 - Relational Algebra.html">Review Difficult Questions for HW 1 - Relational Algebra</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/SQL.html">SQL</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Schema.html">Schema</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Select.html">Select</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Difference.html">Set Difference</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Set Intersection.html">Set Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Superkey.html">Superkey</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Trivial.html">Trivial</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/Union.html">Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Databases/_Index_of_Databases.html">_Index_of_Databases</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Development.html">Game Development</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Game Development/Dithered Drawing.html">Dithered Drawing</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Game Loop.html">Game Loop</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Teamwork Agile.html">Teamwork Agile</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Twine Pitches.html">Twine Pitches</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/Untitled.html">Untitled</a></li><li class="chapter-item "><a href="../../Fall 2021/Game Development/_Index_of_Game Development.html">_Index_of_Game Development</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Operating Systems.html">Operating Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Abstract Data Type.html">Abstract Data Type</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Building with Make.html">Building with Make</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Exam 2 Terms.html">Exam 2 Terms</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Hardware Privledge Level.html">Hardware Privledge Level</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Interrupt.html">Interrupt</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/K-Stack.html">K-Stack</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Kernel Mode.html">Kernel Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Limited Direct Execution.html">Limited Direct Execution</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Persistence.html">Persistence</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Pointers.html">Pointers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Privilege Bit.html">Privilege Bit</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process API.html">Process API</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Process.html">Process</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Schedulers.html">Schedulers</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/State.html">State</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/System Call.html">System Call</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/User Mode.html">User Mode</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/Von Neumann Model of computing.html">Von Neumann Model of computing</a></li><li class="chapter-item "><a href="../../Fall 2021/Operating Systems/_Index_of_Operating Systems.html">_Index_of_Operating Systems</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Professional Practice.html">Professional Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Algorithms of bias movie.html">Algorithms of bias movie</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Ethics Free Presentations.html">Ethics Free Presentations</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Is Professional Practice at Risk Notes.html">Is Professional Practice at Risk Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Losing Lena.html">Losing Lena</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Nick Presentation.html">Nick Presentation</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Picture a Scientist Notes.html">Picture a Scientist Notes</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Presentation 1- Feedback.html">Presentation 1- Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Resume.html">Resume</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/Video 2 Feedback.html">Video 2 Feedback</a></li><li class="chapter-item "><a href="../../Fall 2021/Professional Practice/_Index_of_Professional Practice.html">_Index_of_Professional Practice</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Theory of Computation.html">Theory of Computation</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Automata Theory.html">Automata Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Chomsky Normal Form.html">Chomsky Normal Form</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Closure.html">Closure</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Computability.html">Computability</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Context Free Language.html">Context Free Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA to Regular Expression.html">DFA to Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DFA.html">DFA</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/DeMorgans Law.html">DeMorgans Law</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Epsilon Transition.html">Epsilon Transition</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Equivalence Relation.html">Equivalence Relation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Exam Prep.html">Exam Prep</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Finite Automata.html">Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Context Free Languages.html">Non-Context Free Languages</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Non-Regular Language.html">Non-Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Nondeterministic Finite Automata.html">Nondeterministic Finite Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Pumping Lemma.html">Pumping Lemma</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Push Down Automata.html">Push Down Automata</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Complement.html">RL Closure under Complement</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Concatenation.html">RL Closure under Concatenation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Intersection.html">RL Closure under Intersection</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under Union.html">RL Closure under Union</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/RL Closure under star.html">RL Closure under star</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Expression.html">Regular Expression</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Regular Language.html">Regular Language</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Set Theory.html">Set Theory</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/State Diagram.html">State Diagram</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/Turing Machine.html">Turing Machine</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/_Index_of_Theory of Computation.html">_Index_of_Theory of Computation</a></li><li class="chapter-item "><a href="../../Fall 2021/Theory of Computation/sqrt(2) is irrational.html">sqrt(2) is irrational</a></li></ol></li><li class="chapter-item "><a href="../../Fall 2021/2022-02-09.html">2022-02-09</a></li><li class="chapter-item "><a href="../../Fall 2021/2022-02-18.html">2022-02-18</a></li><li class="chapter-item "><a href="../../Fall 2021/_Index_of_Fall 2021.html">_Index_of_Fall 2021</a></li></ol></li><li class="chapter-item expanded "><div>Spring 2022</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Spring 2022/Algorithms/Algorithms.html">Algorithms</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../Spring 2022/Algorithms/Binary Tree.html" class="active">Binary Tree</a></li><li class="chapter-item "><a href="../../Spring 2022/Algorithms/Hashing.html">Hashing</a></li><li class="chapter-item "><a href="../../Spring 2022/Algorithms/Heaps.html">Heaps</a></li><li class="chapter-item "><a href="../../Spring 2022/Algorithms/Midterm 1 Study Guide.html">Midterm 1 Study Guide</a></li><li class="chapter-item "><a href="../../Spring 2022/Algorithms/Sorting.html">Sorting</a></li><li class="chapter-item "><a href="../../Spring 2022/Algorithms/_Index_of_Algorithms.html">_Index_of_Algorithms</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/Comptia Security+/Comptia Security+.html">Comptia Security+</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Comptia Security+/_Index_of_Comptia Security+.html">_Index_of_Comptia Security+</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/Data Analysis/Data Analysis.html">Data Analysis</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Data Analysis/Simple Linear Regression Assignment.html">Simple Linear Regression Assignment</a></li><li class="chapter-item "><a href="../../Spring 2022/Data Analysis/_Index_of_Data Analysis.html">_Index_of_Data Analysis</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/Networks/Networks.html">Networks</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Networks/_Index_of_Networks.html">_Index_of_Networks</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/Software Engineering/Software Engineering.html">Software Engineering</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Spring 2022/Software Engineering/_Index_of_Software Engineering.html">_Index_of_Software Engineering</a></li></ol></li><li class="chapter-item "><a href="../../Spring 2022/_Index_of_Spring 2022.html">_Index_of_Spring 2022</a></li></ol></li><li class="chapter-item "><div>_Daily_Notes</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-30.html">2021-08-30</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-08-31.html">2021-08-31</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-01.html">2021-09-01</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-06.html">2021-09-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-09.html">2021-09-09</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-10.html">2021-09-10</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-14.html">2021-09-14</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-15.html">2021-09-15</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-16.html">2021-09-16</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-09-22.html">2021-09-22</a></li><li class="chapter-item "><a href="../../_Daily_Notes/2021-10-06.html">2021-10-06</a></li><li class="chapter-item "><a href="../../_Daily_Notes/Capstone Presentations.html">Capstone Presentations</a></li><li class="chapter-item "><a href="../../_Daily_Notes/_Index_of__Daily_Notes.html">_Index_of__Daily_Notes</a></li></ol></li><li class="chapter-item "><a href="../../📗Textbooks/📗Textbooks.html">📗Textbooks</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../📗Textbooks/_Index_of_📗Textbooks.html">_Index_of_📗Textbooks</a></li></ol></li><li class="chapter-item "><a href="../../index.html">🏠 Welcome to Cole's Notes!</a></li><li class="chapter-item "><a href="../../Science of Learning.html">Science of Learning</a></li><li class="chapter-item "><a href="../../Zettelkasten.html">Zettelkasten</a></li><li class="chapter-item "><a href="../../_Index_of_Computer-Science.html">_Index_of_Computer-Science</a></li></ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i id="iconToggle" class="fa fa-moon-o"></i>
+                    </button>
+                </div>
+
+                <h1 class="menu-title">Binary Tree</h1>
+
+                <div class="right-buttons">
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="dark">Dark</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                        aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+          ],
+          throwOnError : false
+        });
+    });
+</script>
+<hr>  
+<p>updated: 2022-05-05_10:07:54-04:00</p>
+<hr>  
+<h1 id="binary-tree"><a class="header" href="#binary-tree">Binary Tree</a></h1>
+<h2 id="basics"><a class="header" href="#basics">Basics</a></h2>
+<ul>
+<li>Root
+<ul>
+<li>two subtrees per each node</li>
+<li>edge connects them</li>
+</ul>
+</li>
+<li>If there is a sequence of nodes n1...nk such that ni is parent of ni+1, it is a <strong>path</strong> from ni to nk</li>
+<li>length of path:k-1</li>
+<li>depth is length of the path from root to the node</li>
+<li>level is depth</li>
+<li>height is depth+1</li>
+<li>leaf has 2 empty children
+<ul>
+<li>each node is structured so it has data and two pointers L&amp;R,</li>
+</ul>
+</li>
+<li>Internal nodes have one non-empty child</li>
+</ul>
+<h2 id="types-of-trees"><a class="header" href="#types-of-trees">Types of Trees</a></h2>
+<ul>
+<li>Oak 🤣</li>
+<li>Full Binary Tree
+<ul>
+<li>each node is either (an internal node with exactly two non empty children) or (a leaf)</li>
+</ul>
+</li>
+<li>Complete binary tree
+<ul>
+<li>shape is restricted and obtained by starting at the root and filling the tree levels from left to right</li>
+</ul>
+</li>
+</ul>
+<h2 id="analysis"><a class="header" href="#analysis">Analysis</a></h2>
+<ul>
+<li>Ratio of internal nodes to leaf nodes?
+<ul>
+<li>Upper bound will occur when each internal node has 2 non-empty children</li>
+<li>This doesn't tell us what shape of tree will give the highest percentage of non-empty leaves</li>
+<li><em>all full binary trees with n internal nodes have the same number of leaves</em></li>
+<li>we can use this to compute space requirements</li>
+</ul>
+</li>
+</ul>
+<h2 id="full-binary-tree-theorem"><a class="header" href="#full-binary-tree-theorem">Full Binary Tree Theorem</a></h2>
+<p><em><strong>MIDTERM</strong></em></p>
+<ul>
+<li>The number of leaves in a non-empty full binary tree is one more than the number of internal nodes</li>
+</ul>
+<blockquote>
+<p>TBP The number of leaves in a FBT is one more than the number of internal nodes<br />
+Proof: By induction, the number of internal nodes<br />
+Basis:  0 internal nodes 1 leaf node $\checkmark$<br />
+1 internal node, 2 leaf nodes $\checkmark$<br />
+Inductive Hypothesis: Assume and FBT, T containing k+1 internal nodes has k leaf nodes for some k $\geq$ 1<br />
+Inductive Step: We must show  that the theorem holds for $\mathbb{k}$+1-&gt;(k-1)+1<br />
+a) Tree T has (k-1)+1 = k internal nodes, by the IH<br />
+See tree T: Select internal node i whose children are leaves<br />
+b) remove i's children. i is now a leaf node.<br />
+See Tree T' : T' has k-1 internal nodes so it has k leave by IH<br />
+c) Restore I's children.<br />
+We again have tree T with k internal nodes<br />
+How many leaves in T<br />
+T' had K leaves<br />
+Restoring to T gives k+2<br />
+BUT<br />
+i was counted as a leave in T' and in T is an internal node.<br />
+$\therefore$ the number of leaves in T is k+2-1 = k+1<br />
+$\therefore$ Tree T has k internal nodes and k+1 leaf nodes<br />
+$\therefore$  Theorem is true by PMI for n $\geq$ 0</p>
+</blockquote>
+<pre><code class="language-nomnoml">#direction:down  
+[0]  
+</code></pre>
+<pre><code class="language-nomnoml">#direction:down  
+[0]-[1]  
+[0]-[2]  
+</code></pre>
+<pre><code class="language-nomnoml">#direction:down  
+Tree T  
+[0]-[1]  
+[0]-[2]  
+[1]-[3]  
+[1]-[i]  
+[i]-[5]  
+[i]-[6]  
+</code></pre>
+<pre><code class="language-nomnoml">#direction:down  
+Tree T'  
+[0]-[1]  
+[0]-[2]  
+[1]-[3]  
+[1]-[i]  
+</code></pre>
+<p>If you take an arbitrary binary tree T, replace every empty subtree with a leaf</p>
+<p><strong>The number of empty subtrees in T is one more than the number of nodes in T.</strong></p>
+<hr>  
+<p>Every node in a binary tree has 2 children for a total of 2n children in a tree of n nodes<br />
+Every node by the root has one parent for a total of n-1 nodes with parents.<br />
+There are n-1 non-empty children.<br />
+2n total children, so n+1 children are empty</p>
+<pre><code class="language-java">public interface BinNode&lt;E&gt;{  
+	// return and set element value  
+	public E element();  
+	public void setElement(E v);  
+  
+	// return the left child  
+	public BinNode&lt;E&gt; left();  
+  
+	// return the right child  
+	public BinNode&lt;E&gt; right();  
+  
+	// return true if is leaf  
+	public boolean isLeaf();  
+}  
+</code></pre>
+<p>Traversal: process for visiting all nodes in some order.<br />
+Three types we will cover:</p>
+<ul>
+<li><strong>Pre order</strong>: left side (root left right starting at root)</li>
+<li><strong>In order</strong>: bottom  (left to right on a tree ignoring level)</li>
+<li><strong>Post order</strong>: right side (left right root starting at leftmost leaf)<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220411192548.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220411192548.png" alt="Pasted image 20220411192548"/></a></li>
+</ul>
+<p>Trace a path around the tree. As you pass a node on the proper side, process it</p>
+<pre><code class="language-java">void preorder (BinNode rt){  
+	if (rt == null) return; // empty subtree  
+	visit(rt);  
+	preorder(rt.left());  
+	preorder(rt.right());  
+}  
+void preorder2(BinNode rt){  
+	visit(rt); // if root is null, we might have a problem  
+	if (rt.left() != null) preorder2(rt.left());  
+	if (rt.right() != null) preorder2(rt.right());  
+}  
+  
+void inorder (BinNode rt){  
+	if (rt == null) return; // empty subtree  
+	inorder(rt.left());  
+	visit(rt);  
+	inorder(rt.right());  
+}  
+  
+void postorder (BinNode rt){  
+	if (rt == null) return; // empty subtree  
+	postorder(rt.left());  
+	postorder(rt.right());  
+	visit(rt);  
+}  
+int count (BinNode rt){  
+	if (rt == null) return 0; // empty subtree  
+	int n = 1;  
+	n += count(rt.left());  
+	n += count(rt.right());  
+	return n;  
+}  
+boolean checkBST (BinNode&lt;integer&gt; rt, int low, int high){  
+	if (rt == null) return true;  
+	int rootKey = rt.element();  
+	if (rt.element() &lt; low || rt.element() &gt; high) return false;  
+	if (!checkBST(rt.left(), low, rt.element())) return false;  
+	return checkBST(rt.right(), rootKey, high);  
+}  
+</code></pre>
+<h2 id="overhead-fractionratio"><a class="header" href="#overhead-fractionratio">Overhead fraction/ratio:</a></h2>
+<ul>
+<li>
+<p>Space requirements (simple pointer based implementation):</p>
+<ul>
+<li>n(2P+D)</li>
+<li>n = number of nodes</li>
+<li>P = size of pointer</li>
+<li>D = size of data</li>
+</ul>
+</li>
+<li>
+<p>Total overhead space for entire tree: 2Pn</p>
+</li>
+<li>
+<p>Total overhead fraction = $\frac{2Pn}{n(2P+D)}=\frac{2P}{2P+D}$</p>
+<ul>
+<li>if P=D, a full tree has about 2/3 of it's total storage taken up in overhead!</li>
+<li>AND 1/2 of the pointers are NULL (theorem 5.2)</li>
+</ul>
+</li>
+<li>
+<p>What if we remove pointers on leaf nodes</p>
+<ul>
+<li>half of nodes are leaf nodes, so that gives us n/2 pointers</li>
+<li>$\frac{P}{P+D}$</li>
+</ul>
+</li>
+<li>
+<p>What if we we have internal nodes with pointers but no data, and leaf nodes with no pointers?</p>
+<ul>
+<li>2Pn+D(n+1) units of space</li>
+<li>overhead is about $\frac{2P}{2P+D}=\frac{2}{3}$</li>
+</ul>
+</li>
+</ul>
+<p>EG:<br />
+all nodes store:</p>
+<ul>
+<li>data  (4B)</li>
+<li>parent pointer (4B)</li>
+<li>2 child pointers (4B each)</li>
+</ul>
+<p>Overhead ratio is $\frac{Ptrs}{Data}=\frac{3(4B)}{3(4B)+4B}=\frac{12B}{16B}=\frac{3}{4}$</p>
+<p>If you can fully fill it up, an array is most efficient.<br />
+We can use an array to store the tree, since the shape of the tree is static.</p>
+<h2 id="binary-search-tree"><a class="header" href="#binary-search-tree">Binary Search Tree</a></h2>
+<ul>
+<li>
+<p>Way of storing a collection of elements so that inserting and searching for records can be done quickly?</p>
+</li>
+<li>
+<p>unsorted list is quick insertion, searching is $\Theta$(n) average case</p>
+</li>
+<li>
+<p>sorted list</p>
+<ul>
+<li>no speed up in searching ll</li>
+<li>array based list: use binary search, so search becomes $\Theta$(n)</li>
+</ul>
+</li>
+<li>
+<p>For every node in the tree</p>
+<ul>
+<li>left node has key value less than node</li>
+<li>right node has greater or equal to node</li>
+</ul>
+</li>
+<li>
+<p>In-order traversal prints them in order</p>
+</li>
+<li>
+<p>Node can be implemented with separate key value and data element as in the books code</p>
+</li>
+<li>
+<p>Finding a record with key value K in BST:</p>
+<ul>
+<li>begin at root</li>
+<li>if root stores record with key value K, you're done</li>
+<li>otherwise search appropriate subtree
+<ul>
+<li>if K &lt; root node's key, left</li>
+<li>if K &gt; root node's key, right</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Deleting is much harder</p>
+<ul>
+<li>Find value in R's subtrees that is most like R (least key value &gt;= R or greatest &lt; R)</li>
+<li>if no duplicates, it doesn't matter</li>
+<li>if there are dupes, must use R subtree</li>
+<li>We want to replace the node with this node</li>
+</ul>
+</li>
+</ul>
+<h3 id="cost"><a class="header" href="#cost">Cost</a></h3>
+<ul>
+<li>finding/inserting/removing is depth of node</li>
+<li>height of tree
+<ul>
+<li>log(n)</li>
+</ul>
+</li>
+<li>Balanced Tree
+<ul>
+<li>Average operations are $\Theta$(log(n))</li>
+<li>if we insert n nodes it's $\Theta$(nlog(n))</li>
+</ul>
+</li>
+<li>Unbalanced
+<ul>
+<li>height can be as much as n</li>
+<li>Worst case $\Theta$(n)</li>
+<li>inserting n nodes is $\Theta$(n$^2$)</li>
+</ul>
+</li>
+<li>Traversal
+<ul>
+<li>$\Theta$(n) regardless of the shape</li>
+</ul>
+</li>
+</ul>
+<p>Simple to implement, efficient when balanced.<br />
+Unbalanced is a problem</p>
+<h2 id="avl-tree"><a class="header" href="#avl-tree">AVL Tree</a></h2>
+<ul>
+<li>named after adelson-velskii and landis</li>
+<li>With each insertion or deletion that the depth of each subtree at each node does not differ by more than once</li>
+<li>Need to be able to maintain balance in $\Theta$(log(n))</li>
+<li>Example: adding 10 -&gt; 6 -&gt; 4
+<ul>
+<li>to fix this, we are going to rotate grandparent right to the child of the parent</li>
+<li>4 &lt;- 6 -&gt; 10</li>
+<li>Left imbalance, right rotation etc.</li>
+</ul>
+</li>
+<li>We are taking three elements and rearranging the tree so the median element is on top</li>
+<li>Example: adding 4 -&gt; 8 -&gt; 6
+<ul>
+<li>we want to right rotate to 4 -&gt; 6 -&gt; 8</li>
+<li>then we can fix it</li>
+</ul>
+</li>
+</ul>
+<h2 id="splay"><a class="header" href="#splay">Splay</a></h2>
+<ul>
+<li>don't maintain balance, but improve balance when tree is accessed</li>
+</ul>
+<p><a href="Heaps.html">Heaps</a></p>
+<hr>  
+<p>Cutoff for midterm</p>
+<h1 id="binary-tree-1"><a class="header" href="#binary-tree-1">Binary Tree</a></h1>
+<h2 id="basics-1"><a class="header" href="#basics-1">Basics</a></h2>
+<ul>
+<li>Root
+<ul>
+<li>two subtrees per each node</li>
+<li>edge connects them</li>
+</ul>
+</li>
+<li>If there is a sequence of nodes n1...nk such that ni is parent of ni+1, it is a <strong>path</strong> from ni to nk</li>
+<li>length of path:k-1</li>
+<li>depth is length of the path from root to the node</li>
+<li>level is depth</li>
+<li>height is depth+1</li>
+<li>leaf has 2 empty children
+<ul>
+<li>each node is structured so it has data and two pointers L&amp;R,</li>
+</ul>
+</li>
+<li>Internal nodes have one non-empty child</li>
+</ul>
+<h2 id="types-of-trees-1"><a class="header" href="#types-of-trees-1">Types of Trees</a></h2>
+<ul>
+<li>Oak 🤣</li>
+<li>Full Binary Tree
+<ul>
+<li>each node is either (an internal node with exactly two non empty children) or (a leaf)</li>
+</ul>
+</li>
+<li>Complete binary tree
+<ul>
+<li>shape is restricted and obtained by starting at the root and filling the tree levels from left to right</li>
+</ul>
+</li>
+</ul>
+<h2 id="analysis-1"><a class="header" href="#analysis-1">Analysis</a></h2>
+<ul>
+<li>Ratio of internal nodes to leaf nodes?
+<ul>
+<li>Upper bound will occur when each internal node has 2 non-empty children</li>
+<li>This doesn't tell us what shape of tree will give the highest percentage of non-empty leaves</li>
+<li><em>all full binary trees with n internal nodes have the same number of leaves</em></li>
+<li>we can use this to compute space requirements</li>
+</ul>
+</li>
+</ul>
+<h2 id="full-binary-tree-theorem-1"><a class="header" href="#full-binary-tree-theorem-1">Full Binary Tree Theorem</a></h2>
+<p><em><strong>MIDTERM</strong></em></p>
+<ul>
+<li>The number of leaves in a non-empty full binary tree is one more than the number of internal nodes</li>
+</ul>
+<blockquote>
+<p>TBP The number of leaves in a FBT is one more than the number of internal nodes<br />
+Proof: By induction, the number of internal nodes<br />
+Basis:  0 internal nodes 1 leaf node $\checkmark$<br />
+1 internal node, 2 leaf nodes $\checkmark$<br />
+Inductive Hypothesis: Assume and FBT, T containing k+1 internal nodes has k leaf nodes for some k $\geq$ 1<br />
+Inductive Step: We must show  that the theorem holds for $\mathbb{k}$+1-&gt;(k-1)+1<br />
+a) Tree T has (k-1)+1 = k internal nodes, by the IH<br />
+See tree T: Select internal node i whose children are leaves<br />
+b) remove i's children. i is now a leaf node.<br />
+See Tree T' : T' has k-1 internal nodes so it has k leave by IH<br />
+c) Restore I's children.<br />
+We again have tree T with k internal nodes<br />
+How many leaves in T<br />
+T' had K leaves<br />
+Restoring to T gives k+2<br />
+BUT<br />
+i was counted as a leave in T' and in T is an internal node.<br />
+$\therefore$ the number of leaves in T is k+2-1 = k+1<br />
+$\therefore$ Tree T has k internal nodes and k+1 leaf nodes<br />
+$\therefore$  Theorem is true by PMI for n $\geq$ 0</p>
+</blockquote>
+<pre><code class="language-nomnoml">#direction:down  
+[0]  
+</code></pre>
+<pre><code class="language-nomnoml">#direction:down  
+[0]-[1]  
+[0]-[2]  
+</code></pre>
+<pre><code class="language-nomnoml">#direction:down  
+Tree T  
+[0]-[1]  
+[0]-[2]  
+[1]-[3]  
+[1]-[i]  
+[i]-[5]  
+[i]-[6]  
+</code></pre>
+<pre><code class="language-nomnoml">#direction:down  
+Tree T'  
+[0]-[1]  
+[0]-[2]  
+[1]-[3]  
+[1]-[i]  
+</code></pre>
+<p>If you take an arbitrary binary tree T, replace every empty subtree with a leaf</p>
+<p><strong>The number of empty subtrees in T is one more than the number of nodes in T.</strong></p>
+<hr>  
+<p>Every node in a binary tree has 2 children for a total of 2n children in a tree of n nodes<br />
+Every node by the root has one parent for a total of n-1 nodes with parents.<br />
+There are n-1 non-empty children.<br />
+2n total children, so n+1 children are empty</p>
+<pre><code class="language-java">public interface BinNode&lt;E&gt;{  
+	// return and set element value  
+	public E element();  
+	public void setElement(E v);  
+  
+	// return the left child  
+	public BinNode&lt;E&gt; left();  
+  
+	// return the right child  
+	public BinNode&lt;E&gt; right();  
+  
+	// return true if is leaf  
+	public boolean isLeaf();  
+}  
+</code></pre>
+<p>Traversal: process for visiting all nodes in some order.<br />
+Three types we will cover:</p>
+<ul>
+<li><strong>Pre order</strong>: left side (root left right starting at root)</li>
+<li><strong>In order</strong>: bottom  (left to right on a tree ignoring level)</li>
+<li><strong>Post order</strong>: right side (left right root starting at leftmost leaf)<br />
+<a href="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220411192548.png" target="_blank"><img src="https://morgenman.github.io/Computer-Science/assets/Pasted image 20220411192548.png" alt="Pasted image 20220411192548"/></a></li>
+</ul>
+<p>Trace a path around the tree. As you pass a node on the proper side, process it</p>
+<pre><code class="language-java">void preorder (BinNode rt){  
+	if (rt == null) return; // empty subtree  
+	visit(rt);  
+	preorder(rt.left());  
+	preorder(rt.right());  
+}  
+void preorder2(BinNode rt){  
+	visit(rt); // if root is null, we might have a problem  
+	if (rt.left() != null) preorder2(rt.left());  
+	if (rt.right() != null) preorder2(rt.right());  
+}  
+  
+void inorder (BinNode rt){  
+	if (rt == null) return; // empty subtree  
+	inorder(rt.left());  
+	visit(rt);  
+	inorder(rt.right());  
+}  
+  
+void postorder (BinNode rt){  
+	if (rt == null) return; // empty subtree  
+	postorder(rt.left());  
+	postorder(rt.right());  
+	visit(rt);  
+}  
+int count (BinNode rt){  
+	if (rt == null) return 0; // empty subtree  
+	int n = 1;  
+	n += count(rt.left());  
+	n += count(rt.right());  
+	return n;  
+}  
+boolean checkBST (BinNode&lt;integer&gt; rt, int low, int high){  
+	if (rt == null) return true;  
+	int rootKey = rt.element();  
+	if (rt.element() &lt; low || rt.element() &gt; high) return false;  
+	if (!checkBST(rt.left(), low, rt.element())) return false;  
+	return checkBST(rt.right(), rootKey, high);  
+}  
+</code></pre>
+<h2 id="overhead-fractionratio-1"><a class="header" href="#overhead-fractionratio-1">Overhead fraction/ratio:</a></h2>
+<ul>
+<li>
+<p>Space requirements (simple pointer based implementation):</p>
+<ul>
+<li>n(2P+D)</li>
+<li>n = number of nodes</li>
+<li>P = size of pointer</li>
+<li>D = size of data</li>
+</ul>
+</li>
+<li>
+<p>Total overhead space for entire tree: 2Pn</p>
+</li>
+<li>
+<p>Total overhead fraction = $\frac{2Pn}{n(2P+D)}=\frac{2P}{2P+D}$</p>
+<ul>
+<li>if P=D, a full tree has about 2/3 of it's total storage taken up in overhead!</li>
+<li>AND 1/2 of the pointers are NULL (theorem 5.2)</li>
+</ul>
+</li>
+<li>
+<p>What if we remove pointers on leaf nodes</p>
+<ul>
+<li>half of nodes are leaf nodes, so that gives us n/2 pointers</li>
+<li>$\frac{P}{P+D}$</li>
+</ul>
+</li>
+<li>
+<p>What if we we have internal nodes with pointers but no data, and leaf nodes with no pointers?</p>
+<ul>
+<li>2Pn+D(n+1) units of space</li>
+<li>overhead is about $\frac{2P}{2P+D}=\frac{2}{3}$</li>
+</ul>
+</li>
+</ul>
+<p>EG:<br />
+all nodes store:</p>
+<ul>
+<li>data  (4B)</li>
+<li>parent pointer (4B)</li>
+<li>2 child pointers (4B each)</li>
+</ul>
+<p>Overhead ratio is $\frac{Ptrs}{Data}=\frac{3(4B)}{3(4B)+4B}=\frac{12B}{16B}=\frac{3}{4}$</p>
+<p>If you can fully fill it up, an array is most efficient.<br />
+We can use an array to store the tree, since the shape of the tree is static.</p>
+<h2 id="binary-search-tree-1"><a class="header" href="#binary-search-tree-1">Binary Search Tree</a></h2>
+<ul>
+<li>
+<p>Way of storing a collection of elements so that inserting and searching for records can be done quickly?</p>
+</li>
+<li>
+<p>unsorted list is quick insertion, searching is $\Theta$(n) average case</p>
+</li>
+<li>
+<p>sorted list</p>
+<ul>
+<li>no speed up in searching ll</li>
+<li>array based list: use binary search, so search becomes $\Theta$(n)</li>
+</ul>
+</li>
+<li>
+<p>For every node in the tree</p>
+<ul>
+<li>left node has key value less than node</li>
+<li>right node has greater or equal to node</li>
+</ul>
+</li>
+<li>
+<p>In-order traversal prints them in order</p>
+</li>
+<li>
+<p>Node can be implemented with separate key value and data element as in the books code</p>
+</li>
+<li>
+<p>Finding a record with key value K in BST:</p>
+<ul>
+<li>begin at root</li>
+<li>if root stores record with key value K, you're done</li>
+<li>otherwise search appropriate subtree
+<ul>
+<li>if K &lt; root node's key, left</li>
+<li>if K &gt; root node's key, right</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Deleting is much harder</p>
+<ul>
+<li>Find value in R's subtrees that is most like R (least key value &gt;= R or greatest &lt; R)</li>
+<li>if no duplicates, it doesn't matter</li>
+<li>if there are dupes, must use R subtree</li>
+<li>We want to replace the node with this node</li>
+</ul>
+</li>
+</ul>
+<h3 id="cost-1"><a class="header" href="#cost-1">Cost</a></h3>
+<ul>
+<li>finding/inserting/removing is depth of node</li>
+<li>height of tree
+<ul>
+<li>log(n)</li>
+</ul>
+</li>
+<li>Balanced Tree
+<ul>
+<li>Average operations are $\Theta$(log(n))</li>
+<li>if we insert n nodes it's $\Theta$(nlog(n))</li>
+</ul>
+</li>
+<li>Unbalanced
+<ul>
+<li>height can be as much as n</li>
+<li>Worst case $\Theta$(n)</li>
+<li>inserting n nodes is $\Theta$(n$^2$)</li>
+</ul>
+</li>
+<li>Traversal
+<ul>
+<li>$\Theta$(n) regardless of the shape</li>
+</ul>
+</li>
+</ul>
+<p>Simple to implement, efficient when balanced.<br />
+Unbalanced is a problem</p>
+<h2 id="avl-tree-1"><a class="header" href="#avl-tree-1">AVL Tree</a></h2>
+<ul>
+<li>named after adelson-velskii and landis</li>
+<li>With each insertion or deletion that the depth of each subtree at each node does not differ by more than once</li>
+<li>Need to be able to maintain balance in $\Theta$(log(n))</li>
+<li>Example: adding 10 -&gt; 6 -&gt; 4
+<ul>
+<li>to fix this, we are going to rotate grandparent right to the child of the parent</li>
+<li>4 &lt;- 6 -&gt; 10</li>
+<li>Left imbalance, right rotation etc.</li>
+</ul>
+</li>
+<li>We are taking three elements and rearranging the tree so the median element is on top</li>
+<li>Example: adding 4 -&gt; 8 -&gt; 6
+<ul>
+<li>we want to right rotate to 4 -&gt; 6 -&gt; 8</li>
+<li>then we can fix it</li>
+</ul>
+</li>
+</ul>
+<h2 id="splay-1"><a class="header" href="#splay-1">Splay</a></h2>
+<ul>
+<li>don't maintain balance, but improve balance when tree is accessed</li>
+</ul>
+
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+    <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+    <script src="//unpkg.com/graphre/dist/graphre.js"></script>
+    <script src="//unpkg.com/nomnoml/dist/nomnoml.js"></script>
+    <script>
+        var nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+        var i = 0;
+        var theme;
+        try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+        if (theme === null || theme === undefined) {
+            theme = 'dark';
+        }
+        while (nomnomls.length > 0) {
+            var name = 'target-canvas';
+            name += i;
+            var source;
+            if (theme == 'dark') source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #c9c9c9\n#fill: #181a20; #22262f\n';
+            else source = '#direction:right\n#gravity:2\n#lineWidth: 2\n#stroke: #22262f\n#fill: #fafafa; #ffffff\n';
+            source += nomnomls[0].textContent;
+            nomnomls[0].insertAdjacentHTML("afterend", '<canvas id="' + name + '">\n</canvas>');
+            var canvas = document.getElementById(name);
+            nomnoml.draw(canvas, source);
+            let rect = canvas.getBoundingClientRect();
+            nomnoml.draw(canvas, source, 4);
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = rect.height + 'px';
+            nomnomls[0].parentElement.removeChild(nomnomls[0].parentElement.firstChild);
+            nomnomls[0].remove();
+            nomnomls = document.getElementsByClassName('language-nomnoml hljs');
+            i++;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
