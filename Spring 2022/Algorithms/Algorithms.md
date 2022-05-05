@@ -1065,8 +1065,12 @@ Keys: 2, 15, 14, 23, 81
 First collsion is 23:
 1. H(K) = 23%7 = 2; collision
    H$_{2}$(K) = REV(23)%5 = 32%5 = 2
-   so, p(K,i) = i * 2 = 
-2. 
+   so, p(K,i) = i * 2 = {2,4,6, ... }
+2. H(K) = 81%7 = 4; collision
+   H$_{2}$(K) = REV(81)%5 = 18%5 = 3
+   P(K,i) = i * H$_{2}$(K) = {3,6,9, ... }
+   Base slot = 4, we add the P(K,i) to it
+   4+3%7
 
 | Slot | Value Stored | Explanation                  |
 | ---- | ------------ | ---------------------------- |
@@ -1074,6 +1078,6 @@ First collsion is 23:
 | 1    | 15           | h(K) = 15%7 = 1; N.C.        |
 | 2    | 2            | h(K) = 2%7 = 2; no collision |
 | 3    |              |                              |
-| 4    |              |                              |
+| 4    | 23             | See #1                            |
 | 5    |              |                              |
 | 6    |              |                              |
