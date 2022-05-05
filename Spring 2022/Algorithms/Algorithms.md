@@ -1051,4 +1051,21 @@ Basically, add i^2 to the home slot
 * A return to linear probing where the constant is determined using the key K
 
 * p(K,i) = i * h_2 (K)
-* 
+
+Example:
+
+h(K) = K % M
+     = K % 7
+p(K,i) = i * h$_$
+
+
+
+| Slot | Value Stored | Explanation |
+| ---- | ------------ | ----------- |
+| 0    |              |             |
+| 1    |              |             |
+| 2    |              |             |
+| 3    |              |             |
+| 4    |              |             |
+| 5    |              |             |
+| 6    |              |             |

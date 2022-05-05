@@ -1,0 +1,253 @@
+/* src/app/components/Menu/styles.css */
+.NLT__menu {
+  position: relative;
+}
+.NLT__menu-container {
+  position: absolute;
+  border-radius: 4px;
+  font-weight: 400;
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 2px 8px var(--background-modifier-box-shadow);
+  z-index: var(--layer-menu);
+}
+
+/* src/app/components/TagCell/styles.css */
+.NLT__tag-cell {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+}
+.NLT__tag {
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 2px 8px;
+  width: fit-content;
+}
+.NLT__tag-content {
+  width: 100%;
+}
+.NLT__tag--red {
+  background-color: #ff6961;
+}
+.NLT__tag--yellow {
+  background-color: #faffc7;
+}
+.NLT__tag--orange {
+  background-color: #ffdfd3;
+}
+.NLT__tag--pink {
+  background-color: #fec8d8;
+}
+.NLT__tag--gray {
+  background-color: #cfcfc4;
+}
+.NLT__tag--purple {
+  background-color: #e0bbe4;
+}
+
+/* src/app/components/TagMenuContent/styles.css */
+.NLT__tag-menu-top {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 4px 10px;
+}
+.NLT__tag-menu-bottom {
+  min-height: 100px;
+  padding: 4px 10px;
+}
+.NLT__tag-menu-text {
+  font-size: 0.85rem;
+  margin: 5px 0px;
+  width: 100%;
+}
+.NLT__tag-menu-input {
+  background-color: transparent !important;
+  border: 0 !important;
+  width: 100%;
+  min-width: 100px;
+  padding-left: 0px !important;
+}
+
+/* src/app/components/CellEditMenu/styles.css */
+.NLT__cell-edit-menu {
+  width: 100%;
+  height: 100%;
+}
+
+/* src/app/components/EditableTd/styles.css */
+.NLT__td {
+  position: relative;
+  vertical-align: top;
+  height: 2rem;
+  cursor: default;
+}
+.NLT__td:focus-visible {
+  border: 1px solid blue;
+  border-style: double;
+}
+.NLT__td--number {
+  text-align: right;
+}
+.NLT__td-content-container {
+  user-select: none;
+}
+
+/* src/app/components/Table/styles.css */
+tbody > tr > .NLT__td:last-child {
+  border: 0 !important;
+  vertical-align: middle;
+}
+tfoot > tr > .NLT__td {
+  border: 0 !important;
+}
+
+/* src/app/components/IconText/styles.css */
+.NLT__icon-text {
+  display: flex;
+  align-items: center;
+}
+.NLT__icon-text > p {
+  margin: 0;
+}
+
+/* src/app/components/DragMenu/styles.css */
+.NLT__drag-menu {
+  width: 180px;
+  font-size: 0.9rem;
+}
+.NLT__drag-menu-item:focus-visible {
+  outline: 1px solid blue;
+}
+
+/* src/app/components/HeaderMenu/styles.css */
+.NLT__header-menu {
+  padding: 4px 10px;
+  cursor: default;
+  min-width: 150px;
+}
+.NLT__header-menu-item:focus-visible {
+  outline: 1px solid blue;
+}
+.NLT__header-menu-header-container {
+  display: flex;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+.NLT__header-menu-ul {
+  padding: 0;
+  margin: 0;
+}
+.NLT__header-menu-header {
+  font-weight: 700;
+  padding-left: 5px;
+}
+.NLT__header-menu-item {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.NLT__header-menu-delete-button {
+  margin-top: 10px;
+}
+
+/* src/app/components/EditableTh/styles.css */
+.NLT__th {
+  text-align: left;
+}
+.NLT__th:focus-visible {
+  border: 1px solid blue;
+  border-style: double;
+}
+.NLT__th:last-child {
+  border: 0 !important;
+}
+.NLT__header-content-container {
+  display: flex;
+}
+.NLT__header-resize-container {
+  position: relative;
+}
+.NLT__header-content {
+  width: 100%;
+  padding-right: 10px;
+  margin-right: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+.NLT__header-resize {
+  position: absolute;
+  cursor: col-resize;
+  width: 10px;
+  margin-left: 7px;
+  min-height: 25px;
+  height: 100%;
+}
+
+/* src/app/app.css */
+.NLT__error {
+  color: red;
+}
+.NLT__app {
+  margin-bottom: 20px;
+  overflow: auto;
+  resize: vertical;
+}
+.NLT__button {
+  padding: 4px;
+}
+.NLT__button:focus-visible {
+  outline: 1px solid blue;
+}
+.NLT__button--sm {
+  width: 50px;
+}
+.NLT__button--reset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.NLT__icon--selectable:hover {
+  border-radius: 4px;
+  box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+.NLT__icon--md {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+.NLT__selectable {
+  cursor: pointer;
+}
+.NLT__selectable:hover {
+  background-color: var(--interactive-hover);
+}
+.NLT__selected {
+  background-color: var(--interactive-normal);
+}
+.NLT__margin-right {
+  margin-right: 4px;
+}
+.NLT__margin-left {
+  margin-left: 4px;
+}
+.NLT__p {
+  margin: 0;
+}
+.NLT__input {
+  height: 100%;
+  width: 100%;
+  padding: 4px 10px !important;
+  border: 0 !important;
+}
+.NLT__input--number {
+  text-align: right;
+}
+.NLT__input--textarea {
+  overflow: hidden;
+}
