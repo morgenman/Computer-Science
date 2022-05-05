@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-05_09:44:15-04:00
+updated: 2022-05-05_09:55:29-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -1056,16 +1056,24 @@ Example:
 
 h(K) = K % M
      = K % 7
-p(K,i) = i * h$_$
+p(K,i) = i * h$_{2}$(K)
+h$_{2}$(K) = REV (K) % 5
 
+Keys: 2, 15, 14, 23, 81
 
+2 - 2 mod 7 is 2
+First collsion is 23:
+1. H(K) = 23%7 = 2; collision
+   H$_{2}$(K) = REV(23)%5 = 32%5 = 2
+   so, p(K,i) = i * 2 = 
+2. 
 
-| Slot | Value Stored | Explanation |
-| ---- | ------------ | ----------- |
-| 0    |              |             |
-| 1    |              |             |
-| 2    |              |             |
-| 3    |              |             |
-| 4    |              |             |
-| 5    |              |             |
-| 6    |              |             |
+| Slot | Value Stored | Explanation                  |
+| ---- | ------------ | ---------------------------- |
+| 0    | 14           | h(K) = 14%7 = 0; N.C.        | 
+| 1    | 15           | h(K) = 15%7 = 1; N.C.        |
+| 2    | 2            | h(K) = 2%7 = 2; no collision |
+| 3    |              |                              |
+| 4    |              |                              |
+| 5    |              |                              |
+| 6    |              |                              |
