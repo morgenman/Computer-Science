@@ -178,5 +178,9 @@ k = number of buckets
 As load factor increases, hash table performance slows
 
 * In general, 70 - 75 % fullness is best
-* 
+
+## Deletion
+* No duplicate records stored in the table
+* deletion cannot undermine later searches
+	* soluti
 
