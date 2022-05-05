@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-03_12:04:36-04:00
+updated: 2022-05-05_09:37:16-04:00
 ---
 # Algorithms
 Thursdays one minute before midnight
@@ -1039,3 +1039,6 @@ p[2] = 5
 ## Quadratic Hashing
 ![[Pasted image 20220503101337.png]]
 Basically, add i^2 to the home slot
+
+## Collision Resolution
+* 
