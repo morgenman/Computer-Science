@@ -4,5 +4,11 @@
   "bubble-space-1@@hover-fm": false,
   "bubble-space-1@@hide-title": false,
   "bubble-space-1@@blp-gif": true,
-  "blue-topaz-theme@@color-scheme-options": "color-scheme-options-autumn-topaz"
+  "blue-topaz-theme@@color-scheme-options": "color-scheme-options-default",
+  "blue-topaz-theme@@background-image-settings-markdown-page-options": "background-image-settings-markdown-page-kawaii",
+  "primary-ceciliamay@@header-color__preset": "header-color__rainbow",
+  "primary-ceciliamay@@vault-title__titlebar": false,
+  "primary-ceciliamay@@vault-title__file-explorer": false,
+  "primary-ceciliamay@@hide__note-header": true,
+  "primary-ceciliamay@@hide__sidedockribbon": "hide__sidedockribbon-functional"
 }
