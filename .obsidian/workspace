@@ -7,8 +7,12 @@
         "id": "57f5a2cbe506e33e",
         "type": "leaf",
         "state": {
-          "type": "graph",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "Spring 2022/Algorithms/Binary Tree.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -52,13 +56,23 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "7063a69376deb659",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Spring 2022/Algorithms/Binary Tree.md"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137,
-    "collapsed": true
+    "width": 278.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -74,6 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Spring 2022/Algorithms/Binary Tree.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -90,17 +105,10 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Spring 2022/Algorithms/Binary Tree.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
-            }
-          },
-          {
-            "id": "7063a69376deb659",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {}
             }
           },
           {
@@ -119,24 +127,25 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 267.1664733886719,
+    "width": 359.9287109375,
     "collapsed": true
   },
   "active": "57f5a2cbe506e33e",
   "lastOpenFiles": [
-    "Spring 2022/Algorithms/Hashing.md",
+    "Spring 2022/Algorithms/Binary Tree.md",
     "Spring 2022/Algorithms/Algorithms.md",
+    "Spring 2022/Algorithms/Hashing.md",
     "Spring 2022/Algorithms/Graphs.md",
     "Spring 2022/Networks/Networks.md",
     "Spring 2022/Data Analysis/Simple Linear Regression Assignment.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Software Engineering/Software Engineering.md",
     "Spring 2022/Internship/Internship.md",
-    "Spring 2022/Comptia Security+/Comptia Security+.md",
-    "Spring 2022/Algorithms/Midterm 1 Study Guide.md"
+    "Spring 2022/Comptia Security+/Comptia Security+.md"
   ]
 }
