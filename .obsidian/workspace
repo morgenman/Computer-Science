@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Spring 2022/Algorithms/Binary Tree.md",
+            "file": "Spring 2022/Networks/Networks.md",
             "mode": "source",
             "source": false
           }
@@ -63,7 +63,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring 2022/Algorithms/Binary Tree.md"
+                "file": "Spring 2022/Networks/Networks.md"
               }
             }
           }
@@ -88,7 +88,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring 2022/Algorithms/Binary Tree.md",
+                "file": "Spring 2022/Networks/Networks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring 2022/Algorithms/Binary Tree.md",
+                "file": "Spring 2022/Networks/Networks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,11 +137,11 @@
   },
   "active": "57f5a2cbe506e33e",
   "lastOpenFiles": [
+    "Spring 2022/Networks/Networks.md",
     "Spring 2022/Algorithms/Binary Tree.md",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Algorithms/Hashing.md",
     "Spring 2022/Algorithms/Graphs.md",
-    "Spring 2022/Networks/Networks.md",
     "Spring 2022/Data Analysis/Simple Linear Regression Assignment.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Software Engineering/Software Engineering.md",
