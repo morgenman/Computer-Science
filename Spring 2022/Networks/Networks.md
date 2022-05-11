@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-04_10:43:57-04:00
+updated: 2022-05-11_09:59:42-04:00
 ---
 # Networks
 
@@ -898,3 +898,20 @@ $\therefore$  we have a set of keys
 	* special messages to securely close connection
 
 
+# Final Exam Review
+* What’s a protocol? 
+	* 
+* Network edge: hosts, access network, physical media 
+	* 
+* Packet switching – advantages and disadvantages 
+	* 
+* Circuit switching - advantages and disadvantages 
+	* reserving the resources ahead of time
+	* constant bandwidth
+	* Packet loss mini
+* End to end delay 
+	* Transmission 
+	* Propagation 
+	* Processing 
+	* Queueing
+Throughput Ping Traceroute DOS attack DDOS attack Why protocol layering?
