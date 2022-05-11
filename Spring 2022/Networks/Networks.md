@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-11_10:27:41-04:00
+updated: 2022-05-11_10:37:05-04:00
 ---
 # Networks
 
@@ -989,3 +989,20 @@ $\therefore$  we have a set of keys
 * Streaming stored video: challenges 
 * DASH 
 * Content distribution networks
+
+## Chapter 3
+* Transport layer services 
+* Two principal Internet transport protocols 
+	* Tcp 
+		* Reliable Data Transfer
+		* Syn, Ack, 
+	* Udp
+* Multiplexing and demultiplexing 
+* Why is there a UDP? 
+* Checksum – disadvantages 
+* Reliable data transfer 
+* Pipelining 
+	* Go-Back-N
+	* Selective Repeat
+TCP – Connection oriented What does a ACK number mean?
+RTT – round trip time Flow control – How is it achieved? Congestion control Principles of congestion control AIMD – Additive increase multiplicative decrease Slow start Congestion Avoidance Fast recovery
