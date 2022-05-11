@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-11_10:13:17-04:00
+updated: 2022-05-11_10:22:12-04:00
 ---
 # Networks
 
@@ -956,13 +956,27 @@ $\therefore$  we have a set of keys
 	* Client 
 	* Server
 * Peer-peer architecture 
-	* file to N users
+	* file to N users it's better
 * Process 
+	* instance of a program
 * Socket 
+	* a connection between a program and outgoing link
+	* Identified with **port number & IP address**
 * What transport service does an app need? 
+	* flow control
+	* reliable data transfer
+	* security
+	* congestion control
+	* guaranteed bandwidth
 * HTTP – Persistent, non persistent 
+	* For client server connection
 * Cookies 
+	* ID's created by servers you are visiting
+	* Stored on client machine
 * Proxy server 
 * Email - Three major components 
 * DNS 
-* File distribution using Client server and peer to peer architecture. Streaming stored video: challenges DASH Content distribution networks
+* File distribution using Client server and peer to peer architecture. 
+* Streaming stored video: challenges 
+* DASH 
+* Content distribution networks
