@@ -19,5 +19,9 @@
   "primary-ceciliamay@@header-size__preset": "header-size__original",
   "primary-ceciliamay@@scrollbar-style": "scrollbar__mac",
   "primary-ceciliamay@@gray-md-formatting": false,
-  "primary-ceciliamay@@no-md-activeline": false
+  "primary-ceciliamay@@no-md-activeline": false,
+  "primary-ceciliamay@@tab-header-size": "tab-header__size-regular",
+  "primary-ceciliamay@@tab-header-style": "tab-header__style-original",
+  "primary-ceciliamay@@tab-header-align-modleft": "tab-header__align-modleft-center",
+  "primary-ceciliamay@@tab-header-align-modright": "tab-header__align-modright-center"
 }

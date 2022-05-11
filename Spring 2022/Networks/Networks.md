@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-11_10:05:27-04:00
+updated: 2022-05-11_10:13:17-04:00
 ---
 # Networks
 
@@ -922,7 +922,13 @@ $\therefore$  we have a set of keys
 		* d values are distance
 		* r1, r2, r3 are rate/bandwidth
 		* s1, s2, s3
+		* L/R (length of packet/R)
 	* Propagation 
+		* d/s
+		* based on distance of link
 	* Processing 
+		* Usually given
 	* Queueing
+		* Usually given
+	* **Make sure to check your units!**
 Throughput Ping Traceroute DOS attack DDOS attack Why protocol layering?
