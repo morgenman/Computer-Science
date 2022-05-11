@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-11_10:44:47-04:00
+updated: 2022-05-11_10:56:36-04:00
 ---
 # Networks
 
@@ -1019,3 +1019,7 @@ $\therefore$  we have a set of keys
 	* Slow start 
 	* Congestion Avoidance 
 	* Fast recovery
+	* if it drops part of the way, it's three dupe 
+	* if it drops all of the way, it timed out
+
+## Chapter 4
