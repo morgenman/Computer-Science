@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-11_10:22:12-04:00
+updated: 2022-05-11_10:27:41-04:00
 ---
 # Networks
 
@@ -968,14 +968,20 @@ $\therefore$  we have a set of keys
 	* security
 	* congestion control
 	* guaranteed bandwidth
+	* Timing
 * HTTP – Persistent, non persistent 
 	* For client server connection
 * Cookies 
 	* ID's created by servers you are visiting
 	* Stored on client machine
 * Proxy server 
+	* Acts as client and server, caching frequently accessed data
 * Email - Three major components 
+	* User agents
+	* Mail Servers
+	* SMTP (Simple Mail Transfer Protocol)
 * DNS 
+	* 
 * File distribution using Client server and peer to peer architecture. 
 * Streaming stored video: challenges 
 * DASH 
