@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-11_10:37:05-04:00
+updated: 2022-05-11_10:44:47-04:00
 ---
 # Networks
 
@@ -1002,8 +1002,10 @@ $\therefore$  we have a set of keys
 * Checksum – disadvantages 
 	* divided into 16 bits, keep adding, 
 		* Carry over wraps around
-		* should ad
+		* should add up to a 16 bit number, 1's compliment
+		* 
 * Reliable data transfer 
+	* Sequence numbers 
 * Pipelining 
 	* Go-Back-N
 	* Selective Repeat
