@@ -1,5 +1,5 @@
 ---
-updated: 2022-04-15_11:59:30-04:00
+updated: 2022-05-11_10:57:28-04:00
 ---
 # Software Engineering
 * Process course
@@ -262,3 +262,5 @@ UNTIL (product complete)
 			* 38 minutes for state to send follow up message
 			* Those kinds of delays *could* cost lives if it was real
 		* Question: Is it better to have less false positives or is it better to have the message go out immediately
+
+
