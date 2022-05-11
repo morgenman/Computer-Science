@@ -14,18 +14,6 @@
             "source": false
           }
         }
-      },
-      {
-        "id": "61ea3f26d1c04fc6",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "Spring 2022/Networks/Networks.md",
-            "mode": "source",
-            "source": false
-          }
-        }
       }
     ],
     "direction": "vertical"

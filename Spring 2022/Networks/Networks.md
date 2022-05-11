@@ -899,6 +899,7 @@ $\therefore$  we have a set of keys
 
 
 # Final Exam Review
+## Chapter 1
 * What’s a protocol? 
 	* Set of rules to follow when exchanging information
 * Network edge: hosts, access network, physical media 
@@ -931,4 +932,37 @@ $\therefore$  we have a set of keys
 	* Queueing
 		* Usually given
 	* **Make sure to check your units!**
-Throughput Ping Traceroute DOS attack DDOS attack Why protocol layering?
+* Throughput 
+	* floor of all link rates in path
+* Ping 
+	* Gives us RTT
+* Traceroute 
+	* ICMP Packets used for pink and traceroute
+* DOS attack
+	* Flooding to block traffic 
+* DDOS attack 
+	* multiple users to flood
+* Why protocol layering?
+	* Order
+		* Application
+		* Transport
+		* Network
+		* Link
+		* Physical
+	* Abstraction allows for easier development
+
+## Chapter 2
+* Client-server paradigm 
+	* Client 
+	* Server
+* Peer-peer architecture 
+	* file to N users
+* Process 
+* Socket 
+* What transport service does an app need? 
+* HTTP – Persistent, non persistent 
+* Cookies 
+* Proxy server 
+* Email - Three major components 
+* DNS 
+* File distribution using Client server and peer to peer architecture. Streaming stored video: challenges DASH Content distribution networks
