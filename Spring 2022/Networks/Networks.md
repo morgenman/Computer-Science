@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-11_09:59:42-04:00
+updated: 2022-05-11_10:05:27-04:00
 ---
 # Networks
 
@@ -900,17 +900,28 @@ $\therefore$  we have a set of keys
 
 # Final Exam Review
 * What’s a protocol? 
-	* 
+	* Set of rules to follow when exchanging information
 * Network edge: hosts, access network, physical media 
-	* 
 * Packet switching – advantages and disadvantages 
-	* 
+	* More users
+	* Message divided into multiple packets
+	* each can take a different route
+	* packet loss & mismatched order are issues
+	* No constant bandwidth
+	* can start immediately 
+	* Lost packets can be recovered
+	* can be faster due 
 * Circuit switching - advantages and disadvantages 
 	* reserving the resources ahead of time
 	* constant bandwidth
-	* Packet loss mini
+	* Packet loss minimal
 * End to end delay 
 	* Transmission 
+		* S <--> X <--> X <--> R
+		*     d1     d2     d3    
+		* d values are distance
+		* r1, r2, r3 are rate/bandwidth
+		* s1, s2, s3
 	* Propagation 
 	* Processing 
 	* Queueing
