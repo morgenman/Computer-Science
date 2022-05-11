@@ -1000,9 +1000,20 @@ $\therefore$  we have a set of keys
 * Multiplexing and demultiplexing 
 * Why is there a UDP? 
 * Checksum – disadvantages 
+	* divided into 16 bits, keep adding, 
+		* Carry over wraps around
+		* should ad
 * Reliable data transfer 
 * Pipelining 
 	* Go-Back-N
 	* Selective Repeat
-TCP – Connection oriented What does a ACK number mean?
-RTT – round trip time Flow control – How is it achieved? Congestion control Principles of congestion control AIMD – Additive increase multiplicative decrease Slow start Congestion Avoidance Fast recovery
+* TCP – Connection oriented 
+	* What does a ACK number mean?
+* RTT – round trip time 
+* Flow control – How is it achieved? 
+* Congestion control 
+	* Principles of congestion control 
+	* AIMD – Additive increase multiplicative decrease 
+	* Slow start 
+	* Congestion Avoidance 
+	* Fast recovery
