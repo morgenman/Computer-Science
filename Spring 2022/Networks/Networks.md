@@ -981,7 +981,10 @@ $\therefore$  we have a set of keys
 	* Mail Servers
 	* SMTP (Simple Mail Transfer Protocol)
 * DNS 
+	* Mail server
+	* Host to IP translation
 	* 
+	* Root -> Top Level Domain -> Authoritative
 * File distribution using Client server and peer to peer architecture. 
 * Streaming stored video: challenges 
 * DASH 
