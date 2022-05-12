@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "fd795173060afe92",
+        "id": "1d66522dd395fc36",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -40,7 +40,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "heap",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -71,8 +71,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137,
-    "collapsed": true
+    "width": 278.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -135,17 +134,17 @@
     "width": 359.9287109375,
     "collapsed": true
   },
-  "active": "fd795173060afe92",
+  "active": "1d66522dd395fc36",
   "lastOpenFiles": [
     "Spring 2022/Algorithms/Algo Final Exam Prep.md",
+    "Spring 2022/Algorithms/Binary Tree.md",
+    "Spring 2022/Algorithms/Heaps.md",
+    "Spring 2022/Algorithms/_Index_of_Algorithms.md",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Software Engineering/Software Engineering.md",
     "Spring 2022/Networks/Networks.md",
-    "Spring 2022/Algorithms/Binary Tree.md",
     "Spring 2022/Algorithms/Hashing.md",
     "Spring 2022/Algorithms/Graphs.md",
-    "Spring 2022/Data Analysis/Simple Linear Regression Assignment.md",
-    "Spring 2022/Data Analysis/Data Analysis.md",
-    "Spring 2022/Internship/Internship.md"
+    "Spring 2022/Data Analysis/Simple Linear Regression Assignment.md"
   ]
 }
