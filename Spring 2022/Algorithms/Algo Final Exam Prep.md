@@ -9,4 +9,11 @@ updated: 2022-05-12_09:36:00-04:00
 	* Performance Analysis
 * Proof of lower bounds
 * P vs. NP
+
+* Sorted array based list vs sorted linked list
+	* 
+
+
+
+
 ![[studyGuideFinalS22.pdf]]
