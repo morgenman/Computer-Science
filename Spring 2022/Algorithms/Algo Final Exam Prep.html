@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-05-12_09:55:47-04:00</p>
+<p>updated: 2022-05-12_10:01:23-04:00</p>
 <hr>  
 <h1 id="review"><a class="header" href="#review">Review</a></h1>
 <ul>
@@ -183,6 +183,8 @@
 <li>
 <p>Sorted array based list vs sorted linked list</p>
 <ul>
+<li>Time Complexity
+<ul>
 <li>Unless I tell you otherwise, you don't have to consider resizing for the array based list</li>
 <li>Insert on a Sorted array list has cost O(n) to put data in the right place
 <ul>
@@ -190,7 +192,16 @@
 </ul>
 </li>
 <li>Search cost can be improved by binary search (log(n))</li>
-<li>There is NO performance increase in using a linkedlist to search</li>
+<li>There is NO performance increase in using a linkedlist to search, insert, delete</li>
+</ul>
+</li>
+<li>Storage Overhead
+<ul>
+<li>If we don't know how much data we need to store, the act of resizing our array is costly</li>
+<li>Break even point is when the array becomes more storage efficient</li>
+<li>If the size of the list has to change a lot, LL is better</li>
+</ul>
+</li>
 <li></li>
 </ul>
 </li>
