@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-12_10:25:30-04:00
+updated: 2022-05-12_10:31:04-04:00
 ---
 
 # Review
@@ -32,6 +32,8 @@ updated: 2022-05-12_10:25:30-04:00
 	* We mainly use Max Heaps
 	* Partially ordered
 	* Building a heap
+	* Sift up is for inserting new values
+	* Sift down is for creating the heap from an array
 	* 
 
 
