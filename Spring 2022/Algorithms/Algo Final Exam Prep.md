@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-12_10:07:25-04:00
+updated: 2022-05-12_10:25:30-04:00
 ---
 
 # Review
@@ -28,7 +28,11 @@ updated: 2022-05-12_10:07:25-04:00
 
 ## Binary Search Tree Review
 * For our implementation, = is on the right
-* 
+* A heap is simply a complete or 'full' binary search tree
+	* We mainly use Max Heaps
+	* Partially ordered
+	* Building a heap
+	* 
 
 
 
