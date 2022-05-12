@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-12_10:01:23-04:00
+updated: 2022-05-12_10:07:25-04:00
 ---
 
 # Review
@@ -12,6 +12,8 @@ updated: 2022-05-12_10:01:23-04:00
 * P vs. NP
 	* at least one question about this
 
+## List Implementation Review
+
 * Sorted array based list vs sorted linked list
 	* Time Complexity
 		* Unless I tell you otherwise, you don't have to consider resizing for the array based list
@@ -23,8 +25,10 @@ updated: 2022-05-12_10:01:23-04:00
 		* If we don't know how much data we need to store, the act of resizing our array is costly
 		* Break even point is when the array becomes more storage efficient
 		* If the size of the list has to change a lot, LL is better
-	* 
 
+## Binary Search Tree Review
+* For our implementation, = is on the right
+* 
 
 
 
