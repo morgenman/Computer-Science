@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Spring 2022/Data Analysis/Data Analysis.md",
+            "file": "Spring 2022/Algorithms/Algorithms.md",
             "mode": "source",
             "source": false
           }
@@ -63,7 +63,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring 2022/Data Analysis/Data Analysis.md"
+                "file": "Spring 2022/Algorithms/Algorithms.md"
               }
             }
           }
@@ -71,8 +71,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137,
-    "collapsed": true
+    "width": 278.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -88,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring 2022/Data Analysis/Data Analysis.md",
+                "file": "Spring 2022/Algorithms/Algorithms.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring 2022/Data Analysis/Data Analysis.md",
+                "file": "Spring 2022/Algorithms/Algorithms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,13 +136,13 @@
   },
   "active": "729177aa5960dcf1",
   "lastOpenFiles": [
+    "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Algorithms/Hashing.md",
     "Spring 2022/Algorithms/_Index_of_Algorithms.md",
     "Spring 2022/Algorithms/Algo Final Exam Prep.md",
     "Spring 2022/Algorithms/Binary Tree.md",
     "Spring 2022/Algorithms/Heaps.md",
-    "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Software Engineering/Software Engineering.md",
     "Spring 2022/Networks/Networks.md",
     "Spring 2022/Algorithms/Graphs.md"
