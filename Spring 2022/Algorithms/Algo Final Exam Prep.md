@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-20_09:37:42-04:00
+updated: 2022-05-20_09:43:42-04:00
 ---
 
 # Review
@@ -62,6 +62,14 @@ log(n!) $\in$ $\Omega$ (nlogn)
 
 $\therefore$ h = $\Omega$(n log n)
 $\therefore$ $\forall$ comparison based sorting methods, $\Omega$ (n log n) comparisons
+
+
+P $\subseteq$ NP
+Problems in P have a deterministic polynomial solution
+
+Polynomial vs. Nondeterministic Polynomial
+Non deterministic polynomial is not 'tractable'
+* 
 
 
 ![[studyGuideFinalS22.pdf]]
