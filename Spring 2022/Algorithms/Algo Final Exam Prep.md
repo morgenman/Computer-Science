@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-12_10:31:04-04:00
+updated: 2022-05-20_09:22:49-04:00
 ---
 
 # Review
@@ -34,7 +34,14 @@ updated: 2022-05-12_10:31:04-04:00
 	* Building a heap
 	* Sift up is for inserting new values
 	* Sift down is for creating the heap from an array
-	* 
+
+* Insertion - n^2
+* Bubble - n^2
+* Selection - n^2
+
+- Merge, twice the space - nlogn
+- Quick - nlogn -> n^2
+- Heap - n to build, 
 
 
 
