@@ -45,7 +45,16 @@ updated: 2022-05-20_09:28:52-04:00
 
 nlogn is lower bound for COMPARISON
 
-Proof
+Proof:
+
+TBP $\Omega$(n log n) is the lower bound for comparison based sorting
+
+1. Sorting Comparison decisions can be modelled as a binary tree
+2. n! leaves in the decision tree, with each being a permutation of list
+3. minimum depth is n log n due to the following facts:
+	1. Binary tree of height h can have at most 2$^{h}$ - 1 nodes
+	2. Any tree with n nodes requires a height of log(n+1)
+4. Therefore... 2$^{h}$ -1 =
 
 
 
