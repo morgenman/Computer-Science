@@ -10443,7 +10443,7 @@ insertion/deletion in Array is O(n), but getting to the node is O(1)</p>
     });
 </script>
 <hr>  
-<p>updated: 2022-05-20_09:28:52-04:00</p>
+<p>updated: 2022-05-20_09:37:42-04:00</p>
 <hr>  
 <h1 id="review-1"><a class="header" href="#review-1">Review</a></h1>
 <ul>
@@ -10523,7 +10523,8 @@ insertion/deletion in Array is O(n), but getting to the node is O(1)</p>
 </ul>
 <p>nlogn is lower bound for COMPARISON</p>
 <p>Proof:</p>
-<p>TBP $\Omega$(n log n) is the lower bound for comparison based sorting</p>
+<p>TBP $\Omega$(n log n) is the lower bound for comparison based sorting<br />
+(direct proof)</p>
 <ol>
 <li>Sorting Comparison decisions can be modelled as a binary tree</li>
 <li>n! leaves in the decision tree, with each being a permutation of list</li>
@@ -10533,8 +10534,14 @@ insertion/deletion in Array is O(n), but getting to the node is O(1)</p>
 <li>Any tree with n nodes requires a height of log(n+1)</li>
 </ol>
 </li>
-<li>Therefore... 2$^{h}$ -1 =</li>
+<li>Therefore...<br />
+2$^{h}$ -1 = n!<br />
+h = log(n!+1)<br />
+By Stirling (the silver approximation) approximation:<br />
+log(n!) $\in$ $\Omega$ (nlogn)</li>
 </ol>
+<p>$\therefore$ h = $\Omega$(n log n)<br />
+$\therefore$ $\forall$ comparison based sorting methods, $\Omega$ (n log n) comparisons</p>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/studyGuideFinalS22.pdf">studyGuideFinalS22.pdf</a></p>
 <div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>

@@ -156,7 +156,7 @@
     });
 </script>
 <hr>  
-<p>updated: 2022-05-20_09:28:52-04:00</p>
+<p>updated: 2022-05-20_09:37:42-04:00</p>
 <hr>  
 <h1 id="review"><a class="header" href="#review">Review</a></h1>
 <ul>
@@ -236,7 +236,8 @@
 </ul>
 <p>nlogn is lower bound for COMPARISON</p>
 <p>Proof:</p>
-<p>TBP $\Omega$(n log n) is the lower bound for comparison based sorting</p>
+<p>TBP $\Omega$(n log n) is the lower bound for comparison based sorting<br />
+(direct proof)</p>
 <ol>
 <li>Sorting Comparison decisions can be modelled as a binary tree</li>
 <li>n! leaves in the decision tree, with each being a permutation of list</li>
@@ -246,8 +247,14 @@
 <li>Any tree with n nodes requires a height of log(n+1)</li>
 </ol>
 </li>
-<li>Therefore... 2$^{h}$ -1 =</li>
+<li>Therefore...<br />
+2$^{h}$ -1 = n!<br />
+h = log(n!+1)<br />
+By Stirling (the silver approximation) approximation:<br />
+log(n!) $\in$ $\Omega$ (nlogn)</li>
 </ol>
+<p>$\therefore$ h = $\Omega$(n log n)<br />
+$\therefore$ $\forall$ comparison based sorting methods, $\Omega$ (n log n) comparisons</p>
 <p><a href="https://morgenman.github.io/Computer-Science/assets/studyGuideFinalS22.pdf">studyGuideFinalS22.pdf</a></p>
 
                 </main>
