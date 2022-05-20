@@ -69,7 +69,8 @@ Problems in P have a deterministic polynomial solution
 
 Polynomial vs. Nondeterministic Polynomial
 Non deterministic polynomial is not 'tractable'
-* 
+* that is, there *could* be a solution, but it would take a prohibitively long time to compute (and to prove that it is a solution)
+* The lower bound is $\Omega$(c$^{n}$) (exponential)
 
 
 ![[studyGuideFinalS22.pdf]]
