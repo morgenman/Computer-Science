@@ -1,5 +1,5 @@
 ---
-updated: 2022-05-20_09:22:49-04:00
+updated: 2022-05-20_09:28:52-04:00
 ---
 
 # Review
@@ -42,6 +42,10 @@ updated: 2022-05-20_09:22:49-04:00
 - Merge, twice the space - nlogn
 - Quick - nlogn -> n^2
 - Heap - n to build, 
+
+nlogn is lower bound for COMPARISON
+
+Proof
 
 
 
