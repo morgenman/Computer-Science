@@ -1,11 +1,12 @@
 {
   "baseFontSize": 16,
-  "theme": "moonstone",
+  "theme": "obsidian",
   "translucency": false,
   "cssTheme": "Primary",
   "enabledCssSnippets": [],
   "baseFontSizeAction": false,
   "textFontFamily": "comic code ligatures",
   "monospaceFontFamily": "",
-  "interfaceFontFamily": ""
+  "interfaceFontFamily": "",
+  "accentColor": ""
 }

@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "52bccab515ec32eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "32fb390e3920494c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8914445c61614c12",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Spring 2022/Algorithms/Algo Final Exam Prep.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9d6cb788dc08c7a8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.1.9"
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "31462b144bfdc6bc",
+    "type": "split",
+    "children": [
+      {
+        "id": "32a6aa9538711dd7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e887abae232e2633",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime"
+              }
+            }
+          },
+          {
+            "id": "c7952e2ae45c44e9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "116d8cae0bee16d6",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "7063a69376deb659",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Spring 2022/Algorithms/Algo Final Exam Prep.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 278.99999809265137,
+    "collapsed": true
+  },
+  "right": {
+    "id": "78053effe92f6b21",
+    "type": "split",
+    "children": [
+      {
+        "id": "0a44f306315adc46",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2f3b833a9bc2bbd2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Spring 2022/Algorithms/Algo Final Exam Prep.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "eb398117cf66936d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Spring 2022/Algorithms/Algo Final Exam Prep.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a2a38bd24aaec6ad",
+            "type": "leaf",
+            "state": {
+              "type": "wordle-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "8e505407aa012a08",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 359.9287109375,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "periodic-notes:Open today": false
+    }
+  },
+  "active": "9d6cb788dc08c7a8",
+  "lastOpenFiles": [
+    "Spring 2022/Algorithms/Algo Final Exam Prep.md",
+    "Spring 2022/Algorithms/Algorithms.md",
+    "Spring 2022/Data Analysis/Data Analysis.md",
+    "Spring 2022/Algorithms/Hashing.md",
+    "Spring 2022/Algorithms/_Index_of_Algorithms.md",
+    "Spring 2022/Algorithms/Binary Tree.md",
+    "Spring 2022/Algorithms/Heaps.md",
+    "Spring 2022/Software Engineering/Software Engineering.md",
+    "Spring 2022/Networks/Networks.md",
+    "Spring 2022/Algorithms/Graphs.md"
+  ]
+}
