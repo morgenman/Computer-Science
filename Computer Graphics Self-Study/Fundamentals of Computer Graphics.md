@@ -1,6 +1,6 @@
 ---
-updated: 2025-01-10_12:09:29-05:00
+updated: 2025-01-10_12:20:44-05:00
 ---
 
-Using [[📗Textbooks/Fundamentals of Computer Graphics.epub]] as a base.
+Using [[Fundamentals of Computer Graphics.epub]] as a base.
 
