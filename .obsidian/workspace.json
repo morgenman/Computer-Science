@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "_Index_of_Computer-Science.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fundamentals of Computer Graphics"
+              "title": "_Index_of_Computer-Science"
             }
           }
         ]
@@ -79,10 +79,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md"
+                "file": "_Index_of_Computer-Science.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Fundamentals of Computer Graphics"
+              "title": "Outline of _Index_of_Computer-Science"
             }
           },
           {
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "_Index_of_Computer-Science.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Fundamentals of Computer Graphics"
+              "title": "Backlinks for _Index_of_Computer-Science"
             }
           },
           {
@@ -134,12 +134,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "_Index_of_Computer-Science.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Fundamentals of Computer Graphics"
+              "title": "Outgoing links from _Index_of_Computer-Science"
             }
           },
           {
@@ -195,8 +195,8 @@
   },
   "active": "7435fb7da37547fc",
   "lastOpenFiles": [
-    "📗Textbooks/_Index_of_📗Textbooks.md",
     "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+    "📗Textbooks/_Index_of_📗Textbooks.md",
     "📗Textbooks/Fundamentals_of_Computer_Graphics_5th.epub",
     "📗Textbooks/A_First_Course_in_Database_Systems.pdf",
     "📗Textbooks/Intro_to_Theory_of_Computation_3rd.pdf",
