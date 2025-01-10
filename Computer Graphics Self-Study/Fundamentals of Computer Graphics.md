@@ -1,5 +1,5 @@
 ---
-updated: 2025-01-10_13:50:51-05:00
+updated: 2025-01-10_14:21:43-05:00
 ---
 
 Using the following book as a base:
@@ -18,3 +18,10 @@ Using the following book as a base:
 
 ## Design Considerations
 * Efficiency: memory access more important than operation counts now
+* Some essential classes:
+	* vector2 (x,y)
+	* vector3 (x,y,z)
+	* hvector (homogeneous vector with four components)
+	* rgb
+	* transform (4x4 matrix) 
+	* image (2d array of rgb)
