@@ -99,8 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137,
-    "collapsed": true
+    "width": 278.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -194,7 +193,7 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "7435fb7da37547fc",
+  "active": "e88c0db4b7cbf94c",
   "lastOpenFiles": [
     "Fall 2021/Theory of Computation/_Index_of_Theory of Computation.md",
     "Spring 2022/_Index_of_Spring 2022.md",
