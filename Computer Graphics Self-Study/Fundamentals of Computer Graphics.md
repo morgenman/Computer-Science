@@ -1,5 +1,5 @@
 ---
-updated: 2025-01-10_13:18:58-05:00
+updated: 2025-01-10_13:33:28-05:00
 ---
 
 Using the following book as a base:
@@ -11,4 +11,5 @@ Using the following book as a base:
 	* manipulated using matrices and vectors
 ## IEEE Floating point standards
 * $\infty$, $-\infty$, $NaN$
-* 
+* ![[Pasted image 20250110133251.png]]
+* ![[Pasted image 20250110133327.png]]
