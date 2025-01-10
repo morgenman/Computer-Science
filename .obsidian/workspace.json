@@ -99,8 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137,
-    "collapsed": true
+    "width": 278.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -178,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375,
-    "collapsed": true
+    "width": 359.9287109375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -197,6 +195,27 @@
   },
   "active": "7435fb7da37547fc",
   "lastOpenFiles": [
+    "📗Textbooks/Fundamentals of Computer Graphics, 5th Ed - Steve Marschner, Peter Shirley.epub",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/toc.ncx",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/content.opf",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/styles/9781000426359.css",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/styles",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Other.js",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Main.js",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/BasicLatin.js",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Size4/Regular/Main.js",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Size3/Regular/Main.js",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/images/MenuArrow-15.png",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/images/CloseX-31.png",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig12_5.jpg",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig12_12.jpg",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig2_20.jpg",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig10_7.jpg",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig2_34.jpg",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig9_3.jpg",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig23_26.jpg",
+    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig9_15.jpg",
     "📗Textbooks/Fundamentals of Computer Graphics.epub.md",
     "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
@@ -205,7 +224,6 @@
     "Science of Learning.md",
     "Computer Graphics Self-Study/_Index_of_Computer Graphics Self-Study.md",
     "Spring 2022/Algorithms/Algo Final Exam Prep.md",
-    "Computer Graphics Self-Study",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Algorithms/Hashing.md",
