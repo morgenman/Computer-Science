@@ -10,4 +10,4 @@ Using the following book as a base:
 * Geometric manipulation used in graphics pipeline largely accomplished in 4d coordinate space with fourth *homogeneous* coordinate that helps with perspective
 	* manipulated using matrices and vectors
 ## IEEE Floating point standards
-* $\infty$, $-\infty$
+* $\infty$, $-\infty$, $NaN$
