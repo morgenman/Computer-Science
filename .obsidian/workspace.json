@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "32fb390e3920494c",
+        "id": "8de14e670408e14e",
         "type": "tabs",
         "children": [
           {
-            "id": "8914445c61614c12",
+            "id": "7435fb7da37547fc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_Index_of_Computer-Science.md",
+                "file": "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_Index_of_Computer-Science"
+              "title": "Computer Graphics Self-Study"
             }
           }
         ]
@@ -79,10 +79,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_Index_of_Computer-Science.md"
+                "file": "Computer Graphics Self-Study/Computer Graphics Self-Study.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of _Index_of_Computer-Science"
+              "title": "Outline of Computer Graphics Self-Study"
             }
           },
           {
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_Index_of_Computer-Science.md",
+                "file": "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for _Index_of_Computer-Science"
+              "title": "Backlinks for Computer Graphics Self-Study"
             }
           },
           {
@@ -134,12 +134,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_Index_of_Computer-Science.md",
+                "file": "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from _Index_of_Computer-Science"
+              "title": "Outgoing links from Computer Graphics Self-Study"
             }
           },
           {
@@ -177,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375,
-    "collapsed": true
+    "width": 359.9287109375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -194,8 +193,11 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "8914445c61614c12",
+  "active": "7435fb7da37547fc",
   "lastOpenFiles": [
+    "Fall 2021/Operating Systems/Operating Systems.md",
+    "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
+    "_Index_of_Computer-Science.md",
     "Science of Learning.md",
     "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Computer Graphics Self-Study/_Index_of_Computer Graphics Self-Study.md",

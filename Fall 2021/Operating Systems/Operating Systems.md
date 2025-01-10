@@ -1,8 +1,5 @@
 ---
-updated: 2022-01-23_12:32:31-05:00
----
----
-updated: 2021-12-10_08:51:57-05:00
+updated: 2025-01-10_12:14:35-05:00
 ---
 # Operating Systems
 ## What does it do?
