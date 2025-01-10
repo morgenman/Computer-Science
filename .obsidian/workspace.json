@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "📗Textbooks/_Index_of_📗Textbooks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fundamentals of Computer Graphics"
+              "title": "_Index_of_📗Textbooks"
             }
           }
         ]
@@ -79,10 +79,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md"
+                "file": "📗Textbooks/_Index_of_📗Textbooks.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Fundamentals of Computer Graphics"
+              "title": "Outline of _Index_of_📗Textbooks"
             }
           },
           {
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "📗Textbooks/_Index_of_📗Textbooks.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Fundamentals of Computer Graphics"
+              "title": "Backlinks for _Index_of_📗Textbooks"
             }
           },
           {
@@ -134,12 +134,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "📗Textbooks/_Index_of_📗Textbooks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Fundamentals of Computer Graphics"
+              "title": "Outgoing links from _Index_of_📗Textbooks"
             }
           },
           {
@@ -195,6 +195,7 @@
   },
   "active": "7435fb7da37547fc",
   "lastOpenFiles": [
+    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "📗Textbooks/Fundamentals of Computer Graphics, 5th Ed - Steve Marschner, Peter Shirley.epub",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/toc.ncx",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/content.opf",
@@ -205,7 +206,6 @@
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/BasicLatin.js",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Size4/Regular/Main.js",
-    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Size3/Regular/Main.js",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/images/MenuArrow-15.png",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/images/CloseX-31.png",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig12_5.jpg",
@@ -217,7 +217,6 @@
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig23_26.jpg",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig9_15.jpg",
     "📗Textbooks/Fundamentals of Computer Graphics.epub.md",
-    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
     "Fall 2021/Operating Systems/Operating Systems.md",
     "_Index_of_Computer-Science.md",
