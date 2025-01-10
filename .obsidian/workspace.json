@@ -13,28 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Spring 2022/Algorithms/Algo Final Exam Prep.md",
+                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Algo Final Exam Prep"
-            }
-          },
-          {
-            "id": "fd8506f498cf7c9e",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.3.5"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.3.5"
+              "title": "Fundamentals of Computer Graphics"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -91,9 +78,11 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {},
+              "state": {
+                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md"
+              },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Fundamentals of Computer Graphics"
             }
           },
           {
@@ -110,8 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137,
-    "collapsed": true
+    "width": 278.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -127,6 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +125,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for Fundamentals of Computer Graphics"
             }
           },
           {
@@ -145,21 +134,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links"
-            }
-          },
-          {
-            "id": "a2a38bd24aaec6ad",
-            "type": "leaf",
-            "state": {
-              "type": "wordle-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "title": "Outgoing links from Fundamentals of Computer Graphics"
             }
           },
           {
@@ -171,14 +151,33 @@
               "icon": "lucide-file",
               "title": "Plugin no longer active"
             }
+          },
+          {
+            "id": "865766689e5cbed9",
+            "type": "leaf",
+            "state": {
+              "type": "wordle-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Wordle"
+            }
+          },
+          {
+            "id": "e88c0db4b7cbf94c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375,
-    "collapsed": true
+    "width": 359.9287109375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,12 +186,19 @@
       "canvas:Create new canvas": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false
+      "markdown-importer:Open format converter": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "periodic-notes:Open today": false,
+      "obsidian-git:Open Git source control": false,
+      "notion-like-tables:Create loom": false
     }
   },
-  "active": "fd8506f498cf7c9e",
+  "active": "e887abae232e2633",
   "lastOpenFiles": [
+    "Computer Graphics Self-Study/_Index_of_Computer Graphics Self-Study.md",
     "Spring 2022/Algorithms/Algo Final Exam Prep.md",
+    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+    "Computer Graphics Self-Study",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Algorithms/Hashing.md",

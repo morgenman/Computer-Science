@@ -1,11 +1,17 @@
 {
   "dateFormat": "yyyy-MM-dd'_'HH:mm:ssxxx",
-  "readDateFormat": "yyyy-MM-dd'T'HH:mm:ssxxx",
-  "useDifferentReadFormat": false,
   "enableCreateTime": false,
   "headerUpdated": "updated",
   "headerCreated": "created",
   "minMinutesBetweenSaves": 5,
   "ignoreGlobalFolder": [],
-  "ignoreCreatedFolder": []
+  "ignoreCreatedFolder": [],
+  "enableExperimentalHash": false,
+  "fileHashMap": {
+    "Computer Graphics Self-Study/_Index_of_Computer Graphics Self-Study.md": "b2517c9e67d9796d957d9552833c82ff6cad46032d5149a652b34cc95350f141",
+    "_Index_of_Computer-Science.md": "bbf1cde79f4d08ddc70bc568f86fa3ece87deb26121ce9573c49ef7177c0e080",
+    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md": "1b94e5f8dfe15ee154412ec1344bad2a654507e0b3381050b27646c3f721a25a"
+  },
+  "readDateFormat": "yyyy-MM-dd'T'HH:mm:ssxxx",
+  "useDifferentReadFormat": false
 }

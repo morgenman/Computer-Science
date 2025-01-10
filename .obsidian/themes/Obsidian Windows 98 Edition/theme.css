@@ -263,6 +263,10 @@ select, .dropdown {
   text-align: initial;
 }
 
+.mod-macos .titlebar-text {
+    margin-left: 75px;
+}
+
 .titlebar-inner {
   align-items: center;
   
@@ -276,7 +280,6 @@ select, .dropdown {
 .titlebar-button-container, .view-actions {
   position: static;
   display: flex;
-  /* padding:3px; */
 }
  
 .titlebar-button {
@@ -317,18 +320,15 @@ select, .dropdown {
   background-repeat: no-repeat;
   background-position: top 3px left 4px;
 }
-.view-action.mod-close-leaf{
-  background-position: top 5px left 4px
-}
 
 .titlebar-button.mod-back {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='13' width='13' viewBox='0 0 100 100'%3E%3Cpath fill='currentColor' stroke='currentColor' d='M39.6,26.2c-0.4,0.1-0.8,0.3-1.1,0.6L16.7,48.6L15.3,50l1.4,1.4l21.8,21.8c0.5,0.6,1.3,0.9,2,0.7c0.7-0.2,1.3-0.8,1.5-1.5 c0.2-0.8-0.1-1.5-0.7-2L22.9,52H82c0.7,0,1.4-0.4,1.8-1c0.4-0.6,0.4-1.4,0-2c-0.4-0.6-1-1-1.8-1H22.9l18.4-18.4 c0.6-0.6,0.8-1.6,0.4-2.3C41.4,26.5,40.5,26,39.6,26.2L39.6,26.2z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='15' width='15' viewBox='0 0 100 100'%3E%3Cpath fill='currentColor' stroke='currentColor' d='M39.6,26.2c-0.4,0.1-0.8,0.3-1.1,0.6L16.7,48.6L15.3,50l1.4,1.4l21.8,21.8c0.5,0.6,1.3,0.9,2,0.7c0.7-0.2,1.3-0.8,1.5-1.5 c0.2-0.8-0.1-1.5-0.7-2L22.9,52H82c0.7,0,1.4-0.4,1.8-1c0.4-0.6,0.4-1.4,0-2c-0.4-0.6-1-1-1.8-1H22.9l18.4-18.4 c0.6-0.6,0.8-1.6,0.4-2.3C41.4,26.5,40.5,26,39.6,26.2L39.6,26.2z'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: top 0 left 1px;
 }
 
 .titlebar-button.mod-forward {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='13' height='13' %3E%3Cpath fill='currentColor' stroke='currentColor' d='M59.7,26.2c-0.8,0.1-1.4,0.7-1.6,1.4c-0.2,0.7,0,1.5,0.6,2L77.1,48H18c-0.1,0-0.1,0-0.2,0c-1.1,0.1-2,1-1.9,2.1 c0.1,1.1,1,2,2.1,1.9h59.1L58.7,70.4c-0.6,0.5-0.9,1.3-0.7,2c0.2,0.7,0.8,1.3,1.5,1.5c0.8,0.2,1.5-0.1,2-0.7l21.8-21.7l1.4-1.4 l-1.4-1.4L61.5,26.8c-0.4-0.4-1-0.7-1.6-0.6C59.8,26.2,59.8,26.2,59.7,26.2L59.7,26.2z'%3E%3C/path%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='15' height='15' %3E%3Cpath fill='currentColor' stroke='currentColor' d='M59.7,26.2c-0.8,0.1-1.4,0.7-1.6,1.4c-0.2,0.7,0,1.5,0.6,2L77.1,48H18c-0.1,0-0.1,0-0.2,0c-1.1,0.1-2,1-1.9,2.1 c0.1,1.1,1,2,2.1,1.9h59.1L58.7,70.4c-0.6,0.5-0.9,1.3-0.7,2c0.2,0.7,0.8,1.3,1.5,1.5c0.8,0.2,1.5-0.1,2-0.7l21.8-21.7l1.4-1.4 l-1.4-1.4L61.5,26.8c-0.4-0.4-1-0.7-1.6-0.6C59.8,26.2,59.8,26.2,59.7,26.2L59.7,26.2z'%3E%3C/path%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: top 0 left 1px;
 }
@@ -352,15 +352,14 @@ select, .dropdown {
 
 .view-header {
   height: 24px;
-  
 }
 .workspace-leaf.mod-active .view-header {
   margin: 2px;
-  height: 20px;
+  height: 24px;
   background: linear-gradient(90deg,var(--titlebar_active_1),var(--titlebar_active_2));
 }
 .workspace-leaf .view-header {
-  height: 20px;
+  height: 24px;
   background: linear-gradient(90deg,var(--titlebar_inactive_1),var(--titlebar_inactive_2));
   border-top: none;
   border-bottom: none;
@@ -370,7 +369,6 @@ select, .dropdown {
   width: 16px;
   height: 16px;
   padding: 1px 2px;
-  margin-top:-2px;
   color: #fff;
   cursor: grab;
   position: relative;
@@ -385,7 +383,6 @@ select, .dropdown {
   font-size: 11px;
   font-weight: 700;
   line-height: unset;
-  margin-top:-1px
 }
 .workspace-leaf.mod-active .view-header-title {
   color: #fff;
@@ -398,11 +395,11 @@ select, .dropdown {
 }
 .view-action {
   display: block;
-  min-height: 18px;
-  min-width: 18px;
+  min-height: 14px;
+  min-width: 16px;
   padding: 0;
   margin: 0;
-  top: -2px;
+  top: 0;
 
   background: var(--window);
   box-shadow: inset -1px -1px var(--border), inset 1px 1px #fff, inset -2px -2px var(--titlebar_inactive_1), inset 2px 2px #fff;
@@ -419,10 +416,8 @@ select, .dropdown {
 }
 
 .view-action svg {
-  width: 11px;
-  height: 11px;
-  margin: 2px;
-  margin-left:3px;
+  width: 16px;
+  height: 14px;
 }
 .view-actions {
   padding: 4px 4px;
@@ -628,20 +623,6 @@ select, .dropdown {
   box-shadow: inset -1px -1px #ffffff, inset 1px 1px #000, inset -2px -2px var(--window), inset 2px 2px var(--titlebar_inactive_1);
   background-color: unset;
 }
-.document-search-container{
-  background-color:var(--window)!important;
-}
-.document-search-button{
-  color:black;
-}
-.document-search-input::placeholder{
-  color:black!important;
-  background-color:white;
-  border-color:white!important;
-}
-.document-search-close-button {
-  color: black;
-}
 
 
 .side-dock-ribbon-action {
@@ -650,8 +631,7 @@ select, .dropdown {
   border: none;
   border-radius: 0;
   /* min-width: 75px; */
-  height: 30px;
-  padding: 6px 0 0px 0; 
+  min-height: 23px;
   /* padding: 0 12px; */
 
   box-shadow: inset -1px -1px 0px #000, inset 1px 1px 0px #fff, inset -2px -2px 0px var(--titlebar_inactive_1), inset 2px 2px 0px var(--window);
@@ -745,13 +725,8 @@ input[type=text] {
   font-size: 11px;
 }
 
-.cm-s{
-  padding-right:10px;
-}
-
 ::-webkit-scrollbar {
-  width: 24px;
-  border-radius:0px;
+  width: 16px;
   -webkit-border-radius: 0;
 }
 
@@ -944,7 +919,7 @@ input[type=text] {
   border: 0;
   border-radius: 0;
 }
-input[type=checkbox], input[type=radio] {
+.mod-settings input[type=checkbox], .mod-settings input[type=radio] {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1024,18 +999,7 @@ input[type=checkbox], input[type=radio] {
 /*right panel*/
 .workspace-ribbon.is-collapsed {
   background-color: var(--window);
-
 }
-
-.workspace-ribbon.mod-right.is-collapsed {
-  flex-basis:20px;
-}
-.workspace-ribbon-collapse-btn{
-  width:20px;
-  margin-left:3px;
-}
-
-
 .backlink-pane, .outgoing-link-pane {
   background: white;
   font-family: 'Pixelated MS Sans Serif';

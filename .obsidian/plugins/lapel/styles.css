@@ -1,18 +1,28 @@
-.cm-heading-marker {
-  align-items: center;
-  color: var(--text-faint);
-  cursor: pointer;
-  display: inline-block;
-  font-size: 0.7rem;
-  letter-spacing: 0.25px;
-  min-width: 20px;
-  text-align: right;
+/*
+  XXX: Hide gutters inside table cell editor
+  Remove this hack once there's a proper way to not register the editor extension
+  inside table cells.
+*/
+.table-cell-wrapper .cm-gutters {
+  display: none;
 }
 
+.cm-lapel {
+  font-size: var(--font-smallest);
+	letter-spacing: 0.015em;
+  text-align: end;
+  width: 4ch;
+}
+
+.cm-heading-marker {
+  cursor: var(--cursor);
+	color: var(--text-faint);
+	display: inline-block;
+}
+
+.cm-heading-marker.has-active-menu,
 .cm-heading-marker:hover {
-  color: var(--text-muted);
-  font-size: 0.7rem;
-  letter-spacing: 0.25px;
+  color: var(--text-accent-hover);
 }
 
 .cm-heading-marker[data-level="1"] {

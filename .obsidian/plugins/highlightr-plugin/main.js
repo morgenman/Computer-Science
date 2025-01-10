@@ -44,7 +44,7 @@ const icons = {
     "highlightr-add": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z" fill="white"/><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10s10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8s8 3.589 8 8s-3.589 8-8 8z" fill="white"/></svg>`,
     "highlightr-save": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21h14a2 2 0 0 0 2-2V8a1 1 0 0 0-.29-.71l-4-4A1 1 0 0 0 16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm10-2H9v-5h6zM13 7h-2V5h2zM5 5h2v4h8V5h.59L19 8.41V19h-2v-5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v5H5z" fill="white"/></svg>`,
     "highlightr-delete": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z" fill="white"/><path d="M9 10h2v8H9zm4 0h2v8h-2z" fill="white"/></svg>`,
-    "highlightr-copy": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="white" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"><path d="M20 2H10c-1.103 0-2 .897-2 2v4H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2v-4h4c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM4 20V10h10l.002 10H4zm16-6h-4v-4c0-1.103-.897-2-2-2h-4V4h10v10z" fill="white"/><path d="M6 12h6v2H6zm0 4h6v2H6z" fill="white"/></svg>`,
+    "highlightr-copy": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1{fill:white;opacity:0;}.cls-2{fill:white;}</style></defs><title>copy</title><g id="Layer_2" data-name="Layer 2"><g id="copy"><g id="copy-2" data-name="copy"><rect class="cls-1" width="24" height="24"/><path class="cls-2" d="M18,21H12a3,3,0,0,1-3-3V12a3,3,0,0,1,3-3h6a3,3,0,0,1,3,3v6A3,3,0,0,1,18,21ZM12,11a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V12a1,1,0,0,0-1-1Z"/><path class="cls-2" d="M9.73,15H5.67A2.68,2.68,0,0,1,3,12.33V5.67A2.68,2.68,0,0,1,5.67,3h6.66A2.68,2.68,0,0,1,15,5.67V9.4H13V5.67A.67.67,0,0,0,12.33,5H5.67A.67.67,0,0,0,5,5.67v6.66a.67.67,0,0,0,.67.67H9.73Z"/></g></g></g></svg>`,
 };
 function createHighlighterIcons(settings, plugin) {
     const highlighterIcons = {};
@@ -82,7 +82,7 @@ var pickr_min = createCommonjsModule(function (module, exports) {
 var Pickr = /*@__PURE__*/getDefaultExportFromCjs(pickr_min);
 
 /**!
- * Sortable 1.14.0
+ * Sortable 1.15.0
  * @author	RubaXa   <trash@rubaxa.org>
  * @author	owenm    <owen23355@gmail.com>
  * @license MIT
@@ -210,7 +210,7 @@ function _objectWithoutProperties(source, excluded) {
   return target;
 }
 
-var version = "1.14.0";
+var version = "1.15.0";
 
 function userAgent(pattern) {
   if (typeof window !== 'undefined' && window.navigator) {
@@ -1201,7 +1201,7 @@ _detectNearestEmptySortable = function _detectNearestEmptySortable(x, y) {
 }; // #1184 fix - Prevent click event on fallback if dragged but item not changed position
 
 
-if (documentExists) {
+if (documentExists && !ChromeForAndroid) {
   document.addEventListener('click', function (evt) {
     if (ignoreNextClick) {
       evt.preventDefault();
@@ -1820,6 +1820,7 @@ Sortable.prototype =
 
     if (!Sortable.eventCanceled) {
       cloneEl = clone(dragEl);
+      cloneEl.removeAttribute("id");
       cloneEl.draggable = false;
       cloneEl.style['will-change'] = '';
 
@@ -2061,7 +2062,14 @@ Sortable.prototype =
 
         if (_onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, !!target) !== false) {
           capture();
-          el.appendChild(dragEl);
+
+          if (elLastChild && elLastChild.nextSibling) {
+            // the last draggable element is not the last node
+            el.insertBefore(dragEl, elLastChild.nextSibling);
+          } else {
+            el.appendChild(dragEl);
+          }
+
           parentEl = el; // actualization
 
           changed();
@@ -3290,15 +3298,11 @@ class HighlightrSettingTab extends obsidian.PluginSettingTab {
                         new obsidian.Notice("This color already exists");
                     }
                 }
-                else if (color && !value) {
-                    new obsidian.Notice("Highlighter hex code missing");
-                }
-                else if (!color && value) {
-                    new obsidian.Notice("Highlighter name missing");
-                }
-                else {
-                    new obsidian.Notice("Highlighter values missing");
-                }
+                color && !value
+                    ? new obsidian.Notice("Highlighter hex code missing")
+                    : !color && value
+                        ? new obsidian.Notice("Highlighter name missing")
+                        : new obsidian.Notice("Highlighter values missing"); // else
             }));
         });
         const highlightersContainer = containerEl.createEl("div", {
@@ -3393,42 +3397,30 @@ const kofiButton = (link) => {
     return a;
 };
 
-const highlighterMenu = (app, plugin, settings, editor, event) => {
+const highlighterMenu = (app, settings, editor) => {
     var _a, _b, _c;
     if (editor && editor.hasFocus()) {
         const cursor = editor.getCursor("from");
         let coords;
-        const editorCli = editor;
-        const menu = new obsidian.Menu(plugin.app).addItem((item) => {
-            const itemDom = item.dom;
-            itemDom.setAttribute("style", "display: none");
-        });
+        const menu = new obsidian.Menu();
+        menu.setUseNativeMenu(false);
         const menuDom = menu.dom;
         menuDom.addClass("highlighterContainer");
         settings.highlighterOrder.forEach((highlighter) => {
-            const colorButton = menuDom.createEl("div");
-            colorButton.setAttribute("id", `${highlighter}`);
-            colorButton.addEventListener("click", function (event) {
-                app.commands.executeCommandById(`highlightr-plugin:${highlighter}`);
+            menu.addItem((highlighterItem) => {
+                highlighterItem.setTitle(highlighter);
+                highlighterItem.setIcon(`highlightr-pen-${highlighter}`.toLowerCase());
+                highlighterItem.onClick(() => {
+                    app.commands.executeCommandById(`highlightr-plugin:${highlighter}`);
+                });
             });
-            const colorButtonIcon = colorButton.createEl("span");
-            colorButtonIcon.innerHTML =
-                '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1.15em" height="1.15em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><title>' +
-                    highlighter +
-                    '</title><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10zm0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16zm0-3a5 5 0 1 1 0-10a5 5 0 0 1 0 10z"/></svg>';
-            colorButtonIcon.setAttribute("style", "margin-right: 10px; vertical-align: -.15em; display: inline-flex;");
-            colorButtonIcon.style.fill = settings.highlighters[highlighter];
-            const colorButtonText = colorButton.createEl("span");
-            colorButtonText.innerHTML = highlighter;
-            colorButtonText.setAttribute("style", "font-weight: 400;");
         });
-        if (editorCli.cursorCoords) {
-            coords = editorCli.cursorCoords(true, "window");
+        if (editor.cursorCoords) {
+            coords = editor.cursorCoords(true, "window");
         }
-        else if (editorCli.coordsAtPos) {
+        else if (editor.coordsAtPos) {
             const offset = editor.posToOffset(cursor);
-            coords =
-                (_c = (_b = (_a = editorCli.cm).coordsAtPos) === null || _b === void 0 ? void 0 : _b.call(_a, offset)) !== null && _c !== void 0 ? _c : editorCli.coordsAtPos(offset);
+            coords = (_c = (_b = (_a = editor.cm).coordsAtPos) === null || _b === void 0 ? void 0 : _b.call(_a, offset)) !== null && _c !== void 0 ? _c : editor.coordsAtPos(offset);
         }
         else {
             return;
@@ -3451,14 +3443,14 @@ function contextMenu(app, menu, editor, plugin, settings) {
         item
             .setTitle("Highlight")
             .setIcon("highlightr-pen")
-            .onClick((_) => __awaiter(this, void 0, void 0, function* () {
-            highlighterMenu(app, plugin, settings, editor);
+            .onClick((e) => __awaiter(this, void 0, void 0, function* () {
+            highlighterMenu(app, settings, editor);
         }));
     });
     if (selection) {
         menu.addItem((item) => {
             item
-                .setTitle("Unhighlight")
+                .setTitle("Erase highlight")
                 .setIcon("highlightr-eraser")
                 .onClick((e) => {
                 if (editor.getSelection()) {
@@ -3513,7 +3505,7 @@ class HighlightrPlugin extends obsidian.Plugin {
     }
     onload() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log("Highlightr v" + this.manifest.version + " loaded");
+            console.log(`Highlightr v${this.manifest.version} loaded`);
             addIcons();
             yield this.loadSettings();
             this.app.workspace.onLayoutReady(() => {
@@ -3528,7 +3520,7 @@ class HighlightrPlugin extends obsidian.Plugin {
                 icon: "highlightr-pen",
                 editorCallback: (editor) => {
                     !document.querySelector(".menu.highlighterContainer")
-                        ? highlighterMenu(this.app, this, this.settings, editor)
+                        ? highlighterMenu(this.app, this.settings, editor)
                         : true;
                 },
             });
@@ -3577,7 +3569,7 @@ class HighlightrPlugin extends obsidian.Plugin {
                 const suf = editor.getRange(curserEnd, sufEnd);
                 const preLast = pre.slice(-1);
                 const prefixLast = prefix.trimStart().slice(-1);
-                const sufFirst = suf[0];
+                suf[0];
                 if (suf === suffix.trimEnd()) {
                     if (preLast === prefixLast && selectedText) {
                         editor.replaceRange(selectedText, preStart, sufEnd);
@@ -3587,12 +3579,7 @@ class HighlightrPlugin extends obsidian.Plugin {
                         return changeCursor(-1);
                     }
                 }
-                (selectedText && sufFirst === " ") ||
-                    (!selectedText && sufFirst === " ")
-                    ? editor.replaceSelection(`${prefix}${selectedText}${suffix}`)
-                    : selectedText && sufFirst !== " "
-                        ? editor.replaceSelection(`${prefix}${selectedText}${suffix} `)
-                        : editor.replaceSelection(`${prefix}${selectedText}${suffix} `);
+                editor.replaceSelection(`${prefix}${selectedText}${suffix}`);
                 return setCursor(1);
             };
             const commandsMap = {
@@ -3645,3 +3632,6 @@ class HighlightrPlugin extends obsidian.Plugin {
 }
 
 module.exports = HighlightrPlugin;
+
+
+/* nosourcemap */
