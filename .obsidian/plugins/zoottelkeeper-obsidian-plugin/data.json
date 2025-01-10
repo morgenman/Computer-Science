@@ -2,7 +2,7 @@
   "indexPrefix": "_Index_of_",
   "indexItemStyle": "list",
   "indexTagValue": "MOC",
-  "indexTagBoolean": true,
+  "indexTagBoolean": false,
   "indexTagSeparator": ", ",
   "indexTagLabel": "tags",
   "cleanPathBoolean": true,
@@ -13,5 +13,7 @@
   "foldersIncluded": "",
   "sortOrder": "asc",
   "addSquareBrackets": true,
-  "embedSubIndex": false
+  "embedSubIndex": false,
+  "templateFile": "",
+  "frontMatterSeparator": "---"
 }

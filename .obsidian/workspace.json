@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_Index_of_Computer-Science.md",
+                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_Index_of_Computer-Science"
+              "title": "_Index_of_Professional Practice"
             }
           }
         ]
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tags",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,10 +79,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_Index_of_Computer-Science.md"
+                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of _Index_of_Computer-Science"
+              "title": "Outline of _Index_of_Professional Practice"
             }
           },
           {
@@ -95,7 +95,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -115,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_Index_of_Computer-Science.md",
+                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +126,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for _Index_of_Computer-Science"
+              "title": "Backlinks for _Index_of_Professional Practice"
             }
           },
           {
@@ -134,12 +135,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_Index_of_Computer-Science.md",
+                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from _Index_of_Computer-Science"
+              "title": "Outgoing links from _Index_of_Professional Practice"
             }
           },
           {
@@ -177,7 +178,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375
+    "width": 359.9287109375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,12 +197,24 @@
   },
   "active": "7435fb7da37547fc",
   "lastOpenFiles": [
-    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+    "Fall 2021/Operating Systems/_Index_of_Operating Systems.md",
+    "Fall 2021/Databases/Nihon-Go/_Index_of_Nihon-Go.md",
+    "Spring 2022/Networks/_Index_of_Networks.md",
+    "Fall 2021/Game Development/_Index_of_Game Development.md",
+    "Fall 2021/_Index_of_Fall 2021.md",
+    "Fall 2021/Databases/_Index_of_Databases.md",
+    "Spring 2022/Data Analysis/_Index_of_Data Analysis.md",
+    "Computer Graphics Self-Study/_Index_of_Computer Graphics Self-Study.md",
+    "Spring 2022/Comptia Security+/_Index_of_Comptia Security+.md",
+    "Spring 2022/Algorithms/_Index_of_Algorithms.md",
     "📗Textbooks/_Index_of_📗Textbooks.md",
+    "_Daily_Notes/_Index_of__Daily_Notes.md",
+    "_Index_of_Computer-Science.md",
+    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+    "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
     "📗Textbooks/Fundamentals_of_Computer_Graphics_5th.epub",
     "📗Textbooks/A_First_Course_in_Database_Systems.pdf",
     "📗Textbooks/Intro_to_Theory_of_Computation_3rd.pdf",
-    "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
     "📗Textbooks/Fundamentals of Computer Graphics, 5th Ed - Steve Marschner, Peter Shirley.epub",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/toc.ncx",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/content.opf",
@@ -220,18 +234,14 @@
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig9_15.jpg",
     "📗Textbooks/Fundamentals of Computer Graphics.epub.md",
     "Fall 2021/Operating Systems/Operating Systems.md",
-    "_Index_of_Computer-Science.md",
     "Science of Learning.md",
-    "Computer Graphics Self-Study/_Index_of_Computer Graphics Self-Study.md",
     "Spring 2022/Algorithms/Algo Final Exam Prep.md",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Algorithms/Hashing.md",
-    "Spring 2022/Algorithms/_Index_of_Algorithms.md",
     "Spring 2022/Algorithms/Binary Tree.md",
     "Spring 2022/Algorithms/Heaps.md",
     "Spring 2022/Software Engineering/Software Engineering.md",
-    "Spring 2022/Networks/Networks.md",
-    "Spring 2022/Algorithms/Graphs.md"
+    "Spring 2022/Networks/Networks.md"
   ]
 }
