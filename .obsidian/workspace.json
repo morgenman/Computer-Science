@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md",
+                "file": "Fall 2021/Theory of Computation/_Index_of_Theory of Computation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_Index_of_Professional Practice"
+              "title": "_Index_of_Theory of Computation"
             }
           }
         ]
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tags",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,10 +79,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md"
+                "file": "Fall 2021/Theory of Computation/_Index_of_Theory of Computation.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of _Index_of_Professional Practice"
+              "title": "Outline of _Index_of_Theory of Computation"
             }
           },
           {
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md",
+                "file": "Fall 2021/Theory of Computation/_Index_of_Theory of Computation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +126,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for _Index_of_Professional Practice"
+              "title": "Backlinks for _Index_of_Theory of Computation"
             }
           },
           {
@@ -135,12 +135,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fall 2021/Professional Practice/_Index_of_Professional Practice.md",
+                "file": "Fall 2021/Theory of Computation/_Index_of_Theory of Computation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from _Index_of_Professional Practice"
+              "title": "Outgoing links from _Index_of_Theory of Computation"
             }
           },
           {
@@ -178,8 +178,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375,
-    "collapsed": true
+    "width": 359.9287109375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -195,8 +194,11 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "7435fb7da37547fc",
+  "active": "c7952e2ae45c44e9",
   "lastOpenFiles": [
+    "Spring 2022/_Index_of_Spring 2022.md",
+    "Spring 2022/Software Engineering/_Index_of_Software Engineering.md",
+    "Fall 2021/Professional Practice/_Index_of_Professional Practice.md",
     "Fall 2021/Operating Systems/_Index_of_Operating Systems.md",
     "Fall 2021/Databases/Nihon-Go/_Index_of_Nihon-Go.md",
     "Spring 2022/Networks/_Index_of_Networks.md",
@@ -239,9 +241,6 @@
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
     "Spring 2022/Algorithms/Hashing.md",
-    "Spring 2022/Algorithms/Binary Tree.md",
-    "Spring 2022/Algorithms/Heaps.md",
-    "Spring 2022/Software Engineering/Software Engineering.md",
-    "Spring 2022/Networks/Networks.md"
+    "Spring 2022/Algorithms/Binary Tree.md"
   ]
 }
