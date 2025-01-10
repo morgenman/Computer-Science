@@ -1,5 +1,5 @@
 ---
-updated: 2025-01-10_12:54:32-05:00
+updated: 2025-01-10_12:56:30-05:00
 ---
 
 Using the following book as a base:
@@ -7,4 +7,7 @@ Using the following book as a base:
 
 
 # Basics
-* Graphics pipe
+* z-buffer essential to proper back to front border 
+* Geometric manipulation used in graphics pipeline largely accomplished in 4d coordinate space with fourth *homogeneous* coordinate that helps with perspective
+	* manipulated using matrices and vectors
+* 

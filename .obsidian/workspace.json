@@ -99,7 +99,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137
+    "width": 278.99999809265137,
+    "collapsed": true
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -177,7 +178,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375
+    "width": 359.9287109375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,7 +195,7 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "e88c0db4b7cbf94c",
+  "active": "7435fb7da37547fc",
   "lastOpenFiles": [
     "Fall 2021/Theory of Computation/_Index_of_Theory of Computation.md",
     "Spring 2022/_Index_of_Spring 2022.md",
