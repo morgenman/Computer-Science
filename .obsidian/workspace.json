@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "_Index_of_Computer-Science.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fundamentals of Computer Graphics"
+              "title": "_Index_of_Computer-Science"
             }
           }
         ]
@@ -79,10 +79,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md"
+                "file": "_Index_of_Computer-Science.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Fundamentals of Computer Graphics"
+              "title": "Outline of _Index_of_Computer-Science"
             }
           },
           {
@@ -115,7 +115,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "_Index_of_Computer-Science.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +125,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Fundamentals of Computer Graphics"
+              "title": "Backlinks for _Index_of_Computer-Science"
             }
           },
           {
@@ -134,12 +134,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+                "file": "_Index_of_Computer-Science.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Fundamentals of Computer Graphics"
+              "title": "Outgoing links from _Index_of_Computer-Science"
             }
           },
           {
@@ -177,7 +177,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375
+    "width": 359.9287109375,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,11 +194,12 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "e887abae232e2633",
+  "active": "8914445c61614c12",
   "lastOpenFiles": [
+    "Science of Learning.md",
+    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Computer Graphics Self-Study/_Index_of_Computer Graphics Self-Study.md",
     "Spring 2022/Algorithms/Algo Final Exam Prep.md",
-    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Computer Graphics Self-Study",
     "Spring 2022/Algorithms/Algorithms.md",
     "Spring 2022/Data Analysis/Data Analysis.md",
