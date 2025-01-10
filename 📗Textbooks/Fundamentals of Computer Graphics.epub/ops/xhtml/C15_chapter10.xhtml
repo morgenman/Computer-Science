@@ -1,0 +1,845 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:svg="http://www.w3.org/2000/svg" dir="ltr" lang="en" xml:lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>10 Signal Processing</title>
+<link href="../styles/9781000426359.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+jax: ["input/TeX","input/MathML","output/SVG"],
+extensions: ["tex2jax.js","mml2jax.js","MathEvents.js"],
+TeX: {
+extensions: ["noErrors.js","noUndefined.js","autoload-all.js"]
+},
+MathMenu: {
+showRenderer: false
+},
+menuSettings: {
+zoom: "Click"
+},
+messageStyle: "none"
+});
+</script>
+<script src="../mathjax/MathJax.js" type="text/javascript"/>
+<meta content="urn:uuid:e0000000-0000-0000-0000-000006665500" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section epub:type="chapter" role="doc-chapter">
+<h1 class="chapz" id="c10"><a id="term-796"/><span aria-label="205" epub:type="pagebreak" id="pg_205" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rc10" role="doc-backlink"><span class="green"><span class="big1">10</span><br/>Signal Processing</span></a></h1>
+<p>In graphics, we often deal with functions of a continuous variable: an image is the first example you have seen, but you will encounter many more as you continue your exploration of graphics. By their nature, continuous functions can’t be directly represented in a computer; we have to somehow represent them using a finite number of bits. One of the most useful approaches to representing continuous functions is to use <em>samples</em> of the function: just store the values of the function at many different points and <em>reconstruct</em> the values in between when and if they are needed.</p>
+<p>You are by now familiar with the idea of representing an image using a two-dimensional grid of pixels—so you have already seen a sampled representation! Think of an image captured by a digital camera: the actual image of the scene that was formed by the camera’s lens is a continuous function of the position on the image plane, and the camera converted that function into a two-dimensional grid of samples. Mathematically, the camera converted a function of type ℝ<sup>2</sup> → <strong>C</strong> (where <strong>C</strong> is the set of colors) to a two-dimensional array of color samples, or a function of type ℤ<sup>2</sup> → <strong>C</strong>.</p>
+<p>Another example of a sampled representation is a 2D digitizing tablet, such as the screen of a tablet computer or a separate pen tablet used by an artist. In this case, the original function is the motion of the stylus, which is a time-varying 2D position, or a function of type ℝ → ℝ<sup>2</sup>. The digitizer measures the position of the stylus at many points in time, resulting in a sequence of 2D coordinates, or a function of type ℤ → ℝ<sup>2</sup> . A <em><a id="index_term760"/>motion capture</em> system does exactly the same thing <a id="term-5"/><a id="term-793"/><span aria-label="206" epub:type="pagebreak" id="pg_206" role="doc-pagebreak"/>for a special marker attached to an actor’s body: it takes the 3D position of the marker over time (ℝ → ℝ<sup>3</sup>) and makes it into a series of instantaneous position measurements (ℤ → ℝ<sup>3</sup>).</p>
+<p>Going up in dimension, a medical CT scanner, used to non-invasively examine the interior of a person’s body, measures density as a function of position inside the body. The output of the scanner is a 3D grid of density values: it converts the density of the body (ℝ<sup>3</sup> → ℝ) to a 3D array of real numbers (ℤ<sup>3</sup> → ℝ).</p>
+<p>These examples seem different, but in fact they can all be handled using exactly the same mathematics. In all cases, a function is being sampled at the points of a <em><a id="index_term659"/>lattice</em> in one or more dimensions, and in all cases, we need to be able to reconstruct that original continuous function from the array of samples.</p>
+<p>From the example of a 2D image, it may seem that the pixels are enough, and we never need to think about continuous functions again once the camera has discretized the image. But what if we want to make the image larger or smaller on the screen, particularly by ion-integer scale factors? It turns out that the simplest algorithms to do this perform badly, introducing obvious visual artifacts known as <em><a id="index_term1076"/>aliasing</em>. Explaining why aliasing happens and understanding how to prevent it require the mathematics of sampling theory. The resulting algorithms are rather simple, but the reasoning behind them, and the details of making them perform well, can be subtle.</p>
+<p>Representing continuous functions in a computer is, of course, not unique to graphics; nor is the idea of sampling and reconstruction. Sampled representations are used in applications from <a id="index_term325"/>digital audio to computational physics, and graphics is just one (and by no means the first) user of the related algorithms and mathematics. The fundamental facts about how to do sampling and reconstruction have been known in the field of communications since the 1920s and were stated in exactly the form we use them by the 1940s (Shannon &amp; Weaver, 1964).</p>
+<p>This chapter starts by summarizing sampling and reconstruction using the concrete one-dimensional example of digital audio. Then, we go on to present the basic mathematics and algorithms that underlie sampling and reconstruction in one and two dimensions. Finally, we go into the details of the frequency-domain viewpoint, which provides many insights into the behavior of these algorithms.</p>
+<section>
+<h2 id="sec10_1"><a epub:type="backlink" href="C02a_toc.xhtml#rsec10_1" role="doc-backlink"><span class="green">10.1 Digital Audio: Sampling in 1D</span></a></h2>
+<p>Although sampled representations had already been in use for years in telecommunications, the introduction of the compact disc in 1982, following the increased use of digital recording for audio in the previous decade, was the first highly visible consumer application of sampling.</p>
+<p><a id="term-9"/><a id="term-270"/><a id="term-794"/><span aria-label="207" epub:type="pagebreak" id="pg_207" role="doc-pagebreak"/>In audio recording, a microphone converts sound, which exists as pressure waves in the air, into a time-varying voltage that amounts to a measurement of the changing air pressure at the point where the microphone is located. This electrical signal needs to be stored somehow so that it may be played back at a later time and sent to a loudspeaker that converts the voltage back into pressure waves by moving a diaphragm in synchronization with the voltage.</p>
+<p>The digital approach to recording the audio signal (<a href="C15_chapter10.xhtml#f10_1">Figure 10.1</a>) uses sampling: an <em>analog-to-digital converter</em> (<em><a id="index_term24"/>A/D converter</em>,or <em>ADC</em>) measures the voltage many thousand times per second, generating a stream of integers that can easily be stored on any number of media, say a disk on a computer in the recording studio, or transmitted to another location, say the memory in a portable audio player. At playback time, the data are read out at the appropriate rate and sent to a <em>digital-to-analog converter</em> (<em><a id="index_term327"/>D/A converter</em>,or <em>DAC</em>). The DAC produces a voltage according to the numbers it receives, and, provided we take enough samples to fairly represent the variation in voltage, the resulting electrical signal is, for all practical purposes, identical to the input.</p>
+<figure id="f10_1" tabindex="0">
+<img alt="" src="../images/fig10_1.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.1.</strong></span> Sampling and reconstruction in digital audio.</p></figcaption>
+</figure>
+<p>It turns out that the number of samples per second required to end up with a good reproduction depends on how high-pitched the sounds are that we are trying to record. A sample rate that works fine for reproducing a string bass or a kick drum produces bizarre-sounding results if we try to record a piccolo or a cymbal; but those sounds are reproduced just fine with a higher sample rate. To avoid these <em>undersampling artifacts</em>, the digital audio recorder <em>filters</em> the input to the ADC to remove high frequencies that can cause problems.</p>
+<p>Another kind of problem arises on the output side. The DAC produces a voltage that changes whenever a new sample comes in, but stays constant until the next sample, producing a stair-step- shaped graph. These stair-steps act like noise, adding a high-frequency, signal-dependent buzzing sound. To remove this <em>reconstruction artifact</em>, the digital audio player filters the output from the DAC to smooth out the waveform.</p>
+<section>
+<h3 id="sec10_1_1"><a id="index_term11"/><a id="index_term1077"/><a id="index_term1005"/><a id="index_term1002"/><a id="term-795"/><span aria-label="208" epub:type="pagebreak" id="pg_208" role="doc-pagebreak"/><span class="green">10.1.1 Sampling Artifacts and Aliasing</span></h3>
+<p>The digital audio recording chain can serve as a concrete model for the sampling and reconstruction processes that happen in graphics. The same kind of under-sampling and reconstruction artifacts also happens with images or other sampled signals in graphics, and the solution is the same: filtering before sampling and filtering again during reconstruction.</p>
+<p>A concrete example of the kind of artifacts that can arise from too-low sample frequencies is shown in <a href="C15_chapter10.xhtml#f10_2">Figure 10.2</a>. Here, we are sampling a simple sine wave using two different sample frequencies: 10.8 samples per cycle on the top and 1.2 samples per cycle on the bottom. The higher rate produces a set of samples that obviously capture the signal well, but the samples resulting from the lower sample rate are indistinguishable from samples of a low-frequency sine wave—in fact, faced with this set of samples the low-frequency sinusoid seems the more likely interpretation.</p>
+<figure id="f10_2" tabindex="0">
+<img alt="" src="../images/fig10_2.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.2.</strong></span> A sine wave (blue curve) sampled at two different rates. (a) At a high sample rate, the resulting samples (black dots) represent the signal well. (b) A lower sample rate produces an ambiguous result: the samples are exactly the same as would result from sampling a wave of much lower frequency (dashed curve).</p></figcaption>
+</figure>
+<p>Once the sampling has been done, it is impossible to know which of the two signals—the fast or the slow sine wave—was the original, and therefore, there is no single method that can properly reconstruct the signal in both cases. Because the high-frequency signal is “pretending to be” a low-frequency signal, this phenomenon is known as <em>aliasing</em>.</p>
+<p>Aliasing shows up whenever flaws in sampling and reconstruction lead to artifacts at surprising frequencies. In audio, aliasing takes the form of odd-sounding extra tones—a bell ringing at 10 KHz, after being sampled at 8 KHz, turns into <a id="term-792"/><span aria-label="209" epub:type="pagebreak" id="pg_209" role="doc-pagebreak"/>a 6 KHz tone. In images, aliasing often takes the form of <em>moiré patterns</em> that result from the interaction of the sample grid with regular features in an image, for instance, the window blinds in <a href="C15_chapter10.xhtml#f10_34">Figure 10.34</a>.</p>
+<p>Another example of aliasing in a synthetic image is the familiar stair-stepping on straight lines that are rendered with only black and white pixels (<a href="C15_chapter10.xhtml#f10_34">Figure 10.34</a>). This is an example of small-scale features (the sharp edges of the lines) creating artifacts at a different scale (for shallow-slope lines, the stair steps are very long).</p>
+<p>The basic issues of sampling and reconstruction can be understood simply based on features being too small or too large, but some more quantitative questions are harder to answer:</p>
+<ul class="list-bullet">
+<li>
+<p class="list">What sample rate is high enough to ensure good results?</p>
+</li>
+<li>
+<p class="list">What kinds of filters are appropriate for sampling and reconstruction?</p>
+</li>
+<li>
+<p class="list">What degree of smoothing is required to avoid aliasing?</p>
+</li>
+</ul>
+<p>Solid answers to these questions will have to wait until we have developed the theory fully in <a href="C15_chapter10.xhtml#sec10_5">Section 10.5</a>.</p>
+</section>
+</section>
+<section>
+<h2 id="sec10_2"><a id="index_term1078"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec10_2" role="doc-backlink"><span class="green">10.2 Convolution</span></a></h2>
+<p>Before we discuss algorithms for sampling and reconstruction, we’ll first examine the mathematical concept on which they are based—<em>convolution</em>. Convolution is a simple mathematical concept that underlies the algorithms that are used for sampling, filtering, and reconstruction. It also is the basis of how we will analyze these algorithms throughout this chapter.</p>
+<p>Convolution is an operation on functions: it takes two functions and combines them to produce a new function. In this book, the convolution operator is denoted by a star: the result of applying convolution to the functions <em>f</em> and <em>g</em> is <em>f * g</em>. We say that <em>f</em> is convolved with <em>g</em>,and <em>f * g</em> is the convolution of <em>f</em> and <em>g</em>.</p>
+<p>Convolution can be applied either to continuous functions (functions <em>f</em> (<em>x</em>) that are defined for any real argument <em>x</em>) or to discrete sequences (functions <em>a</em>[<em>i</em>] that are defined only for integer arguments <em>i</em>). It can also be applied to functions defined on one-dimensional, two-dimensional, or higher-dimensional domains (i.e., functions of one, two, or more arguments). We will start with the discrete, one-dimensional case first and then continue to continuous functions and two- and three-dimensional functions.</p>
+<p>For convenience in the definitions, we generally assume that the functions’ domains go on forever, although of course in practice they will have to stop somewhere, and we have to handle the endpoints in a special way.</p>
+<a id="term-797"/><a id="term-798"/><span aria-label="210" epub:type="pagebreak" id="pg_210" role="doc-pagebreak"/>
+<section>
+<h3 id="sec10_2_1"><span class="green">10.2.1 Moving Averages</span></h3>
+<p>To get a basic picture of convolution, consider the example of smoothing a 1D function using a moving average (<a href="C15_chapter10.xhtml#f10_3">Figure 10.3</a>). To get a smoothed value at any point, we compute the average of the function over a range extending a distance <em>r</em> in each direction. The distance <em>r</em>, called the <em>radius</em> of the smoothing operation, is a parameter that controls how much smoothing happens.</p>
+<p>We can state this idea mathematically for discrete or continuous functions. If we’re smoothing a continuous function <em>g</em>(<em>x</em>), averaging means integrating <em>g</em> over an interval and then dividing by the length of the interval:</p>
+<figure id="f10_3" tabindex="0">
+<img alt="" src="../images/fig10_3.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.3.</strong></span> Smoothing using a moving average.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>h</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>r</m:mi></m:mrow></m:mfrac><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>r</m:mi></m:mrow><m:mrow><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>r</m:mi></m:mrow></m:msubsup><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>t</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>On the other hand, if we’re smoothing a discrete function <em>a</em>[<em>i</em>], averaging means summing <em>a</em> for a range of indices and dividing by the number of values:</p>
+<div class="disp-formula" id="equ10_1">
+<m:math alttext=""><m:mrow><m:mi>c</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>r</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:mfrac></m:mrow><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>r</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>+</m:mo><m:mi>r</m:mi></m:mrow></m:munderover><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mn>.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(10.1)</m:mo></m:math>
+</div>
+<p>In each case, the normalization constant is chosen so that if we smooth a constant function, the result will be the same function.</p>
+<p>This idea of a moving average is the essence of convolution; the only difference is that in convolution, the moving average is a weighted average.</p>
+</section>
+<section>
+<h3 id="sec10_2_2"><a id="index_term335"/><span class="green">10.2.2 Discrete Convolution</span></h3>
+<p>We will start with the most concrete case of convolution: convolving a discrete sequence <em>a</em>[<em>i</em>] with another discrete sequence <em>b</em>[<em>i</em>]. The result is a discrete sequence (<em>a * b</em>)[<em>i</em>]. The process is just like smoothing <em>a</em> with a <a id="index_term1082"/>moving average, but this <a id="term-192"/><span aria-label="211" epub:type="pagebreak" id="pg_211" role="doc-pagebreak"/>time instead of equally weighting all samples within a distance <em>r</em>,weuseasecond sequence <em>b</em> to give a weight to each sample (<a href="C15_chapter10.xhtml#f10_4">Figure 10.4</a>). The value <em>b</em>[<em>i</em> – <em>j</em>] gives the weight for the sample at position <em>j</em>, which is at a distance <em>i</em> – <em>j</em> from the index <em>i</em> where we are evaluating the convolution. Here is the definition of (<em>a</em> ⋆ <em>b</em>), expressed as a formula:</p>
+<figure id="f10_4" tabindex="0">
+<img alt="" src="../images/fig10_4.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.4.</strong></span> Computing one value in the discrete convolution of a sequence <em>a</em> with a filter <em>b</em> that has support five samples wide. Each sample in <em>a</em> ⋆ <em>b</em> is an average of nearby samples in <em>a</em>, weighted by the values of <em>b</em>.</p></figcaption>
+</figure>
+<div class="disp-formula" id="equ10_2">
+<m:math alttext=""><m:mrow><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:mrow><m:mspace width="3em"/><m:mo>(10.2)</m:mo></m:math>
+</div>
+<p>By omitting bounds on <em>j</em>, we indicate that this sum runs over all integers (i.e., from –∞ to +∞). <a href="C15_chapter10.xhtml#f10_4">Figure 10.4</a> illustrates how one output sample is computed, using the example of <span class="inline-formula"><m:math alttext=""><m:mrow><m:mi>b</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>16</m:mn></m:mrow></m:mfrac><m:mrow><m:mo>[</m:mo><m:mo>…</m:mo><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>4</m:mn><m:mo>,</m:mo><m:mn>6</m:mn><m:mo>,</m:mo><m:mn>4</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mo>…</m:mo><m:mo>]</m:mo></m:mrow></m:mrow></m:math></span>—that is, <span class="inline-formula"><m:math alttext=""><m:mrow><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>6</m:mn></m:mrow><m:mrow><m:mn>16</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mo>±</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>4</m:mn></m:mrow><m:mrow><m:mn>16</m:mn></m:mrow></m:mfrac></m:mrow></m:math></span>, etc.</p>
+<p>In graphics, one of the two functions will usually have <em>finite support</em> (as does the example in <a href="C15_chapter10.xhtml#f10_4">Figure 10.4</a>), which means that it is nonzero only over a finite interval of argument values. If we assume that <em>b</em> has finite support, there is some <em>radius</em> <em>r</em> such that <em>b</em>[<em>k</em>] = 0 whenever <em>|k|</em> &gt; <em>r</em>. In that case, we can write the sum <a id="term-67"/><a id="term-199"/><a id="term-200"/><span aria-label="212" epub:type="pagebreak" id="pg_212" role="doc-pagebreak"/>above as</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>r</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>+</m:mo><m:mi>r</m:mi></m:mrow></m:munderover><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>and we can express the definition in code as</p>
+<p class="indent"><strong>function</strong> convolve(sequence <em>a</em>, filter <em>b</em>,int <em>i</em>)</p>
+<p class="indent1">   <em>s</em> = 0</p>
+<p class="indent1">   <em>r</em> = <em>b</em>.radius</p>
+<p class="indent1">   <strong>for</strong> <em>j</em> = <em>i – r</em> to <em>i</em> + <em>r</em> <strong>do</strong></p>
+<p class="indent1">      <em>s</em> = <em>s</em> + <em>a</em>[<em>j</em>]<em>b</em>[<em>i – j</em>]</p>
+<p class="indent1">   <strong>return</strong> <em>s</em></p>
+<section>
+<h4 id="sec45"><span class="blue">Convolution Filters</span></h4>
+<p>Convolution is important because we can use it to perform filtering. Looking back at our first example of filtering, the moving average, we can now reinterpret that smoothing operation as convolution with a particular sequence. When we compute an average over some limited range of indices, that is the same as weighting the points in the range all identically and weighting the rest of the points with zeros. This kind of filter, which has a constant value over the interval where it is nonzero, is known as a <em><a id="index_term246"/>box filter</em> (because it looks like a rectangle if you draw its graph—see <a href="C15_chapter10.xhtml#f10_5">Figure 10.5</a>). For a box filter of radius <em>r</em>, the weight is 1<em>/</em>(2<em>r</em> +1):</p>
+<figure id="f10_5" tabindex="0">
+<img alt="" src="../images/fig10_5.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.5.</strong></span> A discrete box filter.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>k</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>r</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:mfrac></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mi>r</m:mi><m:mo>≤</m:mo><m:mi>k</m:mi><m:mo>≤</m:mo><m:mi>r</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>If you substitute this filter into Equation (10.2), you will find that it reduces to the moving average in Equation (10.1).</p>
+<p>As in this example, convolution filters are usually designed so that they sum to 1. That way, they don’t affect the overall level of the signal.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent1"><span class="blue">Example 20 (Convolution of a box and a step)</span></p>
+<p>For a simple example of filtering, let the signal be the <em>step function</em></p>
+<div class="disp-formula"><m:math alttext=""><m:mrow><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mi>i</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mi>i</m:mi><m:mo>&lt;</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math></div>
+<p>and the filter be the five-point box filter centered at zero,</p>
+<div class="disp-formula"><m:math alttext=""><m:mrow><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>k</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>5</m:mn></m:mrow></m:mfrac><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>2</m:mn><m:mo>≤</m:mo><m:mi>k</m:mi><m:mo>≤</m:mo><m:mn>2</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>Otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math></div>
+<p><span aria-label="213" epub:type="pagebreak" id="pg_213" role="doc-pagebreak"/>What is the result of convolving <em>a</em> and <em>b</em>? At a particular index <em>i</em>, as shown in <a href="C15_chapter10.xhtml#f10_6">Figure 10.6</a>, the result is the average of the step function over the range from <em>i</em> – 2 to <em>i</em> + 2. If <em>i &lt;</em> –2, we are averaging all zeros and the result is zero. If <em>i</em> ≥ 2, we are averaging all ones and the result is one. In between, there are <em>i</em> +3 ones, resulting in the value <span class="inline-formula"><m:math alttext=""><m:mrow><m:mfrac><m:mrow><m:mi>i</m:mi><m:mo>+</m:mo><m:mn>3</m:mn></m:mrow><m:mrow><m:mn>5</m:mn></m:mrow></m:mfrac></m:mrow></m:math></span>. The output is a linear ramp that goes from 0 to 1 over five samples:<span class="inline-formula"><m:math alttext=""><m:mrow><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>5</m:mn></m:mrow></m:mfrac><m:mrow><m:mo>[</m:mo><m:mo>…</m:mo><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>2</m:mn><m:mo>,</m:mo><m:mn>3</m:mn><m:mo>,</m:mo><m:mn>4</m:mn><m:mo>,</m:mo><m:mn>5</m:mn><m:mo>,</m:mo><m:mn>5</m:mn><m:mo>,</m:mo><m:mo>…</m:mo><m:mo>]</m:mo></m:mrow></m:mrow></m:math></span>.</p>
+<figure id="f10_6" tabindex="0">
+<img alt="" src="../images/fig10_6.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.6.</strong></span> Discrete convolution of a box function with a step function.</p></figcaption>
+</figure>
+</aside>
+</section>
+<section>
+<h4 id="sec46"><span class="blue">Properties of Convolution</span></h4>
+<p>The way we’ve written it so far, convolution seems like an asymmetric operation: <em>a</em> is the sequence we’re smoothing, and <em>b</em> provides the weights. But one of the nice properties of convolution is that it actually doesn’t make any difference which is which: the filter and the signal are interchangeable. To see this, just rethink the sum in Equation (10.2) with the indices counting from the origin of the filter <em>b</em>, <span aria-label="214" epub:type="pagebreak" id="pg_214" role="doc-pagebreak"/>rather than from the origin of <em>a</em>. That is, we replace <em>j</em> with <em>i</em> – <em>k</em>. The result of this change of variable is</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd columnalign="right"><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>k</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>k</m:mi><m:mo>]</m:mo><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mrow><m:mo>(</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>k</m:mi><m:mo>)</m:mo></m:mrow><m:mo>]</m:mo></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>k</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>k</m:mi><m:mo>]</m:mo></m:mrow><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>k</m:mi><m:mo>]</m:mo></m:mrow><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>This is exactly the same as Equation (10.2) but with <em>a</em> acting as the filter and <em>b</em> acting as the signal. So for any sequences <em>a</em> and <em>b</em>, (<em>a * b</em>) = (<em>b * a</em>), and we say that convolution is a <em>commutative</em> operation.<a epub:type="noteref" href="C15_chapter10.xhtml#fn10_1" id="rfn10_1" role="doc-noteref"><sup>1</sup></a></p>
+<p>More generally, convolution is a “multiplication-like” operation. Like multiplication or addition of numbers or functions, neither the order of the arguments nor the placement of parentheses affects the result. Also, convolution relates to addition in the same way that multiplication does. To be precise, convolution is <em>commutative</em> and <em>associative</em>, and it is <em>distributive</em> over addition.</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd columnalign="left"><m:mtext>Commutative:</m:mtext></m:mtd><m:mtd columnalign="center"><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mi>b</m:mi><m:mo>*</m:mo><m:mi>a</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mtext>Associative:</m:mtext></m:mtd><m:mtd columnalign="center"><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mrow><m:mo>(</m:mo><m:mi>b</m:mi><m:mo>*</m:mo><m:mi>c</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mo>*</m:mo><m:mi>c</m:mi></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mtext>Distributive:</m:mtext></m:mtd><m:mtd columnalign="center"><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mrow><m:mo>(</m:mo><m:mi>b</m:mi><m:mo>+</m:mo><m:mi>c</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>+</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>c</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>These properties are very natural if we think of convolution as being like multiplication, and they are very handy to know about because they can help us save work by simplifying convolutions before we actually compute them. For instance, suppose we want to take a sequence <em>a</em> and convolve it with three filters, <em>b</em><sub>1</sub>, <em>b</em><sub>2</sub>, and <em>b</em><sub>3</sub>—that is, we want ((<em>a * b</em><sub>1</sub>) * <em>b</em><sub>2</sub>) * <em>b</em><sub>3</sub>. If the sequence is long and the filters are short (that is, they have small radii), it is much faster to first convolve the three filters together (computing <em>b</em><sub>1</sub> * <em>b</em><sub>2</sub> * <em>b</em><sub>3</sub>) and finally to convolve the result with the signal, computing <em>a</em> * (<em>b</em><sub>1</sub> * <em>b</em><sub>2</sub> * <em>b</em><sub>3</sub>), which we know from associativity gives the same result.</p>
+<p>A very simple filter serves as an <em>identity</em> for discrete convolution: it is the discrete filter of radius zero, or the sequence <em>d</em>[<em>i</em>] = <em>...,</em> 0, 0, 1, 0, 0,<em>...</em> (<a href="C15_chapter10.xhtml#f10_7">Figure 10.7</a>). If we convolve <em>d</em> with a signal <em>a</em>, there will be only one nonzero term in the sum:</p>
+<figure id="f10_7" tabindex="0">
+<img alt="" src="../images/fig10_7.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.7.</strong></span> The discrete identity filter.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mi>i</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>=</m:mo><m:mi>i</m:mi></m:mrow></m:munderover><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mi>d</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<aside class="footnote" epub:type="footnote" role="doc-footnote"><p><a href="#rfn10_1" id="fn10_1"><sup>1</sup></a> You may have noticed that one of the functions in the convolution sum seems to be flipped over—that is, <em>b</em>[<em>k</em>] gives the weight for the sample <em>k</em> units <em>earlier</em> in the sequence, while <em>b</em>[–<em>k</em>] gives the weight for the sample <em>k</em> units <em>later</em> in the sequence. The reason for this has to do with ensuring associativity; see Exercise 4. Most of the filters we use are symmetric, so you hardly ever need to worry about this.</p></aside>
+<p class="indent"><a id="term-210"/><a id="term-787"/><a id="term-788"/><span aria-label="215" epub:type="pagebreak" id="pg_215" role="doc-pagebreak"/>So clearly, convolving <em>a</em> with <em>d</em> just gives back <em>a</em> again. The sequence <em>d</em> is known as the <em>discrete impluse</em>. It is occasionally useful in expressing a filter: for instance, the process of smoothing a signal <em>a</em> with a filter <em>b</em> and then subtracting that from the original could be expressed as a single convolution with the filter <em>d</em> – <em>b</em>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>c</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mo>−</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>d</m:mi><m:mo>−</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mrow><m:mo>(</m:mo><m:mi>d</m:mi><m:mo>−</m:mo><m:mi>b</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+</section>
+</section>
+<section>
+<h3 id="sec10_2_3"><a id="index_term1073"/><span class="green">10.2.3 Convolution as a Sum of Shifted Filters</span></h3>
+<p>There is a second, entirely equivalent, way of interpreting Equation (10.2). Looking at the samples of <em>a</em>⋆<em>b</em> one at a time leads to the weighted-average interpretation that we have already seen. But if we omit the [<em>i</em>], we can instead think of the sum as adding together entire sequences. One piece of notation is required to make this work: if <em>b</em> is a sequence, then the same sequence shifted to the right by <em>j</em> places is called <em>b<sub>→j</sub></em> (<a href="C15_chapter10.xhtml#f10_8">Figure 10.8</a>):</p>
+<figure id="f10_8" tabindex="0">
+<img alt="" src="../images/fig10_8.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.8.</strong></span> Shifting a sequence <em>b</em> to get <em>b<sub>→j</sub></em>.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mo>→</m:mo><m:mi>j</m:mi></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Then, we can write Equation (10.2) as a statement about the whole sequence (<em>a * b</em>) rather than element-by-element:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>]</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mo>→</m:mo><m:mi>j</m:mi></m:mrow></m:msub></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Looking at it this way, the convolution is a sum of shifted copies of <em>b</em>, weighted by the entries of <em>a</em> (<a href="C15_chapter10.xhtml#f10_9">Figure 10.9</a>). Because of commutativity, we can pick either <em>a</em> or <em>b</em> as the filter; if we choose <em>b</em>, then we are adding up one copy of the filter for every sample in the input.</p>
+<figure id="f10_9" tabindex="0">
+<img alt="" src="../images/fig10_9.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.9.</strong></span> Discrete convolution as a sum of shifted copies of the filter.</p></figcaption>
+</figure>
+</section>
+<section>
+<h3 id="sec10_2_4"><a id="index_term244"/><a id="term-193"/><span aria-label="216" epub:type="pagebreak" id="pg_216" role="doc-pagebreak"/><span class="green">10.2.4 Convolution with Continuous Functions</span></h3>
+<p>While it is true that discrete sequences are what we actually work with in a computer program, these sampled sequences are supposed to represent continuous functions, and often we need to reason mathematically about the continuous functions in order to figure out what to do. For this reason, it is useful to define convolution between continuous functions and also between continuous and discrete functions.</p>
+<p>The convolution of two continuous functions is the obvious generalization of Equation (10.2), with an integral replacing the sum:</p>
+<div class="disp-formula" id="equ10_3">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>*</m:mo><m:mi>g</m:mi><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mo>+</m:mo><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mi>d</m:mi><m:mi>t</m:mi><m:mn>.</m:mn></m:mrow></m:mrow><m:mspace width="3em"/><m:mo>(10.3)</m:mo></m:math>
+</div>
+<p>One way of interpreting this definition is that the convolution of <em>f</em> and <em>g</em>, evaluated at the argument <em>x</em>, is the area under the curve of the product of the two functions after we shift <em>g</em> so that <em>g</em>(0) lines up with <em>f</em> (<em>t</em>). Just like in the discrete case, the convolution is a moving average, with the filter providing the weights for the average (see <a href="C15_chapter10.xhtml#f10_10">Figure 10.10</a>).</p>
+<figure id="f10_10" tabindex="0">
+<img alt="" src="../images/fig10_10.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.10.</strong></span> Continuous convolution.</p></figcaption>
+</figure>
+<p><a id="term-68"/><a id="term-69"/><a id="term-201"/><a id="term-202"/><a id="term-211"/><a id="term-212"/><a id="term-846"/><a id="term-847"/><span aria-label="217" epub:type="pagebreak" id="pg_217" role="doc-pagebreak"/>Like discrete convolution, convolution of continuous functions is commutative and associative, and it is distributive over addition. Also as with the discrete case, the continuous convolution can be seen as a sum of copies of the filter rather than the computation of weighted averages. Except, in this case, there are infinitely many copies of the filter <em>g</em>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>*</m:mo><m:mi>g</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mo>+</m:mo><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:msub><m:mrow><m:mi>g</m:mi></m:mrow><m:mrow><m:mo>→</m:mo><m:mi>t</m:mi></m:mrow></m:msub><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>t</m:mi><m:mn>.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent1"><span class="blue">Example 21 (Convolution of two box functions)</span></p>
+<p>Let <em>f</em> be a box function:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac><m:mo>≤</m:mo><m:mi>x</m:mi><m:mo>&lt;</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>Otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Then what is <em>f * f</em> ? The definition (Equation 10.3) gives</p>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>*</m:mo><m:mi>f</m:mi><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>t</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p><a href="C15_chapter10.xhtml#f10_11">Figure 10.11</a> shows the two cases of this integral. The two boxes might have zero overlap, which happens when <em>x</em> ≤ –1 or <em>x</em> ≥ 1; in this case, the result is zero. When –1 &lt; x &lt; 1, the overlap depends on the separation between the two boxes, which is <em>|x|</em>; the result is 1 –<em>|x|</em>. So</p>
+<figure id="f10_11" tabindex="0">
+<img alt="" src="../images/fig10_11.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.11.</strong></span> Convolving two boxes yields a tent function.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>*</m:mo><m:mi>f</m:mi><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>1</m:mn><m:mo>&lt;</m:mo><m:mi>x</m:mi><m:mo>&lt;</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+</aside>
+<p class="indent"><a id="term-271"/><a id="term-272"/><span aria-label="218" epub:type="pagebreak" id="pg_218" role="doc-pagebreak"/>This function, known as the <em>tent function</em>, is another common filter (see <a href="C15_chapter10.xhtml#sec10_3_1">Section 10.3.1</a>).</p>
+<section>
+<h4 id="sec47"><span class="blue">The Dirac Delta Function</span></h4>
+<p>In discrete convolution, we saw that the discrete impulse <em>d</em> acted as an identity: <em>d * a</em> = <em>a</em>. In the continuous case, there is also an identity function, called the <em>Dirac impulse</em> or <em>Dirac delta</em> function, denoted δ(<em>x</em>).</p>
+<p>Intuitively, the delta function is a very narrow, very tall spike that has infinitesimal width but still has area equal to 1 (<a href="C15_chapter10.xhtml#f10_12">Figure 10.12</a>). The key defining property of the delta function is that multiplying it by a function selects out the value exactly at zero:</p>
+<figure id="f10_12" tabindex="0">
+<img alt="" src="../images/fig10_12.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.12.</strong></span> The Dirac delta function δ(<em>x</em>).</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>δ</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The delta function does not have a well-defined value at 0 (you can think of its value loosely as +∞), but it does have the value δ(<em>x</em>) = 0 for all <em>x</em> ≠ 0.</p>
+<p>From this property of selecting out single values, it follows that the delta function is the identity for continuous convolution (<a href="C15_chapter10.xhtml#f10_13">Figure 10.13</a>), because convolving δ with any function <em>f</em> yields</p>
+<figure id="f10_13" tabindex="0">
+<img alt="" src="../images/fig10_13.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.13.</strong></span> Convolving a function with δ(<em>X</em>) returns a copy of the same function.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>δ</m:mi><m:mo>*</m:mo><m:mi>f</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>δ</m:mi><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mi>d</m:mi><m:mi>t</m:mi><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>So δ * <em>f</em> = <em>f</em> (and because of commutativity <em>f</em> * δ = <em>f</em> also).</p>
+</section>
+</section>
+<section>
+<h3 id="sec10_2_5"><a id="index_term334"/><a id="term-194"/><span aria-label="219" epub:type="pagebreak" id="pg_219" role="doc-pagebreak"/><span class="green">10.2.5 Discrete-Continuous Convolution</span></h3>
+<p>There are two ways to connect the discrete and continuous worlds. One is sampling: we convert a continuous function into a discrete one by writing down the function’s value at all integer arguments and forgetting about the rest. Given a continuous function <em>f</em> (<em>x</em>), we can sample it to convert to a discrete sequence <em>a</em>[<em>i</em>]:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>i</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Going the other way, from a discrete function, or sequence, to a continuous function, is called <em><a id="index_term965"/>reconstruction</em>. This is accomplished using yet another form of convolution, the discrete-continuous form. In this case, we are filtering a discrete sequence <em>a</em>[<em>i</em>] with a continuous filter <em>f</em> (<em>x</em>):</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>f</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The value of the reconstructed function <em>a * f</em> at <em>x</em> is a weighted sum of the samples <em>a</em>[<em>i</em>] for values of <em>i</em> near <em>x</em> (<a href="C15_chapter10.xhtml#f10_14">Figure 10.14</a>). The weights come from the filter <em>f</em> , which is evaluated at a set of points spaced one unit apart. For example, if <em>x</em> = 5.3 and <em>f</em> has radius 2, <em>f</em> is evaluated at 1.3, 0.3, –0.7, and –1.7. Note that for discrete-continuous convolution, we generally write the sequence first and the filter second, so that the sum is over integers.</p>
+<figure id="f10_14" tabindex="0">
+<img alt="" src="../images/fig10_14.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.14.</strong></span> Discrete-continuous convolution.</p></figcaption>
+</figure>
+<p>As with discrete convolution, we can put bounds on the sum if we know the filter’s radius, <em>r</em>, eliminating all points where the difference between <em>x</em> and <em>i</em> is at <a id="term-195"/><a id="term-688"/><span aria-label="220" epub:type="pagebreak" id="pg_220" role="doc-pagebreak"/>least <em>r</em>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>f</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mrow><m:mo>⌈</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>r</m:mi><m:mo>⌉</m:mo></m:mrow></m:mrow><m:mrow><m:mrow><m:mo>⌊</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>r</m:mi><m:mo>⌋</m:mo></m:mrow></m:mrow></m:munderover><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Note, that if a point falls exactly at distance <em>r</em> from <em>x</em> (i.e., if <em>x</em> – <em>r</em> turns out to be an integer), it will be left out of the sum. This is in contrast to the discrete case, where we included the point at <em>i</em> – <em>r</em>.</p>
+<p>Expressed in code, this is</p>
+<p class="indent1">   <strong>function</strong> reconstruct(sequence <em>a</em>, filter <em>f</em> , real <em>x</em>)</p>
+<p class="indent1">   <em>s</em> = 0</p>
+<p class="indent1">   <em>r</em> = <em>f.</em>radius</p>
+<p class="indent1">   <strong>for</strong> <em>i</em> = <em>x – r </em> to <em>x</em> + <em>r </em> <strong>do</strong></p>
+<p class="indent1">      <em>s</em> = <em>s</em> + <em>a</em>[<em>i</em>]<em>f</em> (<em>x – i</em>)</p>
+<p class="indent1">   <strong>return</strong> <em>s </em></p>
+<p>As with the other forms of convolution, discrete-continuous convolution may be seen as summing shifted copies of the filter (<a href="C15_chapter10.xhtml#f10_15">Figure 10.15</a>):</p>
+<figure id="f10_15" tabindex="0">
+<img alt="" src="../images/fig10_15.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.15.</strong></span> Reconstruction (discrete-continuous convolution) as a sum of shifted copies of the filter.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>f</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>→</m:mo><m:mi>i</m:mi></m:mrow></m:msub><m:mn>.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<p>Discrete-continuous convolution is closely related to splines. For uniform splines (a uniform B-spline, for instance), the parameterized curve for the spline is exactly the convolution of the spline’s basis function with the control point sequence (see <a href="C20_chapter15.xhtml#sec15_6_2">Section 15.6.2</a>).</p>
+</section>
+<section>
+<h3 id="sec10_20_6"><a id="term-196"/><span aria-label="221" epub:type="pagebreak" id="pg_221" role="doc-pagebreak"/><span class="green">10.2.6 Convolution in More Than One Dimension</span></h3>
+<p>So far, everything we have said about sampling and reconstruction has been one-dimensional: there has been a single variable <em>x</em> or a single sequence index <em>i</em>. Many of the important applications of sampling and reconstruction in graphics, though, are applied to two-dimensional functions—in particular, to 2D images. Fortunately, the generalization of sampling algorithms and theory from 1D to 2D, 3D, and beyond is conceptually very simple.</p>
+<p>Beginning with the definition of discrete convolution, we can generalize it to two dimensions by making the sum into a double sum:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo><m:mi>b</m:mi></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>If <em>b</em> is a finitely supported filter of radius <em>r</em> (i.e., it has (2<em>r</em> +1)<a epub:type="noteref" href="C15_chapter10.xhtml#fn10_2" id="rfn10_2" role="doc-noteref"><sup>2</sup></a> values), then we can write this sum with bounds (<a href="C15_chapter10.xhtml#f10_16">Figure 10.16</a>):</p>
+<figure id="f10_16" tabindex="0">
+<img alt="" src="../images/fig10_16.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.16.</strong></span> The weights for the nine input samples that contribute to the discrete convolution at point (<em>i</em>, <em>j</em> ) with a filter <em>b</em> of radius 1.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>=</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>r</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>+</m:mo><m:mi>r</m:mi></m:mrow></m:munderover><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>=</m:mo><m:mi>j</m:mi><m:mo>−</m:mo><m:mi>r</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>+</m:mo><m:mi>r</m:mi></m:mrow></m:munderover><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo><m:mi>b</m:mi></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow></m:mrow></m:math>
+</div>
+<aside class="footnote" epub:type="footnote" role="doc-footnote"><p><a href="#rfn10_2" id="fn10_2"><sup>2</sup></a> Note that the term “Fourier transform” is used both for the function <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> and for the operation that computes <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> from <em>f</em>. Unfortunately, this rather ambiguous usage is standard.</p></aside>
+<p class="indent"><a id="term-197"/><span aria-label="222" epub:type="pagebreak" id="pg_222" role="doc-pagebreak"/>and express it in code:</p>
+<p class="indent1"><strong>function</strong> convolve2d(sequence2d <em>a</em>, filter2d <em>b</em>,int <em>i</em>,int <em>j</em>)</p>
+<p class="indent1">   <em>s</em> = 0</p>
+<p class="indent1">   <em>r</em> = <em>b</em>.radius</p>
+<p class="indent1">   <strong>for</strong> <em>i′</em> = <em>i – r</em> to <em>i</em> + <em>r </em><strong>do</strong></p>
+<p class="indent1">       <strong>for</strong> <em>j′</em> = <em>j – r</em> to <em>j</em> + <em>r</em> <strong>do</strong></p>
+<p class="indent1">          <em>s</em> = <em>s</em> + <em>a</em>[<em>i′</em>][<em>j′</em>]<em>b</em>[<em>i – i′</em>][<em>j – j′</em>]</p>
+<p class="indent1">   <strong>return</strong> <em>s</em></p>
+<p>This definition can be interpreted in the same way as in the 1D case: each output sample is a weighted average of an area in the input, using the 2D filter as a “mask” to determine the weight of each sample in the average.</p>
+<p>Continuing the generalization, we can write continuous-continuous (<a href="C15_chapter10.xhtml#f10_17">Figure 10.17</a>) and discrete-continuous (<a href="C15_chapter10.xhtml#f10_18">Figure 10.18</a>) convolutions in 2D as well:</p>
+<figure id="f10_17" tabindex="0">
+<img alt="" src="../images/fig10_17.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.17.</strong></span> The weight for an infinitesimal area in the input signal resulting from continuous convolution at (<em>x, y</em>).</p></figcaption>
+</figure>
+<figure id="f10_18" tabindex="0">
+<img alt="" src="../images/fig10_18.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.18.</strong></span> The weights for the 16 input samples that contribute to the discrete-continuous convolution at point (<em>x, y</em>) for a reconstruction filter of radius 2.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>*</m:mo><m:mi>g</m:mi><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>=</m:mo></m:mrow><m:mo>∫</m:mo><m:mo>∫</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>′</m:mo><m:mo>)</m:mo><m:mi>g</m:mi></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>x</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>−</m:mo><m:mi>y</m:mi><m:mo>′</m:mo><m:mo>)</m:mo></m:mrow><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>′</m:mo><m:mi>d</m:mi><m:mi>y</m:mi><m:mo>′</m:mo><m:mo>;</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>f</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:munder><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>In each case, the result at a particular point is a weighted average of the input near that point. For the continuous-continuous case, it is a weighted integral over a region centered at that point, and in the discrete-continuous case, it is a weighted average of all the samples that fall near the point.</p>
+<p><span aria-label="223" epub:type="pagebreak" id="pg_223" role="doc-pagebreak"/>Once we have gone from 1D to 2D, it should be fairly clear how to generalize further to 3D or even to higher dimensions.</p>
+</section>
+</section>
+<section>
+<h2 id="sec10_3"><a epub:type="backlink" href="C02a_toc.xhtml#rsec10_3" role="doc-backlink"><span class="green">10.3 Convolution Filters</span></a></h2>
+<p>Now that we have the machinery of convolution, let’s examine some of the particular filters commonly used in graphics.</p>
+<p>Each of the following filters has a natural radius, which is the default size to be used for sampling or reconstruction when samples are spaced one unit apart. In this section, filters are defined at this natural size: for instance, the <a id="index_term248"/><a id="index_term105"/>box filter has a natural radius of <span class="inline-formula"><m:math alttext=""><m:mrow><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac></m:mrow></m:math></span>, and the cubic filters have a natural radius of 2. We also arrange for each filter to integrate to 1: <span class="inline-formula"><m:math alttext=""><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:mi>d</m:mi><m:mi>x</m:mi></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow></m:math></span>, as required for sampling and reconstruction without changing a signal’s average value.</p>
+<p>As we will see in <a href="C15_chapter10.xhtml#sec10_4_3">Section 10.4.3</a>, some applications require filters of different sizes, which can be obtained by scaling the basic filter. For a filter <em>f</em> (<em>x</em>), we can define a version of <em>scale</em> <em>s</em>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>s</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>/</m:mo><m:mi>s</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mrow><m:mi>s</m:mi></m:mrow></m:mfrac><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The filter is stretched horizontally by a factor of <em>s</em> and then squashed vertically by a factor <span class="inline-formula"><m:math alttext=""><m:mrow><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mi>s</m:mi></m:mrow></m:mfrac></m:mrow></m:math></span> so that its area is unchanged. A filter that has a natural radius of <em>r</em> and is used at scale <em>s</em> has a radius of support <em>sr</em> (see <a href="C15_chapter10.xhtml#f10_20">Figure 10.20</a>).</p>
+<section>
+<h3 id="sec10_3_1"><span class="green">10.3.1 A Gallery of Convolution Filters</span></h3>
+<section>
+<h4 id="sec48"><span class="blue">The Box Filter</span></h4>
+<p>The box filter (<a href="C15_chapter10.xhtml#f10_19">Figure 10.19</a>) is a piecewise constant function whose integral is equal to one. As a discrete filter, it can be written as</p>
+<figure id="f10_19" tabindex="0">
+<img alt="" src="../images/fig10_19.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.19.</strong></span> The discrete and continuous box filters.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:msub><m:mrow><m:mi>a</m:mi></m:mrow><m:mrow><m:mtext>box</m:mtext></m:mrow></m:msub><m:mo>,</m:mo><m:mi>r</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn><m:mo>/</m:mo><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mi>r</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>|</m:mo><m:mi>i</m:mi><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:mi>r</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>Otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Note that for symmetry, we include both endpoints.</p>
+<p>As a continuous filter, we write</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>box</m:mtext></m:mrow></m:msub><m:mo>,</m:mo><m:mi>r</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn><m:mo>/</m:mo><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mi>r</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mi>r</m:mi><m:mo>≤</m:mo><m:mi>x</m:mi><m:mo>&lt;</m:mo><m:mi>r</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>Otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>In this case, we exclude one endpoint, which makes the box of radius 0.5 usable as a reconstruction filter. It is because the box filter is discontinuous that these <a id="term-198"/><a id="term-204"/><a id="term-213"/><a id="term-327"/><a id="term-328"/><a id="term-848"/><a id="term-849"/><span aria-label="224" epub:type="pagebreak" id="pg_224" role="doc-pagebreak"/>boundary cases are important, and so for this particular filter, we need to pay attention to them. We write just <em>f</em><sub>box</sub> for the natural radius of <span class="inline-formula"><m:math alttext=""><m:mrow><m:mi>r</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac></m:mrow></m:math></span>.</p>
+</section>
+<section>
+<h4 id="sec49"><span class="blue">The Tent Filter</span></h4>
+<p>The tent, or <a id="index_term689"/>linear filter (<a href="C15_chapter10.xhtml#f10_20">Figure 10.20</a>), is a continuous, piecewise linear function:</p>
+<figure id="f10_20" tabindex="0">
+<img alt="" src="../images/fig10_20.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.20.</strong></span> The <a id="index_term1159"/>tent filter and two scaled versions.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>tent</m:mtext></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise;</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Its natural radius is 1. For filters, such as this one, that are at least <em>C</em><sup>0</sup> (i.e., there are no sudden jumps in the value, as there are with the box), we no longer need to separate the definitions of the discrete and continuous filters: the discrete filter is just the continuous filter sampled at the integers.</p>
+</section>
+<section>
+<h4 id="sec50"><span class="blue">The Gaussian Filter</span></h4>
+<p>The Gaussian function (<a href="C15_chapter10.xhtml#f10_21">Figure 10.21</a>), also known as the normal distribution, is an important filter theoretically and practically. We’ll see more of its special properties as this chapter goes on:</p>
+<figure id="f10_21" tabindex="0">
+<img alt="" src="../images/fig10_21.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.21.</strong></span> The Gaussian filter.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>g</m:mi></m:mrow></m:msub><m:mo>,</m:mo><m:mi>σ</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mi>σ</m:mi><m:msqrt><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi></m:mrow></m:msqrt></m:mrow></m:mfrac><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:mo>−</m:mo><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>/</m:mo><m:mn>2</m:mn><m:msup><m:mrow><m:mi>σ</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:msup><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The parameter σ is called the standard deviation. The Gaussian makes a good sampling filter because it is very smooth; we’ll make this statement more precise in <a href="C15_chapter10.xhtml#sec10_5">Section 10.5</a>.</p>
+<p>The <a id="index_term427"/>Gaussian filter does not have any particular natural radius; it is a useful sampling filter for a range of σ. The Gaussian also does not have a finite radius of support, although because of the exponential decay, its values rapidly become small enough to ignore. When necessary, then, we can trim the tails from the function by setting it to zero outside some radius <em>r</em>, resulting in a <em>trimmed Gaussian</em>. This means that the filter’s width and natural radius can vary depending on the application, and a trimmed Gaussian scaled by <em>s</em> is the same as an unscaled trimmed Gaussian with <a id="index_term1126"/>standard deviation <em>sσ</em> and radius <em>sr</em>. The best way to handle this in practice is to let σ and <em>r</em> be set as properties of the filter, fixed when the filter is specified, and then scale the filter just like any other when it is applied.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Good starting points are σ = 1 and <em>r</em> = 3.</p>
+</aside>
+</section>
+<section>
+<h4 id="sec51"><span class="blue">The B-Spline Cubic Filter</span></h4>
+<p>Many filters are defined as piecewise polynomials, and cubic filters with four pieces (natural radius of 2) are often used as reconstruction filters. One such filter is known as the <a id="index_term245"/>B-spline filter (<a href="C15_chapter10.xhtml#f10_22">Figure 10.22</a>) because of its origins as a blending function for spline curves (see <a href="C20_chapter15.xhtml#c15">Chapter 15</a>):</p>
+<figure id="f10_22" tabindex="0">
+<img alt="" src="../images/fig10_22.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.22.</strong></span> The B-spline filter.</p></figcaption>
+</figure>
+<p>
+<a id="term-84"/><a id="term-203"/><a id="term-207"/><a id="term-531"/><span aria-label="225" epub:type="pagebreak" id="pg_225" role="doc-pagebreak"/>
+</p>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>B</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>6</m:mn></m:mrow></m:mfrac><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>3</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mn>3</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mn>3</m:mn><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>1</m:mn><m:mo>≤</m:mo><m:mi>x</m:mi><m:mo>≤</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:msup><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup></m:mtd><m:mtd columnalign="left"><m:mn>1</m:mn><m:mo>≤</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:mn>2</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>Among piecewise cubics, the B-spline is special because it has continuous first and second derivatives—that is, it is <em>C</em><sup>2</sup>. A more concise way of defining this filter is <em>f<sub>B</sub></em> = <em>f</em><sub>box</sub> * <em>f</em><sub>box</sub> * <em>f</em><sub>box</sub> * <em>f</em><sub>box</sub>; proving that the longer form above is equivalent is a nice exercise in convolution (see Exercise 3).</p>
+</section>
+<section>
+<h4 id="sec52"><span class="blue">The Catmull–Rom Cubic Filter</span></h4>
+<p>Another piecewise cubic filter named for a spline, the Catmull–Rom filter (<a href="C15_chapter10.xhtml#f10_23">Figure 10.23</a>), has the value zero at <em>x</em> = –2, –1, 1,and 2, which means it will <em>interpolate</em> the samples when used as a reconstruction filter (<a href="C15_chapter10.xhtml#sec10_3_2">Section 10.3.2</a>):</p>
+<figure id="f10_23" tabindex="0">
+<img alt="" src="../images/fig10_23.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.23.</strong></span> The Catmull–Rom filter.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>C</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>3</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mn>4</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>1</m:mn><m:mo>≤</m:mo><m:mi>x</m:mi><m:mo>≤</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:msup><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mo>−</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mtd><m:mtd columnalign="left"><m:mn>1</m:mn><m:mo>≤</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:mn>2</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+</section>
+<section>
+<h4 id="sec52a"><span class="blue">The Mitchell–Netravali Cubic Filter</span></h4>
+<p>For the all-important application of resampling images, Mitchell and Netravali (1988) made a study of cubic filters and recommended one partway between the previous two filters as the best all-around choice (<a href="C15_chapter10.xhtml#f10_24">Figure 10.24</a>). It is simply a weighted combination of the previous two filters:</p>
+<figure id="f10_24" tabindex="0">
+<img alt="" src="../images/fig10_24.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.24.</strong></span> The <a id="index_term743"/>Mitchell–<a id="index_term773"/>Netravali filter.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd columnalign="right"><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>M</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:mfrac><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>B</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mfrac><m:mrow><m:mn>2</m:mn></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:mfrac><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>C</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>18</m:mn></m:mrow></m:mfrac><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>21</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mn>27</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mn>9</m:mn><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mn>1</m:mn><m:mo>≤</m:mo><m:mi>x</m:mi><m:mo>≤</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>7</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mo>−</m:mo><m:mn>6</m:mn><m:msup><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mtd><m:mtd columnalign="left"><m:mn>1</m:mn><m:mo>≤</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:mn>2</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+</section>
+</section>
+<section>
+<h3 id="sec10_3_2"><a id="index_term361"/><a id="index_term254"/><span class="green">10.3.2 Properties of Filters</span></h3>
+<p>Filters have some traditional terminology that goes with them, which we use to describe the filters and compare them to one another.</p>
+<p>The <em><a id="index_term252"/>impulse response</em> of a filter is just another name for the function: it is the response of the filter to a signal that just contains an impulse (and recall that convolving with an impulse just gives back the filter).</p>
+<p><a id="term-205"/><a id="term-214"/><a id="term-329"/><a id="term-473"/><a id="term-474"/><a id="term-827"/><a id="term-850"/><span aria-label="226" epub:type="pagebreak" id="pg_226" role="doc-pagebreak"/>A continuous filter is <em>interpolating</em> if, when it is used to reconstruct a continuous function from a discrete sequence, the resulting function takes on exactly the values of the samples at the sample points—that is, it “connects the dots” rather than producing a function that only goes near the dots. Interpolating filters are exactly those filters <em>f</em> for which <em>f</em> (0) = 1 and <em>f</em> (<em>i</em>) = 0 for all nonzero integers <em>i</em> (<a href="C15_chapter10.xhtml#f10_25">Figure 10.25</a>).</p>
+<figure id="f10_25" tabindex="0">
+<img alt="" src="../images/fig10_25.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.25.</strong></span> An interpolating filter reconstructs the sample points exactly because it has the value zero at all nonzero integer offsets from the center.</p></figcaption>
+</figure>
+<p>A filter that takes on negative values has <em>ringing</em> or <em>overshoot</em>: it will produce extra oscillations in the value around sharp changes in the value of the function being filtered.</p>
+<p>For instance, the Catmull–Rom filter has negative lobes on either side, and if you filter a step function with it, it will exaggerate the step a bit, resulting in function values that undershoot 0 and overshoot 1 (<a href="C15_chapter10.xhtml#f10_26">Figure 10.26</a>).</p>
+<figure id="f10_26" tabindex="0">
+<img alt="" src="../images/fig10_26.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.26.</strong></span> A filter with negative lobes will always produce some overshoot when filtering or reconstructing a sharp discontinuity.</p></figcaption>
+</figure>
+<p>A continuous filter is <em>ripple free</em> if, when used as a reconstruction filter, it will reconstruct a constant sequence as a constant function (<a href="C15_chapter10.xhtml#f10_27">Figure 10.27</a>). This is equivalent to the requirement that the filter sum to one on any integer-spaced grid:</p>
+<figure id="f10_27" tabindex="0">
+<img alt="" src="../images/fig10_27.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.27.</strong></span> The tent filter of radius 1 is a ripple-free reconstruction filter; the Gaussian filter with standard deviation 1/2 is not.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:munder><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:mi>i</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mn>1</m:mn></m:mtd><m:mtd><m:mtext>for</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext>all </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>x</m:mi><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>All the filters in <a href="C15_chapter10.xhtml#sec10_3_1">Section 10.3.1</a> are ripple-free at their natural radii, except the <a id="term-190"/><a id="term-739"/><span aria-label="227" epub:type="pagebreak" id="pg_227" role="doc-pagebreak"/>Gaussian, but none of them are necessarily ripple-free when they are used at a non-integer scale. If it is necessary to eliminate ripple in discrete-continuous convolution, it is easy to do so: divide each computed sample by the sum of the weights used to compute it:</p>
+<div class="disp-formula" id="equ10_4">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mover><m:mrow><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>¯</m:mo></m:mrow></m:mover><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:msub><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mrow><m:msub><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:mfrac></m:mrow><m:mn>.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(10.4)</m:mo></m:math>
+</div>
+<p>This expression can still be interpreted as convolution between <em>a</em> and a filter <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>¯</m:mo></m:mrow></m:mover></m:mrow></m:math></span> (see Exercise 6).</p>
+<p>A continuous filter has a <em><a id="index_term315"/>degree of continuity</em>, which is the highest-order derivative that is defined everywhere. A filter, like the box filter, that has sudden jumps in its value is not continuous at all. A filter that is continuous but has sharp corners (discontinuities in the first derivative), such as the tent filter, has order of continuity zero, and we say it is <em>C</em><sup>0</sup>. A filter that has a continuous derivative (no sharp corners), such as the piecewise cubic filters in the previous section, is <em>C</em><sup>1</sup>; if its second derivative is also continuous, as is true of the B-spline filter, it is <em>C</em><sup>2</sup>. The order of continuity of a filter is particularly important for a reconstruction filter because the reconstructed function inherits the continuity of the filter.</p>
+<section>
+<h4 id="sec53"><a id="index_term1029"/><span class="blue">Separable Filters</span></h4>
+<p>So far we have only discussed filters for 1D convolution, but for images and other multidimensional signals, we need filters too. In general, any 2D function could be a 2D filter, and occasionally it is useful to define them this way. But, in most cases, we can build suitable 2D (or higher-dimensional) filters from the 1D filters we have already seen.</p>
+<p>The most useful way of doing this is by using a <em>separable</em> filter. The value of a separable filter <em>f</em><sub>2</sub>(<em>x, y</em>) at a particular <em>x</em> and <em>y</em> is simply the product of <em>f</em><sub>1</sub> (the 1D filter) evaluated at <em>x</em> and at <em>y</em>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Similarly, for discrete filters,</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mrow><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Any horizontal or vertical slice through <em>f</em><sub>2</sub> is a scaled copy of <em>f</em><sub>1</sub>. The integral of <em>f</em><sub>2</sub> is the square of the integral of <em>f</em><sub>1</sub>, so in particular, if <em>f</em><sub>1</sub> is normalized, then so is <em>f</em><sub>2</sub>.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent1"><span class="blue"><a id="term-206"/><a id="term-208"/><a id="term-215"/><a id="term-330"/><a id="term-331"/><a id="term-740"/><a id="term-851"/><span aria-label="228" epub:type="pagebreak" id="pg_228" role="doc-pagebreak"/>Example 22 (The separable tent filter)</span></p>
+<p>If we choose the tent function for <em>f</em><sub>1</sub>, the resulting piecewise bilinear function (<a href="C15_chapter10.xhtml#f10_28">Figure 10.28</a>) is</p>
+<figure id="f10_28" tabindex="0">
+<img alt="" src="../images/fig10_28.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.28.</strong></span> The separable 2D tent filter.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mtext>tent</m:mtext></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mrow><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>|</m:mo></m:mrow><m:mo>&lt;</m:mo><m:mn>1</m:mn></m:mtd><m:mtd><m:mtext>and</m:mtext></m:mtd><m:mtd><m:mrow><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>|</m:mo><m:mo>&lt;</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise.</m:mtext></m:mtd><m:mtd/><m:mtd/></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>The profiles along the coordinate axes are tent functions, but the profiles along the diagonals are quadratics (for instance, along the line <em>x</em> = <em>y</em> in the positive quadrant, we see the quadratic function (1 – <em>x</em>)<sup>2</sup>).</p>
+</aside>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent1"><span class="blue">Example 23 (The 2D <a id="index_term428"/>Gaussian filter)</span></p>
+<p>If we choose the Gaussian function for <em>f</em><sub>1</sub>, the resulting 2D function (<a href="C15_chapter10.xhtml#f10_29">Figure 10.29</a>) is</p>
+<figure id="f10_29" tabindex="0">
+<img alt="" src="../images/fig10_29.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.29.</strong></span> The 2D Gaussian filter, which is both separable and radially symmetric.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>g</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi></m:mrow></m:mfrac><m:mrow><m:mo>(</m:mo><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mo>−</m:mo><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mo>−</m:mo><m:mi>y</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi></m:mrow></m:mfrac><m:mrow><m:mo>(</m:mo><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:mo>−</m:mo><m:mrow><m:mo>(</m:mo><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi></m:mrow></m:mfrac><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:mo>−</m:mo><m:msup><m:mrow><m:mi>r</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Notice that this is (up to a scale factor) the same function we would get if we revolved the 1D Gaussian around the origin to produce a circularly symmetric <a id="term-209"/><a id="term-741"/><span aria-label="229" epub:type="pagebreak" id="pg_229" role="doc-pagebreak"/>function. The property of being both circularly symmetric and separable at the same time is unique to the Gaussian function. The profiles along the coordinate axes are Gaussians, but so are the profiles along any direction at any offset from the center.</p>
+</aside>
+<p class="indent">The key advantage of separable filters over other 2D filters has to do with efficiency in implementation. Let’s substitute the definition of <em>a</em><sub>2</sub> into the definition of discrete convolution:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub><m:mo>)</m:mo><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>]</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Note that <em>b</em><sub>1</sub>[<em>i–i</em>′] does not depend on <em>j</em>′ and can be factored out of the inner sum:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>Let’s abbreviate the inner sum as <em>S</em>[<em>i</em>′]:</p>
+<div class="disp-formula" id="equ10_5">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>S</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mo>′</m:mo><m:mo>]</m:mo><m:mo>;</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>′</m:mo></m:mrow></m:munder><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow><m:mi>S</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>′</m:mo><m:mo>]</m:mo></m:mrow><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow><m:mspace width="3em"/><m:mo>(10.5)</m:mo></m:math>
+</div>
+<p>With the equation in this form, we can first compute and store <em>S</em>[<em>i</em>′] for each value of <em>i</em>′ and then compute the outer sum using these stored values. At first glance, this does not seem remarkable, since we still had to do work proportional to (2<em>r</em> +1)<sup>2</sup> to compute all the inner sums. However, it’s quite different if we want to compute the value at many points [<em>i, j</em>].</p>
+<p>Suppose we need to compute <em>a</em> ⋆ <em>b</em><sub>2</sub> at [2, 2] and [3, 2], and <em>b</em><sub>1</sub> has a radius of 2. Examining Equation 10.5, we can see that we will need <em>S</em>[0],<em>...,S</em>[4] to compute the result at [2, 2], and we will need <em>S</em>[1],<em>...,S</em>[5] to compute the result at [3, 2]. So, in the separable formulation, we can just compute all six values of <em>S</em> and share <em>S</em>[1],<em>...,S</em>[4] (<a href="C15_chapter10.xhtml#f10_30">Figure 10.30</a>).</p>
+<figure id="f10_30" tabindex="0">
+<img alt="" src="../images/fig10_30.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.30.</strong></span> Computing two output points using separate 2D arrays of 25 samples (a) vs. filtering once along the columns and then using separate 1D arrays of five samples (b).</p></figcaption>
+</figure>
+<p>This savings has great significance for large filters. Filtering an image with a filter of radius <em>r</em> in the general case requires computation of (2<em>r</em> +1)<sup>2</sup> products per pixel, while filtering the image with a separable filter of the same size requires 2(2<em>r</em> +1) products (at the expense of some intermediate storage). This change in asymptotic complexity from <em>O</em>(<em>r</em><sup>2</sup>) to <em>O</em>(<em>r</em>) enables the use of much larger filters.</p>
+<p><span aria-label="230" epub:type="pagebreak" id="pg_230" role="doc-pagebreak"/>The algorithm is</p>
+<p class="indent1"><strong>function</strong> filterImage(image <em>I</em>, filter <em>b</em>)</p>
+<p class="indent1">   <em>r</em> = <em>b.</em>radius</p>
+<p class="indent1">   <em>n<sub>x</sub></em> = <em>I.</em>width</p>
+<p class="indent1">   <em>n<sub>y</sub></em> = <em>I.</em>height</p>
+<p class="indent1">   allocate storage array <em>S</em>[0 <em>... n<sub>x</sub> –</em> 1]</p>
+<p class="indent1">   allocate image <em>I</em><sub>out</sub>[<em>r ... n<sub>x</sub> – r –</em> 1,<em>r ... n<sub>y</sub> – r –</em> 1]</p>
+<p class="indent1">   initialize <em>S</em> and <em>I</em><sub>out</sub> to all zero</p>
+<p class="indent1">   <strong>for</strong> <em>j</em> = <em>r</em> to <em>n<sub>y</sub> – r –</em> 1 <strong>do</strong></p>
+<p class="indent1">      <strong>for</strong> <em>i′</em> = 0 to <em>n<sub>x</sub> –</em> 1 <strong>do</strong></p>
+<p class="indent1">         <em>S</em>[<em>i′</em>] = 0</p>
+<p class="indent1">         <strong>for</strong> <em>j′</em> = <em>j – r</em> to <em>j</em> + <em>r</em> <strong>do</strong></p>
+<p class="indent1">            <em>S</em>[<em>i′</em>] = <em>S</em>[<em>i′</em>]+ <em>I</em>[<em>i′</em>,<em>j′</em>]<em>b</em>[<em>j – j′</em>]</p>
+<p class="indent1">      <strong>for</strong> <em>i</em> = <em>r</em> to <em>n<sub>x</sub> – r –</em> 1 <strong>do</strong></p>
+<p class="indent1">         <strong>for</strong> <em>i′</em> = <em>i – r</em> to <em>i</em> + <em>r</em> <strong>do</strong></p>
+<p class="indent1">            <em>I</em><sub>out</sub>[<em>i, j</em>] = <em>I</em><sub>out</sub>[<em>i, j</em>]+ <em>S</em>[<em>i′</em>]<em>b</em>[<em>i – i′</em>]</p>
+<p class="indent1">   <strong>return</strong> <em>I</em><sub>out</sub></p>
+<p>For simplicity, this function avoids all questions of boundaries by trimming <em>r</em> pixels off all four sides of the output image. In practice, there are various ways to handle the boundaries; see <a href="C15_chapter10.xhtml#sec10_4_3">Section 10.4.3</a>.</p>
+</section>
+</section>
+</section>
+<section>
+<h2 id="sec10_4"><a id="index_term562"/><a id="index_term1081"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec10_4" role="doc-backlink"><span class="green">10.4 Signal Processing for Images</span></a></h2>
+<p>We have discussed sampling, filtering, and reconstruction in the abstract so far, using mostly 1D signals for examples. But as we observed at the beginning of this chapter, the most important and most common application of signal processing in graphics is for sampled images. Let us look carefully at how all this applies to images.</p>
+<section>
+<h3 id="sec10_4_1"><a id="index_term547"/><span class="green">10.4.1 Image Filtering Using Discrete Filters</span></h3>
+<p>Perhaps the simplest application of convolution is processing images using discrete convolution. Some of the most widely used features of image manipulation programs are simple convolution filters. <a id="index_term554"/>Blurring of images can be achieved by convolving with many common low-pass filters, ranging from the box to the Gaussian (<a href="C15_chapter10.xhtml#f10_31">Figure 10.31</a>). A Gaussian filter creates a very smooth-looking blur and is commonly used for this purpose.</p>
+<figure id="f10_31" tabindex="0">
+<img alt="" src="../images/fig10_31.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.31.</strong></span> Blurring an image by convolution with each of three different filters.</p></figcaption>
+</figure>
+<p>The opposite of blurring is sharpening, and one way to do this is by using the “unsharp mask” procedure: subtract a fraction α of a blurred image from the <a id="term-408"/><a id="term-411"/><span aria-label="231" epub:type="pagebreak" id="pg_231" role="doc-pagebreak"/>original. With a rescaling to avoid changing the overall brightness, we have</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>I</m:mi></m:mrow><m:mrow><m:mtext>sharp</m:mtext></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mi>α</m:mi><m:mo>)</m:mo></m:mrow><m:mi>I</m:mi><m:mo>−</m:mo><m:mi>α</m:mi><m:mrow><m:mo>(</m:mo><m:mi>I</m:mi><m:mo>*</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>g</m:mi><m:mo>,</m:mo><m:mi>σ</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi>I</m:mi><m:mo>*</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mi>α</m:mi><m:mo>)</m:mo><m:mi>d</m:mi><m:mo>−</m:mo><m:mi>α</m:mi><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>g</m:mi><m:mo>,</m:mo><m:mi>σ</m:mi></m:mrow></m:msub></m:mrow><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi>I</m:mi><m:mo>*</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>sharp</m:mtext></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>σ</m:mi><m:mo>,</m:mo><m:mi>α</m:mi><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>where <em>f<sub>g,σ</sub></em> is the Gaussian filter of width σ. Using the discrete impluse <em>d</em> and the distributive property of convolution, we were able to write this whole process as a single filter that depends on both the width of the blur and the degree of sharpening (<a href="C15_chapter10.xhtml#f10_32">Figure 10.32</a>).</p>
+<figure id="f10_32" tabindex="0">
+<img alt="" src="../images/fig10_32.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.32.</strong></span> Sharpening an image using a convolution filter.</p></figcaption>
+</figure>
+<p><a id="term-413"/><a id="term-722"/><a id="term-754"/><a id="term-755"/><span aria-label="232" epub:type="pagebreak" id="pg_232" role="doc-pagebreak"/>Another example of combining two discrete filters is a drop shadow. It’s common to take a blurred, shifted copy of an object’s outline to create a soft drop shadow (<a href="C15_chapter10.xhtml#f10_33">Figure 10.33</a>). We can express the shifting operation as convolution with an off-center impulse:</p>
+<figure id="f10_33" tabindex="0">
+<img alt="" src="../images/fig10_33.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.33.</strong></span> A soft <a id="index_term1041"/>drop shadow.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:msub><m:mrow><m:mi>d</m:mi></m:mrow><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>i</m:mi><m:mo>,</m:mo><m:mi>j</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mi>i</m:mi><m:mo>=</m:mo><m:mi>m</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext>and </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>j</m:mi><m:mo>=</m:mo><m:mi>n</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>Shifting, then blurring, is achieved by convolving with both filters:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>I</m:mi></m:mrow><m:mrow><m:mtext>shadow</m:mtext></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>(</m:mo><m:mi>I</m:mi><m:mo>*</m:mo><m:msub><m:mrow><m:mi>d</m:mi></m:mrow><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>*</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>g</m:mi><m:mo>,</m:mo><m:mi>σ</m:mi></m:mrow></m:msub></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi>I</m:mi><m:mo>*</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:msub><m:mrow><m:mi>d</m:mi></m:mrow><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:msub><m:mo>*</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>g</m:mi><m:mo>,</m:mo><m:mi>σ</m:mi></m:mrow></m:msub></m:mrow><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi>I</m:mi><m:mo>*</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>shadow</m:mtext></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>n</m:mi><m:mo>,</m:mo><m:mi>σ</m:mi><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Here, we have used associativity to group the two operations into a single filter with three parameters.</p>
+</section>
+<section>
+<h3 id="sec10_4_2"><a id="index_term1003"/><a id="index_term564"/><span class="green">10.4.2 Antialiasing in Image Sampling</span></h3>
+<p>In image synthesis, we often have the task of producing a sampled representation of an image for which we have a continuous mathematical formula (or at least a procedure we can use to compute the color at any point, not just at integer pixel positions). Ray tracing is a common example; more about ray tracing and the specific methods for <a id="index_term52"/>antialiasing is in <a href="C09_chapter4.xhtml#c4">Chapter 4</a>. In the language of signal processing, we have a continuous 2D signal (the image) that we need to sample on a regular 2D <a id="index_term660"/>lattice. If we go ahead and sample the image without any special measures, the result will exhibit various aliasing artifacts (<a href="C15_chapter10.xhtml#f10_34">Figure 10.34</a>). At sharp edges in the image, we see stair-step artifacts known as “jaggies.” In areas where there are repeating patterns, we see wide bands known as <em>moiré patterns</em>.</p>
+<figure id="f10_34" tabindex="0">
+<img alt="" src="../images/fig10_34.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.34.</strong></span> Two artifacts of aliasing in images: moiré patterns in periodic textures (a), and “jaggies” on straight lines (b).</p></figcaption>
+</figure>
+<p><a id="term-723"/><span aria-label="233" epub:type="pagebreak" id="pg_233" role="doc-pagebreak"/>The problem here is that the image contains too many small-scale features; we need to smooth it out by filtering it before sampling. Looking back at the definition of continuous convolution in Equation (10.3), we need to average the image over an area around the pixel location, rather than just taking the value at a single point. The specific methods for doing this are discussed in <a href="C09_chapter4.xhtml#c4">Chapter 4</a>. A simple filter like a box will improve the appearance of sharp edges, but it still produces some moiré patterns (<a href="C15_chapter10.xhtml#f10_35">Figure 10.35</a>). The Gaussian filter, which is very smooth, is much more effective against the moiré patterns, at the expense of overall somewhat more blurring. These two examples illustrate the tradeoff between sharpness and aliasing that is fundamental to choosing antialiasing filters.</p>
+<figure id="f10_35" tabindex="0">
+<img alt="" src="../images/fig10_35.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.35.</strong></span> A comparison of three different sampling filters being used to antialias a difficult test image that contains circles that are spaced closer and closer as they get larger.</p></figcaption>
+</figure>
+</section>
+<section>
+<h3 id="sec10_4_3"><a id="index_term966"/><a id="index_term990"/><span class="green">10.4.3 Reconstruction and Resampling</span></h3>
+<p>One of the most common image operations where careful filtering is crucial is <em>resampling</em>—changing the sample rate, or changing the image size.</p>
+<p>Suppose we have taken an image with a digital camera that is 3000 by 2000 pixels in size, and we want to display it on a monitor that has only 1280 by 1024 pixels. In order to make it fit, while maintaining the 3:2 aspect ratio, we need to resample it to 1278 by 852 pixels. How should we go about this?</p>
+<p>One way to approach this problem is to think of the process as dropping pixels: the size ratio is between 2 and 3, so we’ll have to drop out one or two pixels between pixels that we keep. It’s possible to shrink an image in this way, but the quality of the result is low—the images in <a href="C15_chapter10.xhtml#f10_34">Figure 10.34</a> were made using pixel dropping. Pixel dropping is very fast, however, and it is a reasonable choice to make a preview of the resized image during an interactive manipulation.</p>
+<p>The way to think about resizing images is as a <em>resampling</em> operation: we want a set of samples of the image on a particular grid that is defined by the new <a id="term-689"/><a id="term-707"/><span aria-label="234" epub:type="pagebreak" id="pg_234" role="doc-pagebreak"/>image dimensions, and we get them by sampling a continuous function that is reconstructed from the input samples (<a href="C15_chapter10.xhtml#f10_36">Figure 10.36</a>). Looking at it this way, it’s just a sequence of standard image processing operations: first, we reconstruct a continuous function from the input samples, and then, we sample that function just as we would sample any other continuous image. To avoid aliasing artifacts, appropriate filters need to be used at each stage.</p>
+<figure id="f10_36" tabindex="0">
+<img alt="" src="../images/fig10_36.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.36.</strong></span> Resampling an image consists of two logical steps that are combined into a single operation in code. First, we use a reconstruction filter to define a smooth, continuous function from the input samples. Then, we sample that function on a new grid to get the output samples.</p></figcaption>
+</figure>
+<p>A small example is shown in <a href="C15_chapter10.xhtml#f10_37">Figure 10.37</a>: if the original image is 12 × 9 pixels and the new one is 8 × 6 pixels, there are 2/3 as many output pixels as input pixels in each dimension, so their spacing across the image is 3/2 the spacing of the original samples.</p>
+<figure id="f10_37" tabindex="0">
+<img alt="" src="../images/fig10_37.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.37.</strong></span> The sample locations for the input and output grids in resampling a 12 by 9 image to make an8by6one.</p></figcaption>
+</figure>
+<p>In order to come up with a value for each of the output samples, we need to somehow compute values for the image in between the samples. The pixel-dropping algorithm gives us one way to do this: just take the value of the closest sample in the input image and make that the output value. This is exactly equivalent to reconstructing the image with a 1-pixel-wide (radius one-half) box filter and then point sampling.</p>
+<p>Of course, if the main reason for choosing pixel dropping or other very simple filtering is performance, one would never <em>implement</em> that method as a special <a id="term-690"/><a id="term-708"/><span aria-label="235" epub:type="pagebreak" id="pg_235" role="doc-pagebreak"/>case of the general reconstruction-and-resampling procedure. In fact, because of the discontinuities, it’s difficult to make box filters work in a general framework. But, for high-quality resampling, the reconstruction/sampling framework provides valuable flexibility.</p>
+<p>To work out the algorithmic details, it’s simplest to drop down to 1D and discuss resampling a sequence. The simplest way to write an implementation is in terms of the <em>reconstruct</em> function we defined in <a href="C15_chapter10.xhtml#sec10_2_5">Section 10.2.5</a>.</p>
+<p class="indent1"><strong>function</strong> resample(sequence <em>a</em>,float <em>x</em><sub>0</sub>,float Δ<em>x</em>,int <em>n</em>, filter <em>f</em> )</p>
+<p class="indent1">   create sequence <em>b</em> of length <em>n </em></p>
+<p class="indent1">   <strong>for</strong> <em>i</em> = 0 to <em>n –</em> 1 <strong>do</strong></p>
+<p class="indent1">      <em>b</em>[<em>i</em>]= reconstruct(<em>a, f, x</em><sub>0</sub> + <em>i</em>Δ<em>x</em>)</p>
+<p class="indent1">   <strong>return</strong> <em>b </em></p>
+<p>The parameter <em>x</em><sub>0</sub> gives the position of the first sample of the new sequence in terms of the samples of the old sequence. That is, if the first output sample falls midway between samples 3 and 4 in the input sequence, <em>x</em><sub>0</sub> is 3.5.</p>
+<p>This procedure reconstructs a continuous image by convolving the input sequence with a continuous filter and then point samples it. That’s not to say that these two operations happen sequentially—the continuous function exists only in principle, and its values are computed only at the sample points. But mathematically, this function computes a set of point samples of the function <em>a * f</em>.</p>
+<p>This point sampling seems wrong, though, because we just finished saying that a signal should be sampled with an appropriate smoothing filter to avoid aliasing. We should be convolving the reconstructed function with a sampling filter <em>g</em> and point sampling <em>g</em> * (<em>f * a</em>). But since this is the same as (<em>g * f</em>) * <em>a</em>, <a id="term-691"/><a id="term-709"/><span aria-label="236" epub:type="pagebreak" id="pg_236" role="doc-pagebreak"/>we can roll the sampling filter together with the reconstruction filter; one convolution operation is all we need (<a href="C15_chapter10.xhtml#f10_38">Figure 10.38</a>). This combined reconstruction and sampling filter is known as a <em>resampling filter</em>.</p>
+<figure id="f10_38" tabindex="0">
+<img alt="" src="../images/fig10_38.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.38.</strong></span> Resampling involves filtering for reconstruction and for sampling. Since two convolution filters applied in sequence can be replaced with a single filter, we only need one resampling filter, which serves the roles of reconstruction and sampling.</p></figcaption>
+</figure>
+<p>When resampling images, we usually specify a <em>source rectangle</em> in the units of the old image that specifies the part we want to keep in the new image. For example, using the pixel sample positioning convention from <a href="C08_chapter3.xhtml#c3">Chapter 3</a>, the rectangle we’d use to resample the entire image is <span class="inline-formula"><m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mo>−</m:mo><m:mn>0.5</m:mn><m:mo>,</m:mo><m:msubsup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>old</m:mtext></m:mrow></m:msubsup><m:mo>−</m:mo><m:mn>0.5</m:mn><m:mo>)</m:mo><m:mo>×</m:mo><m:mo>(</m:mo><m:mo>−</m:mo><m:mn>0.5</m:mn><m:mo>,</m:mo><m:msubsup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mtext>old</m:mtext></m:mrow></m:msubsup><m:mo>−</m:mo><m:mn>0.5</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math></span>. Given a source rectangle (<em>x<sub>l</sub></em>, <em>x<sub>h</sub></em>) × (<em>y<sub>l</sub></em>, <em>y<sub>h</sub></em>), the sample spacing for the new image is <span class="inline-formula"><m:math alttext=""><m:mrow><m:mi mathvariant="normal">Δ</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>h</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>l</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mo>/</m:mo><m:msubsup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>new</m:mtext></m:mrow></m:msubsup></m:mrow></m:math></span> in <em>x</em> and <span class="inline-formula"><m:math alttext=""><m:mrow><m:mi mathvariant="normal">Δ</m:mi><m:mi>y</m:mi><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>h</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>l</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mo>/</m:mo><m:msubsup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mtext>new</m:mtext></m:mrow></m:msubsup></m:mrow></m:math></span> in <em>y</em>. The lower-left sample is positioned at (<em>x<sub>l</sub></em> +Δ<em>x/</em>2,<em>y<sub>l</sub></em> +Δ<em>y/</em>2).</p>
+<p>Modifying the 1D pseudocode to use this convention and expanding the call to the reconstruct function into the double loop that is implied, we arrive at</p>
+<p class="indent1"><strong>function</strong> resample(sequence <em>a</em>,float <em>x<sub>l</sub></em>,float <em>x<sub>h</sub></em>,int <em>n</em>, filter <em>f</em> )</p>
+<p class="indent1">create sequence <em>b</em> of length <em>n</em></p>
+<p class="indent1"><em>r</em> = <em>f.</em>radius</p>
+<p class="indent1"><em>x</em><sub>0</sub> = <em>x<sub>l</sub></em> +Δ<em>x/</em>2</p>
+<p class="indent1"><strong>for</strong> <em>i</em> = 0 to <em>n –</em> 1 <strong>do</strong></p>
+<p class="indent1">   <em>s</em> = 0</p>
+<p class="indent1">   <em>x</em> = <em>x</em><sub>0</sub> + <em>i</em>Δ<em>x</em></p>
+<p class="indent1">   <strong>for</strong> <em>j</em> = <em>x – r </em> to <em>x</em> + <em>r </em> <strong>do</strong></p>
+<p class="indent1">      <em>s</em> = <em>s</em> + <em>a</em>[<em>j</em>]<em>f</em> (<em>x – j</em>)</p>
+<p class="indent1">   <em>b</em>[<em>i</em>]= <em>s </em></p>
+<p class="indent1"><strong>return</strong> <em>b</em></p>
+<p class="noindent1">This routine contains all the basics of resampling an image. One last issue that remains to be addressed is what to do at the edges of the image, where the simple <span aria-label="237" epub:type="pagebreak" id="pg_237" role="doc-pagebreak"/>version here will access beyond the bounds of the input sequence. There are several things we might do:</p>
+<ul class="list-bullet">
+<li>
+<p class="list">Just stop the loop at the ends of the sequence. This is equivalent to padding the image with zeros on all sides.</p>
+</li>
+<li>
+<p class="list">Clip all array accesses to the end of the sequence—that is, return <em>a</em>[0] when we would want to access <em>a</em>[–1]. This is equivalent to padding the edges of the image by extending the last row or column.</p>
+</li>
+<li>
+<p class="list">Modify the filter as we approach the edge so that it does not extend beyond the bounds of the sequence.</p>
+</li>
+</ul>
+<p>The first option leads to dim edges when we resample the whole image, which is not really satisfactory. The second option is easy to implement; the third is probably the best performing. The simplest way to modify the filter near the edge of the image is to <em>renormalize</em> it: divide the filter by the sum of the part of the filter that falls within the image. This way, the filter always adds up to 1 over the actual image samples, so it preserves image intensity. For performance, it is desirable to handle the band of pixels within a filter radius of the edge (which require this renormalization) separately from the center (which contains many more pixels and does not require renormalization).</p>
+<p>The choice of filter for resampling is important. There are two separate issues: the shape of the filter and the size (radius). Because the filter serves both as a reconstruction filter and a sampling filter, the requirements of both roles affect the choice of filter. For reconstruction, we would like a filter smooth enough to avoid aliasing artifacts when we enlarge the image, and the filter should be ripple-free. For sampling, the filter should be large enough to avoid undersampling and smooth enough to avoid moiré artifacts. <a href="C15_chapter10.xhtml#f10_39">Figure 10.39</a> illustrates these two different needs.</p>
+<figure id="f10_39" tabindex="0">
+<img alt="" src="../images/fig10_39.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.39.</strong></span> The effects of using different sizes of a filter for upsampling (enlarging) or down-sampling (reducing) an image.</p></figcaption>
+</figure>
+<p>Generally, we will choose one filter shape and scale it according to the relative resolutions of the input and output. The lower of the two resolutions determines the size of the filter: when the output is more coarsely sampled than the input (downsampling, or shrinking the image), the smoothing required for proper sampling is greater than the smoothing required for reconstruction, so we size the filter according to the output sample spacing (radius 3 in <a href="C15_chapter10.xhtml#f10_39">Figure 10.39</a>). On the other hand, when the output is more finely sampled (upsampling, or enlarging the image), the smoothing required for reconstruction dominates (the reconstructed function is already smooth enough to sample at a higher rate than it started), so the size of the filter is determined by the input sample spacing (radius 1 in <a href="C15_chapter10.xhtml#f10_39">Figure 10.39</a>).</p>
+<p><a id="term-692"/><a id="term-710"/><span aria-label="238" epub:type="pagebreak" id="pg_238" role="doc-pagebreak"/>Choosing the filter itself is a tradeoff between speed and quality. Common choices are the box filter (when speed is paramount), the tent filter (moderate quality), or a piecewise cubic (excellent quality). In the piecewise cubic case, the degree of smoothing can be adjusted by interpolating between <em>f<sub>B</sub></em> and <em>f<sub>C</sub></em>; the Mitchell–Netravali filter is a good choice.</p>
+<p>Just as with image filtering, separable filters can provide a significant speedup. The basic idea is to resample all the rows first, producing an image with changed width but not height, then to resample the columns of that image to produce the final result (<a href="C15_chapter10.xhtml#f10_40">Figure 10.40</a>). Modifying the pseudocode given earlier so that it takes advantage of this optimization is reasonably straightforward.</p>
+<figure id="f10_40" tabindex="0">
+<img alt="" src="../images/fig10_40.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.40.</strong></span> Resampling an image using a separable approach.</p></figcaption>
+</figure>
+</section>
+</section>
+<section>
+<h2 id="sec10_5"><a id="index_term1011"/><span aria-label="239" epub:type="pagebreak" id="pg_239" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec10_5" role="doc-backlink"><span class="green">10.5 Sampling Theory</span></a></h2>
+<p>If you are only interested in implementation, you can stop reading here; the algorithms and recommendations in the previous sections will let you implement programs that perform sampling and reconstruction and achieve excellent results. However, there is a deeper mathematical theory of sampling with a history reaching back to the first uses of sampled representations in telecommunications. Sampling theory answers many questions that are difficult to answer with reasoning based strictly on scale arguments.</p>
+<p>But most important, sampling theory gives valuable insight into the workings of sampling and reconstruction. It gives the student who learns it an extra set of intellectual tools for reasoning about how to achieve the best results with the most efficient code.</p>
+<section>
+<h3 id="sec10_5_1"><a id="index_term372"/><span class="green">10.5.1 The Fourier Transform</span></h3>
+<p>The Fourier transform, along with convolution, is the main mathematical concept that underlies sampling theory. You can read about the Fourier transform in many math books on analysis, as well as in books on signal processing.</p>
+<p>The basic idea behind the Fourier transform is to express any function by adding together sine waves (sinusoids) of all frequencies. By using the appropriate weights for the different frequencies, we can arrange for the sinusoids to add up to any (reasonable) function we want.</p>
+<p>As an example, the square wave in <a href="C15_chapter10.xhtml#f10_41">Figure 10.41</a> can be expressed by a sequence of sine waves:</p>
+<figure id="f10_41" tabindex="0">
+<img alt="" src="../images/fig10_41.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.41.</strong></span> Approximating a square wave with finite sums of sines.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>3</m:mn><m:mo>,</m:mo><m:mn>5</m:mn><m:mo>,</m:mo><m:mo>…</m:mo></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:munderover><m:mfrac><m:mrow><m:mn>4</m:mn></m:mrow><m:mrow><m:mi>π</m:mi><m:mi>n</m:mi></m:mrow></m:mfrac><m:mi>sin</m:mi><m:mo>⁡</m:mo><m:mtext> </m:mtext><m:mn>2</m:mn><m:mi>π</m:mi><m:mi>n</m:mi><m:mi>x</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>This <em>Fourier series</em> starts with a sine wave (sin 2π<em>x</em>) that has frequency 1.0—same as the square wave—and the remaining terms add smaller and smaller corrections to reduce the ripples and, in the limit, reproduce the square wave exactly. Note that all the terms in the sum have frequencies that are integer multiples of the frequency of the square wave. This is because other frequencies would produce results that don’t have the same period as the square wave.</p>
+<p>A surprising fact is that a signal does not have to be periodic in order to be expressed as a sum of sinusoids in this way: a non-periodic signal just requires more sinusoids. Rather than summing over a discrete sequence of sinusoids, we will instead integrate over a continuous family of sinusoids. For instance, a box <a id="term-289"/><span aria-label="240" epub:type="pagebreak" id="pg_240" role="doc-pagebreak"/>function can be written as the integral of a family of cosine waves:</p>
+<div class="disp-formula" id="equ10_6">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mfrac><m:mrow><m:mi>sin</m:mi><m:mo>⁡</m:mo><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>u</m:mi></m:mrow><m:mrow><m:mi>π</m:mi><m:mi>n</m:mi></m:mrow></m:mfrac><m:mi>cos</m:mi><m:mo>⁡</m:mo><m:mtext> </m:mtext><m:mn>2</m:mn><m:mi>π</m:mi><m:mi>u</m:mi><m:mi>x</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>u</m:mi><m:mn>.</m:mn></m:mrow><m:mspace width="10.0em"/><m:mo>(10.6)</m:mo></m:mrow></m:math>
+</div>
+<p>This integral in Equation (10.6) is adding up infinitely many cosines, weighting the cosine of frequency <em>u</em> by the weight (sin π<em>u</em>)<em>/πu</em>. The result, as we include higher and higher frequencies, converges to the box function (see <a href="C15_chapter10.xhtml#f10_42">Figure 10.42</a>). When a function <em>f</em> is expressed in this way, this weight, which is a function of the frequency <em>u</em>, is called the <em>Fourier transform</em> of <em>f</em> , denoted <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span>. The function <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> tells us how to build <em>f</em> by integrating over a family of sinusoids:</p>
+<figure id="f10_42" tabindex="0">
+<img alt="" src="../images/fig10_42.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.42.</strong></span> Approximating a box function with integrals of cosines up to each of four cutoff frequencies.</p></figcaption>
+</figure>
+<div class="disp-formula" id="equ10_7">
+<m:math alttext=""><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi><m:mi>i</m:mi><m:mi>u</m:mi><m:mi>x</m:mi></m:mrow></m:msup><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>u</m:mi><m:mn>.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(10.7)</m:mo></m:math>
+</div>
+<p>Equation (10.7) is known as the <em>inverse Fourier transform</em> (IFT) because it starts with the Fourier transform of <em>f</em> and ends up with <em>f</em>.<sup>2</sup></p>
+<p>Note that in Equation (10.7), the complex exponential <em>e</em><sup>2</sup>π<em>iux</em> has been substituted for the cosine in the previous equation. Also, <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> is a complex-valued function. The machinery of complex numbers is required to allow the phase, as well as the frequency, of the sinusoids to be controlled; this is necessary to represent any functions that are not symmetric across zero. The magnitude of <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> is known as the <em>Fourier spectrum</em>, and, for our purposes, this is sufficient—we won’t need to worry about phase or use any complex numbers directly.</p>
+<p><a id="term-290"/><span aria-label="241" epub:type="pagebreak" id="pg_241" role="doc-pagebreak"/>It turns out that computing <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> from <em>f</em> looks very much like computing <em>f</em> from <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span>:</p>
+<div class="disp-formula" id="equ10_8">
+<m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:mo>−</m:mo><m:mn>2</m:mn><m:mi>π</m:mi><m:mi>i</m:mi><m:mi>u</m:mi><m:mi>x</m:mi></m:mrow></m:msup><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>x</m:mi><m:mn>.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(10.8)</m:mo></m:math>
+</div>
+<p>Equation (10.8) is known as the (forward) <em>Fourier transform</em> (FT). The sign in the exponential is the only difference between the forward and inverse Fourier transforms, and it is really just a technical detail. For our purposes, we can think of the FT and IFT as the same operation.</p>
+<p>Sometimes, the <em>f</em> – <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> notation is inconvenient, and then, we will denote the Fourier transform of <em>f</em> by <span class="inline-formula"><m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mo>{</m:mo><m:mi>f</m:mi><m:mo>}</m:mo></m:mrow></m:math></span> and the inverse Fourier transform of <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> by <span class="inline-formula"><m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:msup><m:mrow><m:mi>ℱ</m:mi></m:mrow><m:mrow><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mo>{</m:mo><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>}</m:mo></m:mrow></m:math></span>.</p>
+<p>A function and its Fourier transform are related in many useful ways. A few facts (most of them easy to verify) that we will use later in this chapter are</p>
+<ul class="list-bullet">
+<li>
+<p class="list">A function and its Fourier transform have the same squared integral:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mo>∫</m:mo><m:msup><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mo>∫</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>u</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The physical interpretation is that the two have the same energy (<a href="C15_chapter10.xhtml#f10_43">Figure 10.43</a>).</p>
+<figure id="f10_43" tabindex="0">
+<img alt="" src="../images/fig10_43.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.43.</strong></span> The Fourier transform preserves the squared integral of the signal.</p></figcaption>
+</figure>
+<p>In particular, scaling a function up by <em>a</em> also scales its Fourier transform by <em>a</em>. That is, <span class="inline-formula"><m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mo>{</m:mo><m:mi>a</m:mi><m:mi>f</m:mi><m:mo>}</m:mo><m:mo>=</m:mo><m:mi>a</m:mi><m:mi>ℱ</m:mi><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>)</m:mo></m:mrow></m:math></span>.</p>
+</li>
+<li>
+<p class="list"><a id="term-291"/><span aria-label="242" epub:type="pagebreak" id="pg_242" role="doc-pagebreak"/>Stretching a function along the <em>x</em>-axis squashes its Fourier transform along the <em>u</em>-axis by the same factor (<a href="C15_chapter10.xhtml#f10_44">Figure 10.44</a>):</p>
+<figure id="f10_44" tabindex="0">
+<img alt="" src="../images/fig10_44.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.44.</strong></span> Scaling a signal along the <em>x</em>-axis in the space domain causes an inverse scale along the <em>u</em>-axis in the frequency domain.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>/</m:mo><m:mi>b</m:mi><m:mo>)</m:mo></m:mrow><m:mo>}</m:mo><m:mo>=</m:mo><m:mi>b</m:mi><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mrow><m:mo>(</m:mo><m:mi>b</m:mi><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<p>(The renormalization by <em>b</em> is needed to keep the energy the same.)</p>
+<p class="noindent">This means that if we are interested in a family of functions of different width and height (say all box functions centered at zero), then we only need to know the Fourier transform of one canonical function (say the box function with width and height equal to one), and we can easily know the Fourier transforms of all the scaled and dilated versions of that function. For example, we can instantly generalize Equation (10.6) to give the Fourier transform of a box of width <em>b</em> and height <em>a</em>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>a</m:mi><m:mi>b</m:mi><m:mfrac><m:mrow><m:mi>sin</m:mi><m:mo>⁡</m:mo><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>b</m:mi><m:mi>u</m:mi></m:mrow><m:mrow><m:mi>π</m:mi><m:mi>b</m:mi><m:mi>u</m:mi></m:mrow></m:mfrac><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+</li>
+<li><p class="list">The average value of <em>f</em> is equal to <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> (0). This makes sense since <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> (0) is supposed to be the zero-frequency component of the signal (the DC component if we are thinking of an electrical voltage).</p></li>
+<li><p class="list">If <em>f</em> is real (which it always is for us), <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> is an even function—that is, <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mrow><m:mo>(</m:mo><m:mo>−</m:mo><m:mi>u</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math></span>. Likewise, if <em>f</em> is an even function, then <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> will be real (this is not <a id="term-292"/><span aria-label="243" epub:type="pagebreak" id="pg_243" role="doc-pagebreak"/>usually the case in our domain, but remember that we really are only going to care about the magnitude of <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span>).</p></li>
+</ul>
+</section>
+<section>
+<h3 id="sec10_5_2"><span class="green">10.5.2 Convolution and the Fourier Transform</span></h3>
+<p>One final property of the Fourier transform that deserves special mention is its relationship to convolution (<a href="C15_chapter10.xhtml#f10_45">Figure 10.45</a>). Briefly,</p>
+<figure id="f10_45" tabindex="0">
+<img alt="" src="../images/fig10_45.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.45.</strong></span> A commutative diagram to show visually the relationship between convolution and multiplication. If we multiply <em>f</em> and <em>g</em> in space, then transform to frequency, we end up in the same place as if we transformed <em>f</em> and <em>g</em> to frequency and then convolved them. Likewise, if we convolve <em>f</em> and <em>g</em> in space and then transform into frequency, we end up in the same place as if we transformed <em>f</em> and <em>g</em> to frequency, then multiplied them.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>*</m:mo><m:mi>g</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mover><m:mrow><m:mi>g</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The Fourier transform of the convolution of two functions is the product of the Fourier transforms. Following the by now familiar symmetry,</p>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>*</m:mo><m:mover><m:mrow><m:mi>g</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>=</m:mo><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:mi>f</m:mi><m:mi>g</m:mi><m:mo>}</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The convolution of two Fourier transforms is the Fourier transform of the product of the two functions. These facts are fairly straightforward to derive from the definitions.</p>
+<p>This relationship is the main reason Fourier transforms are useful in studying the effects of sampling and reconstruction. We’ve seen how sampling, filtering, and reconstruction can be seen in terms of convolution; now the Fourier transform gives us a new domain—the frequency domain—in which these operations are simply products.</p>
+</section>
+<section>
+<h3 id="sec10_5_3"><a id="term-293"/><span aria-label="244" epub:type="pagebreak" id="pg_244" role="doc-pagebreak"/><span class="green">10.5.3 A Gallery of Fourier Transforms</span></h3>
+<p>Now that we have some facts about Fourier transforms, let’s look at some examples of individual functions. In particular, we’ll look at some filters from <a href="C15_chapter10.xhtml#sec10_3_1">Section 10.3.1</a>, which are shown with their Fourier transforms in <a href="C15_chapter10.xhtml#f10_46">Figure 10.46</a>. We have already seen the box function:</p>
+<figure id="f10_46" tabindex="0">
+<img alt="" src="../images/fig10_46.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.46.</strong></span> The Fourier transforms of the box, tent, B-spline, and Gaussian filters.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>box</m:mtext></m:mrow></m:msub><m:mo>}</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>sin</m:mi><m:mo>⁡</m:mo><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>u</m:mi></m:mrow><m:mrow><m:mi>π</m:mi><m:mi>u</m:mi></m:mrow></m:mfrac><m:mo>=</m:mo><m:mi>sin</m:mi><m:mtext>c</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>u</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The function<a epub:type="noteref" href="C15_chapter10.xhtml#fn10_3" id="rfn10_3" role="doc-noteref"><sup>3</sup></a> sin <em>x/x</em> is important enough to have its own name, sinc <em>x</em>.</p>
+<p>The tent function is the convolution of the box with itself, so its Fourier transform is just the square of the Fourier transform of the box function:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>tent</m:mtext></m:mrow></m:msub><m:mo>}</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:msup><m:mrow><m:mi>sin</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>⁡</m:mo><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>u</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>u</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:mfrac><m:mo>=</m:mo><m:msup><m:mrow><m:mi>sin</m:mi><m:mtext>c</m:mtext></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>u</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<aside class="footnote" epub:type="footnote" role="doc-footnote"><p><a href="#rfn10_3" id="fn10_3"><sup>3</sup></a> You may notice that sin π<em>u</em>/π<em>u</em> is undefined for <em>u</em> = 0. It is, however, continuous across zero, and we take it as understood that we use the limiting value of this ratio, 1, at <em>u</em> = 0.</p></aside>
+<p class="indent"><a id="term-273"/><a id="term-274"/><a id="term-463"/><span aria-label="245" epub:type="pagebreak" id="pg_245" role="doc-pagebreak"/>We can continue this process to get the Fourier transform of the B-spline filter (see Exercise 3):</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>B</m:mtext></m:mrow></m:msub><m:mo>}</m:mo></m:mrow><m:mo>=</m:mo><m:mfrac><m:mrow><m:msup><m:mrow><m:mi>sin</m:mi></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:msup><m:mo>⁡</m:mo><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>u</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>u</m:mi></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:msup></m:mrow></m:mfrac><m:mo>=</m:mo><m:msup><m:mrow><m:mi>sin</m:mi><m:mtext>c</m:mtext></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:msup><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>π</m:mi><m:mi>u</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p class="indent">The Gaussian has a particularly nice Fourier transform:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:msub><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mtext>G</m:mtext></m:mrow></m:msub><m:mo>}</m:mo></m:mrow><m:mo>=</m:mo><m:msup><m:mrow><m:mi>e</m:mi></m:mrow><m:mrow><m:mo>−</m:mo><m:msup><m:mrow><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:mi>π</m:mi><m:mi>u</m:mi><m:mo>)</m:mo></m:mrow></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>It is another Gaussian! The Gaussian with standard deviation 1.0 becomes a Gaussian with standard deviation 1<em>/</em>2π.</p>
+</section>
+<section>
+<h3 id="sec10_5_4"><span class="green">10.5.4 Dirac Impulses in Sampling Theory</span></h3>
+<p>The reason impulses are useful in sampling theory is that we can use them to talk about samples in the context of continuous functions and Fourier transforms. We represent a sample, which has a position and a value, by an impulse translated to that position and scaled by that value. A sample at position <em>a</em> with value <em>b</em> is represented by <em>bδ</em>(<em>x</em> – <em>a</em>). This way we can express the operation of sampling the function <em>f</em> (<em>x</em>) at <em>a</em> as multiplying <em>f</em> by δ(<em>x</em> – <em>a</em>). The result is <em>f</em> (<em>a</em>)δ(<em>x</em> – <em>a</em>).</p>
+<p>Sampling a function at a series of equally spaced points is therefore expressed as multiplying the function by the sum of a series of equally spaced impulses, called an <em><a id="index_term614"/>impulse train</em> (<a href="C15_chapter10.xhtml#f10_47">Figure 10.47</a>). An impulse train with period <em>T</em> , meaning that the impulses are spaced a distance <em>T</em> apart, is</p>
+<figure id="f10_47" tabindex="0">
+<img alt="" src="../images/fig10_47.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.47.</strong></span> Impulse trains. The Fourier transform of an impulse train is another impulse train. Changing the period of the impulse train in space causes an inverse change in the period in frequency.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>s</m:mi></m:mrow><m:mrow><m:mi>T</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:munderover><m:mi>δ</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>T</m:mi><m:mi>i</m:mi><m:mo>)</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p><span aria-label="246" epub:type="pagebreak" id="pg_246" role="doc-pagebreak"/>The Fourier transform of <em>s</em><sub>1</sub> is the same as <em>s</em><sub>1</sub>: a sequence of impulses at all integer frequencies. You can see why this should be true by thinking about what happens when we multiply the impulse train by a sinusoid and integrate. We wind up adding up the values of the sinusoid at all the integers. This sum will exactly cancel to zero for non-integer frequencies, and it will diverge to +∞ for integer frequencies.</p>
+<p>Because of the dilation property of the Fourier transform, we can guess that the Fourier transform of an impulse train with period <em>T</em> (which is like a dilation of <em>s</em><sub>1</sub>) is an impulse train with period 1<em>/T</em> . Making the sampling finer in the space domain makes the impulses farther apart in the frequency domain.</p>
+</section>
+<section>
+<h3 id="sec10_5_5"><a id="index_term1004"/><span class="green">10.5.5 Sampling and Aliasing</span></h3>
+<p>Now that we have built the mathematical machinery, we need to understand the sampling and reconstruction process from the viewpoint of the frequency domain. The key advantage of introducing Fourier transforms is that it makes the effects of convolution filtering on the signal much clearer, and it provides more precise explanations of why we need to filter when sampling and reconstructing.</p>
+<p>We start the process with the original, continuous signal. In general, its Fourier transform could include components at any frequency, although for most kinds of signals (especially images), we expect the content to decrease as the frequency gets higher. Images also tend to have a large component at zero frequency—remember that the zero-frequency, or DC, component is the integral of the whole image, and since images are all positive values this tends to be a large number.</p>
+<p>Let’s see what happens to the Fourier transform if we sample and reconstruct without doing any special filtering (<a href="C15_chapter10.xhtml#f10_48">Figure 10.48</a>). When we sample the signal, we model the operation as multiplication with an impulse train; the sampled signal is <em>fs<sub>T</sub></em> . Because of the multiplication-convolution property, the FT of the sampled signal is <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>*</m:mo><m:mover><m:mrow><m:msub><m:mrow><m:mi>s</m:mi></m:mrow><m:mrow><m:mi>T</m:mi></m:mrow></m:msub></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>=</m:mo><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>*</m:mo><m:msub><m:mrow><m:mi>s</m:mi></m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>T</m:mi></m:mrow></m:msub></m:mrow></m:math></span>.</p>
+<figure id="f10_48" tabindex="0">
+<img alt="" src="../images/fig10_48.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.48.</strong></span> Sampling and reconstruction with no filtering. Sampling produces alias spectra that overlap and mix with the base spectrum. Reconstruction with a box filter collects even more information from the alias spectra. The result is a signal that has serious aliasing artifacts.</p></figcaption>
+</figure>
+<p>Recall that δ is the identity for convolution. This means that</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>*</m:mo><m:msub><m:mrow><m:mi>s</m:mi></m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mi>T</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:munderover><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mi>∞</m:mi></m:mrow></m:munderover><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>−</m:mo><m:mi>i</m:mi><m:mo>/</m:mo><m:mi>T</m:mi><m:mo>)</m:mo></m:mrow><m:mo>;</m:mo></m:mrow></m:math>
+</div>
+<p>that is, convolving with the impulse train makes a whole series of equally spaced copies of the spectrum of <em>f</em> . A good intuitive interpretation of this seemingly odd result is that all those copies just express the fact (as we saw back in <a href="C15_chapter10.xhtml#sec10_1_1">Section 10.1.1</a>) that frequencies that differ by an integer multiple of the sampling frequency are indistinguishable once we have sampled—they will produce <a id="term-38"/><a id="term-294"/><a id="term-724"/><a id="term-816"/><span aria-label="247" epub:type="pagebreak" id="pg_247" role="doc-pagebreak"/>exactly the same set of samples. The original <a id="index_term1114"/>spectrum is called the <em><a id="index_term74"/>base spectrum</em>, and the copies are known as <em>alias spectra</em>.</p>
+<p>The trouble begins if these copies of the signal’s spectrum overlap, which will happen if the signal contains any significant content beyond half the sample frequency. When this happens, the spectra add, and the information about different frequencies is irreversibly mixed up. This is the first place aliasing can occur, and if it happens here, it’s due to undersampling—using too low a sample frequency for the signal.</p>
+<p>Suppose we reconstruct the signal using the nearest-neighbor technique. This is equivalent to convolving with a box of width 1. (The discrete-continuous convolution used to do this is the same as a continuous convolution with the series of impulses that represent the samples.) The convolution-multiplication property means that the spectrum of the reconstructed signal will be the product of the spectrum of the sampled signal and the spectrum of the box. The resulting reconstructed Fourier transform contains the base spectrum (though somewhat attenuated at higher frequencies), plus attenuated copies of all the alias spectra. Because the box has a fairly broad Fourier transform, these attenuated bits of <a id="index_term9"/>alias spectra are significant, and they are the second form of aliasing, due to an inadequate reconstruction filter. These alias components manifest themselves in the image as the pattern of squares that is characteristic of nearest-neighbor reconstruction.</p>
+<section>
+<h4 id="sec54"><a id="term-725"/><span aria-label="248" epub:type="pagebreak" id="pg_248" role="doc-pagebreak"/><span class="blue">Preventing Aliasing in Sampling</span></h4>
+<p>To do high-quality sampling and reconstruction, we have seen that we need to choose sampling and reconstruction filters appropriately. From the standpoint of the frequency domain, the purpose of low-pass filtering when sampling is to limit the frequency range of the signal so that the alias spectra do not overlap the base spectrum. <a href="C15_chapter10.xhtml#f10_49">Figure 10.49</a> shows the effect of sample rate on the Fourier transform of the sampled signal. Higher sample rates move the alias spectra farther apart, and eventually, whatever overlap is left does not matter.</p>
+<figure id="f10_49" tabindex="0">
+<img alt="" src="../images/fig10_49.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.49.</strong></span> The effect of sample rate on the frequency spectrum of the sampled signal. Higher sample rates push the copies of the spectrum apart, reducing problems caused by overlap.</p></figcaption>
+</figure>
+<p>The key criterion is that the width of the spectrum must be less than the distance between the copies—that is, the highest frequency present in the signal must be less than half the sample frequency. This is known as the <em><a id="index_term788"/>Nyquist criterion</em>, and the highest allowable frequency is known as the <em>Nyquist frequency</em> or <em>Nyquist limit</em>. The <em>Nyquist–Shannon sampling theorem</em> states that a signal whose frequencies do not exceed the Nyquist limit (or, said another way, a signal that is bandlimited to the Nyquist frequency) can, in principle, be reconstructed exactly from samples.</p>
+<p><a id="term-726"/><span aria-label="249" epub:type="pagebreak" id="pg_249" role="doc-pagebreak"/>With a high enough sample rate for a particular signal, we don’t need to use a sampling filter. But if we are stuck with a signal that contains a wide range of frequencies (such as an image with sharp edges in it), we must use a sampling filter to bandlimit the signal before we can sample it. <a href="C15_chapter10.xhtml#f10_50">Figure 10.50</a> shows the effects of three low-pass (smoothing) filters in the frequency domain, and <a href="C15_chapter10.xhtml#f10_51">Figure 10.51</a> shows the effect of using these same filters when sampling. Even if the spectra overlap without filtering, convolving the signal with a low-pass filter can narrow the spectrum enough to eliminate overlap and produce a well-sampled representation of the filtered signal. Of course, we have lost the high frequencies, but that’s better than having them get scrambled with the signal and turn into artifacts.</p>
+<figure id="f10_50" tabindex="0">
+<img alt="" src="../images/fig10_50.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.50.</strong></span> Applying low-pass (smoothing) filters narrows the frequency spectrum of a signal.</p></figcaption>
+</figure>
+<figure id="f10_51" tabindex="0">
+<img alt="" src="../images/fig10_51.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.51.</strong></span> How the low-pass filters from <a href="C15_chapter10.xhtml#f10_50">Figure 10.50</a> prevent aliasing during sampling. Low-pass filtering narrows the spectrum so that the copies overlap less, and the high frequencies from the alias spectra interfere less with the base spectrum.</p></figcaption>
+</figure>
+</section>
+<section>
+<h4 id="sec55"><a id="index_term967"/><span class="blue">Preventing Aliasing in Reconstruction</span></h4>
+<p>From the frequency domain perspective, the job of a reconstruction filter is to remove the alias spectra while preserving the base spectrum. In <a href="C15_chapter10.xhtml#f10_48">Figure 10.48</a>, we can see that the crudest reconstruction filter, the box, does attenuate the alias spectra. Most important, it completely blocks the DC spike for all the alias spectra. This is a characteristic of all reasonable reconstruction filters: they have zeroes in frequency space at all multiples of the sample frequency. This turns out to be equivalent to the ripple-free property in the space domain.</p>
+<p>So a good reconstruction filter needs to be a good low-pass filter, with the added requirement of completely blocking all multiples of the sample frequency. <a id="term-39"/><a id="term-817"/><span aria-label="250" epub:type="pagebreak" id="pg_250" role="doc-pagebreak"/>The purpose of using a reconstruction filter different from the box filter is to more completely eliminate the alias spectra, reducing the leakage of high-frequency artifacts into the reconstructed signal, while disturbing the base spectrum as little as possible. <a href="C15_chapter10.xhtml#f10_52">Figure 10.52</a> illustrates the effects of different filters when used during reconstruction. As we have seen, the box filter is quite “leaky” and results in plenty of artifacts even if the sample rate is high enough. The tent filter, resulting in linear interpolation, attenuates high frequencies more, resulting in milder artifacts, and the B-spline filter is very smooth, controlling the alias spectra very effectively. It also smooths the base spectrum some—this is the tradeoff between smoothing and aliasing that we saw earlier.</p>
+<figure id="f10_52" tabindex="0">
+<img alt="" src="../images/fig10_52.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.52.</strong></span> The effects of different reconstruction filters in the frequency domain. A good reconstruction filter attenuates the alias spectra effectively while preserving the base spectrum.</p></figcaption>
+</figure>
+</section>
+<section>
+<h4 id="sec56"><a id="index_term991"/><span class="blue">Preventing Aliasing in Resampling</span></h4>
+<p>When the operations of reconstruction and sampling are combined in resampling, the same principles apply, but with one filter doing the work of both reconstruction and sampling. <a href="C15_chapter10.xhtml#f10_53">Figure 10.53</a> illustrates how a resampling filter must remove the alias spectra <em>and</em> leave the spectrum narrow enough to be sampled at the new sample rate.</p>
+<figure id="f10_53" tabindex="0">
+<img alt="" src="../images/fig10_53.jpg"/>
+<figcaption><p><span class="blue"><strong>Figure 10.53.</strong></span> <a id="term-40"/><a id="term-70"/><a id="term-332"/><a id="term-693"/><a id="term-711"/><a id="term-818"/><span aria-label="251" epub:type="pagebreak" id="pg_251" role="doc-pagebreak"/>Resampling viewed in the frequency domain. The resampling filter both reconstructs the signal (removes the alias spectra) and bandlimits it (reduces its width) for sampling at the new rate.</p></figcaption>
+</figure>
+</section>
+</section>
+<section>
+<h3 id="sec10_5_6"><a id="index_term539"/><a id="term-712"/><span aria-label="252" epub:type="pagebreak" id="pg_252" role="doc-pagebreak"/><span class="green">10.5.6 Ideal Filters vs. Useful Filters</span></h3>
+<p>Following the frequency domain analysis to its logical conclusion, a filter that is exactly a box in the frequency domain is ideal for both sampling and reconstruction. Such a filter would prevent aliasing at both stages without diminishing the frequencies below the Nyquist frequency at all.</p>
+<p>Recall that the inverse and forward Fourier transforms are essentially identical, so the spatial domain filter that has a box as its Fourier transform is the function sin π<em>x</em>/π<em>x</em> = sinc π<em>x</em>.</p>
+<p>However, the <a id="index_term1084"/>sinc filter is not generally used in practice, either for sampling or for reconstruction, because it is impractical and because, even though it is optimal according to the frequency domain criteria, it doesn’t produce the best results for many applications.</p>
+<p>For sampling, the infinite extent of the sinc filter, and its relatively slow rate of decrease with distance from the center, is a liability. Also, for some kinds of sampling, the negative lobes are problematic. A Gaussian filter makes an excellent sampling filter even for difficult cases where high-frequency patterns must be removed from the input signal, because its Fourier transform falls off exponentially, with no bumps that tend to let aliases leak through. For less difficult cases, a tent filter generally suffices.</p>
+<p>For reconstruction, the size of the sinc function again creates problems, but even more importantly, the many ripples create “ringing” artifacts in reconstructed signals.</p>
+</section>
+</section>
+<section>
+<h2 id="sec57"><span class="green">Exercises</span></h2>
+<p class="qpara"><span class="green">1.</span> Show that discrete convolution is commutative and associative. Do the same for continuous convolution.</p>
+<p class="qpara"><span class="green">2.</span> Discrete-continuous convolution can’t be commutative, because its arguments have two different types. Show that it is associative, though.</p>
+<p class="qpara"><span class="green">3.</span> Prove that the B-spline is the convolution of four box functions.</p>
+<p class="qpara"><span class="green">4.</span> Show that the “flipped” definition of convolution is necessary by trying to show that convolution is commutative and associative using this (incorrect) definition (see the footnote on page 214):</p>
+<div class="disp-formula"><m:math alttext=""><m:mrow><m:mrow><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>*</m:mo><m:mi>b</m:mi><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>]</m:mo></m:mrow><m:mo>=</m:mo><m:munder><m:mrow><m:mi mathvariant="normal">Σ</m:mi></m:mrow><m:mrow><m:mi>j</m:mi></m:mrow></m:munder><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mrow><m:mo>[</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow><m:mi>b</m:mi><m:mrow><m:mo>[</m:mo><m:mi>i</m:mi><m:mo>+</m:mo><m:mi>j</m:mi><m:mo>]</m:mo></m:mrow></m:mrow></m:mrow></m:math>
+</div>
+<p class="qpara"><span class="green">5.</span> <span aria-label="253" epub:type="pagebreak" id="pg_253" role="doc-pagebreak"/>Prove that <span class="inline-formula"><m:math alttext=""><m:mrow><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:mi>f</m:mi><m:mo>*</m:mo><m:mi>g</m:mi><m:mo>}</m:mo></m:mrow><m:mo>=</m:mo><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mover><m:mrow><m:mi>g</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover></m:mrow></m:math></span> and <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>*</m:mo><m:mover><m:mrow><m:mi>g</m:mi></m:mrow><m:mrow><m:mo>^</m:mo></m:mrow></m:mover><m:mo>=</m:mo><m:mi>ℱ</m:mi><m:mrow><m:mo>{</m:mo><m:mi>f</m:mi><m:mi>g</m:mi><m:mo>}</m:mo></m:mrow></m:mrow></m:math></span>.</p>
+ <p class="qpara"><span class="green">6.</span> Equation 10.4 can be interpreted as the convolution of <em>a</em> with a filter <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>¯</m:mo></m:mrow></m:mover></m:mrow></m:math></span>. Write a mathematical expression for the “de-rippled” filter <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>¯</m:mo></m:mrow></m:mover></m:mrow></m:math></span>. Plot the filter that results from de-rippling the box, tent, and B-spline filters scaled to <em>s</em> = 1.25.</p>
+</section>
+</section>
+</body>
+</html>

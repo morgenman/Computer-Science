@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="9781000426359" />
+    <meta name="dtb:depth" content="1" />
+    <meta name="dtb:totalPageCount" content="716" />
+    <meta name="dtb:maxPageNumber" content="716" />
+  </head>
+  <docTitle>
+    <text>Fundamentals of Computer Graphics</text>
+  </docTitle>
+  <navMap>
+<navPoint playOrder="1" id="nav-1">
+<navLabel>
+<text>Cover</text>
+</navLabel>
+<content src="xhtml/A01_cover.xhtml" />
+</navPoint>
+<navPoint playOrder="2" id="nav-2">
+<navLabel>
+<text>Half Title</text>
+</navLabel>
+<content src="xhtml/A02_halftitle.xhtml" />
+</navPoint>
+<navPoint playOrder="3" id="nav-3">
+<navLabel>
+<text>Title Page</text>
+</navLabel>
+<content src="xhtml/A03_TitlePage.xhtml" />
+</navPoint>
+<navPoint playOrder="4" id="nav-4">
+<navLabel>
+<text>Copyright Page</text>
+</navLabel>
+<content src="xhtml/A04_copyright.xhtml" />
+</navPoint>
+<navPoint playOrder="5" id="nav-5">
+<navLabel>
+<text>Table of Contents</text>
+</navLabel>
+<content src="xhtml/C02a_toc.xhtml" />
+</navPoint>
+<navPoint playOrder="6" id="nav-6">
+<navLabel>
+<text>Preface</text>
+</navLabel>
+<content src="xhtml/C03_preface.xhtml#preface" />
+</navPoint>
+<navPoint playOrder="7" id="nav-7">
+<navLabel>
+<text>Acknowledgments</text>
+</navLabel>
+<content src="xhtml/C04_ack.xhtml#ack" />
+</navPoint>
+<navPoint playOrder="8" id="nav-8">
+<navLabel>
+<text>Authors</text>
+</navLabel>
+<content src="xhtml/C05_fm-chapter.xhtml#fm-chapter" />
+</navPoint>
+<navPoint playOrder="9" id="nav-9">
+<navLabel>
+<text>1 Introduction</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#c1" />
+<navPoint playOrder="10" id="nav-10">
+<navLabel>
+<text>1.1 Graphics Areas</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#sec1_1" />
+</navPoint>
+<navPoint playOrder="11" id="nav-11">
+<navLabel>
+<text>1.2 Major Applications</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#sec1_2" />
+</navPoint>
+<navPoint playOrder="12" id="nav-12">
+<navLabel>
+<text>1.3 Graphics APIs</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#sec1_3" />
+</navPoint>
+<navPoint playOrder="13" id="nav-13">
+<navLabel>
+<text>1.4 Graphics Pipeline</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#sec1_4" />
+</navPoint>
+<navPoint playOrder="14" id="nav-14">
+<navLabel>
+<text>1.5 Numerical Issues</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#sec1_5" />
+</navPoint>
+<navPoint playOrder="15" id="nav-15">
+<navLabel>
+<text>1.6 Efficiency</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#sec1_6" />
+</navPoint>
+<navPoint playOrder="16" id="nav-16">
+<navLabel>
+<text>1.7 Designing and Coding Graphics Programs</text>
+</navLabel>
+<content src="xhtml/C06_chapter1.xhtml#sec1_7" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="17" id="nav-17">
+<navLabel>
+<text>2 Miscellaneous Math</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#c2" />
+<navPoint playOrder="18" id="nav-18">
+<navLabel>
+<text>2.1 Sets and Mappings</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_1" />
+</navPoint>
+<navPoint playOrder="19" id="nav-19">
+<navLabel>
+<text>2.2 Solving Quadratic Equations</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_2" />
+</navPoint>
+<navPoint playOrder="20" id="nav-20">
+<navLabel>
+<text>2.3 Trigonometry</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_3" />
+</navPoint>
+<navPoint playOrder="21" id="nav-21">
+<navLabel>
+<text>2.4 Vectors</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_4" />
+</navPoint>
+<navPoint playOrder="22" id="nav-22">
+<navLabel>
+<text>2.5 Integration</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_5" />
+</navPoint>
+<navPoint playOrder="23" id="nav-23">
+<navLabel>
+<text>2.6 Density Functions</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_6" />
+</navPoint>
+<navPoint playOrder="24" id="nav-24">
+<navLabel>
+<text>2.7 Curves and Surfaces</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_7" />
+</navPoint>
+<navPoint playOrder="25" id="nav-25">
+<navLabel>
+<text>2.8 Linear Interpolation</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_8" />
+</navPoint>
+<navPoint playOrder="26" id="nav-26">
+<navLabel>
+<text>2.9 Triangles</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_9" />
+</navPoint>
+<navPoint playOrder="27" id="nav-27">
+<navLabel>
+<text>2.10 Discrete probability</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_10" />
+</navPoint>
+<navPoint playOrder="28" id="nav-28">
+<navLabel>
+<text>2.11 Continuous probability</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_11" />
+</navPoint>
+<navPoint playOrder="29" id="nav-29">
+<navLabel>
+<text>2.12 Monte Carlo Integration</text>
+</navLabel>
+<content src="xhtml/C07_chapter2.xhtml#sec2_12" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="30" id="nav-30">
+<navLabel>
+<text>3 Raster Images</text>
+</navLabel>
+<content src="xhtml/C08_chapter3.xhtml#c3" />
+<navPoint playOrder="31" id="nav-31">
+<navLabel>
+<text>3.1 Raster Devices</text>
+</navLabel>
+<content src="xhtml/C08_chapter3.xhtml#sec3_1" />
+</navPoint>
+<navPoint playOrder="32" id="nav-32">
+<navLabel>
+<text>3.2 Images, Pixels, and Geometry</text>
+</navLabel>
+<content src="xhtml/C08_chapter3.xhtml#sec3_2" />
+</navPoint>
+<navPoint playOrder="33" id="nav-33">
+<navLabel>
+<text>3.3 RGB Color</text>
+</navLabel>
+<content src="xhtml/C08_chapter3.xhtml#sec3_3" />
+</navPoint>
+<navPoint playOrder="34" id="nav-34">
+<navLabel>
+<text>3.4 Alpha Compositing</text>
+</navLabel>
+<content src="xhtml/C08_chapter3.xhtml#sec3_4" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="35" id="nav-35">
+<navLabel>
+<text>4 Ray Tracing</text>
+</navLabel>
+<content src="xhtml/C09_chapter4.xhtml#c4" />
+<navPoint playOrder="36" id="nav-36">
+<navLabel>
+<text>4.1 The Basic Ray-Tracing Algorithm</text>
+</navLabel>
+<content src="xhtml/C09_chapter4.xhtml#sec4_1" />
+</navPoint>
+<navPoint playOrder="37" id="nav-37">
+<navLabel>
+<text>4.2 Perspective</text>
+</navLabel>
+<content src="xhtml/C09_chapter4.xhtml#sec4_2" />
+</navPoint>
+<navPoint playOrder="38" id="nav-38">
+<navLabel>
+<text>4.3 Computing Viewing Rays</text>
+</navLabel>
+<content src="xhtml/C09_chapter4.xhtml#sec4_3" />
+</navPoint>
+<navPoint playOrder="39" id="nav-39">
+<navLabel>
+<text>4.4 Ray-Object Intersection</text>
+</navLabel>
+<content src="xhtml/C09_chapter4.xhtml#sec4_4" />
+</navPoint>
+<navPoint playOrder="40" id="nav-40">
+<navLabel>
+<text>4.5 Shading</text>
+</navLabel>
+<content src="xhtml/C09_chapter4.xhtml#sec4_5" />
+</navPoint>
+<navPoint playOrder="41" id="nav-41">
+<navLabel>
+<text>4.6 Historical Notes</text>
+</navLabel>
+<content src="xhtml/C09_chapter4.xhtml#sec4_6" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="42" id="nav-42">
+<navLabel>
+<text>5 Surface Shading</text>
+</navLabel>
+<content src="xhtml/C10_chapter5.xhtml#c5" />
+<navPoint playOrder="43" id="nav-43">
+<navLabel>
+<text>5.1 Point-like light sources</text>
+</navLabel>
+<content src="xhtml/C10_chapter5.xhtml#sec5_1" />
+</navPoint>
+<navPoint playOrder="44" id="nav-44">
+<navLabel>
+<text>5.2 Basic reflection models</text>
+</navLabel>
+<content src="xhtml/C10_chapter5.xhtml#sec5_2" />
+</navPoint>
+<navPoint playOrder="45" id="nav-45">
+<navLabel>
+<text>5.3 Ambient illumination</text>
+</navLabel>
+<content src="xhtml/C10_chapter5.xhtml#sec5_3" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="46" id="nav-46">
+<navLabel>
+<text>6 Linear Algebra</text>
+</navLabel>
+<content src="xhtml/C11_chapter6.xhtml#c6" />
+<navPoint playOrder="47" id="nav-47">
+<navLabel>
+<text>6.1 Determinants</text>
+</navLabel>
+<content src="xhtml/C11_chapter6.xhtml#sec6_1" />
+</navPoint>
+<navPoint playOrder="48" id="nav-48">
+<navLabel>
+<text>6.2 Matrices</text>
+</navLabel>
+<content src="xhtml/C11_chapter6.xhtml#sec6_2" />
+</navPoint>
+<navPoint playOrder="49" id="nav-49">
+<navLabel>
+<text>6.3 Computing with Matrices and Determinants</text>
+</navLabel>
+<content src="xhtml/C11_chapter6.xhtml#sec6_3" />
+</navPoint>
+<navPoint playOrder="50" id="nav-50">
+<navLabel>
+<text>6.4 Eigenvalues and Matrix Diagonalization</text>
+</navLabel>
+<content src="xhtml/C11_chapter6.xhtml#sec6_4" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="51" id="nav-51">
+<navLabel>
+<text>7 Transformation Matrices</text>
+</navLabel>
+<content src="xhtml/C12_chapter7.xhtml#c7" />
+<navPoint playOrder="52" id="nav-52">
+<navLabel>
+<text>7.1 2D Linear Transformations</text>
+</navLabel>
+<content src="xhtml/C12_chapter7.xhtml#sec7_1" />
+</navPoint>
+<navPoint playOrder="53" id="nav-53">
+<navLabel>
+<text>7.2 3D Linear Transformations</text>
+</navLabel>
+<content src="xhtml/C12_chapter7.xhtml#sec7_2" />
+</navPoint>
+<navPoint playOrder="54" id="nav-54">
+<navLabel>
+<text>7.3 Translation and Affine Transformations</text>
+</navLabel>
+<content src="xhtml/C12_chapter7.xhtml#sec7_3" />
+</navPoint>
+<navPoint playOrder="55" id="nav-55">
+<navLabel>
+<text>7.4 Inverses of Transformation Matrices</text>
+</navLabel>
+<content src="xhtml/C12_chapter7.xhtml#sec7_4" />
+</navPoint>
+<navPoint playOrder="56" id="nav-56">
+<navLabel>
+<text>7.5 Coordinate Transformations</text>
+</navLabel>
+<content src="xhtml/C12_chapter7.xhtml#sec7_5" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="57" id="nav-57">
+<navLabel>
+<text>8 Viewing</text>
+</navLabel>
+<content src="xhtml/C13_chapter8.xhtml#c8" />
+<navPoint playOrder="58" id="nav-58">
+<navLabel>
+<text>8.1 Viewing Transformations</text>
+</navLabel>
+<content src="xhtml/C13_chapter8.xhtml#sec8_1" />
+</navPoint>
+<navPoint playOrder="59" id="nav-59">
+<navLabel>
+<text>8.2 Projective Transformations</text>
+</navLabel>
+<content src="xhtml/C13_chapter8.xhtml#sec8_2" />
+</navPoint>
+<navPoint playOrder="60" id="nav-60">
+<navLabel>
+<text>8.3 Perspective Projection</text>
+</navLabel>
+<content src="xhtml/C13_chapter8.xhtml#sec8_3" />
+</navPoint>
+<navPoint playOrder="61" id="nav-61">
+<navLabel>
+<text>8.4 Some Properties of the Perspective Transform</text>
+</navLabel>
+<content src="xhtml/C13_chapter8.xhtml#sec8_4" />
+</navPoint>
+<navPoint playOrder="62" id="nav-62">
+<navLabel>
+<text>8.5 Field-of-View</text>
+</navLabel>
+<content src="xhtml/C13_chapter8.xhtml#sec8_5" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="63" id="nav-63">
+<navLabel>
+<text>9 The Graphics Pipeline</text>
+</navLabel>
+<content src="xhtml/C14_chapter9.xhtml#c9" />
+<navPoint playOrder="64" id="nav-64">
+<navLabel>
+<text>9.1 Rasterization</text>
+</navLabel>
+<content src="xhtml/C14_chapter9.xhtml#sec9_1" />
+</navPoint>
+<navPoint playOrder="65" id="nav-65">
+<navLabel>
+<text>9.2 Operations Before and After Rasterization</text>
+</navLabel>
+<content src="xhtml/C14_chapter9.xhtml#sec9_2" />
+</navPoint>
+<navPoint playOrder="66" id="nav-66">
+<navLabel>
+<text>9.3 Simple Antialiasing</text>
+</navLabel>
+<content src="xhtml/C14_chapter9.xhtml#sec9_3" />
+</navPoint>
+<navPoint playOrder="67" id="nav-67">
+<navLabel>
+<text>9.4 Culling Primitives for Efficiency</text>
+</navLabel>
+<content src="xhtml/C14_chapter9.xhtml#sec9_4" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="68" id="nav-68">
+<navLabel>
+<text>10 Signal Processing</text>
+</navLabel>
+<content src="xhtml/C15_chapter10.xhtml#c10" />
+<navPoint playOrder="69" id="nav-69">
+<navLabel>
+<text>10.1 Digital Audio: Sampling in 1D</text>
+</navLabel>
+<content src="xhtml/C15_chapter10.xhtml#sec10_1" />
+</navPoint>
+<navPoint playOrder="70" id="nav-70">
+<navLabel>
+<text>10.2 Convolution</text>
+</navLabel>
+<content src="xhtml/C15_chapter10.xhtml#sec10_2" />
+</navPoint>
+<navPoint playOrder="71" id="nav-71">
+<navLabel>
+<text>10.3 Convolution Filters</text>
+</navLabel>
+<content src="xhtml/C15_chapter10.xhtml#sec10_3" />
+</navPoint>
+<navPoint playOrder="72" id="nav-72">
+<navLabel>
+<text>10.4 Signal Processing for Images</text>
+</navLabel>
+<content src="xhtml/C15_chapter10.xhtml#sec10_4" />
+</navPoint>
+<navPoint playOrder="73" id="nav-73">
+<navLabel>
+<text>10.5 Sampling Theory</text>
+</navLabel>
+<content src="xhtml/C15_chapter10.xhtml#sec10_5" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="74" id="nav-74">
+<navLabel>
+<text>11 Texture Mapping</text>
+</navLabel>
+<content src="xhtml/C16_chapter11.xhtml#c11" />
+<navPoint playOrder="75" id="nav-75">
+<navLabel>
+<text>11.1 Looking Up Texture Values</text>
+</navLabel>
+<content src="xhtml/C16_chapter11.xhtml#sec11_1" />
+</navPoint>
+<navPoint playOrder="76" id="nav-76">
+<navLabel>
+<text>11.2 Texture Coordinate Functions</text>
+</navLabel>
+<content src="xhtml/C16_chapter11.xhtml#sec11_2" />
+</navPoint>
+<navPoint playOrder="77" id="nav-77">
+<navLabel>
+<text>11.3 Antialiasing Texture Lookups</text>
+</navLabel>
+<content src="xhtml/C16_chapter11.xhtml#sec11_3" />
+</navPoint>
+<navPoint playOrder="78" id="nav-78">
+<navLabel>
+<text>11.4 Applications of Texture Mapping</text>
+</navLabel>
+<content src="xhtml/C16_chapter11.xhtml#sec11_4" />
+</navPoint>
+<navPoint playOrder="79" id="nav-79">
+<navLabel>
+<text>11.5 Procedural 3D Textures</text>
+</navLabel>
+<content src="xhtml/C16_chapter11.xhtml#sec11_5" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="80" id="nav-80">
+<navLabel>
+<text>12 Data Structures for Graphics</text>
+</navLabel>
+<content src="xhtml/C17_chapter12.xhtml#c12" />
+<navPoint playOrder="81" id="nav-81">
+<navLabel>
+<text>12.1 Triangle Meshes</text>
+</navLabel>
+<content src="xhtml/C17_chapter12.xhtml#sec12_1" />
+</navPoint>
+<navPoint playOrder="82" id="nav-82">
+<navLabel>
+<text>12.2 Scene Graphs</text>
+</navLabel>
+<content src="xhtml/C17_chapter12.xhtml#sec12_2" />
+</navPoint>
+<navPoint playOrder="83" id="nav-83">
+<navLabel>
+<text>12.3 Spatial Data Structures</text>
+</navLabel>
+<content src="xhtml/C17_chapter12.xhtml#sec12_3" />
+</navPoint>
+<navPoint playOrder="84" id="nav-84">
+<navLabel>
+<text>12.4 BSP Trees for Visibility</text>
+</navLabel>
+<content src="xhtml/C17_chapter12.xhtml#sec12_4" />
+</navPoint>
+<navPoint playOrder="85" id="nav-85">
+<navLabel>
+<text>12.5 Tiling Multidimensional Arrays</text>
+</navLabel>
+<content src="xhtml/C17_chapter12.xhtml#sec12_5" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="86" id="nav-86">
+<navLabel>
+<text>13 Sampling</text>
+</navLabel>
+<content src="xhtml/C18_chapter13.xhtml#c13" />
+<navPoint playOrder="87" id="nav-87">
+<navLabel>
+<text>13.1 Integration</text>
+</navLabel>
+<content src="xhtml/C18_chapter13.xhtml#sec13_1" />
+</navPoint>
+<navPoint playOrder="88" id="nav-88">
+<navLabel>
+<text>13.2 Continuous Probability</text>
+</navLabel>
+<content src="xhtml/C18_chapter13.xhtml#sec13_2" />
+</navPoint>
+<navPoint playOrder="89" id="nav-89">
+<navLabel>
+<text>13.3 Monte Carlo Integration</text>
+</navLabel>
+<content src="xhtml/C18_chapter13.xhtml#sec13_3" />
+</navPoint>
+<navPoint playOrder="90" id="nav-90">
+<navLabel>
+<text>13.4 Choosing Random Points</text>
+</navLabel>
+<content src="xhtml/C18_chapter13.xhtml#sec13_4" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="91" id="nav-91">
+<navLabel>
+<text>14 Physics-Based Rendering</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#c14" />
+<navPoint playOrder="92" id="nav-92">
+<navLabel>
+<text>14.1 Photons</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_1" />
+</navPoint>
+<navPoint playOrder="93" id="nav-93">
+<navLabel>
+<text>14.2 Smooth Metals</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_2" />
+</navPoint>
+<navPoint playOrder="94" id="nav-94">
+<navLabel>
+<text>14.3 Smooth Dielectrics</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_3" />
+</navPoint>
+<navPoint playOrder="95" id="nav-95">
+<navLabel>
+<text>14.4 Dielectrics with Subsurface Scattering</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_4" />
+</navPoint>
+<navPoint playOrder="96" id="nav-96">
+<navLabel>
+<text>14.5 A Brute Force Photon Tracer</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_5" />
+</navPoint>
+<navPoint playOrder="97" id="nav-97">
+<navLabel>
+<text>14.6 Radiometry</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_6" />
+</navPoint>
+<navPoint playOrder="98" id="nav-98">
+<navLabel>
+<text>14.7 Radiometry of Scattering</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_7" />
+</navPoint>
+<navPoint playOrder="99" id="nav-99">
+<navLabel>
+<text>14.8 Transport Equation</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_8" />
+</navPoint>
+<navPoint playOrder="100" id="nav-100">
+<navLabel>
+<text>14.9 Materials in Practice</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_9" />
+</navPoint>
+<navPoint playOrder="101" id="nav-101">
+<navLabel>
+<text>14.10 Monte Carlo Ray Tracing</text>
+</navLabel>
+<content src="xhtml/C19_chapter14.xhtml#sec14_10" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="102" id="nav-102">
+<navLabel>
+<text>15 Curves</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#c15" />
+<navPoint playOrder="103" id="nav-103">
+<navLabel>
+<text>15.1 Curves</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#sec15_1" />
+</navPoint>
+<navPoint playOrder="104" id="nav-104">
+<navLabel>
+<text>15.2 Curve Properties</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#sec15_2" />
+</navPoint>
+<navPoint playOrder="105" id="nav-105">
+<navLabel>
+<text>15.3 Polynomial Pieces</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#sec15_3" />
+</navPoint>
+<navPoint playOrder="106" id="nav-106">
+<navLabel>
+<text>15.4 Putting Pieces Together</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#sec15_4" />
+</navPoint>
+<navPoint playOrder="107" id="nav-107">
+<navLabel>
+<text>15.5 Cubics</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#sec15_5" />
+</navPoint>
+<navPoint playOrder="108" id="nav-108">
+<navLabel>
+<text>15.6 Approximating Curves</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#sec15_6" />
+</navPoint>
+<navPoint playOrder="109" id="nav-109">
+<navLabel>
+<text>15.7 Summary</text>
+</navLabel>
+<content src="xhtml/C20_chapter15.xhtml#sec15_7" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="110" id="nav-110">
+<navLabel>
+<text>16 Computer Animation</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#c16" />
+<navPoint playOrder="111" id="nav-111">
+<navLabel>
+<text>16.1 Principles of Animation</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#sec16_1" />
+</navPoint>
+<navPoint playOrder="112" id="nav-112">
+<navLabel>
+<text>16.2 Keyframing</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#sec16_2" />
+</navPoint>
+<navPoint playOrder="113" id="nav-113">
+<navLabel>
+<text>16.3 Deformations</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#sec16_3" />
+</navPoint>
+<navPoint playOrder="114" id="nav-114">
+<navLabel>
+<text>16.4 Character Animation</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#sec16_4" />
+</navPoint>
+<navPoint playOrder="115" id="nav-115">
+<navLabel>
+<text>16.5 Physics-Based Animation</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#sec16_5" />
+</navPoint>
+<navPoint playOrder="116" id="nav-116">
+<navLabel>
+<text>16.6 Procedural Techniques</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#sec16_6" />
+</navPoint>
+<navPoint playOrder="117" id="nav-117">
+<navLabel>
+<text>16.7 Groups of Objects</text>
+</navLabel>
+<content src="xhtml/C21_chapter16.xhtml#sec16_7" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="118" id="nav-118">
+<navLabel>
+<text>17 Using Graphics Hardware</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#c17" />
+<navPoint playOrder="119" id="nav-119">
+<navLabel>
+<text>17.1 Hardware Overview</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_1" />
+</navPoint>
+<navPoint playOrder="120" id="nav-120">
+<navLabel>
+<text>17.2 What Is Graphics Hardware</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_2" />
+</navPoint>
+<navPoint playOrder="121" id="nav-121">
+<navLabel>
+<text>17.3 Heterogeneous Multiprocessing</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_3" />
+</navPoint>
+<navPoint playOrder="122" id="nav-122">
+<navLabel>
+<text>17.4 Graphics Hardware Programming: Buffers, State, and Shaders</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_4" />
+</navPoint>
+<navPoint playOrder="123" id="nav-123">
+<navLabel>
+<text>17.5 State Machine</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_5" />
+</navPoint>
+<navPoint playOrder="124" id="nav-124">
+<navLabel>
+<text>17.6 Basic OpenGL Application Layout</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_6" />
+</navPoint>
+<navPoint playOrder="125" id="nav-125">
+<navLabel>
+<text>17.7 Geometry</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_7" />
+</navPoint>
+<navPoint playOrder="126" id="nav-126">
+<navLabel>
+<text>17.8 A first Look at Shaders</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_8" />
+</navPoint>
+<navPoint playOrder="127" id="nav-127">
+<navLabel>
+<text>17.9 Vertex Buffer Objects</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_9" />
+</navPoint>
+<navPoint playOrder="128" id="nav-128">
+<navLabel>
+<text>17.10 Vertex Array Objects</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_10" />
+</navPoint>
+<navPoint playOrder="129" id="nav-129">
+<navLabel>
+<text>17.11 Transformation Matrices</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_11" />
+</navPoint>
+<navPoint playOrder="130" id="nav-130">
+<navLabel>
+<text>17.12 Shading with Per-Vertex Attributes</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_12" />
+</navPoint>
+<navPoint playOrder="131" id="nav-131">
+<navLabel>
+<text>17.13 Shading in the fragment Processor</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_13" />
+</navPoint>
+<navPoint playOrder="132" id="nav-132">
+<navLabel>
+<text>17.14 Meshes and Instancing</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_14" />
+</navPoint>
+<navPoint playOrder="133" id="nav-133">
+<navLabel>
+<text>17.15 Texture Objects</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_15" />
+</navPoint>
+<navPoint playOrder="134" id="nav-134">
+<navLabel>
+<text>17.16 Object-Oriented Design for Graphics Hardware Programming</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_16" />
+</navPoint>
+<navPoint playOrder="135" id="nav-135">
+<navLabel>
+<text>17.17 Continued Learning</text>
+</navLabel>
+<content src="xhtml/C22_chapter17.xhtml#sec17_17" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="136" id="nav-136">
+<navLabel>
+<text>18 Color</text>
+</navLabel>
+<content src="xhtml/C23_chapter18.xhtml#c18" />
+<navPoint playOrder="137" id="nav-137">
+<navLabel>
+<text>18.1 Colorimetry</text>
+</navLabel>
+<content src="xhtml/C23_chapter18.xhtml#sec18_1" />
+</navPoint>
+<navPoint playOrder="138" id="nav-138">
+<navLabel>
+<text>18.2 Color Spaces</text>
+</navLabel>
+<content src="xhtml/C23_chapter18.xhtml#sec18_2" />
+</navPoint>
+<navPoint playOrder="139" id="nav-139">
+<navLabel>
+<text>18.3 Chromatic Adaptation</text>
+</navLabel>
+<content src="xhtml/C23_chapter18.xhtml#sec18_3" />
+</navPoint>
+<navPoint playOrder="140" id="nav-140">
+<navLabel>
+<text>18.4 Color Appearance</text>
+</navLabel>
+<content src="xhtml/C23_chapter18.xhtml#sec18_4" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="141" id="nav-141">
+<navLabel>
+<text>19 Visual Perception</text>
+</navLabel>
+<content src="xhtml/C24_chapter19.xhtml#c19" />
+<navPoint playOrder="142" id="nav-142">
+<navLabel>
+<text>19.1 Vision Science</text>
+</navLabel>
+<content src="xhtml/C24_chapter19.xhtml#sec19_1" />
+</navPoint>
+<navPoint playOrder="143" id="nav-143">
+<navLabel>
+<text>19.2 Visual Sensitivity</text>
+</navLabel>
+<content src="xhtml/C24_chapter19.xhtml#sec19_2" />
+</navPoint>
+<navPoint playOrder="144" id="nav-144">
+<navLabel>
+<text>19.3 Spatial Vision</text>
+</navLabel>
+<content src="xhtml/C24_chapter19.xhtml#sec19_3" />
+</navPoint>
+<navPoint playOrder="145" id="nav-145">
+<navLabel>
+<text>19.4 Objects, Locations, and Events</text>
+</navLabel>
+<content src="xhtml/C24_chapter19.xhtml#sec19_4" />
+</navPoint>
+<navPoint playOrder="146" id="nav-146">
+<navLabel>
+<text>19.5 Picture Perception</text>
+</navLabel>
+<content src="xhtml/C24_chapter19.xhtml#sec19_5" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="147" id="nav-147">
+<navLabel>
+<text>20 Tone Reproduction</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#c20" />
+<navPoint playOrder="148" id="nav-148">
+<navLabel>
+<text>20.1 Classification</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_1" />
+</navPoint>
+<navPoint playOrder="149" id="nav-149">
+<navLabel>
+<text>20.2 Dynamic Range</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_2" />
+</navPoint>
+<navPoint playOrder="150" id="nav-150">
+<navLabel>
+<text>20.3 Color</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_3" />
+</navPoint>
+<navPoint playOrder="151" id="nav-151">
+<navLabel>
+<text>20.4 Image Formation</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_4" />
+</navPoint>
+<navPoint playOrder="152" id="nav-152">
+<navLabel>
+<text>20.5 Frequency-Based Operators</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_5" />
+</navPoint>
+<navPoint playOrder="153" id="nav-153">
+<navLabel>
+<text>20.6 Gradient-Domain Operators</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_6" />
+</navPoint>
+<navPoint playOrder="154" id="nav-154">
+<navLabel>
+<text>20.7 Spatial Operators</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_7" />
+</navPoint>
+<navPoint playOrder="155" id="nav-155">
+<navLabel>
+<text>20.8 Division</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_8" />
+</navPoint>
+<navPoint playOrder="156" id="nav-156">
+<navLabel>
+<text>20.9 Sigmoids</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_9" />
+</navPoint>
+<navPoint playOrder="157" id="nav-157">
+<navLabel>
+<text>20.10 Other Approaches</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_10" />
+</navPoint>
+<navPoint playOrder="158" id="nav-158">
+<navLabel>
+<text>20.11 Night Tonemapping</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_11" />
+</navPoint>
+<navPoint playOrder="159" id="nav-159">
+<navLabel>
+<text>20.12 Discussion</text>
+</navLabel>
+<content src="xhtml/C25_chapter20.xhtml#sec20_12" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="160" id="nav-160">
+<navLabel>
+<text>21 Implicit Modeling</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#c21" />
+<navPoint playOrder="161" id="nav-161">
+<navLabel>
+<text>21.1 Implicit Functions, Skeletal Primitives, and Summation Blending</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_1" />
+</navPoint>
+<navPoint playOrder="162" id="nav-162">
+<navLabel>
+<text>21.2 Rendering</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_2" />
+</navPoint>
+<navPoint playOrder="163" id="nav-163">
+<navLabel>
+<text>21.3 Space Partitioning</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_3" />
+</navPoint>
+<navPoint playOrder="164" id="nav-164">
+<navLabel>
+<text>21.4 More on Blending</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_4" />
+</navPoint>
+<navPoint playOrder="165" id="nav-165">
+<navLabel>
+<text>21.5 Constructive Solid Geometry</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_5" />
+</navPoint>
+<navPoint playOrder="166" id="nav-166">
+<navLabel>
+<text>21.6 Warping</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_6" />
+</navPoint>
+<navPoint playOrder="167" id="nav-167">
+<navLabel>
+<text>21.7 Precise Contact Modeling</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_7" />
+</navPoint>
+<navPoint playOrder="168" id="nav-168">
+<navLabel>
+<text>21.8 The BlobTree</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_8" />
+</navPoint>
+<navPoint playOrder="169" id="nav-169">
+<navLabel>
+<text>21.9 Interactive Implicit Modeling Systems</text>
+</navLabel>
+<content src="xhtml/C26_chapter21.xhtml#sec21_9" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="170" id="nav-170">
+<navLabel>
+<text>22 Computer Graphics in Games</text>
+</navLabel>
+<content src="xhtml/C27_chapter22.xhtml#c22" />
+<navPoint playOrder="171" id="nav-171">
+<navLabel>
+<text>22.1 Platforms</text>
+</navLabel>
+<content src="xhtml/C27_chapter22.xhtml#sec22_1" />
+</navPoint>
+<navPoint playOrder="172" id="nav-172">
+<navLabel>
+<text>22.2 Limited Resources</text>
+</navLabel>
+<content src="xhtml/C27_chapter22.xhtml#sec22_2" />
+</navPoint>
+<navPoint playOrder="173" id="nav-173">
+<navLabel>
+<text>22.3 Optimization Techniques</text>
+</navLabel>
+<content src="xhtml/C27_chapter22.xhtml#sec22_3" />
+</navPoint>
+<navPoint playOrder="174" id="nav-174">
+<navLabel>
+<text>22.4 Game Types</text>
+</navLabel>
+<content src="xhtml/C27_chapter22.xhtml#sec22_4" />
+</navPoint>
+<navPoint playOrder="175" id="nav-175">
+<navLabel>
+<text>22.5 The Game Production Process</text>
+</navLabel>
+<content src="xhtml/C27_chapter22.xhtml#sec22_5" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="176" id="nav-176">
+<navLabel>
+<text>23 Visualization</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#c23" />
+<navPoint playOrder="177" id="nav-177">
+<navLabel>
+<text>23.1 Background</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_1" />
+</navPoint>
+<navPoint playOrder="178" id="nav-178">
+<navLabel>
+<text>23.2 Data Types</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_2" />
+</navPoint>
+<navPoint playOrder="179" id="nav-179">
+<navLabel>
+<text>23.3 Human-Centered Design Process</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_3" />
+</navPoint>
+<navPoint playOrder="180" id="nav-180">
+<navLabel>
+<text>23.4 Visual Encoding Principles</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_4" />
+</navPoint>
+<navPoint playOrder="181" id="nav-181">
+<navLabel>
+<text>23.5 Interaction Principles</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_5" />
+</navPoint>
+<navPoint playOrder="182" id="nav-182">
+<navLabel>
+<text>23.6 Composite and Adjacent Views</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_6" />
+</navPoint>
+<navPoint playOrder="183" id="nav-183">
+<navLabel>
+<text>23.7 Data Reduction</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_7" />
+</navPoint>
+<navPoint playOrder="184" id="nav-184">
+<navLabel>
+<text>23.8 Examples</text>
+</navLabel>
+<content src="xhtml/C28_chapter23.xhtml#sec23_8" />
+</navPoint>
+</navPoint>
+<navPoint playOrder="185" id="nav-185">
+<navLabel>
+<text>References</text>
+</navLabel>
+<content src="xhtml/C29_references.xhtml#references" />
+</navPoint>
+<navPoint playOrder="186" id="nav-186">
+<navLabel>
+<text>Index</text>
+</navLabel>
+<content src="xhtml/C30_index.xhtml#index" />
+</navPoint>
+</navMap>
+</ncx>

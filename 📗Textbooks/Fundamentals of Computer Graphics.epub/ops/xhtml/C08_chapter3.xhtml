@@ -1,0 +1,338 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:svg="http://www.w3.org/2000/svg" dir="ltr" lang="en" xml:lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>3 Raster Images</title>
+<link href="../styles/9781000426359.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+jax: ["input/TeX","input/MathML","output/SVG"],
+extensions: ["tex2jax.js","mml2jax.js","MathEvents.js"],
+TeX: {
+extensions: ["noErrors.js","noUndefined.js","autoload-all.js"]
+},
+MathMenu: {
+showRenderer: false
+},
+menuSettings: {
+zoom: "Click"
+},
+messageStyle: "none"
+});
+</script>
+<script src="../mathjax/MathJax.js" type="text/javascript"/>
+<meta content="urn:uuid:e0000000-0000-0000-0000-000006665500" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section epub:type="chapter" role="doc-chapter">
+<h1 class="chapz" id="c3"><a id="index_term937"/><a id="term-667"/><span aria-label="63" epub:type="pagebreak" id="pg_63" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rc3" role="doc-backlink"><span class="green"><span class="big1">3</span><br/>Raster Images</span></a></h1>
+<p>Most computer graphics images are presented to the user on some kind of <em>raster display</em>. <a id="index_term935"/>Raster displays show images as rectangular arrays of <em>pixels</em>. A common example is a flat-panel computer display or television, which has a rectangular array of small light-emitting pixels that can individually be set to different colors to create any desired image. Different colors are achieved by mixing varying intensities of red, green, and blue light. Most printers, such as laser printers and ink-jet printers, are also <a id="index_term934"/>raster devices. They are based on scanning: there is no physical grid of pixels, but the image is laid down sequentially by depositing ink at selected points on a grid.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent"><em>Pixel</em> is short for “picture element.”</p>
+</aside>
+<p class="indent">Rasters are also prevalent in input devices for images. A digital camera contains an image sensor comprising a grid of light-sensitive pixels, each of which records the color and intensity of light falling on it. A desktop scanner contains a linear array of pixels that is swept across the page being scanned, making many measurements per second to produce a grid of pixels.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Color in printers is more complicated, involving mixtures of at least four pigments.</p>
+</aside>
+<p class="indent">Because rasters are so prevalent in devices, <em>raster images</em> are the most common way to store and process images. A raster image is simply a 2D <a id="index_term865"/>array that stores the <em>pixel <a id="index_term875"/>value</em> for each pixel—usually a color stored as three numbers, for red, green, and blue. A raster image stored in memory can be displayed by using each pixel in the stored image to control the color of one pixel of the display.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Or, maybe it’s because raster images are so convenient that raster devices are prevalent.</p>
+</aside>
+<p class="indent">But we don’t always want to display an image this way. We might want to change the size or orientation of the image, correct the colors, or even show the image pasted on a moving three-dimensional surface. Even in televisions, the <a id="term-713"/><span aria-label="64" epub:type="pagebreak" id="pg_64" role="doc-pagebreak"/>display rarely has the same number of pixels as the image being displayed. Considerations like these break the direct link between image pixels and display pixels. It’s best to think of a raster image as a <em>device-independent</em> description of the image to be displayed, and the display device as a way of approximating that ideal image.</p>
+<p>There are other ways of describing images besides using arrays of pixels. A <em>vector image</em> is described by storing descriptions of shapes—areas of color bounded by lines or curves—with no reference to any particular pixel grid. In essence, this amounts to storing the <em>instructions</em> for displaying the image rather than the pixels needed to display it. The main advantage of vector images is that they are <em>resolution independent</em> and can be displayed well on very-high-resolution devices. The corresponding disadvantage is that they must be <em>rasterized</em> before they can be displayed. <a id="index_term1306"/>Vector images are often used for text, diagrams, mechanical drawings, and other applications where crispness and precision are important and photographic images and complex shading aren’t needed.</p>
+<p>In this chapter, we discuss the basics of raster images and displays, paying particular attention to the nonlinearities of standard displays. The details of how</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Or: you have to know what those numbers in your image actually mean. pixel values relate to light intensities are important to have in mind when we discuss computing images in later chapters.</p>
+</aside>
+<section>
+<h2 id="sec3_1"><a epub:type="backlink" href="C02a_toc.xhtml#rsec3_1" role="doc-backlink"><span class="green">3.1 Raster Devices</span></a></h2>
+<p>Before discussing raster images in the abstract, it is instructive to look at the basic operation of some specific devices that use these images. A few familiar raster devices can be categorized into a simple hierarchy:</p>
+<ul class="list-bullet">
+<li>
+<p class="list">Output</p>
+<p><strong>–</strong> Display</p>
+<p>* Transmissive: liquid crystal display (LCD)</p>
+<p>* Emissive: light-emitting diode (LED) display</p>
+</li>
+<li>
+<p class="list">Hardcopy</p>
+<p>* Binary: ink-jet printer</p>
+<p>* Continuous tone: dye sublimation printer</p>
+</li>
+<li>
+<p class="list">Input</p>
+<p><strong>–</strong> 2D array sensor: digital camera</p>
+<p><strong>–</strong> 1D array sensor: flatbed scanner</p>
+</li>
+</ul>
+<section>
+<h3 id="sec3_1_1"><a id="index_term340"/><a id="term-625"/><a id="term-666"/><a id="term-831"/><a id="term-832"/><span aria-label="65" epub:type="pagebreak" id="pg_65" role="doc-pagebreak"/><span class="green">3.1.1 Displays</span></h3>
+<p>Current displays, including televisions and digital cinematic projectors as well as displays and projectors for computers, are nearly universally based on fixed arrays of pixels. They can be separated into emissive displays, which use pixels that directly emit controllable amounts of light, and transmissive displays, in which the pixels themselves don’t emit light but instead vary the amount of light that they allow to pass through them. Transmissive displays require a light source to illuminate them: in a direct-viewed display, this is a <em>backlight</em> behind the array; in a projector, it is a lamp that emits light that is projected onto the screen after passing through the array. An emissive display is its own light source.</p>
+<p>Light-emitting diode (LED) displays are an example of the emissive type. Each pixel is composed of one or more LEDs, which are semiconductor devices (based on inorganic or organic semiconductors) that emit light with intensity depending on the electrical current passing through them (see <a href="C08_chapter3.xhtml#f3_1">Figure 3.1</a>).</p>
+<p>The pixels in a color display are divided into three independently controlled <em><a id="index_term1134"/>subpixels</em>—one red, one green, and one blue—each with its own LED made using different materials so that they emit light of different colors (<a href="C08_chapter3.xhtml#f3_2">Figure 3.2</a>). When the display is viewed from a distance, the eye can’t separate the individual subpixels, and the perceived color is a mixture of red, green, and blue.</p>
+<p>Liquid crystal displays (LCDs) are an example of the transmissive type. A liquid crystal is a material whose molecular structure enables it to rotate the polarization of light that passes through it, and the degree of rotation can be adjusted by an applied voltage. An LCD pixel (<a href="C08_chapter3.xhtml#f3_3">Figure 3.3</a>) has a layer of polarizing film behind it, so that it is illuminated by polarized light—let’s assume it is polarized horizontally.</p>
+<figure id="f3_1" tabindex="0">
+<img alt="" src="../images/fig3_1.jpg"/>
+<figcaption><p><span class="blue">Figure 3.1.</span> The operation of a light-emitting diode (LED) display.</p></figcaption>
+</figure>
+<figure id="f3_2" tabindex="0">
+<img alt="" src="../images/fig3_2.jpg"/>
+<figcaption><p><span class="blue">Figure 3.2.</span> The red, green, and blue subpixels within a pixel of a flat-panel display.</p></figcaption>
+</figure>
+<p>A second layer of polarizing film in front of the pixel is oriented to transmit only vertically polarized light. If the applied voltage is set so that the liquid crystal layer in between does not change the polarization, all light is blocked and the pixel is in the “off” (minimum intensity) state. If the voltage is set so that the liquid crystal rotates the polarization by 90°, then all the light that entered through the back of the pixel will escape through the front, and the pixel is fully “on”—it has its maximum intensity. Intermediate voltages will partly rotate the polarization so that the front polarizer partly blocks the light, resulting in intensities between the minimum and maximum (<a href="C08_chapter3.xhtml#f3_4">Figure 3.4</a>). Like color LED displays, color LCDs have red, green, and blue subpixels within each pixel, which are three independent pixels with red, green, and blue color filters over them.</p>
+<p>Any type of display with a fixed pixel grid, including these and other technologies, has a fundamentally fixed <em>resolution</em> determined by the size of the grid. <a id="term-394"/><a id="term-410"/><a id="term-465"/><a id="term-512"/><a id="term-513"/><a id="term-639"/><span aria-label="66" epub:type="pagebreak" id="pg_66" role="doc-pagebreak"/>For displays and images, resolution simply means the dimensions of the pixel grid: if a desktop monitor has a resolution of 1920 × 1200 pixels, this means that it has 2,304,000 pixels arranged in 1920 columns and 1200 rows.</p>
+<figure id="f3_3" tabindex="0">
+<img alt="" src="../images/fig3_3.jpg"/>
+<figcaption><p><span class="blue">Figure 3.3.</span> One pixel of an LCD display in the off state (bottom), in which the front polarizer blocks all the light that passes the back polarizer, and the on state (top), in which the liquid crystal cell rotates the polarization of the light so that it can pass through the front polarizer. <em>Figure courtesy of Reinhard, Khan, Akyüz, and Johnson (2008)</em>.</p></figcaption>
+</figure>
+<figure id="f3_4" tabindex="0">
+<img alt="" src="../images/fig3_4.jpg"/>
+<figcaption><p><span class="blue">Figure 3.4.</span> The operation of a liquid crystal display (LCD).</p></figcaption>
+</figure>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">The resolution of a display is sometimes called its “native resolution” since most displays can handle images of other resolutions, via built-in conversion.</p>
+</aside>
+<p class="indent">An image of a different <a id="index_term992"/>resolution, to fill the screen, must be converted into a 1920 × 1200 image using the methods of <a href="C15_chapter10.xhtml#c10">Chapter 10</a>.</p>
+</section>
+<section>
+<h3 id="sec3_1_2"><a id="index_term516"/><span class="green">3.1.2 Hardcopy Devices</span></h3>
+<p>The process of recording images permanently on paper has very different constraints from showing images transiently on a display. In printing, pigments are distributed on paper or another medium so that when light reflects from the paper it forms the desired image. <a id="index_term896"/>Printers are raster devices like displays, but many printers can only print <em><a id="index_term553"/>binary images</em>—pigment is either deposited or not at each grid position, with no intermediate amounts possible.</p>
+<p>An <a id="index_term622"/>ink-jet printer (<a href="C08_chapter3.xhtml#f3_5">Figure 3.5</a>) is an example of a device that forms a raster image by scanning. An ink-jet print head contains liquid ink carrying pigment, which can be sprayed in very small drops under electronic control. The head <a id="term-395"/><a id="term-640"/><a id="term-883"/><a id="term-884"/><span aria-label="67" epub:type="pagebreak" id="pg_67" role="doc-pagebreak"/>moves across the paper, and drops are emitted as it passes grid positions that should receive ink; no ink is emitted in areas intended to remain blank. After each sweep, the paper is advanced slightly, and then, the next row of the grid is laid down. Color prints are made by using several print heads, each spraying ink with a different pigment, so that each grid position can receive any combination of different colored drops. Because all drops are the same, an ink-jet printer prints binary images: at each grid point, there is a drop or no drop; there are no intermediate shades.</p>
+<p>An ink-jet printer has no physical array of pixels; the resolution is determined by how small the drops can be made and how far the paper is advanced after each sweep. Many ink-jet printers have multiple nozzles in the print head, enabling several sweeps to be made in one pass, but it is the paper advance, not the nozzle spacing, that ultimately determines the spacing of the rows.</p>
+<p>The <em>thermal dye transfer</em> process is an example of a <em>continuous tone</em> printing process, meaning that varying amounts of dye can be deposited at each pixel—it is not all-or-nothing like an ink-jet printer (<a href="C08_chapter3.xhtml#f3_6">Figure 3.6</a>). A <em>donor ribbon</em> containing colored dye is pressed between the paper, or <em>dye receiver</em>, and a <em>print head</em> containing a linear array of heating elements, one for each column of pixels in the image. As the paper and ribbon move past the head, the heating elements switch on and off to heat the ribbon in areas where dye is desired, causing the dye to diffuse from the ribbon to the paper. This process is repeated for each of several dye colors. Since higher temperatures cause more dye to be transferred, the amount of each dye deposited at each grid position can be controlled, allowing a continuous range of colors to be produced. The number of heating elements in the print head establishes a fixed resolution in the direction across the page, but the resolution along the page is determined by the rate of heating and cooling compared to the speed of the paper.</p>
+<figure id="f3_5" tabindex="0">
+<img alt="" src="../images/fig3_5.jpg"/>
+<figcaption><p><span class="blue">Figure 3.5.</span> The operation of an ink-jet printer.</p></figcaption>
+</figure>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">There are also continuous ink-jet printers that print in a continuous helical path on paper wrapped around a spinning drum, rather than moving the head back and forth.</p>
+</aside>
+<figure id="f3_6" tabindex="0">
+<img alt="" src="../images/fig3_6.jpg"/>
+<figcaption><p><span class="blue">Figure 3.6.</span> The operation of a thermal dye transfer printer.</p></figcaption>
+</figure>
+<p>Unlike displays, the resolution of printers is described in terms of the <em>pixel density</em> instead of the total count of pixels. So a thermal dye transfer printer that has elements spaced 300 per inch across its print head has a resolution of 300 <em>pixels per inch</em> (ppi) across the page. If the resolution along the page is chosen to be the same, we can simply say the printer’s resolution is 300 ppi. An ink-jet printer that places dots on a grid with 1200 grid points per inch is described as having a resolution of 1200 <em>dots per inch</em> (dpi). Because the ink-jet printer is a binary device, it requires a much finer grid for at least two reasons. Because edges are abrupt black/white boundaries, very high resolution is required to avoid stair-stepping, or aliasing, from appearing (see <a href="C14_chapter9.xhtml#sec9_3">Section 9.3</a>). When continuous-tone images are printed, the high resolution is required to simulate intermediate colors by printing varying-<a id="index_term868"/>density dot patterns called <em><a id="index_term515"/>halftones</em>.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">The term “dpi” is all too often used to mean “pixels per inch,” but dpi should be used in reference to binary devices and ppi in reference to continuous-tone devices.</p>
+</aside>
+</section>
+<section>
+<h3 id="sec3_1_3"><a id="index_term623"/><a id="term-261"/><a id="term-269"/><span aria-label="68" epub:type="pagebreak" id="pg_68" role="doc-pagebreak"/><span class="green">3.1.3 Input Devices</span></h3>
+<p>Raster images have to come from somewhere, and any image that wasn’t computed by some algorithm has to have been measured by some <em>raster input device</em>, most often a camera or <a id="index_term1018"/>scanner. Even in rendering images of 3D scenes, photographs are used constantly as texture maps (see <a href="C16_chapter11.xhtml#c11">Chapter 11</a>). A <a id="index_term938"/>raster input device has to make a light measurement for each pixel, and (like output devices) they are usually based on arrays of sensors.</p>
+<p>A digital camera is an example of a 2D array input device. The image sensor in a camera is a semiconductor device with a grid of light-sensitive pixels. Two common types of arrays are known as CCDs (charge-coupled devices) and CMOS (complimentary metal–oxide–semiconductor) image sensors. The camera’s lens projects an image of the scene to be photographed onto the sensor, and then, each pixel measures the light energy falling on it, ultimately resulting in a number that goes into the output image (<a href="C08_chapter3.xhtml#f3_7">Figure 3.7</a>). In much the same way as color displays use red, green, and blue subpixels, most color cameras work by using a <em>color-filter array</em> or <em>mosaic</em> to allow each pixel to see only red, green, or blue light, leaving the image processing software to fill in the missing values in a process known as <em><a id="index_term316"/>demosaicking</em> (<a href="C08_chapter3.xhtml#f3_8">Figure 3.8</a>).</p>
+<figure id="f3_7" tabindex="0">
+<img alt="" src="../images/fig3_7.jpg"/>
+<figcaption><p><span class="blue">Figure 3.7.</span> The operation of a digital camera.</p></figcaption>
+</figure>
+<figure id="f3_8" tabindex="0">
+<img alt="" src="../images/fig3_8.jpg"/>
+<figcaption><p><span class="blue">Figure 3.8.</span> Most color <a id="index_term326"/>digital cameras use a color-filter array similar to the <em>Bayer mosaic</em> shown here. Each pixel measures either red, green, or blue light.</p></figcaption>
+</figure>
+<p>Other cameras use three separate arrays, or three separate layers in the array, to measure independent red, green, and blue values at each pixel, producing a usable color image without further processing. The resolution of a camera is determined by the fixed number of pixels in the array and is usually quoted using the total count of pixels: a camera with an array of 3000 columns and 2000 rows produces an image of resolution 3000 × 2000, which has 6 million pixels, and is called a 6 megapixel (MP) camera. It’s important to remember that a mosaic sensor does not measure a complete color image, so a camera that measures the same number of pixels but with independent red, green, and blue measurements records more information about the image than one with a mosaic sensor.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">People who are selling cameras use “mega” to mean 10<sup>6</sup>, not 2<sup>20</sup> as with megabytes.</p>
+</aside>
+<p class="indent">A flatbed scanner also measures red, green, and blue values for each of a grid of pixels, but like a thermal dye transfer printer, it uses a 1D array that sweeps across the page being scanned, making many measurements per second (<a href="C08_chapter3.xhtml#f3_9">Figure 3.9</a>). The resolution across the page is fixed by the size of the array, and the resolution along the page is determined by the frequency of measurements compared to the speed at which the scan head moves. A color scanner has a 3 × <em>n<sub>x</sub></em> array, where <em>n<sub>x</sub></em> is the number of pixels across the page, with the three rows covered by red, green, and blue filters. With an appropriate delay between the times at which the three colors are measured, this allows three independent color measurements at each grid point. As with continuous-tone printers, the resolution of scanners is reported in pixels per inch (ppi).</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">The resolution of a scanner is sometimes called its “optical resolution” since most scanners can produce images of other resolutions, via built-in conversion.</p>
+</aside>
+<p class="indent"><a id="term-732"/><span aria-label="69" epub:type="pagebreak" id="pg_69" role="doc-pagebreak"/>With this concrete information about where our <a id="index_term872"/>images come from and where they will go, we’ll now discuss images more abstractly, in the way we’ll use them in graphics algorithms.</p>
+<figure id="f3_9" tabindex="0">
+<img alt="" src="../images/fig3_9.jpg"/>
+<figcaption><p><span class="blue">Figure 3.9.</span> The operation of a flatbed scanner.</p></figcaption>
+</figure>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">“A pixel is not a little square!”—Alvy Ray Smith (1995)</p>
+</aside>
+</section>
+</section>
+<section>
+<h2 id="sec3_2"><a id="index_term560"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec3_2" role="doc-backlink"><span class="green">3.2 Images, Pixels, and Geometry</span></a></h2>
+<p>We know that a raster image is a big array of pixels, each of which stores information about the color of the image at its grid point. We’ve seen what various output devices do with images we send to them and how input devices derive them from images formed by light in the physical world. But for computations in the computer, we need a convenient abstraction that is independent of the specifics of any device, that we can use to reason about how to produce or interpret the values stored in images.</p>
+<p>When we measure or reproduce images, they take the form of two-dimensional distributions of light energy: the light emitted from the monitor as a function of position on the face of the display; the light falling on a camera’s image sensor as a function of position across the sensor’s plane; the <em>reflectance</em>, or fraction of light reflected (as opposed to absorbed) as a function of position on a piece of paper. So in the physical world, images are functions defined over two-dimensional areas—almost always rectangles. So we can abstract an image as a function</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>I</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo><m:mo>:</m:mo><m:mi>R</m:mi><m:mo>→</m:mo><m:mi>V</m:mi><m:mo>,</m:mo></m:mrow></m:mrow></m:math>
+</div>
+<p>where <em>R</em> ⊂ ℝ<sup>2</sup> is a rectangular area and <em>V</em> is the set of possible pixel values. The simplest case is an idealized grayscale image where each point in the rectangle has just a brightness (no color), and we can say <em>V</em> = ℝ<sup>+</sup> (the nonnegative reals). An idealized color image, with red, green, and blue values at each pixel, has <em>V</em> = (ℝ<sup>+</sup>)<sup>3</sup>. We’ll discuss other possibilities for <em>V</em> in the next section.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Are there any raster devices that are not rectangular?</p>
+</aside>
+<p class="indent">How does a raster image relate to this abstract notion of a continuous image? Looking to the concrete examples, a pixel from a camera or scanner is a measurement of the average color of the image over some small area around the pixel. A display pixel, with its red, green, and blue subpixels, is designed so that the average color of the image over the face of the pixel is controlled by the corresponding pixel value in the raster image. In both cases, the pixel value is a local average of the color of the image, and it is called a <em>point sample</em> of the image. In other words, when we find the value <em>x</em> in a pixel, it means “the value of the image in the vicinity of this grid point is <em>x</em>.” The idea of images as sampled representations of functions is explored further in <a href="C15_chapter10.xhtml#c10">Chapter 10</a>.</p>
+<figure id="f3_10" tabindex="0">
+<img alt="" src="../images/fig3_10.jpg"/>
+<figcaption><p><span class="blue">Figure 3.10.</span> <a id="term-616"/><a id="term-714"/><span aria-label="70" epub:type="pagebreak" id="pg_70" role="doc-pagebreak"/><a id="index_term866"/>Coordinates of a four-pixel × three-pixel screen. Note that in some APIs the <em>y</em>-axis will point downward.</p></figcaption>
+</figure>
+<p>A mundane but important question is where the pixels are located in 2D space. This is only a matter of convention, but establishing a consistent convention is important! In this book, a raster image is indexed by the pair (<em>i, j</em>) indicating the column (<em>i</em>) and row (<em>j</em>) of the pixel, counting from the bottom left. If an image has <em>n<sub>x</sub></em> columns and <em>n<sub>y</sub></em> rows of pixels, the bottom-left pixel is (0, 0) and the top-right is pixel (<em>n<sub>x</sub></em> <em>–</em> 1<em>,n<sub>y</sub></em> <em>–</em> 1) . We need 2D real screen coordinates to specify pixel positions. We will place the pixels’ sample points at integer coordinates, as shown by the 4 × 3 screen in <a href="C08_chapter3.xhtml#f3_10">Figure 3.10</a>.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">In some APIs, and many file formats, the rows of an image are organized top-to-bottom, so that (0, 0) is at the top left. This is for historical reasons: the rows in analog television transmission started from the top.</p>
+</aside>
+<p class="indent">The rectangular domain of the image has width <em>n<sub>x</sub></em> and height <em>n<sub>y</sub></em> and is centered on this grid, meaning that it extends half a pixel beyond the last sample point on each side. So the rectangular domain of a <em>n<sub>x</sub></em> × <em>n<sub>y</sub></em> image is</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Some systems shift the coordinates by half a pixel to place the sample points halfway between the integers but place the edges of the image at integers.</p>
+</aside>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>R</m:mi><m:mo>−</m:mo><m:mrow><m:mo>[</m:mo><m:mo>−</m:mo><m:mn>0.5</m:mn><m:mo>,</m:mo><m:msub><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:mn>0.5</m:mn><m:mo>]</m:mo></m:mrow><m:mo>×</m:mo><m:mrow><m:mo>[</m:mo><m:mn>0.5</m:mn><m:mo>,</m:mo><m:msub><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:mn>0.5</m:mn><m:mo>]</m:mo><m:mn>.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<p>Again, these coordinates are simply conventions, but they will be important to remember later when implementing cameras and viewing transformations.</p>
+<section>
+<h3 id="sec3_2_1"><a id="index_term876"/><span class="green">3.2.1 Pixel Values</span></h3>
+<p>So far we have described the values of pixels in terms of real numbers, representing intensity (possibly separately for red, green, and blue) at a point in the image. This suggests that images should be arrays of floating-point numbers, with either one (for <em>grayscale</em>, or black and white, images) or three (for <a id="index_term995"/>RGB color images) <span aria-label="71" epub:type="pagebreak" id="pg_71" role="doc-pagebreak"/>32-bit floating-point numbers stored per pixel. This format is sometimes used, when its precision and range of values are needed, but images have a lot of pixels and memory and bandwidth for storing and transmitting images are invariably scarce. Just one ten-megapixel photograph would consume about 115 MB of RAM in this format.</p>
+<p>Less range is required for images that are meant to be displayed directly. While the range of possible light intensities is unbounded in principle, any given device has a decidedly finite maximum intensity, so in many contexts, it is perfectly sufficient for pixels to have a bounded range, usually taken to be [0, 1] for simplicity. For instance, the possible values in an 8-bit image are 0, 1<em>/</em>255, 2<em>/</em>255<em>, ...,</em> 254<em>/</em>255, 1. Images stored with floating-point numbers, allowing a wide range of values, are often called <em>high dynamic range</em> (HDR) images to distinguish them from fixed-range, or <em>low dynamic range</em> (<a id="index_term705"/>LDR) images that are stored with integers. See <a href="C25_chapter20.xhtml#c20">Chapter 20</a> for an in-depth discussion of techniques and applications for high dynamic range images.</p>
+<p>Here are some pixel formats with typical applications:</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Why 115 MB and not 120 MB?</p>
+</aside>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">The denominator of 255, rather than 256, is awkward, but being able to represent 0 and 1 exactly is important.</p>
+</aside>
+<ul class="list-bullet">
+<li>
+<p class="list">1-bit grayscale—text and other images where intermediate grays are not desired (high resolution required);</p>
+</li>
+<li>
+<p class="list">8-bit RGB fixed-range color (24 bits total per pixel)—web and email applications, consumer photographs;</p>
+</li>
+<li>
+<p class="list">8- or 10-bit fixed-range RGB (24–30 bits/pixel)—digital interfaces to computer displays;</p>
+</li>
+<li>
+<p class="list">12- to 14-bit fixed-range RGB (36–42 bits/pixel)—raw camera images for professional photography;</p>
+</li>
+<li>
+<p class="list">16-bit fixed-range RGB (48 bits/pixel)—professional photography and printing; intermediate format for image processing of fixed-range images;</p>
+</li>
+<li>
+<p class="list">16-bit fixed-range grayscale (16 bits/pixel)—radiology and medical imaging;</p>
+</li>
+<li>
+<p class="list">16-bit “half-precision” floating-point RGB—HDR images; intermediate format for real-time rendering;</p>
+</li>
+<li>
+<p class="list">32-bit floating-point RGB—general-purpose intermediate format for software rendering and processing of <a id="index_term525"/>HDR images.</p>
+</li>
+</ul>
+<p>Reducing the number of bits used to store each pixel leads to two distinctive types of <em><a id="index_term60"/>artifacts</em>, or artificially introduced flaws, in images. First, encoding <a id="term-325"/><a id="term-657"/><span aria-label="72" epub:type="pagebreak" id="pg_72" role="doc-pagebreak"/>images with fixed-range values produces <em><a id="index_term147"/>clipping</em> when pixels that would otherwise be brighter than the maximum value are set, or clipped, to the maximum representable value. For instance, a photograph of a sunny scene may include reflections that are much brighter than white surfaces; these will be clipped (even if they were measured by the camera) when the image is converted to a fixed range to be displayed. Second, encoding images with limited precision leads to <em>quantization</em> artifacts, or <em>banding</em>, when the need to round pixel values to the nearest representable value introduces visible jumps in intensity or color. <a id="index_term70"/>Banding can be particularly insidious in animation and video, where the bands may not be objectionable in still images, but become very visible when they move back and forth.</p>
+</section>
+<section>
+<h3 id="sec3_2_2"><a id="index_term750"/><span class="green">3.2.2 Monitor Intensities and Gamma</span></h3>
+<p>All modern monitors take digital input for the “value” of a pixel and convert this to an intensity level. Real monitors have some nonzero intensity when they are off because the screen reflects some light. For our purposes, we can consider this “black” and the monitor fully on as “white.” We assume a numeric description of pixel color that ranges from zero to one. Black is zero, white is one, and a gray halfway between black and white is 0.5. Note that here “halfway” refers to the physical amount of light coming from the pixel, rather than the appearance. The human perception of intensity is nonlinear and will not be part of the present discussion; see <a href="C24_chapter19.xhtml#c19">Chapter 19</a> for more.</p>
+<p>There are two key issues that must be understood to produce correct images on monitors. The first is that monitors are nonlinear with respect to input. For example, if you give a monitor 0, 0.5, and 1.0 as inputs for three pixels, the intensities displayed might be 0, 0.25, and 1.0 (off, one-quarter fully on, and fully on). As an approximate characterization of this nonlinearity, monitors are commonly characterized by a <em>γ</em> (“gamma”) value. This value is the degree of freedom in the formula</p>
+<div class="disp-formula" id="equ3_1">
+<m:math alttext=""><m:mrow><m:mtext>displayed intensity =</m:mtext><m:mrow><m:mo>(</m:mo><m:mtext>maximum intensity</m:mtext><m:mo>)</m:mo><m:msup><m:mrow><m:mi>a</m:mi></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mo>,</m:mo></m:mrow></m:mrow><m:mspace width="3em"/><m:mo>(3.1)</m:mo></m:math>
+</div>
+<p>where <em>a</em> is the input pixel value between zero and one. For example, if a monitor has a gamma of 2.0, and we input a value of <em>a</em> = 0.5, the displayed intensity will be one-fourth the maximum possible intensity because 0.5<sup>2</sup> = 0.25. Note that <em>a</em> = 0 maps to zero intensity and <em>a</em> = 1 maps to the maximum intensity regardless of the value of <em>γ</em>. Describing a display’s nonlinearity using <em>γ</em> is only an approximation; we do not need a great deal of accuracy in estimating the <em>γ</em> of a device. A nice visual way to gauge the nonlinearity is to find what value of <em>a</em> <a id="term-326"/><a id="term-536"/><span aria-label="73" epub:type="pagebreak" id="pg_73" role="doc-pagebreak"/>gives an intensity halfway between black and white. This <em>a</em> will be</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mn>0.5</m:mn><m:mo>=</m:mo><m:msup><m:mrow><m:mi>a</m:mi></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>If we can find that <em>a</em>, we can deduce <em>γ</em> by taking logarithms on both sides:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>γ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mtext>In 0.5</m:mtext></m:mrow><m:mrow><m:mtext>In</m:mtext><m:mi>a</m:mi></m:mrow></m:mfrac><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>We can find this <em>a</em> by a standard technique where we display a checkerboard pattern of black and white pixels next to a square of gray pixels with input <em>a</em> (<a href="C08_chapter3.xhtml#f3_11">Figure 3.11</a>), then ask the user to adjust <em>a</em> (with a slider, for instance) until the two sides match in average brightness. When you look at this image from a distance (or without glasses if you are nearsighted), the two sides of the image will look about the same when <em>a</em> is producing an intensity halfway between black and white. This is because the blurred checkerboard is mixing even numbers of white and black pixels so the overall effect is a uniform color halfway between white and black.</p>
+<p>Once we know <em>γ</em>, we can <em><a id="index_term425"/>gamma correct</em> our input so that a value of <em>a</em> = 0.5 is displayed with intensity halfway between black and white. This is done with the transformation</p>
+<figure id="f3_11" tabindex="0">
+<img alt="" src="../images/fig3_11.jpg"/>
+<figcaption><p><span class="blue">Figure 3.11.</span> Alternating black and white pixels viewed from a distance are halfway between black and white. The gamma of a monitor can be inferred by finding a gray value that appears to have the same intensity as the black and white pattern.</p></figcaption>
+</figure>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">For monitors with analog interfaces, which have difficulty changing intensity rapidly along the horizontal direction, horizontal black and white stripes work better than a checkerboard.</p>
+</aside>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>a</m:mi><m:mo>′</m:mo><m:mo>=</m:mo><m:msup><m:mrow><m:mi>a</m:mi></m:mrow><m:mrow><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:mfrac></m:mrow></m:msup><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>When this formula is plugged into Equation (3.1), we get</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtext>Displayed intensity</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:msup><m:mrow><m:mtable><m:mtr><m:mtd><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mo>′</m:mo><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mo>=</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mrow><m:mi>a</m:mi></m:mrow><m:mrow><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:mfrac></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:mtext>Maximum intensity</m:mtext><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi>a</m:mi><m:mrow><m:mo>(</m:mo><m:mtext>Maximum intensity</m:mtext><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Another important characteristic of real displays is that they take quantized input values. So while we can manipulate intensities in the floating-point range [0, 1], the detailed input to a monitor is a fixed-size integer. The most common range for this integer is 0–255 which can be held in 8 bits of storage. This means that the possible values for <em>a</em> are not any number in [0, 1] but instead</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtext>Possible values for</m:mtext><m:mi>a</m:mi><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mfrac><m:mrow><m:mn>0</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mrow><m:mn>2</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo><m:mn>...</m:mn><m:mo>,</m:mo><m:mfrac><m:mrow><m:mn>254</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mrow><m:mn>255</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>}</m:mo></m:mrow><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>This means the possible displayed intensity values are approximately</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>{</m:mo><m:mi>M</m:mi><m:msup><m:mrow><m:mo>(</m:mo><m:mfrac><m:mrow><m:mn>0</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mo>,</m:mo><m:mi>M</m:mi><m:msup><m:mrow><m:mo>(</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mo>,</m:mo><m:mi>M</m:mi><m:msup><m:mrow><m:mo>(</m:mo><m:mfrac><m:mrow><m:mn>2</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mo>,</m:mo><m:mn>...</m:mn><m:mo>,</m:mo><m:mi>M</m:mi><m:msup><m:mrow><m:mo>(</m:mo><m:mfrac><m:mrow><m:mn>254</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mo>,</m:mo><m:mi>M</m:mi><m:msup><m:mrow><m:mo>(</m:mo><m:mfrac><m:mrow><m:mn>255</m:mn></m:mrow><m:mrow><m:mn>255</m:mn></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>γ</m:mi></m:mrow></m:msup><m:mo>}</m:mo><m:mo>,</m:mo></m:mrow></m:mrow></m:math>
+</div>
+<p><a id="term-120"/><a id="term-715"/><span aria-label="74" epub:type="pagebreak" id="pg_74" role="doc-pagebreak"/>where <em>M</em> is the maximum intensity. In applications where the exact intensities need to be controlled, we would have to actually measure the 256 possible intensities, and these intensities might be different at different points on the screen, especially for CRTs. They might also vary with viewing angle. Fortunately, few applications require such accurate calibration.</p>
+</section>
+</section>
+<section>
+<h2 id="sec3_3"><a id="index_term169"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec3_3" role="doc-backlink"><span class="green">3.3 RGB Color</span></a></h2>
+<p>Most computer graphics images are defined in terms of red-green-blue (RGB) color. RGB color is a simple space that allows straightforward conversion to the controls for most computer screens. In this section, RGB color is discussed from a user’s perspective, and operational facility is the goal. A more thorough discussion of color is given in <a href="C23_chapter18.xhtml#c18">Chapter 18</a>, but the mechanics of RGB color space will allow us to write most graphics programs. The basic idea of RGB color space is that the color is displayed by mixing three <em>primary</em> lights: one red, one green, and one blue. The lights mix in an <em>additive</em> manner.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">In grade school, you probably learned that the primaries are red, yellow, and blue, and that, e.g., yellow + blue = green. This is <em>subtractive</em> color mixing, which is fundamentally different from the more familiar additive mixing that happens in displays.</p>
+</aside>
+<p class="indent">In RGB additive color mixing we have (<a href="C08_chapter3.xhtml#f3_12">Figure 3.12</a>)</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd columnalign="right"><m:mtext>Red</m:mtext><m:mo>+</m:mo><m:mtext>Green</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mtext>Yellow,</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:mtext>Green</m:mtext><m:mo>+</m:mo><m:mtext>Blue</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mtext>Cyan,</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:mtext>Blue</m:mtext><m:mo>+</m:mo><m:mtext>Red</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mtext>Magenta,</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:mtext>Red</m:mtext><m:mo>+</m:mo><m:mtext>Green</m:mtext><m:mo>+</m:mo><m:mtext>Blue</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mtext>White.</m:mtext></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>The color “cyan” is a blue-green, and the color “magenta” is a purple.</p>
+<figure id="f3_12" tabindex="0">
+<img alt="" src="../images/fig3_12.jpg"/>
+<figcaption><p><span class="blue">Figure 3.12.</span> The additive mixing rules for colors red/-green/blue.</p></figcaption>
+</figure>
+<p>If we are allowed to dim the primary lights from fully off (indicated by pixel value 0) to fully on (indicated by 1), we can create all the colors that can be displayed on an RGB monitor. The red, green, and blue pixel values create a three-dimensional <em>RGB color cube</em> that has a red, a green, and a blue axis. Allowable coordinates for the axes range from zero to one. The color cube is shown graphically in <a href="C08_chapter3.xhtml#f3_13">Figure 3.13</a>.</p>
+<p>The colors at the corners of the cube are</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtext>Black</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mtext>Red</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mtext>Green</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mtext>Blue</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mtext>Yellow</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mtext>Magenta</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<figure id="f3_13" tabindex="0">
+<img alt="" src="../images/fig3_13.jpg"/>
+<figcaption><p><span class="blue">Figure 3.13.</span> <a id="term-121"/><a id="term-716"/><span aria-label="75" epub:type="pagebreak" id="pg_75" role="doc-pagebreak"/>The RGB color cube in 3D and its faces unfolded. Any RGB color is a point in the cube.</p></figcaption>
+</figure>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtext>cyan</m:mtext><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mtext>white</m:mtext><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Actual RGB levels are often given in quantized form, just like the grayscales discussed in <a href="C08_chapter3.xhtml#sec3_2_2">Section 3.2.2</a>. Each component is specified with an integer. The most common size for these integers is one byte each, so each of the three RGB components is an integer between 0 and 255. The three integers together take up three bytes, which is 24 bits. Thus, a system that has “24-bit color” has 256 possible levels for each of the three primary colors. Issues of gamma correction discussed in <a href="C08_chapter3.xhtml#sec3_2_2">Section 3.2.2</a> also apply to each RGB component separately.</p>
+</section>
+<section>
+<h2 id="sec3_4"><a id="index_term15"/><a id="index_term196"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec3_4" role="doc-backlink"><span class="green">3.4 Alpha Compositing</span></a></h2>
+<p>Often, we would like to only partially overwrite the contents of a pixel. A common example of this occurs in <em>compositing</em>, where we have a background and want to insert a foreground image over it. For opaque pixels in the foreground, we just replace the background pixel. For entirely transparent foreground pixels, we do not change the background pixel. For <em>partially</em> transparent pixels, some care must be taken. Partially transparent pixels can occur when the foreground object has partially transparent regions, such as glass. But, the most frequent case where foreground and background must be blended is when the foreground object only partly covers the pixel, either at the edge of the foreground object, or when there are subpixel holes such as between the leaves of a distant tree.</p>
+<p>The most important piece of information needed to blend a foreground object over a background object is the <em>pixel <a id="index_term867"/>coverage</em>, which tells the fraction of the pixel covered by the foreground layer. We can call this fraction α. If we want <a id="term-6"/><a id="term-7"/><a id="term-154"/><span aria-label="76" epub:type="pagebreak" id="pg_76" role="doc-pagebreak"/>to composite a foreground color <strong>c</strong><em><sub>f</sub></em> over background color <strong>c</strong><em><sub>b</sub></em>, and the fraction of the pixel covered by the foreground is α, then we can use the formula</p>
+<div class="disp-formula" id="equ3_2">
+<m:math alttext=""><m:mrow><m:mtext>c</m:mtext><m:mo>=</m:mo><m:msub><m:mrow><m:mi>α</m:mi><m:mtext>c</m:mtext></m:mrow><m:mrow><m:mi>f</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mi>α</m:mi><m:mo>)</m:mo><m:msub><m:mrow><m:mtext>c</m:mtext></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub><m:mn>.</m:mn></m:mrow></m:mrow><m:mspace width="3em"/><m:mo>(3.2)</m:mo></m:math>
+</div>
+<p>For an opaque foreground layer, the interpretation is that the foreground object covers area α within the pixel’s rectangle and the background object covers the remaining area, which is (1 <em>–</em> α) . For a transparent layer (think of an image painted on glass or on tracing paper, using translucent paint), the interpretation is that the foreground layer blocks the fraction (1 <em>–</em> α) of the light coming through from the background and contributes a fraction α of its own color to replace what was removed. An example of using Equation (3.2) is shown in <a href="C08_chapter3.xhtml#f3_14">Figure 3.14</a>.</p>
+<p>The α values for all the pixels in an image might be stored in a separate grayscale image, which is then known as an <em><a id="index_term16"/>alpha mask</em> or <em><a id="index_term1270"/>transparency mask</em>. Or the information can be stored as a fourth channel in an RGB image, in which case it is called the <em><a id="index_term14"/>alpha channel</em>, and the image can be called an RGBA image. With 8-bit images, each pixel then takes up 32 bits, which is a conveniently sized chunk in many computer architectures.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Since the weights of the foreground and background layers add up to 1, the color won’t change if the foreground and background layers have the same color.</p>
+</aside>
+<p class="indent">Although Equation (3.2) is what is usually used, there are a variety of situations where α is used differently (Porter &amp; Duff, 1984).</p>
+<figure id="f3_14" tabindex="0">
+<img alt="" src="../images/fig3_14.jpg"/>
+<figcaption><p><span class="blue">Figure 3.14.</span> An example of compositing using Equation (3.2). The foreground image is in effect cropped by the α channel before being put on top of the background image. The resulting composite is shown on the bottom.</p></figcaption>
+</figure>
+<section>
+<h3 id="sec3_4_1"><span class="green">3.4.1 Image Storage</span></h3>
+<p><a id="term-482"/><a id="term-628"/><a id="term-636"/><a id="term-889"/><span aria-label="77" epub:type="pagebreak" id="pg_77" role="doc-pagebreak"/>Most RGB image <a id="index_term558"/>formats use eight bits for each of the red, green, and blue channels. This results in approximately three megabytes of raw information for a single million-pixel image. To reduce the storage requirement, most image formats allow for some kind of compression. At a high level, such compression is either <em>lossless</em> or <em>lossy</em>. No information is discarded in lossless compression, while some information is lost unrecoverably in a lossy system. Popular image <a id="index_term563"/>storage formats include</p>
+<ul class="list-bullet">
+<li>
+<p class="list"><strong><span class="green">jpeg.</span></strong> This lossy format compresses image blocks based on thresholds in the human visual system. This format works well for natural images.</p>
+</li>
+<li>
+<p class="list"><strong><span class="green">tiff.</span></strong> This format is most commonly used to hold binary images or losslessly compressed 8- or 16-bit RGB although many other options exist.</p>
+</li>
+<li>
+<p class="list"><strong><span class="green">ppm.</span></strong> This very simple lossless, uncompressed format is most often used for 8-bit RGB images although many options exist.</p>
+</li>
+<li>
+<p class="list"><strong><span class="green">png.</span></strong> This is a set of lossless formats with a good set of open source management tools.</p>
+</li>
+</ul>
+<p>Because of compression and variants, writing input/output routines for images can be involved. Fortunately, one can usually rely on library routines to read and write standard file formats. For quick-and-dirty applications, where simplicity is valued above efficiency, a simple choice is to use raw ppm files, which can often be written simply by dumping the array that stores the image in memory to a file, prepending the appropriate header.</p>
+</section>
+</section>
+<section>
+<h2 id="sec18"><span class="green">Frequently Asked Questions</span></h2>
+<ul class="list-bullet">
+<li>
+<p class="list"><span class="green">Why don’t they just make monitors linear and avoid all this gamma business?</span></p>
+<p class="noindent1b">Ideally, the 256 possible intensities of a monitor should <em>look</em> evenly spaced as opposed to being linearly spaced in energy. Because human perception of intensity is itself nonlinear, a gamma between 1.5 and 3 (depending on viewing conditions) will make the intensities approximately uniform in a subjective sense. In this way, gamma is a feature. Otherwise, the manufacturers would make the monitors linear.</p>
+</li>
+</ul>
+</section>
+<section>
+<h2 id="sec19"><span aria-label="78" epub:type="pagebreak" id="pg_78" role="doc-pagebreak"/><span class="green">Exercise</span></h2>
+<p class="qpara"><span class="green">1.</span> Simulate an image acquired from the Bayer mosaic by taking a natural image (preferably a scanned photo rather than a digital photo where the Bayer mosaic may already have been applied) and creating a grayscale image composed of interleaved red/green/blue channels. This simulates the raw output of a digital camera. Now create a true RGB image from that output and compare with the original.</p>
+</section>
+</section>
+</body>
+</html>

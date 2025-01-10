@@ -1,0 +1,387 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:svg="http://www.w3.org/2000/svg" dir="ltr" lang="en" xml:lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>4 Ray Tracing</title>
+<link href="../styles/9781000426359.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+jax: ["input/TeX","input/MathML","output/SVG"],
+extensions: ["tex2jax.js","mml2jax.js","MathEvents.js"],
+TeX: {
+extensions: ["noErrors.js","noUndefined.js","autoload-all.js"]
+},
+MathMenu: {
+showRenderer: false
+},
+menuSettings: {
+zoom: "Click"
+},
+messageStyle: "none"
+});
+</script>
+<script src="../mathjax/MathJax.js" type="text/javascript"/>
+<meta content="urn:uuid:e0000000-0000-0000-0000-000006665500" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section epub:type="chapter" role="doc-chapter">
+<h1 class="chapz" id="c4"><a id="term-699"/><a id="term-677"/><a id="term-702"/><a id="term-704"/><span aria-label="79" epub:type="pagebreak" id="pg_79" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rc4" role="doc-backlink"><span class="green"><span class="big1">4</span><br/>Ray Tracing</span></a></h1>
+<p>One of the basic tasks of computer graphics is <em>rendering</em> three-dimensional objects: taking a scene composed of many geometric objects arranged in 3D space and computing a 2D image that shows the objects as viewed from a particular viewpoint. It is the same operation that has been done for centuries by architects and engineers creating drawings to communicate their designs to others.</p>
+<p>Fundamentally, rendering is a process that takes as its input a set of objects and produces as its output an array of pixels. One way or another, rendering involves considering how each object contributes to each pixel, and it can be organized in two general ways. In <em>object-order rendering</em>, each object is considered in turn, and for each object, all the pixels that it influences are found and updated. In <em>image-order rendering</em>, each pixel is considered in turn, and for each pixel all the objects that influence it are found and the pixel value is computed. You can think of the difference in terms of the nesting of loops: in image-order rendering, the “for each pixel” loop is on the outside, whereas in object-order rendering, the “for each object” loop is on the outside.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">If the output is a vector image rather than a raster image, rendering doesn’t have to involve pixels, but we’ll assume raster images in this book.</p>
+</aside>
+<p class="indent">Image-order and object-order renderers can compute exactly the same images, but they lend themselves to computing different kinds of effects and have quite different performance characteristics. We’ll explore the comparative strengths of the approaches in <a href="C14_chapter9.xhtml#c9">Chapter 9</a> after we have discussed them both, but, broadly speaking, image-order rendering is simpler to get working and more flexible in the effects that can be produced and usually (though not always) takes more execution time to produce a comparable image.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">In a ray tracer, it is easy to compute accurate shadows and reflections, which are awkward in the object-order framework.</p>
+</aside>
+<p class="indent"><a id="term-672"/><a id="term-676"/><a id="term-680"/><a id="term-684"/><a id="term-756"/><span aria-label="80" epub:type="pagebreak" id="pg_80" role="doc-pagebreak"/>Ray tracing is an image-order <a id="index_term952"/>algorithm for making renderings of 3D scenes, and we’ll consider it first because it’s possible to get a ray tracer working without developing any of the mathematical machinery that’s used for object-order rendering.</p>
+<section>
+<h2 id="sec4_1"><a epub:type="backlink" href="C02a_toc.xhtml#rsec4_1" role="doc-backlink"><span class="green">4.1 The Basic Ray-Tracing Algorithm</span></a></h2>
+<p>A ray tracer works by computing one pixel at a time, and for each pixel, the basic task is to find the object that is seen at that pixel’s position in the image. Each pixel “looks” in a different direction, and any object that is seen by a pixel must intersect the <em>viewing ray</em>, a line that emanates from the viewpoint in the direction that pixel is looking. The particular object we want is the one that intersects the viewing ray nearest the camera, since it blocks the view of any other objects behind it. Once that object is found, a <em>shading</em> computation uses the intersection point, surface normal, and other information (depending on the desired type of rendering) to determine the color of the pixel. This is shown in <a href="C09_chapter4.xhtml#f4_1">Figure 4.1</a>, where the ray intersects two triangles, but only the first triangle hit, <em>T</em><sub>2</sub>, is shaded.</p>
+<p>A basic ray tracer therefore has three parts:</p>
+<ol class="list-order">
+<li>
+<p class="list"><em><a id="index_term944"/>ray generation</em>, which computes the origin and direction of each pixel’s viewing ray based on the camera geometry;</p>
+</li>
+<li>
+<p class="list"><em>ray intersection</em>, which finds the closest object intersecting the viewing ray;</p>
+</li>
+<li>
+<p class="list"><em>shading</em>, which computes the pixel color based on the results of ray intersection.</p>
+</li>
+</ol>
+<figure id="f4_1" tabindex="0">
+<img alt="" src="../images/fig4_1.jpg"/>
+<figcaption><p><span class="blue">Figure 4.1.</span> The ray is “traced” into the scene and the first object hit is the one seen through the pixel. In this case, the triangle <em>T</em><sub>2</sub> is returned.</p></figcaption>
+</figure>
+<p>The <a id="index_term957"/>structure of the basic ray tracing program is</p>
+<pre class="pre"><strong>for</strong> each pixel
+  <strong>do</strong> compute <a id="index_term958"/>viewing ray <a id="term-283"/><a id="term-507"/><a id="term-563"/><a id="term-573"/><a id="term-579"/><a id="term-596"/><a id="term-645"/><span aria-label="81" epub:type="pagebreak" id="pg_81" role="doc-pagebreak"/> find first object hit by ray
+  and its surface normal <strong>n</strong>
+  set pixel color to value computed from hit point, lights, and <strong>n</strong></pre>
+<p class="noindent">This chapter covers basic methods for ray generation, ray intersection, and shading, that are sufficient for implementing a simple demonstration ray tracer. For a really useful system, more efficient ray intersection techniques from <a href="C17_chapter12.xhtml#c12">Chapter 12</a> need to be added, and the real potential of a ray tracer will be seen with the more advanced rendering techniques from <a href="C19_chapter14.xhtml#c14">Chapter 14</a>.</p>
+</section>
+<section>
+<h2 id="sec4_2"><a id="index_term837"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec4_2" role="doc-backlink"><span class="green">4.2 Perspective</span></a></h2>
+<p>The problem of representing a 3D object or scene with a 2D drawing or painting was studied by artists hundreds of years before computers. Photographs also represent 3D scenes with 2D images. While there are many unconventional ways to make images, from cubist painting to fisheye lenses (<a href="C09_chapter4.xhtml#f4_2">Figure 4.2</a>) to peripheral cameras, the standard approach for both art and photography, as well as computer graphics, is <em>linear perspective</em>, in which 3D objects are projected onto an <em>image plane</em> in such a way that straight lines in the scene become straight lines in the image.</p>
+<figure id="f4_2" tabindex="0">
+<img alt="" src="../images/fig4_2.jpg"/>
+<figcaption><p><span class="blue">Figure 4.2.</span> An image taken with a <a id="index_term362"/>fisheye lens is not a <a id="index_term692"/>linear perspective image. <em>Photo courtesy Philip Greenspun.</em></p></figcaption>
+</figure>
+<p>The simplest type of projection is <em><a id="index_term818"/>parallel projection</em>, in which 3D points are mapped to 2D by moving them along a <em><a id="index_term907"/>projection direction</em> until they hit the image plane (<a href="C09_chapter4.xhtml#f4_3">Figures 4.3</a>–<a href="C09_chapter4.xhtml#f4_4">4.4</a>). The view that is produced is determined by the choice of projection direction and image plane. If the image plane is perpendicular to the view direction, the projection is called <em>orthographic</em>; otherwise, it is called <em>oblique</em>.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Some books reserve “orthographic” for projection directions that are parallel to the coordinate axes.</p>
+</aside>
+<figure id="f4_3" tabindex="0">
+<img alt="" src="../images/fig4_3.jpg"/>
+<figcaption><p><span class="blue">Figure 4.3.</span> When projection lines are parallel and perpendicular to the image plane, the resulting views are called orthographic.</p></figcaption>
+</figure>
+<p>Parallel projections are often used for mechanical and architectural drawings <a id="term-580"/><a id="term-598"/><a id="term-646"/><span aria-label="82" epub:type="pagebreak" id="pg_82" role="doc-pagebreak"/>because they keep parallel lines parallel and they preserve the size and shape of planar objects that are parallel to the image plane.</p>
+<figure id="f4_4" tabindex="0">
+<img alt="" src="../images/fig4_4.jpg"/>
+<figcaption><p><span class="blue">Figure 4.4.</span> A parallel projection that has the image plane at an angle to the projection direction is called oblique (right). In perspective projection, the projection lines all pass through the viewpoint, rather than being parallel (left). The illustrated perspective view is non-oblique because a projection line drawn through the center of the image would be perpendicular to the image plane.</p></figcaption>
+</figure>
+<p>The advantages of parallel projection are also its limitations. In our everyday experience (and even more so in photographs), objects look smaller as they get farther away, and as a result, parallel lines receding into the distance do not appear parallel. This is because eyes and cameras don’t collect light from a single viewing direction; they collect light that passes through a particular viewpoint. As has been recognized by artists since the Renaissance, we can produce natural-looking views using <em><a id="index_term839"/>perspective projection</em>: we simply project along lines that pass through a single point, the <em>viewpoint</em>, rather than along parallel lines (<a href="C09_chapter4.xhtml#f4_4">Figure 4.4</a>). In this way, objects farther from the viewpoint naturally become smaller when they are projected. A perspective view is determined by the choice of viewpoint (rather than projection direction) and image plane. As with parallel views, there are oblique and non-oblique perspective views; the distinction is made based on the projection direction at the center of the image.</p>
+<p>You may have learned about the artistic conventions of <em>three-point perspective</em>, a system for manually constructing perspective views (<a href="C09_chapter4.xhtml#f4_5">Figure 4.5</a>). A surprising fact about perspective is that all the rules of perspective drawing will be followed automatically if we follow the simple mathematical rule underlying perspective: objects are projected directly toward the eye, and they are drawn where they meet a view plane in front of the eye.</p>
+</section>
+<section>
+<h2 id="sec4_3"><a epub:type="backlink" href="C02a_toc.xhtml#rsec4_3" role="doc-backlink"><span class="green">4.3 Computing Viewing Rays</span></a></h2>
+<p>From the previous section, the basic tools of ray generation are the <a id="index_term1318"/>viewpoint (or view direction, for parallel views) and the image plane. There are many ways to work out the details of camera geometry; in this section, we explain one based <a id="term-681"/><a id="term-682"/><a id="term-683"/><a id="term-685"/><a id="term-686"/><span aria-label="83" epub:type="pagebreak" id="pg_83" role="doc-pagebreak"/>on orthonormal bases that supports normal and oblique parallel and orthographic views.</p>
+<figure id="f4_5" tabindex="0">
+<img alt="" src="../images/fig4_5.jpg"/>
+<figcaption><p><span class="blue">Figure 4.5.</span> In three-point perspective, an artist picks “vanishing points” where parallel lines meet. Parallel horizontal lines will meet at a point on the horizon. Every set of parallel lines has its own vanishing points. These rules are followed automatically if we implement perspective based on the correct geometric principles.</p></figcaption>
+</figure>
+<p>In order to generate rays, we first need a mathematical representation for a ray. A ray is really just an origin point and a propagation direction; a 3D parametric line is ideal for this. As discussed in <a href="C07_chapter2.xhtml#sec2_7_7">Section 2.7.7</a>, the 3D parametric line from the eye <strong>e</strong> through a point <strong>s</strong> on the image plane (<a href="C09_chapter4.xhtml#f4_6">Figure 4.6</a>) is given by</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtext>p</m:mtext><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo><m:mo>=</m:mo><m:mtext>e</m:mtext><m:mo>+</m:mo><m:mi>t</m:mi><m:mrow><m:mo>(</m:mo><m:mtext>s</m:mtext><m:mo>−</m:mo><m:mtext>e</m:mtext><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mrow></m:mrow></m:math>
+</div>
+<p>This should be interpreted as, “we advance from <strong>e</strong> along the vector (<strong>s</strong> <em>–</em> <strong>e</strong>) a fractional distance <em>t</em> to find the point <strong>p</strong>.” So given <em>t</em>, we can determine a point <strong>p</strong>. The point <strong>e</strong> is the ray’s <em>origin</em>,and <strong>s</strong> <em>–</em> <strong>e</strong> is the ray’s <em>direction</em>.</p>
+<p>Note that <strong>p</strong>(0) = <strong>e</strong>, and <strong>p</strong>(1) = <strong>s</strong>, and more generally, if 0 <em>&lt; t</em><sub>1</sub> <em>&lt; t</em><sub>2</sub>, then <strong>p</strong>(<em>t</em><sub>1</sub>) is closer to the eye than <strong>p</strong>(<em>t</em><sub>2</sub>) . Also, if <em>t &lt;</em> 0,then <strong>p</strong>(<em>t</em>) is “behind” the eye. These facts will be useful when we search for the closest object hit by the ray that is not behind the eye.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Caution: we are overloading the variable <em>t</em>, which is the ray parameter and also the <em>v</em>-coordinate of the top edge of the image.</p>
+</aside>
+<p class="indent">Rays are invariably represented in code using some kind of structure or object that stores the position and direction. For instance, in an object-oriented program we might write:</p>
+<figure id="f4_6" tabindex="0">
+<img alt="" src="../images/fig4_6.jpg"/>
+<figcaption><p><span class="blue">Figure 4.6.</span> The ray from the eye through a point on the image plane.</p></figcaption>
+</figure>
+<pre class="pre"><strong>class</strong> Ray
+    Vec3 <strong>o</strong> | <em><a id="index_term956"/>ray origin</em>
+    Vec3 <strong>d</strong> | <em><a id="index_term955"/>ray direction</em>
+    Vec3 evaluate(real <em>t</em>)
+    <strong>return</strong> <strong>o</strong> + <em>t</em><strong>d</strong></pre>
+<figure id="f4_7" tabindex="0">
+<img alt="" src="../images/fig4_7.jpg"/>
+<figcaption><p><span class="blue">Figure 4.7.</span> <a id="term-76"/><a id="term-601"/><a id="term-687"/><span aria-label="84" epub:type="pagebreak" id="pg_84" role="doc-pagebreak"/>The sample points on the screen are mapped to a similar array on the 3D window. A viewing ray is sent to each of these locations.</p></figcaption>
+</figure>
+<p class="noindent">We are assuming there is a class <em>Vec3</em> that represents three-dimensional vectors and supports the usual arithmetic operations.</p>
+<p>To compute a viewing ray, we need to know <strong>e</strong> (which is given) and <strong>s</strong>. Finding <strong>s</strong> may seem difficult, but it is actually straightforward if we look at the problem in the right coordinate system.</p>
+<figure id="f4_8" tabindex="0">
+<img alt="" src="../images/fig4_8.jpg"/>
+<figcaption><p><span class="blue">Figure 4.8.</span> The vectors of the camera frame, together with the view direction and up direction. The <strong>w</strong> vector is opposite the view direction, and the <strong>v</strong> vector is coplanar with <strong>w</strong> and the up vector.</p></figcaption>
+</figure>
+<p>All of our ray-generation methods start from an orthonormal coordinate frame known as the <em>camera frame</em> (<a href="C09_chapter4.xhtml#f4_7">Figure 4.7</a>), which we’ll denote by <strong>e</strong>, for the eye point, or viewpoint, and <strong>u</strong>, <strong>v</strong>, and <strong>w</strong> for the three basis vectors, organized with <strong>u</strong> pointing rightward (from the camera’s view), <strong>v</strong> pointing upward, and <strong>w</strong> pointing backward, so that <em>{</em><strong>u</strong>, <strong>v</strong>, <strong>w</strong><em>}</em> forms a right-handed coordinate system. The most common way to construct the camera frame is from the viewpoint, which becomes <strong>e</strong>, the <em>view direction</em>,which is <em>–</em><strong>w</strong>, and the <em>up vector</em>, which is used to construct a basis that has <strong>v</strong> and <strong>w</strong> in the plane defined by the view direction and the up direction, using the process for constructing an orthonormal basis from two vectors described in <a href="C07_chapter2.xhtml#sec2_4_7">Section 2.4.7</a> (<a href="C09_chapter4.xhtml#f4_8">Figure 4.8</a>).</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Since <strong>v</strong> and <strong>w</strong> have to be perpendicular, the up vector and <strong>v</strong> are not generally the same. But setting the up vector to point straight upward in the scene will orient the camera in the way we would think of as “up-right.”</p>
+</aside>
+<section>
+<h3 id="sec4_3_1"><a id="index_term812"/><span class="green">4.3.1 Orthographic Views</span></h3>
+<p>For an orthographic view, all the rays will have the direction <em>–</em><strong>w</strong>. Even though a parallel view doesn’t have a viewpoint <em>per se</em>, we can still use the origin of the <a id="index_term117"/>camera frame to define the plane where the rays start, so that it’s possible for objects to be behind the camera.</p>
+<p>The viewing rays should start on the plane defined by the point <strong>e</strong> and the vectors <strong>u</strong> and <strong>v</strong>; the only remaining information required is <em>where</em> on the plane the image is supposed to be. We’ll define the image dimensions with four numbers, for the four sides of the image: <em>l</em> and <em>r</em> are the positions of the left and right <a id="term-575"/><a id="term-602"/><span aria-label="85" epub:type="pagebreak" id="pg_85" role="doc-pagebreak"/>edges of the image, as measured from <strong>e</strong> along the <strong>u</strong> direction; and <em>b</em> and <em>t</em> are the positions of the bottom and top edges of the image, as measured from <strong>e</strong> along the <strong>v</strong> direction. Usually, <em>l &lt;</em> 0 <em>&lt; r</em> and <em>b &lt;</em> 0 <em>&lt; t</em>. (SeeFigure4.9a.)</p>
+<figure id="f4_9" tabindex="0">
+<img alt="" src="../images/fig4_9.jpg"/>
+<figcaption><p><span class="blue">Figure 4.9.</span> Ray generation using the camera frame. (a) In an orthographic view, the rays start at the pixels’ locations on the image plane, and all share the same direction, which is equal to the view direction. (b) In a <a id="index_term842"/>perspective view, the rays start at the viewpoint, and each ray’s direction is defined by the line through the viewpoint, <strong>e</strong>, and the pixel’s location on the image plane.</p></figcaption>
+</figure>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">It might seem logical that orthographic viewing rays should start from infinitely far away, but then it would not be possible to make orthographic views of an object inside a room, for instance.</p>
+</aside>
+<p class="indent">In <a href="C08_chapter3.xhtml#sec3_2">Section 3.2</a>, we discussed pixel coordinates in an image. To fit an image with <em>n<sub>x</sub></em> × <em>n<sub>y</sub></em> pixels into a rectangle of size (<em>r – l</em>)×(<em>t</em>–<em>b</em>) , the pixels are spaced a distance (<em>r – l</em>)<em>/n<sub>x</sub></em> apart horizontally and (<em>t – b</em>)<em>/n<sub>y</sub></em> apart vertically, with a half-pixel space around the edge to center the pixel grid within the image rectangle. This means that the pixel at position (<em>i, j</em>) in the raster image has the position</p>
+<div class="disp-formula" id="equ4_1">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>u</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mi>l</m:mi><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mi>r</m:mi><m:mo>−</m:mo><m:mi>l</m:mi><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>i</m:mi><m:mo>+</m:mo><m:mn>0.5</m:mn><m:mo>)</m:mo><m:mo>/</m:mo><m:msub><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>,</m:mo></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>v</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mi>b</m:mi><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>−</m:mo><m:mi>b</m:mi><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>j</m:mi><m:mo>+</m:mo><m:mn>0.5</m:mn><m:mo>)</m:mo><m:mo>/</m:mo><m:msub><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>,</m:mo></m:mrow></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow><m:mspace width="3em"/><m:mo>(4.1)</m:mo></m:math>
+</div>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Many systems assume that <em>l</em> = – <em>r</em> and <em>b</em> = – <em>t</em> so that a width and a height suffice.</p>
+</aside>
+<p class="noindent">where (<em>u, v</em>) are the coordinates of the pixel’s position on the image plane, measured with respect to the origin <strong>e</strong> and the basis <em>{</em><strong>u</strong>, <strong>v</strong><em>}</em>.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">With <em>l</em> and <em>r</em> both specified, there is redundancy: moving the viewpoint a bit to the right and correspondingly decreasing <em>l</em> and <em>r</em> will not change the view (and similarly on the <strong>v-</strong>axis).</p>
+</aside>
+<p>In an orthographic view, we can simply use the pixel’s image-plane position as the ray’s starting point, and we already know the ray’s direction is the view direction. The procedure for generating orthographic viewing rays is then</p>
+<p class="indent2b">compute <em>u</em> and <em>v</em> using (4.1)</p>
+<p class="indent2">ray.<strong>o</strong> <em>←</em> <strong>e</strong> + <em>u</em> <strong>u</strong> + <em>v</em> <strong>v</strong></p>
+<p class="indent2">ray.<strong>d</strong> <em>←–</em><strong>w</strong></p>
+<p class="noindent1">It’s very simple to make an oblique parallel view: just allow the image plane normal <strong>w</strong> to be specified separately from the view direction <strong>d</strong>. The procedure is then exactly the same, but with <strong>d</strong> substituted for <em>–</em><strong>w</strong>. Of course, <strong>w</strong> is still used to construct <strong>u</strong> and <strong>v</strong>.</p>
+</section>
+<section>
+<h3 id="sec4_3_2"><span aria-label="86" epub:type="pagebreak" id="pg_86" role="doc-pagebreak"/><span class="green">4.3.2 Perspective Views</span></h3>
+<p>For a perspective view, all the rays have the same origin, at the viewpoint; it is the directions that are different for each pixel. The image plane is no longer positioned at <strong>e</strong>, but rather some distance <em>d</em> in front of <strong>e</strong>; this distance is the <em><a id="index_term550"/>image plane distance</em>, often loosely called the <em>focal length</em>, because choosing <em>d</em> plays the same role as choosing <a id="index_term367"/>focal length in a real camera. The direction of each ray is defined by the viewpoint and the position of the pixel on the image plane. This situation is illustrated in <a href="C09_chapter4.xhtml#f4_9">Figure 4.9</a>, and the resulting procedure is similar to the orthographic one:</p>
+<p class="indent2b">compute <em>u</em> and <em>v</em> using (4.1)</p>
+<p class="indent2">ray.<strong>o</strong> <em>←</em> <strong>e</strong></p>
+<p class="indent2">ray.<strong>d</strong> <em>←– d</em> <strong>w</strong> + <em>u</em> <strong>u</strong> + <em>v</em> <strong>v</strong></p>
+<p class="noindent1">As with parallel projection, oblique perspective views can be achieved by specifying the image plane normal separately from the projection direction.</p>
+</section>
+</section>
+<section>
+<h2 id="sec4_4"><a id="index_term947"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec4_4" role="doc-backlink"><span class="green">4.4 Ray-Object Intersection</span></a></h2>
+<p>Once we’ve generated a ray <strong>e</strong> + <em>t</em><strong>d</strong>, we next need to find the first intersection with any object where <em>t &gt;</em> 0. In practice, it turns out to be useful to solve a slightly more general problem: find the first intersection between the ray and a surface that occurs at a <em>t</em> in the interval [<em>t</em><sub>0</sub><em>,t</em><sub>1</sub>]. The basic ray intersection is then the case where <em>t</em><sub>0</sub> = 0 and <em>t</em><sub>1</sub> = +∞. We solve this problem for both spheres and triangles. In the next section, multiple objects are discussed.</p>
+<section>
+<h3 id="sec4_4_1"><a id="index_term949"/><span class="green">4.4.1 Ray-Sphere Intersection</span></h3>
+<p>Given a ray <strong>p</strong>(<em>t</em>) = <strong>e</strong> + <em>t</em><strong>d</strong> and an implicit surface <em>f</em> (<strong>p</strong>) = 0 (see <a href="C07_chapter2.xhtml#sec2_7_3">Section 2.7.3</a>), we’d like to know where they intersect. Intersection points occur when points on the ray satisfy the implicit equation, so the values of <em>t</em> we seek are those that solve the equation</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mtext>p</m:mtext><m:mrow><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:mtd><m:mtd><m:mtext>or</m:mtext></m:mtd></m:mtr></m:mtable></m:mtd><m:mtd><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>e</m:mi><m:mo>+</m:mo><m:mi>t</m:mi><m:mtext>d</m:mtext><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>A sphere with center <strong>c</strong> = (<em>x<sub>c</sub> ,y<sub>c</sub> ,z<sub>c</sub></em>) and radius <em>R</em> can be represented by the implicit equation</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msup><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>−</m:mo><m:msup><m:mrow><m:mi>R</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow></m:math>
+</div>
+<p><span aria-label="87" epub:type="pagebreak" id="pg_87" role="doc-pagebreak"/>We can write this same equation in vector form:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mtext>p</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>·</m:mo></m:mrow><m:mo>(</m:mo><m:mtext>p</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>−</m:mo><m:msup><m:mrow><m:mi>R</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow></m:math>
+</div>
+<p>Any point <strong>p</strong> that satisfies this equation is on the sphere. If we plug points on the ray <strong>p</strong>(<em>t</em>) = <strong>e</strong> + <em>t</em><strong>d</strong> into this equation, we get an equation in terms of <em>t</em> that is satisfied by the values of <em>t</em> that yield points on the sphere:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>+</m:mo><m:mi>t</m:mi><m:mtext>d</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo></m:mrow><m:mo>·</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>+</m:mo><m:mi>t</m:mi><m:mtext>d</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>−</m:mo><m:msup><m:mrow><m:mi>R</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<p>Rearranging terms yields</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msup><m:mrow><m:mrow><m:mo>(</m:mo><m:mtext>d</m:mtext><m:mo>·</m:mo><m:mtext>d</m:mtext><m:mo>)</m:mo></m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mn>2</m:mn><m:mtext>d</m:mtext><m:mo>·</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo></m:mrow><m:mi>t</m:mi><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>·</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>−</m:mo><m:msup><m:mrow><m:mi>R</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow></m:mrow></m:mrow></m:math>
+</div>
+<p>Here, everything is known except the parameter <em>t</em>, so this is a classic quadratic equation in <em>t</em>, meaning it has the form</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msup><m:mrow><m:mi>A</m:mi><m:mi>t</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:mi>B</m:mi><m:mi>t</m:mi><m:mo>+</m:mo><m:mi>C</m:mi><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow></m:math>
+</div>
+<p>The solution to this equation is discussed in <a href="C07_chapter2.xhtml#sec2_2">Section 2.2</a>. The term under the square root sign in the quadratic solution, <em>B</em><sup>2</sup> <em>–</em> 4<em>AC</em>, is called the <em>discriminant</em> and tells us how many real solutions there are. If the discriminant is negative, its square root is imaginary and the line and sphere do not intersect. If the discriminant is positive, there are two solutions: one solution where the ray enters the sphere and one where it leaves. If the discriminant is zero, the ray grazes the sphere, touching it at exactly one point. Plugging in the actual terms for the sphere and canceling a factor of two, we get</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>t</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>−</m:mo><m:mtext>d</m:mtext><m:mo>·</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>±</m:mo><m:msqrt><m:mrow><m:mrow><m:mo>(</m:mo><m:mtext>d</m:mtext><m:msup><m:mrow><m:mo>·</m:mo><m:mtext> </m:mtext><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>−</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>d</m:mtext><m:mo>·</m:mo><m:mtext>d</m:mtext><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>·</m:mo><m:mrow><m:mo>(</m:mo><m:mtext>e</m:mtext><m:mo>−</m:mo><m:mtext>c</m:mtext><m:mo>)</m:mo><m:mo>−</m:mo><m:msup><m:mrow><m:mi>R</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:mrow></m:msqrt></m:mrow></m:mrow><m:mrow><m:mo>(</m:mo><m:mtext>d</m:mtext><m:mo>·</m:mo><m:mtext>d</m:mtext><m:mo>)</m:mo></m:mrow></m:mfrac></m:mrow></m:math>
+</div>
+<p>In an actual implementation, you should first check the value of the discriminant before computing other terms. To correctly find the closest intersection <em>in the interval</em> [<em>t</em><sub>0</sub><em>,t</em><sub>1</sub>], there are three cases: if the smaller of the two solutions is in the interval, it is the first hit; otherwise, if the larger solution is in the interval, it is the first hit; otherwise, there is no hit.</p>
+<p>As discussed in <a href="C07_chapter2.xhtml#sec2_7_4">Section 2.7.4</a>, the normal vector at point <strong>p</strong> is given by the gradient <strong>n</strong> = 2(<strong>p</strong> <em>–</em> <strong>c</strong>) . The unit normal is (<strong>p</strong> <em>–</em> <strong>c</strong>)<em>/R</em>.</p>
+</section>
+<section>
+<h3 id="sec4_4_2"><a id="index_term960"/><a id="term-675"/><span aria-label="88" epub:type="pagebreak" id="pg_88" role="doc-pagebreak"/><span class="green">4.4.2 Ray-Triangle Intersection</span></h3>
+<p>There are many algorithms for computing ray-triangle intersections. We will present the form that uses barycentric coordinates for the parametric plane containing the triangle, because it requires no long-term storage other than the vertices of the triangle (Snyder &amp; Barr, 1987).</p>
+<p>To intersect a ray with a parametric surface, we set up a system of equations where the Cartesian coordinates all match:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>t</m:mi><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>,</m:mo><m:mi>v</m:mi><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>t</m:mi><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>,</m:mo><m:mi>v</m:mi><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>t</m:mi><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mi>h</m:mi><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>,</m:mo><m:mi>v</m:mi><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/></m:mtr></m:mtable><m:mo>}</m:mo></m:mtd><m:mtd><m:mtext>or,</m:mtext></m:mtd></m:mtr></m:mtable></m:mtd><m:mtd><m:mtext>e</m:mtext><m:mo>+</m:mo><m:mi>t</m:mi><m:mtext>d</m:mtext></m:mtd></m:mtr></m:mtable><m:mo>=</m:mo><m:mtext>f</m:mtext><m:mrow><m:mo>(</m:mo><m:mi>u</m:mi><m:mo>,</m:mo><m:mi>v</m:mi><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<p>Here, we have three equations and three unknowns (<em>t</em>, <em>u</em>, and <em>v</em>). In the case where the surface is a parametric plane, the parametric equation is linear and can be written in vector form as discussed in <a href="C07_chapter2.xhtml#sec2_9_2">Section 2.9.2</a>. If the vertices of the triangle are <strong>a</strong>, <strong>b</strong>,and <strong>c</strong>, then the intersection will occur when</p>
+<div class="disp-formula" id="equ4_2">
+<m:math alttext=""><m:mrow><m:mtext>e</m:mtext><m:mo>+</m:mo><m:mtext> </m:mtext><m:mi>t</m:mi><m:mtext>d</m:mtext><m:mo>=</m:mo><m:mtext>a</m:mtext><m:mo>+</m:mo><m:mi>β</m:mi><m:mrow><m:mo>(</m:mo><m:mtext>b</m:mtext><m:mo>−</m:mo><m:mtext>a</m:mtext><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>γ</m:mi><m:mrow><m:mo>(</m:mo><m:mtext>c</m:mtext><m:mo>−</m:mo><m:mtext>a</m:mtext><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mrow></m:mrow><m:mspace width="3em"/><m:mo>(4.2)</m:mo></m:math>
+</div>
+<p>for some <em>t</em>, <em>β</em>,and <em>γ</em>. Solving this equation tells us both <em>t</em>, which locates the intersection point along the ray, and (<em>β, γ</em>) , which locates the intersection point relative to the triangle. The intersection <strong>p</strong> will be at <strong>e</strong>+<em>t</em><strong>d</strong> as shown in <a href="C09_chapter4.xhtml#f4_10">Figure 4.10</a>. Again from <a href="C07_chapter2.xhtml#sec2_9_2">Section 2.9.2</a>, we know the intersection is inside the triangle if and only if <em>β &gt;</em> 0, <em>γ &gt;</em> 0, and <em>β</em> + <em>γ &lt;</em> 1. Otherwise, the ray has hit the plane outside the triangle, so it misses the triangle. If there are no solutions, either the triangle is degenerate or the ray is parallel to the plane containing the triangle.</p>
+<figure id="f4_10" tabindex="0">
+<img alt="" src="../images/fig4_10.jpg"/>
+<figcaption><p><span class="blue">Figure 4.10.</span> The ray hits the plane containing the triangle at point p.</p></figcaption>
+</figure>
+<p>To solve for <em>t</em>, <em>β</em>, and <em>γ</em> in Equation (4.2), we expand it from its vector form into the three equations for the three coordinates:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>t</m:mi><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:mi>β</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>γ</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>t</m:mi><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:mi>β</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>γ</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mrow></m:mtd></m:mtr></m:mtable></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>t</m:mi><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:mi>β</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>γ</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>This can be rewritten as a standard linear system:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mi>β</m:mi></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>γ</m:mi></m:mtd></m:mtr></m:mtable></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>t</m:mi></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo><m:mo>=</m:mo><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo></m:mtd></m:mtr></m:mtable></m:mtd><m:mtd><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd></m:mtr></m:mtable></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo></m:mrow></m:mrow></m:mrow></m:mrow></m:math>
+</div>
+<p><span aria-label="89" epub:type="pagebreak" id="pg_89" role="doc-pagebreak"/>The fastest classic method to solve this 3 × 3 linear system is <em>Cramer’s rule</em>. This gives us the solutions</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>β</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo></m:mrow><m:mrow><m:mrow><m:mo>|</m:mo><m:mtext mathvariant="bold">A</m:mtext><m:mo>|</m:mo></m:mrow></m:mrow></m:mfrac></m:mtd></m:mtr><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mi>γ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo></m:mrow><m:mrow><m:mrow><m:mo>|</m:mo><m:mtext mathvariant="bold">A</m:mtext><m:mo>|</m:mo></m:mrow></m:mrow></m:mfrac></m:mtd></m:mtr></m:mtable></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>t</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo></m:mrow><m:mrow><m:mrow><m:mo>|</m:mo><m:mtext mathvariant="bold">A</m:mtext><m:mo>|</m:mo></m:mrow></m:mrow></m:mfrac></m:mtd></m:mtr><m:mtr><m:mtd/></m:mtr></m:mtable></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>where the matrix <strong>A</strong> is</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtext>A</m:mtext><m:mo>=</m:mo><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>b</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>c</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo><m:mo>,</m:mo></m:mrow></m:mrow></m:math>
+</div>
+<p class="noindent">and |<strong>A</strong>| denotes the determinant of <strong>A</strong>. The 3 × 3 determinants have common subterms that can be exploited for efficiency in implementation. Looking at the linear systems with dummy variables</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:mi>a</m:mi></m:mtd><m:mtd><m:mi>d</m:mi></m:mtd><m:mtd><m:mi>g</m:mi></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>b</m:mi></m:mtd><m:mtd><m:mi>e</m:mi></m:mtd><m:mtd><m:mi>h</m:mi></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>c</m:mi></m:mtd><m:mtd><m:mi>f</m:mi></m:mtd><m:mtd><m:mi>i</m:mi></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mi>β</m:mi></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>γ</m:mi></m:mtd></m:mtr></m:mtable></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>t</m:mi></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo><m:mo>=</m:mo><m:mrow><m:mo>[</m:mo><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mi>j</m:mi></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>k</m:mi></m:mtd></m:mtr></m:mtable></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>l</m:mi></m:mtd></m:mtr></m:mtable><m:mo>]</m:mo><m:mo>,</m:mo></m:mrow></m:mrow></m:mrow></m:mrow></m:math>
+</div>
+<p><a id="index_term274"/>Cramer’s rule gives us</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mi>β</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>j</m:mi><m:mrow><m:mo>(</m:mo><m:mi>e</m:mi><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>h</m:mi><m:mi>f</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>k</m:mi><m:mrow><m:mo>(</m:mo><m:mi>g</m:mi><m:mi>f</m:mi><m:mo>−</m:mo><m:mi>d</m:mi><m:mi>i</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>l</m:mi><m:mrow><m:mo>(</m:mo><m:mi>d</m:mi><m:mi>h</m:mi><m:mo>−</m:mo><m:mi>e</m:mi><m:mi>g</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:mrow><m:mrow><m:mi>M</m:mi></m:mrow></m:mfrac></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>γ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>i</m:mi><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mi>k</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mi>b</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>h</m:mi><m:mrow><m:mo>(</m:mo><m:mi>j</m:mi><m:mi>c</m:mi><m:mo>−</m:mo><m:mi>a</m:mi><m:mi>l</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:mi>b</m:mi><m:mi>l</m:mi><m:mo>−</m:mo><m:mi>k</m:mi><m:mi>c</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:mrow><m:mrow><m:mi>M</m:mi></m:mrow></m:mfrac></m:mtd></m:mtr></m:mtable></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>t</m:mi><m:mo>=</m:mo><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>a</m:mi><m:mi>k</m:mi><m:mo>−</m:mo><m:mi>j</m:mi><m:mi>b</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>e</m:mi><m:mrow><m:mo>(</m:mo><m:mi>j</m:mi><m:mi>c</m:mi><m:mo>−</m:mo><m:mi>a</m:mi><m:mi>l</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:mi>b</m:mi><m:mi>l</m:mi><m:mo>−</m:mo><m:mi>k</m:mi><m:mi>c</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:mrow><m:mrow><m:mi>M</m:mi></m:mrow></m:mfrac></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>where</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>M</m:mi><m:mo>=</m:mo><m:mi>a</m:mi><m:mrow><m:mo>(</m:mo><m:mi>e</m:mi><m:mi>i</m:mi><m:mo>−</m:mo><m:mi>h</m:mi><m:mi>f</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>b</m:mi><m:mrow><m:mo>(</m:mo><m:mi>g</m:mi><m:mi>f</m:mi><m:mo>−</m:mo><m:mi>d</m:mi><m:mi>i</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>c</m:mi><m:mrow><m:mo>(</m:mo><m:mi>d</m:mi><m:mi>h</m:mi><m:mo>−</m:mo><m:mi>e</m:mi><m:mi>g</m:mi><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mrow></m:mrow></m:mrow></m:math>
+</div>
+<p><a id="term-61"/><a id="term-674"/><a id="term-823"/><a id="term-976"/><span aria-label="90" epub:type="pagebreak" id="pg_90" role="doc-pagebreak"/>We can reduce the number of operations by reusing numbers such as “<em>ei-minus-hf</em>.”</p>
+<p>The algorithm for the ray-triangle intersection for which we need the linear solution can have some conditions for early termination. Thus, the function should look something like:</p>
+<pre class="pre">boolean raytri (Ray <strong>r</strong>, vector3 <strong>a</strong>, vector3 <strong>b</strong>, vector3 <strong>c</strong>,<br/>                interval [<em>t</em><sub>0</sub><em>,t</em><sub>1</sub>])<br/>compute <em>t </em><br/><strong>if</strong> (<em>t &lt; t</em><sub>0</sub>) or (<em>t &gt; t</em><sub>1</sub>) <strong>then</strong><br/>   <strong>return</strong> false<br/>compute <em>γ </em><br/><strong>if</strong> (<em>γ &lt;</em> 0) or (<em>γ &gt;</em> 1) <strong>then</strong><br/>  <strong>return</strong> false<br/>compute <em>β </em><br/><strong>if</strong> (<em>β &lt;</em> 0) or (<em>β &gt;</em> 1 <em>– γ</em>) <strong>then</strong><br/><strong>return</strong> false<br/><strong>return</strong> true</pre>
+</section>
+<section>
+<h3 id="sec4_4_3"><a id="index_term1096"/><span class="green">4.4.3 Ray intersection in software</span></h3>
+<p>In a ray tracing program, it is a good idea to use an object-oriented design that has a class called something like <em>Surface</em> with derived classes <em>Triangle</em>, <em>Sphere</em>, etc. Anything that a ray can intersect, including groups of surfaces or efficiency structures (<a href="C17_chapter12.xhtml#sec12_3">Section 12.3</a>) should be a subclass of Surface. The ray-tracing program would then have one reference to a Surface for the whole model, and new types of objects and efficiency structures can be added transparently.</p>
+<p class="noindent">The key interface of the Surface class is a method to intersect a ray (Kirk &amp; Arvo, 1988).</p>
+<pre class="pre"><strong>class</strong> Surface<br/>    HitRecord hit(Ray r, real <em>t</em><sub>0</sub>, real <em>t</em><sub>1</sub>)</pre>
+<p class="noindent1">Here, (<em>t</em><sub>0</sub><em>,t</em><sub>1</sub>) is the interval on the ray where hits will be returned, and HitRecord is a class that contains all the data about the <a id="index_term1140"/>surface <a id="index_term1139"/>intersection that will be needed:</p>
+<pre class="pre"><strong>class</strong> HitRecord<br/>    Surface <em>s</em>  | <em>surface that was hit</em><br/>    real <em>t</em> | <em>coordinate of hit point along the ray</em><br/>    Vec3 <strong>n</strong> | <em>surface normal at the hit point</em><br/>    .<br/>    .<br/>    .</pre>
+<p class="noindent1"><a id="term-557"/><a id="term-558"/><a id="term-671"/><a id="term-673"/><a id="term-757"/><a id="term-834"/><span aria-label="91" epub:type="pagebreak" id="pg_91" role="doc-pagebreak"/>The surface that was hit, the <em>t</em> value, and the surface normal are the minimum required, but other data such as texture coordinates or tangent vectors may be stored as well. Depending on the language, the hit record might not be literally returned from the function but rather passed by reference and filled in. A miss can be indicated by a hit that has <em>t</em> = ∞.</p>
+</section>
+<section>
+<h3 id="sec4_4_4"><span class="green">4.4.4 Intersecting a Group of Objects</span></h3>
+<p>Of course, most interesting scenes consist of more than one object, and when we intersect a ray with the scene, we must find only the closest intersection to the camera along the ray. A simple way to implement this is to think of a group of objects as itself being another type of object. To intersect a ray with a group, you simply intersect the ray with the objects in the group and return the intersection with the smallest <em>t</em> value. The following code tests for hits in the interval <em>t ∈</em> [<em>t</em><sub>0</sub><em>,t</em><sub>1</sub>]:</p>
+<pre class="pre"><strong>class</strong> Group, subclass of Surface<br/>    list-of-Surface surfaces | <em>list of all surfaces in the group</em><br/>    HitRecord hit(Ray ray, real <em>t</em><sub>0</sub>, real <em>t</em><sub>1</sub>)<br/>       HitRecord closest-hit(∞) | <em>initialize to indicate miss</em><br/>       <strong>for</strong> surf in surfaces <strong>do</strong><br/>           rec = surf.hit(ray, <em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>)<br/>           <strong>if</strong> rec.<em>t</em> &lt; ∞ <strong>then</strong><br/>               closest-hit = rec<br/>               <em>t</em><sub>1</sub> = <em>t</em><br/>       <strong>return</strong> closest-hit</pre>
+<p>Note that this code shrinks the intersection interval [<em>t</em><sub>0</sub><em>,t</em><sub>1</sub>] so that the call to surf.hit will only hit surfaces that are closer than the closest one seen so far.</p>
+<p>Once ray-scene intersection works, we can render an image like <a href="C09_chapter4.xhtml#f4_11">Figure 4.11</a>, but nicer results depend on including more visual cues, as we describe next.</p>
+<figure id="f4_11" tabindex="0">
+<img alt="" src="../images/fig4_11.jpg"/>
+<figcaption><p><span class="blue">Figure 4.11.</span> A simple scene rendered with only ray generation and surface intersection, but no shading; each pixel is just set to a fixed color depending on which object it hit.</p></figcaption>
+</figure>
+</section>
+</section>
+<section>
+<h2 id="sec4_5"><a epub:type="backlink" href="C02a_toc.xhtml#rsec4_5" role="doc-backlink"><span class="green">4.5 Shading</span></a></h2>
+<p>Once the visible surface for a pixel is known, the pixel value is computed by evaluating a <em>shading model</em>. How this is done depends entirely on the application— methods range from simple heuristics to elaborate physics-based models. Exactly the same shading models can be used in ray tracing or in object-order rendering methods.</p>
+<p><a href="C10_chapter5.xhtml#c5">Chapter 5</a> describes a simple <a id="index_term1064"/>shading model that is suitable for a basic ray tracer and that is the one we used to make the renderings in this chapter. For more <span aria-label="92" epub:type="pagebreak" id="pg_92" role="doc-pagebreak"/>realism, you can upgrade to the models discussed in <a href="C19_chapter14.xhtml#c14">Chapter 14</a>, which are much more true to the physics of real surfaces. Here, we will discuss how a ray tracer computes the inputs to <a id="index_term1097"/>shading.</p>
+<section>
+<h3 id="sec4_5_1"><span class="green">4.5.1 Light Sources</span></h3>
+<p>To support shading, a ray tracing program always has a list of light sources. For the <a href="C10_chapter5.xhtml#c5">Chapter 5</a> shading model, we need three types of lights: point lights, which emit light from a point in space, directional lights, which illuminate the scene from a single direction, and ambient lights, which provide constant illumination to fill in the shadows. In fancier systems, other types of lights are supported, such as area lights (which are basically scene geometry that emits light) or environment lights (which use an image to represent light coming from far-away sources like the sky).</p>
+<p>Computing shading from a point or directional light source requires certain geometric information, and in a ray tracer, after a viewing ray has been determined to hit the surface, we have all we need to determine these four vectors:</p>
+<ul class="list-bullet">
+<li>
+<p class="list">The shading point <strong>x</strong> can be computed by evaluating the viewing ray at the <em>t</em> value of the intersection.</p>
+</li>
+<li>
+<p class="list">The surface normal <strong>n</strong> depends on the type of surface (sphere, triangle, etc.), and every surface needs to be able to compute its normal at the point where a ray intersects it.</p>
+</li>
+<li>
+<p class="list">The light direction <strong>l</strong> is computed from the light source position or direction as part of shading.</p>
+</li>
+<li>
+<p class="list">The viewing direction <strong>v</strong> is simply opposite the direction of the viewing ray (<strong>v</strong> = <em>–</em><strong>d</strong><em>/</em> <strong>||d||</strong>).</p>
+</li>
+</ul>
+<p>The shading from an ambient source is much simpler: there is no <strong>l</strong> since light comes from everywhere; the shading does not depend on <strong>v</strong>; and for the simple models of <a href="C10_chapter5.xhtml#c5">Chapter 5</a>, it doesn’t even depend on <strong>x</strong> or <strong>n</strong>.</p>
+<p>Computing shading in a scene containing several lights is simply a matter of adding up the contributions of the lights. In a basic ray tracer, you can simply loop over all the light sources, computing shading from each one, and accumulate the results into the pixel color.</p>
+</section>
+<section>
+<h3 id="sec4_5_2"><a id="index_term1057"/><span class="green">4.5.2 Shading in software</span></h3>
+<p>A ray tracing program usually contains objects representing light sources and materials. <a id="index_term675"/>Light sources can be instances of subclasses of a <em>Light</em> class, and they must <a id="term-267"/><a id="term-268"/><a id="term-604"/><a id="term-752"/><a id="term-753"/><span aria-label="93" epub:type="pagebreak" id="pg_93" role="doc-pagebreak"/>include enough information to fully describe the light source. Since shading also requires parameters describing the material of the surface, another class that is useful is <em>Material</em>, which encapsulates everything needed to evaluate the shading model.</p>
+<p>Different systems take different approaches to breaking up the shading calculations between lights and materials. An approach that aligns with the presentation in this chapter is to make lights responsible for the overall illumination computation and materials responsible for computing BRDF values. With this setup, the interfaces of these classes might look like:</p>
+<pre class="pre">class Light<br/>    Color illuminate(Ray ray, HitRecord hrec)</pre>
+<pre class="pre">class Material<br/>    Color evaluate(Vec3 <strong>l</strong>, Vec3 <strong>v</strong>, Vec3 <strong>n</strong>)</pre>
+<p class="noindent1">Each surface would then store a reference to its material, and in this way, point light illumination might be implemented as follows:</p>
+<pre class="pre">class PointLight, subclass of Light<br/>    Color <em>I</em><br/>    Vec3 <strong>p</strong><br/>    Color illuminate(Ray ray, HitRecord hrec)<br/>       Vec3 <strong>x</strong> = ray.evaluate(hrec<em>.t</em>)<br/>       real <em>r</em> = <em/><strong>p</strong> <em>–</em> <strong>x</strong><br/>       Vec3 <strong>l</strong> = (<strong>p</strong> <em>–</em> <strong>x</strong>)<em>/r</em><br/>       Vec3 <strong>n</strong> = hrec.normal<br/>       Color <em>E</em> = max(0, <strong>n</strong> · <strong>l</strong>) <em>I/r</em><sup>2</sup><br/>       Color <em>k</em> = hrec.surface.material.evaluate(<strong>l</strong>, <strong>v</strong>, <strong>n</strong>)<br/>       <strong>return</strong> <em>kE</em></pre><p class="noindent1">These computations assume the class <em>Color</em> carries the RGB components of a color and supports componentwise multiplication. This arrangement is also amenable to treating <a id="index_term20"/>ambient lighting as a light source, by making the ambient coefficient a property of the material:</p>
+<pre class="pre">class AmbientLight, subclass of Light<br/>    Color <em>I<sub>a</sub></em><br/>    Color illuminate(Ray ray, HitRecord hrec)<br/>       Color <em>k<sub>a</sub></em> = hrec.surface.material<em>.k<sub>a</sub></em><br/>       <strong>return</strong> <em>k<sub>a</sub> I<sub>a</sub></em></pre>
+<p class="noindentt">The complete calculation for shading a ray, including the intersection and handling several lights, can look like this:</p>
+<pre class="pre"><strong>function</strong> shade-ray(Ray ray, real<em>t</em><sub>0</sub>, real<em>t</em><sub>1</sub>)<br/>HitRecord rec = scene.hit(ray<em>,t</em><sub>0</sub><em>,t</em><sub>1</sub>)<br/><strong>if</strong> rec<em>.t &lt;</em> ∞ <strong>then</strong><br/>   Color <em>c</em> = 0<br/>   <strong>for</strong> light <strong>in</strong> scene.lights <strong>do</strong><br/>     <em>c</em> = <em>c</em> + light.illuminate(ray, rec)<br/>   <strong>return</strong> <em>c</em><br/><strong>else</strong> <strong>return</strong> background-color</pre>
+<p>This setup keeps materials and lights reasonably separate and allows you to later add new kinds of materials and lights transparently. Textures add some complexity to the architecture of a ray tracer; see <a href="C16_chapter11.xhtml#sec11_2_5">Section 11.2.5</a>.</p>
+<figure id="f4_12" tabindex="0">
+<img alt="" src="../images/fig4_12.jpg"/>
+<figcaption><p><span class="blue">Figure 4.12.</span> A simple scene rendered with shading from two point sources using the shading model of <a href="C10_chapter5.xhtml#c5">Chapter 5</a>.</p></figcaption>
+</figure>
+<p>By itself, shading makes images of 3D objects more realistic and understandable, but it doesn’t show their interactions with other objects. For instance, the spheres in <a href="C09_chapter4.xhtml#f4_12">Figure 4.12</a> appear to float above the floor they are resting on.</p>
+</section>
+<section>
+<h3 id="sec4_5_3"><a id="index_term1069"/><span class="green">4.5.3 Shadows</span></h3>
+<p>Once you have basic shading in your ray tracer, shadows for point and directional lights can be added very easily. If we imagine ourselves at a point <strong>x</strong> on a surface being shaded, the point is in shadow if we “look” towards the light source and see an object between us and the light source. If there are no objects in between, then the light is not blocked.</p>
+<figure id="f4_13" tabindex="0">
+<img alt="" src="../images/fig4_14.jpg"/>
+<figcaption><p><span class="blue">Figure 4.13.</span> The point <strong>p</strong> is not in shadow, while the point <strong>q</strong> is in shadow.</p></figcaption>
+</figure>
+<p>This is shown in <a href="C09_chapter4.xhtml#f4_13">Figure 4.13</a>, where the ray <strong>x</strong> + <em>t</em><strong>l</strong> does not hit any objects and thus the point <strong>x</strong> is not in shadow. On the other hand, the point <strong>x</strong> is in shadow because the ray <strong>x</strong> + <em>t</em><strong>l</strong> does hit an object. The rays that determine in or out of shadow are called <em>shadow rays</em> to distinguish them from viewing rays.</p>
+<figure id="f4_14" tabindex="0">
+<img alt="" src="../images/fig4_15.jpg"/>
+<figcaption><p><span class="blue">Figure 4.14.</span> By testing in the interval starting at ̭, we avoid numerical imprecision causing the ray to hit the surface <strong>p</strong> is on.</p></figcaption>
+</figure>
+<p>To get the algorithm for shading, we add an if statement to the code that adds shading from a light source to first determine whether the light is shadowed. In a naive implementation, the shadow ray will check for <em>t</em> ∈ [0<em>,r</em>], but because of numerical imprecision, this can result in an intersection with the surface on which <strong>p</strong> lies. Instead, the usual adjustment to avoid that problem is to test for <em>t</em> ∈ [ <em>, r</em>] where <em/> is some small positive constant (<a href="C09_chapter4.xhtml#f4_14">Figure 4.14</a>).</p>
+<p>A shadow test can be added to the method PointLight.illuminate shown above by tracing a shadow ray and adding a conditional:</p>
+<p>HitRecord srec = scene.hit(Ray(<strong>x</strong>, <strong>l</strong>)<em>, ,r</em>) <strong>if</strong> srec<em>.t &lt;</em> ∞ <strong>then</strong> proceed with normal illumination calculation <strong>else</strong> <strong>return</strong> 0 | <em>shading point is in shadow</em></p>
+<p><a id="term-405"/><a id="term-530"/><a id="term-822"/><span aria-label="95" epub:type="pagebreak" id="pg_95" role="doc-pagebreak"/>The shadow test for directional lights is similar but uses <em>t</em><sub>1</sub> = ∞ rather than <em>r</em>. Note that the illumination computation for each light requires a separate shadow ray, and there is no shadow test in computing <a id="index_term23"/>ambient shading.</p>
+<p>Shadows serve an important visual role in showing the relationships between nearby objects, as shown in <a href="C09_chapter4.xhtml#f4_15">Figure 4.15</a>.</p>
+</section>
+<section>
+<h3 id="sec4_5_4"><span class="green">4.5.4 Mirror Reflection</span></h3>
+<p>It is straightforward to add <em>ideal specular</em> reflection, or <em>mirror reflection</em>,toaray-tracing program. The key observation is shown in <a href="C09_chapter4.xhtml#f4_16">Figure 4.16</a> where a viewer looking from direction <strong>e</strong> sees what is in direction <strong>r</strong> as seen from the surface. The vector <strong>r</strong> is the reflection of the vector <em>–</em><strong>d</strong> across the surface normal <strong>n</strong>, which can be computed using the projection of <strong>d</strong> onto the direction of the surface normal:</p>
+<div class="disp-formula" id="equ4_3">
+<m:math alttext=""><m:mrow><m:mtext>r</m:mtext><m:mo>=</m:mo><m:mtext>d</m:mtext><m:mo>−</m:mo><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:mtext>d</m:mtext><m:mo>·</m:mo><m:mtext>n</m:mtext><m:mo>)</m:mo><m:mtext>n.</m:mtext></m:mrow></m:mrow><m:mspace width="3em"/><m:mo>(4.3)</m:mo></m:math>
+</div>
+<figure id="f4_15" tabindex="0">
+<img alt="" src="../images/fig4_13.jpg"/>
+<figcaption><p><span class="blue">Figure 4.15.</span> The same scene rendered with shading and shadows from two point sources.</p></figcaption>
+</figure>
+<p class="noindent1">In the real world, some energy is lost when the light reflects from the surface, and this loss can be different for different colors. For example, gold reflects yellow more efficiently than blue, so it shifts the colors of the objects it reflects. This can be implemented by adding a recursive call in <em>shade-ray</em> that adds one more contribution after all the lights are accounted for:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtext>color</m:mtext><m:mtext> </m:mtext><m:mi>c</m:mi><m:mo>=</m:mo><m:mi>c</m:mi><m:mo>+</m:mo><m:msub><m:mrow><m:mi>k</m:mi></m:mrow><m:mrow><m:mi>m</m:mi></m:mrow></m:msub><m:mtext><a id="index_term1032"/>shade-ray</m:mtext><m:mrow><m:mo>(</m:mo><m:mtext>Ray</m:mtext><m:mrow><m:mo>(</m:mo><m:mtext>p, r</m:mtext><m:mo>)</m:mo><m:mo>∈</m:mo><m:mo>,</m:mo><m:mi>∞</m:mi></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math>
+</div>
+<figure id="f4_16" tabindex="0">
+<img alt="" src="../images/fig4_16.jpg"/>
+<figcaption><p><span class="blue">Figure 4.16.</span> When looking into a perfect mirror, the viewer looking in direction <strong>d</strong> will see whatever the viewer “below” the surface would see in direction <strong>r</strong>.</p></figcaption>
+</figure>
+<p class="noindent1">where <em>k<sub>m</sub></em> (for “mirror reflection”) is the specular RGB color. We need to make sure to pass <em>t</em><sub>0</sub> = <em/> for the same reason as we did with shadow rays; we don’t want the reflection ray to hit the object that generates it.</p>
+<p>The problem with the recursive call above is that it may never terminate. For example, if a ray starts inside a room, it will bounce forever. This can be fixed by adding a maximum recursion depth. The code will be more efficient if a reflection ray is generated only if <em>k<sub>m</sub></em> is not zero.</p>
+<p>Using a constant mirror reflection coefficient <em>k<sub>m</sub></em> gives a particular look characteristic of simple ray tracers (<a href="C09_chapter4.xhtml#f4_17">Figure 4.17</a>); in the real world, this coefficient varies substantially depending on the incident angle. For better models, see <a href="C19_chapter14.xhtml#c14">Chapter 14</a>.</p>
+<figure id="f4_17" tabindex="0">
+<img alt="" src="../images/fig4_17.jpg"/>
+<figcaption><p><span class="blue">Figure 4.17.</span> A simple scene rendered with shading, shadows, and mirror reflection. Both the floor and the blue sphere have nonzero <a id="index_term742"/>mirror reflection coefficients.</p></figcaption>
+</figure>
+</section>
+</section>
+<section>
+<h2 id="sec4_6"><a epub:type="backlink" href="C02a_toc.xhtml#rsec4_6" role="doc-backlink"><span class="green">4.6 Historical Notes</span></a></h2>
+<p>Ray tracing was developed early in the <a id="index_term954"/>history of computer graphics (Appel, 1968) but was not used much until sufficient compute power was available (Kay &amp; Greenberg, 1979; Whitted, 1980).</p>
+<p>Ray tracing has a lower asymptotic time complexity than basic object-order rendering (Snyder &amp; Barr, 1987; Muuss, 1995; Parker et al., 1999; Wald, Slusallek, <span aria-label="96" epub:type="pagebreak" id="pg_96" role="doc-pagebreak"/>Benthin, &amp; Wagner, 2001). Although it was traditionally thought of as an offline method, real-time ray tracing implementations are becoming more and more common.</p>
+</section>
+<section>
+<h2 id="sec20"><span class="green">Frequently Asked Questions</span></h2>
+<ul class="list-bullet">
+<li>
+<p class="list"><span class="green">Why is there no perspective matrix in ray tracing?</span></p>
+<p class="noindent1b">The perspective matrix in a z-buffer exists so that we can turn the perspective projection into a parallel projection. This is not needed in ray tracing, because it is easy to do the perspective projection implicitly by fanning the rays out from the eye.</p>
+</li>
+<li>
+<p class="list"><span class="green">Can ray tracing be made interactive?</span></p>
+<p class="noindent1b">For sufficiently small models and images, any modern PC is sufficiently powerful for ray tracing to be interactive. In practice, multiple CPUs with a shared frame buffer are required for a full-screen implementation. Computer power is increasing much faster than screen resolution, and it is just a matter of time before conventional PCs can ray trace complex scenes at screen resolution.</p>
+</li>
+<li>
+<p class="list"><span class="green">Is ray tracing useful in a hardware graphics program?</span></p>
+<p class="noindent1b">Ray tracing is frequently used for <em>picking</em>. When the user clicks the mouse on a pixel in a 3D graphics program, the program needs to determine which object is visible within that pixel. Ray tracing is an ideal way to determine that.</p>
+</li>
+</ul>
+</section>
+<section>
+<h2 id="sec21"><span class="green">Exercises</span></h2>
+<p class="qpara"><span class="green">1</span>. What are the ray parameters of the intersection points between ray (1, 1, 1)+ <em>t</em>(<em>–</em>1, <em>–</em>1, <em>–</em>1) and the sphere centered at the origin with radius 1? Note: this is a good debugging case.</p>
+<p class="qpara"><span class="green">2</span>. What are the barycentric coordinates and ray parameter where the ray (1, 1, 1) + <em>t</em>(<em>–</em>1, <em>–</em>1, <em>–</em>1) hits the triangle with vertices (1, 0, 0) , (0, 1, 0) , and (0, 0, 1) ? Note: this is a good debugging case.</p>
+<p class="qpara"><span class="green">3</span>. Do a back of the envelope computation of the approximate time complexity of ray tracing on “nice” (non-adversarial) models. Split your analysis into the cases of preprocessing and computing the image, so that you can predict the behavior of ray tracing multiple frames for a static model.</p>
+</section>
+</section>
+</body>
+</html>
