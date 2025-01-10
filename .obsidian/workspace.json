@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8de14e670408e14e",
+        "id": "8bf36213a11fd394",
         "type": "tabs",
         "children": [
           {
-            "id": "7435fb7da37547fc",
+            "id": "58f4c7204c164af7",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -195,8 +195,10 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "7435fb7da37547fc",
+  "active": "58f4c7204c164af7",
   "lastOpenFiles": [
+    "Fall 2021/Theory of Computation/Theory of Computation.md",
+    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Fall 2021/Theory of Computation/_Index_of_Theory of Computation.md",
     "Spring 2022/_Index_of_Spring 2022.md",
     "Spring 2022/Software Engineering/_Index_of_Software Engineering.md",
@@ -214,7 +216,6 @@
     "📗Textbooks/_Index_of_📗Textbooks.md",
     "_Daily_Notes/_Index_of__Daily_Notes.md",
     "_Index_of_Computer-Science.md",
-    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
     "📗Textbooks/Fundamentals_of_Computer_Graphics_5th.epub",
     "📗Textbooks/A_First_Course_in_Database_Systems.pdf",
@@ -241,7 +242,6 @@
     "Science of Learning.md",
     "Spring 2022/Algorithms/Algo Final Exam Prep.md",
     "Spring 2022/Algorithms/Algorithms.md",
-    "Spring 2022/Data Analysis/Data Analysis.md",
-    "Spring 2022/Algorithms/Hashing.md"
+    "Spring 2022/Data Analysis/Data Analysis.md"
   ]
 }

@@ -1,14 +1,13 @@
 ---
-updated: 2025-01-10_12:57:34-05:00
+updated: 2025-01-10_13:04:48-05:00
 ---
 
 Using the following book as a base:
 * [[Fundamentals_of_Computer_Graphics_5th.epub]]
-
 
 # Basics
 * z-buffer essential to proper back to front border 
 * Geometric manipulation used in graphics pipeline largely accomplished in 4d coordinate space with fourth *homogeneous* coordinate that helps with perspective
 	* manipulated using matrices and vectors
 ## IEEE Floating point standards
-* 
+* $\infty$, $-\infty$
