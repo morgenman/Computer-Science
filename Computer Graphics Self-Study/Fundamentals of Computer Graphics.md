@@ -1,5 +1,5 @@
 ---
-updated: 2025-01-10_13:47:26-05:00
+updated: 2025-01-10_13:50:51-05:00
 ---
 
 Using the following book as a base:
@@ -15,3 +15,6 @@ Using the following book as a base:
 * ![[Pasted image 20250110133327.png]]
 * NaN arithmetic = NaN, boolean = false
 * ![[Pasted image 20250110134725.png]]
+
+## Design Considerations
+* Efficiency: memory access more important than operation counts now
