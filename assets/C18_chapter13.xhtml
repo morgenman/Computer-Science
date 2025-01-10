@@ -1,0 +1,597 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:svg="http://www.w3.org/2000/svg" dir="ltr" lang="en" xml:lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>13 Sampling</title>
+<link href="../styles/9781000426359.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+jax: ["input/TeX","input/MathML","output/SVG"],
+extensions: ["tex2jax.js","mml2jax.js","MathEvents.js"],
+TeX: {
+extensions: ["noErrors.js","noUndefined.js","autoload-all.js"]
+},
+MathMenu: {
+showRenderer: false
+},
+menuSettings: {
+zoom: "Click"
+},
+messageStyle: "none"
+});
+</script>
+<script src="../mathjax/MathJax.js" type="text/javascript"/>
+<meta content="urn:uuid:e0000000-0000-0000-0000-000006665500" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section epub:type="chapter" role="doc-chapter">
+<h1 class="chapz" id="c13"><a id="term-538"/><span aria-label="335" epub:type="pagebreak" id="pg_335" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rc13" role="doc-backlink"><span class="green"><span class="big1">13</span><br/>Sampling</span></a></h1>
+<p>Many applications in graphics require “fair” sampling of unusual spaces, such as the space of all possible lines. For example, we might need to generate random edges within a pixel, or random sample points on a pixel that vary in density according to some density function. This chapter provides the machinery for such probability operations. These techniques will also prove useful for numerically evaluating complicated integrals using <em>Monte Carlo <a id="index_term627"/><a id="index_term1007"/>integration</em>, also covered in this chapter.</p>
+<section>
+<h2 id="sec13_1"><a epub:type="backlink" href="C02a_toc.xhtml#rsec13_1" role="doc-backlink"><span class="green">13.1 Integration</span></a></h2>
+<p>Although the words “integral” and “measure” often seem intimidating, they relate to some of the most intuitive concepts found in mathematics, and they should not be feared. For our very non-rigorous purposes, a <em>measure</em> is just a function that maps subsets to ℝ<sup>+</sup> in a manner consistent with our intuitive notions of length, area, and volume. For example, on the 2D real plane ℝ<sup>2</sup>, we have the area measure A which assigns a value to a set of points in the plane. Note that A is just a function that takes pieces of the plane and returns area. This means the domain of A is all possible subsets of ℝ<sup>2</sup>, which we denote as the <em><a id="index_term891"/>power set</em> <em>P</em>(ℝ<sup>2</sup>). Thus, we can characterize A in arrow notation:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>A</m:mi><m:mo>:</m:mo><m:mi mathvariant="script">P</m:mi><m:mo stretchy="false">(</m:mo><m:msup><m:mi>ℝ</m:mi><m:mn>2</m:mn></m:msup><m:mo stretchy="false">)</m:mo><m:mo>→</m:mo><m:msup><m:mi>ℝ</m:mi><m:mo>+</m:mo></m:msup><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p><span aria-label="336" epub:type="pagebreak" id="pg_336" role="doc-pagebreak"/>An example of applying the area measure shows that the area of the square with side length one is one:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>A</m:mi><m:mo stretchy="false">(</m:mo><m:mo stretchy="false">[</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo stretchy="false">]</m:mo><m:mo>×</m:mo><m:mo stretchy="false">[</m:mo><m:mi>b</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo>+</m:mo><m:mn>1</m:mn><m:mo stretchy="false">]</m:mo><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>where (<em>a,b</em>) is just the lower left-hand corner of the square. Note that a single point such as (3,7) is a valid subset of ℝ<sup>2</sup> and has zero area: A((3,7)) = 0. The same is true of the set of points <em>S</em> on the x-axis, <em>S</em> = (<em>x,y</em>) such that (<em>x,y</em>) ∈ ℝ<sup>2</sup>and <em>y</em> = 0, i.e., <em>A(S)</em> = 0. Such sets are called <em><a id="index_term1469"/>zero <a id="index_term729"/>measure sets</em>.</p>
+<p>To be considered a measure, a function has to obey certain area-like properties. For example, we have a function μ:<em>P</em>(&#120138;) → ℝ<sup>+</sup>. For <em>μ</em> to be a measure, the following conditions must be true:</p>
+<ol class="list-order">
+<li>
+<p class="list">The measure of the empty set is zero: <em>μ</em>(∅) = 0.</p>
+</li>
+<li>
+<p class="list">The measure of two distinct sets together is the sum of their measure alone. This rule with possible intersections is</p>
+<div class="disp-formula" id="uequ13_3">
+<m:math alttext=""><m:mrow><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mi>A</m:mi><m:mo>∪</m:mo><m:mi>B</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mi>A</m:mi><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mi>B</m:mi><m:mo stretchy="false">)</m:mo><m:mo>−</m:mo><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mi>A</m:mi><m:mo>∩</m:mo><m:mi>B</m:mi><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>where ∪is the set union operator, and ∩is the set intersection operator.</p></li>
+</ol>
+
+<p>When we actually compute measures, we usually use <em>integration</em>. We can think of integration as really just notation:</p>
+<div class="disp-formula" id="uequ13_4">
+<m:math alttext=""><m:mrow><m:mi>A</m:mi><m:mo stretchy="false">(</m:mo><m:mi>S</m:mi><m:mo stretchy="false">)</m:mo><m:mo>≡</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:mi>A</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>You can informally read the right-hand side as “take all points <strong>x</strong> in the region <em>S</em>, and sum their associated differential areas.” The integral is often written other ways including</p>
+<div class="disp-formula" id="uequ13_5">
+<m:math alttext=""><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mi>S</m:mi></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:mi>A</m:mi><m:mo>,</m:mo><m:mtext> </m:mtext><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:mtext>x</m:mtext><m:mo>,</m:mo><m:mtext> </m:mtext><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:msub><m:mi>A</m:mi><m:mtext>x</m:mtext></m:msub><m:mo>,</m:mo><m:mtext> </m:mtext><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mtext>x</m:mtext></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:mtext>x</m:mtext><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>All of the above formulas represent “the area of region S.” We will stick with the first one we used, because it is so verbose it avoids ambiguity. To evaluate such integrals analytically, we usually need to lay down some coordinate system and use our bag of calculus tricks to solve the equations. But have no fear if those skills have faded, as we usually have to numerically approximate integrals, and that requires only the simple techniques described in <a href="C18_chapter13.xhtml#sec13_3">Section 13.3</a>.</p>
+<p>Given a measure on a set S, we can always create a new measure by weighting with a nonnegative function w : S → ℝ<sup>+</sup>. This is best expressed in integral <span aria-label="337" epub:type="pagebreak" id="pg_337" role="doc-pagebreak"/>notation. For example, we can start with the example of the simple area <a id="index_term730"/>measure on [0,1]<sup>2</sup>:</p>
+<div class="disp-formula" id="uequ13_6">
+<m:math alttext=""><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mtext>x</m:mtext><m:mo>∈</m:mo><m:msup><m:mrow><m:mo stretchy="false">[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo stretchy="false">]</m:mo></m:mrow><m:mn>2</m:mn></m:msup></m:mrow></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:mi>A</m:mi><m:mo stretchy="false">(</m:mo><m:mtext>x</m:mtext><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>and we can use a “radially weighted” measure by inserting a weighting function of radius squared:</p>
+<div class="disp-formula" id="uequ13_7">
+<m:math alttext=""><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mtext>x</m:mtext><m:mo>∈</m:mo><m:msup><m:mrow><m:mo stretchy="false">[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo stretchy="false">]</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:msub><m:mrow/></m:mrow></m:mstyle><m:msup><m:mrow><m:mrow><m:mo>‖</m:mo><m:mtext>x</m:mtext><m:mo>‖</m:mo></m:mrow></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mi>d</m:mi><m:mi>A</m:mi><m:mo stretchy="false">(</m:mo><m:mtext>x</m:mtext><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>To evaluate this analytically, we can expand using a Cartesian coordinate system with <em>dA</em> ≡ <em>dx dy</em>:</p>
+<div class="disp-formula" id="uequ13_8">
+<m:math alttext=""><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mtext>x</m:mtext><m:mo>∈</m:mo><m:msup><m:mrow><m:mo stretchy="false">[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo stretchy="false">]</m:mo></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:msub><m:mtext> </m:mtext></m:mrow></m:mstyle><m:msup><m:mrow><m:mrow><m:mo>‖</m:mo><m:mtext>x</m:mtext><m:mo>‖</m:mo></m:mrow></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mi>d</m:mi><m:mi>A</m:mi><m:mo stretchy="false">(</m:mo><m:mtext>x</m:mtext><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msubsup><m:mrow><m:mo stretchy="false">(</m:mo><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo stretchy="false">)</m:mo></m:mrow></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:mi>d</m:mi><m:mi>x</m:mi><m:mi>d</m:mi><m:mi>y</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>The key thing here is that if you think of the ∥<strong>x</strong>∥<sup>2</sup> term as married to the dA term, and that these together form a new measure, we can call that measure ν. This would allow us to write ν(S) instead of the whole integral. If this strikes you as just a bunch of notation and bookkeeping, you are right. But it does allow us to write down equations that are either compact or expanded depending on our preference.</p>
+<section>
+<h3 id="sec13_1_1"><span class="green">13.1.1 Measures and Averages</span></h3>
+<p>Measures really start paying off when taking averages of a function. You can only take an average with respect to a particular measure, and you would like to select a measure that is “natural” for the application or domain. Once a measure is chosen, the average of a function f over a region S with respect to measure <em>μ</em> is</p>
+<div class="disp-formula" id="uequ13_9">
+<m:math alttext=""><m:mrow><m:mtext>average</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo><m:mo>≡</m:mo><m:mfrac><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mi>f</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mtext>x</m:mtext><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mtext>x</m:mtext><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mtext>x</m:mtext><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>For example, the average of the function <em>f</em>(<em>x,y</em>) = <em>x</em><sup>2</sup> over [0,2]<sup>2</sup> with respect to the area measure is</p>
+<div class="disp-formula" id="uequ13_10">
+<m:math alttext=""><m:mrow><m:mtext>average</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">)</m:mo><m:mo>≡</m:mo><m:mfrac><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mn>2</m:mn></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mn>2</m:mn></m:msubsup><m:mrow><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>x</m:mi><m:mi>d</m:mi><m:mi>y</m:mi></m:mrow><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mn>2</m:mn></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow><m:mn>2</m:mn></m:msubsup><m:mtext> </m:mtext></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:mi>d</m:mi><m:mi>x</m:mi><m:mi>d</m:mi><m:mi>y</m:mi></m:mrow></m:mfrac><m:mo>=</m:mo><m:mfrac><m:mn>4</m:mn><m:mn>3</m:mn></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>This machinery helps solve seemingly hard problems where choosing the measure is the tricky part. Such problems often arise in <em>integral geometry</em>, a field that studies measures on geometric entities, such as lines and planes. For example, <a id="term-524"/><span aria-label="338" epub:type="pagebreak" id="pg_338" role="doc-pagebreak"/>one might want to know the average length of a line through [0,1]<sup>2</sup>. That is, by definition,</p>
+<div class="disp-formula" id="uequ13_11">
+<m:math alttext=""><m:mrow><m:mtext>Average(length)</m:mtext><m:mo>=</m:mo><m:mfrac><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mtext>lines</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>L</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext>through</m:mtext><m:msup><m:mrow><m:mo stretchy="false">[</m:mo><m:mtext>0</m:mtext><m:mo>,</m:mo><m:mtext>1</m:mtext><m:mo stretchy="false">]</m:mo></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:msup></m:mrow></m:msub><m:mrow><m:mtext>length</m:mtext></m:mrow></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>L</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mi>L</m:mi><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mtext>lines</m:mtext><m:mi>L</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext>through</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:msup><m:mrow><m:mo stretchy="false">[</m:mo><m:mtext>0</m:mtext><m:mo>,</m:mo><m:mtext>1</m:mtext><m:mo stretchy="false">]</m:mo></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:msup></m:mrow></m:msub><m:mi>d</m:mi></m:mrow></m:mstyle><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:mi>L</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>All that is left, once we know that, is choosing the appropriate <em>μ</em> for the application. This is dealt with for lines in the next section.</p>
+</section>
+<section>
+<h3 id="sec13_1_2"><span class="green">13.1.2 Example: Measures on the Lines in the 2D Plane</span></h3>
+<p>What measure <em>μ</em> is “natural”?</p>
+<p>If you parameterize the lines as <em>y = mx + b</em>, you might think of a given line as a point (<em>m,b</em>) in “slope-intercept” space. An easy measure to use would be <em>dm db</em>, but this would not be a “good” measure in that not all equal size “bundles” of lines would have the same measure. More precisely, the measure would not be invariant with respect to change of coordinate system. For example, if you took all lines through the square [0,1]<sup>2</sup>, the measure of lines through it would not be the same as the measure through a unit square rotated 45∘. What we would really like is a “fair” measure that does not change with rotation or translation of a set of lines. This idea is illustrated in <a href="C18_chapter13.xhtml#f13_1">Figures 13.1</a> and <a href="C18_chapter13.xhtml#f13_2">13.2</a>.</p>
+<figure id="f13_1" tabindex="0">
+<img alt="" src="../images/fig13_1.jpg"/>
+<figcaption><p><span class="blue">Figure 13.1.</span> These two bundles of lines should have the same measure. They have different intersection lengths with the <em>y</em>-axis so using <em>db</em> would be a poor choice for a differential measure.</p></figcaption>
+</figure>
+<figure id="f13_2" tabindex="0">
+<img alt="" src="../images/fig13_2.jpg"/>
+<figcaption><p><span class="blue">Figure 13.2.</span> These two bundles of lines should have the same measure. Since they have different values for change in slope, using <em>dm</em> would be a poor choice for a differential measure.</p></figcaption>
+</figure>
+<p>To develop a natural measure on the lines, we should first start thinking of them as points in a dual space. This is a simple concept: the line <em>y = mx + b</em> can be specified as the point (<em>m,b</em>) in a slope-intercept space. This concept is illustrated in <a href="C18_chapter13.xhtml#f13_3">Figure 13.3</a>. It is more straightforward to develop a measure in (<em>ϕ</em>,<em>b</em>) space. In that space, b is the y-intercept, while <em>ϕ</em> is the angle the line makes with the <em>x</em>-axis, as shown in <a href="C18_chapter13.xhtml#f13_4">Figure 13.4</a>. Here, the differential measure <em>dϕdb</em> almost works, but it would not be fair due to the effect shown in <a href="C18_chapter13.xhtml#f13_1">Figure 13.1</a>. To account for the larger span b that a constant width bundle of lines makes, we must add a cosine factor:</p>
+<div class="disp-formula" id="uequ13_12">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mi>cos</m:mi><m:mi>ϕ</m:mi><m:mi>d</m:mi><m:mi>ϕ</m:mi><m:mi>d</m:mi><m:mi>b</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<figure id="f13_3" tabindex="0">
+<img alt="" src="../images/fig13_3.jpg"/>
+<figcaption><p><span class="blue">Figure 13.3.</span> The set of points on the line <em>y = m x + b</em> in (<em>x, y</em>) space can also be represented by a single point in (<em>m, b</em>) space so the top line and the bottom point represent the same geometric entity: a 2D line.</p></figcaption>
+</figure>
+<figure id="f13_4" tabindex="0">
+<img alt="" src="../images/fig13_4.jpg"/>
+<figcaption><p><span class="blue">Figure 13.4.</span> In angle-intercept space we parameterize the line by angle <em>ϕ</em> ∈ [-π∕2,π∕2) rather than slope.</p></figcaption>
+</figure>
+<p>It can be shown that this measure, up to a constant, is the only one that is invariant with respect to rotation and translation.</p>
+<p>This measure can be converted into an appropriate measure for other parameterizations of the line. For example, the appropriate measure for (<em>m,b</em>) space is</p>
+<div class="disp-formula" id="uequ13_13">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>d</m:mi><m:mi>m</m:mi><m:mi>d</m:mi><m:mi>b</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mfenced><m:mrow><m:mn>1</m:mn><m:mo>+</m:mo><m:msup><m:mi>m</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfenced></m:mrow><m:mrow><m:mfrac><m:mn>3</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:msup></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p><a id="term-525"/><span aria-label="339" epub:type="pagebreak" id="pg_339" role="doc-pagebreak"/>For the space of lines parameterized in (<em>u,v</em>) space,</p>
+<div class="disp-formula" id="uequ13_14">
+<m:math alttext=""><m:mrow><m:mi>u</m:mi><m:mi>x</m:mi><m:mtext>+</m:mtext><m:mi>v</m:mi><m:mi>y</m:mi><m:mtext>+ 1 = 0,</m:mtext></m:mrow></m:math>
+</div>
+<p>the appropriate measure is</p>
+<div class="disp-formula" id="uequ13_15">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>d</m:mi><m:mi>u</m:mi><m:mi>d</m:mi><m:mi>v</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mfenced><m:mrow><m:msup><m:mi>u</m:mi><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mi>v</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfenced></m:mrow><m:mrow><m:mfrac><m:mn>3</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:msup></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>For lines parameterized in terms of (<em>a,b</em>), the x-intercept and <em>y</em>-intercept, the measure is</p>
+<div class="disp-formula" id="uequ13_16">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>a</m:mi><m:mi>b</m:mi><m:mi>d</m:mi><m:mi>a</m:mi><m:mi>d</m:mi><m:mi>b</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mfenced><m:mrow><m:msup><m:mi>a</m:mi><m:mn>2</m:mn></m:msup><m:mo>+</m:mo><m:msup><m:mi>b</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfenced></m:mrow><m:mrow><m:mfrac><m:mn>3</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:msup></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>Note that any of those spaces are equally valid ways to specify lines, and which is best depends upon the circumstances. However, one might wonder whether there exists a coordinate system where the measure of a set of lines is just an area in the dual space. In fact, there is such a coordinate system, and it is delightfully simple; it is the <em>normal coordinates</em> which specify a line in terms of the normal distance from the origin to the line, and the angle the normal of the line makes with respect to the x-axis (<a href="C18_chapter13.xhtml#f13_5">Figure 13.5</a>). The implicit equation for such lines is</p>
+<div class="disp-formula" id="uequ13_17">
+<m:math alttext=""><m:mrow><m:mi>x</m:mi><m:mi>cos</m:mi><m:mi>θ</m:mi><m:mo>+</m:mo><m:mi>y</m:mi><m:mi>sin</m:mi><m:mi>θ</m:mi><m:mo>−</m:mo><m:mi>p</m:mi><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow></m:math>
+</div>
+<figure id="f13_5" tabindex="0">
+<img alt="" src="../images/fig13_5.jpg"/>
+<figcaption><p><span class="blue">Figure 13.5.</span> The normal coordinates of a line use the normal distance to the origin and an angle to specify a line.</p></figcaption>
+</figure>
+<p class="noindent1">And, indeed, the measure in that space is</p>
+<div class="disp-formula" id="uequ13_18">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mi>d</m:mi><m:mi>p</m:mi><m:mi>d</m:mi><m:mi>θ</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>We shall use these measures to choose fair random lines in a later section.</p>
+</section>
+<section>
+<h3 id="sec13_1_3"><span class="green">13.1.3 Example: Measure of Lines in 3D</span></h3>
+<p>In 3D, there are many ways to parameterize lines. Perhaps, the simplest way is to use their intersection with a particular plane along with some specification of their orientation. For example, we could chart the intersection with the xy plane along with the spherical coordinates of its orientation. Thus, each line would be specified as a (x,y,θ,<em>ϕ</em>) quadruple. This shows that lines in 3D are 4D entities; i.e., they can be described as points in a 4D space.</p>
+<p>The differential measure of a line should not vary with (<em>x,y</em>), but bundles of lines with equal cross section should have equal measure. Thus, a fair differential measure is</p>
+<div class="disp-formula" id="uequ13_19">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>y</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>sin</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>θ</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>θ</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>ϕ</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p><a id="term-191"/><span aria-label="340" epub:type="pagebreak" id="pg_340" role="doc-pagebreak"/>Another way to parameterize lines is to chart the intersection with two parallel planes. For example, if the line intersects the plane <em>z</em> = 0 at (<em>x = u,y = v</em>) and the plane <em>z</em> = 1 at (<em>x</em> = <em>s,y</em> = <em>t</em>), then the line can be described by the quadruple (<em>u,v,s,t</em>). Note that like the previous parameterization, this one is degenerate for lines parallel to the xy plane. The differential measure is more complicated for this parameterization although it can be approximated as</p>
+<div class="disp-formula" id="uequ13_20">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>≈</m:mo><m:mi>d</m:mi><m:mi>u</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>v</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>s</m:mi><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>t</m:mi><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>for bundles of lines nearly parallel to the z-axis. This is the measure often implicitly used in image-based rendering.</p>
+<p>For sets of lines that intersect a sphere, we can use the parameterization of the two points where the line intersects the sphere. If these are in spherical coordinates, then the point can be described by the quadruple (<em>θ<sub>1</sub>,<em>ϕ</em><sub>1</sub>,θ<sub>2</sub>,<em>ϕ</em><sub>2</sub></em>) and the measure is just the differential area associated with each point:</p>
+<div class="disp-formula" id="uequ13_21">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mi>sin</m:mi><m:msub><m:mi>θ</m:mi><m:mn>1</m:mn></m:msub><m:mi>d</m:mi><m:msub><m:mi>θ</m:mi><m:mn>1</m:mn></m:msub><m:mi>d</m:mi><m:msub><m:mi>ϕ</m:mi><m:mn>1</m:mn></m:msub><m:mi>sin</m:mi><m:msub><m:mi>θ</m:mi><m:mn>2</m:mn></m:msub><m:mi>d</m:mi><m:msub><m:mi>θ</m:mi><m:mn>2</m:mn></m:msub><m:mi>d</m:mi><m:msub><m:mi>ϕ</m:mi><m:mn>2</m:mn></m:msub><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>This implies that picking two uniform random endpoints on the sphere results in a line with uniform density. This observation was used to compute form-factors by Mateu Sbert in his dissertation (<a id="index_term1012"/>Sbert, 1997).</p>
+<p>Note that sometimes we want to parameterize directed lines, and sometimes we want the order of the endpoints not to matter. This is a bookkeeping detail that is especially important for rendering applications where the amount of light flowing along a line is different in the two directions along the line.</p>
+</section>
+</section>
+<section>
+<h2 id="sec13_2"><a id="index_term1006"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec13_2" role="doc-backlink"><span class="green">13.2 Continuous Probability</span></a></h2>
+<p>Many graphics algorithms use probability to construct random samples to solve integration and averaging problems. This is the domain of applied continuous probability which has basic connections to measure theory.</p>
+<section>
+<h3 id="sec13_2_1"><span class="green">13.2.1 One-Dimensional Continuous Probability Density Functions</span></h3>
+<p>Loosely speaking, a <em><a id="index_term242"/>continuous random variable</em> x is a scalar or vector quantity that “randomly” takes on some value from the real line ℝ = (-∞,+∞). The behavior of x is entirely described by the distribution of values it takes. This distribution of values can be quantitatively described by <a id="term-79"/><span aria-label="341" epub:type="pagebreak" id="pg_341" role="doc-pagebreak"/>the <em>probability density function</em> (pdf), <em>p</em>, associated with x (the relationship is denoted <em>x ~ p</em>). The probability that x assumes a particular value in some interval [a,b] is given by the following integral:</p>
+<div class="disp-formula" id="equ13_1">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mi>a</m:mi><m:mo>,</m:mo><m:mi>b</m:mi><m:mo stretchy="false">]</m:mo><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mi>a</m:mi><m:mi>b</m:mi></m:msubsup><m:mi>p</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>.</m:mo></m:mrow><m:mspace width="3em"/><m:mo>(13.1)</m:mo></m:math>
+</div>
+<p>Loosely speaking, the probability density function p describes the relative likelihood of a random variable taking a certain value; if <em>p</em>(<em>x</em><sub>1</sub>) = 6.0 and <em>p</em>(<em>x</em><sub>2</sub>) = 3.0, then a random variable with density <em>p</em> is twice as likely to have a value “near” <em>x</em><sub>1</sub> than it is to have a value near <em>x</em><sub>2</sub>. The density p has two characteristics:</p>
+<div class="disp-formula" id="equ13_2">
+<m:math alttext=""><m:mrow><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>≥</m:mo><m:mn>0</m:mn><m:mtext>(probability is nonnegative)</m:mtext><m:mo>,</m:mo></m:mrow><m:mspace width="3em"/><m:mo>(13.2)</m:mo></m:math>
+</div>
+<div class="disp-formula" id="equ13_3">
+<m:math alttext=""><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:mo>−</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mo>+</m:mo><m:mi>∞</m:mi></m:mrow></m:msubsup><m:mi>p</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mtext> </m:mtext><m:mo stretchy="false">(</m:mo><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>ℝ</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>1</m:mn><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow><m:mspace width="3em"/><m:mo>(13.3)</m:mo></m:math>
+</div>
+<p>As an example, the <em>canonical</em> random variable ξ takes on values between zero (inclusive) and one (non-inclusive) with uniform probability (here <em>uniform</em> simply means each value for ξ is equally likely). This implies that the <a id="index_term901"/>probability density function q for ξ is</p>
+<div class="disp-formula" id="uequ13_22">
+<m:math alttext=""><m:mrow><m:mi>q</m:mi><m:mrow><m:mo>(</m:mo><m:mi>ξ</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd><m:mn>1</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mn>0</m:mn><m:mo>≤</m:mo><m:mi>ξ</m:mi><m:mo>&lt;</m:mo><m:mn>1</m:mn><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>otherwise</m:mtext><m:mo>,</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>The space over which ξ is defined is simply the interval [0,1). The probability that ξ takes on a value in a certain interval [<em>a,b</em>] ∈ [0,1) is</p>
+<div class="disp-formula" id="uequ13_23">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>a</m:mi><m:mo>≤</m:mo><m:mi>ξ</m:mi><m:mo>≤</m:mo><m:mi>b</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mi>a</m:mi><m:mi>b</m:mi></m:msubsup><m:mn>1</m:mn></m:mrow></m:mstyle><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mi>b</m:mi><m:mo>−</m:mo><m:mi>a</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+</section>
+<section>
+<h3 id="sec13_2_2"><a id="index_term240"/><span class="green">13.2.2 One-Dimensional Expected Value</span></h3>
+<p>The average value that a real function <em>f</em> of a one-dimensional random variable with underlying pdf <em>p</em> will take on is called its <em>expected value</em>, <em>E(f(x))</em> (sometimes written <em>Ef(x))</em>:</p>
+<div class="disp-formula" id="uequ13_24">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:mo>∫</m:mo><m:mi>f</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>The expected value of a one-dimensional random variable can be calculated by setting <em>f(x) = x</em>. The expected value has a surprising and useful property: the <span aria-label="342" epub:type="pagebreak" id="pg_342" role="doc-pagebreak"/>expected value of the sum of two random variables is the sum of the expected values of those variables:</p>
+<div class="disp-formula" id="uequ13_25">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mtext>(</m:mtext><m:mi>x</m:mi><m:mtext>+</m:mtext><m:mi>y</m:mi><m:mtext>) =</m:mtext><m:mi>E</m:mi><m:mtext>(</m:mtext><m:mi>x</m:mi><m:mtext>) +</m:mtext><m:mi>E</m:mi><m:mtext>(</m:mtext><m:mi>y</m:mi><m:mtext>),</m:mtext></m:mrow></m:math>
+</div>
+<p>for random variables <em>x</em> and <em>y</em>. Because functions of random variables are themselves random variables, this linearity of expectation applies to them as well:</p>
+<div class="disp-formula" id="uequ13_26">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mtext>(</m:mtext><m:mi>f</m:mi><m:mtext>(</m:mtext><m:mi>x</m:mi><m:mtext>) +</m:mtext><m:mi>g</m:mi><m:mtext>(</m:mtext><m:mi>y</m:mi><m:mtext>)) =</m:mtext><m:mi>E</m:mi><m:mtext>(</m:mtext><m:mi>f</m:mi><m:mtext>(</m:mtext><m:mi>x</m:mi><m:mtext>)) +</m:mtext><m:mi>E</m:mi><m:mtext>(</m:mtext><m:mi>g</m:mi><m:mtext>(</m:mtext><m:mi>y</m:mi><m:mtext>))</m:mtext><m:mtext>.</m:mtext></m:mrow></m:math>
+</div>
+<p>An obvious question to ask is whether this property holds if the random variables being summed are correlated (variables that are not correlated are called <em>independent</em>). This linearity property in fact does hold <em>whether or not</em> the variables are independent! This summation property is vital for most Monte Carlo applications.</p>
+</section>
+<section>
+<h3 id="sec13_2_3"><a id="index_term238"/><a id="index_term769"/><span class="green">13.2.3 Multidimensional Random Variables</span></h3>
+<p>The discussion of random variables and their expected values extends naturally to multidimensional spaces. Most graphics problems will be in such higher-dimensional spaces. For example, many lighting problems are phrased on the surface of the hemisphere. Fortunately, if we define a measure <em>μ</em> on the space the random variables occupy, everything is very similar to the one-dimensional case. Suppose the space S has associated measure <em>μ</em>; for example, <em>S</em> is the surface of a sphere and <em>μ</em> measures area. We can define a pdf <em>p : S</em>↦ℝ, and if <em>x</em> is a random variable with <em>x ~ p</em>, then the probability that x will take on a value in some region S<sub>i</sub> ⊂ S is given by the integral</p>
+<div class="disp-formula" id="uequ13_27">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:msub><m:mi>S</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:msub><m:mi>S</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:msub><m:mi>p</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>Here, <em>Probability</em> (<em>event</em>) is the probability that <em>event</em> is true, so the integral is the probability that <em>x</em> takes on a value in the region <em>S<sub>i</sub></em>.</p>
+<p>In graphics, S is often an area (<em>dμ = dA = dxdy)</em> or a set of directions (points on a unit sphere: <em>dμ = dω = sinθdθdϕ</em>). As an example, a two-dimensional random variable α is a uniformly distributed random variable on a disk of radius R. Here, <em>uniformly</em> means uniform with respect to area, e.g., the way a bad dart player’s hits would be distributed on a dart board. Since it is uniform, we know that p(α) is some constant. From the fact that the area of the disk is <em>πr</em><sup>2</sup> and that the total probability is one, we can deduce that</p>
+<div class="disp-formula" id="uequ13_28">
+<m:math alttext=""><m:mrow><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>α</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mrow><m:mi>π</m:mi><m:msup><m:mi>R</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p><span aria-label="343" epub:type="pagebreak" id="pg_343" role="doc-pagebreak"/>This means that the probability that α is in a certain subset <em>S</em><sub>1</sub> of the disk is just</p>
+<div class="disp-formula" id="uequ13_29">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>α</m:mi><m:mo>∈</m:mo><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:msub><m:mi>S</m:mi><m:mn>1</m:mn></m:msub></m:mrow></m:msub><m:mrow><m:mfrac><m:mn>1</m:mn><m:mrow><m:mi>π</m:mi><m:msup><m:mi>R</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfrac></m:mrow></m:mrow></m:mstyle><m:mi>d</m:mi><m:mi>A</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>This is all very abstract. To actually use this information, we need the integral in a form we can evaluate. Suppose S<sub>i</sub> is the portion of the disk closer to the center than the perimeter. If we convert to polar coordinates, then α is represented as a (r,<em>ϕ</em>) pair, and S<sub>1</sub> is the region where r &lt; R∕2. Note that just because α is uniform, it does not imply that <em>ϕ</em> or r is necessarily uniform (in fact, <em>ϕ</em> is uniform, and r is not uniform). The differential area dA is just <em>r dr dϕ</em>. Thus,</p>
+<div class="disp-formula" id="uequ13_30">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mfenced><m:mrow><m:mi>r</m:mi><m:mo>&lt;</m:mo><m:mfrac><m:mi>R</m:mi><m:mn>2</m:mn></m:mfrac></m:mrow></m:mfenced><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mn>0</m:mn><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi></m:mrow></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mn>0</m:mn><m:mrow><m:mfrac><m:mi>R</m:mi><m:mn>2</m:mn></m:mfrac></m:mrow></m:msubsup><m:mrow><m:mfrac><m:mn>1</m:mn><m:mrow><m:mi>π</m:mi><m:msup><m:mi>R</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfrac></m:mrow></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:mi>r</m:mi><m:mi>d</m:mi><m:mi>r</m:mi><m:mi>d</m:mi><m:mi>ϕ</m:mi><m:mo>=</m:mo><m:mn>0.25.</m:mn></m:mrow></m:math>
+</div>
+<p>The formula for expected value of a real function applies to the multidimensional case:</p>
+<div class="disp-formula" id="uequ13_31">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mi>S</m:mi></m:msub><m:mi>f</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>where <em>x ∈ S</em> and <em>f : S</em>↦ℝ, and <em>p</em> : <em>S</em>↦ℝ. For example, on the unit square S = [0,1] × [0,1] and p(<em>x,y</em>) = 4xy, the expected value of the x coordinate for (<em>x,y</em>) ~ p is</p>
+<div class="disp-formula" id="uequ13_32">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>E</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mi>S</m:mi></m:mrow></m:msub><m:mi>f</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>A</m:mi></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msubsup><m:mn>4</m:mn></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mi>y</m:mi><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>x</m:mi><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>y</m:mi></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mfrac><m:mrow><m:mn>2</m:mn></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:mfrac><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Note that here f(<em>x,y</em>) = <em>x</em>.</p>
+</section>
+<section>
+<h3 id="sec13_2_4"><a id="index_term1305"/><span class="green">13.2.4 Variance</span></h3>
+<p>The <em>variance, V (x)</em>, of a one-dimensional random variable is, by definition, the expected value of the square of the difference between <em>x</em> and <em>E(x)</em>:</p>
+<div class="disp-formula" id="uequ13_33">
+<m:math alttext=""><m:mrow><m:mi>V</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>≡</m:mo><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:msup><m:mrow><m:mfenced close="]" open="["><m:mrow><m:mi>x</m:mi><m:mo>−</m:mo><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mfenced></m:mrow><m:mn>2</m:mn></m:msup><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>Some algebraic manipulation gives the non-obvious expression:</p>
+<div class="disp-formula" id="uequ13_34">
+<m:math alttext=""><m:mrow><m:mi>V</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup><m:mo stretchy="false">)</m:mo><m:mo>−</m:mo><m:msup><m:mrow><m:mfenced close="]" open="["><m:mrow><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mfenced></m:mrow><m:mn>2</m:mn></m:msup><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p><a id="term-464"/><span aria-label="344" epub:type="pagebreak" id="pg_344" role="doc-pagebreak"/>The expression <em>E([x − E(x)]</em><sup>2</sup>) is more useful for thinking intuitively about variance, while the algebraically equivalent expression <em>E</em>(<em>x</em><sup>2</sup>) − [<em>E(x)</em>]<sup>2</sup> is usually convenient for calculations. The variance of a sum of random variables is the sum of the <a id="index_term241"/>variances <em>if the variables are independent</em>. This summation property of variance is one of the reasons it is frequently used in analysis of probabilistic models. The square root of the variance is called the <em><a id="index_term1127"/>standard deviation</em>, σ, which gives some indication of expected absolute deviation from the expected value.</p>
+</section>
+<section>
+<h3 id="sec13_2_5"><a id="index_term350"/><span class="green">13.2.5 Estimated Means</span></h3>
+<p>Many problems involve sums of independent random variables <em>x</em><sub>i</sub>, where the variables share a common density p. Such variables are said to be <em>independent identically distributed</em> (iid) random variables. When the sum is divided by the number of variables, we get an estimate of <em>E(x)</em>:</p>
+<div class="disp-formula" id="uequ13_35">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>≈</m:mo><m:mfrac><m:mn>1</m:mn><m:mi>N</m:mi></m:mfrac><m:mstyle displaystyle="true"><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:mstyle><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>As <em>N</em> increases, the variance of this estimate decreases. We want <em>N</em> to be large enough so that we have confidence that the estimate is “close enough.” However, there are no sure things in Monte Carlo; we just gain statistical confidence that our estimate is good. To be sure, we would have to have <em>N</em> = ∞. This confidence is expressed by the <em><a id="index_term666"/>Law of Large Numbers</em>:</p>
+<div class="disp-formula" id="uequ13_36">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mfenced close="]" open="["><m:mrow><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:munder><m:mrow><m:mi>lim</m:mi></m:mrow><m:mrow><m:mi>N</m:mi><m:mo>→</m:mo><m:mi>∞</m:mi></m:mrow></m:munder><m:mfrac><m:mn>1</m:mn><m:mi>N</m:mi></m:mfrac><m:mstyle displaystyle="true"><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:mrow><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:mstyle></m:mrow></m:mfenced><m:mo>=</m:mo><m:mn>1.</m:mn></m:mrow></m:math>
+</div>
+</section>
+</section>
+<section>
+<h2 id="sec13_3"><a id="index_term754"/><a id="index_term1008"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec13_3" role="doc-backlink"><span class="green">13.3 Monte Carlo Integration</span></a></h2>
+<p>In this section, the basic Monte Carlo solution methods for definite integrals are outlined. These techniques are then straightforwardly applied to certain integral problems. All of the basic material of this section is also covered in several of the classic Monte Carlo texts. (See the “Notes” section at the end of this chapter.)</p>
+<p>As discussed earlier, given a function f : S↦ℝ and a random variable x ~ p, we can approximate the expected value of f(x) by a sum:</p>
+<div class="disp-formula" id="equ13_4">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mo stretchy="false">(</m:mo><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mi>f</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>≈</m:mo><m:mfrac><m:mn>1</m:mn><m:mi>N</m:mi></m:mfrac><m:mstyle displaystyle="true"><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:mi>f</m:mi></m:mstyle><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow><m:mspace width="3em"/><m:mo>(13.4)</m:mo></m:math>
+</div>
+<p><a id="term-830"/><span aria-label="345" epub:type="pagebreak" id="pg_345" role="doc-pagebreak"/>Because the expected value can be expressed as an integral, the integral is also approximated by the sum. The form of Equation (13.4) is a bit awkward; we would usually like to approximate an integral of a single function g rather than a product fp. We can accomplish this by substituting <em>g = fp</em> as the integrand:</p>
+<div class="disp-formula" id="equ13_5">
+<m:math alttext=""><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>S</m:mi></m:mrow></m:msub><m:mi>g</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>≈</m:mo><m:mfrac><m:mn>1</m:mn><m:mi>N</m:mi></m:mfrac><m:mstyle displaystyle="true"><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:mrow><m:mfrac><m:mrow><m:mi>g</m:mi><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac></m:mrow></m:mstyle><m:mo>.</m:mo></m:mrow><m:mspace width="3em"/><m:mo>(13.5)</m:mo></m:math>
+</div>
+<p>For this formula to be valid, <em>p</em> must be positive when <em>g</em> is nonzero.</p>
+<p>So to get a good estimate, we want as many samples as possible, and we want the <em>g</em>∕<em>p</em> to have a low variance (<em>g</em> and <em>p</em> should have a similar shape). Choosing p intelligently is called <em>importance sampling</em>, because if p is large where g is large, there will be more samples in important regions. Equation (13.4) also shows the fundamental problem with Monte Carlo integration: <em>diminishing return</em>. Because the variance of the estimate is proportional to 1/<em>N</em>, the standard deviation is proportional to <span class="inline-formula"><m:math alttext=""><m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:msqrt><m:mrow><m:mi>N</m:mi></m:mrow></m:msqrt></m:mrow></m:mrow></m:math></span>. Since the error in the estimate behaves similarly to the standard deviation, we will need to quadruple <em>N</em> to halve the error.</p>
+<p>Another way to reduce variance is to partition S, the domain of the integral, into several smaller domains <em>S<sub>i</sub></em>, and evaluate the integral as a sum of integrals over the <em>S<sub>i</sub></em>. This is called <em><a id="index_term1132"/>stratified sampling</em>, the technique that jittering employs in pixel sampling (<a href="C09_chapter4.xhtml#c4">Chapter 4</a>). Normally, only one sample is taken in each <em>S<sub>i</sub></em> (with density <em>p<sub>i</sub></em>), and in this case, the variance of the estimate is</p>
+<div class="disp-formula" id="equ13_6">
+<m:math alttext=""><m:mrow><m:mi>v</m:mi><m:mi>a</m:mi><m:mi>r</m:mi><m:mfenced><m:mrow><m:mstyle displaystyle="true"><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:mrow><m:mfrac><m:mrow><m:mi>g</m:mi><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:msub><m:mi>p</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac></m:mrow></m:mstyle></m:mrow></m:mfenced><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:munderover><m:mo>∑</m:mo><m:mrow><m:mi>i</m:mi><m:mo>=</m:mo><m:mn>1</m:mn></m:mrow><m:mi>N</m:mi></m:munderover><m:mi>v</m:mi></m:mstyle><m:mi>a</m:mi><m:mi>r</m:mi><m:mfenced><m:mrow><m:mfrac><m:mrow><m:mi>g</m:mi><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:msub><m:mi>p</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac></m:mrow></m:mfenced><m:mo>.</m:mo></m:mrow><m:mspace width="3em"/><m:mo>(13.6)</m:mo></m:math>
+</div>
+<p>It can be shown that the variance of stratified sampling is never higher than unstratified if all strata have equal measure:</p>
+<div class="disp-formula" id="uequ13_37">
+<m:math alttext=""><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mrow><m:msub><m:mi>S</m:mi><m:mi>i</m:mi></m:msub></m:mrow></m:msub><m:mi>p</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mn>1</m:mn><m:mi>N</m:mi></m:mfrac><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mo>∫</m:mo><m:mi>S</m:mi></m:msub><m:mi>p</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>The most common example of stratified sampling in graphics is jittering for pixel sampling.</p>
+<p>As an example of the Monte Carlo solution of an integral I, set g(x) equal to x over the interval (0, 4):</p>
+<div class="disp-formula" id="equ13_7">
+<m:math alttext=""><m:mrow><m:mi>I</m:mi><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mn>0</m:mn><m:mn>4</m:mn></m:msubsup><m:mi>x</m:mi></m:mrow></m:mstyle><m:mi>d</m:mi><m:mi>x</m:mi><m:mo>=</m:mo><m:mn>8.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(13.7)</m:mo></m:math>
+</div>
+<p>The impact of the shape of the function <em>p</em> on the variance of the N sample estimates is shown in <a href="C18_chapter13.xhtml#t13_1">Table 13.1</a>. Note that the variance is reduced when the shape of <em>p</em> is similar to the shape of g. The variance drops to zero if <em>p</em> = <em>g∕I</em>, but <a id="term-537"/><span aria-label="346" epub:type="pagebreak" id="pg_346" role="doc-pagebreak"/><em>I</em> is not usually known or we would not have to resort to Monte Carlo. One important principle illustrated in <a href="C18_chapter13.xhtml#t13_1">Table 13.1</a> is that stratified sampling is often <em>far</em> superior to importance sampling (Mitchell, 1996). Although the variance for this stratification on I is inversely proportional to the cube of the number of samples, there is no general result for the behavior of variance under stratification. There are some functions for which stratification does no good. One example is a white noise function, where the variance is constant for all regions. On the other hand, most functions will benefit from stratified sampling, because the variance in each subcell will usually be smaller than the variance of the entire domain.</p>
+
+<table class="table" id="t13_1">
+<caption><span class="blue">Table 13.1.</span> Variance for <a id="index_term751"/>Monte Carlo estimate of <span class="inline-formula"><m:math alttext=""><m:mrow><m:mrow><m:msubsup><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:msubsup><m:mrow><m:mi>x</m:mi><m:mtext> </m:mtext><m:mi>d</m:mi><m:mi>x</m:mi></m:mrow></m:mrow></m:mrow></m:math></span></caption>
+<thead>
+<tr>
+<th class="bordera" scope="col"><p class="tabtexth">Method</p>
+</th>
+<th class="bordera" scope="col"><p class="tabtexthc">Sampling function</p>
+</th>
+<th class="bordera" scope="col"><p class="tabtexthc">Variance</p>
+</th>
+<th class="bordera" scope="col"><p class="tabtexthc">Samples needed for standard error of 0.008</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="bordera"><p class="tabtext">Importance</p>
+</td>
+<td class="bordera"><p class="tabtextc">(6 - x)/(16)</p>
+</td>
+<td class="bordera"><p class="tabtextc">56.8<em>N</em><sup>-1</sup></p>
+</td>
+<td class="bordera"><p class="tabtextc">887,500</p>
+</td>
+</tr>
+<tr>
+<td class="bordera"><p class="tabtext">Importance</p>
+</td>
+<td class="bordera"><p class="tabtextc">1/4</p>
+</td>
+<td class="bordera"><p class="tabtextc">21.3<em>N</em><sup>-1</sup></p>
+</td>
+<td class="bordera"><p class="tabtextc">332,812</p>
+</td>
+</tr>
+<tr>
+<td class="bordera"><p class="tabtext">Importance</p>
+</td>
+<td class="bordera"><p class="tabtextc">(<em>x</em>+2)/16</p>
+</td>
+<td class="bordera"><p class="tabtextc">6.3<em>N</em><sup>-1</sup></p>
+</td>
+<td class="bordera"><p class="tabtextc">98,437</p>
+</td>
+</tr>
+<tr>
+<td class="bordera"><p class="tabtext">Importance</p>
+</td>
+<td class="bordera"><p class="tabtextc"><em>x</em>/8</p>
+</td>
+<td class="bordera"><p class="tabtextc">0</p>
+</td>
+<td class="bordera"><p class="tabtextc">1</p>
+</td>
+</tr>
+<tr>
+<td class="bordera"><p class="tabtext">Stratified</p>
+</td>
+<td class="bordera"><p class="tabtextc">1/4</p>
+</td>
+<td class="bordera"><p class="tabtextc">21.3<em>N</em><sup>-3</sup></p>
+</td>
+<td class="bordera"><p class="tabtextc">70</p>
+</td>
+</tr>
+</tbody>
+</table>
+<section>
+<h3 id="sec13_3_1"><span class="green">13.3.1 Quasi–Monte Carlo Integration</span></h3>
+<p>A popular method for quadrature is to replace the random points in Monte Carlo integration with <em>quasi-random</em> points. Such points are deterministic, but are in some sense uniform. For example, on the unit square [0,1]<sup>2</sup>, a set of N quasi-random points should have the following property on a region of area A within the square:</p>
+<div class="disp-formula" id="uequ13_38">
+<m:math alttext=""><m:mrow><m:mtext>Number of points in the region</m:mtext><m:mo>≈</m:mo><m:mi>A</m:mi><m:mi>N</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>For example, a set of regular samples in a lattice has this property.</p>
+<p>Quasi-random points can improve performance in many integration applications. Sometimes, care must be taken to make sure that they do not introduce aliasing. It is especially nice that, in any application where calls are made to random or stratified points in [0,1]<sup>d</sup>, one can substitute d-dimensional quasi-random points with no other changes.</p>
+<p>The key intuition motivating <a id="index_term920"/>quasi–Monte Carlo integration is that when estimating the average value of an integrand, any set of sample points will do, provided they are “fair.”</p>
+</section>
+</section>
+<section>
+<h2 id="sec13_4"><a id="index_term1009"/><a id="term-661"/><span aria-label="347" epub:type="pagebreak" id="pg_347" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec13_4" role="doc-backlink"><span class="green">13.4 Choosing Random Points</span></a></h2>
+<p>We often want to generate sets of random or pseudorandom points on the unit square for applications such as distribution ray tracing. There are several methods for doing this, e.g., jittering. These methods give us a set of <em>N</em> reasonably equidistributed points on the unit square [0,1]<sup>2</sup> : (<em>u</em><sub>1</sub>,<em>v</em><sub>1</sub>) through (<em>u<sub>N</sub>,v<sub>N</sub></em>).</p>
+<p>Sometimes, our sampling space may not be square (e.g., a circular lens) or may not be uniform (e.g., a filter function centered on a pixel). It would be nice if we could write a mathematical transformation that would take our equidistributed points (<em>u<sub>i</sub>,v<sub>i</sub></em>) as input and output a set of points in our desired sampling space with our desired density. For example, to sample a camera lens, the transformation would take (<em>u<sub>i</sub>,v<sub>i</sub></em>) and output (<em>r<sub>i</sub>,<em>ϕ</em><sub>i</sub></em>) such that the new points are approximately equidistributed on the disk of the lens. While we might be tempted to use the transform</p>
+<div class="disp-formula" id="uequ13_39">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mrow><m:msub><m:mrow><m:mi>ϕ</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi><m:msub><m:mrow><m:mi>u</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub></m:mrow><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mrow><m:msub><m:mrow><m:mi>r</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:msub><m:mrow><m:mi>v</m:mi></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub><m:mi>R</m:mi><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>it has a serious problem. While the points do cover the lens, they do so nonuniformly (<a href="C18_chapter13.xhtml#f13_6">Figure 13.6</a>). What we need in this case is a transformation that takes equal-area regions to equal-area regions—one that takes uniform sampling distributions on the square to uniform distributions on the new domain.</p>
+<figure id="f13_6" tabindex="0">
+<img alt="" src="../images/fig13_6.jpg"/>
+<figcaption><p><span class="blue">Figure 13.6.</span> The transform that takes the horizontal and vertical dimensions uniformly to (<em>r</em>,<em>ϕ</em>) does not preserve relative area; not all of the resulting areas are the same.</p></figcaption>
+</figure>
+<p>There are several ways to generate such nonuniform points or uniform points on non-rectangular domains, and the following sections review the three most often used: <a id="index_term384"/>function inversion, rejection, and Metropolis.</p>
+<section>
+<h3 id="sec13_4_1"><span class="green">13.4.1 Function Inversion</span></h3>
+<p>If the density <em>f(x)</em> is one-dimensional and defined over the interval <em>x</em> ∈ [<em>x</em><sub>min</sub>,<em>x</em><sub>max</sub>], then we can generate random numbers α<sub>i</sub> that have density f from a set of uniform random numbers ξ<sub>i</sub>, where ξ<sub>i</sub> ∈ [0,1]. To do this, we need the cumulative probability distribution function <em>P(x)</em>:</p>
+<div class="disp-formula" id="uequ13_40">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>α</m:mi><m:mo>&lt;</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:msub><m:mi>x</m:mi><m:mrow><m:mi>min</m:mi></m:mrow></m:msub></m:mrow><m:mi>x</m:mi></m:msubsup><m:mi>f</m:mi></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:msup><m:mi>x</m:mi><m:mo>′</m:mo></m:msup><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>To get α<sub>i</sub>, we simply transform ξ<sub>i</sub>:</p>
+<div class="disp-formula" id="uequ13_41">
+<m:math alttext=""><m:mrow><m:msub><m:mi>α</m:mi><m:mi>i</m:mi></m:msub><m:mo>=</m:mo><m:msup><m:mi>P</m:mi><m:mrow><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mo stretchy="false">(</m:mo><m:msub><m:mi>ξ</m:mi><m:mi>i</m:mi></m:msub><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>where <em>P</em><sup>-1</sup> is the inverse of <em>P</em>. If <em>P</em> is not analytically invertible, then numerical methods will suffice, because an inverse exists for all valid probability distribution functions.</p>
+<p>Note that analytically inverting a function is more confusing than it should be due to notation. For example, if we have the function</p>
+<div class="disp-formula" id="uequ13_42">
+<m:math alttext=""><m:mrow><m:mi>y</m:mi><m:mo>=</m:mo><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>for <em>x</em> &gt; 0, then the inverse function is expressed in terms of <em>y</em> as a function of <em>x</em>:</p>
+<div class="disp-formula" id="uequ13_43">
+<m:math alttext=""><m:mrow><m:mi>x</m:mi><m:mo>=</m:mo><m:msqrt><m:mi>y</m:mi></m:msqrt><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>When the function is analytically invertible, it is almost always that simple. However, things are a little more opaque with the standard notation:</p>
+<div class="disp-formula" id="uequ13_44">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd columnalign="right"><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="right"><m:msup><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:msqrt><m:mrow><m:mi>x</m:mi></m:mrow></m:msqrt><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Here, <em>x</em> is just a dummy variable. You may find it easier to use the less standard notation:</p>
+<div class="disp-formula" id="uequ13_45">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>y</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>x</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:msqrt><m:mrow><m:mi>y</m:mi></m:mrow></m:msqrt><m:mo>,</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>while keeping in mind that these are inverse functions of each other.</p>
+<p>For example, to choose random points <em>x</em><sub>i</sub> that have density</p>
+<div class="disp-formula" id="uequ13_46">
+<m:math alttext=""><m:mrow><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>3</m:mn><m:msup><m:mi>x</m:mi><m:mn>2</m:mn></m:msup></m:mrow><m:mn>2</m:mn></m:mfrac></m:mrow></m:math>
+</div>
+<p>on [-1,1], we see that</p>
+<div class="disp-formula" id="uequ13_47">
+<m:math alttext=""><m:mrow><m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac><m:mrow><m:msup><m:mi>x</m:mi><m:mn>3</m:mn></m:msup><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mn>2</m:mn></m:mfrac><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>and</p>
+<div class="disp-formula" id="uequ13_48">
+<m:math alttext=""><m:mrow><m:msup><m:mi>P</m:mi><m:mrow><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mroot><m:mrow><m:mn>2</m:mn><m:mi>x</m:mi><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow><m:mn>3</m:mn></m:mroot><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>so we can “warp” a set of canonical random numbers (ξ<sub>1</sub>,…,ξ<sub>N</sub>) to the properly distributed numbers</p>
+<div class="disp-formula" id="uequ13_49">
+<m:math alttext=""><m:mrow><m:mo stretchy="false">(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>…</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>N</m:mi></m:msub><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mroot><m:mrow><m:mn>2</m:mn><m:msub><m:mi>ξ</m:mi><m:mn>1</m:mn></m:msub><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow><m:mn>3</m:mn></m:mroot><m:mo>,</m:mo><m:mo>…</m:mo><m:mo>,</m:mo><m:mroot><m:mrow><m:mn>2</m:mn><m:msub><m:mi>ξ</m:mi><m:mi>N</m:mi></m:msub><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow><m:mn>3</m:mn></m:mroot><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>Of course, this same warping function can be used to transform “uniform” jittered samples into nicely distributed samples with the desired density.</p>
+<p><a id="term-662"/><span aria-label="349" epub:type="pagebreak" id="pg_349" role="doc-pagebreak"/>If we have a random variable α = (α<sub>x</sub>,α<sub>y</sub>) with two-dimensional density (<em>x,y</em>) defined on [<em>x</em><sub>min</sub>,<em>x</em><sub>max</sub>] × [<em>y</em><sub>min</sub>,<em>y</em><sub>max</sub>], then we need the two-dimensional distribution function:</p>
+<div class="disp-formula" id="uequ13_50">
+<m:math alttext=""><m:mrow><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:msub><m:mi>α</m:mi><m:mi>x</m:mi></m:msub><m:mo>&lt;</m:mo><m:mi>x</m:mi><m:mtext>and</m:mtext><m:msub><m:mi>α</m:mi><m:mi>y</m:mi></m:msub><m:mo>&lt;</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>F</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:msub><m:mi>y</m:mi><m:mrow><m:mi>min</m:mi></m:mrow></m:msub></m:mrow><m:mi>y</m:mi></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:msub><m:mi>x</m:mi><m:mrow><m:mi>min</m:mi></m:mrow></m:msub></m:mrow><m:mi>x</m:mi></m:msubsup><m:mi>f</m:mi></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:msup><m:mi>x</m:mi><m:mo>′</m:mo></m:msup><m:mo>,</m:mo><m:msup><m:mi>y</m:mi><m:mo>′</m:mo></m:msup><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo stretchy="false">(</m:mo><m:msup><m:mi>x</m:mi><m:mo>′</m:mo></m:msup><m:mo>,</m:mo><m:msup><m:mi>y</m:mi><m:mo>′</m:mo></m:msup><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>We first choose an <em>x</em><sub>i</sub> using the marginal distribution <em>F(x</em>,<em>y</em><sub>max</sub>) and then choose <em>y</em><sub>i</sub> according to <em>F</em>(<em>x</em><sub>i</sub>,y)∕F(<em>x</em><sub>i</sub>,<em>y</em><sub>max</sub>). If f(<em>x,y</em>) is separable (expressible as <em>g(x)h(y)</em>), then the one-dimensional techniques can be used on each dimension.</p>
+<p>Returning to our earlier example, suppose we are sampling uniformly from the disk of radius <em>R</em>, so <em>p(r</em>,<em>ϕ</em>) = 1∕(<em>πR</em><sup>2</sup>). The two-dimensional distribution function is</p>
+<div class="disp-formula" id="uequ13_51">
+<m:math display="block"><m:mrow><m:mtext>Probability</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>r</m:mi><m:mo>&lt;</m:mo><m:msub><m:mi>r</m:mi><m:mn>0</m:mn></m:msub><m:mtext>and</m:mtext><m:mi>ϕ</m:mi><m:mo>&lt;</m:mo><m:msub><m:mi>ϕ</m:mi><m:mn>0</m:mn></m:msub><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>F</m:mi><m:mo stretchy="false">(</m:mo><m:msub><m:mi>r</m:mi><m:mn>0</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>ϕ</m:mi><m:mn>0</m:mn></m:msub><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mn>0</m:mn><m:mrow><m:msub><m:mi>ϕ</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mn>0</m:mn><m:mrow><m:msub><m:mi>r</m:mi><m:mn>0</m:mn></m:msub></m:mrow></m:msubsup><m:mrow><m:mfrac><m:mrow><m:mi>r</m:mi><m:mi>d</m:mi><m:mi>r</m:mi><m:mi>d</m:mi><m:mi>ϕ</m:mi></m:mrow><m:mrow><m:mi>π</m:mi><m:msup><m:mi>R</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfrac></m:mrow></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>ϕ</m:mi><m:msup><m:mi>r</m:mi><m:mn>2</m:mn></m:msup></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi><m:msup><m:mi>R</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>This means that a canonical pair (ξ<sub>1</sub>,ξ<sub>2</sub>) can be transformed to a uniform random point on the disk:</p>
+<div class="disp-formula" id="uequ13_52">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="block"><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>ϕ</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mn>2</m:mn><m:mi>π</m:mi><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>r</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mi>R</m:mi><m:msqrt><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub></m:msqrt><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>This mapping is shown in <a href="C18_chapter13.xhtml#f13_7">Figure 13.7</a>.</p>
+<figure id="f13_7" tabindex="0">
+<img alt="" src="../images/fig13_7.jpg"/>
+<figcaption><p><span class="blue">Figure 13.7.</span> A mapping that takes equal area regions in the unit square to equal area regions in the disk.</p></figcaption>
+</figure>
+<p>To choose reflected ray directions for some realistic rendering applications, we choose points on the unit hemisphere according to the density:</p>
+<div class="disp-formula" id="uequ13_53">
+<m:math alttext=""><m:mrow><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo>,</m:mo><m:mi>ϕ</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi></m:mrow></m:mfrac><m:msup><m:mrow><m:mi>cos</m:mi></m:mrow><m:mi>n</m:mi></m:msup><m:mi>θ</m:mi><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>where <em>n</em> is a Phong-like exponent, θ is the angle from the surface normal and θ ∈ [0,π∕2] (is on the upper hemisphere), and <em>ϕ</em> is the azimuthal angle (<em>ϕ</em> ∈ [0,2π]). The cumulative distribution function is</p>
+<div class="disp-formula" id="equ13_8">
+<m:math alttext=""><m:mrow><m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo>,</m:mo><m:mi>ϕ</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mn>0</m:mn><m:mi>ϕ</m:mi></m:msubsup><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mn>0</m:mn><m:mi>θ</m:mi></m:msubsup><m:mi>p</m:mi></m:mrow></m:mstyle></m:mrow></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:msup><m:mi>θ</m:mi><m:mo>′</m:mo></m:msup><m:mo>,</m:mo><m:msup><m:mi>ϕ</m:mi><m:mo>′</m:mo></m:msup><m:mo stretchy="false">)</m:mo><m:mi>sin</m:mi><m:msup><m:mi>θ</m:mi><m:mo>′</m:mo></m:msup><m:mi>d</m:mi><m:msup><m:mi>θ</m:mi><m:mo>′</m:mo></m:msup><m:mi>d</m:mi><m:msup><m:mi>ϕ</m:mi><m:mo>′</m:mo></m:msup><m:mo>.</m:mo></m:mrow><m:mspace width="3em"/><m:mo>(13.8)</m:mo></m:math>
+</div>
+<p>Thesinθ′ term arises because, on the sphere, dω = cosθdθd<em>ϕ</em>. When the marginal densities are found, p (as expected) is separable, and we find that a (ξ<sub>1</sub>,ξ<sub>2</sub>) pair of canonical random numbers can be transformed to a direction by</p>
+<div class="disp-formula" id="uequ13_54">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>θ</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mi>arccos</m:mi><m:mrow><m:mo>(</m:mo><m:mrow><m:msup><m:mrow><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mi>n</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:mfrac></m:mrow></m:msup></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>ϕ</m:mi></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mn>2</m:mn><m:mi>π</m:mi><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p><span aria-label="350" epub:type="pagebreak" id="pg_350" role="doc-pagebreak"/>Again, a nice thing about this is that a set of jittered points on the unit square can be easily transformed to a set of jittered points on the hemisphere with the desired distribution. Note that if n is set to 1, we have a diffuse distribution, as is often needed.</p>
+<p>Often, we must map the point on the sphere into an appropriate direction with respect to a <em>uvw</em> basis. To do this, we can first convert the angles to a unit vector <span class="inline-formula"><m:math alttext=""><m:mrow><m:mover><m:mrow><m:mi>a</m:mi></m:mrow><m:mrow><m:mo>→</m:mo></m:mrow></m:mover></m:mrow></m:math></span>:</p>
+<div class="disp-formula" id="uequ13_55">
+<m:math alttext=""><m:mrow><m:mstyle mathsize="normal" mathvariant="bold"><m:mi>a</m:mi></m:mstyle><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mi>cos</m:mi><m:mi>ϕ</m:mi><m:mi>sin</m:mi><m:mi>θ</m:mi><m:mo>,</m:mo><m:mi>sin</m:mi><m:mi>ϕ</m:mi><m:mi>sin</m:mi><m:mi>θ</m:mi><m:mo>,</m:mo><m:mi>cos</m:mi><m:mi>θ</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:math>
+</div>
+<p>As an efficiency improvement, we can avoid taking trigonometric functions of inverse trigonometric functions (e.g.,cos(arccosθ)). For example, when <em>n</em> = 1 (a diffuse distribution), the vector <strong>a</strong> simplifies to</p>
+<div class="disp-formula" id="uequ13_56">
+<m:math alttext=""><m:mrow><m:mstyle mathsize="normal" mathvariant="bold"><m:mi>a</m:mi></m:mstyle><m:mo>=</m:mo><m:mfenced><m:mrow><m:mi>cos</m:mi><m:mo stretchy="false">(</m:mo><m:mn>2</m:mn><m:mi>π</m:mi><m:msub><m:mi>ξ</m:mi><m:mn>1</m:mn></m:msub><m:mo stretchy="false">)</m:mo><m:msqrt><m:mrow><m:msub><m:mi>ξ</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:msqrt><m:mo>,</m:mo><m:mi>sin</m:mi><m:mo stretchy="false">(</m:mo><m:mn>2</m:mn><m:mi>π</m:mi><m:msub><m:mi>ξ</m:mi><m:mn>1</m:mn></m:msub><m:mo stretchy="false">)</m:mo><m:msqrt><m:mrow><m:msub><m:mi>ξ</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:msqrt><m:mo>,</m:mo><m:msqrt><m:mrow><m:mn>1</m:mn><m:mo>−</m:mo><m:msub><m:mi>ξ</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:msqrt></m:mrow></m:mfenced></m:mrow></m:math>
+</div>
+</section>
+<section>
+<h3 id="sec13_4_2"><a id="index_term978"/><span class="green">13.4.2 Rejection</span></h3>
+<p>A <em>rejection</em> method chooses points according to some simple distribution and rejects some of them that are in a more complex distribution. There are several scenarios where rejection is used, and we show some of these by example.</p>
+<p class="indentb">Suppose we want uniform random points within the unit circle. We can first choose uniform random points (<em>x,y</em>) ∈ [-1,1]<sup>2</sup> and reject those outside the circle. If the function r() returns a canonical random number, then the procedure is</p>
+<p class="indent1">done = false</p>
+<p class="indent1"><strong>while</strong> (not done) <strong>do</strong></p>
+<p class="indent1">    <em>x</em> = -1 + 2<em>r</em>()</p>
+<p class="indent1">    <em>y</em> = -1 + 2<em>r</em>()</p>
+<p class="indent1">    <strong>if</strong> (x<sup>2</sup> + y<sup>2</sup> &lt; 1) <strong>then</strong></p>
+<p class="indent1">        done = true</p>
+<p class="noindent1">If we want a random number <em>x ~ p</em> and we know that <em>p : [a,b]</em>↦ℝ, and that for all <em>x, p(x)</em> &lt; <em>m</em>, then we can generate random points in the rectangle <em>[a,b]</em> × [0,<em>m</em>] and take those where <em>y</em> &lt; <em>p(x)</em>:</p>
+<p class="indent1"> done = false</p>
+<p class="indent1"><strong>while</strong> (not done) <strong>do</strong></p>
+<p class="indent1">    <em>x</em> = <em>a + r()(b - a)</em></p>
+<p class="indent1">    <em>y</em> = <em>r()m</em></p>
+<p class="indent1">    <strong>if</strong> (<em>y</em> &lt; <em>p(x)</em>) <strong>then</strong></p>
+<p class="indent1">        done = true</p>
+<p class="noindent1"><span aria-label="351" epub:type="pagebreak" id="pg_351" role="doc-pagebreak"/>This same idea can be applied to take random points on the surface of a sphere. To pick a random unit vector with uniform directional distribution, we first pick a random point in the unit sphere and then treat that point as a direction vector by taking the unit vector in the same direction:</p>
+<p class="indent1">done = false</p>
+<p class="indent1"><strong>while</strong> (not done) <strong>do</strong></p>
+<p class="indent1">    <em>x</em> = -1 + 2<em>r</em>()</p>
+<p class="indent1">    <em>y</em> = -1 + 2<em>r</em>()</p>
+<p class="indent1">    <em>z</em> = -1 + 2<em>r</em>()</p>
+<p class="indent1">    <strong>if</strong> <span class="inline-formula"><m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><m:mrow><m:mo>(</m:mo><m:mo>(</m:mo><m:mi>l</m:mi><m:mo>=</m:mo><m:msqrt><m:mrow><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>+</m:mo><m:msup><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:msqrt><m:mo>)</m:mo><m:mo>)</m:mo><m:mo>&lt;</m:mo><m:mn>1</m:mn><m:mtext mathvariant="bold"> then</m:mtext></m:mrow></m:math></span></p>
+<p class="indent1">        done = true</p>
+<p class="indent1"><em>x</em> = <em>x</em>∕<em>l</em></p>
+<p class="indent1"><em>y</em> = <em>y</em>∕<em>l</em></p>
+<p class="indent1"><em>z</em> = <em>z</em>∕<em>l</em></p>
+<p class="noindent1">Although the rejection method is usually simple to code, it is rarely compatible with stratification. For this reason, it tends to converge more slowly and should thus be used mainly for debugging or in particularly difficult circumstances.</p>
+</section>
+<section>
+<h3 id="sec13_4_3"><a id="index_term738"/><span class="green">13.4.3 Metropolis</span></h3>
+<p>The <em>Metropolis</em> method uses random <em>mutations</em> to produce a set of samples with a desired density. This concept is used extensively in the <em>Metropolis Light Transport</em> algorithm referenced in the chapter notes. Suppose we have a random point <em>x</em><sub>0</sub> in a domain S. Furthermore, suppose for any point x, we have a way to generate random y ~ p<sub>x</sub>. We use the marginal notation p<sub>x</sub>(y) ≡ p(x → y) to denote this density function. Now, suppose we let <em>x</em><sub>1</sub> be a random point in S selected with underlying density p(<em>x</em><sub>0</sub> → <em>x</em><sub>1</sub>). We generate <em>x</em><sub>2</sub> with density p(<em>x</em><sub>1</sub> → <em>x</em><sub>0</sub>) and so on. In the limit, where we generate an infinite number of samples, it can be proved that the samples will have some underlying density determined by p regardless of the initial point <em>x</em><sub>0</sub>.</p>
+<p>Now, suppose we want to choose p such that the underlying density of samples to which we converge is proportional to a function f(x) where f is a nonnegative function with domain S. Furthermore, suppose we can evaluate f, but we have little or no additional knowledge about its properties (such functions are common in graphics). Also, suppose we have the ability to make “transitions” from <em>x</em><sub>i</sub> to <em>x</em><sub>i+1</sub> with underlying density function t(<em>x</em><sub>i</sub> → <em>x</em><sub>i+1</sub>). To add flexibility, further suppose we add the potentially nonzero probability that <em>x</em><sub>i</sub> transitions to itself, i.e., <em>x</em><sub>i+1</sub> = <em>x</em><sub>i</sub>. We phrase this as generating a potential candidate y ~ t(<em>x</em><sub>i</sub> → y) <span aria-label="352" epub:type="pagebreak" id="pg_352" role="doc-pagebreak"/>and “accepting” this candidate (i.e., <em>x</em><sub>i+1</sub> = y) with probability a(<em>x</em><sub>i</sub> → y) and rejecting it (i.e., <em>x</em><sub>i+1</sub> = <em>x</em><sub>i</sub>) with probability 1 - a(<em>x</em><sub>i</sub> → y). Note that the sequence <em>x</em><sub>0</sub>,<em>x</em><sub>1</sub>,<em>x</em><sub>2</sub>,… will be a random set, but there will be some correlation among samples. They will still be suitable for Monte Carlo integration or density estimation, but analyzing the variance of those estimates is much more challenging.</p>
+<p>Now, suppose we are given a transition function <em>t(x → y)</em> and a function <em>f(x)</em> of which we want to mimic the distribution, can we use a(y → x) such that the points are distributed in the shape of <em>f</em>? Or more precisely,</p>
+<div class="disp-formula" id="uequ13_57">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mrow><m:mo>{</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:mo>…</m:mo><m:mo>}</m:mo></m:mrow><m:mo>~</m:mo><m:mfrac><m:mrow><m:mi>f</m:mi></m:mrow><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msub><m:mrow><m:mo>∫</m:mo></m:mrow><m:mrow><m:mi>s</m:mi></m:mrow></m:msub><m:mi>f</m:mi></m:mrow></m:mstyle></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>It turns out this can be forced by making sure the <em>x</em><sub>i</sub> are <em>stationary</em> in some strong sense. If you visualize a huge collection of sample points x, you want the “flow” between two points to be the same in each direction. If we assume the density of points near <em>x</em> and <em>y</em> are proportional to <em>f(x)</em> and <em>f(y)</em>, respectively, then the flow in the two directions should be the same:</p>
+<div class="disp-formula" id="uequ13_58">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mrow><m:mtext>flow</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>→</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>k</m:mi><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>t</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>→</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>→</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd><m:mrow><m:mtext>flow</m:mtext><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo>→</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mi>k</m:mi><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mi>t</m:mi><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo>→</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo>→</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>where <em>k</em> is some positive constant. Setting these two flows constant gives a constraint on a:</p>
+<div class="disp-formula" id="uequ13_59">
+<m:math alttext=""><m:mrow><m:mfrac><m:mrow><m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo>→</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mi>a</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>→</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mi>t</m:mi><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>→</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mi>t</m:mi><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo>→</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>Thus, if either <em>a(y → x)</em> or <em>a(x → y)</em> is known, so is the other. Making them larger improves the chance of acceptance, so the usual technique is to set the larger of the two to 1.</p>
+<p>A difficulty in using the Metropolis sample generation technique is that it is hard to estimate how many points are needed before the set of points is “good.” Things are accelerated if the first n points are discarded, although choosing n wisely is nontrivial.</p>
+</section>
+<section>
+<h3 id="sec13_4_4"><a id="index_term930"/><span class="green">13.4.4 Example: Choosing Random Lines in the Square</span></h3>
+<p>As an example of the full process of designing a sampling strategy, consider the problem of finding random lines that intersect the unit square [0,1]<sup>2</sup>. We want this process to be fair; that is, we would like the lines to be uniformly distributed within the square. Intuitively, we can see that there is some subtlety to this problem; there are “more” lines at an oblique angle than in horizontal or vertical directions. This is because the cross section of the square is not uniform.</p>
+<p><a id="term-663"/><span aria-label="353" epub:type="pagebreak" id="pg_353" role="doc-pagebreak"/>Our first goal is to find a function-inversion method, if one exists, and then to fall back on rejection or Metropolis if that fails. This is because we would like to have stratified samples in line space. We try using normal coordinates first, because the problem of choosing random lines in the square is just the problem of finding uniform random points in whatever part of (<em>r,θ</em>) space corresponds to lines in the square.</p>
+<p>Consider the region where−π∕2 &lt; <em>θ</em> &lt; 0. What values of r correspond to lines that hit the square? For those angles, r &lt; cos<em>θ</em> are all the lines that hit the square as shown in <a href="C18_chapter13.xhtml#f13_8">Figure 13.8</a>. Similar reasoning in the other four quadrants finds the region in (r,<em>θ</em>) space that must be sampled, as shown in <a href="C18_chapter13.xhtml#f13_9">Figure 13.9</a>. The equation of the boundary of that region r<sub>max</sub>(<em>θ</em>)is</p>
+<figure id="f13_8" tabindex="0">
+<img alt="" src="../images/fig13_8.jpg"/>
+<figcaption><p><span class="blue">Figure 13.8.</span> The largest distance r corresponds to a line hitting the square for <em><em>θ</em> ∈[ - π</em>∕2, 0]. Because the square has sidelength one, <em>r</em>= cos <em><em>θ</em></em>.</p></figcaption>
+</figure>
+<figure id="f13_9" tabindex="0">
+<img alt="" src="../images/fig13_9.jpg"/>
+<figcaption><p><span class="blue">Figure 13.9.</span> The maximum radius for lines hitting the unit square [0,1]<sup>2</sup> as a function of <em><em>θ</em></em>.</p></figcaption>
+</figure>
+<div class="disp-formula" id="uequ13_60">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="block"><m:mrow><m:msub><m:mrow><m:mi>r</m:mi></m:mrow><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable columnalign="left"><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mo>−</m:mo><m:mi>π</m:mi><m:mo>,</m:mo><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo stretchy="false">]</m:mo><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mi>cos</m:mi><m:mi>θ</m:mi></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo>,</m:mo><m:mtext>0</m:mtext><m:mo stretchy="false">]</m:mo><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mrow><m:msqrt><m:mn>2</m:mn></m:msqrt><m:mi>cos</m:mi><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:mfrac><m:mo stretchy="false">)</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mtext>0</m:mtext><m:mo>,</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo stretchy="false">]</m:mo><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mi>sin</m:mi><m:mi>θ</m:mi></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo>,</m:mo><m:mi>π</m:mi><m:mo stretchy="false">]</m:mo><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>Because the region under <em>r</em><sub>max</sub>(<em>θ</em>) is a simple function bounded below by <em>r</em> = 0, we can sample it by first choosing <em>θ</em> according to the density function:</p>
+<div class="disp-formula" id="uequ13_61">
+<m:math alttext=""><m:mrow><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac><m:mrow><m:msub><m:mi>r</m:mi><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo stretchy="false">)</m:mo></m:mrow><m:mrow><m:mstyle displaystyle="true"><m:mrow><m:msubsup><m:mo>∫</m:mo><m:mrow><m:mo>−</m:mo><m:mi>π</m:mi></m:mrow><m:mi>π</m:mi></m:msubsup><m:mrow><m:msub><m:mi>r</m:mi><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub></m:mrow></m:mrow></m:mstyle><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo stretchy="false">)</m:mo><m:mi>d</m:mi><m:mi>θ</m:mi></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>The denominator here is 4. Now, we can compute the cumulative probability distribution function:</p>
+<div class="disp-formula" id="uequ13_62">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="block"><m:mrow><m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable columnalign="left"><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mn>0</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mo>−</m:mo><m:mi>π</m:mi><m:mo>,</m:mo><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo stretchy="false">]</m:mo><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mtext>sin </m:mtext><m:mi>θ</m:mi><m:mo>)</m:mo><m:mo>/</m:mo><m:mn>4</m:mn></m:mrow></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo>,</m:mo><m:mtext>0</m:mtext><m:mo stretchy="false">]</m:mo><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mfrac><m:mrow><m:msqrt><m:mrow><m:mn>2</m:mn></m:mrow></m:msqrt></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac><m:mtext> sin </m:mtext><m:mrow><m:mo>(</m:mo><m:mi>θ</m:mi><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mtext>0</m:mtext><m:mo>,</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo stretchy="false">]</m:mo><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mo>(</m:mo><m:mn>3</m:mn><m:mo>−</m:mo><m:mtext>cos </m:mtext><m:mi>θ</m:mi><m:mo>)</m:mo><m:mo>/</m:mo><m:mn>4</m:mn></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mi>θ</m:mi><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac><m:mo>,</m:mo><m:mi>π</m:mi><m:mo stretchy="false">]</m:mo><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p><a id="term-664"/><span aria-label="354" epub:type="pagebreak" id="pg_354" role="doc-pagebreak"/>We can invert this by manipulating ξ<sub>1</sub> = P(<em>θ</em>) into the form <em>θ</em> = g(ξ<sub>1</sub>). This yields</p>
+<div class="disp-formula" id="uequ13_63">
+<m:math alttext=""><m:mrow><m:mi>θ</m:mi><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mrow><m:mtext>arcsin</m:mtext><m:mrow><m:mo>(</m:mo><m:mn>4</m:mn><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>−</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>&lt;</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mtext>arcsin</m:mtext><m:mrow><m:mo>(</m:mo><m:mfrac><m:mrow><m:msqrt><m:mrow><m:mn>2</m:mn></m:mrow></m:msqrt></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:mfrac><m:mrow><m:mo>(</m:mo><m:mn>2</m:mn><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>−</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo><m:mo>+</m:mo><m:mfrac><m:mrow><m:mi>π</m:mi></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:mfrac></m:mrow></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>∈</m:mo><m:mrow><m:mo>[</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:mfrac><m:mo>,</m:mo><m:mfrac><m:mrow><m:mn>3</m:mn></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:mfrac><m:mo>]</m:mo></m:mrow><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mtext>arccos</m:mtext><m:mrow><m:mo>(</m:mo><m:mn>3</m:mn><m:mo>−</m:mo><m:mn>4</m:mn><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd columnalign="left"><m:mtext>if</m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mo>&gt;</m:mo><m:mfrac><m:mrow><m:mn>3</m:mn></m:mrow><m:mrow><m:mn>4</m:mn></m:mrow></m:mfrac><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>Once we have <em><em>θ</em></em>, then <em>r</em> is simply</p>
+<div class="disp-formula" id="uequ13_64">
+<m:math alttext=""><m:mrow><m:mi>r</m:mi><m:mo>=</m:mo><m:msub><m:mi>ξ</m:mi><m:mn>2</m:mn></m:msub><m:msub><m:mi>r</m:mi><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>θ</m:mi><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>As discussed earlier, there are many parameterizations of the line, and each has an associated “fair” measure. We can generate random lines in any of these spaces as well. For example, in slope-intercept space, the region that hits the square is shown in <a href="C18_chapter13.xhtml#f13_10">Figure 13.10</a>. By similar reasoning to the normal space, the density function for the slope is</p>
+<div class="disp-formula" id="uequ13_65">
+<m:math alttext=""><m:mrow><m:mi>p</m:mi><m:mo stretchy="false">(</m:mo><m:mi>m</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mfrac><m:mrow><m:mn>1</m:mn><m:mo>+</m:mo><m:mo>|</m:mo><m:mi>m</m:mi><m:mo>|</m:mo></m:mrow><m:mn>4</m:mn></m:mfrac></m:mrow></m:math>
+</div>
+<figure id="f13_10" tabindex="0">
+<img alt="" src="../images/fig13_10.jpg"/>
+<figcaption><p><span class="blue">Figure 13.10.</span> The region of (<em>m,b</em>) space that contains lines that intersect the unit square [0,1]<sup>2</sup>.</p></figcaption>
+</figure>
+<p class="noindent1">with respect to the differential measure</p>
+<div class="disp-formula" id="uequ13_66">
+<m:math alttext=""><m:mrow><m:mi>d</m:mi><m:mi>μ</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>d</m:mi><m:mi>m</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mfenced><m:mrow><m:mn>1</m:mn><m:mo>+</m:mo><m:msup><m:mi>m</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:mfenced></m:mrow><m:mrow><m:mfrac><m:mn>3</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:msup></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>This gives rise to the cumulative distribution function:</p>
+<div class="disp-formula" id="uequ13_67">
+<m:math display="block"><m:mrow><m:mi>P</m:mi><m:mo stretchy="false">(</m:mo><m:mi>m</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mrow><m:mtable columnalign="left"><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mrow><m:mfrac><m:mn>1</m:mn><m:mn>4</m:mn></m:mfrac><m:mo>+</m:mo><m:mfrac><m:mrow><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>4</m:mn><m:msqrt><m:mrow><m:mn>1</m:mn><m:mo>+</m:mo><m:msup><m:mi>m</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt></m:mrow></m:mfrac></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mtext>if</m:mtext><m:mi>m</m:mi><m:mo>&lt;</m:mo><m:mtext>0</m:mtext><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr columnalign="left"><m:mtd columnalign="left"><m:mrow><m:mfrac><m:mn>3</m:mn><m:mn>4</m:mn></m:mfrac><m:mo>+</m:mo><m:mfrac><m:mrow><m:mi>m</m:mi><m:mo>−</m:mo><m:mn>1</m:mn></m:mrow><m:mrow><m:mn>4</m:mn><m:msqrt><m:mrow><m:mn>1</m:mn><m:mo>+</m:mo><m:msup><m:mi>m</m:mi><m:mn>2</m:mn></m:msup></m:mrow></m:msqrt></m:mrow></m:mfrac></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mtext>if</m:mtext><m:mi>m</m:mi><m:mo>≥</m:mo><m:mtext>0</m:mtext><m:mo>.</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:mrow></m:math>
+</div>
+<p><span aria-label="355" epub:type="pagebreak" id="pg_355" role="doc-pagebreak"/>These can be inverted by solving two quadratic equations. Given an <em>m</em> generated using ξ<sub>1</sub>, we then have</p>
+<div class="disp-formula" id="uequ13_68">
+<m:math alttext=""><m:mrow><m:mi>b</m:mi><m:mrow><m:mo>=</m:mo></m:mrow><m:mrow><m:mo>{</m:mo><m:mtable><m:mtr><m:mtd columnalign="left"><m:mrow><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:mi>m</m:mi><m:mo stretchy="false">)</m:mo><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mtext>if</m:mtext><m:mtext> </m:mtext><m:mi>ξ</m:mi><m:mo>&lt;</m:mo><m:mfrac><m:mrow><m:mtext>1</m:mtext></m:mrow><m:mrow><m:mtext>2</m:mtext></m:mrow></m:mfrac></m:mrow><m:mn>.</m:mn></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:mrow><m:mo>−</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mo stretchy="false">(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mi>m</m:mi><m:mo stretchy="false">)</m:mo><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub></m:mrow></m:mtd><m:mtd columnalign="left"><m:mrow><m:mtext>otherwise.</m:mtext></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>This is not a better way than using normal coordinates; it is just an alternative way.</p>
+</section>
+</section>
+<section>
+<h2 id="sec13_5"><span class="green">Frequently Asked Questions</span></h2>
+<ul class="list-bullet">
+<li>
+<p class="list"><span class="green">This chapter discussed probability but not statistics. What is the distinction?</span></p></li>
+</ul>
+<p class="noindent1b">Probability is the study of how likely an event is. Statistics infers characteristics of large, but finite, populations of random variables. In that sense, statistics could be viewed as a specific type of applied probability.</p>
+<ul>
+<li>
+<p class="list"><span class="green">Is Metropolis sampling the same as the Metropolis Light Transport Algorithm?</span></p>
+</li>
+</ul>
+<p class="noindent1b">No. The <em>Metropolis Light Transport</em> (Veach &amp; Guibas, 1997). Algorithm uses Metropolis sampling as part of its procedure, but it is specifically for rendering, and it has other steps as well.</p>
+</section>
+<section>
+<h2 id="sec13_6"><span class="green">Notes</span></h2>
+<p>The classic reference for geometric probability is <em>Geometric Probability</em> (Solomon, 1978). Another method for picking random edges in a square is given in <em>Random–Edge Discrepancy of Supersampling Patterns</em> (Dobkin &amp; Mitchell, 1993). More information on quasi–Monte Carlo methods for graphics can be found in <em>Efficient Multidimensional Sampling</em> (Kollig &amp; Keller, 2002). Three classic and very readable books on Monte Carlo methods are <em>Monte</em> <em>Carlo Methods</em> (Hammersley &amp; Handscomb, 1964), <em>Monte Carlo Methods,</em> <em>Basics</em> (Kalos &amp; Whitlock, 1986), and <em>The Monte Carlo Method</em> (Sobel, Stone, &amp; Messer, 1975).</p>
+</section>
+<section>
+<h2 id="sec13_7"><span class="green">Exercises</span></h2>
+<p class="qpara"><span class="green">1.</span> What is the average value of the function xyz in the unit cube (<em>x,y,z</em>) ∈ [0,1]<sup>3</sup>?</p>
+<p class="qpara"><span class="green">2.</span> <span aria-label="356" epub:type="pagebreak" id="pg_356" role="doc-pagebreak"/>What is the average value of r on the unit-radius disk: (<em>r</em>,<em>ϕ</em>) ∈ [0,1] × [0,2π)?</p>
+<p class="qpara"><span class="green">3.</span> Show that the uniform mapping of canonical random points (ξ<sub>1</sub>,ξ<sub>2</sub>) to the barycentric coordinates of any triangle is: <span class="inline-formula"><m:math alttext=""><m:mrow><m:mi>β</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>−</m:mo><m:msqrt><m:mrow><m:mn>1</m:mn><m:mo>−</m:mo><m:msub><m:mrow><m:mi>ξ</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub></m:mrow></m:msqrt></m:mrow></m:math></span> , and γ = (1 - <em>u</em>)ξ<sub>2</sub>.</p>
+<p class="qpara"><span class="green">4.</span> What is the average length of a line inside the unit square? Verify your answer by generating ten million random lines in the unit square and averaging their lengths.</p>
+<p class="qpara"><span class="green">5.</span> What is the average length of a line inside the unit cube? Verify your answer by generating ten million random lines in the unit cube and averaging their lengths.</p>
+<p class="qpara"><span class="green">6.</span> Show from the definition of variance that <em>V(x)</em> = <em>E</em>(<em>x</em><sup>2</sup>) – [<em>E(x)</em>]<sup>2</sup>.</p>
+</section>
+</section>
+</body>
+</html>

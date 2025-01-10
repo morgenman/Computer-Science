@@ -1,0 +1,1095 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:svg="http://www.w3.org/2000/svg" dir="ltr" lang="en" xml:lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>12 Data Structures for Graphics</title>
+<link href="../styles/9781000426359.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+jax: ["input/TeX","input/MathML","output/SVG"],
+extensions: ["tex2jax.js","mml2jax.js","MathEvents.js"],
+TeX: {
+extensions: ["noErrors.js","noUndefined.js","autoload-all.js"]
+},
+MathMenu: {
+showRenderer: false
+},
+menuSettings: {
+zoom: "Click"
+},
+messageStyle: "none"
+});
+</script>
+<script src="../mathjax/MathJax.js" type="text/javascript"/>
+<meta content="urn:uuid:e0000000-0000-0000-0000-000006665500" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section epub:type="chapter" role="doc-chapter">
+<h1 class="chapz" id="c12"><a id="term-352"/><a id="term-979"/><span aria-label="291" epub:type="pagebreak" id="pg_291" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rc12" role="doc-backlink"><span class="green"><span class="big1">12</span><br/>Data Structures for Graphics</span></a></h1>
+<p>Certain data structures seem to pop up repeatedly in graphics applications, perhaps because they address fundamental underlying ideas such as surfaces, space, and scene structure. This chapter talks about several basic and unrelated categories of data structures that are among the most common and useful: mesh structures, spatial data structures, scene graphs, and tiled multidimensional arrays.</p>
+<p>For meshes, we discuss the basic storage schemes used for storing static meshes and for transferring meshes to graphics APIs. We also discuss the winged-edge data structure (Baumgart, 1974) and the related half-edge structure, which are useful for managing models where the tessellation changes, such as in subdivision or model simplification. Although these methods generalize to arbitrary polygon meshes, we focus on the simpler case of triangle meshes here.</p>
+<p>Next, the scene-graph data structure is presented. Various forms of this data structure are ubiquitous in graphics applications because they are so useful in managing objects and transformations. All new graphics APIs are designed to support scene graphs well.</p>
+<p>For spatial data structures, we discuss three approaches to organizing models in 3D space—bounding volume hierarchies, hierarchical space subdivision, and uniform space subdivision—and the use of hierarchical space subdivision (BSP trees) for hidden surface removal. The same methods are also used for other purposes, including geometry culling and collision detection.</p>
+<p>Finally, the tiled multidimensional array is presented. Originally developed to help paging performance in applications where graphics data needed to be swapped in from disk, such structures are now crucial for memory locality on machines regardless of whether the array fits in main memory.</p>
+<section>
+<h2 id="sec12_1"><a id="index_term1276"/><a id="term-970"/><span aria-label="292" epub:type="pagebreak" id="pg_292" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec12_1" role="doc-backlink"><span class="green">12.1 Triangle Meshes</span></a></h2>
+<p>Most real-world models are composed of complexes of triangles with shared vertices. These are usually known as <em>triangular meshes</em>, <em>triangle meshes</em>, or <em>triangular irregular</em> <em>networks</em> (TINs), and handling them efficiently is crucial to the performance of many graphics programs. The kind of efficiency that is important depends on the application. Meshes are stored on disk and in memory, and we’d like to minimize the amount of storage consumed. When meshes are transmitted across networks or from the CPU to the graphics system, they consume bandwidth, which is often even more precious than storage. In applications that perform operations on meshes, besides simply storing and drawing them—such as subdivision, mesh editing, mesh compression, or other operations—efficient access to adjacency information is crucial.</p>
+<p>Triangle meshes are generally used to represent surfaces, so a mesh is not just a collection of unrelated triangles, but rather a network of triangles that connect to one another through shared vertices and edges to form a single continuous surface. This is a key insight about meshes: a mesh can be handled more efficiently than a collection of the same number of unrelated triangles.</p>
+<p>The minimum information required for a triangle mesh is a set of triangles (triples of vertices) and the positions (in 3D space) of their vertices. But many, if not most, programs require the ability to store additional data at the vertices, edges, or faces to support texture mapping, shading, animation, and other operations. Vertex data are the most common: each vertex can have material parameters, texture coordinates, and irradiances—any parameters whose values change across the surface. These parameters are then linearly interpolated across each triangle to define a continuous function over the whole surface of the mesh. However, it is also occasionally important to be able to store data per edge or per face.</p>
+<section>
+<h3 id="sec12_1_1"><a id="index_term733"/><span class="green">12.1.1 Mesh Topology</span></h3>
+<p>The idea that meshes are surface-like can be formalized as constraints on the <em>mesh</em> <em>topology</em>—the way the triangles connect together, without regard for the vertex positions. Many algorithms will only work, or are much easier to implement, on a mesh with predictable connectivity. The simplest and most restrictive requirement on the topology of a mesh is for the surface to be a <em><a id="index_term706"/>manifold</em>. A manifold mesh is “watertight”—it has no gaps and separates the space on the inside of the surface from the space outside. It also looks like a surface everywhere on the mesh.</p>
+<aside class="boxed-text" epub:type="sidebar" id="c012_box1">
+<p class="noindent">We’ll leave the precise definitions to the mathematicians; see the chapter notes.</p>
+</aside>
+<p class="indent">The term <em>manifold</em> comes from the mathematical field of topology: roughly speaking, a manifold (specifically a two-dimensional manifold, or 2-manifold) is <a id="term-514"/><span aria-label="293" epub:type="pagebreak" id="pg_293" role="doc-pagebreak"/>a surface in which a small neighborhood around any point could be smoothed out into a bit of flat surface. This idea is most clearly explained by counterexample: if an edge on a mesh has three triangles connected to it, the neighborhood of a point on the edge is different from the neighborhood of one of the points in the interior of one of the triangles, because it has an extra “fin” sticking out of it (<a href="C17_chapter12.xhtml#f12_1">Figure 12.1</a>). If the edge has exactly two triangles attached to it, points on the edge have neighborhoods just like points in the interior, only with a crease down the middle. Similarly, if the triangles sharing a vertex are in a configuration like the left one in <a href="C17_chapter12.xhtml#f12_2">Figure 12.2</a>, the neighborhood is like two pieces of surface glued together at the center, which can’t be flattened without doubling it up. The vertex with the simpler neighborhood shown at right is just fine.</p>
+<figure id="f12_1" tabindex="0">
+<img alt="" src="../images/fig12_1.jpg"/>
+<figcaption><p><span class="blue">Figure 12.1.</span> Non-manifold (a) and manifold (b) interior edges.</p></figcaption>
+</figure>
+<figure id="f12_2" tabindex="0">
+<img alt="" src="../images/fig12_2.jpg"/>
+<figcaption><p><span class="blue">Figure 12.2.</span> Non-manifold (a) and manifold (b) interior vertices.</p></figcaption>
+</figure>
+<p>Many algorithms assume that meshes are manifold, and it’s always a good idea to verify this property to prevent crashes or infinite loops if you are handed a malformed mesh as input. This verification boils down to checking that all edges are manifold and checking that all vertices are manifold by verifying the following conditions:</p>
+<ul class="list-bullet">
+<li>
+<p class="list">Every edge is shared by exactly two triangles.</p>
+</li>
+<li>
+<p class="list">Every vertex has a single, complete loop of triangles around it.</p>
+</li>
+</ul>
+<p><a href="C17_chapter12.xhtml#f12_1">Figure 12.1</a> illustrates how an edge can fail the first test by having too many triangles, and <a href="C17_chapter12.xhtml#f12_2">Figure 12.2</a> illustrates how a vertex can fail the second test by having two separate loops of triangles attached to it.</p>
+<p>Manifold meshes are convenient, but sometimes, it’s necessary to allow meshes to have edges or <em>boundaries</em>. Such meshes are not manifolds—a point on the boundary has a neighborhood that is cut off on one side. They are not necessarily watertight. However, we can relax the requirements of a manifold mesh to those for a <em>manifold with</em> <em>boundary</em> without causing problems for most mesh processing algorithms. The relaxed conditions are</p>
+<ul class="list-bullet">
+<li>
+<p class="list">Every edge is used by either one or two triangles.</p>
+</li>
+<li>
+<p class="list">Every vertex connects to a single edge-connected set of triangles.</p>
+</li>
+</ul>
+<p><a href="C17_chapter12.xhtml#f12_3">Figure 12.3</a> illustrates these conditions: from left to right, there is an edge with one triangle, a vertex whose neighboring triangles are in a single edge-connected set, and a vertex with two disconnected sets of triangles attached to it.</p>
+<p>Finally, in many applications it’s important to be able to distinguish the “front” or “outside” of a surface from the “back” or “inside”—this is known as the <em>orientation</em> of the surface. For a single triangle, we define orientation based on the order in which the vertices are listed: the front is the side from which the triangle’s three vertices are arranged in counterclockwise order. A connected mesh is <a id="term-532"/><span aria-label="294" epub:type="pagebreak" id="pg_294" role="doc-pagebreak"/><em>consistently oriented</em> if its triangles all agree on which side is the front—and this is true if and only if every pair of adjacent triangles is consistently oriented.</p>
+<figure id="f12_3" tabindex="0">
+<img alt="" src="../images/fig12_3.jpg"/>
+<figcaption><p><span class="blue">Figure 12.3.</span> Conditions at the edge of a manifold with boundary.</p></figcaption>
+</figure>
+<p>In a consistently oriented pair of triangles, the two shared vertices appear in opposite orders in the two triangles’ vertex lists (<a href="C17_chapter12.xhtml#f12_4">Figure 12.4</a>). What’s important is consistency of orientation—some systems define the front using clockwise rather than counterclockwise order.</p>
+<figure id="f12_4" tabindex="0">
+<img alt="" src="../images/fig12_4.jpg"/>
+<figcaption><p><span class="blue">Figure 12.4.</span> Triangles (B,A,C) and (D,C,A) are consistently oriented, whereas (B,A,C) and (A,C,D) are inconsistently oriented.</p></figcaption>
+</figure>
+<p>Any mesh that has non-manifold edges can’t be oriented consistently. But it’s also possible for a mesh to be a valid manifold with boundary (or even a manifold) and yet have no consistent way to orient the triangles—they are not <em>orientable</em> surfaces. An example is the Möbius band shown in <a href="C17_chapter12.xhtml#f12_5">Figure 12.5</a>. This is rarely an issue in practice, however.</p>
+<figure id="f12_5" tabindex="0">
+<img alt="" src="../images/fig12_5.jpg"/>
+<figcaption><p><span class="blue">Figure 12.5.</span> A triangulated <a id="index_term745"/>Möbius band, which is not orientable.</p></figcaption>
+</figure>
+</section>
+<section>
+<h3 id="sec12_1_2"><a id="index_term619"/><span class="green">12.1.2 Indexed Mesh Storage</span></h3>
+<p>A simple triangular mesh is shown in <a href="C17_chapter12.xhtml#f12_6">Figure 12.6</a>. You could store these three triangles as independent entities, each of this form:</p>
+<pre class="pre">Triangle {
+  vector3 vertexPosition[3]
+}</pre>
+<figure id="f12_6" tabindex="0">
+<img alt="" src="../images/fig12_6.jpg"/>
+<figcaption><p><span class="blue">Figure 12.6.</span> A three-triangle mesh with four vertices, represented with separate triangles (left) and with shared vertices (right).</p></figcaption>
+</figure>
+<p class="noindent1">This would result in storing vertex <strong>b</strong> three times and the other vertices twice each for a total of nine stored points (three vertices for each of three triangles). Or you could instead arrange to share the common vertices and store only four, resulting <a id="term-357"/><a id="term-971"/><span aria-label="295" epub:type="pagebreak" id="pg_295" role="doc-pagebreak"/>in a <em>shared-vertex mesh</em>. Logically, this data structure has triangles which point to vertices which contain the vertex data (<a href="C17_chapter12.xhtml#f12_7">Figure 12.7</a>):</p>
+<pre class="pre">Triangle {
+  Vertex v[3]
+}
+ 
+Vertex {
+  vector3 position   // or other vertex data
+}</pre>
+<figure id="f12_7" tabindex="0">
+<img alt="" src="../images/fig12_7.jpg"/>
+<figcaption><p><span class="blue">Figure 12.7.</span> The triangle-to-vertex references in a shared-vertex mesh.</p></figcaption>
+</figure>
+<p class="noindent1">Note that the entries in the <span class="monospace">v</span> array are references, or pointers, to <span class="monospace">Vertex</span> objects; the vertices are not contained in the triangle.</p>
+<p>In implementation, the vertices and triangles are normally stored in arrays, with the triangle-to-vertex references handled by storing array indices:</p>
+<pre class="pre">IndexedMesh {
+  int tInd[nt][3]
+  vector3 verts[nv]
+ }</pre>
+<p class="noindent1">The index of the kth vertex of the ith triangle is found in <span class="monospace">tInd[i][k]</span>, and the position of that vertex is stored in the corresponding row of the <span class="monospace">verts</span> array; see <a href="C17_chapter12.xhtml#f12_8">Figure 12.8</a> for an example. This way of storing a shared-vertex mesh is an <em>indexed triangle mesh</em>.</p>
+<figure id="f12_8" tabindex="0">
+<img alt="" src="../images/fig12_8.jpg"/>
+<figcaption><p><span class="blue">Figure 12.8.</span> A larger triangle mesh, with part of its representation as an indexed triangle mesh.</p></figcaption>
+</figure>
+<p>Separate triangles or shared vertices will both work well. Is there a space advantage for sharing vertices? If our mesh has <em>n<sub>v</sub></em> vertices and <em>n<sub>t</sub></em> triangles, and if we assume that the data for floats, pointers, and ints all require the same storage (a dubious assumption), the space requirements are as follows:</p>
+<ul class="list-bullet">
+<li>
+<p class="list"><a id="term-358"/><a id="term-972"/><a id="term-974"/><span aria-label="296" epub:type="pagebreak" id="pg_296" role="doc-pagebreak"/><span class="green"><strong>Triangle.</strong></span> Three vectors per triangle, for 9<em>n<sub>t</sub></em> units of storage;</p>
+</li>
+<li>
+<p class="list"><strong><span class="green">IndexedMesh.</span></strong> One vector per vertex and three ints per triangle, for 3<em>n<sub>v</sub></em> + 3<em>n<sub>t</sub></em> units of storage.</p>
+</li>
+</ul>
+<p>The relative storage requirements depend on the ratio of <em>n<sub>t</sub></em> to <em>n<sub>v</sub></em>.</p>
+<aside class="boxed-text" epub:type="sidebar" id="c012_box2">
+<p class="noindent">Is this factor of two worth the complication? I think the answer is yes, and it becomes an even bigger win as soon as you start adding “properties” to the vertices.</p>
+</aside>
+<p class="indent">As a rule of thumb, a large mesh has each vertex connected to about six triangles (although there can be any number for extreme cases). Since each triangle connects to three vertices, this means that there are generally twice as many triangles as vertices in a large mesh: <em>n<sub>t</sub></em> ≈ 2<em>n<sub>v</sub></em>. Making this substitution, we can conclude that the storage requirements are 18<em>n<sub>v</sub></em> for the <span class="monospace">Triangle</span> structure and 9<em>n<sub>v</sub></em> for <span class="monospace">IndexedMesh</span>. Using shared vertices reduces storage requirements by about a factor of two, and this seems to hold in practice for most implementations.</p>
+</section>
+<section>
+<h3 id="sec12_1_3"><a id="index_term1279"/><span class="green">12.1.3 Triangle Strips and Fans</span></h3>
+<p>Indexed meshes are the most common in-memory representation of triangle meshes, because they achieve a good balance of simplicity, convenience, and compactness. They are also commonly used to transfer meshes over networks and between the application and graphics pipeline. In applications where even more compactness is desirable, the triangle vertex indices (which take up two-thirds of the space in an indexed mesh with only positions at the vertices) can be expressed more efficiently using <em>triangle strips</em> and <em>triangle</em> <em>fans</em>.</p>
+<p>A <a id="index_term1274"/>triangle fan is shown in <a href="C17_chapter12.xhtml#f12_9">Figure 12.9</a>. In an indexed mesh, the triangles array would contain [(0, 1, 2), (0, 2, 3), (0, 3, 4), (0, 4, 5)]. We are storing 12 vertex indices, although there are only six distinct vertices. In a triangle fan, all the triangles share one common vertex, and the other vertices generate a set of triangles like the vanes of a collapsible fan. The fan in the figure could be specified with the sequence [0, 1, 2, 3, 4, 5]: the first vertex establishes the center, and subsequently each pair of adjacent vertices (1-2, 2-3, etc.) creates a triangle.</p>
+<figure id="f12_9" tabindex="0">
+<img alt="" src="../images/fig12_9.jpg"/>
+<figcaption><p><span class="blue">Figure 12.9.</span> A triangle fan.</p></figcaption>
+</figure>
+<p>The triangle strip is a similar concept, but it is useful for a wider range of meshes. Here, vertices are added alternating top and bottom in a linear strip as shown in <a href="C17_chapter12.xhtml#f12_10">Figure 12.10</a>. The triangle strip in the figure could be specified by the sequence [0 1 2 3 4 5 6 7], and every subsequence of three adjacent vertices (0-1-2, 1-2-3, etc.) creates a triangle. For consistent orientation, every other triangle needs to have its order reversed. In the example, this results in the triangles (0, 1, 2), (2, 1, 3), (2, 3, 4), (4, 3, 5), etc. For each new vertex that comes in, the oldest vertex is forgotten and the order of the two remaining vertices is swapped. See <a href="C17_chapter12.xhtml#f12_11">Figure 12.11</a> for a larger example.</p>
+<figure id="f12_10" tabindex="0">
+<img alt="" src="../images/fig12_10.jpg"/>
+<figcaption><p><span class="blue">Figure 12.10.</span> A triangle strip.</p></figcaption>
+</figure>
+<figure id="f12_11" tabindex="0">
+<img alt="" src="../images/fig12_11.jpg"/>
+<figcaption><p><span class="blue">Figure 12.11.</span> Two triangle strips in the context of a larger mesh. Note that neither strip can be extended to include the triangle marked with an asterisk.</p></figcaption>
+</figure>
+<p><a id="term-975"/><span aria-label="297" epub:type="pagebreak" id="pg_297" role="doc-pagebreak"/>In both strips and fans, n + 2 vertices suffice to describe n triangles—a substantial savings over the 3n vertices required by a standard indexed mesh. Long triangle strips will save approximately a factor of three if the program is vertex-bound.</p>
+<p>It might seem that triangle strips are only useful if the strips are very long, but even relatively short strips already gain most of the benefits. The savings in storage space (for only the vertex indices) are as follows:</p>
+<div class="table-wrap" id="utab12_1">
+<table class="table2">
+<tr>
+<td class="bordera"><p class="tabtext">strip length</p></td>
+<td class="bordera"><p class="tabtextc">1</p></td>
+<td class="bordera"><p class="tabtextc">2</p></td>
+<td class="bordera"><p class="tabtextc">3</p></td>
+<td class="bordera"><p class="tabtextc">4</p></td>
+<td class="bordera"><p class="tabtextc">5</p></td>
+<td class="bordera"><p class="tabtextc">6</p></td>
+<td class="bordera"><p class="tabtextc">7</p></td>
+<td class="bordera"><p class="tabtextc">8</p></td>
+<td class="bordera"><p class="tabtextc">16</p></td>
+<td class="bordera"><p class="tabtextc">100</p></td>
+<td class="bordera"><p class="tabtextc">∞</p></td>
+</tr>
+<tr>
+<td class="bordera"><p class="tabtext">relative size</p></td>
+<td class="bordera"><p class="tabtextc">1.00</p></td>
+<td class="bordera"><p class="tabtextc">0.67</p></td>
+<td class="bordera"><p class="tabtextc">0.56</p></td>
+<td class="bordera"><p class="tabtextc">0.50</p></td>
+<td class="bordera"><p class="tabtextc">0.47</p></td>
+<td class="bordera"><p class="tabtextc">0.44</p></td>
+<td class="bordera"><p class="tabtextc">0.43</p></td>
+<td class="bordera"><p class="tabtextc">0.42</p></td>
+<td class="bordera"><p class="tabtextc">0.38</p></td>
+<td class="bordera"><p class="tabtextc">0.34</p></td>
+<td class="bordera"><p class="tabtextc">0.33</p></td>
+</tr>
+</table>
+</div>
+<p class="indent">So, in fact, there is a rather rapid diminishing return as the strips grow longer. Thus, even for an unstructured mesh, it is worthwhile to use some greedy algorithm to gather them into short strips.</p>
+</section>
+<section>
+<h3 id="sec12_1_4"><a id="index_term732"/><span class="green">12.1.4 Data Structures for Mesh Connectivity</span></h3>
+<p>Indexed meshes, strips, and fans are all good, compact representations for static meshes. However, they do not readily allow for meshes to be modified. In order to efficiently edit meshes, more complicated data structures are needed to efficiently answer queries such as</p>
+<ul class="list-bullet">
+<li>
+<p class="list">Given a triangle, what are the three adjacent triangles?</p>
+</li>
+<li>
+<p class="list">Given an edge, which two triangles share it?</p>
+</li>
+<li>
+<p class="list"><span aria-label="298" epub:type="pagebreak" id="pg_298" role="doc-pagebreak"/>Given a vertex, which faces share it?</p>
+</li>
+<li>
+<p class="list">Given a vertex, which edges share it?</p>
+</li>
+</ul>
+<p>There are many data structures for triangle meshes, polygonal meshes, and polygonal meshes with holes (see the notes at the end of this chapter for references). In many applications, the meshes are very large, so an efficient representation can be crucial.</p>
+<p>The most straightforward, though bloated, implementation would be to have three types, <span class="monospace">Vertex</span>, <span class="monospace">Edge</span>, and <span class="monospace">Triangle</span>, and to just store all the relationships directly:</p>
+<pre class="pre">Triangle {
+  Vertex v[3]
+  Edge e[3]
+}
+ 
+Edge {
+  Vertex v[2]
+  Triangle t[2]
+}
+ 
+Vertex {
+  Triangle t[]
+  Edge e[]
+}</pre>
+<p class="noindent">This lets us directly look up answers to the connectivity questions above, but because this information is all inter-related, it stores more than is really needed. Also, storing connectivity in vertices makes for variable-length data structures (since vertices can have arbitrary numbers of neighbors), which are generally less efficient to implement. Rather than committing to store all these relationships explicitly, it is best to define a class interface to answer these questions, behind which a more efficient data structure can hide. It turns out we can store only some of the connectivity and efficiently recover the other information when needed.</p>
+<p>The fixed-size arrays in the <span class="monospace">Edge</span> and <span class="monospace">Triangle</span> classes suggest that it will be more efficient to store the connectivity information there. In fact, for polygon meshes, in which polygons have arbitrary numbers of edges and vertices, only edges have fixed-size connectivity information, which leads to many traditional mesh data structures being based on edges. But for triangle-only meshes, storing connectivity in the (less numerous) faces is appealing.</p>
+<p>A good mesh data structure should be reasonably compact and allow efficient answers to all adjacency queries. Efficient means constant-time: the time to find neighbors should not depend on the size of the mesh. We’ll look at three data structures for meshes, one based on triangles and two based on edges.</p>
+<section>
+<h4 id="sec12_1_4_1"><a id="index_term1277"/><a id="term-973"/><span aria-label="299" epub:type="pagebreak" id="pg_299" role="doc-pagebreak"/><span class="blue">The Triangle-Neighbor Structure</span></h4>
+<p>We can create a compact mesh data structure based on triangles by augmenting the basic shared-vertex mesh with pointers from the triangles to the three neighboring triangles, and a pointer from each vertex to one of the adjacent triangles (it doesn’t matter which one); see <a href="C17_chapter12.xhtml#f12_12">Figure 12.12</a>:</p>
+<pre class="pre1">Triangle {
+   Triangle nbr[3];
+   Vertex v[3];
+}
+   
+Vertex {
+   // ... per-vertex data ...
+   Triangle t; // any adjacent tri
+}</pre>
+<figure id="f12_12" tabindex="0">
+<img alt="" src="../images/fig12_12.jpg"/>
+<figcaption><p><span class="blue">Figure 12.12.</span> The references between triangles and vertices in the triangle-neighbor structure.</p></figcaption>
+</figure>
+<p class="noindent">In the array <span class="monospace">Triangle.nbr</span>, the kth entry points to the neighboring triangle that shares vertices k and k + 1. We call this structure the <em>triangle-neighbor structure</em>. Starting from standard indexed mesh arrays, it can be implemented with two additional arrays: one that stores the three neighbors of each triangle and one that stores a single neighboring triangle for each vertex (see <a href="C17_chapter12.xhtml#f12_13">Figure 12.13</a> for an example):</p>
+<pre class="pre1">Mesh {
+   // ... per-vertex data ...
+   int tInd[nt][3]; // vertex indices
+   int tNbr[nt][3]; // indices of neighbor triangles
+   int vTri[nv]; // index of any adjacent triangle
+}</pre>
+<figure id="f12_13" tabindex="0">
+<img alt="" src="../images/fig12_13.jpg"/>
+<figcaption><p><span class="blue">Figure 12.13.</span> The triangle-neighbor structure as encoded in arrays, and the sequence that is followed in traversing the neighboring triangles of vertex 2.</p></figcaption>
+</figure>
+<p><span aria-label="300" epub:type="pagebreak" id="pg_300" role="doc-pagebreak"/>Clearly, the neighboring triangles and vertices of a triangle can be found directly in the data structure, but by using this triangle adjacency information carefully, it is also possible to answer connectivity queries about vertices in constant time. The idea is to move from triangle to triangle, visiting only the triangles adjacent to the relevant vertex. If triangle t has vertex v as its kth vertex, then the triangle <span class="monospace">t.nbr[<em>k</em>]</span> is the next triangle around v in the clockwise direction. This observation leads to the following algorithm to traverse all the triangles adjacent to a given vertex:</p>
+<aside class="boxed-text" epub:type="sidebar" id="c012_box3">
+<p class="noindent">Of course, a real program would <em>do</em> something with the triangles as it found them.</p>
+</aside>
+<pre class="pre1">TrianglesOfVertex(v) {
+   t = v.t
+   do {
+      find i such that (t.v[i] == v)
+      t = t.nbr[i]
+   } while (t != v.t)
+}</pre>
+<p class="noindent">This operation finds each subsequent triangle in constant time—even though a search is required to find the position of the central vertex in each triangle’s vertex list, the vertex lists have constant size so the search takes constant time. However, that search is awkward and requires extra branching.</p>
+<p>A small refinement can avoid these searches. The problem is that once we follow a pointer from one triangle to the next, we don’t know from which way we came: we have to search the triangle’s vertices to find the vertex that connects back to the previous triangle. To solve this, instead of storing pointers to neighboring triangles, we can store pointers to specific edges of those triangles by storing an index with the pointer:</p>
+<pre class="pre1">Triangle {
+   Edge nbr[3];
+   Vertex v[3];
+}
+   
+Edge { // the i-th edge of triangle t
+   Triangle t;
+   int i; // in {0,1,2}
+}
+   
+Vertex {
+   // ... per-vertex data ...
+   Edge e; // any edge leaving vertex
+}</pre>
+<p class="noindent">In practice, the <span class="monospace">Edge</span> is stored by borrowing two bits of storage from the triangle index <em>t</em> to store the edge index <em>i</em>, so that the total storage requirements remain the same.</p>
+<p><span aria-label="301" epub:type="pagebreak" id="pg_301" role="doc-pagebreak"/>In this structure, the neighbor array for a triangle tells <em>which</em> of the neighboring triangles’ edges are shared with the three edges of that triangle. With this extra information, we always know where to find the original triangle, which leads to an invariant of the data structure: for any jth edge of any triangle <em>t</em>,</p>
+<pre class="pre"><em>t</em>.nbr[<em>j</em>].t.nbr[<em>t</em>.nbr[<em>j</em>].i].t ==<em>t</em>.</pre>
+<p class="noindent">Knowing which edge we came in through lets us know immediately which edge to leave through in order to continue traversing around a vertex, leading to a streamlined algorithm:</p>
+<pre class="pre1">TrianglesOfVertex(v) {
+   {t, i} = v.e;
+   do {
+     {t, i} = t.nbr[i];
+     i = (i+1) mod 3;
+   } while (t != v.e.t);
+}</pre>
+<p>The triangle-neighbor structure is quite compact. For a mesh with only vertex positions, we are storing four numbers (three coordinates and an edge) per vertex and six (three vertex indices and three edges) per face, for a total of 4<em>n<sub>v</sub></em> + 6<em>n<sub>t</sub></em> ≈ 16<em>n<sub>v</sub></em> units of storage per vertex, compared with 9n<sub>v</sub> for the basic indexed mesh.</p>
+<p>The triangle neighbor structure as presented here works only for manifold meshes, because it depends on returning to the starting triangle to terminate the traversal of a vertex’s neighbors, which will not happen at a boundary vertex that doesn’t have a full cycle of triangles. However, it is not difficult to generalize it to manifolds with boundary, by introducing a suitable sentinel value (such as - 1) for the neighbors of boundary triangles and taking care that the boundary vertices point to the most counterclockwise neighboring triangle, rather than to any arbitrary triangle.</p>
+</section>
+<section>
+<h4 id="sec12_1_4_2"><a id="index_term1464"/><span class="blue">The Winged-Edge Structure</span></h4>
+<p>One widely used mesh data structure that stores connectivity information at the edges instead of the faces is the <em>winged-edge</em> data structure. This data structure makes edges the first-class citizen of the data structure, as illustrated in <a href="C17_chapter12.xhtml#f12_14">Figures 12.14</a> and <a href="C17_chapter12.xhtml#f12_15">12.15</a>.</p>
+<figure id="f12_14" tabindex="0">
+<img alt="" src="../images/fig12_14.jpg"/>
+<figcaption><p><span class="blue">Figure 12.14.</span> An example of a winged-edge mesh structure, stored in arrays.</p></figcaption>
+</figure>
+<figure id="f12_15" tabindex="0">
+<img alt="" src="../images/fig12_15.jpg"/>
+<figcaption><p><span class="blue">Figure 12.15.</span> <a id="term-1137"/><span aria-label="302" epub:type="pagebreak" id="pg_302" role="doc-pagebreak"/>A tetrahedron and the associated elements for a winged-edge data structure. The two small tables are not unique; each vertex and face stores any one of the edges with which it is associated.</p></figcaption>
+</figure>
+<p>In a winged-edge mesh, each edge stores pointers to the two vertices it connects (the <em>head</em> and <em>tail</em> vertices), the two faces it is part of (the <em>left</em> and <em>right</em> faces), and, most importantly, the next and previous edges in the counterclockwise traversal of its left and right faces (<a href="C17_chapter12.xhtml#f12_16">Figure 12.16</a>). Each vertex and face also stores a pointer to a single, arbitrary edge that connects to it:</p>
+<a id="term-1138"/><span aria-label="303" epub:type="pagebreak" id="pg_303" role="doc-pagebreak"/>
+<pre class="pre1">Edge {
+   Edge lprev, lnext, rprev, rnext;
+   Vertex head, tail;
+   Face left, right;
+}
+   
+Face {
+   // ... per-face data ...
+   Edge e; // any adjacent edge
+}
+   
+Vertex {
+   // ... per-vertex data ...
+   Edge e; // any incident edge
+}</pre>
+<figure id="f12_16" tabindex="0">
+<img alt="" src="../images/fig12_16.jpg"/>
+<figcaption><p><span class="blue">Figure 12.16.</span> The references from an edge to the neighboring edges, faces, and vertices in the winged-edge structure.</p></figcaption>
+</figure>
+<p>The winged-edge data structure supports constant-time access to the edges of a face or of a vertex, and from those edges the adjoining vertices or faces can be found:</p>
+<pre class="pre1">EdgesOfVertex(v) {
+   e = v.e;
+   do {
+      if (e.tail == v)
+         e = e.lprev;
+      else
+         e = e.rprev;
+   } while (e != v.e);
+}
+   
+EdgesOfFace(f) {
+   e = f.e;
+   do {
+      if (e.left == f)
+         e = e.lnext;
+      else
+         e = e.rnext;
+  } while (e != f.e);
+}</pre>
+<p>These same algorithms and data structures will work equally well in a polygon mesh that isn’t limited to triangles; this is one important advantage of edge-based structures.</p>
+<p>As with any data structure, the winged-edge data structure makes a variety of time/space tradeoffs. For example, we can eliminate the <span class="monospace">prev</span> references. This makes it more difficult to traverse clockwise around faces or counterclockwise around vertices, but when we need to know the previous edge, we can always follow the successor edges in a circle until we get back to the original edge. This saves space, but it makes some operations slower. (See the chapter notes for more information on these tradeoffs).</p>
+</section>
+<section>
+<h4 id="sec12_1_4_3"><a id="index_term512"/><a id="term-392"/><span aria-label="304" epub:type="pagebreak" id="pg_304" role="doc-pagebreak"/><span class="blue">The Half-Edge Structure</span></h4>
+<p>The winged-edge structure is quite elegant, but it has one remaining awkward- ness—the need to constantly check which way the edge is oriented before moving to the next edge. This check is directly analogous to the search we saw in the basic version of the triangle neighbor structure: we are looking to find out whether we entered the present edge from the head or from the tail. The solution is also almost indistinguishable: rather than storing data for each edge, we store data for each <em>half-edge</em>. There is one half-edge for each of the two triangles that share an edge, and the two half-edges are oriented oppositely, each oriented consistently with its own triangle.</p>
+<p>The data normally stored in an edge are split between the two half-edges. Each half-edge points to the face on its side of the edge and to the vertex at its head, and each contains the edge pointers for its face (<a href="C17_chapter12.xhtml#f12_17">Figure 12.17</a>). It also points to its neighbor on the other side of the edge, from which the other half of the information can be found. Like the winged-edge, a half-edge can contain pointers to both the previous and next half-edges around its face, or only to the next half-edge. We’ll show the example that uses a single pointer.</p>
+<figure id="f12_17" tabindex="0">
+<img alt="" src="../images/fig12_17.jpg"/>
+<figcaption><p><span class="blue">Figure 12.17.</span> The references from a half-edge to its neighboring mesh components.</p></figcaption>
+</figure>
+<pre class="pre1">HEdge {
+   HEdge pair, next;
+   Vertex v;
+   Face f;
+}
+   
+Face {
+   // ... per-face data ...
+   HEdge h; // any h-edge of this face
+}
+   
+Vertex {
+   // ... per-vertex data ...
+   HEdge h; // any h-edge pointing toward this vertex
+}</pre>
+<p>Traversing a half-edge structure is just like traversing a winged-edge structure except that we no longer need to check orientation, and we follow the <span class="monospace">pair</span> pointer to access the edges in the opposite face.</p>
+<pre class="pre1">EdgesOfVertex(v) {
+   h = v.h;
+   do {
+      h = h.pair.next;
+   } while (h != v.h);
+}
+   
+   
+EdgesOfFace(f) {
+<a id="term-393"/><a id="term-733"/><span aria-label="305" epub:type="pagebreak" id="pg_305" role="doc-pagebreak"/>
+   h = f.h;
+   do {
+      h = h.next;
+   } while (h != f.h);
+}</pre>
+<p>The vertex traversal here is clockwise, which is necessary because of omitting the <span class="monospace">prev</span> pointer from the structure.</p>
+<p>Because half-edges are generally allocated in pairs (at least in a mesh with no boundaries), many implementations can do away with the <span class="monospace">pair</span> pointers. For instance, in an implementation based on array indexing (such as shown in <a href="C17_chapter12.xhtml#f12_18">Figure 12.18</a>), the array can be arranged so that an even-numbered edge i always pairs with edge i + 1 and an odd-numbered edge j always pairs with edge j - 1.</p>
+<figure id="f12_18" tabindex="0">
+<img alt="" src="../images/fig12_18.jpg"/>
+<figcaption><p><span class="blue">Figure 12.18.</span> An example of a half-edge mesh structure, stored in arrays.</p></figcaption>
+</figure>
+<p>In addition to the simple traversal algorithms shown in this chapter, all three of these mesh topology structures can support “mesh surgery” operations of various sorts, such as splitting or collapsing vertices, swapping edges, adding, or removing triangles.</p>
+</section>
+</section>
+</section>
+<section>
+<h2 id="sec12_2"><a id="index_term1019"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec12_2" role="doc-backlink"><span class="green">12.2 Scene Graphs</span></a></h2>
+<p>A triangle mesh manages a collection of triangles that constitute an object in a scene, but another universal problem in graphics applications is arranging the objects in the desired positions. As we saw in <a href="C12_chapter7.xhtml#c7">Chapter 7</a>, this is done using transformations, but complex scenes can contain a great many transformations and organizing them well makes the scene much easier to manipulate. Most scenes admit to a hierarchical organization, and the transformations can be managed according to this hierarchy using a <em>scene graph</em>.</p>
+<p><a id="term-354"/><a id="term-734"/><span aria-label="306" epub:type="pagebreak" id="pg_306" role="doc-pagebreak"/>To motivate the scene-graph data structure, we will use the hinged pendulum shown in <a href="C17_chapter12.xhtml#f12_19">Figure 12.19</a>. Consider how we would draw the top part of the pendulum:</p>
+<figure id="f12_19" tabindex="0">
+<img alt="" src="../images/fig12_19.jpg"/>
+<figcaption><p><span class="blue">Figure 12.19.</span> A hinged pendulum. On the left are the two pieces in their “local” coordinate systems. The hinge of the bottom piece is at point <strong>b</strong>, and the attachment for the bottom piece is at its local origin. The degrees of freedom for the assembled object are the angles (<em>θ,ϕ</em>) and the location <strong>p</strong> of the top hinge.</p></figcaption>
+</figure>
+<ul class="list-simple">
+<li>
+<p class="list-item"><strong>M</strong><sub>1</sub> = rotate(<em>θ</em>)</p>
+</li>
+<li>
+<p class="list-item"><strong>M</strong><sub>2</sub> = translate(<strong>p</strong>)</p>
+</li>
+<li>
+<p class="list-item"><strong>M</strong><sub>3</sub> = <strong>M</strong><sub>2</sub><strong>M</strong><sub>1</sub></p>
+</li>
+<li>
+<p class="list-item">Apply <strong>M</strong><sub>3</sub> to all points in upper pendulum</p>
+</li>
+</ul>
+<p>The bottom is more complicated, but we can take advantage of the fact that it is attached to the bottom of the upper pendulum at point <strong>b</strong> in the local coordinate system. First, we rotate the lower pendulum so that it is at an angle <em>ϕ</em> relative to its initial position. Then, we move it so that its top hinge is at point <strong>b</strong>. Now it is at the appropriate position in the local coordinates of the upper pendulum, and it can then be moved along with that coordinate system. The composite transform for the lower pendulum is</p>
+<ul class="list-simple">
+<li>
+<p class="list-item"><strong>M</strong><sub><em>a</em></sub> = rotate(<em>ϕ</em>)</p>
+</li>
+<li>
+<p class="list-item"><strong>M</strong><sub><em>b</em></sub> = translate(<strong>b</strong>)</p>
+</li>
+<li>
+<p class="list-item"><strong>M</strong><sub><em>c</em></sub> = <strong>M</strong><sub><em>b</em></sub><strong>M</strong><sub><em>a</em></sub></p>
+</li>
+<li>
+<p class="list-item"><strong>M</strong><sub><em>d</em></sub> = <strong>M</strong><sub>3</sub><strong>M</strong><sub><em>c</em></sub></p>
+</li>
+<li>
+<p class="list-item">Apply <strong>M</strong><sub><em>d</em></sub> to all points in lower pendulum</p>
+</li>
+</ul>
+<p>Thus, we see not onyl that the lower pendulum lives in its own local coordinate system, but also that coordinate system itself is moved along with that of the upper pendulum.</p>
+<p>We can encode the pendulum in a data structure that makes management of these coordinate system issues easier, as shown in <a href="C17_chapter12.xhtml#f12_20">Figure 12.20</a>. The appropriate matrix to apply to an object is just the product of all the matrices in the chain from <a id="term-355"/><a id="term-635"/><a id="term-651"/><a id="term-735"/><span aria-label="307" epub:type="pagebreak" id="pg_307" role="doc-pagebreak"/>the object to the root of the data structure. For example, consider the model of a ferry that has a car that can move freely on the deck of the ferry and wheels that each move relative to the car as shown in <a href="C17_chapter12.xhtml#f12_21">Figure 12.21</a>.</p>
+<figure id="f12_20" tabindex="0">
+<img alt="" src="../images/fig12_20.jpg"/>
+<figcaption><p><span class="blue">Figure 12.20.</span> The scene graph for the hinged pendulum of <a href="C17_chapter12.xhtml#f12_19">Figure 12.19</a>.</p></figcaption>
+</figure>
+<figure id="f12_21" tabindex="0">
+<img alt="" src="../images/fig12_21.jpg"/>
+<figcaption><p><span class="blue">Figure 12.21.</span> A ferry, a car on the ferry, and the wheels of the car (only two shown) are stored in a scene graph.</p></figcaption>
+</figure>
+<p>As with the pendulum, each object should be transformed by the product of the matrices in the path from the root to the object:</p>
+<ul class="list-bullet">
+<li>
+<p class="list"><strong><span class="green">ferry</span></strong> transform using <em>M</em><sub>0</sub>;</p>
+</li>
+<li>
+<p class="list"><strong><span class="green">car body</span></strong> transform using <em>M</em><sub>0</sub><em>M</em><sub>1</sub>;</p>
+</li>
+<li>
+<p class="list"><strong><span class="green">left wheel</span></strong> transform using <em>M</em><sub>0</sub><em>M</em><sub>1</sub><em>M</em><sub>2</sub>;</p>
+</li>
+<li>
+<p class="list"><strong><span class="green">left wheel</span></strong> transform using <em>M</em><sub>0</sub><em>M</em><sub>1</sub><em>M</em><sub>3</sub>.</p>
+</li>
+</ul>
+<section>
+<h3 id="sec12_2_1"><span class="green">12.2.1 In rasterization</span></h3>
+<p>An efficient implementation in the case of <a id="index_term940"/>rasterization can be achieved using a <em>matrix stack</em>, a data structure supported by many APIs. A matrix stack is manipulated using <em>push</em> and <em>pop</em> operations that add and delete matrices from the right-hand side of a matrix product. For example, calling</p>
+<ul class="list-simple">
+<li>
+<p class="list-item">push(<strong>M</strong><sub>0</sub>)</p>
+</li>
+<li>
+<p class="list-item">push(<strong>M</strong><sub>1</sub>)</p>
+</li>
+<li>
+<p class="list-item">push(<strong>M</strong><sub>2</sub>)</p>
+</li>
+</ul>
+<p>creates the active matrix <strong>M</strong> = <strong>M</strong><sub>0</sub><strong>M</strong><sub>1</sub><strong>M</strong><sub>2</sub>. A subsequent call to <em>pop()</em> strips the last matrix added so that the active matrix becomes <strong>M</strong> = <strong>M</strong><sub>0</sub><strong>M</strong><sub>1</sub>. Combining the <a id="index_term727"/>matrix stack with a recursive traversal of a scene graph gives us</p>
+<ul class="list-simple">
+<li><p class="list-item"><strong>function</strong> traverse(node)</p></li>
+<li><p class="list-item">push(<strong>M</strong><sub>local</sub>)</p></li>
+<li><p class="list-item">draw object using composite matrix from stack</p></li>
+<li><p class="list-item">traverse(left child)</p></li>
+<li><p class="list-item">traverse(right child)</p></li>
+<li><p class="list-item">pop()</p></li>
+</ul>
+<p>There are many variations on scene graphs but all follow the basic idea above.</p>
+</section>
+<section>
+<h3 id="sec12_2_2"><a id="index_term951"/><span class="green">12.2.2 In ray tracing</span></h3>
+<p>An elegant property of ray tracing is that it allows very natural application of transformations without changing the representation of the geometry. The basic <a id="term-678"/><span aria-label="308" epub:type="pagebreak" id="pg_308" role="doc-pagebreak"/>idea of instancing is to distort all points on an object by a transformation matrix before the object is displayed. For example, if we transform the unit circle (in 2D) by a scale factor (2,1) in <em>x</em> and <em>y</em>, respectively, then rotate it by 45<sup>∘</sup>, and move one unit in the <em>x</em>-direction, the result is an ellipse with an eccentricity of 2 and a long axis along the (<em>x = −y</em>)-direction centered at (0,1) (<a href="C17_chapter12.xhtml#f12_22">Figure 12.22</a>). The key thing that makes that entity an “instance” is that we store the circle and the composite transform matrix. Thus, the explicit construction of the ellipse is left as a future operation at render time.</p>
+<figure id="f12_22" tabindex="0">
+<img alt="" src="../images/fig12_22.jpg"/>
+<figcaption><p><span class="blue">Figure 12.22.</span> An instance of a circle with a series of three transforms is an ellipse.</p></figcaption>
+</figure>
+<p>The advantage of instancing in ray tracing is that we can choose the space in which to do intersection. If the base object is composed of a set of points, one of which is <strong>p</strong>, then the transformed object is composed of that set of points transformed by matrix <strong>M</strong>, where the example point is transformed to <strong>Mp</strong>. If we have a ray <strong>a</strong> + <em>t</em><strong>b</strong> that we want to intersect with the transformed object, we can instead intersect an <em><a id="index_term639"/>inverse-transformed ray</em> with the untransformed object (<a href="C17_chapter12.xhtml#f12_23">Figure 12.23</a>). There are two potential advantages to computing in the untransformed space (i.e., the right-hand side of <a href="C17_chapter12.xhtml#f12_23">Figure 12.23</a>):</p>
+<ol class="list-order">
+<li>
+<p class="list">The untransformed object may have a simpler intersection routine, e.g., a sphere versus an ellipsoid.</p>
+</li>
+<li>
+<p class="list">Many transformed objects can share the same untransformed object, thus reducing storage, e.g., a traffic jam of cars, where individual cars are just transforms of a few base (untransformed) models.</p>
+</li>
+</ol>
+<figure id="f12_23" tabindex="0">
+<img alt="" src="../images/fig12_23.jpg"/>
+<figcaption><p><span class="blue">Figure 12.23.</span> The ray intersection problem in the two spaces is just simple transforms of each other. The object is specified as a sphere plus matrix <strong>M</strong>. The ray is specified in the transformed (world) space by location a and direction <strong>b</strong>.</p></figcaption>
+</figure>
+<p class="indentb">As discussed in <a href="C12_chapter7.xhtml#sec7_2_2">Section 7.2.2</a>, surface normal vectors transform differently. With this in mind and using the concepts illustrated in <a href="C17_chapter12.xhtml#f12_23">Figure 12.23</a>, we can determine the intersection of a ray and an object transformed by matrix <strong>M</strong>. If we create an instance class of type <em>surface</em>, we need to create a <em>hit</em> function:</p>
+<p class="indent1">instance::hit(ray <strong>a</strong> + <em>t</em><strong>b</strong>, real <em>t</em><sub>0</sub>, real <em>t</em><sub>1</sub>, hit-record rec)</p>
+<p class="indent1">ray <strong>r</strong>’ = <strong>M</strong><sup>-1</sup><strong>a</strong> + <em>t</em><strong>M</strong><sup>-1</sup><strong>b</strong></p>
+<p class="indent1"><strong>if</strong> (base-object →hit(<strong>r</strong>′, <em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>, rec)) <strong>then</strong></p>
+<p class="indent1">     rec.<strong>n</strong> = (<strong>M</strong><sup>-1</sup>)<sup>T</sup>rec.<strong>n</strong></p>
+<p class="indent1">     <strong>return </strong>true</p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     <strong>return </strong>false</p>
+<p class="noindent1">An elegant thing about this function is that the parameter rec.t does not need to be changed, because it is the same in either space. Also note that we need not compute or store the matrix <strong>M</strong>.</p>
+<p>This brings up a very important point: the ray direction <strong>b</strong> must <em>not</em> be restricted to a unit-length vector, or none of the infrastructure above works. For this reason, it is useful not to restrict ray directions to unit vectors.</p>
+</section>
+</section>
+<section>
+<h2 id="sec12_3"><a id="index_term1106"/><a id="term-561"/><a id="term-679"/><a id="term-808"/><a id="term-812"/><span aria-label="309" epub:type="pagebreak" id="pg_309" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec12_3" role="doc-backlink"><span class="green">12.3 Spatial Data Structures</span></a></h2>
+<p>In many, if not all, graphics applications, the ability to quickly locate geometric objects in particular regions of space is important. Ray tracers need to find objects that intersect rays; interactive applications navigating an environment need to find the objects visible from any given viewpoint; games and physical simulations require detecting when and where objects collide. All these needs can be supported by various <em>spatial data structures</em> designed to organize objects in space so they can be looked up efficiently.</p>
+<p>In this section, we will discuss examples of three general classes of spatial data structures. Structures that group objects together into a hierarchy are <em><a id="index_term792"/>object partitioning</em> schemes: objects are divided into disjoint groups, but the groups may end up overlapping in space. Structures that divide space into disjoint regions are <em>space</em> <em>partitioning</em> schemes: space is divided into separate partitions, but one object may have to intersect more than one partition. <a id="index_term1102"/>Space partitioning schemes can be regular, in which space is divided into uniformly shaped pieces, or irregular, in which space is divided adaptively into irregular pieces, with smaller pieces where there are more and smaller objects.</p>
+<p><a id="term-356"/><a id="term-809"/><span aria-label="310" epub:type="pagebreak" id="pg_310" role="doc-pagebreak"/>We will use ray tracing as the primary motivation while discussing these structures, although they can all also be used for view culling or collision detection. In <a href="C09_chapter4.xhtml#c4">Chapter 4</a>, all objects were looped over while checking for intersections. For N objects, this is an O(N) linear search and is thus slow for large scenes. Like most search problems, the ray-object intersection can be computed in sub-linear time using “divide and conquer” techniques, provided we can create an ordered data structure as a preprocess. There are many techniques to do this.</p>
+<p>This section discusses three of these techniques in detail: bounding volume hierarchies (Rubin &amp; Whitted, 1980; Whitted, 1980; Goldsmith &amp; Salmon, 1987), uniform spatial subdivision (Cleary, Wyvill, Birtwistle, &amp; Vatti, 1983; Fujimoto, Tanaka, &amp; Iwata, 1986; Amanatides &amp; Woo, 1987), and binary space partitioning (Glassner, 1984; Jansen, 1986; Havran, 2000). An example of the first two strategies is shown in <a href="C17_chapter12.xhtml#f12_24">Figure 12.24</a>.</p>
+<figure id="f12_24" tabindex="0">
+<img alt="" src="../images/fig12_24.jpg"/>
+<figcaption><p><span class="blue">Figure 12.24.</span> (a) A uniform partitioning of space. (b) Adaptive bounding-box hierarchy. <em>Image courtesy David DeMarle.</em></p></figcaption>
+</figure>
+<section>
+<h3 id="sec12_3_1"><a id="index_term101"/><span class="green">12.3.1 Bounding Boxes</span></h3>
+<p>A key operation in most intersection-acceleration schemes is computing the intersection of a ray with a bounding box (<a href="C17_chapter12.xhtml#f12_25">Figure 12.25</a>). This differs from conventional intersection tests in that we do not need to know where the ray hits the box; we only need to know whether it hits the box.</p>
+<figure id="f12_25" tabindex="0">
+<img alt="" src="../images/fig12_25.jpg"/>
+<figcaption><p><span class="blue">Figure 12.25.</span> The ray is only tested for intersection with the surfaces if it hits the bounding box.</p></figcaption>
+</figure>
+<p>To build an algorithm for ray-box intersection, we begin by considering a 2D ray whose direction vector has positive x and y components. We can generalize this to arbitrary 3D rays later. The 2D bounding box is defined by two horizontal and two vertical lines:</p>
+<p>
+<a id="term-65"/><span aria-label="311" epub:type="pagebreak" id="pg_311" role="doc-pagebreak"/>
+</p>
+<div class="disp-formula" id="uequ12_1">
+<m:math alttext=""><m:mrow><m:mrow><m:mtable columnalign="left"><m:mtr><m:mtd><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>min</m:mtext></m:mrow></m:msub><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>x</m:mi><m:mo>=</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>y</m:mi><m:mo>=</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mtext>min</m:mtext></m:mrow></m:msub><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>y</m:mi><m:mo>=</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>The points bounded by these lines can be described in interval notation:</p>
+<div class="disp-formula" id="uequ12_2">
+<m:math alttext=""><m:mrow><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>∈</m:mo><m:mo stretchy="false">[</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>min</m:mtext></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo stretchy="false">]</m:mo><m:mo>×</m:mo><m:mo stretchy="false">[</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mtext>min</m:mtext></m:mrow></m:msub><m:mo>,</m:mo><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo stretchy="false">]</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>As shown in <a href="C17_chapter12.xhtml#f12_26">Figure 12.26</a>, the intersection test can be phrased in terms of these intervals. First, we compute the ray parameter where the ray hits the line <em>x</em> = <em>x</em><sub>min</sub>:</p>
+<div class="disp-formula" id="uequ12_3">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mtext>xmin</m:mtext></m:mrow></m:msub><m:mo>=</m:mo><m:mfrac><m:mrow><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>min</m:mtext></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mrow><m:mrow><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>d</m:mi></m:mrow></m:msub></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<figure id="f12_26" tabindex="0">
+<img alt="" src="../images/fig12_26.jpg"/>
+<figcaption><p><span class="blue">Figure 12.26.</span> The ray will be inside the interval x ∈ [<em>x</em><sub>min</sub>,<em>x</em><sub>max</sub>] for some interval in its parameter space <em>t</em> ∈ [<em>t</em><sub>xmin</sub>,<em>t</em><sub>xmax</sub>]. A similar interval exists for the <em>y</em> interval. The ray intersects the box if it is in both the <em>x</em> interval and <em>y</em> interval at the same time; i.e., the intersection of the two one-dimensional intervals is not empty.</p></figcaption>
+</figure>
+<p class="noindentb">We then make similar computations for <em>t</em><sub>xmax</sub>, <em>t</em><sub>ymin</sub>, and <em>t</em><sub>ymax</sub>. The ray hits the box if and only if the intervals [t<sub>xmin</sub>,t<sub>xmax</sub>] and [t<sub>ymin</sub>,t<sub>ymax</sub>] overlap; i.e., their intersection is nonempty. In pseudocode this algorithm is</p>
+<p class="indent1"><em>t</em><sub>xmin</sub> = (<em>x</em><sub>min</sub> − <em>x<sub>e</sub>)∕x<sub>d</sub></em></p>
+<p class="indent1"><span aria-label="312" epub:type="pagebreak" id="pg_312" role="doc-pagebreak"/></p>
+<p class="indent1"><em>t</em><sub>xmax</sub> = (<em>x</em><sub>max</sub> - <em>x</em><sub>e</sub>)∕<em>x</em><sub>d</sub></p>
+<p class="indent1"><em>t</em><sub>ymin</sub> = (<em>y</em><sub>min</sub> - <em>y</em><sub>e</sub>)∕<em>y</em><sub>d</sub></p>
+<p class="indent1"><em>t</em><sub>ymax</sub> = (<em>y</em><sub>max</sub> - <em>y</em><sub>e</sub>)∕<em>y</em><sub>d</sub></p>
+<p class="indent1"><strong>if</strong> (t<sub>xmin</sub> &gt; <em>t</em><sub>ymax</sub>) or (t<sub>ymin</sub> &gt; <em>t</em><sub>xmax</sub>) <strong>then</strong></p>
+<p class="indent1">     <strong>return </strong>false</p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     <strong>return </strong>true</p>
+<p class="noindent1">The if statement may seem non-obvious. To see the logic of it, note that there is no overlap if the first interval is either entirely to the right or entirely to the left of the second interval.</p>
+<p class="indentb">The first thing we must address is the case when <em>x<sub>d</sub></em> or <em>y<sub>d</sub></em> is negative. If <em>x<sub>d</sub></em> is negative, then the ray will hit <em>x</em><sub>max</sub> before it hits <em>x</em><sub>min</sub>. Thus, the code for computing <em>t</em><sub>xmin</sub> and <em>t</em><sub>xmax</sub> expands to</p>
+<p class="indent1"><strong>if</strong> (<em>x<sub>d</sub></em> ≥ 0) <strong>then</strong></p>
+<p class="indent1">     <em>t</em><sub>xmin</sub> = (<em>x</em><sub>min</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="indent1">     <em>t</em><sub>xmax</sub> = (<em>x</em><sub>max</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     <em>t</em><sub>xmin</sub> = (<em>x</em><sub>max</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="indent1">     <em>t</em><sub>xmax</sub> = (<em>x</em><sub>min</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="noindent1">A similar code expansion must be made for the <em>y</em> cases. A major concern is that horizontal and vertical rays have a zero value for <em>y</em><sub><em>d</em></sub> and <em>x</em><sub><em>d</em></sub>, respectively. This will cause divide-by-zero which may be a problem. However, before addressing this directly, we check whether IEEE floating point computation handles these cases gracefully for us. Recall from <a href="C06_chapter1.xhtml#sec1_5">Section 1.5</a> the rules for divide-by-zero: for any positive real number <em>a</em>,</p>
+<div class="disp-formula" id="uequ12_4">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable columnalign="left"><m:mtr><m:mtd><m:mo>+</m:mo><m:mi>a</m:mi><m:mo>/</m:mo><m:mn>0</m:mn><m:mtext>&amp;</m:mtext><m:mo>=</m:mo><m:mo>+</m:mo><m:mi>∞</m:mi><m:mo>;</m:mo><m:mspace linebreak="newline"/></m:mtd></m:mtr><m:mtr><m:mtd><m:mo>−</m:mo><m:mi>a</m:mi><m:mo>/</m:mo><m:mn>0</m:mn><m:mo>=</m:mo><m:mo>−</m:mo><m:mi>∞</m:mi><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Consider the case of a vertical ray where <em>x</em><sub><em>d</em></sub> = 0 and <em>y</em><sub><em>d</em></sub> &gt; 0. We can then calculate</p>
+<div class="disp-formula" id="uequ12_5">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mtext>xmin</m:mtext></m:mrow></m:msub><m:mtext> </m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mfrac><m:mrow><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>min</m:mtext></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:mfrac><m:mo>;</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mtext>xmax</m:mtext></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mfrac><m:mrow><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mtext>max</m:mtext></m:mrow></m:msub><m:mo>−</m:mo><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>e</m:mi></m:mrow></m:msub></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:mfrac><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>There are three possibilities of interest:</p>
+<ol class="list-order">
+<li><p class="list-item"><em>x</em><sub><em>e</em></sub> ≤ <em>x</em><sub>min</sub> (no hit);</p></li>
+<li><p class="list-item"><span aria-label="313" epub:type="pagebreak" id="pg_313" role="doc-pagebreak"/><em>x</em><sub>min</sub> &lt; <em>x</em><sub><em>e</em></sub> &lt; <em>x</em><sub>max</sub> (hit);</p></li>
+<li><p class="list-item"><em>x</em><sub>max</sub> ≤ <em>x</em><sub><em>e</em></sub> (no hit).</p></li>
+</ol>
+<p>For the first case, we have</p>
+<div class="disp-formula" id="uequ12_6">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mtext>xmin</m:mtext></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mfrac><m:mrow><m:mtext>Positive number</m:mtext></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:mfrac><m:mo>;</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mtext>xmax</m:mtext></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mfrac><m:mrow><m:mtext>Positive number</m:mtext></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:mfrac><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>This yields the interval (<em>t</em><sub>xmin</sub>,<em>t</em><sub>xmin</sub>) = (∞,∞). That interval will not overlap with any interval, so there will be no hit, as desired. For the second case, we have</p>
+<div class="disp-formula" id="uequ12_7">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mtext>xmin</m:mtext></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mfrac><m:mrow><m:mtext>Nagative </m:mtext><m:mtext>number</m:mtext></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:mfrac><m:mo>;</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>t</m:mi></m:mrow><m:mrow><m:mtext>xmax</m:mtext></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mfrac><m:mrow><m:mtext>Positive number</m:mtext></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:mfrac><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>This yields the interval (<em>t</em><sub>xmin</sub>,<em>t</em><sub>xmin</sub>) = (-∞,∞) which will overlap with all intervals and thus will yield a hit as desired. The third case results in the interval (-∞,-∞) which yields no hit, as desired. Because these cases work as desired, we need no special checks for them. As is often the case, IEEE floating point conventions are our ally. However, there is still a problem with this approach.</p>
+<p class="indentb">Consider the code segment:</p>
+<p class="indent1"><strong>if</strong> (<em>x</em><sub><em>d</em></sub> ≥ 0) <strong>then</strong></p>
+<p class="indent1">     <em>t</em><sub>min</sub> = (<em>x</em><sub>min</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="indent1">     <em>t</em><sub>max</sub> = (<em>x</em><sub>max</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     <em>t</em><sub>min</sub> = (<em>x</em><sub>max</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="indent1">     <em>t</em><sub>max</sub> = (<em>x</em><sub>min</sub> - <em>x</em><sub><em>e</em></sub>)∕<em>x</em><sub><em>d</em></sub></p>
+<p class="noindent1">This code breaks down when <em>x</em><sub><em>d</em></sub> = −0. This can be overcome by testing on the reciprocal of <em>x</em><sub><em>d</em></sub> (Williams, Barrus, Morley, &amp; Shirley, 2005):</p>
+<p class="indent1"><em>a</em> = 1∕<em>x</em><sub><em>d</em></sub></p>
+<p class="indent1"><strong>if</strong> (<em>a</em> ≥ 0) <strong>then</strong></p>
+<p class="indent1">     <em>t</em><sub>min</sub> = a(<em>x</em><sub>min</sub> - <em>x</em><sub><em>e</em></sub>)</p>
+<p class="indent1">     <em>t</em><sub>max</sub> = a(<em>x</em><sub>max</sub> - <em>x</em><sub><em>e</em></sub>)</p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     <em>t</em><sub>min</sub> = a(<em>x</em><sub>max</sub> - <em>x</em><sub><em>e</em></sub>)</p>
+<p class="indent1">     <em>t</em><sub>max</sub> = a(<em>x</em><sub>min</sub> - <em>x</em><sub><em>e</em></sub>)</p>
+</section>
+<section>
+<h3 id="sec12_2_3"><a id="index_term524"/><a id="term-66"/><a id="term-398"/><span aria-label="314" epub:type="pagebreak" id="pg_314" role="doc-pagebreak"/><span class="green">12.3.2 Hierarchical Bounding Boxes</span></h3>
+<p>The basic idea of hierarchical bounding boxes can be seen by the common tactic of placing an axis-aligned 3D bounding box around all the objects as shown in <a href="C17_chapter12.xhtml#f12_27">Figure 12.27</a>. Rays that hit the bounding box will actually be more expensive to compute than in a brute force search, because testing for intersection with the box is not free. However, rays that miss the box are cheaper than the brute force search. Such bounding boxes can be made hierarchical by partitioning the set of objects in a box and placing a box around each partition as shown in <a href="C17_chapter12.xhtml#f12_28">Figure 12.28</a>. The data structure for the hierarchy shown in <a href="C17_chapter12.xhtml#f12_29">Figure 12.29</a> might be a tree with the large bounding box at the root and the two smaller bounding boxes as left and right subtrees. These would in turn each point to a list of three triangles. The intersection of a ray with this particular hard-coded tree would be</p>
+<figure id="f12_27" tabindex="0">
+<img alt="" src="../images/fig12_27.jpg"/>
+<figcaption><p><span class="blue">Figure 12.27.</span> A 2D ray <strong>e</strong> + <em>t</em> <strong>d</strong> is tested against a 2D bounding box.</p></figcaption>
+</figure>
+<figure id="f12_28" tabindex="0">
+<img alt="" src="../images/fig12_28.jpg"/>
+<figcaption><p><span class="blue">Figure 12.28.</span> The bounding boxes can be nested by creating boxes around subsets of the model.</p></figcaption>
+</figure>
+<figure id="f12_29" tabindex="0">
+<img alt="" src="../images/fig12_29.jpg"/>
+<figcaption><p><span class="blue">Figure 12.29.</span> The gray box is a tree node that points to the three gray spheres, and the thick black box points to the three black spheres. Note that not all spheres enclosed by the box are guaranteed to be pointed to by the corresponding tree node.</p></figcaption>
+</figure>
+<p class="indent1"><strong>if</strong> (ray hits root box) <strong>then</strong></p>
+<p class="indent1">     <strong>if</strong> (ray hits left subtree box) <strong>then</strong></p>
+<p class="indent1">         check three triangles for intersection</p>
+<p class="indent1">     <strong>if</strong> (ray intersects right subtree box) <strong>then</strong></p>
+<p class="indent1">         check other three triangles for intersection</p>
+<p class="indent1">     <strong>if</strong> (an intersections returned from each subtree) <strong>then</strong></p>
+<p class="indent1">         <strong>return </strong>the closest of the two hits</p>
+<p class="indent1">     <strong>else</strong> <strong>if</strong> (a intersection is returned from exactly one subtree) <strong>then</strong></p>
+<p class="indent1">         <strong>return </strong>that intersection</p>
+<p class="indent1">     <strong>else</strong></p>
+<p class="indent1">         <strong>return </strong>false</p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     <strong>return </strong>false</p>
+<p class="noindent1">Some observations related to this algorithm are that there is no geometric ordering between the two subtrees, and there is no reason a ray might not hit both subtrees. Indeed, there is no reason that the two subtrees might not overlap.</p>
+<p>A key point of such data hierarchies is that a box is guaranteed to bound all objects that are below it in the hierarchy, but they are <em>not</em> guaranteed to contain all objects that overlap it spatially, as shown in <a href="C17_chapter12.xhtml#f12_29">Figure 12.29</a>. This makes this geometric search somewhat more complicated than a traditional binary search on strictly ordered one-dimensional data. The reader may note that several possible optimizations present themselves. We defer optimizations until we have a full hierarchical algorithm.</p>
+<p>If we restrict the tree to be binary and require that each node in the tree has bounding box, then this traversal code extends naturally. Furthermore, assume <span aria-label="315" epub:type="pagebreak" id="pg_315" role="doc-pagebreak"/>that all nodes are leaves in the tree and contain a primitive, or that they contain one or two subtrees.</p>
+<p>The <span class="monospace">bvh-node</span> class should be of type surface, so it should implement <span class="monospace">surface::hit</span>. The data it contains should be simple:</p>
+<p class="indent1"><strong>class</strong>  bvh-node subclass of surface</p>
+<p class="indent1">     virtual bool hit(ray <strong>e</strong> + t<strong>d</strong>, real <em>t</em><sub>0</sub>, real <em>t</em><sub>1</sub>, hit-record rec)</p>
+<p class="indent1">     virtual box bounding-box()</p>
+<p class="indent1">     surface-pointer left</p>
+<p class="indent1">     surface-pointer right</p>
+<p class="indent1">     box bbox</p>
+<p class="noindent1">The traversal code can then be called recursively in an object-oriented style:</p>
+<p class="indent1"><strong>function</strong> bool bvh-node::hit(ray <strong>a</strong> + <em>t</em><strong>b</strong>, real <em>t</em><sub>0</sub>, real <em>t</em><sub>1</sub>,</p>
+<p class="indent1">                                               hit-record rec)</p>
+<p class="indent1">   <strong>if</strong> (bbox.hitbox(<strong>a</strong> + t<strong>b</strong>, <em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>)) <strong>then</strong></p>
+<p class="indent1">         hit-record lrec, rrec</p>
+<p class="indent1">         left-hit = (left ≠ NULL) and (left → hit(<strong>a</strong> + t<strong>b</strong>, <em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>, lrec))</p>
+<p class="indent1">         right-hit = (right ≠ NULL) and (right  → hit(<strong>a</strong> + t<strong>b</strong>, <em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>, rrec))</p>
+<p class="indent1">        <strong>if</strong> (left-hit and right-hit) <strong>then</strong></p>
+<p class="indent1">           <strong>if</strong> (lrec.t &lt; rrec.t) <strong>then</strong></p>
+<p class="indent1">                rec = lrec</p>
+<p class="indent1">          <strong>else</strong></p>
+<p class="indent1">                rec = rrec</p>
+<p class="indent1">         <strong>return </strong>true</p>
+<p class="indent1">      <strong>else</strong> <strong>if</strong> (left-hit) <strong>then</strong></p>
+<p class="indent1">           rec = lrec</p>
+<p class="indent1">          <strong>return </strong>true</p>
+<p class="indent1">     <strong>else</strong> <strong>if</strong> (right-hit) <strong>then</strong></p>
+<p class="indent1">         rec = rrec</p>
+<p class="indent1">         <strong>return </strong>true</p>
+<p class="indent1">     <strong>else</strong></p>
+<p class="indent1">         <strong>return </strong>false</p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     <strong>return </strong>false</p>
+<p class="noindent1">Note that because <span class="monospace">left</span> and <span class="monospace">right</span> point to surfaces rather than <span class="monospace">bvh-node</span>s specifically, we can let the virtual functions take care of distinguishing between internal and leaf nodes; the appropriate hit function will be called. Note that if the tree is built properly, we can eliminate the check for left being NULL. If we want to eliminate the check for right being NULL, we can replace NULL right <span aria-label="316" epub:type="pagebreak" id="pg_316" role="doc-pagebreak"/>pointers with a redundant pointer to left. This will end up checking left twice, but will eliminate the check throughout the tree. Whether that is worth it will depend on the details of tree construction.</p>
+<p class="indentb">There are many ways to build a tree for a bounding volume hierarchy. It is convenient to make the tree binary, roughly balanced, and to have the boxes of sibling subtrees not overlap too much. A heuristic to accomplish this is to sort the surfaces along an axis before dividing them into two sublists. If the axes are defined b<em>y</em> an integer with <em>x</em> = 0, <em>y</em> = 1, and <em>z</em> = 2, we have</p>
+<p class="indent1"><strong>function</strong> bvh-node::create(object-array A, int AXIS)</p>
+<p class="indent1">    N = A.length</p>
+<p class="indent1">    <strong>if</strong> (N = 1) <strong>then</strong></p>
+<p class="indent1">       left = A[0]</p>
+<p class="indent1">       right = NULL</p>
+<p class="indent1">       bbox = bounding-box(A[0])</p>
+<p class="indent1">    <strong>else</strong> <strong>if</strong> (N = 2) <strong>then</strong></p>
+<p class="indent1">         left-node = A[0]</p>
+<p class="indent1">         right-node = A[1]</p>
+<p class="indent1">         bbox = combine(bounding-box(A[0]), bounding-box(A[1]))</p>
+<p class="indent1">    <strong>else</strong></p>
+<p class="indent1">        sort A by the object center along AXIS</p>
+<p class="indent1">        left= new bvh-node(A[0..N/2 - 1], (AXIS + 1) mod 3)</p>
+<p class="indent1">        right = new bvh-node(A[N/2..N - 1], (AXIS  + 1) mod 3)</p>
+<p class="indent1">        bbox = combine(left → bbox, right  → bbox)</p>
+<p class="noindent1">The quality of the tree can be improved by carefully choosing AXIS each time. One way to do this is to choose the axis such that the sum of the volumes of the bounding boxes of the two subtrees is minimized. This change compared to rotating through the axes will make little difference for scenes composed of isotopically distributed small objects, but it may help significantly in less well-behaved scenes. This code can also be made more efficient by doing just a partition rather than a full sort.</p>
+<p>Another, and probably better, way to build the tree is to have the subtrees contain about the same amount of space rather than the same number of objects.</p>
+<p class="indentb">To do this, we partition the list based on space:</p>
+<p class="indent1"><strong>function</strong> bvh-node::create(object-array A, int AXIS)</p>
+<p class="indent1">   N = A.length</p>
+<p class="indent1">   <strong>if</strong> (N  = 1) <strong>then</strong></p>
+<p class="indent1">       left = A[0]</p>
+<p class="indent1">       right = NULL</p>
+<p class="indent1">       bbox = bounding-box(A[0])</p>
+<span aria-label="317" epub:type="pagebreak" id="pg_317" role="doc-pagebreak"/>
+<p class="indent1">   <strong>else</strong> <strong>if</strong> (N  = 2) <strong>then</strong></p>
+<p class="indent1">        left = A[0]</p>
+<p class="indent1">        right = A[1]</p>
+<p class="indent1">        bbox = combine(bounding-box(A[0]), bounding-box(A[1]))</p>
+<p class="indent1">   <strong>else</strong></p>
+<p class="indent1">       find the midpoint m of the bounding box of A along AXIS</p>
+<p class="indent1">       partition A into lists with lengths <em>k</em> and (<em>N − k</em>) surrounding <em>m</em></p>
+<p class="indent1">       left = new bvh-node(A[0..<em>k</em>], (AXIS + 1) mod 3)</p>
+<p class="indent1">       right = new bvh-node(A[k + 1..N - 1], (AXIS + 1) mod 3)</p>
+<p class="indent1">       bbox = combine(left → bbox, right  → bbox)</p>
+<p class="noindent1">Although this results in an unbalanced tree, it allows for easy traversal of empty space and is cheaper to build because partitioning is cheaper than sorting.</p>
+</section>
+<section>
+<h3 id="sec12_3_3"><a id="index_term1300"/><span class="green">12.3.3 Uniform Spatial Subdivision</span></h3>
+<p>Another strategy to reduce intersection tests is to divide space. This is fundamentally different from dividing objects as was done with hierarchical bounding volumes:</p>
+<ul class="list-bullet">
+<li>
+<p class="list">In hierarchical bounding volumes, each object belongs to one of two sibling nodes, whereas a point in space may be inside both sibling nodes.</p>
+</li>
+<li>
+<p class="list">In spatial subdivision, each point in space belongs to exactly one node, whereas objects may belong to many nodes.</p>
+</li>
+</ul>
+<p>In uniform spatial subdivision, the scene is partitioned into axis-aligned boxes. These boxes are all the same size, although they are not necessarily cubes. The ray traverses these boxes as shown in <a href="C17_chapter12.xhtml#f12_30">Figure 12.30</a>. When an object is hit, the traversal ends.</p>
+<figure id="f12_30" tabindex="0">
+<img alt="" src="../images/fig12_30.jpg"/>
+<figcaption><p><span class="blue">Figure 12.30.</span> In uniform spatial subdivision, the ray is tracked forward through cells until an object in one of those cells is hit. In this example, only objects in the shaded cells are checked.</p></figcaption>
+</figure>
+<p>The grid itself should be a subclass of surface and should be implemented as a 3D array of pointers to surface. For empty cells, these pointers are NULL. For cells with one object, the pointer points to that object. For cells with more than one object, the pointer can point to a list, another grid, or another data structure, such as a bounding volume hierarchy.</p>
+<p>This traversal is done in an incremental fashion. The regularity comes from the way that a ray hits each set of parallel planes, as shown in <a href="C17_chapter12.xhtml#f12_31">Figure 12.31</a>. To see how this traversal works, first consider the 2D case where the ray direction has positive x and y components and starts outside the grid. Assume the grid is bounded by points (<em>x</em><sub>min</sub>,<em>y</em><sub>min</sub>) and (<em>x</em><sub>max</sub>,<em>y</em><sub>max</sub>). The grid has n<sub>x</sub> × n<sub>y</sub> cells.</p>
+<figure id="f12_31" tabindex="0">
+<img alt="" src="../images/fig12_31.jpg"/>
+<figcaption><p><span class="blue">Figure 12.31.</span> Although the pattern of cell hits seems irregular (left), the hits on sets of parallel planes are very even.</p></figcaption>
+</figure>
+<p>Our first order of business is to find the index (<em>i,j</em>) of the first cell hit by the ray <strong>e</strong> + <em>t</em><strong>d</strong>. Then, we need to traverse the cells in an appropriate order. The <a id="term-990"/><span aria-label="318" epub:type="pagebreak" id="pg_318" role="doc-pagebreak"/>key parts to this algorithm are finding the initial cell (i,j) and deciding whether to increment i or j (<a href="C17_chapter12.xhtml#f12_32">Figure 12.32</a>). Note that when we check for an intersection with objects in a cell, we restrict the range of t to be within the cell (<a href="C17_chapter12.xhtml#f12_33">Figure 12.33</a>). Most implementations make the 3D array of type “pointer to surface.” To improve the locality of the traversal, the array can be tiled as discussed in <a href="C17_chapter12.xhtml#sec12_5">Section 12.5</a>.</p>
+<figure id="f12_32" tabindex="0">
+<img alt="" src="../images/fig12_32.jpg"/>
+<figcaption><p><span class="blue">Figure 12.32.</span> To decide whether we advance right or upward, we keep track of the intersections with the next vertical and horizontal boundary of the cell.</p></figcaption>
+</figure>
+<figure id="f12_33" tabindex="0">
+<img alt="" src="../images/fig12_33.jpg"/>
+<figcaption><p><span class="blue">Figure 12.33.</span> Only hits within the cell should be reported. Otherwise, the case above would cause us to report hitting object <em>b</em> rather than object <em>a</em>.</p></figcaption>
+</figure>
+</section>
+<section>
+<h3 id="sec12_3_4"><a id="index_term64"/><a id="index_term1103"/><a id="term-45"/><a id="term-46"/><a id="term-810"/><span aria-label="319" epub:type="pagebreak" id="pg_319" role="doc-pagebreak"/><span class="green">12.3.4 Axis-Aligned Binary Space Partitioning</span></h3>
+<p>We can also partition space in a hierarchical data structure such as a <em>binary space</em> <em>partitioning tree</em> (BSP tree). This is similar to the BSP tree used for visibility sorting in <a href="C17_chapter12.xhtml#sec12_4">Section 12.4</a>, but it’s most common to use axis-aligned, rather than polygon-aligned, cutting planes for ray intersection.</p>
+<p class="indentb">A node in this structure contains a single cutting plane and a left and right subtree. Each subtree contains all the objects on one side of the cutting plane. Objects that pass through the plane are stored in in both subtrees. If we assume the cutting plane is parallel to the yz plane at x = D, then the node class is</p>
+<p class="indent1"><strong>class</strong> bsp-node subclass of surface</p>
+<p class="indent1">    virtual bool hit(ray <strong>e</strong> + t<strong>d</strong>, real <em>t</em><sub>0</sub>, real <em>t</em><sub>1</sub>, hit-record rec)</p>
+<p class="indent1">    virtual box bounding-box()</p>
+<p class="indent1">    surface-pointer left</p>
+<p class="indent1">    surface-pointer right</p>
+<p class="indent1">    real <em>D</em></p>
+<p class="noindent1">We generalize this to y and z cutting planes later. The intersection code can then be called recursively in an object-oriented style. The code considers the four cases shown in <a href="C17_chapter12.xhtml#f12_34">Figure 12.34</a>. For our purposes, the origin of these rays is a point at parameter <em>t</em><sub>0</sub>:</p>
+<div class="disp-formula" id="uequ12_8">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtext>p</m:mtext><m:mo>=</m:mo><m:mtext> </m:mtext><m:mtext>a</m:mtext><m:mo>+</m:mo><m:msub><m:mrow><m:mtext>t</m:mtext></m:mrow><m:mrow><m:mn>0</m:mn></m:mrow></m:msub><m:mtext>b.</m:mtext></m:mrow></m:math>
+</div>
+<figure id="f12_34" tabindex="0">
+<img alt="" src="../images/fig12_34.jpg"/>
+<figcaption><p><span class="blue">Figure 12.34.</span> The four cases of how a ray relates to the BSP cutting plane <em>x = D</em>.</p></figcaption>
+</figure>
+<p class="noindent1">The four cases are</p>
+<ol class="list-order">
+<li>
+<p class="list">The ray only interacts with the left subtree, and we need not test it for intersection with the cutting plane. It occurs for <em>x</em><sub>p</sub> &lt; D and <em>x</em><sub>b</sub> &lt; 0.</p>
+</li>
+<li>
+<p class="list">The ray is tested against the left subtree, and if there are no hits, it is then tested against the right subtree. We need to find the ray parameter at <em>x = D</em>, so we can make sure we only test for intersections within the subtree. This case occurs for <em>x</em><sub>p</sub> &lt; D and <em>x</em><sub>b</sub> &gt; 0.</p>
+</li>
+<li>
+<p class="list">This case is analogous to case 1 and occurs for <em>x</em><sub>p</sub> &gt; D and <em>x</em><sub>b</sub> &gt; 0.</p>
+</li>
+<li>
+<p class="list">This case is analogous to case 2 and occurs for <em>x</em><sub>p</sub> &gt; D and <em>x</em><sub>b</sub> &lt; 0.</p>
+</li>
+</ol>
+<p>The resulting traversal code handling these cases in order is</p>
+<p class="indent1"><strong>function</strong> bool bsp-node::hit(ray <strong>a</strong> + <em>t</em><strong>b</strong>, real <em>t</em><sub>0</sub>, real <em>t</em><sub>1</sub>,</p>
+<p class="indent1">                                               hit-record rec)</p>
+<p class="indent1">     <em>x</em><sub>p</sub> = <em>x</em><sub>a</sub> + <em>t</em><sub>0</sub><em>x</em><sub>b</sub></p>
+<p class="indent1">     <strong>if</strong> (<em>x</em><sub>p</sub> &lt; D) <strong>then</strong></p>
+<p class="indent1"><span aria-label="320" epub:type="pagebreak" id="pg_320" role="doc-pagebreak"/>     <strong>if</strong> (<em>x</em><sub>b</sub> &lt; 0) <strong>then</strong></p>
+<p class="indent1">         <strong>return </strong>(left ≠ NULL) and (left →hit(<strong>a</strong> + t<strong>b</strong>, <em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>, rec))</p>
+<p class="indent1">     <em>t</em> = (<em>D</em> - <em>x</em><sub>a</sub>)∕<em>x</em><sub>b</sub></p>
+<p class="indent1">     <strong>if</strong> (t &gt; <em>t</em><sub>1</sub>) <strong>then</strong></p>
+<p class="indent1">         <strong>return </strong>(left ≠ NULL) and (left →hit(<strong>a</strong> + t<strong>b</strong>, <em>t</em><sub>0</sub>, <em>t</em><sub>1</sub>, rec))</p>
+<p class="indent1">     <strong>if</strong> (left ≠ NULL) and (left →hit(<strong>a</strong> + t<strong>b</strong>, <em>t</em><sub>0</sub>, t, rec)) <strong>then</strong></p>
+<p class="indent1">         <strong>return </strong>true</p>
+<p class="indent1">     <strong>return </strong>(right ≠ NULL) and (right →hit(<strong>a</strong> + t<strong>b</strong>, t, <em>t</em><sub>1</sub>, rec))</p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     analogous code for cases 3 and 4</p>
+<p class="noindent1">This is very clean code. However, to get it started, we need to hit some root object that includes a bounding box so we can initialize the traversal, <em>t</em><sub>0</sub> and <em>t</em><sub>1</sub>. An issue we have to address is that the cutting plane may be along any axis. We can add an integer index <em>axis</em> to the <em>bsp-node</em> class. If we allow an indexing operator for points, this will result in some simple modifications to the code above, for example,</p>
+<p class="indent1"><em>x</em><sub>p</sub> = <em>x</em><sub>a</sub> + <em>t</em><sub>0</sub><em>x</em><sub>b</sub></p>
+<p class="noindent1">would become</p>
+<p class="indent1"><em>u</em><sub>p</sub> = <em>a</em>[axis] + <em>t</em><sub>0</sub><em>b</em>[axis]</p>
+<p class="noindent1">which will result in some additional array indexing, but will not generate more branches.</p>
+<p>While the processing of a single bsp-node is faster than processing a bvh-node, the fact that a single surface may exist in more than one subtree means there are more nodes and, potentially, a higher memory use. How “well” the trees are built determines which is faster. Building the tree is similar to building the BVH tree. We can pick axes to split in a cycle, and we can split in half each time, or we can try to be more sophisticated in how we divide.</p>
+</section>
+</section>
+<section>
+<h2 id="sec12_4"><a id="index_term453"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec12_4" role="doc-backlink"><span class="green">12.4 BSP Trees for Visibility</span></a></h2>
+<p>Another geometric problem in which spatial data structures can be used is determining the visibility ordering of objects in a scene with changing viewpoint.</p>
+<p>If we are making many images of a fixed scene composed of planar polygons, from different viewpoints—as is often the case for applications such as games—we can use a <em>binary space partitioning</em> scheme closely related to the method for ray intersection discussed in the previous section. The difference is that for visibility sorting, we use non–axis-aligned splitting planes, so that the planes can be <span aria-label="321" epub:type="pagebreak" id="pg_321" role="doc-pagebreak"/>made coincident with the polygons. This leads to an elegant algorithm known as the <a id="index_term111"/>BSP tree algorithm to order the surfaces from front to back. The key aspect of the BSP tree is that it uses a preprocess to create a data structure that is useful for any viewpoint. So, as the viewpoint changes, the same data structure is used without change.</p>
+<section>
+<h3 id="sec12_4_1"><span class="green">12.4.1 Overview of BSP Tree Algorithm</span></h3>
+<p>The BSP tree algorithm is an example of a <em>painter’s algorithm</em>. A painter’s algorithm draws every object from back-to-front, with each new polygon potentially overdrawing previous polygons, as is shown in <a href="C17_chapter12.xhtml#f12_35">Figure 12.35</a>. It can be implemented as follows:</p>
+<figure id="f12_35" tabindex="0">
+<img alt="" src="../images/fig12_35.jpg"/>
+<figcaption><p><span class="blue">Figure 12.35.</span> A <a id="index_term817"/>painter’s algorithm starts with a blank image and then draws the scene one object at a time from back-to-front, overdrawing whatever is already there. This automatically eliminates hidden surfaces.</p></figcaption>
+</figure>
+<p class="indent1">sort objects back to front relative to viewpoint</p>
+<p class="indent1"><strong>for</strong> each object <strong>do</strong></p>
+<p class="indent1">     draw object on screen</p>
+<p class="noindent1">The problem with the first step (the sort) is that the relative order of multiple objects is not always well defined, even if the order of every pair of objects is. This problem is illustrated in <a href="C17_chapter12.xhtml#f12_36">Figure 12.36</a> where the three triangles form a <em>cycle</em>.</p>
+<figure id="f12_36" tabindex="0">
+<img alt="" src="../images/fig12_36.jpg"/>
+<figcaption><p><span class="blue">Figure 12.36.</span> A cycle occurs if a global back-to-front ordering is not possible for a particular eye position.</p></figcaption>
+</figure>
+<p>The BSP tree algorithm works on any scene composed of polygons where no polygon crosses the plane defined by any other polygon. This restriction is then relaxed by a preprocessing step. For the rest of this discussion, triangles are assumed to be the only primitive, but the ideas extend to arbitrary polygons.</p>
+<p class="indentb">The basic idea of the BSP tree can be illustrated with two triangles, T<sub>1</sub> and T<sub>2</sub>. We first recall (see <a href="C07_chapter2.xhtml#sec2_7_3">Section 2.7.3</a>) the implicit plane equation of the plane containing T<sub>1</sub>: f<sub>1</sub>(<strong>p</strong>) = 0. The key property of implicit planes that we wish to take advantage of is that for all points <strong>p</strong><sup>+</sup> on one side of the plane, f<sub>1</sub>(<strong>p</strong><sup>+</sup>) &gt; 0; and for all points <strong>p</strong><sup>-</sup> on the other side of the plane, f<sub>1</sub>(<strong>p</strong><sup>-</sup>) &lt; 0. Using this property, we can find out on which side of the plane T<sub>2</sub> lies. Again, this assumes all three vertices of T<sub>2</sub> are on the same side of the plane. For discussion, assume that T<sub>2</sub> is on the f<sub>1</sub>(<strong>p</strong>) &lt; 0 side of the plane. Then, we can draw T<sub>1</sub> and T<sub>2</sub> in the right order for any eyepoint <strong>e</strong>:</p>
+<p class="indent1"><strong>if</strong> (f<sub>1</sub>(<strong>e</strong>) &lt; 0) <strong>then</strong></p>
+<p class="indent1">     draw T<sub>1</sub></p>
+<p class="indent1">     draw T<sub>2</sub></p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">     draw T<sub>2</sub></p>
+<p class="indent1">     draw T<sub>1</sub></p>
+<p class="noindent1"><a id="term-47"/><a id="term-578"/><span aria-label="322" epub:type="pagebreak" id="pg_322" role="doc-pagebreak"/>The reason this works is that if <em>T</em><sub>2</sub> and <strong>e</strong> are on the same side of the plane containing <em>T</em><sub>1</sub>, there is no way for <em>T</em><sub>2</sub> to be fully or partially blocked by <em>T</em><sub>1</sub> as seen from <strong>e</strong>, so it is safe to draw <em>T</em><sub>1</sub> first. If <strong>e</strong> and <em>T</em><sub>2</sub> are on opposite sides of the plane containing <em>T</em><sub>1</sub>, then <em>T</em><sub>2</sub> cannot fully or partially block <em>T</em><sub>1</sub>, and the opposite drawing order is safe (<a href="C17_chapter12.xhtml#f12_37">Figure 12.37</a>).</p>
+<figure id="f12_37" tabindex="0">
+<img alt="" src="../images/fig12_37.jpg"/>
+<figcaption><p><span class="blue">Figure 12.37.</span> When <strong>e</strong> and <em>T</em><sub>2</sub> are on opposite sides of the plane containing <em>T</em><sub>1</sub>, then it is safe to draw <em>T</em><sub>2</sub> first and <em>T</em><sub>1</sub> second. If <strong>e</strong> and <em>T</em><sub>2</sub> are on the same side of the plane, then <em>T</em><sub>1</sub> should be drawn before <em>T</em><sub>2</sub>. This is the core idea of the BSP tree algorithm.</p></figcaption>
+</figure>
+<p class="indentb">This observation can be generalized to many objects provided none of them span the plane defined by <em>T</em><sub>1</sub>. If we use a binary tree data structure with <em>T</em><sub>1</sub> as root, the <em>negative</em> branch of the tree contains all the triangles whose vertices have <em>f<sub>i</sub></em>(<strong>p</strong>) &lt; 0, and the <em>positive</em> branch of the tree contains all the triangles whose vertices have <em>f<sub>i</sub></em>(<strong>p</strong>) &gt; 0. We can draw in proper order as follows:</p>
+<p class="indent1"><a id="term-48"/><span aria-label="323" epub:type="pagebreak" id="pg_323" role="doc-pagebreak"/></p>
+<p class="indent1"><strong>function</strong> draw(bsptree tree, point <strong>e</strong>)</p>
+<p class="indent1">    <strong>if</strong> (tree.empty) <strong>then</strong></p>
+<p class="indent1">        return</p>
+<p class="indent1">    <strong>if</strong> (<em>f</em><sub>tree.root</sub>(<strong>e</strong>) &lt; 0) <strong>then</strong></p>
+<p class="indent1">        draw(tree.plus, <strong>e</strong>)</p>
+<p class="indent1">        rasterize tree.triangle</p>
+<p class="indent1">        draw(tree.minus, <strong>e</strong>)</p>
+<p class="indent1">   <strong>else</strong></p>
+<p class="indent1">       draw(tree.minus, <strong>e</strong>)</p>
+<p class="indent1">       rasterize tree.triangle</p>
+<p class="indent1">       draw(tree.plus, <strong>e</strong>)</p>
+<p class="noindent1">The nice thing about that code is that it will work for any viewpoint <strong>e</strong>, so the tree can be precomputed. Note that, if each subtree is itself a tree, where the root triangle divides the other triangles into two groups relative to the plane containing it, the code will work as is. It can be made slightly more efficient by terminating the recursive calls one level higher, but the code will still be simple. A tree illustrating this code is shown in <a href="C17_chapter12.xhtml#f12_38">Figure 12.38</a>. As discussed in <a href="C07_chapter2.xhtml#sec2_7_5">Section 2.7.5</a>, the implicit equation for a point <strong>p</strong> on a plane containing three non-colinear points <strong>a</strong>, <strong>b</strong>, and <strong>c</strong> is</p>
+<div class="disp-formula" id="equ12_1">
+<m:math alttext=""><m:mrow><m:mi>f</m:mi><m:mo stretchy="false">(</m:mo><m:mi>p</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo stretchy="false">(</m:mo><m:mi>b</m:mi><m:mo>−</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo><m:mo>×</m:mo><m:mo stretchy="false">(</m:mo><m:mi>c</m:mi><m:mo>−</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>⋅</m:mo><m:mo stretchy="false">(</m:mo><m:mi>p</m:mi><m:mo>−</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:mn>0.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(12.1)</m:mo></m:math>
+</div>
+<figure id="f12_38" tabindex="0">
+<img alt="" src="../images/fig12_38.jpg"/>
+<figcaption><p><span class="blue">Figure 12.38.</span> Three triangles and a BSP tree that is valid for them. The “positive” and “negative” are encoded by right and left subtree position, respectively.</p></figcaption>
+</figure>
+<p class="noindent1">It can be faster to store the (<em>A,B,C,D</em>) of the implicit equation of the form</p>
+<div class="disp-formula" id="equ12_2">
+<m:math alttext=""><m:mrow><m:mtable columnalign="left"><m:mtr><m:mtd><m:mtext mathvariant="italic">f(x,y,z) = Ax + By + Cz + D = 0</m:mtext><m:mtext mathvariant="italic">.</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd><m:mrow/></m:mtd></m:mtr></m:mtable></m:mrow><m:mspace width="3em"/><m:mo>(12.2)</m:mo></m:math>
+</div>
+<p>Equations (12.1) and (12.2) are equivalent, as is clear when you recall that the gradient of the implicit equation is the normal to the triangle. The gradient of <a id="term-49"/><span aria-label="324" epub:type="pagebreak" id="pg_324" role="doc-pagebreak"/>Equation (12.2) is <strong>n</strong> = (A,B,C) which is just the normal vector</p>
+<div class="disp-formula" id="uequ12_9">
+<m:math alttext=""><m:mrow><m:mi>n</m:mi><m:mo>=</m:mo><m:mo stretchy="false">(</m:mo><m:mi>b</m:mi><m:mo>−</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo><m:mo>×</m:mo><m:mo stretchy="false">(</m:mo><m:mi>c</m:mi><m:mo>−</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>We can solve for D by plugging in any point on the plane, e.g., <strong>a</strong>:</p>
+<div class="disp-formula" id="uequ12_10">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>D</m:mi><m:mtext> </m:mtext><m:mspace linebreak="newline"/><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext><m:mtext> </m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mi>A</m:mi><m:msub><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:mi>B</m:mi><m:msub><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mo>−</m:mo><m:mi>C</m:mi><m:msub><m:mrow><m:mi>z</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mo>−</m:mo><m:mi mathvariant="normal">n</m:mi><m:mo mathvariant="normal">⋅</m:mo><m:mtext mathvariant="normal"/><m:mi mathvariant="normal">a</m:mi><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>This suggests the form:</p>
+<div class="disp-formula" id="uequ12_11">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>f</m:mi><m:mo>(</m:mo><m:mi mathvariant="bold">p</m:mi><m:mo>)</m:mo></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi mathvariant="bold">n</m:mi><m:mo>⋅</m:mo><m:mi mathvariant="bold">p</m:mi><m:mo>−</m:mo><m:mi mathvariant="bold">n</m:mi><m:mo>⋅</m:mo><m:mi mathvariant="bold">a</m:mi></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mi mathvariant="bold">n</m:mi><m:mo>⋅</m:mo><m:mo>(</m:mo><m:mi mathvariant="bold">p</m:mi><m:mo>−</m:mo><m:mi mathvariant="bold">a</m:mi><m:mo>)</m:mo></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mn>0</m:mn><m:mo>,</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>which is the same as Equation (12.1) once you recall that <strong>n</strong> is computed using the cross product. Which form of the plane equation you use and whether you store only the vertices, <strong>n</strong> and the vertices, or <strong>n</strong>, <em>D</em>, and the vertices, is probably a matter of taste—a classic time-storage tradeoff that will be settled best by profiling. For debugging, using Equation (12.1) is probably the best.</p>
+<p>The only issue that prevents the code above from working in general is that one cannot guarantee that a triangle can be uniquely classified on one side of a <a id="term-50"/><a id="term-71"/><a id="term-72"/><span aria-label="325" epub:type="pagebreak" id="pg_325" role="doc-pagebreak"/>plane or the other. It can have two vertices on one side of the plane and the third on the other. Or it can have vertices on the plane. This is handled by splitting the triangle into smaller triangles using the plane to “cut” them.</p>
+</section>
+<section>
+<h3 id="sec12_4_2"><a id="index_term112"/><span class="green">12.4.2 Building the Tree</span></h3>
+<p class="noindentb">If none of the triangles in the dataset cross each other’s planes, so that all triangles are on one side of all other triangles, a BSP tree that can be traversed using the code above can be built using the following algorithm:</p>
+<p class="indent1">    tree-root = node(T<sub>1</sub>)</p>
+<p class="indent1">    <strong>for</strong> <em>i</em> ∈{2,…,<em>N</em>} <strong>do</strong></p>
+<p class="indent1">        tree-root.add(T<sub>i</sub>)</p>
+<p class="indent1"><strong>function</strong> add ( triangle <em>T</em>)</p>
+<p class="indent1">    <strong>if</strong> (<em>f</em>(<strong>a</strong>) &lt; 0 and <em>f</em>(<strong>b</strong>) &lt; 0 and <em>f</em>(<strong>c</strong>) &lt; 0) <strong>then</strong></p>
+<p class="indent1">        <strong>if</strong> (negative subtree is empty) <strong>then</strong></p>
+<p class="indent1">            negative-subtree = node(<em>T</em>)</p>
+<p class="indent1">        <strong>else</strong></p>
+<p class="indent1">            negative-subtree = node(<em>T</em>)</p>
+<p class="indent1">   <strong>else</strong> <strong>if</strong> (f(<strong>a</strong>) &gt; 0 and f(<strong>b</strong>) &gt; 0 and f(<strong>c</strong>) &gt; 0) <strong>then</strong></p>
+<p class="indent1">        <strong>if</strong> positive subtree is empty <strong>then</strong></p>
+<p class="indent1">            positive-subtree = node(<em>T</em>)</p>
+<p class="indent1">       <strong>else</strong></p>
+<p class="indent1">            positive-subtree = node(<em>T</em>)</p>
+<p class="indent1">  <strong>else</strong></p>
+<p class="indent1">      we have assumed this case is impossible</p>
+<p class="noindent1">The only thing we need to fix is the case where the triangle crosses the dividing plane, as shown in <a href="C17_chapter12.xhtml#f12_39">Figure 12.39</a>. Assume, for simplicity, that the triangle has vertices <strong>a</strong> and <strong>b</strong> on one side of the plane, and vertex <strong>c</strong> is on the other side. In this case, we can find the intersection points <strong>A</strong> and <strong>B</strong> and cut the triangle into three new triangles with vertices</p>
+<div class="disp-formula" id="uequ12_12">
+<m:math alttext=""><m:mrow><m:mtable columnalign="left"><m:mtr><m:mtd><m:msub><m:mrow><m:mi>T</m:mi></m:mrow><m:mrow><m:mn>1</m:mn></m:mrow></m:msub><m:mtext>= (a, b, A),</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>T</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msub><m:mtext>= (b, B, A),</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>T</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msub><m:mtext>= (A, B, c),</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd><m:mrow/></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<figure id="f12_39" tabindex="0">
+<img alt="" src="../images/fig12_39.jpg"/>
+<figcaption><p><span class="blue">Figure 12.39.</span> When a tri-angle spans a plane, there will be one vertex on one side and two on the other.</p></figcaption>
+</figure>
+<p class="noindent1">as shown in <a href="C17_chapter12.xhtml#f12_40">Figure 12.40</a>. This order of vertices is important so that the direction of the normal remains the same as for the original triangle. If we assume that <em>f</em>(<strong>c</strong>) &lt; 0, the following code could add these three triangles to the tree assuming the positive and negative subtrees are not empty:</p>
+<p class="indent1"><a id="term-51"/><a id="term-73"/><span aria-label="326" epub:type="pagebreak" id="pg_326" role="doc-pagebreak"/></p>
+<p class="indent1">positive-subtree = node (<em>T</em><sub>1</sub>)</p>
+<p class="indent1">positive-subtree = node (<em>T</em><sub>2</sub>)</p>
+<p class="indent1">negative-subtree = node (<em>T</em><sub>3</sub>)</p>
+<figure id="f12_40" tabindex="0">
+<img alt="" src="../images/fig12_40.jpg"/>
+<figcaption><p><span class="blue">Figure 12.40.</span> When a triangle is cut, we break it into three triangles, none of which span the cutting plane.</p></figcaption>
+</figure>
+<p class="noindent1">A precision problem that will plague a naive implementation occurs when a vertex is very near the splitting plane. For example, if we have two vertices on one side of the splitting plane and the other vertex is only an extremely small distance on the other side, we will create a new triangle almost the same as the old one, a triangle that is a sliver, and a triangle of almost zero size. It would be better to detect this as a special case and not split into three new triangles. One might expect this case to be rare, but because many models have tessellated planes and triangles with shared vertices, it occurs frequently and thus must be handled carefully. Some simple manipulations that accomplish this are</p>
+<p class="indent1"><strong>function</strong> add( triangle <em>T</em>)</p>
+<p class="indent1">     fa = <em>f</em>(<strong>a</strong>)</p>
+<p class="indent1">     fb = <em>f</em>(<strong>b</strong>)</p>
+<p class="indent1">     fc = <em>f</em>(<strong>c</strong>)</p>
+<p class="indent1">     <strong>if</strong> (<em>abs(fa)</em> &lt; ϵ) <strong>then</strong></p>
+<p class="indent1">         fa = 0</p>
+<p class="indent1">     <strong>if</strong> (<em>abs(fb)</em> &lt; ϵ) <strong>then</strong></p>
+<p class="indent1">         fb = 0</p>
+<p class="indent1">     <strong>if</strong> (<em>abs(fc)</em> &lt; ϵ) <strong>then</strong></p>
+<p class="indent1">         fc = 0</p>
+<p class="indent1">     <strong>if</strong> (<em>fa</em> ≤ 0 and fb  ≤ 0 and fc  ≤ 0) <strong>then</strong></p>
+<p class="indent1">        <strong>if</strong> (negative subtree is empty) <strong>then</strong></p>
+<p class="indent1">            negative-subtree = node(T)</p>
+<p class="indent1">        <strong>else</strong></p>
+<p class="indent1">           negative-subtree.add(<em>T</em>)</p>
+<p class="indent1">    <strong>else</strong> <strong>if</strong> (fa ≥ 0 and fb  ≥ 0 and fc  ≥ 0) <strong>then</strong></p>
+<p class="indent1">        <strong>if</strong> (positive subtree is empty) <strong>then</strong></p>
+<p class="indent1">            positive-subtree = node(T)</p>
+<p class="indent1">        <strong>else</strong></p>
+<p class="indent1">           positive-subtree.add(<em>T</em>)</p>
+<p class="indent1">    <strong>else</strong></p>
+<p class="indent1">        cut triangle into three triangles and add to each side</p>
+<p class="noindent1">This takes any vertex whose <em>f</em> value is within ϵ of the plane and counts it as positive or negative. The constant ϵ is a small positive real chosen by the user. The technique above is a rare instance where testing for floating-point equality is useful and works because the zero value is set rather than being computed. <span aria-label="327" epub:type="pagebreak" id="pg_327" role="doc-pagebreak"/>Comparing for equality with a computed floating-point value is almost never advisable, but we are not doing that.</p>
+</section>
+<section>
+<h3 id="sec12_4_3"><a id="index_term113"/><span class="green">12.4.3 Cutting Triangles</span></h3>
+<p class="noindentb">Filling out the details of the last case “cut triangle into three triangles and add to each side” is straightforward, but tedious. We should take advantage of the BSP tree construction as a preprocess where the highest efficiency is not key. Instead, we should attempt to have a clean compact code. A nice trick is to force many of the cases into one by ensuring that <strong>c</strong> is on one side of the plane and the other two vertices are on the other. This is easily done with swaps. Filling out the details in the final else statement (assuming the subtrees are nonempty for simplicity) gives</p>
+<p class="indent1"><strong>if</strong> (<em>fa * fc</em> ≥ 0) <strong>then</strong></p>
+<p class="indent1">    swap(<em>fb,fc</em>)</p>
+<p class="indent1">    swap(<strong>b</strong>,<strong>c</strong>)</p>
+<p class="indent1">    swap(<em>fa,fb</em>)</p>
+<p class="indent1">    swap(<strong>a</strong>,<strong>b</strong>)</p>
+<p class="indent1"><strong>else if</strong> (<em>fb * fc</em> ≥ 0) <strong>then</strong></p>
+<p class="indent1">    swap(<em>fa,fc</em>)</p>
+<p class="indent1">    swap(<strong>a</strong>,<strong>c</strong>)</p>
+<p class="indent1">    swap(<em>fa,fb</em>)</p>
+<p class="indent1">    swap(<strong>a</strong>,<strong>b</strong>)</p>
+<p class="indent1">compute <strong>A</strong></p>
+<p class="indent1">compute <strong>B</strong></p>
+<p class="indent1"><em>T</em><sub>1</sub> = (<strong>a</strong>,<strong>b</strong>,<strong>A</strong>)</p>
+<p class="indent1"><em>T</em><sub>2</sub> = (<strong>b</strong>,<strong>B</strong>,<strong>A</strong>)</p>
+<p class="indent1"><em>T</em><sub>3</sub> = (<strong>A</strong>,<strong>B</strong>,<strong>c</strong>)</p>
+<p class="indent1"><strong>if</strong> (<em>fc</em> ≥ 0) <strong>then</strong></p>
+<p class="indent1">    negative-subtree.add(<em>T</em><sub>1</sub>)</p>
+<p class="indent1">    negative-subtree.add(<em>T</em><sub>2</sub>)</p>
+<p class="indent1">    positive-subtree.add(<em>T</em><sub>3</sub>)</p>
+<p class="indent1"><strong>else</strong></p>
+<p class="indent1">    positive-subtree.add(<em>T</em><sub>1</sub>)</p>
+<p class="indent1">    positive-subtree.add(<em>T</em><sub>2</sub>)</p>
+<p class="indent1">    negative-subtree.add(<em>T</em><sub>3</sub>)</p>
+<p class="noindent1">This code takes advantage of the fact that the product of a and b are positive if they have the same sign—thus, the first if statement. If vertices are swapped, we must do two swaps to keep the vertices ordered counterclockwise. Note that exactly one of the vertices may lie exactly on the plane, in which case the code above will <a id="term-74"/><span aria-label="328" epub:type="pagebreak" id="pg_328" role="doc-pagebreak"/>work, but one of the generated triangles will have zero area. This can be handled by ignoring the possibility, which is not that risky, because the rasterization code must handle zero-area triangles in screen space (i.e., edge-on triangles). You can also add a check that does not add zero-area triangles to the tree. Finally, you can put in a special case for when exactly one of fa, fb, and fc is zero which cuts the triangle into two triangles.</p>
+<p>To compute <strong>A</strong> and <strong>B</strong>, a line segment and implicit plane intersection is needed. For example, the parametric line connecting <strong>a</strong> and <strong>c</strong> is</p>
+<div class="disp-formula" id="uequ12_13">
+<m:math alttext=""><m:mrow><m:mrow><m:mtable columnalign="left"><m:mtr><m:mtd><m:mtext>p(t) = a + t(c - a)</m:mtext><m:mtext>.</m:mtext></m:mtd></m:mtr><m:mtr><m:mtd><m:mrow/></m:mtd></m:mtr></m:mtable></m:mrow></m:mrow></m:math>
+</div>
+<p>The point of intersection with the plane <strong>n</strong> ⋅<strong>p</strong> + <em>D</em> = 0 is found by plugging <strong>p</strong>(<em>t</em>) into the plane equation:</p>
+<div class="disp-formula" id="uequ12_14">
+<m:math alttext=""><m:mrow><m:mi mathvariant="normal">n</m:mi><m:mo>⋅</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo>+</m:mo><m:mi>t</m:mi><m:mo stretchy="false">(</m:mo><m:mi>c</m:mi><m:mo>−</m:mo><m:mtext> </m:mtext><m:mi>a</m:mi><m:mo stretchy="false">)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mi>D</m:mi><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>and solving for <em>t</em>:</p>
+<div class="disp-formula" id="uequ12_15">
+<m:math alttext=""><m:mrow><m:mi>t</m:mi><m:mo>=</m:mo><m:mo>−</m:mo><m:mfrac><m:mrow><m:mi mathvariant="normal">n</m:mi><m:mo>⋅</m:mo><m:mtext> </m:mtext><m:mi mathvariant="normal">a</m:mi><m:mo>+</m:mo><m:mi>D</m:mi></m:mrow><m:mrow><m:mi mathvariant="normal">n</m:mi><m:mo>⋅</m:mo><m:mo stretchy="false">(</m:mo><m:mi mathvariant="normal">c</m:mi><m:mo>−</m:mo><m:mtext> </m:mtext><m:mi mathvariant="normal">a</m:mi><m:mo stretchy="false">)</m:mo></m:mrow></m:mfrac><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>Calling this solution <em>t</em><sub><em>A</em></sub>, we can write the expression for <strong>A</strong>:</p>
+<div class="disp-formula" id="uequ12_16">
+<m:math alttext=""><m:mrow><m:mtext>A = a +</m:mtext><m:msub><m:mrow><m:mtext mathvariant="italic">t</m:mtext></m:mrow><m:mrow><m:mi>A</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mtext>c - a</m:mtext><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<p>A similar computation will give <strong>B</strong>.</p>
+</section>
+<section>
+<h3 id="sec12_4_4"><a id="index_term85"/><span class="green">12.4.4 Optimizing the Tree</span></h3>
+<p>The efficiency of tree creation is much less of a concern than tree traversal because it is a preprocess. The traversal of the BSP tree takes time proportional to the number of nodes in the tree. (How well balanced the tree is does not matter.) There will be one node for each triangle, including the triangles that are created as a result of splitting. This number can depend on the order in which triangles are added to the tree. For example, in <a href="C17_chapter12.xhtml#f12_41">Figure 12.41</a>, if <em>T</em><sub>1</sub> is the root, there will be two nodes in the tree, but if <em>T</em><sub>2</sub> is the root, there will be more nodes, because <em>T</em><sub>1</sub> will be split.</p>
+<figure id="f12_41" tabindex="0">
+<img alt="" src="../images/fig12_41.jpg"/>
+<figcaption><p><span class="blue">Figure 12.41.</span> Using <em>T</em><sub>1</sub> as the root of a BSP tree will result in a tree with two nodes. Using <em>T</em><sub>2</sub> as the root will require a cut and thus make a larger tree.</p></figcaption>
+</figure>
+<p>It is difficult to find the “best” order of triangles to add to the tree. For <em>N</em> triangles, there are <em>N</em>! orderings that are possible. So trying all orderings is not usually feasible. Alternatively, some predetermined number of orderings can be tried from a random collection of permutations, and the best one can be kept for the final tree.</p>
+<p><a id="term-547"/><span aria-label="329" epub:type="pagebreak" id="pg_329" role="doc-pagebreak"/>The splitting algorithm described above splits one triangle into three triangles. It could be more efficient to split a triangle into a triangle and a convex quadrilateral. This is probably not worth it if all input models have only triangles, but would be easy to support for implementations that accommodate arbitrary polygons.</p>
+</section>
+</section>
+<section>
+<h2 id="sec12_5"><a id="index_term1207"/><a id="index_term454"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec12_5" role="doc-backlink"><span class="green">12.5 Tiling Multidimensional Arrays</span></a></h2>
+<p>Effectively utilizing the memory hierarchy is a crucial task in designing algorithms for modern architectures. Making sure that multidimensional arrays have data in a “nice” arrangement is accomplished by <em>tiling</em>, sometimes also called <em>bricking</em>. A traditional <a id="index_term59"/><a id="index_term1288"/>2D array is stored as a 1D array together with an indexing mechanism; for example, an <em>N</em><sub><em>x</em></sub> by <em>N</em><sub><em>y</em></sub> array is stored in a 1D array of length <em>N</em><sub><em>x</em></sub><em>N</em><sub><em>y</em></sub> and the 2D index (<em>x,y</em>) (which runs from (0,0) to (<em>N</em><sub><em>x</em></sub> - 1, <em>N</em><sub><em>y</em></sub> - 1)) maps to the 1D index (running from 0 to <em>N</em><sub><em>x</em></sub><em>N</em><sub><em>y</em></sub> - 1) using the formula</p>
+<div class="disp-formula" id="uequ12_17">
+<m:math alttext=""><m:mrow><m:mrow><m:mtext>index</m:mtext><m:mo>=</m:mo><m:mi>x</m:mi><m:mo>+</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>x</m:mi><m:mi>y</m:mi></m:mrow></m:msub><m:mn>.</m:mn></m:mrow></m:mrow></m:math>
+</div>
+<p>An example of how that memory lays out is shown in <a href="C17_chapter12.xhtml#f12_42">Figure 12.42</a>. A problem with this layout is that although two adjacent array elements that are in the same row are next to each other in memory, two adjacent elements in the same column will be separated by <em>N<sub>x</sub></em> elements in memory. This can cause poor memory locality for large <em>N<sub>x</sub></em>. The standard solution to this is to use <em>tiles</em> to make memory locality for rows and columns more equal. An example is shown in <a href="C17_chapter12.xhtml#f12_43">Figure 12.43</a> where 2 × 2 tiles are used. The details of indexing such an array are discussed in the next section. A more complicated example, with two levels of tiling on a 3D array, is covered after that.</p>
+<figure id="f12_42" tabindex="0">
+<img alt="" src="../images/fig12_42.jpg"/>
+<figcaption><p><span class="blue">Figure 12.42.</span> The memory layout for an untiled 2D array with <em>N<sub>x</sub></em> = 4 and <em>N<sub>y</sub></em> = 3.</p></figcaption>
+</figure>
+<figure id="f12_43" tabindex="0">
+<img alt="" src="../images/fig12_43.jpg"/>
+<figcaption><p><span class="blue">Figure 12.43.</span> The memory layout for a tiled 2D array with <em>N</em><sub><em>x</em></sub> = 4 and <em>N</em><sub><em>y</em></sub> = 3 and 2 × 2 tiles. Note that padding on the top of the array is needed because <em>N</em><sub><em>y</em></sub> is not a multiple of the tile size two.</p></figcaption>
+</figure>
+<p>A key question is what size to make the tiles. In practice, they should be similar to the memory-unit size on the machine. For example, if we are using 16-bit (2-byte) data values on a machine with 128-byte cache lines, 8 × 8 tiles fit exactly in a cache line. However, using 32-bit floating-point numbers, which fit 32 elements to a cache line, 5 × 5 tiles are a bit too small and 6 × 6 tiles are a bit too large. Because there are also coarser-sized memory units such as pages, hierarchical tiling with similar logic can be useful.</p>
+<section>
+<h3 id="sec12_5_1"><span class="green">12.5.1 One-Level Tiling for 2D Arrays</span></h3>
+<p>If we assume an <em>N<sub>x</sub></em> × <em>N<sub>y</sub></em> array decomposed into square n × n tiles (<a href="C17_chapter12.xhtml#f12_44">Figure 12.44</a>), then the number of tiles required is</p>
+<figure id="f12_44" tabindex="0">
+<img alt="" src="../images/fig12_44.jpg"/>
+<figcaption><p><span class="blue">Figure 12.44.</span> <a id="term-27"/><a id="term-353"/><a id="term-548"/><a id="term-890"/><a id="term-981"/><span aria-label="330" epub:type="pagebreak" id="pg_330" role="doc-pagebreak"/>A tiled 2D array composed of <em>B<sub>x</sub></em> × <em>B<sub>y</sub></em> tiles each of size <em>n</em> by <em>n</em>.</p></figcaption>
+</figure>
+<div class="disp-formula" id="uequ12_18">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>B</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>⁢</m:mo></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>/</m:mo><m:mi>n</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>B</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>/</m:mo><m:mi>n</m:mi><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>Here, we assume that n divides <em>N<sub>x</sub></em> and <em>N<sub>y</sub></em> exactly. When this is not true, the array should be <em>padded</em>. For example, if <em>N<sub>x</sub></em> = 15 and <em>n</em> = 4, then <em>N<sub>x</sub></em> should be changed to 16. To work out a formula for indexing such an array, we first find the tile indices (b<sub>x</sub>,b<sub>y</sub>) that give the row/column for the tiles (the tiles themselves form a 2D array):</p>
+<div class="disp-formula" id="uequ12_19">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mspace linebreak="newline"/></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mi>x</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mi>y</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>,</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>where ÷ is integer division, e.g., 12 ÷ 5 = 2. If we order the tiles along rows as shown in <a href="C17_chapter12.xhtml#f12_42">Figure 12.42</a>, then the index of the first element of the tile (<em>b<sub>x</sub>,b<sub>y</sub></em>) is</p>
+<div class="disp-formula" id="uequ12_20">
+<m:math alttext=""><m:mrow><m:mtext>index</m:mtext><m:mo>=</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo stretchy="false">(</m:mo><m:msub><m:mrow><m:mi>B</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo stretchy="false">)</m:mo><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p>The memory in that tile is arranged like a traditional 2D array as shown in <a href="C17_chapter12.xhtml#f12_43">Figure 12.43</a>. The partial offsets (<em>x′,y′</em>) inside the tile are</p>
+<div class="disp-formula" id="uequ12_21">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>x</m:mi><m:mo>′</m:mo></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mi>x</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:mi>y</m:mi><m:mo>′</m:mo></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd><m:mi>y</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>,</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>where <span class="monospace">mod</span> is the remainder operator, e.g., <span class="monospace">12 mod</span> 5 = 2. Therefore, the offset inside the tile is</p>
+<div class="disp-formula" id="uequ12_22">
+<m:math alttext=""><m:mrow><m:mtext>offset</m:mtext><m:mo>=</m:mo><m:msup><m:mrow><m:mi>y</m:mi></m:mrow><m:mrow><m:mo>′</m:mo></m:mrow></m:msup><m:mi>n</m:mi><m:mo>+</m:mo><m:msup><m:mrow><m:mi>x</m:mi></m:mrow><m:mrow><m:mo>′</m:mo></m:mrow></m:msup><m:mo>.</m:mo></m:mrow></m:math>
+</div>
+<p><span aria-label="331" epub:type="pagebreak" id="pg_331" role="doc-pagebreak"/>Thus, the full formula for finding the 1D index element (<em>x,y</em>) in an <em>N<sub>x</sub></em> × <em>N<sub>y</sub></em> array with <em>n</em> × <em>n</em> tiles is</p>
+<div class="disp-formula" id="uequ12_23">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtext>index</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>B</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>+</m:mo><m:msub><m:mrow><m:mi>b</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>y</m:mi><m:mo>′</m:mo><m:mi>n</m:mi><m:mo>+</m:mo><m:mi>x</m:mi><m:mo>′</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mi>x</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi></m:mrow></m:mrow><m:mo>)</m:mo><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>)</m:mo><m:mn>.</m:mn></m:mrow></m:mrow></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>This expression contains many integer multiplication, divide, and modulus operations, which are costly on some processors. When n is a power of two, these operations can be converted to bitshifts and bitwise logical operations. However, as noted above, the ideal size is not always a power of two. Some of the multiplications can be converted to shift/add operations, but the divide and modulus operations are more problematic. The indices could be computed incrementally, but this would require tracking counters, with numerous comparisons and poor branch prediction performance.</p>
+<p>However, there is a simple solution; note that the index expression can be written as</p>
+<div class="disp-formula" id="uequ12_24">
+<m:math alttext=""><m:mrow><m:mtext>index</m:mtext><m:mo>=</m:mo><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>where</p>
+<div class="disp-formula" id="uequ12_25">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable columnalign="left"><m:mtr><m:mtd><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mtext> </m:mtext><m:mi>mod</m:mi><m:mtext> </m:mtext><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo><m:mspace linebreak="newline"/></m:mtd></m:mtr><m:mtr><m:mtd columnalign="left"><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>=</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo stretchy="false">(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mtext> </m:mtext><m:mi>mod</m:mi><m:mtext> </m:mtext><m:mi>n</m:mi><m:mo stretchy="false">)</m:mo><m:mi>n</m:mi><m:mo>.</m:mo></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>We tabulate <em>F<sub>x</sub></em> and <em>F<sub>y</sub></em>, and use x and y to find the index into the data array. These tables will consist of <em>N<sub>x</sub></em> and <em>N<sub>y</sub></em> elements, respectively. The total size of the tables will fit in the primary data cache of the processor, even for very large dataset sizes.</p>
+</section>
+<section>
+<h3 id="sec12_5_2"><a id="index_term1191"/><a id="index_term58"/><span class="green">12.5.2 Example: Two-Level Tiling for 3D Arrays</span></h3>
+<p>Effective TLB utilization is also becoming a crucial factor in algorithm performance. The same technique can be used to improve TLB hit rates in a 3D array by creating <em>m</em> × <em>m</em> × <em>m</em> bricks of <em>n</em> × <em>n</em> × <em>n</em> cells. For example, a 40 × 20 × 19 volume could be decomposed into 4 × 2 × 2 macrobricks of 2 × 2 × 2 bricks of 5 × 5 × 5 cells. This corresponds to <em>m</em> = 2 and <em>n</em> = 5. Because 19 cannot be factored by <em>mn</em> = 10, one level of padding is needed. Empirically useful sizes are m = 5 for 16-bit datasets and <em>m</em> = 6 for float datasets.</p>
+<aside class="boxed-text" epub:type="sidebar" id="c012_box4">
+<p class="noindent">TLB: translation lookaside buffer, a cache that is part of the virtual memory system.</p>
+</aside>
+<p class="indent"><span aria-label="332" epub:type="pagebreak" id="pg_332" role="doc-pagebreak"/>The resulting index into the data array can be computed for any (x,y,z) triple with the expression</p>
+<div class="disp-formula" id="uequ12_26">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtext>index</m:mtext></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>z</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup></m:mrow><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>z</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mtext> mod </m:mtext><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup></m:mrow><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mtext> mod </m:mtext><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mi>m</m:mi></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mtext> mod </m:mtext><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mrow><m:mo>+</m:mo><m:mo>(</m:mo><m:mi>x</m:mi><m:mtext> mod </m:mtext><m:mrow><m:mo>(</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:mo>)</m:mo></m:mrow><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>)</m:mo><m:mi>n</m:mi></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mi>z</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>,</m:mo></m:mrow></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>where <em>N<sub>x</sub></em>, <em>N<sub>y</sub></em>, and <em>N</em><sub>z</sub> are the respective sizes of the dataset.</p>
+<p>Note that, as in the simpler 2D one-level case, this expression can be written as</p>
+<div class="disp-formula" id="uequ12_27">
+<m:math alttext=""><m:mrow><m:mtext>index</m:mtext><m:mo>=</m:mo><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>x</m:mi><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>y</m:mi><m:mo stretchy="false">)</m:mo><m:mo>+</m:mo><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>z</m:mi></m:mrow></m:msub><m:mo stretchy="false">(</m:mo><m:mi>z</m:mi><m:mo stretchy="false">)</m:mo><m:mo>,</m:mo></m:mrow></m:math>
+</div>
+<p>where</p>
+<div class="disp-formula" id="uequ12_28">
+<m:math xmlns:mml="http://www.w3.org/1998/Math/MathML" alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>x</m:mi></m:mrow></m:msub><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>z</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mtext> mod </m:mtext><m:mi>m</m:mi></m:mrow><m:mo>)</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mo>(</m:mo><m:mi>x</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>)</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>y</m:mi></m:mrow></m:msub><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mo>(</m:mo><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi><m:mo>)</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mo>(</m:mo><m:mo>(</m:mo><m:msub><m:mrow><m:mi>N</m:mi></m:mrow><m:mrow><m:mi>z</m:mi></m:mrow></m:msub><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi><m:mo>)</m:mo></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mo>(</m:mo><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mtext> mod </m:mtext><m:mi>m</m:mi><m:mo>)</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:mi>m</m:mi><m:mo>+</m:mo></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mo>(</m:mo><m:mo>(</m:mo><m:mi>y</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>)</m:mo><m:mi>n</m:mi><m:mo>,</m:mo></m:mtd></m:mtr><m:mtr><m:mtd><m:msub><m:mrow><m:mi>F</m:mi></m:mrow><m:mrow><m:mi>z</m:mi></m:mrow></m:msub><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>)</m:mo></m:mtd><m:mtd><m:mo>=</m:mo></m:mtd><m:mtd columnalign="left"><m:mo>(</m:mo><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mo>÷</m:mo><m:mi>m</m:mi><m:mo>)</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mi>m</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mo>(</m:mo><m:mo>(</m:mo><m:mi>z</m:mi><m:mo>÷</m:mo><m:mi>n</m:mi><m:mo>)</m:mo><m:mtext> mod </m:mtext><m:mi>m</m:mi><m:mo>)</m:mo><m:msup><m:mrow><m:mi>n</m:mi></m:mrow><m:mrow><m:mn>3</m:mn></m:mrow></m:msup></m:mtd></m:mtr><m:mtr><m:mtd/><m:mtd/><m:mtd columnalign="left"><m:mo>+</m:mo><m:mo>(</m:mo><m:mi>z</m:mi><m:mtext> mod </m:mtext><m:mi>n</m:mi><m:mo>)</m:mo><m:mn>.</m:mn></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+</section>
+</section>
+<section>
+<h2 id="sec12_6"><span class="green">Frequently Asked Questions</span></h2>
+<ul class="list-bullet">
+<li>
+<p class="list"><span class="green">Does tiling really make that much difference in performance?</span></p></li>
+</ul>
+<p class="noindent1b">On some volume rendering applications, a two-level tiling strategy made as much as a factor-of-ten performance difference. When the array does not fit in main <span aria-label="333" epub:type="pagebreak" id="pg_333" role="doc-pagebreak"/>memory, it can effectively prevent thrashing in some applications such as image editing.</p>
+<ul>
+<li>
+<p class="list"><span class="green">How do I store the lists in a winged-edge structure?</span></p>
+</li>
+</ul>
+<p class="noindent1b">For most applications, it is feasible to use arrays and indices for the references. However, if many delete operations are to be performed, then it is wise to use linked lists and pointers.</p>
+</section>
+<section>
+<h2 id="sec12_7"><span class="green">Notes</span></h2>
+<p>The discussion of the winged-edge data structure is based on the course notes of <em>Ching-Kuang Shene</em> (2003). There are smaller mesh data structures than winged-edge. The tradeoffs in using such structures are discussed in <em>Directed Edges—A Scalable</em> <em>Representation for Triangle Meshes</em> (Campagna, Kobbelt, &amp; Seidel, 1998). The tiled-array discussion is based on <em>Interactive Ray Tracing for Volume</em> <em>Visualization</em> (Parker et al., 1999). A structure similar to the triangle neighbor structure is discussed in a technical report by Charles Loop (<a id="index_term704"/>Loop, 2000). A discussion of manifolds can be found in an introductory topology text (Munkres, 2000).</p>
+</section>
+<section>
+<h2 id="sec12_8"><span class="green">Exercises</span></h2>
+<p class="qpara"><span class="green">1.</span> What is the memory difference for a simple tetrahedron stored as four independent triangles and one stored in a winged-edge data structure?</p>
+<p class="qpara"><span class="green">2.</span> Diagram a scene graph for a bicycle.</p>
+<p class="qpara"><span class="green">3.</span> How many lookup tables are needed for a single-level tiling of an n-dimensional array?</p>
+<p class="qpara"><span class="green">4.</span> Given <em>N</em> triangles, what is the minimum number of triangles that could be added to a resulting BSP tree? What is the maximum number?</p>
+</section>
+</section>
+</body>
+</html>

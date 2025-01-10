@@ -1,0 +1,832 @@
+<package xmlns="http://www.idpf.org/2007/opf" unique-identifier="BookID" version="3.0">
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:opf="http://www.idpf.org/2007/opf">
+<dc:identifier id="p9781000426359">6665500</dc:identifier>
+<dc:title>Fundamentals of Computer Graphics</dc:title>
+<dc:creator>Marschner, Steve;Shirley, Peter;</dc:creator>
+<dc:creator>Peter Shirley</dc:creator>
+<dc:creator>Michael Ashikhmin</dc:creator>
+<dc:creator>Michael Gleicher</dc:creator>
+<dc:creator>Naty Hoffman</dc:creator>
+<dc:creator>Garrett Johnson</dc:creator>
+<dc:creator>Tamara Munzner</dc:creator>
+<dc:creator>Erik Reinhard</dc:creator>
+<dc:creator>William B. Thompson</dc:creator>
+<dc:creator>Peter Willemsen</dc:creator>
+<dc:creator>Brian Wyvill</dc:creator>
+<dc:format>application/ePub</dc:format>
+<dc:source>9780367505035</dc:source>
+<dc:date>2021-07-05</dc:date>
+<dc:identifier id="BookID">9781000426359</dc:identifier>
+<dc:language>en</dc:language>
+<dc:relation>9781003050339</dc:relation>
+<dc:relation>9781000426281</dc:relation>
+<dc:publisher>CRC Press LLC</dc:publisher>
+<dc:rights>© 2022 Taylor &amp; Francis Group, LLC</dc:rights>
+<meta property="dcterms:modified">2021-07-05T15:30:57Z</meta>
+<meta property="schema:accessMode">textual</meta>
+<meta property="schema:accessMode">visual</meta>
+<meta property="schema:accessModeSufficient">textual</meta>
+<meta property="schema:accessibilityFeature">structuralNavigation</meta>
+<meta property="schema:accessibilityFeature">bookmarks</meta>
+<meta property="schema:accessibilityFeature">tableOfContents</meta>
+<meta property="schema:accessibilityFeature">index</meta>
+<meta property="schema:accessibilityFeature">printPageNumbers</meta>
+<meta property="schema:accessibilityHazard">none</meta>
+<meta property="schema:accessibilitySummary">Fundamentals of Computer Graphics contains bookmarks, print page numbers, structural navigation, table of contents, index page-listing, landmarks.</meta>
+<link href="http://www.idpf.org/epub/a11y/accessibility-20170105.html#wcag-aa" rel="dcterms:conformsTo"/>
+<meta content="cover-image" name="cover"/>
+</metadata>
+<manifest>
+<item href="images/9781000426359.jpg" id="cover-image" media-type="image/jpeg" properties="cover-image"/>
+<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
+<item href="styles/9781000426359.css" id="style" media-type="text/css"/>
+<item href="images/fig10_1.jpg" id="fig10_1" media-type="image/jpeg"/>
+<item href="images/fig10_10.jpg" id="fig10_10" media-type="image/jpeg"/>
+<item href="images/fig10_11.jpg" id="fig10_11" media-type="image/jpeg"/>
+<item href="images/fig10_12.jpg" id="fig10_12" media-type="image/jpeg"/>
+<item href="images/fig10_13.jpg" id="fig10_13" media-type="image/jpeg"/>
+<item href="images/fig10_14.jpg" id="fig10_14" media-type="image/jpeg"/>
+<item href="images/fig10_15.jpg" id="fig10_15" media-type="image/jpeg"/>
+<item href="images/fig10_16.jpg" id="fig10_16" media-type="image/jpeg"/>
+<item href="images/fig10_17.jpg" id="fig10_17" media-type="image/jpeg"/>
+<item href="images/fig10_18.jpg" id="fig10_18" media-type="image/jpeg"/>
+<item href="images/fig10_19.jpg" id="fig10_19" media-type="image/jpeg"/>
+<item href="images/fig10_2.jpg" id="fig10_2" media-type="image/jpeg"/>
+<item href="images/fig10_20.jpg" id="fig10_20" media-type="image/jpeg"/>
+<item href="images/fig10_21.jpg" id="fig10_21" media-type="image/jpeg"/>
+<item href="images/fig10_22.jpg" id="fig10_22" media-type="image/jpeg"/>
+<item href="images/fig10_23.jpg" id="fig10_23" media-type="image/jpeg"/>
+<item href="images/fig10_24.jpg" id="fig10_24" media-type="image/jpeg"/>
+<item href="images/fig10_25.jpg" id="fig10_25" media-type="image/jpeg"/>
+<item href="images/fig10_26.jpg" id="fig10_26" media-type="image/jpeg"/>
+<item href="images/fig10_27.jpg" id="fig10_27" media-type="image/jpeg"/>
+<item href="images/fig10_28.jpg" id="fig10_28" media-type="image/jpeg"/>
+<item href="images/fig10_29.jpg" id="fig10_29" media-type="image/jpeg"/>
+<item href="images/fig10_3.jpg" id="fig10_3" media-type="image/jpeg"/>
+<item href="images/fig10_30.jpg" id="fig10_30" media-type="image/jpeg"/>
+<item href="images/fig10_31.jpg" id="fig10_31" media-type="image/jpeg"/>
+<item href="images/fig10_32.jpg" id="fig10_32" media-type="image/jpeg"/>
+<item href="images/fig10_33.jpg" id="fig10_33" media-type="image/jpeg"/>
+<item href="images/fig10_34.jpg" id="fig10_34" media-type="image/jpeg"/>
+<item href="images/fig10_35.jpg" id="fig10_35" media-type="image/jpeg"/>
+<item href="images/fig10_36.jpg" id="fig10_36" media-type="image/jpeg"/>
+<item href="images/fig10_37.jpg" id="fig10_37" media-type="image/jpeg"/>
+<item href="images/fig10_38.jpg" id="fig10_38" media-type="image/jpeg"/>
+<item href="images/fig10_39.jpg" id="fig10_39" media-type="image/jpeg"/>
+<item href="images/fig10_4.jpg" id="fig10_4" media-type="image/jpeg"/>
+<item href="images/fig10_40.jpg" id="fig10_40" media-type="image/jpeg"/>
+<item href="images/fig10_41.jpg" id="fig10_41" media-type="image/jpeg"/>
+<item href="images/fig10_42.jpg" id="fig10_42" media-type="image/jpeg"/>
+<item href="images/fig10_43.jpg" id="fig10_43" media-type="image/jpeg"/>
+<item href="images/fig10_44.jpg" id="fig10_44" media-type="image/jpeg"/>
+<item href="images/fig10_45.jpg" id="fig10_45" media-type="image/jpeg"/>
+<item href="images/fig10_46.jpg" id="fig10_46" media-type="image/jpeg"/>
+<item href="images/fig10_47.jpg" id="fig10_47" media-type="image/jpeg"/>
+<item href="images/fig10_48.jpg" id="fig10_48" media-type="image/jpeg"/>
+<item href="images/fig10_49.jpg" id="fig10_49" media-type="image/jpeg"/>
+<item href="images/fig10_5.jpg" id="fig10_5" media-type="image/jpeg"/>
+<item href="images/fig10_50.jpg" id="fig10_50" media-type="image/jpeg"/>
+<item href="images/fig10_51.jpg" id="fig10_51" media-type="image/jpeg"/>
+<item href="images/fig10_52.jpg" id="fig10_52" media-type="image/jpeg"/>
+<item href="images/fig10_53.jpg" id="fig10_53" media-type="image/jpeg"/>
+<item href="images/fig10_6.jpg" id="fig10_6" media-type="image/jpeg"/>
+<item href="images/fig10_7.jpg" id="fig10_7" media-type="image/jpeg"/>
+<item href="images/fig10_8.jpg" id="fig10_8" media-type="image/jpeg"/>
+<item href="images/fig10_9.jpg" id="fig10_9" media-type="image/jpeg"/>
+<item href="images/fig11_1.jpg" id="fig11_1" media-type="image/jpeg"/>
+<item href="images/fig11_10.jpg" id="fig11_10" media-type="image/jpeg"/>
+<item href="images/fig11_11.jpg" id="fig11_11" media-type="image/jpeg"/>
+<item href="images/fig11_12.jpg" id="fig11_12" media-type="image/jpeg"/>
+<item href="images/fig11_13.jpg" id="fig11_13" media-type="image/jpeg"/>
+<item href="images/fig11_14.jpg" id="fig11_14" media-type="image/jpeg"/>
+<item href="images/fig11_15.jpg" id="fig11_15" media-type="image/jpeg"/>
+<item href="images/fig11_16.jpg" id="fig11_16" media-type="image/jpeg"/>
+<item href="images/fig11_17.jpg" id="fig11_17" media-type="image/jpeg"/>
+<item href="images/fig11_18.jpg" id="fig11_18" media-type="image/jpeg"/>
+<item href="images/fig11_19.jpg" id="fig11_19" media-type="image/jpeg"/>
+<item href="images/fig11_2.jpg" id="fig11_2" media-type="image/jpeg"/>
+<item href="images/fig11_20.jpg" id="fig11_20" media-type="image/jpeg"/>
+<item href="images/fig11_21.jpg" id="fig11_21" media-type="image/jpeg"/>
+<item href="images/fig11_22.jpg" id="fig11_22" media-type="image/jpeg"/>
+<item href="images/fig11_23.jpg" id="fig11_23" media-type="image/jpeg"/>
+<item href="images/fig11_24.jpg" id="fig11_24" media-type="image/jpeg"/>
+<item href="images/fig11_25.jpg" id="fig11_25" media-type="image/jpeg"/>
+<item href="images/fig11_26.jpg" id="fig11_26" media-type="image/jpeg"/>
+<item href="images/fig11_27.jpg" id="fig11_27" media-type="image/jpeg"/>
+<item href="images/fig11_28.jpg" id="fig11_28" media-type="image/jpeg"/>
+<item href="images/fig11_3.jpg" id="fig11_3" media-type="image/jpeg"/>
+<item href="images/fig11_4.jpg" id="fig11_4" media-type="image/jpeg"/>
+<item href="images/fig11_5.jpg" id="fig11_5" media-type="image/jpeg"/>
+<item href="images/fig11_6.jpg" id="fig11_6" media-type="image/jpeg"/>
+<item href="images/fig11_7.jpg" id="fig11_7" media-type="image/jpeg"/>
+<item href="images/fig11_8.jpg" id="fig11_8" media-type="image/jpeg"/>
+<item href="images/fig11_9.jpg" id="fig11_9" media-type="image/jpeg"/>
+<item href="images/fig12_1.jpg" id="fig12_1" media-type="image/jpeg"/>
+<item href="images/fig12_10.jpg" id="fig12_10" media-type="image/jpeg"/>
+<item href="images/fig12_11.jpg" id="fig12_11" media-type="image/jpeg"/>
+<item href="images/fig12_12.jpg" id="fig12_12" media-type="image/jpeg"/>
+<item href="images/fig12_13.jpg" id="fig12_13" media-type="image/jpeg"/>
+<item href="images/fig12_14.jpg" id="fig12_14" media-type="image/jpeg"/>
+<item href="images/fig12_15.jpg" id="fig12_15" media-type="image/jpeg"/>
+<item href="images/fig12_16.jpg" id="fig12_16" media-type="image/jpeg"/>
+<item href="images/fig12_17.jpg" id="fig12_17" media-type="image/jpeg"/>
+<item href="images/fig12_18.jpg" id="fig12_18" media-type="image/jpeg"/>
+<item href="images/fig12_19.jpg" id="fig12_19" media-type="image/jpeg"/>
+<item href="images/fig12_2.jpg" id="fig12_2" media-type="image/jpeg"/>
+<item href="images/fig12_20.jpg" id="fig12_20" media-type="image/jpeg"/>
+<item href="images/fig12_21.jpg" id="fig12_21" media-type="image/jpeg"/>
+<item href="images/fig12_22.jpg" id="fig12_22" media-type="image/jpeg"/>
+<item href="images/fig12_23.jpg" id="fig12_23" media-type="image/jpeg"/>
+<item href="images/fig12_24.jpg" id="fig12_24" media-type="image/jpeg"/>
+<item href="images/fig12_25.jpg" id="fig12_25" media-type="image/jpeg"/>
+<item href="images/fig12_26.jpg" id="fig12_26" media-type="image/jpeg"/>
+<item href="images/fig12_27.jpg" id="fig12_27" media-type="image/jpeg"/>
+<item href="images/fig12_28.jpg" id="fig12_28" media-type="image/jpeg"/>
+<item href="images/fig12_29.jpg" id="fig12_29" media-type="image/jpeg"/>
+<item href="images/fig12_3.jpg" id="fig12_3" media-type="image/jpeg"/>
+<item href="images/fig12_30.jpg" id="fig12_30" media-type="image/jpeg"/>
+<item href="images/fig12_31.jpg" id="fig12_31" media-type="image/jpeg"/>
+<item href="images/fig12_32.jpg" id="fig12_32" media-type="image/jpeg"/>
+<item href="images/fig12_33.jpg" id="fig12_33" media-type="image/jpeg"/>
+<item href="images/fig12_34.jpg" id="fig12_34" media-type="image/jpeg"/>
+<item href="images/fig12_35.jpg" id="fig12_35" media-type="image/jpeg"/>
+<item href="images/fig12_36.jpg" id="fig12_36" media-type="image/jpeg"/>
+<item href="images/fig12_37.jpg" id="fig12_37" media-type="image/jpeg"/>
+<item href="images/fig12_38.jpg" id="fig12_38" media-type="image/jpeg"/>
+<item href="images/fig12_39.jpg" id="fig12_39" media-type="image/jpeg"/>
+<item href="images/fig12_4.jpg" id="fig12_4" media-type="image/jpeg"/>
+<item href="images/fig12_40.jpg" id="fig12_40" media-type="image/jpeg"/>
+<item href="images/fig12_41.jpg" id="fig12_41" media-type="image/jpeg"/>
+<item href="images/fig12_42.jpg" id="fig12_42" media-type="image/jpeg"/>
+<item href="images/fig12_43.jpg" id="fig12_43" media-type="image/jpeg"/>
+<item href="images/fig12_44.jpg" id="fig12_44" media-type="image/jpeg"/>
+<item href="images/fig12_5.jpg" id="fig12_5" media-type="image/jpeg"/>
+<item href="images/fig12_6.jpg" id="fig12_6" media-type="image/jpeg"/>
+<item href="images/fig12_7.jpg" id="fig12_7" media-type="image/jpeg"/>
+<item href="images/fig12_8.jpg" id="fig12_8" media-type="image/jpeg"/>
+<item href="images/fig12_9.jpg" id="fig12_9" media-type="image/jpeg"/>
+<item href="images/fig13_1.jpg" id="fig13_1" media-type="image/jpeg"/>
+<item href="images/fig13_10.jpg" id="fig13_10" media-type="image/jpeg"/>
+<item href="images/fig13_2.jpg" id="fig13_2" media-type="image/jpeg"/>
+<item href="images/fig13_3.jpg" id="fig13_3" media-type="image/jpeg"/>
+<item href="images/fig13_4.jpg" id="fig13_4" media-type="image/jpeg"/>
+<item href="images/fig13_5.jpg" id="fig13_5" media-type="image/jpeg"/>
+<item href="images/fig13_6.jpg" id="fig13_6" media-type="image/jpeg"/>
+<item href="images/fig13_7.jpg" id="fig13_7" media-type="image/jpeg"/>
+<item href="images/fig13_8.jpg" id="fig13_8" media-type="image/jpeg"/>
+<item href="images/fig13_9.jpg" id="fig13_9" media-type="image/jpeg"/>
+<item href="images/fig14_1.jpg" id="fig14_1" media-type="image/jpeg"/>
+<item href="images/fig14_10.jpg" id="fig14_10" media-type="image/jpeg"/>
+<item href="images/fig14_11.jpg" id="fig14_11" media-type="image/jpeg"/>
+<item href="images/fig14_12.jpg" id="fig14_12" media-type="image/jpeg"/>
+<item href="images/fig14_13.jpg" id="fig14_13" media-type="image/jpeg"/>
+<item href="images/fig14_2.jpg" id="fig14_2" media-type="image/jpeg"/>
+<item href="images/fig14_3.jpg" id="fig14_3" media-type="image/jpeg"/>
+<item href="images/fig14_4.jpg" id="fig14_4" media-type="image/jpeg"/>
+<item href="images/fig14_5.jpg" id="fig14_5" media-type="image/jpeg"/>
+<item href="images/fig14_6.jpg" id="fig14_6" media-type="image/jpeg"/>
+<item href="images/fig14_7.jpg" id="fig14_7" media-type="image/jpeg"/>
+<item href="images/fig14_8.jpg" id="fig14_8" media-type="image/jpeg"/>
+<item href="images/fig14_9.jpg" id="fig14_9" media-type="image/jpeg"/>
+<item href="images/fig15_1.jpg" id="fig15_1" media-type="image/jpeg"/>
+<item href="images/fig15_10.jpg" id="fig15_10" media-type="image/jpeg"/>
+<item href="images/fig15_11.jpg" id="fig15_11" media-type="image/jpeg"/>
+<item href="images/fig15_12.jpg" id="fig15_12" media-type="image/jpeg"/>
+<item href="images/fig15_13.jpg" id="fig15_13" media-type="image/jpeg"/>
+<item href="images/fig15_14.jpg" id="fig15_14" media-type="image/jpeg"/>
+<item href="images/fig15_15.jpg" id="fig15_15" media-type="image/jpeg"/>
+<item href="images/fig15_16.jpg" id="fig15_16" media-type="image/jpeg"/>
+<item href="images/fig15_17.jpg" id="fig15_17" media-type="image/jpeg"/>
+<item href="images/fig15_18.jpg" id="fig15_18" media-type="image/jpeg"/>
+<item href="images/fig15_19.jpg" id="fig15_19" media-type="image/jpeg"/>
+<item href="images/fig15_2.jpg" id="fig15_2" media-type="image/jpeg"/>
+<item href="images/fig15_20.jpg" id="fig15_20" media-type="image/jpeg"/>
+<item href="images/fig15_21.jpg" id="fig15_21" media-type="image/jpeg"/>
+<item href="images/fig15_22.jpg" id="fig15_22" media-type="image/jpeg"/>
+<item href="images/fig15_23.jpg" id="fig15_23" media-type="image/jpeg"/>
+<item href="images/fig15_24.jpg" id="fig15_24" media-type="image/jpeg"/>
+<item href="images/fig15_25.jpg" id="fig15_25" media-type="image/jpeg"/>
+<item href="images/fig15_3.jpg" id="fig15_3" media-type="image/jpeg"/>
+<item href="images/fig15_4.jpg" id="fig15_4" media-type="image/jpeg"/>
+<item href="images/fig15_5.jpg" id="fig15_5" media-type="image/jpeg"/>
+<item href="images/fig15_6.jpg" id="fig15_6" media-type="image/jpeg"/>
+<item href="images/fig15_7.jpg" id="fig15_7" media-type="image/jpeg"/>
+<item href="images/fig15_8.jpg" id="fig15_8" media-type="image/jpeg"/>
+<item href="images/fig15_9.jpg" id="fig15_9" media-type="image/jpeg"/>
+<item href="images/fig16_1.jpg" id="fig16_1" media-type="image/jpeg"/>
+<item href="images/fig16_10.jpg" id="fig16_10" media-type="image/jpeg"/>
+<item href="images/fig16_11.jpg" id="fig16_11" media-type="image/jpeg"/>
+<item href="images/fig16_12.jpg" id="fig16_12" media-type="image/jpeg"/>
+<item href="images/fig16_13.jpg" id="fig16_13" media-type="image/jpeg"/>
+<item href="images/fig16_14.jpg" id="fig16_14" media-type="image/jpeg"/>
+<item href="images/fig16_15.jpg" id="fig16_15" media-type="image/jpeg"/>
+<item href="images/fig16_16.jpg" id="fig16_16" media-type="image/jpeg"/>
+<item href="images/fig16_17.jpg" id="fig16_17" media-type="image/jpeg"/>
+<item href="images/fig16_18.jpg" id="fig16_18" media-type="image/jpeg"/>
+<item href="images/fig16_19.jpg" id="fig16_19" media-type="image/jpeg"/>
+<item href="images/fig16_2.jpg" id="fig16_2" media-type="image/jpeg"/>
+<item href="images/fig16_20.jpg" id="fig16_20" media-type="image/jpeg"/>
+<item href="images/fig16_21.jpg" id="fig16_21" media-type="image/jpeg"/>
+<item href="images/fig16_22.jpg" id="fig16_22" media-type="image/jpeg"/>
+<item href="images/fig16_23.jpg" id="fig16_23" media-type="image/jpeg"/>
+<item href="images/fig16_24.jpg" id="fig16_24" media-type="image/jpeg"/>
+<item href="images/fig16_25.jpg" id="fig16_25" media-type="image/jpeg"/>
+<item href="images/fig16_26.jpg" id="fig16_26" media-type="image/jpeg"/>
+<item href="images/fig16_27.jpg" id="fig16_27" media-type="image/jpeg"/>
+<item href="images/fig16_28.jpg" id="fig16_28" media-type="image/jpeg"/>
+<item href="images/fig16_29.jpg" id="fig16_29" media-type="image/jpeg"/>
+<item href="images/fig16_3.jpg" id="fig16_3" media-type="image/jpeg"/>
+<item href="images/fig16_4.jpg" id="fig16_4" media-type="image/jpeg"/>
+<item href="images/fig16_5.jpg" id="fig16_5" media-type="image/jpeg"/>
+<item href="images/fig16_6.jpg" id="fig16_6" media-type="image/jpeg"/>
+<item href="images/fig16_7.jpg" id="fig16_7" media-type="image/jpeg"/>
+<item href="images/fig16_8.jpg" id="fig16_8" media-type="image/jpeg"/>
+<item href="images/fig16_9.jpg" id="fig16_9" media-type="image/jpeg"/>
+<item href="images/fig17_1.jpg" id="fig17_1" media-type="image/jpeg"/>
+<item href="images/fig17_10.jpg" id="fig17_10" media-type="image/jpeg"/>
+<item href="images/fig17_11.jpg" id="fig17_11" media-type="image/jpeg"/>
+<item href="images/fig17_12.jpg" id="fig17_12" media-type="image/jpeg"/>
+<item href="images/fig17_13.jpg" id="fig17_13" media-type="image/jpeg"/>
+<item href="images/fig17_14.jpg" id="fig17_14" media-type="image/jpeg"/>
+<item href="images/fig17_2.jpg" id="fig17_2" media-type="image/jpeg"/>
+<item href="images/fig17_3.jpg" id="fig17_3" media-type="image/jpeg"/>
+<item href="images/fig17_4.jpg" id="fig17_4" media-type="image/jpeg"/>
+<item href="images/fig17_5.jpg" id="fig17_5" media-type="image/jpeg"/>
+<item href="images/fig17_6.jpg" id="fig17_6" media-type="image/jpeg"/>
+<item href="images/fig17_7.jpg" id="fig17_7" media-type="image/jpeg"/>
+<item href="images/fig17_8.jpg" id="fig17_8" media-type="image/jpeg"/>
+<item href="images/fig17_9.jpg" id="fig17_9" media-type="image/jpeg"/>
+<item href="images/fig18_1.jpg" id="fig18_1" media-type="image/jpeg"/>
+<item href="images/fig18_10.jpg" id="fig18_10" media-type="image/jpeg"/>
+<item href="images/fig18_2.jpg" id="fig18_2" media-type="image/jpeg"/>
+<item href="images/fig18_3.jpg" id="fig18_3" media-type="image/jpeg"/>
+<item href="images/fig18_4.jpg" id="fig18_4" media-type="image/jpeg"/>
+<item href="images/fig18_5.jpg" id="fig18_5" media-type="image/jpeg"/>
+<item href="images/fig18_6.jpg" id="fig18_6" media-type="image/jpeg"/>
+<item href="images/fig18_7.jpg" id="fig18_7" media-type="image/jpeg"/>
+<item href="images/fig18_8.jpg" id="fig18_8" media-type="image/jpeg"/>
+<item href="images/fig18_9.jpg" id="fig18_9" media-type="image/jpeg"/>
+<item href="images/fig19_1.jpg" id="fig19_1" media-type="image/jpeg"/>
+<item href="images/fig19_10.jpg" id="fig19_10" media-type="image/jpeg"/>
+<item href="images/fig19_11.jpg" id="fig19_11" media-type="image/jpeg"/>
+<item href="images/fig19_12.jpg" id="fig19_12" media-type="image/jpeg"/>
+<item href="images/fig19_13.jpg" id="fig19_13" media-type="image/jpeg"/>
+<item href="images/fig19_14.jpg" id="fig19_14" media-type="image/jpeg"/>
+<item href="images/fig19_15.jpg" id="fig19_15" media-type="image/jpeg"/>
+<item href="images/fig19_16.jpg" id="fig19_16" media-type="image/jpeg"/>
+<item href="images/fig19_17.jpg" id="fig19_17" media-type="image/jpeg"/>
+<item href="images/fig19_18.jpg" id="fig19_18" media-type="image/jpeg"/>
+<item href="images/fig19_19.jpg" id="fig19_19" media-type="image/jpeg"/>
+<item href="images/fig19_2.jpg" id="fig19_2" media-type="image/jpeg"/>
+<item href="images/fig19_20.jpg" id="fig19_20" media-type="image/jpeg"/>
+<item href="images/fig19_21.jpg" id="fig19_21" media-type="image/jpeg"/>
+<item href="images/fig19_22.jpg" id="fig19_22" media-type="image/jpeg"/>
+<item href="images/fig19_23.jpg" id="fig19_23" media-type="image/jpeg"/>
+<item href="images/fig19_24.jpg" id="fig19_24" media-type="image/jpeg"/>
+<item href="images/fig19_25.jpg" id="fig19_25" media-type="image/jpeg"/>
+<item href="images/fig19_26.jpg" id="fig19_26" media-type="image/jpeg"/>
+<item href="images/fig19_27.jpg" id="fig19_27" media-type="image/jpeg"/>
+<item href="images/fig19_28.jpg" id="fig19_28" media-type="image/jpeg"/>
+<item href="images/fig19_29.jpg" id="fig19_29" media-type="image/jpeg"/>
+<item href="images/fig19_3.jpg" id="fig19_3" media-type="image/jpeg"/>
+<item href="images/fig19_30.jpg" id="fig19_30" media-type="image/jpeg"/>
+<item href="images/fig19_31.jpg" id="fig19_31" media-type="image/jpeg"/>
+<item href="images/fig19_32.jpg" id="fig19_32" media-type="image/jpeg"/>
+<item href="images/fig19_33.jpg" id="fig19_33" media-type="image/jpeg"/>
+<item href="images/fig19_34.jpg" id="fig19_34" media-type="image/jpeg"/>
+<item href="images/fig19_35.jpg" id="fig19_35" media-type="image/jpeg"/>
+<item href="images/fig19_36.jpg" id="fig19_36" media-type="image/jpeg"/>
+<item href="images/fig19_37.jpg" id="fig19_37" media-type="image/jpeg"/>
+<item href="images/fig19_38.jpg" id="fig19_38" media-type="image/jpeg"/>
+<item href="images/fig19_39.jpg" id="fig19_39" media-type="image/jpeg"/>
+<item href="images/fig19_4.jpg" id="fig19_4" media-type="image/jpeg"/>
+<item href="images/fig19_40.jpg" id="fig19_40" media-type="image/jpeg"/>
+<item href="images/fig19_41.jpg" id="fig19_41" media-type="image/jpeg"/>
+<item href="images/fig19_42.jpg" id="fig19_42" media-type="image/jpeg"/>
+<item href="images/fig19_43.jpg" id="fig19_43" media-type="image/jpeg"/>
+<item href="images/fig19_44.jpg" id="fig19_44" media-type="image/jpeg"/>
+<item href="images/fig19_45.jpg" id="fig19_45" media-type="image/jpeg"/>
+<item href="images/fig19_46.jpg" id="fig19_46" media-type="image/jpeg"/>
+<item href="images/fig19_5.jpg" id="fig19_5" media-type="image/jpeg"/>
+<item href="images/fig19_6.jpg" id="fig19_6" media-type="image/jpeg"/>
+<item href="images/fig19_7.jpg" id="fig19_7" media-type="image/jpeg"/>
+<item href="images/fig19_8.jpg" id="fig19_8" media-type="image/jpeg"/>
+<item href="images/fig19_9.jpg" id="fig19_9" media-type="image/jpeg"/>
+<item href="images/fig20_1.jpg" id="fig20_1" media-type="image/jpeg"/>
+<item href="images/fig20_10.jpg" id="fig20_10" media-type="image/jpeg"/>
+<item href="images/fig20_11.jpg" id="fig20_11" media-type="image/jpeg"/>
+<item href="images/fig20_12.jpg" id="fig20_12" media-type="image/jpeg"/>
+<item href="images/fig20_13.jpg" id="fig20_13" media-type="image/jpeg"/>
+<item href="images/fig20_14.jpg" id="fig20_14" media-type="image/jpeg"/>
+<item href="images/fig20_15.jpg" id="fig20_15" media-type="image/jpeg"/>
+<item href="images/fig20_16.jpg" id="fig20_16" media-type="image/jpeg"/>
+<item href="images/fig20_17.jpg" id="fig20_17" media-type="image/jpeg"/>
+<item href="images/fig20_18.jpg" id="fig20_18" media-type="image/jpeg"/>
+<item href="images/fig20_19.jpg" id="fig20_19" media-type="image/jpeg"/>
+<item href="images/fig20_2.jpg" id="fig20_2" media-type="image/jpeg"/>
+<item href="images/fig20_20.jpg" id="fig20_20" media-type="image/jpeg"/>
+<item href="images/fig20_21.jpg" id="fig20_21" media-type="image/jpeg"/>
+<item href="images/fig20_22.jpg" id="fig20_22" media-type="image/jpeg"/>
+<item href="images/fig20_23.jpg" id="fig20_23" media-type="image/jpeg"/>
+<item href="images/fig20_24.jpg" id="fig20_24" media-type="image/jpeg"/>
+<item href="images/fig20_25.jpg" id="fig20_25" media-type="image/jpeg"/>
+<item href="images/fig20_26.jpg" id="fig20_26" media-type="image/jpeg"/>
+<item href="images/fig20_27.jpg" id="fig20_27" media-type="image/jpeg"/>
+<item href="images/fig20_28.jpg" id="fig20_28" media-type="image/jpeg"/>
+<item href="images/fig20_29.jpg" id="fig20_29" media-type="image/jpeg"/>
+<item href="images/fig20_3.jpg" id="fig20_3" media-type="image/jpeg"/>
+<item href="images/fig20_30.jpg" id="fig20_30" media-type="image/jpeg"/>
+<item href="images/fig20_31.jpg" id="fig20_31" media-type="image/jpeg"/>
+<item href="images/fig20_4.jpg" id="fig20_4" media-type="image/jpeg"/>
+<item href="images/fig20_5.jpg" id="fig20_5" media-type="image/jpeg"/>
+<item href="images/fig20_6.jpg" id="fig20_6" media-type="image/jpeg"/>
+<item href="images/fig20_7.jpg" id="fig20_7" media-type="image/jpeg"/>
+<item href="images/fig20_8.jpg" id="fig20_8" media-type="image/jpeg"/>
+<item href="images/fig20_9.jpg" id="fig20_9" media-type="image/jpeg"/>
+<item href="images/fig21_1.jpg" id="fig21_1" media-type="image/jpeg"/>
+<item href="images/fig21_10.jpg" id="fig21_10" media-type="image/jpeg"/>
+<item href="images/fig21_11.jpg" id="fig21_11" media-type="image/jpeg"/>
+<item href="images/fig21_12.jpg" id="fig21_12" media-type="image/jpeg"/>
+<item href="images/fig21_13.jpg" id="fig21_13" media-type="image/jpeg"/>
+<item href="images/fig21_14.jpg" id="fig21_14" media-type="image/jpeg"/>
+<item href="images/fig21_15.jpg" id="fig21_15" media-type="image/jpeg"/>
+<item href="images/fig21_16.jpg" id="fig21_16" media-type="image/jpeg"/>
+<item href="images/fig21_17.jpg" id="fig21_17" media-type="image/jpeg"/>
+<item href="images/fig21_18.jpg" id="fig21_18" media-type="image/jpeg"/>
+<item href="images/fig21_19.jpg" id="fig21_19" media-type="image/jpeg"/>
+<item href="images/fig21_2.jpg" id="fig21_2" media-type="image/jpeg"/>
+<item href="images/fig21_20.jpg" id="fig21_20" media-type="image/jpeg"/>
+<item href="images/fig21_21.jpg" id="fig21_21" media-type="image/jpeg"/>
+<item href="images/fig21_22.jpg" id="fig21_22" media-type="image/jpeg"/>
+<item href="images/fig21_23.jpg" id="fig21_23" media-type="image/jpeg"/>
+<item href="images/fig21_24.jpg" id="fig21_24" media-type="image/jpeg"/>
+<item href="images/fig21_25.jpg" id="fig21_25" media-type="image/jpeg"/>
+<item href="images/fig21_26.jpg" id="fig21_26" media-type="image/jpeg"/>
+<item href="images/fig21_27.jpg" id="fig21_27" media-type="image/jpeg"/>
+<item href="images/fig21_28.jpg" id="fig21_28" media-type="image/jpeg"/>
+<item href="images/fig21_29.jpg" id="fig21_29" media-type="image/jpeg"/>
+<item href="images/fig21_3.jpg" id="fig21_3" media-type="image/jpeg"/>
+<item href="images/fig21_30.jpg" id="fig21_30" media-type="image/jpeg"/>
+<item href="images/fig21_31.jpg" id="fig21_31" media-type="image/jpeg"/>
+<item href="images/fig21_4.jpg" id="fig21_4" media-type="image/jpeg"/>
+<item href="images/fig21_5.jpg" id="fig21_5" media-type="image/jpeg"/>
+<item href="images/fig21_6.jpg" id="fig21_6" media-type="image/jpeg"/>
+<item href="images/fig21_7.jpg" id="fig21_7" media-type="image/jpeg"/>
+<item href="images/fig21_8.jpg" id="fig21_8" media-type="image/jpeg"/>
+<item href="images/fig21_9.jpg" id="fig21_9" media-type="image/jpeg"/>
+<item href="images/fig22_1.jpg" id="fig22_1" media-type="image/jpeg"/>
+<item href="images/fig22_10.jpg" id="fig22_10" media-type="image/jpeg"/>
+<item href="images/fig22_11.jpg" id="fig22_11" media-type="image/jpeg"/>
+<item href="images/fig22_12.jpg" id="fig22_12" media-type="image/jpeg"/>
+<item href="images/fig22_13.jpg" id="fig22_13" media-type="image/jpeg"/>
+<item href="images/fig22_14.jpg" id="fig22_14" media-type="image/jpeg"/>
+<item href="images/fig22_15.jpg" id="fig22_15" media-type="image/jpeg"/>
+<item href="images/fig22_2.jpg" id="fig22_2" media-type="image/jpeg"/>
+<item href="images/fig22_3.jpg" id="fig22_3" media-type="image/jpeg"/>
+<item href="images/fig22_4.jpg" id="fig22_4" media-type="image/jpeg"/>
+<item href="images/fig22_5.jpg" id="fig22_5" media-type="image/jpeg"/>
+<item href="images/fig22_6.jpg" id="fig22_6" media-type="image/jpeg"/>
+<item href="images/fig22_7.jpg" id="fig22_7" media-type="image/jpeg"/>
+<item href="images/fig22_8.jpg" id="fig22_8" media-type="image/jpeg"/>
+<item href="images/fig22_9.jpg" id="fig22_9" media-type="image/jpeg"/>
+<item href="images/fig23_1.jpg" id="fig23_1" media-type="image/jpeg"/>
+<item href="images/fig23_10.jpg" id="fig23_10" media-type="image/jpeg"/>
+<item href="images/fig23_11.jpg" id="fig23_11" media-type="image/jpeg"/>
+<item href="images/fig23_12.jpg" id="fig23_12" media-type="image/jpeg"/>
+<item href="images/fig23_13.jpg" id="fig23_13" media-type="image/jpeg"/>
+<item href="images/fig23_14.jpg" id="fig23_14" media-type="image/jpeg"/>
+<item href="images/fig23_15.jpg" id="fig23_15" media-type="image/jpeg"/>
+<item href="images/fig23_16.jpg" id="fig23_16" media-type="image/jpeg"/>
+<item href="images/fig23_17.jpg" id="fig23_17" media-type="image/jpeg"/>
+<item href="images/fig23_18.jpg" id="fig23_18" media-type="image/jpeg"/>
+<item href="images/fig23_19.jpg" id="fig23_19" media-type="image/jpeg"/>
+<item href="images/fig23_2.jpg" id="fig23_2" media-type="image/jpeg"/>
+<item href="images/fig23_20.jpg" id="fig23_20" media-type="image/jpeg"/>
+<item href="images/fig23_21.jpg" id="fig23_21" media-type="image/jpeg"/>
+<item href="images/fig23_22.jpg" id="fig23_22" media-type="image/jpeg"/>
+<item href="images/fig23_23.jpg" id="fig23_23" media-type="image/jpeg"/>
+<item href="images/fig23_24.jpg" id="fig23_24" media-type="image/jpeg"/>
+<item href="images/fig23_25.jpg" id="fig23_25" media-type="image/jpeg"/>
+<item href="images/fig23_26.jpg" id="fig23_26" media-type="image/jpeg"/>
+<item href="images/fig23_3.jpg" id="fig23_3" media-type="image/jpeg"/>
+<item href="images/fig23_4.jpg" id="fig23_4" media-type="image/jpeg"/>
+<item href="images/fig23_5.jpg" id="fig23_5" media-type="image/jpeg"/>
+<item href="images/fig23_6.jpg" id="fig23_6" media-type="image/jpeg"/>
+<item href="images/fig23_7.jpg" id="fig23_7" media-type="image/jpeg"/>
+<item href="images/fig23_8.jpg" id="fig23_8" media-type="image/jpeg"/>
+<item href="images/fig23_9.jpg" id="fig23_9" media-type="image/jpeg"/>
+<item href="images/fig2_1.jpg" id="fig2_1" media-type="image/jpeg"/>
+<item href="images/fig2_10.jpg" id="fig2_10" media-type="image/jpeg"/>
+<item href="images/fig2_11.jpg" id="fig2_11" media-type="image/jpeg"/>
+<item href="images/fig2_12.jpg" id="fig2_12" media-type="image/jpeg"/>
+<item href="images/fig2_13.jpg" id="fig2_13" media-type="image/jpeg"/>
+<item href="images/fig2_14.jpg" id="fig2_14" media-type="image/jpeg"/>
+<item href="images/fig2_15.jpg" id="fig2_15" media-type="image/jpeg"/>
+<item href="images/fig2_16.jpg" id="fig2_16" media-type="image/jpeg"/>
+<item href="images/fig2_17.jpg" id="fig2_17" media-type="image/jpeg"/>
+<item href="images/fig2_18.jpg" id="fig2_18" media-type="image/jpeg"/>
+<item href="images/fig2_19.jpg" id="fig2_19" media-type="image/jpeg"/>
+<item href="images/fig2_2.jpg" id="fig2_2" media-type="image/jpeg"/>
+<item href="images/fig2_20.jpg" id="fig2_20" media-type="image/jpeg"/>
+<item href="images/fig2_21.jpg" id="fig2_21" media-type="image/jpeg"/>
+<item href="images/fig2_22.jpg" id="fig2_22" media-type="image/jpeg"/>
+<item href="images/fig2_23.jpg" id="fig2_23" media-type="image/jpeg"/>
+<item href="images/fig2_24.jpg" id="fig2_24" media-type="image/jpeg"/>
+<item href="images/fig2_25.jpg" id="fig2_25" media-type="image/jpeg"/>
+<item href="images/fig2_26.jpg" id="fig2_26" media-type="image/jpeg"/>
+<item href="images/fig2_27.jpg" id="fig2_27" media-type="image/jpeg"/>
+<item href="images/fig2_28.jpg" id="fig2_28" media-type="image/jpeg"/>
+<item href="images/fig2_29.jpg" id="fig2_29" media-type="image/jpeg"/>
+<item href="images/fig2_3.jpg" id="fig2_3" media-type="image/jpeg"/>
+<item href="images/fig2_30.jpg" id="fig2_30" media-type="image/jpeg"/>
+<item href="images/fig2_31.jpg" id="fig2_31" media-type="image/jpeg"/>
+<item href="images/fig2_32.jpg" id="fig2_32" media-type="image/jpeg"/>
+<item href="images/fig2_33.jpg" id="fig2_33" media-type="image/jpeg"/>
+<item href="images/fig2_34.jpg" id="fig2_34" media-type="image/jpeg"/>
+<item href="images/fig2_35.jpg" id="fig2_35" media-type="image/jpeg"/>
+<item href="images/fig2_36.jpg" id="fig2_36" media-type="image/jpeg"/>
+<item href="images/fig2_37.jpg" id="fig2_37" media-type="image/jpeg"/>
+<item href="images/fig2_38.jpg" id="fig2_38" media-type="image/jpeg"/>
+<item href="images/fig2_39.jpg" id="fig2_39" media-type="image/jpeg"/>
+<item href="images/fig2_4.jpg" id="fig2_4" media-type="image/jpeg"/>
+<item href="images/fig2_40.jpg" id="fig2_40" media-type="image/jpeg"/>
+<item href="images/fig2_41.jpg" id="fig2_41" media-type="image/jpeg"/>
+<item href="images/fig2_42.jpg" id="fig2_42" media-type="image/jpeg"/>
+<item href="images/fig2_5.jpg" id="fig2_5" media-type="image/jpeg"/>
+<item href="images/fig2_6.jpg" id="fig2_6" media-type="image/jpeg"/>
+<item href="images/fig2_7.jpg" id="fig2_7" media-type="image/jpeg"/>
+<item href="images/fig2_8.jpg" id="fig2_8" media-type="image/jpeg"/>
+<item href="images/fig2_9.jpg" id="fig2_9" media-type="image/jpeg"/>
+<item href="images/fig3_1.jpg" id="fig3_1" media-type="image/jpeg"/>
+<item href="images/fig3_10.jpg" id="fig3_10" media-type="image/jpeg"/>
+<item href="images/fig3_11.jpg" id="fig3_11" media-type="image/jpeg"/>
+<item href="images/fig3_12.jpg" id="fig3_12" media-type="image/jpeg"/>
+<item href="images/fig3_13.jpg" id="fig3_13" media-type="image/jpeg"/>
+<item href="images/fig3_14.jpg" id="fig3_14" media-type="image/jpeg"/>
+<item href="images/fig3_2.jpg" id="fig3_2" media-type="image/jpeg"/>
+<item href="images/fig3_3.jpg" id="fig3_3" media-type="image/jpeg"/>
+<item href="images/fig3_4.jpg" id="fig3_4" media-type="image/jpeg"/>
+<item href="images/fig3_5.jpg" id="fig3_5" media-type="image/jpeg"/>
+<item href="images/fig3_6.jpg" id="fig3_6" media-type="image/jpeg"/>
+<item href="images/fig3_7.jpg" id="fig3_7" media-type="image/jpeg"/>
+<item href="images/fig3_8.jpg" id="fig3_8" media-type="image/jpeg"/>
+<item href="images/fig3_9.jpg" id="fig3_9" media-type="image/jpeg"/>
+<item href="images/fig4_1.jpg" id="fig4_1" media-type="image/jpeg"/>
+<item href="images/fig4_10.jpg" id="fig4_10" media-type="image/jpeg"/>
+<item href="images/fig4_11.jpg" id="fig4_11" media-type="image/jpeg"/>
+<item href="images/fig4_12.jpg" id="fig4_12" media-type="image/jpeg"/>
+<item href="images/fig4_13.jpg" id="fig4_13" media-type="image/jpeg"/>
+<item href="images/fig4_14.jpg" id="fig4_14" media-type="image/jpeg"/>
+<item href="images/fig4_15.jpg" id="fig4_15" media-type="image/jpeg"/>
+<item href="images/fig4_16.jpg" id="fig4_16" media-type="image/jpeg"/>
+<item href="images/fig4_17.jpg" id="fig4_17" media-type="image/jpeg"/>
+<item href="images/fig4_2.jpg" id="fig4_2" media-type="image/jpeg"/>
+<item href="images/fig4_3.jpg" id="fig4_3" media-type="image/jpeg"/>
+<item href="images/fig4_4.jpg" id="fig4_4" media-type="image/jpeg"/>
+<item href="images/fig4_5.jpg" id="fig4_5" media-type="image/jpeg"/>
+<item href="images/fig4_6.jpg" id="fig4_6" media-type="image/jpeg"/>
+<item href="images/fig4_7.jpg" id="fig4_7" media-type="image/jpeg"/>
+<item href="images/fig4_8.jpg" id="fig4_8" media-type="image/jpeg"/>
+<item href="images/fig4_9.jpg" id="fig4_9" media-type="image/jpeg"/>
+<item href="images/fig5_1.jpg" id="fig5_1" media-type="image/jpeg"/>
+<item href="images/fig5_2.jpg" id="fig5_2" media-type="image/jpeg"/>
+<item href="images/fig5_3.jpg" id="fig5_3" media-type="image/jpeg"/>
+<item href="images/fig5_4.jpg" id="fig5_4" media-type="image/jpeg"/>
+<item href="images/fig5_5.jpg" id="fig5_5" media-type="image/jpeg"/>
+<item href="images/fig5_6.jpg" id="fig5_6" media-type="image/jpeg"/>
+<item href="images/fig6_1.jpg" id="fig6_1" media-type="image/jpeg"/>
+<item href="images/fig6_2.jpg" id="fig6_2" media-type="image/jpeg"/>
+<item href="images/fig6_3.jpg" id="fig6_3" media-type="image/jpeg"/>
+<item href="images/fig6_4.jpg" id="fig6_4" media-type="image/jpeg"/>
+<item href="images/fig6_5.jpg" id="fig6_5" media-type="image/jpeg"/>
+<item href="images/fig6_6.jpg" id="fig6_6" media-type="image/jpeg"/>
+<item href="images/fig6_7.jpg" id="fig6_7" media-type="image/jpeg"/>
+<item href="images/fig6_8.jpg" id="fig6_8" media-type="image/jpeg"/>
+<item href="images/fig7_1.jpg" id="fig7_1" media-type="image/jpeg"/>
+<item href="images/fig7_10.jpg" id="fig7_10" media-type="image/jpeg"/>
+<item href="images/fig7_11.jpg" id="fig7_11" media-type="image/jpeg"/>
+<item href="images/fig7_12.jpg" id="fig7_12" media-type="image/jpeg"/>
+<item href="images/fig7_13.jpg" id="fig7_13" media-type="image/jpeg"/>
+<item href="images/fig7_14.jpg" id="fig7_14" media-type="image/jpeg"/>
+<item href="images/fig7_15.jpg" id="fig7_15" media-type="image/jpeg"/>
+<item href="images/fig7_16.jpg" id="fig7_16" media-type="image/jpeg"/>
+<item href="images/fig7_17.jpg" id="fig7_17" media-type="image/jpeg"/>
+<item href="images/fig7_18.jpg" id="fig7_18" media-type="image/jpeg"/>
+<item href="images/fig7_19.jpg" id="fig7_19" media-type="image/jpeg"/>
+<item href="images/fig7_2.jpg" id="fig7_2" media-type="image/jpeg"/>
+<item href="images/fig7_20.jpg" id="fig7_20" media-type="image/jpeg"/>
+<item href="images/fig7_3.jpg" id="fig7_3" media-type="image/jpeg"/>
+<item href="images/fig7_4.jpg" id="fig7_4" media-type="image/jpeg"/>
+<item href="images/fig7_5.jpg" id="fig7_5" media-type="image/jpeg"/>
+<item href="images/fig7_6.jpg" id="fig7_6" media-type="image/jpeg"/>
+<item href="images/fig7_7.jpg" id="fig7_7" media-type="image/jpeg"/>
+<item href="images/fig7_8.jpg" id="fig7_8" media-type="image/jpeg"/>
+<item href="images/fig7_9.jpg" id="fig7_9" media-type="image/jpeg"/>
+<item href="images/fig8_1.jpg" id="fig8_1" media-type="image/jpeg"/>
+<item href="images/fig8_10.jpg" id="fig8_10" media-type="image/jpeg"/>
+<item href="images/fig8_11.jpg" id="fig8_11" media-type="image/jpeg"/>
+<item href="images/fig8_12.jpg" id="fig8_12" media-type="image/jpeg"/>
+<item href="images/fig8_13.jpg" id="fig8_13" media-type="image/jpeg"/>
+<item href="images/fig8_14.jpg" id="fig8_14" media-type="image/jpeg"/>
+<item href="images/fig8_2.jpg" id="fig8_2" media-type="image/jpeg"/>
+<item href="images/fig8_3.jpg" id="fig8_3" media-type="image/jpeg"/>
+<item href="images/fig8_4.jpg" id="fig8_4" media-type="image/jpeg"/>
+<item href="images/fig8_5.jpg" id="fig8_5" media-type="image/jpeg"/>
+<item href="images/fig8_6.jpg" id="fig8_6" media-type="image/jpeg"/>
+<item href="images/fig8_7.jpg" id="fig8_7" media-type="image/jpeg"/>
+<item href="images/fig8_8.jpg" id="fig8_8" media-type="image/jpeg"/>
+<item href="images/fig8_9.jpg" id="fig8_9" media-type="image/jpeg"/>
+<item href="images/fig9_1.jpg" id="fig9_1" media-type="image/jpeg"/>
+<item href="images/fig9_10.jpg" id="fig9_10" media-type="image/jpeg"/>
+<item href="images/fig9_11.jpg" id="fig9_11" media-type="image/jpeg"/>
+<item href="images/fig9_12.jpg" id="fig9_12" media-type="image/jpeg"/>
+<item href="images/fig9_13.jpg" id="fig9_13" media-type="image/jpeg"/>
+<item href="images/fig9_14.jpg" id="fig9_14" media-type="image/jpeg"/>
+<item href="images/fig9_15.jpg" id="fig9_15" media-type="image/jpeg"/>
+<item href="images/fig9_16.jpg" id="fig9_16" media-type="image/jpeg"/>
+<item href="images/fig9_17.jpg" id="fig9_17" media-type="image/jpeg"/>
+<item href="images/fig9_2.jpg" id="fig9_2" media-type="image/jpeg"/>
+<item href="images/fig9_3.jpg" id="fig9_3" media-type="image/jpeg"/>
+<item href="images/fig9_4.jpg" id="fig9_4" media-type="image/jpeg"/>
+<item href="images/fig9_5.jpg" id="fig9_5" media-type="image/jpeg"/>
+<item href="images/fig9_6.jpg" id="fig9_6" media-type="image/jpeg"/>
+<item href="images/fig9_7.jpg" id="fig9_7" media-type="image/jpeg"/>
+<item href="images/fig9_8.jpg" id="fig9_8" media-type="image/jpeg"/>
+<item href="images/fig9_9.jpg" id="fig9_9" media-type="image/jpeg"/>
+<item href="images/pub.jpg" id="pub" media-type="image/jpeg"/>
+
+<item href="xhtml/A01_cover.xhtml" id="A01_cover" media-type="application/xhtml+xml"/>
+<item href="xhtml/A02_halftitle.xhtml" id="A02_halftitle" media-type="application/xhtml+xml"/>
+<item href="xhtml/A03_TitlePage.xhtml" id="A03_TitlePage" media-type="application/xhtml+xml"/>
+<item href="xhtml/A04_copyright.xhtml" id="A04_copyright" media-type="application/xhtml+xml"/>
+<item href="xhtml/C02a_toc.xhtml" id="C02a_toc" media-type="application/xhtml+xml"/>
+<item href="xhtml/C03_preface.xhtml" id="C03_preface" media-type="application/xhtml+xml"/>
+<item href="xhtml/C04_ack.xhtml" id="C04_ack" media-type="application/xhtml+xml"/>
+<item href="xhtml/C05_fm-chapter.xhtml" id="C05_fm-chapter" media-type="application/xhtml+xml"/>
+<item href="xhtml/C06_chapter1.xhtml" id="C06_chapter1" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C07_chapter2.xhtml" id="C07_chapter2" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C08_chapter3.xhtml" id="C08_chapter3" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C09_chapter4.xhtml" id="C09_chapter4" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C10_chapter5.xhtml" id="C10_chapter5" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C11_chapter6.xhtml" id="C11_chapter6" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C12_chapter7.xhtml" id="C12_chapter7" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C13_chapter8.xhtml" id="C13_chapter8" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C14_chapter9.xhtml" id="C14_chapter9" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C15_chapter10.xhtml" id="C15_chapter10" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C16_chapter11.xhtml" id="C16_chapter11" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C17_chapter12.xhtml" id="C17_chapter12" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C18_chapter13.xhtml" id="C18_chapter13" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C19_chapter14.xhtml" id="C19_chapter14" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C20_chapter15.xhtml" id="C20_chapter15" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C21_chapter16.xhtml" id="C21_chapter16" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C22_chapter17.xhtml" id="C22_chapter17" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C23_chapter18.xhtml" id="C23_chapter18" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C24_chapter19.xhtml" id="C24_chapter19" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C25_chapter20.xhtml" id="C25_chapter20" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C26_chapter21.xhtml" id="C26_chapter21" media-type="application/xhtml+xml" properties="mathml scripted"/>
+<item href="xhtml/C27_chapter22.xhtml" id="C27_chapter22" media-type="application/xhtml+xml"/>
+<item href="xhtml/C28_chapter23.xhtml" id="C28_chapter23" media-type="application/xhtml+xml"/>
+<item href="xhtml/C29_references.xhtml" id="C29_references" media-type="application/xhtml+xml"/>
+<item href="xhtml/C30_index.xhtml" id="C30_index" media-type="application/xhtml+xml"/>
+<item href="xhtml/C31_index.xhtml" id="C31_index" media-type="application/xhtml+xml"/>
+
+<item href="xhtml/nav.xhtml" id="nav" media-type="application/xhtml+xml" properties="nav"/>
+
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/BasicLatin.js" id="id0" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscMathSymbolsB.js" id="id1" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/d.js" id="id2" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/jax.js" id="id3" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/cancel.js" id="id4" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/a.js" id="id5" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/AsciiMath/jax.js" id="id6" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/ms.js" id="id7" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/mathchoice.js" id="id8" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Script/Regular/Main.js" id="id9" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/extpfeil.js" id="id10" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/AsciiMath/config.js" id="id11" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Arrows.js" id="id12" media-type="application/x-javascript"/>
+<item href="mathjax/images/CloseX-31.png" id="id13" media-type="image/png"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedA.js" id="id14" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Other.js" id="id15" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Size3/Regular/Main.js" id="id16" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Size2/Regular/Main.js" id="id17" media-type="application/x-javascript"/>
+<item href="mathjax/images/MenuArrow-15.png" id="id18" media-type="image/png"/>
+<item href="mathjax/jax/input/TeX/jax.js" id="id19" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Size1/Regular/Main.js" id="id20" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/h.js" id="id21" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/l.js" id="id22" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/PUA.js" id="id23" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/AMSsymbols.js" id="id24" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/CombDiacritMarks.js" id="id25" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/PUA.js" id="id26" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GreekAndCoptic.js" id="id27" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LatinExtendedB.js" id="id28" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedA.js" id="id29" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscSymbols.js" id="id30" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/scr.js" id="id31" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MiscSymbols.js" id="id32" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/MiscTechnical.js" id="id33" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/newcommand.js" id="id34" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/mmultiscripts.js" id="id35" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/p.js" id="id36" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Main.js" id="id37" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/o.js" id="id38" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/annotation-xml.js" id="id39" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/u.js" id="id40" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/BasicLatin.js" id="id41" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/BasicLatin.js" id="id42" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Size4/Regular/Main.js" id="id43" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/noUndefined.js" id="id44" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/k.js" id="id45" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LetterlikeSymbols.js" id="id46" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/HTML.js" id="id47" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Main.js" id="id49" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/MiscSymbolsAndArrows.js" id="id50" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/BasicLatin.js" id="id51" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/GeometricShapes.js" id="id52" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeometricShapes.js" id="id53" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/config.js" id="id54" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/enclose.js" id="id55" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/EnclosedAlphanum.js" id="id56" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/mhchem.js" id="id57" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/verb.js" id="id58" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/GeneralPunctuation.js" id="id59" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/MathMenu.js" id="id60" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeometricShapes.js" id="id61" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/PUA.js" id="id62" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/LetterlikeSymbols.js" id="id63" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/z.js" id="id64" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Main.js" id="id65" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SpacingModLetters.js" id="id66" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Bold/Other.js" id="id67" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/autoload-all.js" id="id68" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/CombDiacritMarks.js" id="id69" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/noErrors.js" id="id70" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/g.js" id="id71" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/BasicLatin.js" id="id72" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SpacingModLetters.js" id="id73" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscSymbols.js" id="id74" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GreekAndCoptic.js" id="id75" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/Main.js" id="id76" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/mml2jax.js" id="id77" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/GeometricShapes.js" id="id78" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/i.js" id="id79" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/q.js" id="id80" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/toMathML.js" id="id81" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/NativeMML/config.js" id="id82" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/BasicLatin.js" id="id83" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/boldsymbol.js" id="id84" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Other.js" id="id85" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/BoxDrawing.js" id="id86" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/begingroup.js" id="id87" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/v.js" id="id88" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/MiscMathSymbolsA.js" id="id89" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Math/BoldItalic/Main.js" id="id90" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Other.js" id="id91" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/menclose.js" id="id92" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LetterlikeSymbols.js" id="id93" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js" id="id94" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GeneralPunctuation.js" id="id95" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/MiscMathSymbolsB.js" id="id96" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/x.js" id="id97" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Other.js" id="id98" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/j.js" id="id99" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/MathZoom.js" id="id100" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscMathSymbolsA.js" id="id101" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/unicode.js" id="id102" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/c.js" id="id103" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/NativeMML/jax.js" id="id104" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/SupplementalArrowsB.js" id="id105" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/autobold.js" id="id106" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SuppMathOperators.js" id="id107" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/Main.js" id="id108" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/action.js" id="id109" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/fr.js" id="id110" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/Dingbats.js" id="id111" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Dingbats.js" id="id112" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/CombDiacritMarks.js" id="id113" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/Arrows.js" id="id114" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/MathEvents.js" id="id115" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/MathOperators.js" id="id116" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Bold/Main.js" id="id117" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/MathOperators.js" id="id118" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Latin1Supplement.js" id="id119" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/CombDiacritMarks.js" id="id120" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/f.js" id="id121" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Main.js" id="id122" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/bbox.js" id="id123" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/config.js" id="id124" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/CombDiactForSymbols.js" id="id125" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Regular/CombDiacritMarks.js" id="id126" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Arrows.js" id="id127" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/SupplementalArrowsA.js" id="id128" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/r.js" id="id129" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/GeneralPunctuation.js" id="id130" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/BasicLatin.js" id="id131" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/SuppMathOperators.js" id="id132" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/opf.js" id="id133" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/fontdata.js" id="id134" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SpacingModLetters.js" id="id135" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/mglyph.js" id="id136" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/MathOperators.js" id="id137" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/GreekAndCoptic.js" id="id138" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiactForSymbols.js" id="id139" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Bold/Main.js" id="id140" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/w.js" id="id141" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MiscTechnical.js" id="id142" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/Latin1Supplement.js" id="id143" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/MathOperators.js" id="id144" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LetterlikeSymbols.js" id="id146" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/m.js" id="id147" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GeneralPunctuation.js" id="id148" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/multiline.js" id="id149" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/LatinExtendedA.js" id="id150" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/mtable.js" id="id151" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedA.js" id="id152" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/SansSerif/Italic/Main.js" id="id153" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/asciimath2jax.js" id="id154" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/jax.js" id="id155" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/AMSmath.js" id="id156" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/b.js" id="id157" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/fontdata-extra.js" id="id158" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/SuppMathOperators.js" id="id159" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MathOperators.js" id="id160" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/s.js" id="id161" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Script/Regular/BasicLatin.js" id="id162" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Caligraphic/Regular/Main.js" id="id163" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/SpacingModLetters.js" id="id164" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/GreekAndCoptic.js" id="id165" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/BasicLatin.js" id="id166" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/SupplementalArrowsA.js" id="id167" media-type="application/x-javascript"/>
+<item href="mathjax/MathJax.js" id="id168" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/TeX/config.js" id="id169" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/BasicLatin.js" id="id170" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/CombDiacritMarks.js" id="id171" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/color.js" id="id172" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/Main.js" id="id173" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/LatinExtendedB.js" id="id174" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Italic/CombDiacritMarks.js" id="id175" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Fraktur/Regular/Other.js" id="id176" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/tex2jax.js" id="id177" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/MiscTechnical.js" id="id178" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/autoload/maction.js" id="id179" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/GreekAndCoptic.js" id="id180" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Bold/LatinExtendedB.js" id="id181" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/n.js" id="id182" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/t.js" id="id183" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/BasicLatin.js" id="id184" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/SuppMathOperators.js" id="id185" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/y.js" id="id186" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/jax.js" id="id187" media-type="application/x-javascript"/>
+<item href="mathjax/jax/input/MathML/entities/e.js" id="id188" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/LetterlikeSymbols.js" id="id189" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/AMS/Regular/Latin1Supplement.js" id="id190" media-type="application/x-javascript"/>
+<item href="mathjax/jax/element/mml/optable/CombDiacritMarks.js" id="id191" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Math/Italic/Main.js" id="id192" media-type="application/x-javascript"/>
+<item href="mathjax/jax/output/SVG/fonts/TeX/Main/Regular/Main.js" id="id193" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/AMScd.js" id="id4a" media-type="application/x-javascript"/>
+<item href="mathjax/extensions/TeX/mediawiki-texvc.js" id="id4b" media-type="application/x-javascript"/>
+</manifest>
+<spine toc="ncx">
+
+<itemref idref="A01_cover"/>
+<itemref idref="A02_halftitle"/>
+<itemref idref="A03_TitlePage"/>
+<itemref idref="A04_copyright"/>
+<itemref idref="C02a_toc"/>
+<itemref idref="C03_preface"/>
+<itemref idref="C04_ack"/>
+<itemref idref="C05_fm-chapter"/>
+<itemref idref="C06_chapter1"/>
+<itemref idref="C07_chapter2"/>
+<itemref idref="C08_chapter3"/>
+<itemref idref="C09_chapter4"/>
+<itemref idref="C10_chapter5"/>
+<itemref idref="C11_chapter6"/>
+<itemref idref="C12_chapter7"/>
+<itemref idref="C13_chapter8"/>
+<itemref idref="C14_chapter9"/>
+<itemref idref="C15_chapter10"/>
+<itemref idref="C16_chapter11"/>
+<itemref idref="C17_chapter12"/>
+<itemref idref="C18_chapter13"/>
+<itemref idref="C19_chapter14"/>
+<itemref idref="C20_chapter15"/>
+<itemref idref="C21_chapter16"/>
+<itemref idref="C22_chapter17"/>
+<itemref idref="C23_chapter18"/>
+<itemref idref="C24_chapter19"/>
+<itemref idref="C25_chapter20"/>
+<itemref idref="C26_chapter21"/>
+<itemref idref="C27_chapter22"/>
+<itemref idref="C28_chapter23"/>
+<itemref idref="C29_references"/>
+<itemref idref="C30_index"/>
+<itemref idref="C31_index"/>
+</spine>
+<guide>
+<reference href="xhtml/C02a_toc.xhtml" title="Contents" type="toc"/>
+<reference href="xhtml/A01_cover.xhtml" title="Cover" type="cover"/>
+<reference href="xhtml/C06_chapter1.xhtml" title="Chapter 1" type="text"/>
+</guide>
+</package>

@@ -1,0 +1,228 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:svg="http://www.w3.org/2000/svg" dir="ltr" lang="en" xml:lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>5 Surface Shading</title>
+<link href="../styles/9781000426359.css" rel="stylesheet" type="text/css"/>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+jax: ["input/TeX","input/MathML","output/SVG"],
+extensions: ["tex2jax.js","mml2jax.js","MathEvents.js"],
+TeX: {
+extensions: ["noErrors.js","noUndefined.js","autoload-all.js"]
+},
+MathMenu: {
+showRenderer: false
+},
+menuSettings: {
+zoom: "Click"
+},
+messageStyle: "none"
+});
+</script>
+<script src="../mathjax/MathJax.js" type="text/javascript"/>
+<meta content="urn:uuid:e0000000-0000-0000-0000-000006665500" name="Adept.expected.resource"/>
+</head>
+<body epub:type="bodymatter">
+<section epub:type="chapter" role="doc-chapter">
+<h1 class="chapz" id="c5"><a id="index_term1145"/><a id="term-837"/><span aria-label="97" epub:type="pagebreak" id="pg_97" role="doc-pagebreak"/><a epub:type="backlink" href="C02a_toc.xhtml#rc5" role="doc-backlink"><span class="green"><span class="big1">5</span><br/>Surface Shading</span></a></h1>
+<p>When we are rendering images of 3D scenes, whether by using ray tracing or rasterization, in real time or in batch processing, one of the key contributors to the visual impression of three-dimensionality is shading or coloring surfaces in the scene based on their shape and their relationship to other objects in the scene. In the physical world, most of the light we see is reflected light, and the physics of light reflection is strongly influenced by geometry, which produces a variety of cues that the human visual system makes very effective use of to understand shape.</p>
+<p>In computer graphics, the purpose of shading is to provide these cues to the visual system, although the goals differ depending on the application. In computer-aided design or scientific visualization, the focus is on clarity: shading should be designed to provide the clearest, most accurate impression of 3D shape. On the other hand, in visual effects or advertising, the goal is to maximize the resemblance of renderings to the appearance of real objects. In animation, virtual environments, or games, the goals are somewhere in the middle: shading is meant to achieve artistic ends, which include depicting shape and material, but may not necessarily be intended to literally imitate reality.</p>
+<p>The equations used to compute shading are known as a <em>shading model</em>, and a range of different <a id="index_term1065"/>shading models have been developed for these different applications. Generally, they all begin with simple models that provide a useful approximation to the physics of light reflection. From this starting point, additional features can be added to achieve closer approximations to physics for realistic <a id="term-481"/><a id="term-629"/><span aria-label="98" epub:type="pagebreak" id="pg_98" role="doc-pagebreak"/>rendering, or some parts can be modified or left out to make models suitable for more abstract styles.</p>
+<p>A shading model is quite independent of the rest of a rendering system, and the same models can be used in ray tracing and rasterization systems. This chapter describes a basic shading model for an opaque surface illuminated by a point light source. This model might be all we need for simple applications, and it forms the starting point for more advanced shading computations such as those discussed in <a href="C19_chapter14.xhtml#c14">Chapter 14</a>.</p>
+<section>
+<h2 id="sec5_1"><a id="index_term880"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec5_1" role="doc-backlink"><span class="green">5.1 Point-like light sources</span></a></h2>
+<p>In the real world, light falls on surfaces from all directions. But for modeling illumination, the simplest case is when light arrives from a single direction; this is always an idealization, but it makes a useful model for light sources that are small in proportion to to their distance from the surface, either because they are indeed small (for example, an LED flashlight) or because they are very far away (for example, the sun). Point-like sources come in two flavors: a <em>point source</em> is small enough to be treated as a point, but is close to the scene and can illuminate different surfaces differently; and a <em><a id="index_term333"/>directional source</em> is both small enough (relative to its distance) to be treated as point-like and also so far away that it illuminates all surfaces the same and there is no need to keep track of its location, only its direction. The flashlight and the sun are canonical examples of these two types of light sources.</p>
+<section>
+<h3 id="sec5_1_1"><a id="index_term883"/><span class="green">5.1.1 Point source illumination</span></h3>
+<p>A point light source is described by its position, which is a point in 3D space, and its intensity, which describes the amount of light it produces. A point source can be <em>isotropic</em>, meaning the intensity is the same in all directions; this is normally the default, but many systems provide “spot lights” that only send light in some directions, which can be handy for controlling light in a virtual scene in the same way that a real spot light is useful for controlling light on a stage.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">When in doubt, make light sources neutral in color, with equal red, green, and blue intensities.</p>
+</aside>
+<figure id="f5_1" tabindex="0">
+<img alt="" src="../images/fig5_1.jpg"/>
+<figcaption><p><span class="blue">Figure 5.1.</span> Irradiance from a point source decreases with the square of distance.</p></figcaption>
+</figure>
+<p>For an isotropic point source, it’s easy to reason about how much light falls on a surface a certain distance away. Suppose we have a <a id="index_term882"/>point source that emits one Watt of <em><a id="index_term925"/>radiant power</em> isotropically, and we place this source at the center of a hollow sphere with one meter radius (<a href="C10_chapter5.xhtml#f5_1">Figure 5.1</a>). All the power from the light falls on the inside surface of the sphere, and it’s distributed uniformly over <a id="term-630"/><span aria-label="99" epub:type="pagebreak" id="pg_99" role="doc-pagebreak"/>the whole surface area of 4<em>π</em> m<sup>2</sup>, so the density of radiant power per unit area is 1<em>/</em>(4<em>π</em>) Watts per square meter. This density is known as <em>irradiance</em> and is the right quantity to describe how much light is falling on a surface for the purposes of light reflection.</p>
+<p>In the general case of a source that has power <em>P</em> and a receiving sphere of radius <em>r</em>, we find the irradiance <em>E</em> is</p>
+<div class="disp-formula" id="equ5_1">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>P</m:mi></m:mrow><m:mrow><m:mn>4</m:mn><m:mi>π</m:mi></m:mrow></m:mfrac><m:mfrac><m:mrow><m:mn>1</m:mn></m:mrow><m:mrow><m:msup><m:mrow><m:mi>r</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:mfrac><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>I</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mi>r</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:mfrac></m:mrow><m:mspace width="3em"/><m:mo>(5.1)</m:mo></m:math>
+</div>
+<p>The quantity <em>I</em> = <em>P/</em>(4<em>π</em>) is the intensity of the source; it is a property of the source itself that is independent of what surface it’s illuminating. The <em>r<sup>–2</sup></em> factor, often called the inverse square term, describes how irradiance depends on the distance <em>r</em> between the source and the surface.</p>
+<figure id="f5_2" tabindex="0">
+<img alt="" src="../images/fig5_2.jpg"/>
+<figcaption><p><span class="blue">Figure 5.2.</span> (a) A beam of light falls on a surface, illuminating the whole top of the cube. (b) The cube is tilted 60°, and now only half the light falls on the top surface of the cube; the area stays the same so the power per unit area, or irradiance, is halved.</p></figcaption>
+</figure>
+<p>One other important consideration in computing irradiance is the <em><a id="index_term25"/>angle of incidence</em>—the angle between the surface normal and the direction the light is traveling. Consider a small surface that is illuminated by a point source that is far away compared to the size of the surface. The light that falls on the surface is all travelling approximately parallel. If we tilt the surface to an angle of 60° as shown in <a href="C10_chapter5.xhtml#f5_2">Figure 5.2</a>, the surface intercepts only half the light that it did when it was facing the source. In general, when rotated by an angle <em>θ</em> it intercepts an amount of light (radiant power) proportional to cos <em>θ</em>, and since the area stays the same, the irradiance (which, remember, is radiant power per unit area) is proportional to the same factor. This rule, that the irradiance on a surface falls off as the cosine of the incident angle, is known as <em><a id="index_term657"/>Lambert’s cosine law</em> because it was described by Johann Heinrich Lambert in his 1760 book <em>Photometria</em>.</p>
+<p>Putting this together with the formula, we just derived for irradiance on a surface facing exactly toward the source, we get the general formula for <a id="index_term641"/>irradiance due to a point source,</p>
+<div class="disp-formula" id="equ5_2">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mo>=</m:mo><m:mi>I</m:mi><m:mfrac><m:mrow><m:mtext>cos</m:mtext><m:mi>θ</m:mi></m:mrow><m:mrow><m:msup><m:mrow><m:mi>r</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:mfrac><m:mn>.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(5.2)</m:mo></m:math>
+</div>
+<p>The term cos <em>θ/r</em><sup>2</sup> can be called the <em><a id="index_term437"/>geometry factor</em> for a point source; it depends on the geometric relationship between source and receiving surface, but not on the specific properties of either one.</p>
+<p>In practice, the angle <em>θ</em> is not normally computed, because given a unit vector <strong>n</strong> that is normal to the surface and a unit vector <strong>l</strong> that points toward the light (<a href="C10_chapter5.xhtml#f5_3">Figure 5.3</a>), the cosine factor can be computed using the dot product</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtext>cos</m:mtext><m:mi>θ</m:mi><m:mo>=</m:mo><m:mtext>n</m:mtext><m:mo>·</m:mo><m:mn>1</m:mn></m:mrow></m:math>
+</div>
+<figure id="f5_3" tabindex="0">
+<img alt="" src="../images/fig5_3.jpg"/>
+<figcaption><p><span class="blue">Figure 5.3.</span> A surface in a beam of light intercepts an amount of light proportional to the cosine of the angle between the light direction and the surface normal.</p></figcaption>
+</figure>
+<p class="noindent1">which is simpler and more efficient than computations with trigonometric functions.</p>
+</section>
+<section>
+<h3 id="sec5_1_2"><a id="index_term332"/><a id="term-404"/><a id="term-696"/><span aria-label="100" epub:type="pagebreak" id="pg_100" role="doc-pagebreak"/><span class="green">5.1.2 Directional illumination</span></h3>
+<p>A directional source is a limiting case of a very bright, far-away point source. As the source gets farther and farther away, the ratio <em>I/r</em><sup>2</sup> in Equation 5.2 varies less and less over the scene, and for a directional source, we replace this with a constant, <em>H</em>:</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Note that this formula only holds when these two vectors have unit length!</p>
+</aside>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mi>E</m:mi><m:mo>=</m:mo><m:mi>H</m:mi><m:mtext>cos</m:mtext><m:mi>θ</m:mi></m:mrow></m:math>
+</div>
+<p>This constant can be called the <em>normal irradiance</em> since it is equal to the irradiance when the light is positioned along the surface normal. A directional source is characterized by the <em>direction</em> toward the source (rather than by a position) and by the <a id="index_term782"/>normal irradiance <em>H</em> (rather than by an intensity). The illumination from a directional source is uniform and does not fall off with distance in the way that point source illumination does.</p>
+</section>
+</section>
+<section>
+<h2 id="sec5_2"><a id="index_term972"/><a epub:type="backlink" href="C02a_toc.xhtml#rsec5_2" role="doc-backlink"><span class="green">5.2 Basic reflection models</span></a></h2>
+<p>Now that we have the ability to compute irradiance, which describes how much light falls on an object, we come to the question of how the object reflects that light. This depends on the material the object is made out of, and in this chapter, we develop a basic model for a colored material with an optional shiny surface. The idea behind this model is shown in <a href="C10_chapter5.xhtml#f5_4">Figure 5.4</a>: the material can have a base layer that determines the object’s overall color, and it can have a surface that provides a shiny, mirror-like reflection, and we will look at the simplest model for each.</p>
+<figure id="f5_4" tabindex="0">
+<img alt="" src="../images/fig5_4.jpg"/>
+<figcaption><p><span class="blue">Figure 5.4.</span> Specular reflection (a) happens at the top surface and reflects near the mirror direction; diffuse reflection (b) happens in the material below the surface and emerges in all directions.</p></figcaption>
+</figure>
+<section>
+<h3 id="sec5_2_1"><a id="index_term656"/><span class="green">5.2.1 Lambertian reflection</span></h3>
+<p>The very simplest kind of reflection is a surface that reflects light equally to all directions, regardless of where it came from, so that the reflected light <em>L<sub>r</sub></em> seen by the observer is simply a constant multiple of the irradiance:</p>
+<div class="disp-formula" id="equ5_3">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>L</m:mi></m:mrow><m:mrow><m:mi>r</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mi>k</m:mi><m:mi>E</m:mi><m:mn>.</m:mn></m:mrow><m:mspace width="3em"/><m:mo>(5.3)</m:mo></m:math>
+</div>
+<p>A surface that behaves this way is known as an <em>ideal diffuse</em> surface and appears the same brightness from all directions; its color is <em><a id="index_term1315"/>view independent</em> and is completely described by its <em><a id="index_term968"/>reflectance</em>, <em>R</em>, which is the fraction of the irradiance it reflects. The coefficient relating reflected to incident light is <em>R/π</em> (the reason for <a id="term-535"/><a id="term-603"/><span aria-label="101" epub:type="pagebreak" id="pg_101" role="doc-pagebreak"/>the factor of <em>π</em> will have to wait for <a href="C19_chapter14.xhtml#c14">Chapter 14</a>):</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>L</m:mi></m:mrow><m:mrow><m:mi>r</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mfrac><m:mrow><m:mi>R</m:mi></m:mrow><m:mrow><m:mi>π</m:mi></m:mrow></m:mfrac><m:mi>E</m:mi><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<p>The reflectance can be different for different colors of light, and for simple modeling of color, it suffices to just keep three different reflectances, one each for red, green, and blue, so this shading equation is carried out separately for the three color channels.</p>
+<p>Ideal diffuse shading, often called Lambertian shading because Lambert’s cosine law is the main effect it models, provides a flat, chalky appearance by itself. Physically, it models light that bounces around inside the material so that it “for-gets” where it came from and emerges randomly in all directions. It is an effective model for paper, flat paint, dirt, tree bark, stone, and other rough materials that don’t have a distinct and smooth enough top surface to produce noticeable shiny reflections.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Precise prediction of color is a bit more complex; see <a href="C23_chapter18.xhtml#c18">Chapter 18</a>.</p>
+</aside>
+</section>
+<section>
+<h3 id="sec5_2_2"><a id="index_term1120"/><span class="green">5.2.2 Specular reflection</span></h3>
+<p>Many materials have some degree of shininess to them—for example, metals, plastics, gloss or semi-gloss paints, or many leaves of plants. When you look at these materials, you see reflections that move around when you move your viewpoint; you could describe their color as being view-dependent in contrast to the view-independent color of a Lambertian surface. The view-dependent part of the reflection generally happens at the top surface of the material and is known as <em>specular reflection</em>.</p>
+<p>The simplest kind of specular reflection happens at perfectly smooth surfaces like a mirror or the surface of water: light reflects in a mirrorlike way so that light coming from a point source goes in exactly one direction. This is known as <em><a id="index_term541"/>ideal specular reflection</em> and generally needs to be handled as a special case. But many surfaces are not perfectly smooth, and they exhibit a more general kind of reflection known in computer graphics as <em>glossy reflection</em>. There are many models for <a id="index_term443"/>glossy reflection, and better ones are discussed in <a href="C19_chapter14.xhtml#c14">Chapter 14</a>, but a simple and well-known model was originally proposed by Phong (1975) and later updated by Blinn (1976) and others to the form most commonly used today, known as the <em>Modified <a id="index_term91"/>Blinn–Phong</em> model.</p>
+<p>Since specular reflection is view dependent, it is a function of the <em><a id="index_term1316"/>view vector</em> <strong>v</strong> that points from the shading point toward the viewer, as well as the normal vector <strong>n</strong> and light direction <strong>l</strong>. The idea is to produce reflection that is at its brightest when <strong>v</strong> and <strong>l</strong> are symmetrically positioned across the surface normal, which is <a id="term-266"/><span aria-label="102" epub:type="pagebreak" id="pg_102" role="doc-pagebreak"/>when mirror reflection would occur; the reflection then decreases smoothly as the vectors move away from a mirror configuration.</p>
+<p>We can tell how close we are to a mirror configuration using the idea of a <em>half vector</em>, which is the vector halfway between the viewing and illumination directions and is perpendicular to the surface exactly when <strong>l</strong> and <strong>v</strong> are in a mirror reflection configuration (<a href="C10_chapter5.xhtml#f5_5">Figure 5.5</a>). If the half vector is near the surface normal, the specular component should be bright; if it is far away, it should be dim. We measure the nearness of <strong>h</strong> and <strong>n</strong> by computing their dot product (remember they are unit vectors, so <strong>n</strong> · <strong>h</strong> reaches its maximum of 1 when the vectors are equal) and then take the result to a power <em>p &gt;</em> 1 to make it decrease faster:</p>
+<figure id="f5_5" tabindex="0">
+<img alt="" src="../images/fig5_5.jpg"/>
+<figcaption><p><span class="blue">Figure 5.5.</span> Geometry for Blinn–Phong shading.</p></figcaption>
+</figure>
+<p class="center">(<b>n</b> · <b>h</b>)<sup><i>p</i></sup></p>
+<p class="noindent1">The <em><a id="index_term847"/>Phong exponent</em>, <em>p</em>, controls the apparent shininess of the surface: higher values make the reflection fall off faster away from the mirror direction, leading to a shinier appearance. The <a id="index_term514"/>half vector itself is easy to compute: since <strong>v</strong> and <strong>l</strong> are the same length, their sum is a vector that bisects the angle between them, which only needs to be normalized to produce <strong>h</strong>:</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">Typical values of <em>p</em>:</p>
+<p class="noindent">10—“eggshell”;</p>
+<p class="noindent">100—mildly shiny;</p>
+<p class="noindent">1000—really glossy;</p>
+<p class="noindent">10,000—nearlymirror-like.</p>
+</aside>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtext>h=</m:mtext><m:mfrac><m:mrow><m:mtext>l+v</m:mtext></m:mrow><m:mrow><m:mrow><m:mo>‖</m:mo><m:mtext>l+v</m:mtext><m:mo>‖</m:mo></m:mrow></m:mrow></m:mfrac></m:mrow></m:math>
+</div>
+<p>To incorporate the Blinn–Phong idea into a shading computation, we add a <em>specular component</em> to Lambertian shading; the Lambertian part is then the <em><a id="index_term322"/>diffuse component</em>. We simply generalize the factor <em>k</em> from (5.3) that relates reflected light to incident irradiance to include not just the contribution of diffuse reflection but also a separate term that adds in specular reflection:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>L</m:mi></m:mrow><m:mrow><m:mi>r</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:mrow><m:mo>(</m:mo><m:mfrac><m:mrow><m:mi>R</m:mi></m:mrow><m:mrow><m:mi>π</m:mi></m:mrow></m:mfrac><m:mo>+</m:mo><m:msub><m:mrow><m:mi>k</m:mi></m:mrow><m:mrow><m:mi>s</m:mi></m:mrow></m:msub><m:mo>⁢</m:mo><m:mtext> </m:mtext><m:msup><m:mrow><m:mtext>max</m:mtext><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mtext>n</m:mtext><m:mo>·</m:mo><m:mtext>h</m:mtext><m:mo>)</m:mo></m:mrow></m:mrow><m:mrow><m:mi>p</m:mi></m:mrow></m:msup><m:mo>)</m:mo><m:mi>E</m:mi></m:mrow></m:mrow></m:math>
+</div>
+<p>where the scale factor <em>k<sub>s</sub></em> is the <em>specular coefficient</em> (separate for red, green, and blue) and controls how bright the <a id="index_term1118"/>specular component is, and we have added a clamping operation to avoid surprises for corner cases in which <strong>n</strong> faces away from <strong>h</strong>.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">When in doubt, for surfaces that also have a diffuse color, make the <a id="index_term1117"/>specular coefficient neutral in color, with equal red, green, and blue values.</p>
+</aside>
+<p class="indent">The expression that generalizes the factor <em>k</em> is called the <em><a id="index_term80"/>bidirectional reflectance distribution function</em> or BRDF, because it describes how the reflectance varies as a function of the two directions <strong>l</strong> and <strong>v</strong>. The BRDF of a Lambertian surface is constant, but the BRDF of a surface that has specular reflection is not. The shading calculation then boils down to computing the irradiance (describing how much light is available to reflect) and the BRDF (describing how the surface reflects it), and then multiplying them. The <a id="index_term107"/>BRDF is discussed more completely in <a href="C19_chapter14.xhtml#c14">Chapter 14</a>.</p>
+</section>
+<section>
+<h3 id="sec5_2_3"><a id="index_term1037"/><span aria-label="103" epub:type="pagebreak" id="pg_103" role="doc-pagebreak"/><span class="green">5.2.3 Calculating shading</span></h3>
+<p>When implementing surface shading, the code needs to have access to information about the light source, the surface, and the viewing direction. Writing clean code that supports both point and directional lights is easiest to do by separating the calculation of irradiance from the calculation of reflected light. Irradiance depends only on the light source and the surface geometry, and once it’s known, calculating the reflected light only depends on the surface properties and the viewing geometry.</p>
+<p>Basic shading calculations can be done in exactly the same way in ray tracing and rasterization systems; it’s really only how the inputs are computed that varies. To compute irradiance, we need</p>
+<ul class="list-bullet">
+<li>
+<p class="list">The shading point <strong>x</strong>, a 3D point on a surface</p>
+</li>
+<li>
+<p class="list">The surface normal <strong>n</strong> perpendicular to the surface at <strong>x</strong></p>
+</li>
+<li>
+<p class="list">The light source position <strong>p</strong> for a point light or its direction <strong>l</strong> for a directional light</p>
+</li>
+<li>
+<p class="list">The light source intensity <em>I</em> for a point light or its normal irradiance <em>H</em> for a directional light (these are RGB colors).</p>
+</li>
+</ul>
+<p>For a point light, we need to compute the distance and the light direction, which are both simple to get from the vector <strong>p</strong> <em>–</em> <strong>x</strong>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mi>r</m:mi><m:mo>=</m:mo><m:mrow><m:mo>‖</m:mo><m:mtext>p</m:mtext><m:mo>−</m:mo><m:mtext>x</m:mtext><m:mo>‖</m:mo></m:mrow></m:mtd><m:mtd><m:mn>1</m:mn><m:mo>=</m:mo><m:mfrac><m:mrow><m:mtext>p</m:mtext><m:mo>−</m:mo><m:mtext>x</m:mtext></m:mrow><m:mrow><m:mi>r</m:mi></m:mrow></m:mfrac></m:mtd></m:mtr></m:mtable></m:mrow></m:math>
+</div>
+<p>and for both types of lights, the cosine factor is best computed using a dot product; as long as <strong>n</strong> and <strong>l</strong> are unit vectors,</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtext>cos</m:mtext><m:mtext> </m:mtext><m:mi>θ</m:mi><m:mo>=</m:mo><m:mtext>n</m:mtext><m:mo>·</m:mo><m:mn>1.</m:mn></m:mrow></m:math>
+</div>
+<p>In practice, it’s a good idea when computing irradiance to clamp the dot product at zero to make sure that even if in some cases, you find the light direction is facing away from the surface normal, you won’t get negative shading. This leads to what we view as the official equations for computing irradiance:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:mtable><m:mtr><m:mtd><m:mtable><m:mtr><m:mtd><m:mi>E</m:mi><m:mo>=</m:mo><m:mfrac><m:mrow><m:mtext>max</m:mtext><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mtext>n</m:mtext><m:mo>·</m:mo><m:mn>1</m:mn><m:mo>)</m:mo></m:mrow></m:mrow><m:mrow><m:msup><m:mrow><m:mi>r</m:mi></m:mrow><m:mrow><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:mfrac><m:mi>I</m:mi><m:mtext> </m:mtext><m:mrow><m:mo>(</m:mo><m:mtext>point</m:mtext><m:mo>)</m:mo></m:mrow></m:mtd><m:mtd><m:mtext>or</m:mtext></m:mtd></m:mtr></m:mtable></m:mtd><m:mtd><m:mtext>max</m:mtext><m:mrow><m:mo>(</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mtext>n</m:mtext><m:mo>·</m:mo><m:mn>1</m:mn><m:mo>)</m:mo><m:mi>H</m:mi></m:mrow></m:mtd></m:mtr></m:mtable><m:mtext> </m:mtext><m:mrow><m:mo>(</m:mo><m:mtext>directional</m:mtext><m:mo>)</m:mo></m:mrow></m:mrow></m:math>
+</div>
+<p>Once the irradiance is known, it needs to be multiplied by the BDRF value, and the ingredients for calculating that value are</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">This can happen with interpolated normals (<a href="C14_chapter9.xhtml#sec9_2_4">Section 9.2.4</a>)</p>
+</aside>
+<ul class="list-bullet">
+<li>
+<p class="list"><span aria-label="104" epub:type="pagebreak" id="pg_104" role="doc-pagebreak"/>The light direction <strong>l</strong>, a unit vector pointing from <strong>x</strong> toward the light (already computed as part of the irradiance calculation)</p>
+</li>
+<li>
+<p class="list">The viewing direction <strong>v</strong>, a unit vector pointing from <strong>x</strong> toward the viewer</p>
+</li>
+<li>
+<p class="list">The parameters describing the properties of the surface material. For this chapter’s model, this includes <em>R</em>, <em>k<sub>s</sub></em>, and <em>p</em>.</p>
+</li>
+</ul>
+<p>How you get these quantities differs substantially between ray tracing and rasterization systems, but the actual shading calculation itself is the same. Don’t forget that <strong>v</strong>, <strong>l</strong>, and <strong>n</strong> all must be unit vectors; failing to normalize these vectors is a very common error in shading computations.</p>
+</section>
+</section>
+<section>
+<h2 id="sec5_3"><a epub:type="backlink" href="C02a_toc.xhtml#rsec5_3" role="doc-backlink"><span class="green">5.3 Ambient illumination</span></a></h2>
+<figure id="f5_6" tabindex="0">
+<img alt="" src="../images/fig5_6.jpg"/>
+<figcaption><p><span class="blue">Figure 5.6.</span> <a id="index_term18"/>Ambient illumination adds some light that arrives from all directions equally.</p></figcaption>
+</figure>
+<p class="noindent1">Point-like sources are models for very localized sources that produce a lot of light near one direction. Other kinds of light sources are not so localized—for instance the sky, or the light reflected from the walls of a room. While such extended sources can be modeled in great detail, for basic shading we need a really simple approximation, so we make the assumption of <em>ambient</em> light that is exactly the same in all directions and at all locations in the scene (<a href="C10_chapter5.xhtml#f5_6">Figure 5.6</a>). We further assume ambient light is only reflected diffusely (since there is no light direction and therefore no way to compute specular shading). This makes ambient shading very simple: it is a constant!</p>
+<p>Normally, this constant is factored into the product of a material-related <em><a id="index_term22"/>ambient reflection coefficient k<sub>a</sub></em> and a light-related <em>ambient intensity I<sub>a</sub></em>:</p>
+<div class="disp-formula">
+<m:math alttext=""><m:mrow><m:msub><m:mrow><m:mi>L</m:mi></m:mrow><m:mrow><m:mi>r</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:msub><m:mrow><m:mi>k</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:msub><m:mrow><m:mi>I</m:mi></m:mrow><m:mrow><m:mi>a</m:mi></m:mrow></m:msub><m:mn>.</m:mn></m:mrow></m:math>
+</div>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">really, <em>k</em><sub>a</sub> ought to be called reflectance and <em>I</em><sub>a</sub> ought to be called radiance, but this is not the usual nomenclature.</p>
+</aside>
+<p class="noindent">Both these quantities are colored, so they are multiplied componentwise (the ambient coefficient for red scales the red ambient intensity). This arrangement makes it convenient to tune ambient shading per object and in the scene as a whole.</p>
+<p>Ambient shading is a bit of a hack, since lighting from large extended light sources does still vary: it tends to be darker in corners and other concave areas. But it is an important part of simple shading setups because it prevents shadows from being completely black and allows an easy way to tweak overall scene contrast.</p>
+<aside class="boxed-text" epub:type="sidebar">
+<p class="noindent">When in doubt, set the ambient color to be the same as the diffuse color and the ambient intensity to a neutral color.</p>
+</aside>
+<p class="indent">Many systems treat ambient light as a type of light source that appears in a list with point and directional lights; other systems make the <a id="index_term19"/>ambient intensity a parameter of the scene so that there is no explicit light source for ambient, which is the same as assuming there is always exactly one <a id="index_term21"/>ambient light.</p>
+</section>
+<section>
+<h2 id="sec22"><span aria-label="105" epub:type="pagebreak" id="pg_105" role="doc-pagebreak"/><span class="green">Frequently Asked Questions</span></h2>
+<ul class="list-bullet">
+<li>
+<p class="list"><span class="green">Phong shading seems like an enormous hack. Is that true?</span></p>
+<p class="noindent1b">Yes. It is not a very good model if you are trying to match measurements of real surfaces. However, it is simple and has proven to produce shading that is very useful in practice. Applications that are looking for realistic shading are moving away from Phong shading to more complex but much more accurate models based on microfacet theory (Walter, Marschner, Li, &amp; Torrance, 2007). But realism also absolutely requires going beyond point-like light sources. All this is discussed in <a href="C19_chapter14.xhtml#c14">Chapter 14</a>.</p>
+</li>
+<li>
+<p class="list"><span class="green">I hate calling pow(). Is there a way to avoid it when doing Phong lighting?</span></p>
+<p class="noindent1b">A simple way is to only have exponents that are themselves a power of two, i.e., 2, 4, 8, 16, .... In practice, this is not a problematic restriction for most applications. Many systems designed for fast graphics calculations have library functions for pow() that are much faster and slightly less accurate than the ones found in standard math libraries.</p>
+</li>
+</ul>
+</section>
+<section>
+<h2 id="sec23"><span class="green">Exercises</span></h2>
+<p class="qpara"><span class="green">1</span>. The moon is poorly approximated by both diffuse and Phong shading. What observations tell you that this is true?</p>
+<p class="qpara"><span class="green">2.</span> Velvet is poorly approximated by both diffuse and Phong shading. What observations tell you that this is true?</p>
+<p class="qpara"><span class="green">3.</span> Why do most highlights on plastic objects look white, while those on gold metal look gold?</p>
+</section>
+</section>
+</body>
+</html>
