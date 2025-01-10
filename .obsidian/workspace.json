@@ -99,8 +99,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.99999809265137,
-    "collapsed": true
+    "width": 278.99999809265137
   },
   "right": {
     "id": "78053effe92f6b21",
@@ -178,8 +177,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.9287109375,
-    "collapsed": true
+    "width": 359.9287109375
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,9 +196,10 @@
   "active": "7435fb7da37547fc",
   "lastOpenFiles": [
     "📗Textbooks/_Index_of_📗Textbooks.md",
+    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
+    "📗Textbooks/Fundamentals_of_Computer_Graphics_5th.epub",
     "📗Textbooks/A_First_Course_in_Database_Systems.pdf",
     "📗Textbooks/Intro_to_Theory_of_Computation_3rd.pdf",
-    "Computer Graphics Self-Study/Fundamentals of Computer Graphics.md",
     "Computer Graphics Self-Study/Computer Graphics Self-Study.md",
     "📗Textbooks/Fundamentals of Computer Graphics, 5th Ed - Steve Marschner, Peter Shirley.epub",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/toc.ncx",
@@ -209,7 +208,6 @@
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/styles",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Other.js",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/Main.js",
-    "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular/CombDiacritMarks.js",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/images/MenuArrow-15.png",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/mathjax/images/CloseX-31.png",
     "📗Textbooks/Fundamentals of Computer Graphics.epub/ops/images/fig12_5.jpg",

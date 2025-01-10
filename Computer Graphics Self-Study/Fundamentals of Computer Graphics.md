@@ -1,7 +1,7 @@
 ---
-updated: 2025-01-10_12:34:45-05:00
+updated: 2025-01-10_12:38:03-05:00
 ---
 
-Using [[📗Textbooks/Fundamentals of Computer Graphics, 5th Ed - Steve Marschner, Peter Shirley.epub|Fundamentals of Computer Graphics, 5th Ed - Steve Marschner, Peter Shirley.epub]] as a base.
+Using [[📗Textbooks/Fundamentals_of_Computer_Graphics_5th.epub|Fundamentals_of_Computer_Graphics_5th.epub]] as a base.
 
 
