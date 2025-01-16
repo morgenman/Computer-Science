@@ -190,9 +190,9 @@
       "command-palette:Open command palette": false,
       "markdown-importer:Open format converter": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "periodic-notes:Open today": false,
       "obsidian-git:Open Git source control": false,
-      "notion-like-tables:Create loom": false
+      "notion-like-tables:Create loom": false,
+      "periodic-notes:Open today": false
     }
   },
   "active": "58f4c7204c164af7",
